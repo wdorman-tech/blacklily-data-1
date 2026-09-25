@@ -1,0 +1,40 @@
+*   Question: "When was the business continuity plan last exercised in a full-scale test?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not found, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "01_brochure.md"
+    *   "02_compliance_manual.md"
+    *   "03_valuation_policy.md"
+    *   "04_business_continuity_plan.md"
+    *   "05_fee_schedule.md"
+    *   "06_policy_update_memo.md"
+
+    *   The question is about the "business continuity plan" and "full-scale test".
+    *   Looking at "04_business_continuity_plan.md":
+        *   Section 6.1 (Frequency) mentions "The Plan is tested through a full-scale exercise at least annually...".
+        *   Section 6.2 (Most Recent Tests) says: "The most recent full-scale test was conducted on November 14, 2025."
+    *   Checking "06_policy_update_memo.md" for any updates to the BCP:
+        *   Section 6 (Offsite Data Backup Vendor) updates the vendor and location, but doesn't change the date of the last test.
+
+    *   Answer: November 14, 2025.
+    *   Source: 04_business_continuity_plan.md
+    *   Section: 6.2
+    *   Quote: "The most recent full-scale test was conducted on November 14, 2025."
+
+    *   Answer: November 14, 2025
+    *   Source: 04_business_continuity_plan.md
+    *   Section: 6.2
+    *   Quote: "The most recent full-scale test was conducted on November 14, 2025."
+
+    *   "06_policy_update_memo.md" is dated September 8, 2026.
+    *   "04_business_continuity_plan.md" is revised April 21, 2026.
+    *   The memo mentions updates to the BCP in Section 6, but it doesn't change the date of the last test mentioned in the BCP.
+
+    *   Answer: November 14, 2025
+    *   Source: 04_business_continuity_plan.md
+    *   Section: 6.2
+    *   Quote: "The most recent full-scale test was conducted on November 14, 2025."

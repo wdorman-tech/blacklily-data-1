@@ -1,0 +1,73 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   **Role:** Research Analyst at a registered investment adviser.
+    *   **Audience:** Investment Committee.
+    *   **Task:** Turn the company's earnings release into a one-page brief.
+    *   **Constraints:**
+        *   Use *only* figures stated in the release (no calculations, no growth rates unless stated, no margins unless stated).
+        *   Label non-GAAP/adjusted figures.
+        *   State period for non-current figures.
+        *   No outside knowledge.
+        *   If no guidance, say so plainly.
+        *   No buy/sell/hold recommendation.
+        *   Format: Markdown, 350-450 words total.
+        *   Structure: Headline (bold, one sentence), ## Results (3-5 bullets), ## Segments and drivers (2-4 bullets), ## Outlook (1-3 bullets), ## Capital and balance sheet (1-3 bullets), ## Watch items (2-3 bullets).
+    *   **Input:** Goldman Sachs Group, Inc. Form 8-K, Exhibit 99.1 (earnings release) for 2Q26.
+
+2.  **Scan the Release for Data:**
+    *   **Headline:** Needs to be one sentence, bold.
+    *   **Results:**
+        *   Net Earnings 2Q26: $6,628 million (or $6.63 billion).
+        *   EPS 2Q26 Diluted: $20.98.
+        *   Net Revenues 2Q26: $20,338 million (or $20.34 billion).
+        *   YTD Net Earnings: $12,258 million.
+        *   YTD EPS: $38.51.
+        *   Annualized ROE 2Q26: 23.5%.
+        *   Book Value Per Share 2Q26: $367.67.
+        *   Dividend increase to $5.00 per common share in 3Q26.
+    *   **Segments:**
+        *   Global Banking & Markets (GBM) Net Revenues 2Q26: $15,520 million (53% higher than 2Q25).
+        *   Asset & Wealth Management (A&WM) Net Revenues 2Q26: $4,60 billion (or $4.597 billion).
+        *   Platform Solutions Net Revenues 2Q26: $221 million.
+        *   Investment banking fees 2Q26: $3.40 billion.
+        *   Operating Expenses 2Q26: $11,673 million.
+    *   **Outlook:**
+        *   Release mentions forward-looking statements but does not provide specific numerical guidance for future quarters or full year beyond the standard cautionary note. It says "Statements about the firm’s Investment banking fees backlog and future results also may constitute forward-looking statements." No specific numbers given for next quarter.
+    *   **Capital/Balance Sheet:**
+        *   Global Core Liquid Assets (GCLA) averaged $555 billion for 2Q26.
+        *   Common equity tier 1 capital ratio: 12.9% (Standardized).
+        *   Risk-weighted assets: $790 billion.
+        *   Share repurchases 2Q26: $4.00 billion.
+    *   **Watch Items:**
+        *   Platform Solutions revenue decrease due to Apple Card loan portfolio markdowns.
+        *   Investment banking fees backlog increased compared with end of Q1 and end of 2025.
+        *   Operating expenses up 26% vs 2Q25.
+
+3.  **Drafting - Section by Section (adhering to constraints):**
+
+    *   *Headline:* Goldman Sachs Reports Second Quarter Net Earnings of $6.63 Billion and Increases Quarterly Dividend
+    *   *Results:*
+        *   Net earnings were $6,628 million for the second quarter of 2026.
+        *   Diluted earnings per common share was $20.98 for the second quarter of 2026.
+        *   Net revenues were $20,338 million for the second quarter of 2026.
+        *   Annualized return on average common shareholders' equity was 23.5% for the second quarter of 2026.
+    *   *Segments and drivers:*
+        *   Global Banking & Markets net revenues were $15,520 million, 53% higher than the second quarter of 2025.
+        *   Asset & Wealth Management net revenues were $4,60 billion for the second quarter of 2026, 20% higher than the second quarter of 2025.
+        *   Investment banking fees were $3.40 billion, 55% higher than the second quarter of 2025.
+    *   *Outlook:*
+        *   The release does not provide specific numerical guidance for future periods beyond standard forward-looking statements regarding backlog and risks.
+    *   *Capital and balance sheet:*
+        *   Global core liquid assets averaged $555 billion for the second quarter of 2026.
+        *   Common equity tier 1 capital ratio was 12.9% under standardized rules as of June 30, 2026.
+        *   The firm returned $5.36 billion of capital to common shareholders during the quarter.
+    *   *Watch items:*
+        *   Monitor Platform Solutions net revenues which were $221 million, 64% lower than the second quarter of 2025 due to Apple Card loan portfolio markdowns.
+        *   Track operating expenses which were $11,673 billion (wait, check units: $11,673 million), 26% higher than the second quarter of 2025.
+
+    *Wait, I need to check word count and constraints carefully.*
+    *   Constraint: "Use only figures stated in the release." -> Do not calculate growth rates myself if not stated. The release states "53% higher", so I can use that. It states "26% higher" for expenses.
+    *   Constraint: "Label every non-GAAP, adjusted... figure as such." -> Most figures here are GAAP (Net Earnings, Net Revenues). ROE is labeled "Annualized". Book Value is stated.
+    *   Constraint: "State the period of any figure that is not for the quarter being reported." -> YTD figures need "YTD" or "first half".
+    *   Constraint: Word count 350-450 words. This is tight. I need to be concise but informative.

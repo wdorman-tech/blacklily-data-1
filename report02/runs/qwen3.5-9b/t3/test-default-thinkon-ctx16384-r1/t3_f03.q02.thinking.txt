@@ -1,0 +1,43 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "When was the firm's most recent external penetration test completed, and what were its principal findings?"
+    *   Key Information Needed: Date of most recent external penetration test, Principal findings.
+
+3.  **Scan the Documents:**
+    *   `01_brochure.md`: Discusses custody, surprise examinations (Aldwick Brennan LLP). No mention of penetration tests.
+    *   `02_compliance_manual.md`:
+        *   Section 8.4: Testimonials/Endorsements. Irrelevant.
+        *   Section 11.3: Monitoring and Managed Services (Pellow Stack IT, LLC, Northgale Security Operations, Inc.). Mentions patching, monitoring. No penetration test dates/findings.
+        *   Section 11.4: Vulnerability Management and Penetration Testing.
+            *   Text: "Northgale Security Operations, Inc. performs vulnerability scans of the Firm's external and internal networks quarterly."
+            *   Text: "Ostler Vane Security Testing, LLC performs an external penetration test annually..."
+            *   Text: "...and its findings are reported to the Management Committee with a remediation plan and target dates tracked by the ISO."
+            *   Does it give a specific date for the *most recent* one? No. It says "annually".
+            *   Does it give principal findings? No, it says findings are reported but doesn't list them here.
+        *   Section 11.7: Cyber Liability Insurance. Irrelevant.
+        *   Section 15.1 & 15.2: Annual Review. Irrelevant to specific penetration test date/findings.
+    *   `04_business_continuity_plan.md`:
+        *   Section 6.2 Most Recent Tests.
+        *   Text: "The most recent full-scale test was conducted on November 14, 2025." (This is a BCP test, not necessarily an external penetration test).
+        *   Text: "The most recent tabletop exercise was conducted on March 19, 2026..."
+        *   No mention of the specific date of the external penetration test or its findings here.
+
+4.  **Evaluate Findings:**
+    *   Document `02_compliance_manual.md`, Section 11.4 mentions that "Ostler Vane Security Testing, LLC performs an external penetration test annually".
+    *   It does *not* state the date of the most recent one (only frequency: annually).
+    *   It does *not* state the principal findings (only says they are reported to Management Committee).
+    *   Document `04_business_continuity_plan.md` mentions tests but not external

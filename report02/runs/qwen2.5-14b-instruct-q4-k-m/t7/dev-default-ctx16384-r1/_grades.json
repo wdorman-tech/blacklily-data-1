@@ -1,0 +1,292 @@
+{
+ "task": "t7",
+ "model": "qwen2.5:14b-instruct-q4_K_M",
+ "items": {
+  "t7_p01": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C2",
+     "hallucination": false,
+     "got": "Dividend Growth Equity: 14.62% over one year, 12.07% over five years and 11.84% over ten years, annualized, for periods ended December 31, 2025, gross of fees.",
+     "expected": "Dividend Growth Equity: 14.62% over one year, 12.07% over five years and 11.84% over ten years, annualized, for periods ended December 31, 2025, gross of fees.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C3",
+     "hallucination": false,
+     "got": "",
+     "expected": "Since its April 1, 2009 inception through December 31, 2025, the Intermediate Tax-Exempt Composite returned 3.28% annualized gross of fees and 2.76% annualized net of fees.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p3",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C7",
+     "hallucination": false,
+     "got": "",
+     "expected": "Named to the Penwarden Adviser Review list of Top 50 Independent Advisers in the Mid-Atlantic, Ardwell & Tamsett has served Virginia families for more than two decades.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "flag_02",
+     "score": 0.0,
+     "verdict": "FLAGGED_DECOY",
+     "kind": "extra_flag",
+     "error_kind": "decoy_flagged",
+     "trap": "decoy",
+     "hallucination": true,
+     "got": "For the ten years ended December 31, 2025, the composite returned 11.84% annualized gross of fees and 10.72% annualized net of fees.",
+     "expected": "",
+     "extra": {
+      "category": "C2",
+      "reason": "Gross performance is shown without net performance of equal prominence.",
+      "quote_grounded": true,
+      "needs_adjudication": false
+     }
+    },
+    {
+     "uid": "flag_03",
+     "score": 0.0,
+     "verdict": "FLAGGED_DECOY",
+     "kind": "extra_flag",
+     "error_kind": "decoy_flagged",
+     "trap": "decoy",
+     "hallucination": true,
+     "got": "Over the one year ended December 31, 2025, the Core Balanced Composite returned 11.26% gross and 10.31% net of fees; over five years, 8.14% gross and 7.22% net annualized; and since its July 1, 2018 inception, 8.02% gross and 7.10% net annualized.",
+     "expected": "",
+     "extra": {
+      "category": "C2",
+      "reason": "Gross performance is shown without net performance of equal prominence.",
+      "quote_grounded": true,
+      "needs_adjudication": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 3,
+   "group": "t7_p01",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 6.47,
+    "prompt_tokens": 1997,
+    "output_tokens": 311,
+    "output_tokens_per_sec": 55.3,
+    "prompt_tokens_per_sec": 2415.7,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11300
+   }
+  },
+  "t7_p02": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C6",
+     "hallucination": false,
+     "got": "the Fund has never finished a calendar year in negative territory, through the 2018 selloff, the 2020 drawdown and the 2022 rate shock.",
+     "expected": "Capital preservation comes first: the Fund has never finished a calendar year in negative territory, through the 2018 selloff, the 2020 drawdown and the 2022 rate shock.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C4",
+     "hallucination": false,
+     "got": "",
+     "expected": "The last restructuring cycle shows what the strategy can do: from the March 23, 2020 market low through June 30, 2021, the Fund returned 71.4% net of fees.",
+     "extra": {
+      "category_match": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 1,
+   "group": "t7_p02",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 2.28,
+    "prompt_tokens": 2126,
+    "output_tokens": 86,
+    "output_tokens_per_sec": 56.0,
+    "prompt_tokens_per_sec": 3208.6,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11300
+   }
+  },
+  "t7_p03": {
+   "units": [
+    {
+     "uid": "flag_01",
+     "score": 0.0,
+     "verdict": "FLAGGED_DECOY",
+     "kind": "extra_flag",
+     "error_kind": "decoy_flagged",
+     "trap": "decoy",
+     "hallucination": true,
+     "got": "After my wife died, Eleanor sat with me at our kitchen table three times that first winter. She went through every account, every beneficiary form and the estate filings with me, and she never once made me feel rushed.",
+     "expected": "",
+     "extra": {
+      "category": "C1",
+      "reason": "The testimonial does not clearly and prominently disclose whether the person was compensated or has a material conflict of interest.",
+      "quote_grounded": true,
+      "needs_adjudication": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 1,
+   "group": "t7_p03",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 2.31,
+    "prompt_tokens": 1762,
+    "output_tokens": 98,
+    "output_tokens_per_sec": 56.4,
+    "prompt_tokens_per_sec": 3515.4,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11298
+   }
+  },
+  "t7_p04": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C1",
+     "hallucination": false,
+     "got": "A client couple let me share their note from last week: \"Dana took a shoebox of statements from four different firms and turned it into one plan we finally understand. Hiring her team was the best financial decision we have made in retirement.\"",
+     "expected": "A client couple let me share their note from last week: \"Dana took a shoebox of statements from four different firms and turned it into one plan we finally understand. Hiring her team was the best financial decision we have made in retirement.\"",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C8",
+     "hallucination": false,
+     "got": "Three of the positions we added to client portfolios in early 2025 finished the year up 112%, 74% and 58%: Quillon Grid Systems, Tamsworth Biologics and Arnbeck Freight.",
+     "expected": "Three of the positions we added to client portfolios in early 2025 finished the year up 112%, 74% and 58%: Quillon Grid Systems, Tamsworth Biologics and Arnbeck Freight.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p3",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C6",
+     "hallucination": false,
+     "got": "",
+     "expected": "Our tax-loss harvesting program adds at least 1.5% a year to every client's after-tax return, in up markets and down.",
+     "extra": {
+      "category_match": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 2,
+   "group": "t7_p04",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 4.08,
+    "prompt_tokens": 1675,
+    "output_tokens": 199,
+    "output_tokens_per_sec": 56.1,
+    "prompt_tokens_per_sec": 3540.3,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11298
+   }
+  },
+  "t7_p05": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C5",
+     "hallucination": false,
+     "got": "A couple who retired on January 1, 2000 with $1,000,000 and followed the Three-Bucket Income Plan we use today could have withdrawn $35,000 a year, raised it each year for inflation, and still had $1.4 million at the end of 2025.",
+     "expected": "A couple who retired on January 1, 2000 with $1,000,000 and followed the Three-Bucket Income Plan we use today could have withdrawn $35,000 a year, raised it each year for inflation, and still had $1.4 million at the end of 2025.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C9",
+     "hallucination": false,
+     "got": "",
+     "expected": "A ladder of individual bonds, each held until it matures, gives you a predictable schedule of income, lets you match maturities to the years you will need the money and takes the guesswork out of retirement spending.",
+     "extra": {
+      "category_match": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 1,
+   "group": "t7_p05",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 2.64,
+    "prompt_tokens": 1649,
+    "output_tokens": 122,
+    "output_tokens_per_sec": 57.6,
+    "prompt_tokens_per_sec": 3651.9,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11298
+   }
+  }
+ }
+}

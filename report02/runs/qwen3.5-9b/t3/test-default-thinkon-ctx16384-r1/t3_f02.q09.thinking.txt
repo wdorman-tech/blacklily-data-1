@@ -1,0 +1,37 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Never guess, never supply general knowledge, never fill gaps.
+        *   If not in documents -> `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   "Who are the voting members of the Valuation Committee, and what constitutes a quorum?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "Valuation Committee", "voting members", "quorum".
+
+4.  **Evaluate Document Content:**
+
+    *   `01_brochure.md`: Mentions Valuation Committee chaired by CFO, voting members do not include CIO or investment team. Doesn't list names or quorum specifics.
+    *   `03_valuation_policy.md` (dated November 3, 2025):
+        *   Section 2.1 Composition: Lists four voting members: Chief Financial Officer (Oren Pellisier), President and Chief Operating Officer (Mireille Dansby), Head of Risk (Ingrid Vallancey), Controller (Lydia Marchbanks). Mentions General Counsel/CCO as non-voting. Mentions CIO/investment team attend but don't vote.
+        *   Section 2.2 Quorum and Voting: "A quorum consists of three voting members, one of whom must be the Chief Financial Officer or the Chief Operating Officer."
+    *   `06_policy_update_memo.md` (dated August 24, 2026):
+        *   Section 2.4 Valuation Policy Section 2.3 (Meetings): Amends meeting frequency (quarterly to monthly). States "The provisions for ad hoc meetings in Section 2.3, and the quorum and voting requirements in Section 2.2, are unchanged."
+        *   This memo supersedes Section 2.3 of the Valuation Policy regarding meetings, but explicitly states quorum/voting (Section 2.2) are unchanged.
+
+5.  **Determine the Current State:**
+    *   The question asks for voting members and quorum.
+    *   `03_valuation_policy.md` provides the specific names and quorum definition.
+    *   `06_policy_update_memo.md` confirms that the quorum/voting requirements (from Section 2.2 of the policy) are unchanged by the amendment dated August 24, 2026.
+    *   Therefore, the information in `03_valuation_policy.md` remains valid for this specific question.
+    *   Since `06_policy_update_memo.md` is later (August 24, 2026) than `03_valuation_policy.md` (November 3, 2025), I need to check if the memo changes the composition or quorum. The memo says "The provisions for ad hoc meetings in Section 2.3, and the quorum and voting requirements in

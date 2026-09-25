@@ -1,0 +1,112 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Client Service Associate at a wealth management firm.
+    *   Task: Update CRM from meeting transcript.
+    *   Constraint 1: Record ONLY what was said/decided. No typical planning items not discussed.
+    *   Constraint 2: Use final versions of figures/dates/names if corrected.
+    *   Constraint 3: Action items = tasks agreed to do. Ideas deferred/proposals declined are NOT action items.
+    *   Constraint 4: Owner of action item = person's name.
+    *   Constraint 5: Due dates as stated + calendar date where meeting date makes it unambiguous.
+    *   Constraint 6: Use `NOT_FOUND` for fields not established.
+    *   Constraint 7: Correct machine-generated errors (names/numbers) based on later clarification.
+    *   Output Format: JSON object ONLY. No markdown, no preamble.
+    *   Keys: `meeting_date`, `client_names`, `primary_goal`, `retirement_target`, `risk_tolerance`, `risk_tolerance_change`, `life_events`, `account_actions`, `action_items`, `next_meeting`.
+
+2.  **Analyze the Transcript:**
+    *   **Meeting Date:** Wednesday, September 16, 2026 (from header).
+    *   **Participants:** Lowell Pennacott (Advisor), Dermot Quillane (Client), Renata Quillane (Client), Ifeoma Maduka (Associate).
+    *   **Client Names:** Dermot Quillane, Renata Quillane.
+    *   **Primary Goal:** Preserve what they got from the sale and turn it into income that lasts the rest of both their lives (Renata: "Don't lose it", Dermot: "It has to last... This is the retirement").
+    *   **Retirement Target:** Dermot plans full retirement at end of consulting agreement, end of October 2027, at age sixty-two. Renata is already retired (3 years in June).
+    *   **Risk Tolerance:** Current IPS says "moderately aggressive" (70/30). They agree to change to "moderate" (50/50).
+    *   **Risk Tolerance Change:** From moderately aggressive to moderate.
+    *   **Life Events:** Sale closing (Oct 30, 2026), Dermot retiring Oct 2027, Renata already retired, Dermot's consulting agreement ends Oct 2027. Mortgage balance $310,000 (discussed paying off later).
+    *   **Account Actions:**
+        *   Open new trust account at Wickstead (Quillane Family Trust).
+        *   Wire instructions to Emory by Dermot by Oct 23rd.
+        *   Funds flow: $10,496,300 net proceeds. $2.6M into T-bills, $7.9M into moderate model (phased). IRAs reallocated to moderate once IPS signed.
+        *   DocuSign for new account application and wire letter.
+    *   **Action Items:**
+        1.  Lowell Pennacott: Draft revised IPS by Tuesday the 29th (Oct 29, 2026).
+        2.  Ifeoma Maduka: Send DocuSign packet (account application + wire letter) to clients before they fly out (Tomorrow morning, Sept 17, 2026).
+        3.  Dermot Quillane: Sign DocuSign before flying out (Sept 17/18, 2026).
+        4.  Dermot Quillane: Send wire letter to Emory by Oct 23rd, 2026.
+        5.  Renata Quillane: Forward signed purchase agreement to Ifeoma and Lorna tonight (Sept 16/17, 2026).
+        6.  Dermot Quillane: Confirm wire instructions with Emory via callback on Oct 23rd or before closing (implied by "by the twenty-third" for letter, but confirmation happens at closing/wire time). Actually, Lowell says "You sign it, you email it to Emory yourself, and when his office calls you to confirm, you confirm." Action is sending the letter.
+        7.  Ifeoma Maduka: Put together COBRA vs Marketplace comparison for next meeting (Oct 14).
+        8.  Lowell Pennacott/Lorna: Provide tax projection by Oct 9th (Lorna's task).
+    *   **Next Meeting:** Wednesday, October 14, 2026 at 10:00 AM ET.
+
+3.  **Refine Data Points & Corrections:**
+    *   **Meeting Date:** September 16, 2026.
+    *   **Client Names:** Dermot Quillane, Renata Quillane.
+    *   **Primary Goal:** Preserve sale proceeds and turn into income for rest of lives.
+    *   **Retirement Target:** End of October 2027 (Dermot). Renata is already retired. I should capture the main target discussed: "full retirement at the end of the consulting agreement, end of October 2027".
+    *   **Risk Tolerance:** Moderate (50/50).
+    *   **Risk Tolerance Change:** From moderately aggressive to moderate.
+    *   **Life Events:** Sale closing Oct 30, 2026; Dermot retirement Oct 2027; Renata retired June 2024 (implied "Three years in June" from current Sept 2026). Mortgage balance $310,000.
+    *   **Account Actions:**
+        *   Open new trust account at Wickstead.
+        *   Wire instructions to Emory by Dermot.
+        *   Funds flow: Net proceeds $10,496,300.
+        *   Allocation: $2.6M T-bills, $7.9M Moderate Model (phased).
+    *   **Action Items:**
+        *   Lowell Pennacott: Draft IPS by Tuesday the 29th (Oct 29, 2026).
+        *   Ifeoma Maduka: Send DocuSign packet before Sept 17 morning.
+        *   Dermot Quillane: Sign DocuSign before flying out.
+        *   Renata Quillane: Forward signed agreement to Ifeoma and Lorna tonight (Sept 16/17).
+        *   Dermot Quillane: Send wire letter to Emory by Oct 23rd, 2026.
+        *   Ifeoma Maduka: Prepare COBRA vs Marketplace comparison for next meeting.
+        *   Lorna (not in participant list but mentioned): Provide tax projection by Oct 9th. Wait, is Lorna an action item owner? The transcript says "Lorna's piece... Did she give you a date on the full projection?" Dermot says "She said the ninth." Lowell says "That's Lorna's". So Lorna is an external party or internal not present. I should record the action item if it was agreed upon. Lowell says "I'll have it to you by Friday" (IPS). Renata asks about IPS. Lowell agrees to send on 29th.
+        *   Wait, check Action Item Rule: "An action item is a task someone agreed to do."
+        *   Lorna's projection date: Oct 9th. Is this an action item? Lowell says "That's Lorna's". It implies she will provide it. I should include it if it's a specific task assigned.
+        *   Dermot sending wire letter: Agreed by Dermot.
+        *   Renata forwarding agreement: Agreed by Renata.
+        *   Ifeoma sending DocuSign: Agreed by Ifeoma.
+        *   Lowell drafting IPS: Agreed by Lowell.
+        *   Ifeoma preparing health insurance comparison: Agreed by Ifeoma.
+    *   **Next Meeting:** Wednesday, October 14, 2026 at 10:00 AM ET.
+
+4.  **Drafting the JSON:**
+
+    *   `meeting_date`: "September 16, 2026"
+    *   `client_names`: ["Dermot Quillane", "Renata Quillane"]
+    *   `primary_goal`: "Preserve sale proceeds and turn into income that lasts the rest of both their lives"
+    *   `retirement_target`: "End of October 2027" (Dermot's full retirement). Renata is already retired. I'll note Dermot's target as it's the active planning horizon. Or "October 2027".
+    *   `risk_tolerance`: "Moderate"
+    *   `risk_tolerance_change`: "From moderately aggressive to moderate"
+    *   `life_events`: ["Sale closing October 30, 2026", "Dermot retirement end of October 2027", "Renata retired June 2024"] (Need to check if Renata's retirement date is a significant life event discussed. She says "Three years in June". Current date Sept 2026. So June 2024. It's relevant context.)
+    *   `account_actions`: Need to list specific actions regarding accounts.
+        *   Open new trust account at Wickstead (Quillane Family Trust).
+        *   Wire $10,496,300 net proceeds.
+        *   Allocate $2.6M to T-bills.
+        *   Allocate $7.9M to Moderate Model (phased: 1/3 funding, 1/3 Jan, 1/3 March).
+        *   Reallocate IRAs to moderate model once IPS signed.
+    *   `action_items`:
+        *   Task: Draft revised IPS with moderate profile and proceeds plan. Owner: Lowell Pennacott. Due: Tuesday the twenty-ninth (October 29, 2026).
+        *   Task: Send DocuSign packet (account application + wire letter) to clients. Owner: Ifeoma Maduka. Due: Tomorrow morning (September 17, 2026).
+        *   Task: Sign DocuSign before flying out. Owner: Dermot Quillane / Renata Quillane. Due: Before flight (September 17/18, 2026). I'll split or combine? Usually separate if different people. Let's make one for signing.
+        *   Task: Forward signed purchase agreement to Ifeoma and Lorna. Owner: Renata Quillane. Due: Tonight (September 16, 2026).
+        *   Task: Send wire letter to Emory with account number and Wickstead details. Owner: Dermot Quillane. Due: By October 23rd, 2026.
+        *   Task: Prepare COBRA vs Marketplace comparison. Owner: Ifeoma Maduka. Due: Next meeting (October 14, 2026).
+        *   Task: Provide full tax projection. Owner: Lorna. Due: October 9th, 2026. (Is Lorna in the CRM? She's mentioned as "Lorna". I should use her name if she is an action item owner. The prompt says "owner of an action item is the person who will do it, by name". If Lorna is not a participant in the meeting but is assigned work, I should still record it.)
+    *   `next_meeting`: "Wednesday, October 14, 2026 at 10:00 AM ET"
+
+5.  **Review Constraints:**
+    *   No markdown fences.
+    *   JSON only.
+    *   Corrected figures: Net proceeds $10,496,300 (corrected from 11.1). Closing date Oct 30 (corrected from 13th). IPS due Oct 29 (changed from Friday Sept 19? No, Lowell said "Friday" initially but Renata asked to wait until back on 28th/29th. Lowell agreed to Tuesday the 29th).
+    *   Action items: Only agreed tasks. Deferred ideas (like Wes Hollingshed shop) are NOT action items. Mortgage payoff is "thinking about for 2028", NOT an action item today. Donor-advised fund proposal declined, NOT an action item.
+    *   Dates: Add calendar date where meeting date makes it unambiguous. Meeting is Sept 16, 2026. "Tomorrow" = Sept 17. "Friday" (initially mentioned) was overridden by "Tuesday the twenty-ninth". "October 30th" is clear. "October 9th" is clear. "October 23rd" is clear.
+    *   Names: Dermot Quillane, Renata Quillane, Lowell Pennacott, Ifeoma Maduka. Lorna (not present but assigned task).
+
+6.  **Final Polish:** Check JSON syntax. Ensure no trailing commas. Ensure keys match exactly.
+
+    *   `life_events`: Needs to be an array of strings with figures. "Sale closing October 30, 2026", "Dermot retirement end of October 2027".
+    *   `account_actions`: Array of objects.
+    *   `action_items`: Array of objects.
+
+    Let's refine the Action Items due dates to be specific calendar dates based on Sept 16, 2026 meeting.
+    *   Ifeoma DocuSign: "Tomorrow morning" -> September 17, 2026.
+    *   Renata Agreement: "Tonight" -> September

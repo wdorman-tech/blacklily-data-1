@@ -1,0 +1,36 @@
+*   Question: "When was the firm's most recent surprise custody examination completed, and were any exceptions noted?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in docs, answer is NOT_IN_DOCUMENTS.
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   `01_brochure.md`:
+        *   Section 15.3: "As required by Rule 206(4)-2 under the Advisers Act, those assets are subject to an annual surprise examination by an independent public accountant, Pemberline & Rusk LLP, at a time chosen by the accountant without prior notice to the Firm. The accountant files Form ADV-E with the SEC within 120 days of the examination date."
+    *   `02_compliance_manual.md`:
+        *   Section 2.4: Mentions "custody examinations" in the CCO's compliance calendar.
+    *   `03_valuation_policy.md`:
+        *   Section 8.2: Mentions "independent valuation firm... reviews this Policy and tests a sample of Level 3 valuations".
+    *   `04_business_continuity_plan.md`:
+        *   Section 7.1: Mentions "The most recent full test of the Plan was conducted on October 22, 2025." (This is for the BCP, not custody examination).
+    *   `06_policy_update_memo.md`:
+        *   No mention of custody examinations.
+
+    *   The question asks for the *date* of the most recent surprise custody examination and if any *exceptions* were noted.
+    *   `01_brochure.md` (Section 15.3) says: "those assets are subject to an annual surprise examination by an independent public accountant, Pemberline & Rusk LLP, at a time chosen by the accountant without prior notice to the Firm. The accountant files Form ADV-E with the SEC within 120 days of the examination date."
+    *   Does it give a specific date for the *most recent* one? No.
+    *   Does it mention exceptions? No.
+
+    *   The document mentions that an examination happens annually and that a Form ADV-E is filed within 120 days of the date, but it does not provide the specific date of the most recent examination or any notes on exceptions.
+
+    *   Answer: NOT_IN_DOCUMENTS
+    *   Source: ""
+    *   Section: ""
+    *   Quote: ""
+
+    *   Wait, let me double-check `01_brochure.md` Section 15.3 again.
+    *   "As required by Rule 206(4)-2 under the Advisers Act, those assets are subject to an annual surprise examination by an independent public accountant, Pemberline & Rusk LLP, at a time chosen by the accountant without prior notice to the Firm. The accountant files Form ADV-E with the SEC within 120 days of the examination date."
+    *   No date is provided. No exceptions are mentioned.
+
+    *   Check `02_compliance_manual.md` Section 2.4: "The CCO maintains a compliance calendar of recurring

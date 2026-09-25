@@ -1,0 +1,44 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Describe the frequency of data backups and where backup copies are stored."
+    *   Key information needed:
+        *   Frequency of data backups.
+        *   Storage locations of backup copies.
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "backup", "frequency", "stored", "location", "data".
+
+4.  **Evaluate Document Content:**
+
+    *   `02_compliance_manual.md`:
+        *   Section 13.2 Retention Period: Discusses retention periods (7 years, 5 years Rule 204-2). No specific backup frequency or storage location details for backups themselves (just records retention).
+        *   Section 13.3 Storage and Access: Discusses electronic records protection, retrieval, destruction approval. No specific backup frequency or geographic storage locations for backups.
+
+    *   `03_valuation_policy.md`:
+        *   Section 9.1 Records: References Section 13 of Compliance Manual. No backup details.
+
+    *   `04_business_continuity_plan.md` (Dated February 9, 2026 - Most recent):
+        *   Section 3.1 Alternate Site: Discusses alternate site location (Norwalk, CT). Not backup storage.
+        *   Section 6.1 Backup Frequency: "Hourly incremental snapshots are taken during each business day, and a full backup is taken nightly at 11:00 p.m. Eastern Time." -> **Matches "frequency of data backups".**
+        *   Section 6.2 Storage Locations and Retention: "Backup copies ... are stored in two geographically separate data centers in Ashburn, Virginia and Columbus, Ohio..." -> **Matches "where backup copies are stored".**
+
+5.  **Synthesize the Answer:**
+    *   The question asks for both frequency and storage location.
+    *   Document `04_business_continuity_plan.md` contains both pieces of information in Sections 6.1 and 6.2.
+    *   Since I need to provide a single JSON object with one "quote", I should combine the relevant text or select the most comprehensive quote. However, the instruction says "Quote the supporting text verbatim." Usually, if multiple sections are needed, I might need to concatenate them or pick the section that covers the topic best.
+    *   Looking at Section 6.2 title: "Storage Locations and Retention". It mentions storage locations explicitly.
+    *   Looking at Section 6.1 title: "Backup Frequency". It mentions frequency explicitly.
+    *   The prompt asks for a JSON object with one "quote" field. I should combine the relevant sentences from both sections to fully answer the question, or choose the section that encompasses the topic most broadly if possible. However,

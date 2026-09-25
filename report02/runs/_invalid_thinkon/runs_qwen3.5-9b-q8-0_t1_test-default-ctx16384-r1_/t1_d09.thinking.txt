@@ -1,0 +1,148 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from the provided private fund offering document (Private Offering Memorandum).
+    *   Output Format: JSON object only. No markdown, no preamble, no commentary.
+    *   Constraints:
+        *   Accuracy is paramount. No guessing, no inferring market standards.
+        *   If not found -> "NOT_FOUND".
+        *   If not applicable -> "NOT_APPLICABLE" (with quote).
+        *   Amendments/Supplements override original text (none apparent here, but need to check).
+        *   Every citation must be a section/appendix identifier.
+        *   Every quote must be verbatim.
+        *   Specific fields to extract: fund_name, fund_domicile, fund_structure, management_fee, performance_fee, hurdle_rate, high_water_mark, minimum_initial_investment, lockup_period, redemption_frequency, redemption_notice_days, gate_provision, key_man_provision, gp_commitment, fund_term, auditor, administrator, prime_broker, legal_counsel, mfn_election.
+
+2.  **Scan the Document for Each Field:**
+
+    *   **fund_name**:
+        *   Search: "Castellow Wexcombe Multi-Manager Fund, L.P." appears in title and Section 1.1 ("...in Castellow Wexcombe Multi-Manager Fund, L.P. (the "Partnership").").
+        *   Value: "Castellow Wexcombe Multi-Manager Fund, L.P."
+        *   Citation: "Section 1.1" or Title. Let's use "Section 1.1".
+        *   Quote: "Castellow Wexcombe Multi-Manager Fund, L.P. is a limited partnership..."
+
+    *   **fund_domicile**:
+        *   Search: "organized", "Delaware". Section 1.1: "...organized on September 17, 2019 under the Delaware Revised Uniform Limited Partnership Act (the "Delaware Act")."
+        *   Value: "Delaware"
+        *   Citation: "Section 1.1"
+        *   Quote: "Castellow Wexcombe Multi-Manager Fund, L.P. is a limited partnership organized on September 17, 2019 under the Delaware Revised Uniform Limited Partnership Act (the "Delaware Act")."
+
+    *   **fund_structure**:
+        *   Search: "Structure", "master-feeder", "open-end", "closed-end". Section 1.2: "The Partnership is an open-end fund of hedge funds... The Partnership is a stand-alone fund: it is not a feeder fund in a master-feeder structure..."
+        *   Value: "Open-end; Stand-alone (not master-feeder)"
+        *   Citation: "Section 1.2"
+        *   Quote: "The Partnership is an open-end fund of hedge funds... The Partnership is a stand-alone fund: it is not a feeder fund in a master-feeder structure..."
+
+    *   **management_fee**:
+        *   Search: "Management Fee", "rate". Section 4.1: "...at an annual rate of 1.00% of the net asset value of each Limited Partner's capital account."
+        *   Value: "1.00% of net asset value"
+        *   Citation: "Section 4.1"
+        *   Quote: "The Partnership pays the Investment Manager a management fee (the "Management Fee") at an annual rate of 1.00% of the net asset value of each Limited Partner's capital account."
+
+    *   **performance_fee**:
+        *   Search: "Incentive Allocation", "carried interest". Section 4.2: "...an amount equal to 10% of the Excess Net Profits..."
+        *   Value: "10% of Excess Net Profits"
+        *   Citation: "Section 4.2"
+        *   Quote: "At the end of each Incentive Period, an amount equal to 10% of the Excess Net Profits of each Limited Partner's capital account (the "Incentive Allocation") is reallocated from that capital account to the capital account of the General Partner."
+
+    *   **hurdle_rate**:
+        *   Search: "Hurdle Amount", "preferred return". Section 4.3: "The "Hurdle Amount" for a capital account for any Incentive Period equals 5.00% per annum..."
+        *   Value: "5.00% per annum (hard hurdle)"
+        *   Citation: "Section 4.3"
+        *   Quote: "The "Hurdle Amount" for a capital account for any Incentive Period equals 5.00% per annum... The hurdle is a hard hurdle..."
+
+    *   **high_water_mark**:
+        *   Search: "Loss Carryforward", "high-water mark". Section 4.3: "...so that the Loss Carryforward functions as a high-water mark for each capital account. It does not expire and is not reset..."
+        *   Value: "Yes; Perpetual (does not expire or reset)"
+        *   Citation: "Section 4.3"
+        *   Quote: "...so that the Loss Carryforward functions as a high-water mark for each capital account. It does not expire and is not reset at the end of any fiscal year or for any other reason..."
+
+    *   **minimum_initial_investment**:
+        *   Search: "minimum initial", "subscription". Section 5.2: "The minimum initial capital contribution is $1,000,000..."
+        *   Value: "$1,000,000"
+        *   Citation: "Section 5.2"
+        *   Quote: "The minimum initial capital contribution is $1,000,000..."
+
+    *   **lockup_period**:
+        *   Search: "lock-up", "withdrawal". Section 5.4: "Each capital contribution is subject to a soft lock-up of one year." Also Section 2.4 mentions Portfolio Funds have lock-ups, but the Partnership terms are in Section 5. Section 5.4 says "The Partnership does not impose a hard lock-up."
+        *   Value: "Soft lock-up of one year (early withdrawal charge applies); No hard lock-up"
+        *   Citation: "Section 5.4"
+        *   Quote: "Each capital contribution is subject to a soft lock-up of one year... The Partnership does not impose a hard lock-up."
+
+    *   **redemption_frequency**:
+        *   Search: "withdraw", "quarterly". Section 5.3: "...as of the last business day of each calendar quarter..."
+        *   Value: "Quarterly"
+        *   Citation: "Section 5.3"
+        *   Quote: "A Limited Partner may withdraw all or part of its capital account as of the last business day of each calendar quarter..."
+
+    *   **redemption_notice_days**:
+        *   Search: "notice", "days". Section 5.3: "...by written notice received by the Administrator at least 95 days before the Withdrawal Date."
+        *   Value: "95 days"
+        *   Citation: "Section 5.3"
+        *   Quote: "...by written notice received by the Administrator at least 95 days before the Withdrawal Date."
+
+    *   **gate_provision**:
+        *   Search: "Gate", "limit". Section 5.5: "Investor-Level Gate... No Limited Partner may withdraw, as of any single Withdrawal Date, more than 25% of the net asset value of its capital account..." Also Section 2.4 mentions Portfolio Funds have gates (10-20%), but Partnership terms are in 5.5.
+        *   Value: "Investor-Level Gate; 25% of net asset value of capital account"
+        *   Citation: "Section 5.5"
+        *   Quote: "No Limited Partner may withdraw, as of any single Withdrawal Date, more than 25% of the net asset value of its capital account..."
+
+    *   **key_man_provision**:
+        *   Search: "Key Man", "loss of services". Section 8.3: "...on the judgment of Ms. Throckford and Mr. Varrell as the voting members of the Investment Committee. The loss of the services of either of them could adversely affect the Partnership." This is a risk factor, not necessarily a contractual key man provision triggering dissolution or specific action in the text provided (Section 1.3 mentions withdrawal/bankruptcy of GP triggers dissolution). Section 8.3 describes dependence but doesn't explicitly state a "Key Man Provision" clause with specific triggers like resignation causing termination. However, Section 1.3 says "on the withdrawal or bankruptcy of the General Partner...". Let's look for explicit "Key Man" language. None found in standard Key Man clause format (e.g., "If X leaves, Y happens"). Section 8.3 is a risk factor disclosure. I should check if there is a specific provision. Scanning... No specific "Key Man Provision" section or clause defining triggers other than GP withdrawal/bankruptcy in dissolution context.
+        *   Decision: NOT_FOUND (as a specific contractual provision distinct from general dissolution terms). The text mentions dependence in 8.3 but doesn't define a Key Man Provision with specific triggers beyond the GP status in 1.3. I will mark as NOT_FOUND to be accurate per instructions ("If the document does not state a term...").
+        *   Wait, Section 1.3 says "on the withdrawal or bankruptcy of the General Partner". Is that a key man provision? Usually, Key Man provisions relate to specific individuals (Investment Manager/Committee). Section 8.3 mentions Throckford and Varrell. But it doesn't say "If they leave, the fund terminates." It says "could adversely affect". I will stick with NOT_FOUND for a formal Key Man Provision clause.
+        *   Re-evaluating: Often analysts look for specific clauses. If not explicitly named or defined as a provision triggering action, it's safer to say NOT_FOUND.
+        *   Value: "NOT_FOUND"
+        *   Citation: ""
+        *   Quote: ""
+
+    *   **gp_commitment**:
+        *   Search: "commitment", "General Partner". Section 3.2: "...Neither the General Partner nor the Investment Manager has made, or is required by the Partnership Agreement or otherwise to make or maintain, any capital commitment or minimum investment in the Partnership..."
+        *   Value: "NOT_APPLICABLE" (or NOT_FOUND? The text says they don't have a commitment). Instruction 3: "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE".
+        *   Value: "NOT_APPLICABLE"
+        *   Citation: "Section 3.2"
+        *   Quote: "Neither the General Partner nor the Investment Manager has made, or is required by the Partnership Agreement or otherwise to make or maintain, any capital commitment or minimum investment in the Partnership..."
+
+    *   **fund_term**:
+        *   Search: "Term", "perpetual". Section 1.3: "The Partnership has no fixed term and will continue perpetually unless dissolved..."
+        *   Value: "Perpetual"
+        *   Citation: "Section 1.3"
+        *   Quote: "The Partnership has no fixed term and will continue perpetually unless dissolved in accordance with the Partnership Agreement."
+
+    *   **auditor**:
+        *   Search: "Auditor", "accountants". Section 7.2: "The General Partner has appointed Tamsford Keverne LLP, independent certified public accountants..."
+        *   Value: "Tamsford Keverne LLP"
+        *   Citation: "Section 7.2"
+        *   Quote: "The General Partner has appointed Tamsford Keverne LLP, independent certified public accountants, New York, New York, as the independent auditor of the Partnership."
+
+    *   **administrator**:
+        *   Search: "Administrator". Section 7.1: "Marrowdale Fund Services, LLC (the "Administrator")..."
+        *   Value: "Marrowdale Fund Services, LLC"
+        *   Citation: "Section 7.1"
+        *   Quote: "Marrowdale Fund Services, LLC (the "Administrator"), Denver, Colorado, serves as administrator, registrar and transfer agent of the Partnership."
+
+    *   **prime_broker**:
+        *   Search: "Prime Broker". Section 7.3: "...the Partnership does not engage a prime broker."
+        *   Value: "NOT_APPLICABLE" (or NOT_FOUND? It says it does not engage one). Instruction 3: "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE".
+        *   Value: "NOT_APPLICABLE"
+        *   Citation: "Section 7.3"
+        *   Quote: "...the Partnership does not engage a prime broker."
+
+    *   **legal_counsel**:
+        *   Search: "Legal Counsel", "law firm". Section 7.4: "Thursby Kilbride LLP, New York, New York, acts as counsel to the Partnership..."
+        *   Value: "Thursby Kilbride LLP"
+        *   Citation: "Section 7.4"
+        *   Quote: "Thursby Kilbride LLP, New York, New York, acts as counsel to the Partnership, the General Partner and the Investment Manager."
+
+    *   **mfn_election**:
+        *   Search: "Most Favored Nation", "side letters". Section 9.2: "...the Partnership does not offer Limited Partners any most favored nation election or other right to receive the benefit of terms granted to another Limited Partner."
+        *   Value: "NOT_OFFERED" (or NOT_APPLICABLE? It says it does not offer). Instruction 3: "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE". However, the field asks "Whether a most favored nation election... is offered". The answer is No. "NOT_FOUND" implies missing info. "NOT_APPLICABLE" implies it doesn't apply. Since the document explicitly says they do *not* offer it, I should probably state that it is not offered. But the instruction says "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE". Does "not offered" count as "does not apply"? Or is it a negative finding? Usually, if asked "Is there an X?" and the doc says "No", the value is often "No" or "NOT_OFFERED". But strict adherence to rules: "If the document states that a term does not exist... value is exactly NOT_APPLICABLE". The term "mfn_election" exists in the context of side letters, but the *election right* does not apply. Let's look at the instruction again: "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE".
+        *   However, for boolean fields like this, often "No" is better than "NOT_APPLICABLE" if the concept exists but isn't offered. But I must follow the rules. Rule 3 says "If the document states that a term does not exist or does not apply to this fund...". The *election* does not apply.
+        *   Wait, looking at Section 9.2: "...the Partnership does not offer Limited Partners any most favored nation election..."
+        *   I will use "NOT_OFFERED" as the value string to be precise about the negative, but strictly speaking, Rule 3 says "NOT_APPLICABLE". Let's check if "NOT_FOUND" is better. No, it's found in the text. Is it applicable? The concept of MFN exists in the industry, but for this fund, it does not apply. I will use "NOT_OFFERED" to be descriptive, or follow Rule 3 strictly. Rule 3 says "If the document states that a term does not exist or does not apply...". Since the *election* is explicitly stated not to be offered, it effectively doesn't apply. However, standard practice for extraction is often to capture the negative. Let's look at the instruction: "Every value must be supported by text that actually appears in the document." "NOT_OFFERED" isn't a phrase in the doc. The phrase is "does not offer".
+        *   Better approach: Value = "No", Citation = "Section 9.2", Quote = "...the Partnership does not offer Limited Partners any most favored nation election...". But the instruction says "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE".
+        *   Okay, I will use "NOT_APPLICABLE" because the specific right/election does not apply to the fund.
+        *   Wait, checking Rule 3 again: "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE". The term is "mfn_election". Does it exist? No, they don't offer it. So it doesn't apply.
+        *   Actually, usually for "Whether... is offered", if the answer is no, "NOT_FOUND" might be interpreted as "not found in text". But here it is found. I will use "NOT_OFFERED" to be clear, but wait, I must follow the rules. Rule 3 says "value is exactly NOT_APPLICABLE". I should probably stick to that if it's a negative. However, often "No" is acceptable for boolean questions. Let's look at the instruction: "If the document states that a term does not exist or does not apply to this fund...". The *election* does not apply.
+        *   Decision: I will use "NOT_OFFERED" because it describes the state accurately based on the text, but wait, Rule 3 is strict ("exactly NOT_APPLICABLE"). If I write "NOT_OFFERED", is that violating Rule 3? Yes. If I write "NOT_APPLICABLE", does it match the text? The text says "does not offer".
+        *   Let's check other fields. "gp_commitment" -> "NOT_APPLICABLE" because text says they don't have one. "prime_broker" -> "NOT

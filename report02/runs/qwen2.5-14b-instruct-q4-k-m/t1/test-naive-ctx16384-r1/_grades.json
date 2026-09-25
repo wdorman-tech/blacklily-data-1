@@ -1,0 +1,2868 @@
+{
+ "task": "t1",
+ "model": "qwen2.5:14b-instruct-q4_K_M",
+ "items": {
+  "t1_d05": {
+   "units": [
+    {
+     "uid": "fund_name",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Skelmorlie Ridge Multi-Strategy Fund, L.P.",
+     "expected": "Skelmorlie Ridge Multi-Strategy Fund, L.P.",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_domicile",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Delaware",
+     "expected": "Delaware (Delaware limited partnership)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_structure",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Open-end, stand-alone fund",
+     "expected": "Open-end (redeemable quarterly) stand-alone fund; not a master-feeder structure (the Cayman Parallel Fund invests side by side, not through a master fund)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": false
+     }
+    },
+    {
+     "uid": "management_fee",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "table_only",
+     "hallucination": false,
+     "got": "{'Class A Interests': '2.00%', 'Class B Interests': '1.50%', 'Founders Class Interests': '1.00%'}",
+     "expected": "Class A 2.00%, Class B 1.50%, Founders Class 1.00% per annum, calculated on the NAV of each Capital Account as of the first Business Day of each month and payable monthly in advance",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": false
+     }
+    },
+    {
+     "uid": "performance_fee",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "table_only",
+     "hallucination": false,
+     "got": "{'Class A Interests': '20%', 'Class B Interests': '17.5%', 'Founders Class Interests': '15%'}",
+     "expected": "Incentive Allocation of Net Profits, allocated annually (and on redemption) and subject to the Loss Carryforward: Class A 20%, Class B 17.5%, Founders Class 15%",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "hurdle_rate",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "None",
+     "expected": "NOT_APPLICABLE: the Incentive Allocation is not subject to any hurdle rate or preferred return and is not measured against any index or reference rate",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "high_water_mark",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "none",
+     "hallucination": false,
+     "got": "Loss Carryforward",
+     "expected": "Yes: a Loss Carryforward functioning as a high water mark applies to each Capital Account; it is cumulative and perpetual (does not reset or expire), and is reduced proportionately on partial redemptions",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "minimum_initial_investment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "class_variants",
+     "hallucination": false,
+     "got": "{'Class A Interests': '$5,000,000', 'Class B Interests': '$5,000,000', 'Founders Class Interests': '$10,000,000'}",
+     "expected": "$5,000,000 for Class A and Class B Interests; $10,000,000 for Founders Class Interests (the General Partner may accept lesser amounts)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "lockup_period",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "class_variants",
+     "hallucination": false,
+     "got": "{'Class A Interests': '12 months (soft)', 'Class B Interests': '24 months (hard)', 'Founders Class Interests': '36 months (hard)'}",
+     "expected": "Class A: 12-month soft lock-up (3% early redemption charge on amounts redeemed before expiry); Class B: 24-month hard lock-up; Founders Class: 36-month hard lock-up; each measured from the Subscription Date of each contribution",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": false
+     }
+    },
+    {
+     "uid": "redemption_frequency",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Quarterly",
+     "expected": "Quarterly, as of the last Business Day of each calendar quarter, after expiry of the applicable lock-up",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_notice_days",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "class_variants",
+     "hallucination": false,
+     "got": "{'Class A Interests': '60 days', 'Class B Interests': '60 days', 'Founders Class Interests': '90 days'}",
+     "expected": "60 days' prior written notice for Class A and Class B Interests; 90 days for Founders Class Interests",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gate_provision",
+     "score": 0.0,
+     "verdict": "WRONG",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "table_only",
+     "hallucination": false,
+     "got": "Investor-level gate only",
+     "expected": "Investor-level gate only (no Fund-level gate): a Limited Partner may redeem no more than 12.5% of the Gate Base of its Capital Account for a Class as of any quarterly Redemption Date; unsatisfied amounts carry forward, so a full redemption ordinarily takes about eight quarterly Redemption Dates",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "key_man_provision",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "none",
+     "hallucination": false,
+     "got": "Orla Penhallow",
+     "expected": "Key Person Event if Orla Penhallow dies or is permanently incapacitated, ceases to serve as Chief Investment Officer, or ceases to devote substantially all of her business time for more than 120 consecutive days; Limited Partners may then redeem as of the first Redemption Date after the event without regard to lock-up, early redemption charge, notice period or the Investor-Level Gate, and new subscriptions are suspended until a successor CIO is designated",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gp_commitment",
+     "score": 0.0,
+     "verdict": "HALLUCINATION",
+     "kind": "field",
+     "error_kind": "HOLDING_AS_COMMITMENT",
+     "trap": "holding_not_commitment",
+     "hallucination": true,
+     "got": "Founders Class Interests with an aggregate NAV of approximately $42 million",
+     "expected": "NOT_APPLICABLE: no GP or sponsor commitment is required; the principals' disclosed holding of about $42 million of Founders Class Interests is not a commitment and may be redeemed",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_term",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "No fixed term",
+     "expected": "Perpetual: no fixed term; the Fund continues until dissolved under the Partnership Agreement",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "auditor",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Marrable Oakshott LLP",
+     "expected": "Marrable Oakshott LLP",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "administrator",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Wendlebury Fund Services, LLC",
+     "expected": "Wendlebury Fund Services, LLC",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "prime_broker",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "['Orrinshaw Securities LLC', 'Kestermoor Prime Services LLC']",
+     "expected": "Orrinshaw Securities LLC and Kestermoor Prime Services LLC",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "legal_counsel",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Hollinrake Vaux LLP",
+     "expected": "Hollinrake Vaux LLP (counsel to the Fund, the General Partner and the Investment Manager)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "mfn_election",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "No",
+     "expected": "NOT_APPLICABLE: the Fund does not offer a most favored nation election; no Limited Partner may elect the benefit of terms granted to another Limited Partner, regardless of investment size",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t1_d05",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 131.95,
+    "prompt_tokens": 6942,
+    "output_tokens": 1742,
+    "output_tokens_per_sec": 25.9,
+    "prompt_tokens_per_sec": 107.5,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11328
+   }
+  },
+  "t1_d06": {
+   "units": [
+    {
+     "uid": "fund_name",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Fenwright Colquist Capital Partners III, L.P.",
+     "expected": "Fenwright Colquist Capital Partners III, L.P.",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_domicile",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Delaware",
+     "expected": "Delaware (Delaware limited partnership)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_structure",
+     "score": 0.0,
+     "verdict": "WRONG",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Limited Partnership",
+     "expected": "Closed-end (drawdown) limited partnership: capital is called against commitments and Limited Partners have no redemption rights; not master-feeder (a Cayman parallel fund invests alongside it)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "management_fee",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "1.75% of Capital Commitment during Investment Period, 1.25% of Net Invested Capital thereafter",
+     "expected": "1.75% per annum of Capital Commitments during the Investment Period; thereafter, as amended by the First Amendment, 1.25% per annum of Net Invested Capital (Invested Capital reduced by permanent write-downs and write-offs); payable quarterly in advance and reduced by 100% of Fee Income",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "performance_fee",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "20% of the amount distributed under Section 5.3(b) and (c)",
+     "expected": "20% carried interest to the General Partner after return of all contributed capital and the 8% preferred return, with a 100% General Partner catch-up; whole-fund (cumulative) waterfall with a General Partner clawback",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "hurdle_rate",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "none",
+     "hallucination": false,
+     "got": "8% per annum",
+     "expected": "8% per annum preferred return, compounded annually, on Capital Contributions, followed by a 100% (full) General Partner catch-up",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "high_water_mark",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "None",
+     "expected": "NOT_APPLICABLE: no high-water mark or loss carryforward account; carried interest is calculated cumulatively over the life of the Partnership (whole-fund waterfall) with a General Partner clawback",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "minimum_initial_investment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "$5,000,000",
+     "expected": "$5,000,000 minimum Capital Commitment (the General Partner may accept lesser amounts)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "lockup_period",
+     "score": 0.0,
+     "verdict": "HALLUCINATION",
+     "kind": "field",
+     "error_kind": "HALLUCINATED_lockup",
+     "trap": "absence",
+     "hallucination": true,
+     "got": "10 years from Final Closing Date",
+     "expected": "NOT_APPLICABLE: closed-end partnership; Limited Partners have no right to withdraw or redeem their Interests, so no lock-up applies",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_frequency",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "None",
+     "expected": "NOT_APPLICABLE: Limited Partners have no right to withdraw or redeem at any time",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_notice_days",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "None",
+     "expected": "NOT_APPLICABLE: no redemption right, so no redemption notice period",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gate_provision",
+     "score": 0.0,
+     "verdict": "HALLUCINATION",
+     "kind": "field",
+     "error_kind": "HALLUCINATED_gate",
+     "trap": "absence",
+     "hallucination": true,
+     "got": "15% of aggregate Capital Commitments",
+     "expected": "NOT_APPLICABLE: no redemption right, so no gate",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "key_man_provision",
+     "score": 0.0,
+     "verdict": "WRONG",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "Key Person Event if Key Person ceases to devote Required Time",
+     "expected": "Key Persons are Graham Oduya and Tomas Wexcombe (Wexcombe replaced Celia Brandvold under the First Amendment). If either Key Person dies, becomes permanently disabled, ceases to be a managing member of the General Partner or ceases to devote substantially all business time during the Investment Period, the Investment Period is automatically suspended; it resumes only if within 180 days a Majority in Interest reinstates it or consents to an Advisory Committee approved replacement, and otherwise terminates",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gp_commitment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2% of aggregate Capital Commitments",
+     "expected": "At least 2% of the aggregate Capital Commitments of all Partners and all Parallel Fund partners, made by the General Partner and its Affiliates and funded in cash pro rata (not through a management fee waiver)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_term",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "10 years from Final Closing Date, extendable for up to 2 years with consent",
+     "expected": "Ten years from the Final Closing Date (expiring December 16, 2034), extendable for up to two successive one-year periods, each only with the prior written consent of a Majority in Interest of the Limited Partners (as amended by the First Amendment)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "auditor",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Aldwin Treloar LLP",
+     "expected": "Aldwin Treloar LLP",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "administrator",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Kinnaird Stroud Fund Services, LLC",
+     "expected": "Kinnaird Stroud Fund Services, LLC",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "prime_broker",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "None",
+     "expected": "NOT_APPLICABLE: the Partnership does not engage a prime broker",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "legal_counsel",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Pellow Ashdown LLP",
+     "expected": "Pellow Ashdown LLP (counsel to the Partnership, the General Partner and the Manager)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "mfn_election",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Yes, for Limited Partners with Capital Commitments of $25,000,000 or more",
+     "expected": "Yes: each Limited Partner with a Capital Commitment of $25,000,000 or more (aggregated with Affiliates and investors under the same discretionary adviser) may elect, within 30 days of receiving the side letters delivered within 45 days after the Final Closing Date, the benefit of any side letter right granted to an investor with an equal or smaller commitment; excluded are status-based legal, tax and regulatory rights, Advisory Committee seats or observer rights, co-investment rights, consents to affiliate transfers and notice delivery, and rights granted to GP-affiliated Limited Partners",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t1_d06",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 163.91,
+    "prompt_tokens": 8365,
+    "output_tokens": 1960,
+    "output_tokens_per_sec": 25.1,
+    "prompt_tokens_per_sec": 97.5,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11328
+   }
+  },
+  "t1_d07": {
+   "units": [
+    {
+     "uid": "fund_name",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Brackenholt Senior Lending Fund, LP",
+     "expected": "Brackenholt Senior Lending Fund, LP",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_domicile",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Delaware",
+     "expected": "Delaware (limited partnership formed under the Delaware Revised Uniform Limited Partnership Act)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_structure",
+     "score": 0.0,
+     "verdict": "WRONG",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Delaware Limited Partnership",
+     "expected": "Open-end evergreen (semi-liquid) fund: no fixed term, no capital drawdowns, monthly subscriptions at NAV, liquidity only through discretionary quarterly repurchase (tender) offers; standalone fund, not master-feeder (a Cayman parallel fund invests alongside it)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "management_fee",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "side_letter",
+     "hallucination": false,
+     "got": "1.25% per annum of net asset value",
+     "expected": "1.25% per annum of the Fund's net asset value (charged on net assets, not gross assets or borrowings), accrued and paid monthly in arrears; single fund-level rate, with Interests of the Adviser and its personnel bearing no fee",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "performance_fee",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "12.5% of Pre-Incentive Fee Net Investment Income over a 1.25% quarterly Hurdle Rate with a full catch-up, plus 12.5% of cumulative net realized capital gains",
+     "expected": "Two-part incentive fee: (1) Income Incentive Fee of 12.5% of pre-incentive fee net investment income, paid quarterly in arrears, over a 1.25% per quarter (5.0% annualized) hurdle with a 100% (full) catch-up up to 1.4286% per quarter; (2) Capital Gains Incentive Fee of 12.5% of cumulative realized capital gains net of cumulative realized capital losses and unrealized capital depreciation, less prior capital gains incentive fees, paid annually",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "hurdle_rate",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.25% per quarter (5.0% annualized)",
+     "expected": "1.25% per quarter (5.0% annualized) on pre-incentive fee net investment income measured against prior quarter-end NAV, for the income incentive fee; 100% (full) catch-up between 1.25% and 1.4286% per quarter (5.7143% annualized); non-cumulative and non-compounding, with no carryforward of shortfalls; the capital gains incentive fee has no hurdle",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": false
+     }
+    },
+    {
+     "uid": "high_water_mark",
+     "score": 0.0,
+     "verdict": "WRONG",
+     "kind": "field",
+     "error_kind": "NO_HWM_OR_CARRYFORWARD",
+     "trap": "none",
+     "hallucination": false,
+     "got": "No high-water mark",
+     "expected": "Loss carryforward applies to the capital gains incentive fee only: that fee is computed cumulatively from inception, so realized capital losses and unrealized depreciation are carried forward (perpetual, no reset) and must be recovered before further capital gains fees; no high-water mark, look-back or loss carryforward on the income incentive fee",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "minimum_initial_investment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "$1,000,000",
+     "expected": "$1,000,000 (General Partner may accept lesser amounts); minimum additional subscription $100,000",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "lockup_period",
+     "score": 0.0,
+     "verdict": "WRONG",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "side_letter",
+     "hallucination": false,
+     "got": "No hard lock-up",
+     "expected": "No hard lock-up; one-year soft lock: Interests repurchased within one year after issuance bear a 2.0% Early Repurchase Deduction (retained by the Fund; not applied to reinvested distributions)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_frequency",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Quarterly",
+     "expected": "Quarterly: discretionary repurchase (tender) offers as of the last Business Day of each calendar quarter; no right to redeem on demand",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_notice_days",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "side_letter",
+     "hallucination": false,
+     "got": "60 days",
+     "expected": "60 days' prior written notice: an irrevocable Repurchase Request must be received by the Administrator not later than 60 days before the Repurchase Date",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gate_provision",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5.0% of net asset value per quarter",
+     "expected": "Fund-level quarterly gate: aggregate repurchases limited to 5.0% of the Fund's net asset value (as of the prior quarter-end) per Repurchase Date, pro rata if oversubscribed, unfilled portions do not carry over; the GP may repurchase up to an additional 2.0% of NAV at its discretion",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "key_man_provision",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "side_letter",
+     "hallucination": false,
+     "got": "No key person provision",
+     "expected": "NOT_APPLICABLE: the Partnership Agreement does not contain a key person provision",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gp_commitment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "holding_not_commitment",
+     "hallucination": false,
+     "got": "No commitment",
+     "expected": "NOT_APPLICABLE: neither the General Partner nor the Adviser is required to make any capital commitment (the approximately $14.2 million of Interests held by the Adviser and its personnel is a voluntary holding, not a commitment)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_term",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Evergreen, with no fixed term",
+     "expected": "Perpetual (evergreen): no fixed term; the Fund continues until dissolved",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "auditor",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Tessier Mulvane LLP",
+     "expected": "Tessier Mulvane LLP",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "administrator",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Rendlesham Fund Services, LLC",
+     "expected": "Rendlesham Fund Services, LLC",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "prime_broker",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "No prime broker",
+     "expected": "NOT_APPLICABLE: the Fund does not engage a prime broker",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "legal_counsel",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "side_letter",
+     "hallucination": false,
+     "got": "Pellow Ainsworth LLP",
+     "expected": "Pellow Ainsworth LLP (counsel to the Fund, the General Partner and the Adviser)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "mfn_election",
+     "score": 0.0,
+     "verdict": "WRONG",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Yes",
+     "expected": "Yes: Limited Partners with aggregate net subscriptions of at least $25,000,000 may elect side letter terms granted after the Initial Closing Date to Limited Partners with equal or smaller net subscriptions, subject to the same conditions; excludes legal, regulatory, tax or policy status terms, confidentiality and disclosure terms, affiliate-transfer consents and personnel notification rights",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t1_d07",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 146.5,
+    "prompt_tokens": 8097,
+    "output_tokens": 1664,
+    "output_tokens_per_sec": 25.5,
+    "prompt_tokens_per_sec": 100.0,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11328
+   }
+  },
+  "t1_d08": {
+   "units": [
+    {
+     "uid": "fund_name",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Tarrenfield Oakes Real Estate Partners III, L.P.",
+     "expected": "Tarrenfield Oakes Real Estate Partners III, L.P.",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_domicile",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Delaware",
+     "expected": "Delaware (limited partnership)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_structure",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Closed-end fund",
+     "expected": "Closed-end (drawdown) fund; a single stand-alone Delaware limited partnership, not a master-feeder structure (AIVs and Fund REIT subsidiaries permitted)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "management_fee",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "class_variants",
+     "hallucination": false,
+     "got": "1.50% per annum of Capital Commitments during the Investment Period; 1.50% per annum of Invested Equity thereafter",
+     "expected": "1.50% per annum of Capital Commitments during the Investment Period, then 1.50% per annum of Invested Equity; Large Commitment Limited Partners (Capital Commitments of $50 million or more, aggregated with affiliates) pay 1.25% per annum on the same bases; payable quarterly in advance and reduced by 100% of Transaction Fees",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "performance_fee",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "20% of profits distributed after the Limited Partner has received its Capital Contributions and Preferred Return",
+     "expected": "20% carried interest, paid after return of Capital Contributions, the 9% IRR Preferred Return and a 50/50 catch-up; the same rate for all Limited Partners (Sponsor and its employees bear none)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "hurdle_rate",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "none",
+     "hallucination": false,
+     "got": "9% per annum, compounded annually",
+     "expected": "9% per annum IRR (compounded annually) Preferred Return on Capital Contributions; a hard hurdle (capital and the full Preferred Return must be distributed in cash before any carry), followed by a 50/50 GP catch-up until the GP has received 20% of profits",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "high_water_mark",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "No high-water mark",
+     "expected": "NOT_APPLICABLE: no high-water mark or loss carryforward applies; Carried Interest is determined on a cumulative whole-of-fund basis and is subject to the General Partner Clawback",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "minimum_initial_investment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "$5,000,000",
+     "expected": "$5,000,000 minimum Capital Commitment (the General Partner may accept lesser amounts in its sole discretion)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "lockup_period",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "No lock-up period",
+     "expected": "NOT_APPLICABLE: closed-end fund; Limited Partners have no right to withdraw or redeem, so no lock-up period applies",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_frequency",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "No redemption rights",
+     "expected": "NOT_APPLICABLE: Limited Partners have no right to withdraw from the Fund or redeem their Interests",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_notice_days",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "N/A",
+     "expected": "NOT_APPLICABLE: no redemption right, so no redemption notice period applies",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gate_provision",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "N/A",
+     "expected": "NOT_APPLICABLE: no redemption right, so no redemption gate applies",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "key_man_provision",
+     "score": 0.0,
+     "verdict": "WRONG",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Suspension of Investment Period if Key Person Event occurs",
+     "expected": "Key Persons are Garrett Vashon and Ines Kalloway; if either ceases to devote substantially all of his or her business time to the Fund, the Prior Funds and the Investment Manager during the Investment Period, the Investment Period is automatically suspended, and it terminates (with the fee moving to Invested Equity) unless a Majority in Interest votes to reinstate it within 180 days",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gp_commitment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Greater of $7,500,000 or 2.0% of the aggregate Capital Commitments of the Limited Partners",
+     "expected": "The greater of $7,500,000 or 2.0% of the aggregate Capital Commitments of the Limited Partners, funded in cash by the General Partner, the Investment Manager and their principals and affiliates (currently $7,500,000 after the Initial Closing)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_term",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "none",
+     "hallucination": false,
+     "got": "8 years, extendable by up to 2 years",
+     "expected": "8 years from the Initial Closing Date (the eighth anniversary), plus up to two one-year extensions (the first at the General Partner's discretion, the second with Advisory Committee consent); in no event beyond the tenth anniversary",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "auditor",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "Lindenhall Crewe LLP",
+     "expected": "Lindenhall Crewe LLP (engaged effective June 1, 2026, replacing Wexcombe Adair LLP)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "administrator",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Ostrander Pell Fund Services, LLC",
+     "expected": "Ostrander Pell Fund Services, LLC",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": false
+     }
+    },
+    {
+     "uid": "prime_broker",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "N/A",
+     "expected": "NOT_FOUND: the Memorandum does not name or refer to any prime broker",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": null
+     }
+    },
+    {
+     "uid": "legal_counsel",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Haverill Quint LLP",
+     "expected": "Haverill Quint LLP (counsel to the Fund, the General Partner and the Investment Manager)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "mfn_election",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Yes, for Limited Partners with Capital Commitments of $25,000,000 or more",
+     "expected": "Yes: Limited Partners whose Capital Commitments (aggregated with affiliates) are $25,000,000 or more may elect the benefit of side letter rights granted to Limited Partners with equal or smaller commitments, within 30 days after a compendium delivered after the Final Closing; excludes investor-specific legal, regulatory, tax or policy terms, Advisory Committee membership, co-investment rights, the 1.25% Large Commitment fee rate and rights granted to the Sponsor and its affiliates",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t1_d08",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 126.01,
+    "prompt_tokens": 7287,
+    "output_tokens": 1491,
+    "output_tokens_per_sec": 25.8,
+    "prompt_tokens_per_sec": 107.3,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11328
+   }
+  },
+  "t1_d09": {
+   "units": [
+    {
+     "uid": "fund_name",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Castellow Wexcombe Multi-Manager Fund, L.P.",
+     "expected": "Castellow Wexcombe Multi-Manager Fund, L.P.",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_domicile",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Delaware",
+     "expected": "Delaware (limited partnership organized under the Delaware Revised Uniform Limited Partnership Act)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_structure",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "none",
+     "hallucination": false,
+     "got": "Open-end fund of hedge funds",
+     "expected": "Open-end fund of hedge funds; a stand-alone fund, not a master-feeder structure (monthly subscriptions, quarterly withdrawals, no capital calls)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "management_fee",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "layered_fee",
+     "hallucination": false,
+     "got": "1.00% annually",
+     "expected": "1.00% per annum of the net asset value of each Limited Partner's capital account, payable quarterly in advance (0.25% per quarter); single class",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "performance_fee",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "layered_fee",
+     "hallucination": false,
+     "got": "10% of Excess Net Profits",
+     "expected": "10% Incentive Allocation to the General Partner of each capital account's Net Profits in excess of its Loss Carryforward and Hurdle Amount (5.00% per annum), determined annually and on withdrawal; single class",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "hurdle_rate",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "layered_fee",
+     "hallucination": false,
+     "got": "5.00% per annum",
+     "expected": "5.00% per annum hard hurdle on each capital account (prorated, non-compounding, shortfalls not carried forward), with no catch-up",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "high_water_mark",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "none",
+     "hallucination": false,
+     "got": "Yes",
+     "expected": "Yes: a perpetual Loss Carryforward on each capital account that functions as a high-water mark; it does not expire and is not reset (reduced proportionately only on partial withdrawals)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "minimum_initial_investment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "$1,000,000",
+     "expected": "$1,000,000 (subject to the General Partner's discretion to accept lesser amounts)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "lockup_period",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "none",
+     "hallucination": false,
+     "got": "1 year",
+     "expected": "One-year soft lock-up on each capital contribution: withdrawals before the first anniversary are permitted subject to a 4% early withdrawal charge retained by the Partnership; no hard lock-up",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_frequency",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Quarterly",
+     "expected": "Quarterly, as of the last business day of each calendar quarter",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_notice_days",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "95 days",
+     "expected": "95 days' prior written notice before the quarterly Withdrawal Date",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gate_provision",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "25% of the net asset value of its capital account",
+     "expected": "Investor-level gate: no Limited Partner may withdraw more than 25% of its capital account (measured as of the first Withdrawal Date of the request) on any Withdrawal Date, excess carried forward; no Partnership-level gate",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "key_man_provision",
+     "score": 0.0,
+     "verdict": "HALLUCINATION",
+     "kind": "field",
+     "error_kind": "HALLUCINATED_KEY_PERSON",
+     "trap": "absence",
+     "hallucination": true,
+     "got": "Dependence on the Investment Manager's ability to select and monitor Portfolio Managers and, in particular, on the judgment of Ms. Throckford and Mr. Varrell as the voting members of the Investment Committee.",
+     "expected": "NOT_FOUND",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gp_commitment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "holding_not_commitment",
+     "hallucination": false,
+     "got": "No commitment",
+     "expected": "NOT_APPLICABLE: no commitment by the General Partner or the Investment Manager is required; the approximately $7.25 million affiliate holding (about 1.9% of NAV) is voluntary and expressly not a commitment",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_term",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Perpetual",
+     "expected": "Perpetual: no fixed term; continues until dissolved under the Partnership Agreement",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "auditor",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Tamsford Keverne LLP",
+     "expected": "Tamsford Keverne LLP",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "administrator",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Marrowdale Fund Services, LLC",
+     "expected": "Marrowdale Fund Services, LLC",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "prime_broker",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "None",
+     "expected": "NOT_APPLICABLE (the Partnership does not engage a prime broker; each Portfolio Fund selects its own)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "legal_counsel",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Thursby Kilbride LLP",
+     "expected": "Thursby Kilbride LLP (counsel to the Partnership, the General Partner and the Investment Manager)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "mfn_election",
+     "score": 0.0,
+     "verdict": "HALLUCINATION",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": true,
+     "got": "Yes",
+     "expected": "NOT_APPLICABLE: the Partnership does not offer Limited Partners any most favored nation election; the MFN rights in Section 9.2 are obtained by the Partnership from Portfolio Funds and run to the Partnership only",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t1_d09",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 142.62,
+    "prompt_tokens": 6618,
+    "output_tokens": 2194,
+    "output_tokens_per_sec": 25.9,
+    "prompt_tokens_per_sec": 114.5,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11328
+   }
+  },
+  "t1_d10": {
+   "units": [
+    {
+     "uid": "fund_name",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Fenlight Carrow Ventures II, L.P.",
+     "expected": "Fenlight Carrow Ventures II, L.P.",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_domicile",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Delaware",
+     "expected": "Delaware (limited partnership under the Delaware Revised Uniform Limited Partnership Act)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_structure",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Closed-end investment vehicle",
+     "expected": "Closed-end drawdown fund: capital is called from Unfunded Commitments and Interests are not redeemable; a stand-alone Delaware partnership, not a master-feeder (Alternative Investment Vehicles permitted for legal, tax or regulatory reasons)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "management_fee",
+     "score": 0.0,
+     "verdict": "WRONG",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "class_variants",
+     "hallucination": false,
+     "got": "2.50% per annum for Fee Year 1 through Fee Year 5, decreasing by 0.25% annually thereafter to a minimum of 1.50% per annum",
+     "expected": "2.50% per annum of aggregate Capital Commitments (excluding Affiliated Limited Partners and the GP Commitment) for Fee Years 1 through 5; from Fee Year 6 the rate steps down by 0.25% each Fee Year (2.25% in Fee Year 6, 2.00% in Fee Year 7, 1.75% in Fee Year 8) to a floor of 1.50% of Capital Commitments from Fee Year 9 onward, including any extension; payable semi-annually in advance and reduced by 100% of Fee Income, placement fees and excess Organizational Expenses",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "performance_fee",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "class_variants",
+     "hallucination": false,
+     "got": "20% of profits after the Step-Up Threshold is achieved",
+     "expected": "Carried interest of 20% of distributions after return of all Capital Contributions (whole-fund basis, no preferred return, no catch-up), stepping up to 25% of distributions made after cumulative distributions to the Limited Partners reach 3.0x their aggregate Capital Contributions (paid-in capital); the 25% rate applies prospectively only; no carry on the GP Commitment or Affiliated Limited Partners; subject to GP clawback",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "hurdle_rate",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "None",
+     "expected": "NOT_APPLICABLE: the LPA expressly provides no preferred return or hurdle rate (Section 6.3); carried interest begins once a Limited Partner's Capital Contributions are returned, with no catch-up",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "high_water_mark",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "No high-water mark",
+     "expected": "NOT_APPLICABLE: the LPA states the Partnership does not maintain a high-water mark or loss carryforward account (Section 6.6(b)); carried interest is computed on a cumulative whole-fund basis subject to a GP clawback",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "minimum_initial_investment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "$1,000,000",
+     "expected": "$1,000,000 minimum Capital Commitment per Limited Partner (the General Partner may accept lesser amounts; the minimum does not apply to Affiliated Limited Partners)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "lockup_period",
+     "score": 0.0,
+     "verdict": "HALLUCINATION",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": true,
+     "got": "No specific lockup period mentioned",
+     "expected": "NOT_APPLICABLE: Limited Partners have no right to withdraw or redeem (Section 9.2) and the LPA provides for no lock-up period; Interests are subject only to transfer restrictions",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_frequency",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "No redemption rights",
+     "expected": "NOT_APPLICABLE: closed-end; no Limited Partner may withdraw or redeem any part of its Interest at any time (Section 9.2)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_notice_days",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "No redemption rights",
+     "expected": "NOT_APPLICABLE: there is no redemption right and no redemption notice period (Section 9.2); the 15-day notice in Section 9.3 applies only to withdrawals required by the General Partner",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gate_provision",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "No gate provision mentioned",
+     "expected": "NOT_APPLICABLE: Interests are not redeemable and the LPA provides no limitation on redemptions (Section 9.2), so no gate exists",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": false
+     }
+    },
+    {
+     "uid": "key_man_provision",
+     "score": 0.0,
+     "verdict": "WRONG",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Key Person Event occurs if a Key Person dies, becomes permanently incapacitated, ceases to devote substantially all of his or her business time and attention to the affairs of the Partnership and the Affiliated Funds, or ceases to be a managing member of the General Partner",
+     "expected": "Key Persons: Delphine Wrexcombe and Tobias Quennell. A Key Person Event occurs if either dies or becomes permanently incapacitated, ceases to devote substantially all business time to the Partnership and the Affiliated Funds, or ceases to be a managing member of the General Partner; it automatically suspends the Investment Period (only previously committed investments and follow-ons up to 10% of commitments), and unless a Majority in Interest approves continuation within 180 days the Investment Period terminates permanently. Imogen Ravell is a Principal but not a Key Person",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gp_commitment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "holding_not_commitment",
+     "hallucination": false,
+     "got": "2.0% of the aggregate Capital Commitments of all Partners",
+     "expected": "Not less than 2.0% of the aggregate Capital Commitments of all Partners (including the General Partner's own), funded in cash pro rata and not through a management fee waiver; Affiliated Limited Partner commitments (about $1,250,000 expected) do not count toward it",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_term",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "10 years, extendable for up to 3 one-year periods with Advisory Committee consent",
+     "expected": "Ten years from the Initial Closing Date (to its tenth anniversary), extendable by up to three successive one-year periods: the first at the General Partner's discretion on 90 days' notice, the second and third only with Advisory Committee consent (maximum 13 years)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "auditor",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Brisley Ashcombe LLP",
+     "expected": "Brisley Ashcombe LLP",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "administrator",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Stavely Rook Fund Services, LLC",
+     "expected": "Stavely Rook Fund Services, LLC",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "prime_broker",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "No prime broker",
+     "expected": "NOT_APPLICABLE: the Partnership does not engage, and does not intend to engage, a prime broker (Section 8.4)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "legal_counsel",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Quarrington Voss LLP",
+     "expected": "Quarrington Voss LLP (counsel to the Partnership, the General Partner and the Management Company)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "mfn_election",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Limited to MFN Eligible Limited Partners with a Capital Commitment of $10,000,000 or more",
+     "expected": "Yes. Limited Partners whose Capital Commitment (aggregated with Affiliates that are Limited Partners) is $10,000,000 or more may elect, within 30 days after receiving the side letter compendium, the benefit of any side letter provision granted to a Limited Partner with an equal or smaller Capital Commitment, excluding provisions tied to a particular investor's legal, regulatory, tax or public-disclosure status, Advisory Committee seats, co-investment rights, consents to affiliate transfers and provisions granted to Affiliated Limited Partners",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t1_d10",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 146.28,
+    "prompt_tokens": 7481,
+    "output_tokens": 1922,
+    "output_tokens_per_sec": 25.6,
+    "prompt_tokens_per_sec": 105.4,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11328
+   }
+  },
+  "t1_d11": {
+   "units": [
+    {
+     "uid": "fund_name",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Quillmarsh Global Macro Fund, L.P.",
+     "expected": "Quillmarsh Global Macro Fund, L.P.",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_domicile",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Delaware",
+     "expected": "Delaware (limited partnership organized under the Delaware Revised Uniform Limited Partnership Act)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_structure",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "none",
+     "hallucination": false,
+     "got": "Master-Feeder Structure",
+     "expected": "Open-end (monthly redemptions), master-feeder: a Delaware feeder fund investing substantially all of its assets in Quillmarsh Global Macro Master Fund, Ltd., a Cayman Islands master fund, alongside an offshore feeder",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "management_fee",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "class_variants",
+     "hallucination": false,
+     "got": "2.0% for Class A, 1.5% for Class B",
+     "expected": "Class A: 2.0% per annum of the net asset value of each Class A capital account; Class B: 1.5% per annum of the net asset value of each Class B capital account; paid monthly in advance (about 0.1667% and 0.125% per month) at the Fund level, with no management fee charged by the Master Fund",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "performance_fee",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "class_variants",
+     "hallucination": false,
+     "got": "20% for Class A, 17.5% for Class B",
+     "expected": "Incentive allocation to the General Partner of 20% of Net Profits for Class A and 17.5% of Net Profits for Class B, made at each fiscal year end and on redemption, in excess of the loss carryforward",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "hurdle_rate",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "None",
+     "expected": "NOT_APPLICABLE: the Incentive Allocation is not subject to any hurdle rate, preferred return or minimum rate of return (only a loss carryforward applies)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "high_water_mark",
+     "score": 0.0,
+     "verdict": "WRONG",
+     "kind": "field",
+     "error_kind": "NO_HWM",
+     "trap": "none",
+     "hallucination": false,
+     "got": "None",
+     "expected": "Yes: a loss carryforward (high-water mark) is kept for each capital account; it is perpetual (never reset) and is reduced proportionately on partial redemptions",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "minimum_initial_investment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "$1,000,000",
+     "expected": "$1,000,000 for each class of Interests (minimum additional investment $100,000); the General Partner may accept lesser amounts",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "lockup_period",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "class_variants",
+     "hallucination": false,
+     "got": "12 months for Class A, 24 months for Class B",
+     "expected": "Class A: 12-month soft lock-up (3% early redemption charge on redemptions before the first anniversary of purchase); Class B: 24-month hard lock-up",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_frequency",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Monthly",
+     "expected": "Monthly, as of the last Business Day of each calendar month (after the applicable lock-up)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_notice_days",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "late_position",
+     "hallucination": false,
+     "got": "45 days",
+     "expected": "45 days' prior written notice (increased from 30 days by Section 14, effective July 1, 2026, for Redemption Dates on or after August 31, 2026)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gate_provision",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "late_position",
+     "hallucination": false,
+     "got": "15% of net asset value",
+     "expected": "Fund-level gate introduced by Section 14 (the body says there is no gate): if aggregate redemption requests as of a Redemption Date exceed 15% of the Fund's net asset value, requests are reduced pro rata and the unsatisfied portion is carried forward without priority; applies from the July 31, 2026 Redemption Date",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "key_man_provision",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "none",
+     "hallucination": false,
+     "got": "Matthias Orlev",
+     "expected": "Matthias Orlev. A Key Person Event (his death, incapacity for 90 consecutive days, or ceasing to devote substantially all his business time to and have ultimate responsibility for the Master Fund's program) requires written notice to Limited Partners within five Business Days; each Limited Partner may then redeem as of either of the next two Redemption Dates on 10 days' notice, without regard to lock-up and without early redemption charge, and subscriptions are suspended until then",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gp_commitment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "holding_not_commitment",
+     "hallucination": false,
+     "got": "None",
+     "expected": "NOT_FOUND: no GP or sponsor commitment is required; the approximately $31.4 million held by the General Partner, the Investment Manager and their personnel is a disclosed holding, and none of them has committed to make or maintain any investment",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_term",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "No fixed term",
+     "expected": "No fixed term (perpetual); the Fund continues until dissolved in accordance with the Partnership Agreement",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "auditor",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "late_position",
+     "hallucination": false,
+     "got": "Marbeck Pennycott LLP",
+     "expected": "Marbeck Pennycott LLP (the Fund) and Marbeck Pennycott (Cayman) (the Master Fund), appointed by Section 14 effective July 1, 2026 in place of Brennick Tallow LLP and Brennick Tallow (Cayman)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "administrator",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Stellmoor Fund Services Ltd.",
+     "expected": "Stellmoor Fund Services Ltd.",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "prime_broker",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Kittering Hale Securities LLC and Mallory Quenby & Co. LLC",
+     "expected": "Kittering Hale Securities LLC and Mallory Quenby & Co. LLC (Kittering Hale Futures LLC acts as futures commission merchant)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "legal_counsel",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Tregarth Ellingsby LLP (United States) and Carrick Mowbray (Cayman Islands)",
+     "expected": "Tregarth Ellingsby LLP (U.S. counsel to the Fund, the General Partner and the Investment Manager); Carrick Mowbray acts as Cayman Islands counsel to the Master Fund and the Offshore Feeder",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "mfn_election",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "No most favored nation election",
+     "expected": "NOT_APPLICABLE: the Fund does not offer any most favored nation election; Limited Partners may not elect the benefit of side letter terms granted to other investors",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t1_d11",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 230.36,
+    "prompt_tokens": 12071,
+    "output_tokens": 1625,
+    "output_tokens_per_sec": 24.1,
+    "prompt_tokens_per_sec": 74.2,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11332
+   }
+  },
+  "t1_d12": {
+   "units": [
+    {
+     "uid": "fund_name",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Vessary Point Commodities Fund Ltd.",
+     "expected": "Vessary Point Commodities Fund Ltd.",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_domicile",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Cayman Islands",
+     "expected": "Cayman Islands (exempted company with limited liability)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_structure",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "none",
+     "hallucination": false,
+     "got": "Open-ended",
+     "expected": "Open-ended (Shares redeemable at the option of the holder); standalone fund, not a master-feeder structure",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "management_fee",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "field",
+     "error_kind": "incomplete",
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "{'Class A Shares': '1.75% per annum', 'Class B Shares': '1.00% per annum'}",
+     "expected": "Class A: 1.75% per annum of the Net Asset Value of the Class A Shares (set by Supplement No. 1); Class B: 1.00% per annum of the Net Asset Value of the Class B Shares (set by Supplement No. 2); each calculated monthly and payable monthly in advance, before accrual of the Performance Fee",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "performance_fee",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "{'Class A Shares': '20% of Net New Appreciation', 'Class B Shares': '15% of Net New Appreciation'}",
+     "expected": "Class A: 20% and Class B: 15% of Net New Appreciation, calculated per Series above the High Water Mark as of 31 December each year and on redemption",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": false
+     }
+    },
+    {
+     "uid": "hurdle_rate",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "None",
+     "expected": "NOT_APPLICABLE: no hurdle rate or preferred return; the Performance Fee is subject only to the High Water Mark",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "high_water_mark",
+     "score": 0.0,
+     "verdict": "WRONG",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Yes",
+     "expected": "Yes: a High Water Mark applies to each Share of each Series and is never reset (perpetual), so losses are carried forward until recouped",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "minimum_initial_investment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "{'Class A Shares': 'US$1,000,000', 'Class B Shares': 'US$10,000,000'}",
+     "expected": "Class A: US$1,000,000; Class B: US$10,000,000 (the Directors may accept less, but not below US$100,000)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": false
+     }
+    },
+    {
+     "uid": "lockup_period",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "class_variants",
+     "hallucination": false,
+     "got": "{'Class A Shares': '12 months, soft (3% early redemption charge)', 'Class B Shares': '12 months, hard'}",
+     "expected": "Class A: 12-month soft lock-up (redemption before the first anniversary of issue only with a 3% early redemption charge); Class B: 12-month hard lock-up (no redemption before the first anniversary of issue)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": false
+     }
+    },
+    {
+     "uid": "redemption_frequency",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Last Business Day of each calendar quarter",
+     "expected": "Quarterly, as of the last Business Day of each calendar quarter",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_notice_days",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "60 calendar days",
+     "expected": "60 calendar days' prior written notice before the relevant Redemption Day (set by Supplement No. 1, effective for Redemption Days on or after 31 March 2025; not changed by Supplement No. 2)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gate_provision",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "No",
+     "expected": "NOT_APPLICABLE: the Fund imposes no gate (no limit on aggregate redemptions at the Fund or Shareholder level)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "key_man_provision",
+     "score": 0.0,
+     "verdict": "HALLUCINATION",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": true,
+     "got": "Yes",
+     "expected": "NOT_FOUND: the document contains no key person provision; dependence on Mr. Rennard is disclosed as a risk factor only",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gp_commitment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "None",
+     "expected": "NOT_FOUND: no required Investment Manager or sponsor commitment; the disclosed Class B holding of the principals (about US$6.4 million) is voluntary and not a commitment",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_term",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Unlimited duration",
+     "expected": "Perpetual: incorporated for an unlimited duration with no fixed termination date (continues until wound up)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "auditor",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Kellaway Brandt (Cayman)",
+     "expected": "Kellaway Brandt (Cayman)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "administrator",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Marrowgate Fund Services (Cayman) Ltd.",
+     "expected": "Marrowgate Fund Services (Cayman) Ltd.",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "prime_broker",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Wexcombe Securities LLC",
+     "expected": "Wexcombe Securities LLC (Cinderford Quay Futures LLC is separately the clearing broker and futures commission merchant)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "legal_counsel",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "{'Cayman Islands': 'Carrow Pendle', 'United States': 'Linacre Stowe LLP'}",
+     "expected": "Carrow Pendle (Cayman Islands counsel to the Fund) and Linacre Stowe LLP (United States counsel to the Fund and counsel to the Investment Manager)",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "mfn_election",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "Not specified",
+     "expected": "NOT_APPLICABLE: no MFN election is offered; no Shareholder is entitled to receive, or to elect to receive, the benefit of side letter terms granted to another Shareholder",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t1_d12",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 133.29,
+    "prompt_tokens": 7037,
+    "output_tokens": 1780,
+    "output_tokens_per_sec": 25.8,
+    "prompt_tokens_per_sec": 110.1,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11328
+   }
+  },
+  "t1_d13": {
+   "units": [
+    {
+     "uid": "fund_name",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Quarrendon Vale Infrastructure Secondaries Fund II, L.P.",
+     "expected": "Quarrendon Vale Infrastructure Secondaries Fund II, L.P.",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_domicile",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Delaware",
+     "expected": "Delaware (Delaware limited partnership formed under the Delaware Revised Uniform Limited Partnership Act)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_structure",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Closed-end, drawdown vehicle",
+     "expected": "Closed-end drawdown fund; Interests are not redeemable; not part of a master-feeder structure (Parallel Funds may invest alongside the Partnership)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "management_fee",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.00% per annum of Capital Commitments during the Investment Period; thereafter, 0.75% per annum of Net Invested Capital",
+     "expected": "1.00% per annum of Capital Commitments during the Investment Period; thereafter 0.75% per annum of Net Invested Capital; payable quarterly in advance; no Management Fee after the twelfth anniversary of the Final Closing Date (including any extension) or on the GP Commitment; reduced by 100% of Transaction Fees",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "performance_fee",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "12.5%",
+     "expected": "12.5% carried interest, determined cumulatively on a whole-fund basis after return of all Capital Contributions and the 8% Preferred Return, with a 100% General Partner catch-up; subject to GP clawback",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "hurdle_rate",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "8% per annum, compounded annually",
+     "expected": "8% per annum preferred return, compounded annually, on outstanding Capital Contributions, followed by a 100% (full) General Partner catch-up",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "high_water_mark",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "None",
+     "expected": "NOT_APPLICABLE: the Partnership Agreement states that no high water mark, loss carryforward or similar mechanism applies to the Carried Interest; carry is determined cumulatively on a whole-fund basis and the Section 6.3 clawback is the exclusive adjustment",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "minimum_initial_investment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "$10,000,000",
+     "expected": "$10,000,000 Capital Commitment (the General Partner may accept lesser amounts, but not less than $5,000,000)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "lockup_period",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "None",
+     "expected": "NOT_APPLICABLE: Limited Partners have no right to withdraw or redeem, and the Partnership Agreement states there is no lock-up period",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_frequency",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "None",
+     "expected": "NOT_APPLICABLE: no withdrawal or redemption rights; the Partnership is closed-end and has no redemption dates",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_notice_days",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "None",
+     "expected": "NOT_APPLICABLE: there is no redemption right and the Partnership Agreement states there is no redemption notice requirement",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gate_provision",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "None",
+     "expected": "NOT_APPLICABLE: there are no withdrawal rights and the Partnership Agreement states there is no gate",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "key_man_provision",
+     "score": 0.0,
+     "verdict": "WRONG",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "If during the Investment Period fewer than two Key Persons devote substantially all of their business time to the Partnership, Fund I, the Parallel Funds and the Manager, the Investment Period is automatically suspended.",
+     "expected": "Helena Strathdee, Marcus Vellacott and Priya Lathcombe. A Key Person Event occurs if, during the Investment Period, fewer than two of them devote substantially all of their business time to the Partnership, the Parallel Funds, Fund I and the Manager; the Investment Period is automatically suspended (no new Investments other than those committed in writing) and resumes only if Two-Thirds in Interest of the Limited Partners approve replacement Key Persons or reinstate it within 180 days, otherwise the Investment Period terminates",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gp_commitment",
+     "score": 0.0,
+     "verdict": "WRONG",
+     "kind": "field",
+     "error_kind": "TABLE_VALUE_ONE_PERCENT",
+     "trap": "precedence",
+     "hallucination": false,
+     "got": "1.0% of total Capital Commitments",
+     "expected": "Not less than 2% of the aggregate Capital Commitments of the Partnership and the Parallel Funds (determined as of the Final Closing Date), made by the General Partner directly or through its Affiliates, funded in cash and not through any Management Fee waiver",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_term",
+     "score": 0.0,
+     "verdict": "WRONG",
+     "kind": "field",
+     "error_kind": "TABLE_VALUE_THREE_EXTENSIONS",
+     "trap": "precedence",
+     "hallucination": false,
+     "got": "Twelve years from the Final Closing Date, subject to up to three consecutive one-year extensions",
+     "expected": "12 years from the Final Closing Date, plus up to two successive one-year extensions (the first at the General Partner's discretion, the second with Advisory Committee consent), for a maximum of 14 years from the Final Closing Date",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "auditor",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Merriwick Sowerby LLP",
+     "expected": "Merriwick Sowerby LLP",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "administrator",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Orrelby Fund Services (US) LLC",
+     "expected": "Orrelby Fund Services (US) LLC",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "prime_broker",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "None",
+     "expected": "NOT_APPLICABLE: the Partnership does not engage, and does not intend to engage, a prime broker",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "legal_counsel",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Haskett Voorlan LLP",
+     "expected": "Haskett Voorlan LLP (counsel to the Partnership, the General Partner and the Manager)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "mfn_election",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Limited Partners with Capital Commitments of $50,000,000 or more may elect the benefit of side letter provisions granted to Limited Partners with equal or smaller Capital Commitments",
+     "expected": "Offered: each Limited Partner whose Capital Commitment (aggregated with its Affiliates and accounts under common investment control) is $50,000,000 or more may elect, within 30 days after receipt of the compilation, the benefit of side letter provisions granted to Limited Partners with equal or smaller Capital Commitments, excluding provisions on tax, legal, regulatory or policy status, Advisory Committee seats, co-investment rights, consents to Transfers to Affiliates and terms granted for admission at the Initial Closing Date",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t1_d13",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 130.87,
+    "prompt_tokens": 7768,
+    "output_tokens": 1414,
+    "output_tokens_per_sec": 25.6,
+    "prompt_tokens_per_sec": 103.0,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11328
+   }
+  }
+ }
+}

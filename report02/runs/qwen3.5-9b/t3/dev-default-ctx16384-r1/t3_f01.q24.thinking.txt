@@ -1,0 +1,45 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+    *   Question: "Is the firm a signatory to the UN-supported Principles for Responsible Investment, and does it maintain a formal ESG integration policy?"
+
+2.  **Scan the Documents:**
+    *   `01_brochure.md` (March 27, 2026):
+        *   Item 9. Disciplinary Information: No legal/disciplinary events.
+        *   Item 10. Other Financial Industry Activities and Affiliations: Mentions recommending unaffiliated private funds, no sponsorship, due diligence on funds. No mention of PRI or ESG policy.
+    *   `02_compliance_manual.md` (January 15, 2026):
+        *   Section 1. Purpose, Scope and Definitions: Describes the firm's business (discretionary management, financial planning, third-party private funds). Mentions Rule 206(4)-7 and Rule 204A-1. No mention of PRI or ESG policy.
+        *   Section 3. Code of Ethics: Fiduciary duty, conflicts of interest, outside business activities, acknowledgment. No mention of PRI or ESG policy.
+    *   `03_valuation_policy.md` (February 10, 2026):
+        *   Section 3. Pricing Hierarchy and Sources: Held-away assets, valuation methods. No mention of PRI or ESG policy.
+        *   Section 8. Independent Review: Annual compliance review by CCO. No mention of PRI or ESG policy.
+
+3.  **Evaluate Findings:**
+    *   The question asks about two specific things:
+        1.  Signatory to UN-supported Principles for Responsible Investment (PRI).
+        2.  Formal ESG integration policy.
+    *   I have scanned all provided text (`01_brochure.md`, `02_compliance_manual.md`, `03_valuation_policy.md`).
+    *   None of these documents contain information regarding the PRI signatory status or an ESG integration policy.
+    *   According to Rule 2: "If the documents do not answer the question, or address the topic without giving the specific detail asked for... the answer is exactly NOT_IN_DOCUMENTS."
+
+4.  **Formulate Output:**
+    *   `answer`: "NOT_IN_DOCUMENTS"
+    *   `source_document`: "" (empty string as per instruction for NOT_IN_DOCUMENTS case)
+    *   `section`: "" (empty string as per instruction for NOT_IN_DOCUMENTS case)
+    *   `quote`: "" (empty string as per instruction for NOT_IN_DOCUMENTS case)
+
+5.  **Final Review:**
+    *   Does the JSON match the schema? Yes.
+    *   Is it valid JSON? Yes.
+    *

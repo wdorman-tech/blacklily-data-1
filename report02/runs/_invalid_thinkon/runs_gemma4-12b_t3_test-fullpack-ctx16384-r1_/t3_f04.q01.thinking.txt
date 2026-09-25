@@ -1,0 +1,20 @@
+*   Question: Identify the Firm's principal owners and the percentage of the Firm each owns.
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+    *   Keys: "answer", "source_document", "section", "quote".
+
+    *   `01_valuation_policy.md`: Discusses valuation procedures, committee members (CFO, CRO, Director of Portfolio Operations, CCO, Head of Credit Research), pricing sources, etc. No mention of ownership.
+    *   `04_business_continuity_plan.md`: Discusses BCP, roles (CEO, COO, CIO, CFO, CCO, CTO, Head of Trading), vendors, and procedures. No mention of ownership.
+    *   `05_fee_schedule.md`: Discusses management fees, account types, and billing. No mention of ownership.
+    *   `06_policy_update_memo.md`: Discusses amendments to policies. No mention of ownership.
+
+    *   The documents mention various officers (Ines Morrow-Tate, Yuki Ashbury, Leopold Sarkis, Priya Castellane, Rafael Denholm, Dmitri Halloway, Colette Varnum, Tobias Aldren, Samuel Treloar, Marcus Ebbing), but they do not state who owns the firm or what percentage they own.
+
+    *   answer: "NOT_IN_DOCUMENTS"
+    *   source_document: ""
+    *   section: ""
+    *   quote: ""
+
+    *   JSON object? Yes.
+    *   No markdown? Yes.
+    *   No preamble/commentary? Yes.
+    *   Correct keys? Yes.

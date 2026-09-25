@@ -1,0 +1,35 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (check dates).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   "Under what conditions does the Firm effect cross trades between client accounts, and does it engage in principal transactions?"
+    *   Two parts:
+        1.  Conditions for cross trades.
+        2.  Engagement in principal transactions.
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "cross trade", "principal transactions", "client accounts".
+
+4.  **Locate Relevant Information:**
+    *   Document 1: `01_brochure.md` (dated March 27, 2026).
+        *   Section: Item 11. Code of Ethics... > 11.3 Cross Trades.
+            *   Text: "The Firm may effect a cross trade between two client accounts, in which one account sells a security to another, only when the portfolio manager has determined that the transaction is in the best interest of both accounts and consistent with each account's guidelines; the Chief Compliance Officer or the Deputy Chief Compliance Officer has approved the transaction in advance; and the transaction is executed at the current evaluated price supplied by the Firm's independent primary pricing service. Neither the Firm nor any affiliate receives a commission, markup or other compensation in connection with a cross trade. Cross trades are not effected for any account whose IMA or governing law prohibits them."
+        *   Section: Item 11. Code of Ethics... > 11.4 Principal Transactions.
+            *   Text: "The Firm does not engage in principal transactions, in which the Firm or an affiliate buys a security from or sells a security to a client for its own account, and it does not effect agency cross transactions, because it has no affiliated broker-dealer."
+
+    *   Document 2: `02_compliance_manual.md` (dated January 15, 2026).
+        *   Section: SECTION 10. BEST EXECUTION REVIEW > 10.1 Standard.
+            *   Text: "The Firm seeks to execute each transaction on the most favorable terms reasonably available under the circumstances. For fixed income securities traded with dealers as principal, the net price is the principal factor..."
+        *   Note: This document discusses best execution and fixed income trading as principal, but does not contradict the Brochure's statement about *not engaging* in principal transactions (which usually refers to agency vs principal capacity for client accounts). The Brochure explicitly states "The Firm does not engage in principal transactions...". The Compliance Manual mentions "fixed income securities traded with dealers as principal" which might be a nuance, but the Brochure is the primary source for the firm's general policy on principal transactions (Item 11.4). However, the question asks if it engages in principal transactions. Item 11.4 says "The Firm does

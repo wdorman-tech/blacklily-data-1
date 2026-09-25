@@ -1,0 +1,38 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Does the Firm file class action claims on behalf of separately managed account clients?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "class action", "claims", "file", "separate accounts", "clients".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md`:
+        *   Section: Item 17. Voting Client Securities > 17.2 Class Actions and Bankruptcy Claims.
+        *   Text: "The Firm does not file proofs of claim in securities class actions or bankruptcy proceedings on behalf of separate account clients."
+    *   `02_compliance_manual.md`:
+        *   Section: SECTION 12. PRIVACY > 12.1 Scope. (Irrelevant to filing claims).
+
+5.  **Determine the Answer:**
+    *   The document explicitly states "The Firm does not file proofs of claim in securities class actions... on behalf of separate account clients."
+    *   So the answer is "No" or a direct negation based on the text. The instruction says "Answer only from the documents provided." and "Keep answers short and specific: the number, name, frequency, threshold or rule that was asked for". Since it's a Yes/No question about policy, I should state the fact found in the document.
+    *   Wait, the instruction says: "If the documents do not answer the question... the answer is exactly NOT_IN_DOCUMENTS." Here the document *does* answer it.
+    *   The answer should reflect the content. "No" is accurate based on the text. Or I can quote the relevant part. Usually, for DDQs, a direct answer is preferred. Let's look at the constraint: "Answer only from the documents provided." and "Keep answers short and specific".
+    *   The question asks "Does the Firm file...?"
+    *   The text says "The Firm does not file proofs of claim in securities class actions... on behalf of separate account clients."
+    *   So the answer is "No". Or I can use the verbatim text as the quote and summarize the answer. However, the key "answer" should contain the direct response. Let's make it clear: "No".
+    *   Actually, looking at similar tasks, often the "answer" field contains the specific fact found. If the question is Yes/No, the answer is No.
+    *   Let's check the constraint: "Quote the supporting text verbatim." This goes in the "quote" field. The "answer" field should be the direct response to the question.
+    *   Answer: "No". Or "The Firm does not file proofs of claim...". To be safe and specific, I will state "No" or the negation

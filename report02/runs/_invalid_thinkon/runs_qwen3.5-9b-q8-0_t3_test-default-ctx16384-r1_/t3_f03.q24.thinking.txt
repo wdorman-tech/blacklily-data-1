@@ -1,0 +1,41 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "What advisory fee rate applies to Family Relationship assets above $250 million?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "advisory fee", "rate", "Family Relationship", "$250 million", "above".
+
+4.  **Evaluate Document 1 (`01_brochure.md`):**
+    *   Date: March 27, 2026.
+    *   Section: Item 5. Fees and Compensation > 5.1 Advisory Fee.
+    *   Content: Shows a table with tiers. "Above $250,000,000 | 0.20%".
+    *   Note: This document is superseded by a later policy update memo regarding breakpoints.
+
+5.  **Evaluate Document 2 (`05_fee_schedule.md`):**
+    *   Date: January 1, 2026.
+    *   Section: SECTION 2. ADVISORY FEE > 2.1 Tiered Rates.
+    *   Content: Shows a table with tiers. "Above $250,000 | 0.20%".
+    *   Note: This document is superseded by a later policy update memo regarding breakpoints.
+
+6.  **Evaluate Document 3 (`06_policy_update_memo.md`):**
+    *   Date: September 8, 2026.
+    *   Section: SECTION 7. FEE SCHEDULE BREAKPOINT.
+    *   Content: States it amends Schedule of Fees and Brochure Item 5.1.
+    *   Specifics: "The first breakpoint is lowered from $25,000,000 to $20,000,000." "The rates and breakpoints for assets above $50,000,000 are unchanged."
+    *   Crucial Sentence: "This amendment supersedes Schedule of Fees Sections 2.1 and 2.2 and brochure Item 5.1 to the extent inconsistent."
+    *   Since the memo says rates for assets above $50,000,000 are unchanged, and the original rate for above $250,000,000 was 0.20%, this rate likely remains 0.20%. However, I need to check if the memo explicitly states the rate for above $250 million or if it relies on the "unchanged" clause.
+    *   The memo says: "The rates and breakpoints for assets above $50,000,000 are unchanged."
+    *   In the original documents (Brochure 01_brochure.md and Fee Schedule

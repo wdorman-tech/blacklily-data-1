@@ -1,0 +1,105 @@
+{
+  "sheet_id": "t6_f20",
+  "notes": "Positive Q2 net return for an inherited IRA under the 10-year rule, a fee INCREASE with 30-day notice, and an internal note about a missed 2025 distribution and excise tax waiver.",
+  "required_facts": [
+    {
+      "fid": "net_return",
+      "kind": "number",
+      "desc": "Q2 2026 net return 1.2%",
+      "accept": [
+        "(?<![^\\w]-)(?<!^-)(?<![(\\[]- )(?<![(\\[] - )(?<!^- )(?<!: - )(?<!\\u2212)(?<!\\u2013)(?<!\\u2014)(?<!negative )(?<!minus )(?<!down )(?<!lost )(?<!fell )(?<!declined )(?<!loss of )(?<!decline of )(?<!falling )(?<!losing )(?<!dropped )(?<!dipped )(?<!slipped )(?<!slid )(?<![\\d.,])1\\.20?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?!\\s+(?:declines?|loss(?:es)?|drops?|decrease|negative|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "benchmark",
+      "kind": "number",
+      "desc": "Comparison index (50% global equity index / 50% US intermediate aggregate bond index) Q2 2026 return 1.7%",
+      "accept": [
+        "(?<![^\\w]-)(?<!^-)(?<![(\\[]- )(?<![(\\[] - )(?<!^- )(?<!: - )(?<!\\u2212)(?<!\\u2013)(?<!\\u2014)(?<!negative )(?<!minus )(?<!down )(?<!lost )(?<!fell )(?<!declined )(?<!loss of )(?<!decline of )(?<!falling )(?<!losing )(?<!dropped )(?<!dipped )(?<!slipped )(?<!slid )(?<![\\d.,])1\\.70?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?!\\s+(?:declines?|loss(?:es)?|drops?|decrease|negative|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "ytd",
+      "kind": "number",
+      "desc": "Year-to-date net return 2.8%",
+      "accept": [
+        "(?<![^\\w]-)(?<!^-)(?<![(\\[]- )(?<![(\\[] - )(?<!^- )(?<!: - )(?<!\\u2212)(?<!\\u2013)(?<!\\u2014)(?<!negative )(?<!minus )(?<!down )(?<!lost )(?<!fell )(?<!declined )(?<!loss of )(?<!decline of )(?<!falling )(?<!losing )(?<!dropped )(?<!dipped )(?<!slipped )(?<!slid )(?<![\\d.,])2\\.80?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?!\\s+(?:declines?|loss(?:es)?|drops?|decrease|negative|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "point_1",
+      "kind": "concept",
+      "desc": "2026 required annual distribution of $38,400",
+      "accept": [
+        "(?<![\\d.,])38,?400(?!\\d)|(?<![\\d.,])38\\.4\\s*(?:thousand|k)\\b"
+      ]
+    },
+    {
+      "fid": "point_2",
+      "kind": "concept",
+      "desc": "Drawdown plan empties the account by December 31, 2034 under the 10-year deadline",
+      "accept": [
+        "\\b2034\\b"
+      ]
+    },
+    {
+      "fid": "point_3",
+      "kind": "concept",
+      "desc": "Bond duration shortened to 3.9 years from 5.4",
+      "accept": [
+        "(?<![\\d.,])3\\.90?(?!\\d)(?!\\.\\d)(?!\\s*(?:%|percent|per cent))"
+      ]
+    },
+    {
+      "fid": "fee_new_rate",
+      "kind": "fee",
+      "desc": "Increase to 1.10% (from 0.90%) on all inherited IRA assets",
+      "accept": [
+        "(?<![\\d.,])(?:1\\.10?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|110\\s*(?:basis points?|basis-points?|bps|bp)\\b)"
+      ]
+    },
+    {
+      "fid": "fee_effective",
+      "kind": "fee",
+      "desc": "Effective September 1, 2026",
+      "accept": [
+        "(?:\\bsep(?:tember|t\\.?|\\.)?\\s*1(?:st|nd|rd|th)?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d)|(?<![\\d.])1(?:st|nd|rd|th)?\\s+(?:of\\s+)?sep(?:tember|t\\.?|\\.)?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d)|(?<![\\d/])0?9/0?1/(?:20)?26\\b|2026-09-01|\\bfirst\\s+(?:day\\s+)?of\\s+sep(?:tember|t\\.?|\\.)?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d))"
+      ]
+    }
+  ],
+  "disclosure": "Distributions from an inherited IRA are generally taxable as ordinary income in the year received, and this letter is not tax advice; please consult your tax adviser about your distribution requirements.",
+  "forbidden": [
+    {
+      "fid": "internal_note",
+      "desc": "Missed 2025 annual distribution ($35,900 shortfall), Form 5329 excise tax waiver request, firm reimbursing",
+      "patterns": [
+        "\\b5329\\b",
+        "excise",
+        "\\bwaiver\\b",
+        "shortfall",
+        "35,?900",
+        "tibbs",
+        "missed\\s+(?:the\\s+|your\\s+|a\\s+|last year'?s\\s+)?(?:2025\\s+)?(?:annual\\s+|required\\s+)?(?:distribution|rmd|withdrawal)",
+        "2025\\s+(?:annual\\s+|required\\s+)?(?:distribution|rmd|withdrawal)",
+        "(?:did not|didn't|failed to)\\s+flag",
+        "reimburse",
+        "(?:irs|excise|tax)\\s+penalt|penalt(?:y|ies)\\s+(?:from|assessed|imposed|for (?:the )?(?:missed|late))|(?:cover|pay|reimburse|absorb)\\w*\\s+(?:any|the)\\s+(?:irs\\s+|tax\\s+)?penalt",
+        "(?:irs|tax|penalty|excise)\\s+relief|relief from (?:the )?(?:irs|penalt|tax)|request\\w*\\s+(?:\\w+\\s+){0,3}relief",
+        "march\\s*18",
+        "(?:last|prior|previous) year'?s\\s+(?:annual\\s+|required\\s+)?(?:distribution|withdrawal|rmd)",
+        "(?:taken|paid|made|distributed|withdrawn)\\s+late\\b(?!\\s+(?:in\\s+(?:the\\s+year|november|december|2026)|this|next)\\b)|\\blate\\s+(?:distribution|withdrawal|payment|rmd)",
+        "(?:not|never)\\s+(?:taken|made|paid|withdrawn)\\s+(?:\\w+\\s+){0,2}(?:last year|in 2025|on time)",
+        "(?:catch(?:-| )?up|caught up)\\s+(?:\\w+\\s+){0,3}(?:distribution|withdrawal|rmd|payment)|(?:distribution|withdrawal|rmd|payment)\\s+(?:\\w+\\s+){0,2}catch(?:-| )?up|made up (?:the|for)"
+      ]
+    },
+    {
+      "fid": "gross_only",
+      "desc": "gross return 1.4% stated without the net return 1.2%",
+      "patterns": [
+        "(?<![\\d.,])1\\.40?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)"
+      ]
+    }
+  ],
+  "gross_return": "1.4%",
+  "net_return": "1.2%"
+}

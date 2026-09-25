@@ -1,0 +1,78 @@
+{
+ "pair_id": "t2_hd_4",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "The Home Depot, Inc.",
+ "ticker": "HD",
+ "split": "test",
+ "prior": {
+  "fiscal_year_end": "2025-02-02",
+  "url": "https://www.sec.gov/Archives/edgar/data/354950/000035495025000085/hd-20250202.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2026-02-01",
+  "url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026019436/hd-20260201.htm"
+ },
+ "words": 886,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "modified",
+   "prior_heading": "We may incur property, casualty or other losses not covered by our insurance.",
+   "current_heading": "We may incur property, casualty or other losses not covered by our insurance.",
+   "similarity": 0.963,
+   "diff": [
+    "insert: [] -> [third-party]",
+    "replace: [occurrence] -> [incurrence]",
+    "insert: [] -> [losses from]",
+    "insert: [] -> [Table of Contents]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The self-insurance risk factor now describes the catastrophic coverage as \"third-party insurance coverage\" and rephrases \"the occurrence of significant claims\" as \"the incurrence of losses from significant claims\"; the list of self-insured categories and the adverse-impact language are unchanged.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "Minor: the edits are stylistic rewording with identical meaning (catastrophic coverage above self-insurance levels was already insurance from outside carriers) plus a stray \"Table of Contents\" page artifact, with no new risk, event, severity change or number."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: stylistic rewording with identical meaning, since coverage above self-insurance levels was already disclosed and is necessarily third-party; the risk categories, retention approach and listed adverse outcomes are unchanged, so no criterion 1 to 4 change."
+    }
+   }
+  },
+  {
+   "aid": "a02",
+   "status": "unchanged",
+   "prior_heading": "Changes in accounting standards and subjective assumptions, estimates and judgments by management related to complex accounting matters could significantly affect our financial results or financial condition.",
+   "current_heading": "Changes in accounting standards and subjective assumptions, estimates and judgments by management related to complex accounting matters could significantly affect our financial results or financial condition.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a03",
+   "status": "modified",
+   "prior_heading": "We are involved from time to time in a number of legal, regulatory and governmental enforcement proceedings. While we cannot predict the outcomes of those proceedings and other contingencies with certainty, certain of them could adversely affect our operations and reputation and/or increase our costs.",
+   "current_heading": "We are involved from time to time in a number of legal, regulatory and governmental enforcement proceedings. While we cannot predict the outcomes of those proceedings and other contingencies with certainty, certain of them could adversely affect our operations and reputation and/or increase our costs.",
+   "similarity": 0.996,
+   "diff": [
+    "insert: [] -> [brand and]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The legal proceedings risk factor now says involvement in proceedings could \"impact the brand and reputation of the Company\" instead of \"impact the reputation of the Company\"; everything else is identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "Minor: adding \"brand\" beside \"reputation\" is stylistic rewording of the same reputational harm, with no new proceeding, exposure, likelihood or severity change, or quantitative change."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: adding \"brand\" beside \"reputation\" is stylistic rewording of the same reputational harm, with no new proceeding, exposure, likelihood or severity change under criteria 1 to 4."
+    }
+   }
+  }
+ ]
+}

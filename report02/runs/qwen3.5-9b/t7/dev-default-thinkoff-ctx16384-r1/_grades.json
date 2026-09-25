@@ -1,0 +1,343 @@
+{
+ "task": "t7",
+ "model": "qwen3.5:9b",
+ "items": {
+  "t7_p01": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C2",
+     "hallucination": false,
+     "got": "",
+     "expected": "Dividend Growth Equity: 14.62% over one year, 12.07% over five years and 11.84% over ten years, annualized, for periods ended December 31, 2025, gross of fees.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C3",
+     "hallucination": false,
+     "got": "",
+     "expected": "Since its April 1, 2009 inception through December 31, 2025, the Intermediate Tax-Exempt Composite returned 3.28% annualized gross of fees and 2.76% annualized net of fees.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p3",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C7",
+     "hallucination": false,
+     "got": "",
+     "expected": "Named to the Penwarden Adviser Review list of Top 50 Independent Advisers in the Mid-Atlantic, Ardwell & Tamsett has served Virginia families for more than two decades.",
+     "extra": {
+      "category_match": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 0,
+   "group": "t7_p01",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 0.75,
+    "prompt_tokens": 2043,
+    "output_tokens": 10,
+    "output_tokens_per_sec": 73.1,
+    "prompt_tokens_per_sec": 3628.8,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 7908
+   }
+  },
+  "t7_p02": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C6",
+     "hallucination": false,
+     "got": "the Fund has never finished a calendar year in negative territory, through the 2018 selloff, the 2020 drawdown and the 2022 rate shock.",
+     "expected": "Capital preservation comes first: the Fund has never finished a calendar year in negative territory, through the 2018 selloff, the 2020 drawdown and the 2022 rate shock.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C4",
+     "hallucination": false,
+     "got": "the Fund returned 71.4% net of fees.",
+     "expected": "The last restructuring cycle shows what the strategy can do: from the March 23, 2020 market low through June 30, 2021, the Fund returned 71.4% net of fees.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "flag_03",
+     "score": 0.0,
+     "verdict": "FLAGGED_DECOY",
+     "kind": "extra_flag",
+     "error_kind": "decoy_flagged",
+     "trap": "decoy",
+     "hallucination": true,
+     "got": "A hypothetical portfolio of 54% global equities, 36% U.S. investment-grade bonds and 10% in the Fund, rebalanced each January 1, would have returned 7.98% annualized from 2017 through 2025...",
+     "expected": "",
+     "extra": {
+      "category": "C5",
+      "reason": "The hypothetical performance is presented without clearly disclosing that it uses the Fund's actual annual net returns from Slide 4 for the sleeve while using indices for others, and does not explicitly state that the index-fund fees were excluded from the comparison calculation as a material limita",
+      "quote_grounded": true,
+      "needs_adjudication": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 3,
+   "group": "t7_p02",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 4.75,
+    "prompt_tokens": 2180,
+    "output_tokens": 370,
+    "output_tokens_per_sec": 90.3,
+    "prompt_tokens_per_sec": 3588.2,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 7910
+   }
+  },
+  "t7_p03": {
+   "units": [
+    {
+     "uid": "flag_01",
+     "score": 0.0,
+     "verdict": "FLAGGED_DECOY",
+     "kind": "extra_flag",
+     "error_kind": "decoy_flagged",
+     "trap": "decoy",
+     "hallucination": true,
+     "got": "In May 2026, Rennick Fiduciary Survey named Calderstone & Pym one of its 2026 Client Service Leaders among independent advisers in New England.",
+     "expected": "",
+     "extra": {
+      "category": "C7",
+      "reason": "The third-party rating is presented without the required date it was given, the period covered, who gave it, and whether compensation was paid for it.",
+      "quote_grounded": true,
+      "needs_adjudication": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 1,
+   "group": "t7_p03",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 1.73,
+    "prompt_tokens": 1789,
+    "output_tokens": 108,
+    "output_tokens_per_sec": 91.4,
+    "prompt_tokens_per_sec": 3705.2,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 7908
+   }
+  },
+  "t7_p04": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C1",
+     "hallucination": false,
+     "got": "\"A client couple let me share their note from last week: 'Dana took a shoebox of statements from four different firms and turned it into one plan we finally understand. Hiring her team was the best financial decision we have made in retirement.'\"",
+     "expected": "A client couple let me share their note from last week: \"Dana took a shoebox of statements from four different firms and turned it into one plan we finally understand. Hiring her team was the best financial decision we have made in retirement.\"",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C8",
+     "hallucination": false,
+     "got": "\"Three of the positions we added to client portfolios in early 2025 finished the year up 112%, 74% and 58%: Quillon Grid Systems, Tamsworth Biologics and Arnbeck Freight.\"",
+     "expected": "Three of the positions we added to client portfolios in early 2025 finished the year up 112%, 74% and 58%: Quillon Grid Systems, Tamsworth Biologics and Arnbeck Freight.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p3",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C6",
+     "hallucination": false,
+     "got": "\"Our tax-loss harvesting program adds at least 1.5% a year to every client's after-tax return, in up markets and down.\"",
+     "expected": "Our tax-loss harvesting program adds at least 1.5% a year to every client's after-tax return, in up markets and down.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "flag_03",
+     "score": 0.0,
+     "verdict": "UNPLANTED_FLAG",
+     "kind": "extra_flag",
+     "error_kind": "unplanted",
+     "trap": "none",
+     "hallucination": true,
+     "got": "\"Three of the positions we added to client portfolios in early 2025 finished the year up 112%, 74% and 58%: Quillon Grid Systems, Tamsworth Biologics and Arnbeck Freight.\"",
+     "expected": "",
+     "extra": {
+      "category": "C3",
+      "reason": "Performance is shown for a portfolio other than a private fund (specific positions) without results for the required 1-, 5-, and 10-year periods or the life of the portfolio.",
+      "quote_grounded": true,
+      "needs_adjudication": true
+     }
+    },
+    {
+     "uid": "flag_04",
+     "score": 0.0,
+     "verdict": "UNPLANTED_FLAG",
+     "kind": "extra_flag",
+     "error_kind": "unplanted",
+     "trap": "none",
+     "hallucination": true,
+     "got": "\"Three of the positions we added to client portfolios in early 2025 finished the year up 112%, 74% and 58%: Quillon Grid Systems, Tamsworth Biologics and Arnbeck Freight.\"",
+     "expected": "",
+     "extra": {
+      "category": "C4",
+      "reason": "Performance time periods or results are chosen by selecting only three specific positions that performed well in a single year, which may not be fair and balanced compared to the total portfolio performance over a longer record.",
+      "quote_grounded": true,
+      "needs_adjudication": true
+     }
+    },
+    {
+     "uid": "flag_06",
+     "score": 0.0,
+     "verdict": "UNPLANTED_FLAG",
+     "kind": "extra_flag",
+     "error_kind": "unplanted",
+     "trap": "none",
+     "hallucination": true,
+     "got": "\"Our tax-loss harvesting program adds at least 1.5% a year to every client's after-tax return, in up markets and down.\"",
+     "expected": "",
+     "extra": {
+      "category": "C6",
+      "reason": "The statement implies a guaranteed or absolute result ('adds at least', 'every client') which is a material statement of fact that the adviser could not substantiate given market variability.",
+      "quote_grounded": true,
+      "needs_adjudication": true
+     }
+    },
+    {
+     "uid": "flag_07",
+     "score": 0.0,
+     "verdict": "FLAGGED_DECOY",
+     "kind": "extra_flag",
+     "error_kind": "decoy_flagged",
+     "trap": "decoy",
+     "hallucination": true,
+     "got": "\"In February 2026, Brenlow Adviser Quarterly named Fenwright Ostler to its list of 40 Independent Firms to Watch in the Mountain West... We paid Brenlow a $2,400 licensing fee to use the designation in our marketing; there is no fee to be considered for the list.\"",
+     "expected": "",
+     "extra": {
+      "category": "C7",
+      "reason": "The third-party rating or ranking lacks the date it was given (only February 2026 is mentioned generally), the specific period covered by the data used for the ranking, and whether compensation was paid for the listing itself versus just usage rights.",
+      "quote_grounded": true,
+      "needs_adjudication": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 7,
+   "group": "t7_p04",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.4,
+    "prompt_tokens": 1715,
+    "output_tokens": 802,
+    "output_tokens_per_sec": 90.4,
+    "prompt_tokens_per_sec": 3725.3,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 7910
+   }
+  },
+  "t7_p05": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C5",
+     "hallucination": false,
+     "got": "",
+     "expected": "A couple who retired on January 1, 2000 with $1,000,000 and followed the Three-Bucket Income Plan we use today could have withdrawn $35,000 a year, raised it each year for inflation, and still had $1.4 million at the end of 2025.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C9",
+     "hallucination": false,
+     "got": "",
+     "expected": "A ladder of individual bonds, each held until it matures, gives you a predictable schedule of income, lets you match maturities to the years you will need the money and takes the guesswork out of retirement spending.",
+     "extra": {
+      "category_match": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 0,
+   "group": "t7_p05",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 0.65,
+    "prompt_tokens": 1684,
+    "output_tokens": 10,
+    "output_tokens_per_sec": 97.2,
+    "prompt_tokens_per_sec": 3773.2,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 7910
+   }
+  }
+ }
+}

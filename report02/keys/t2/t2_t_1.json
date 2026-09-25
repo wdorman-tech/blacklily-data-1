@@ -1,0 +1,291 @@
+{
+ "pair_id": "t2_t_1",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "AT&T Inc.",
+ "ticker": "T",
+ "split": "test",
+ "prior": {
+  "fiscal_year_end": "2024-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271725000013/t-20241231.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2025-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271726000120/t-20251231.htm"
+ },
+ "words": 6289,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "modified",
+   "prior_heading": "Adverse changes in the U.S. securities markets, increasing interest rates, rising inflation and medical costs could materially increase our benefit plan costs and future funding requirements.",
+   "current_heading": "Adverse changes in the U.S. securities markets, a higher interest rate environment, rising inflation and medical costs could materially increase our benefit plan costs and future funding requirements.",
+   "similarity": 0.981,
+   "diff": [
+    "replace: [increasing] -> [a higher]",
+    "replace: [rates,] -> [rate environment,]",
+    "delete: [7] -> []"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The headline replaces \"increasing interest rates\" with \"a higher interest rate environment\" as a driver of benefit plan costs; the body is unchanged apart from a page-number artifact.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "Minor: the headline rewording names the same interest rate exposure with no change to the body, the other assumptions, or the severity language, and the only other difference is a page number."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: stylistic rewording of the same interest rate exposure with no change to the risk, its severity, or any figure, plus a formatting artifact."
+    }
+   }
+  },
+  {
+   "aid": "a02",
+   "status": "modified",
+   "prior_heading": "Inflationary pressures on costs, such as inputs for devices we sell and network components, labor and distribution costs, may impact our network construction, our financial condition or results of operations.",
+   "current_heading": "Inflationary pressures on costs, such as inputs for devices we sell and network components, labor and distribution costs, may impact our network construction, our financial condition or results of operations.",
+   "similarity": 0.959,
+   "diff": [
+    "insert: [] -> [7]",
+    "insert: [] -> [Recent spending by hyperscalers and others to support AI is beginning to pressure supply chains for goods such as semiconductors and other network components.]",
+    "insert: [] -> [and supply]",
+    "replace: [offerings,] -> [offerings from us or our competitors,]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds a new sentence that recent spending by hyperscalers and others to support AI is beginning to pressure supply chains for semiconductors and other network components, and widens the offset discussion from cost pressures to \"cost and supply pressures\".",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: a new supply-chain exposure (AI-driven demand for semiconductors and network components) is disclosed, stated as already beginning (criterion 3)."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1 and 2: a new supply-chain exposure and a new specific development (AI-driven hyperscaler demand for semiconductors) is disclosed."
+    }
+   }
+  },
+  {
+   "aid": "a03",
+   "status": "modified",
+   "prior_heading": "Adverse changes in global financial markets could limit our ability and our larger customers’ and suppliers’ ability to access capital or increase the cost of capital needed to fund business operations.",
+   "current_heading": "Adverse changes in global financial markets could limit our ability and our larger customers’ and suppliers’ ability to access capital or increase the cost of capital needed to fund business operations.",
+   "similarity": 0.547,
+   "diff": [
+    "delete: [A company’s cost of borrowing is affected by evaluations given by various credit rating agencies, and these agencies have been applying tighter credit standards when evaluating debt levels and future growth prospects.] -> []"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Deletes the sentence stating that credit rating agencies have been applying tighter credit standards when evaluating debt levels and future growth prospects.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: a previously disclosed adverse development (tighter rating agency standards affecting cost of borrowing) is removed, softening the risk (criterion 3)."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1 and 3: a previously disclosed adverse development (tighter rating agency standards) is removed, softening the borrowing-cost risk."
+    }
+   }
+  },
+  {
+   "aid": "a04",
+   "status": "modified",
+   "prior_heading": "Our international operations increase our exposure to political instability, to changes in the international economy and to regulation on our business, and these risks could offset our expected growth opportunities.",
+   "current_heading": "Our international operations increase our exposure to political instability, to changes in the international economy and to regulation on our business, and these risks could offset our expected growth opportunities.",
+   "similarity": 0.999,
+   "diff": [
+    "delete: [8] -> []"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "No change to the risk factor text; the only difference is a page number (8) that fell inside the prior-year body.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "Minor: the difference is a page-number layout artifact with no change in wording or substance."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: a formatting artifact equivalent to punctuation, with no change in substance."
+    }
+   }
+  },
+  {
+   "aid": "a05",
+   "status": "modified",
+   "prior_heading": "Changes to federal, state and foreign government regulations and decisions in regulatory proceedings, as well as private litigation, could further increase our operating costs and/or alter customer perceptions of our operations, which could materially adversely affect us.",
+   "current_heading": "Changes to federal, state and foreign government regulations and decisions in regulatory proceedings, as well as private litigation, could further increase our operating costs and/or alter customer perceptions of our operations, which could materially adversely affect us.",
+   "similarity": 0.567,
+   "diff": [
+    "replace: [deployment,,] -> [deployment]",
+    "delete: [in response to the Federal Aviation Administration (FAA) questioning whether cell sites transmitting C-Band spectrum could impact radio altimeter equipment on airplanes, we voluntarily committed to temporary, precautionary measures near certain airports through January 1, 2028, which may have limite] -> []",
+    "insert: [] -> [state rate regulation of broadband]",
+    "insert: [] -> [8]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Drops the disclosure of AT&T's voluntary commitment to temporary C-Band precautionary measures near certain airports through January 1, 2028 in response to FAA radio altimeter concerns, and adds state rate regulation of broadband to the issues driving proposed legislation.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2: a specific regulatory development (the FAA C-Band airport commitment) is dropped and a new regulatory issue (state rate regulation of broadband) is referenced."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 2: a specific regulatory matter (the FAA C-Band commitment) is dropped and a new regulatory area (state broadband rate regulation) is referenced."
+    }
+   }
+  },
+  {
+   "aid": "a06",
+   "status": "modified",
+   "prior_heading": "Extreme weather events and other potential effects of climate change may impose risk of damage to our infrastructure, our ability to provide services, and may cause changes in federal, state and foreign government regulation, all of which may result in potential adverse impact to our financial results.",
+   "current_heading": "Extreme weather events and other potential effects of climate change may impose risk of damage to our infrastructure, our ability to provide services, and may cause changes in federal, state and foreign government regulation, all of which may result in potential adverse impact to our financial results.",
+   "similarity": 0.993,
+   "diff": [
+    "replace: [climate change’s] -> [its]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "Replaces \"climate change's impacts\" with \"its impacts\" in the final sentence.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "Minor: stylistic rewording with identical meaning."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: stylistic rewording with identical meaning."
+    }
+   }
+  },
+  {
+   "aid": "a07",
+   "status": "modified",
+   "prior_heading": "Continuing growth in and the converging nature of wireless and broadband services will require us to deploy significant amounts of capital and require ongoing access to spectrum in order to provide attractive services to customers.",
+   "current_heading": "Continuing growth in and the converging nature of wireless and broadband services will require us to deploy significant amounts of capital and require ongoing access to spectrum in order to provide attractive services to customers.",
+   "similarity": 0.169,
+   "diff": [
+    "replace: [The COVID-19 pandemic] -> [Recent world events and trends]",
+    "replace: [bandwidth from changes in work and learn from home trends.] -> [bandwidth.]",
+    "replace: [artificial intelligence (AI)] -> [AI]",
+    "replace: [subscriber] -> [connectivity]",
+    "replace: [network.] -> [network and where we offer our fixed wireless access product.]",
+    "delete: [9] -> []",
+    "insert: [] -> [standalone or converged]",
+    "delete: [In 2023, the FCC’s statutory authority to conduct spectrum auctions lapsed and it is uncertain when Congress will act to reauthorize it. Also in 2023, the federal government released a national spectrum strategy that focused on spectrum sharing but did not include terms of future spectrum sharing mo] -> []"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Deletes the disclosure that the FCC's spectrum auction authority lapsed in 2023 and that the national spectrum strategy left spectrum availability uncertain, replaces the COVID-19 pandemic with \"recent world events and trends\", and adds the fixed wireless access product to the network expansion.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2: a specific regulatory development (the lapse of FCC auction authority and the 2023 national spectrum strategy) and a named event (COVID-19) are dropped and a product (fixed wireless access) is added, removing a stated spectrum-availability uncertainty (criterion 1)."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 2: a specific regulatory development (the lapsed FCC auction authority and national spectrum strategy) and a named event (COVID-19) are dropped, and a new product (fixed wireless access) is referenced."
+    }
+   }
+  },
+  {
+   "aid": "a08",
+   "status": "modified",
+   "prior_heading": "Increasing competition could materially adversely affect our operating results.",
+   "current_heading": "Increasing competition could materially adversely affect our operating results.",
+   "similarity": 0.999,
+   "diff": [
+    "insert: [] -> [9]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "No change to the risk factor text; the only difference is a page number (9) that now falls inside the current-year body.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "Minor: the difference is a page-number layout artifact with no change in wording or substance."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: a formatting artifact equivalent to punctuation, with no change in substance."
+    }
+   }
+  },
+  {
+   "aid": "a09",
+   "status": "unchanged",
+   "prior_heading": "Intellectual property rights may be inadequate to take advantage of business opportunities, which may materially adversely affect our operations.",
+   "current_heading": "Intellectual property rights may be inadequate to take advantage of business opportunities, which may materially adversely affect our operations.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a10",
+   "status": "modified",
+   "prior_heading": "Incidents or public assertions leading to damage to our reputation or questions about our business conduct, and any resulting lawsuits, claims or other legal proceedings, could have a material adverse effect on our business.",
+   "current_heading": "Incidents or public assertions leading to damage to our reputation or questions about our business conduct, and any resulting lawsuits, claims or other legal proceedings, could have a material adverse effect on our business.",
+   "similarity": 0.734,
+   "diff": [
+    "insert: [] -> [the safety,]",
+    "replace: [issues related to] -> [of]",
+    "insert: [] -> [or outside]",
+    "replace: [employees.] -> [employees, contractors or other third parties.]",
+    "replace: [public-health] -> [public health]",
+    "delete: [10] -> []"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds safety as a reputational factor and widens the litigation exposure from ordinary-course suits over employee misconduct to suits arising in or outside the ordinary course over misconduct by employees, contractors or other third parties.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 3: the scope of the litigation and reputation risk is widened to non-ordinary-course proceedings and to contractors and third parties, and safety is a newly disclosed factor (criterion 1)."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1 and 3: a new exposure (safety) is added and the scope of covered proceedings and actors is widened."
+    }
+   }
+  },
+  {
+   "aid": "a11",
+   "status": "unchanged",
+   "prior_heading": "Our business is subject to risks related to public health crises.",
+   "current_heading": "Our business is subject to risks related to public health crises.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a12",
+   "status": "modified",
+   "prior_heading": "Customer adoption of new software-based technologies may require higher-quality services from us, and meeting these demands could create supply chain issues and could increase capital costs.",
+   "current_heading": "Customer adoption of new software-based technologies may require higher-quality services from us, and meeting these demands could create supply chain issues and could increase capital costs.",
+   "similarity": 0.989,
+   "diff": [
+    "insert: [] -> [for using AI-enabled applications and]",
+    "insert: [] -> [10]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds customer use of mobile devices for AI-enabled applications as a driver of demand for higher-quality services.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: a new demand driver (AI-enabled applications) behind the capital cost and supply chain risk is disclosed, widening its scope (criterion 3)."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1 and 2: a new demand driver and development (AI-enabled applications) is disclosed as part of the risk."
+    }
+   }
+  }
+ ]
+}

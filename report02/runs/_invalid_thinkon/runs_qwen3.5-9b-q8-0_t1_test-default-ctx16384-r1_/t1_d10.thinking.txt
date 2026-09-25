@@ -1,0 +1,198 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from the provided fund offering document (Amended and Restated Agreement of Limited Partnership).
+    *   Output Format: JSON object only. No markdown, no preamble, no commentary.
+    *   Constraints:
+        *   Accuracy is paramount. No guessing, no inferring market standards.
+        *   Values must be supported by text in the document.
+        *   If not found: `NOT_FOUND`.
+        *   If not applicable: `NOT_APPLICABLE` (with quote).
+        *   Amendments/Supplements override original text (this is an Amended and Restated Agreement, so it's the current text).
+        *   Report variants if they exist.
+        *   Citations must be section identifiers.
+        *   Quotes must be verbatim.
+    *   Fields to extract: `fund_name`, `fund_domicile`, `fund_structure`, `management_fee`, `performance_fee`, `hurdle_rate`, `high_water_mark`, `minimum_initial_investment`, `lockup_period`, `redemption_frequency`, `redemption_notice_days`, `gate_provision`, `key_man_provision`, `gp_commitment`, `fund_term`, `auditor`, `administrator`, `prime_broker`, `legal_counsel`, `mfn_election`.
+
+2.  **Scan the Document for Each Field:**
+
+    *   **fund_name**:
+        *   Search: "name of the Partnership", "Fenlight Carrow Ventures II".
+        *   Text: "The name of the Partnership is Fenlight Carrow Ventures II, L.P." (Section 2.1).
+        *   Value: `Fenlight Carrow Ventures II, L.P.`
+        *   Citation: `Section 2.1`
+        *   Quote: `"The name of the Partnership is Fenlight Carrow Ventures II, L.P."`
+
+    *   **fund_domicile**:
+        *   Search: "Delaware", "jurisdiction", "organized".
+        *   Text: "A Delaware Limited Partnership" (Header). Also Section 2.1: "The Partners hereby continue the Partnership as a limited partnership under the Delaware Revised Uniform Limited Partnership Act...".
+        *   Value: `Delaware`
+        *   Citation: `Section 2.1` (or Header, but Section 2.1 is safer for structured data). Let's use Section 2.1 text "under the Delaware Revised Uniform Limited Partnership Act". Or Header "A Delaware Limited Partnership". The prompt asks for section or appendix identifier. Header isn't a section number. Section 2.1 says "Delaware Revised Uniform Limited Partnership Act".
+        *   Value: `Delaware`
+        *   Citation: `Section 2.1`
+        *   Quote: `"The Partners hereby continue the Partnership as a limited partnership under the Delaware Revised Uniform Limited Partnership Act"`
+
+    *   **fund_structure**:
+        *   Search: "Structure", "Open-end", "Closed-end", "Master-feeder".
+        *   Text: Section 2.4: "The Partnership is a closed-end investment vehicle." ... "The Partnership is a stand-alone vehicle: it is not a feeder fund into, and does not invest through, any master fund..."
+        *   Value: `Closed-end; Stand-alone (not master-feeder)`
+        *   Citation: `Section 2.4`
+        *   Quote: `"The Partnership is a closed-end investment vehicle."` and `"The Partnership is a stand-alone vehicle: it is not a feeder fund into, and does not invest through, any master fund"`
+
+    *   **management_fee**:
+        *   Search: "Management Fee", "Section 5.1".
+        *   Text: Section 5.1(a)(i): "two and one-half percent (2.50%) per annum of the aggregate Capital Commitments of the Limited Partners, other than Affiliated Limited Partners" for Fee Year 1-5.
+        *   Text: Section 5.1(a)(ii): "for each Fee Year commencing with Fee Year 6... the annual rate applicable for the immediately preceding Fee Year less twenty-five basis points (0.25%)... provided that in no event shall the annual rate be less than one and one-half percent (1.50%)".
+        *   Text: Section 5.1(b): "the annual rate is 2.25% for Fee Year 6, 2.00% for Fee Year 7, 1.75% for Fee Year 8, and the Floor Rate of 1.50% for Fee Year 9 and each Fee Year thereafter."
+        *   Text: Section 5.1(c): "No Management Fee is charged in respect of the GP Commitment or the Capital Commitment of any Affiliated Limited Partner".
+        *   Value: `2.50% per annum on aggregate Capital Commitments of Limited Partners (other than Affiliated Limited Partners) for Fee Years 1-5; declining by 0.25% annually thereafter to a floor of 1.50%; No fee on GP Commitment or Affiliated Limited Partner Commitments`
+        *   Citation: `Section 5.1`
+        *   Quote: `"two and one-half percent (2.50%) per annum of the aggregate Capital Commitments of the Limited Partners, other than Affiliated Limited Partners"`
+
+    *   **performance_fee**:
+        *   Search: "Carried Interest", "Performance Fee", "Allocation".
+        *   Text: Section 6.2(b): "eighty percent (80%) to that Limited Partner and twenty percent (20%) to the General Partner".
+        *   Text: Section 6.2(c): "seventy-five percent (75%) to that Limited Partner and twenty-five percent (25%) to the General Partner."
+        *   Text: Section 6.3: "The General Partner's entitlement to Carried Interest under Section 6.2(b) arises as soon as a Limited Partner has received cumulative distributions equal to its aggregate Capital Contributions".
+        *   Value: `20% (80/20 Split) until Step-Up Threshold; 25% (75/25 Split) thereafter`
+        *   Citation: `Section 6.2`
+        *   Quote: `"eighty percent (80%) to that Limited Partner and twenty percent (20%) to the General Partner"`
+
+    *   **hurdle_rate**:
+        *   Search: "Hurdle", "Preferred Return".
+        *   Text: Section 6.3: "The Limited Partners are not entitled to any preferred return, hurdle rate or other priority return on their Capital Contributions."
+        *   Value: `NOT_APPLICABLE`
+        *   Citation: `Section 6.3`
+        *   Quote: `"The Limited Partners are not entitled to any preferred return, hurdle rate or other priority return on their Capital Contributions."`
+
+    *   **high_water_mark**:
+        *   Search: "High-Water Mark", "Loss Carryforward".
+        *   Text: Section 6.6(b): "the Partnership does not maintain a high-water mark, loss carryforward account or similar mechanism, and no such mechanism applies to any Partner."
+        *   Value: `NOT_APPLICABLE` (or explicitly stated as not maintained)
+        *   Citation: `Section 6.6`
+        *   Quote: `"the Partnership does not maintain a high-water mark, loss carryforward account or similar mechanism"`
+
+    *   **minimum_initial_investment**:
+        *   Search: "Minimum Commitment", "Subscription".
+        *   Text: Section 3.1: "The minimum Capital Commitment of each Limited Partner, other than an Affiliated Limited Partner, is $1,000,000; provided that the General Partner may, in its sole discretion, accept Capital Commitments of lesser amounts."
+        *   Value: `$1,000,000` (with caveat for Affiliated LPs)
+        *   Citation: `Section 3.1`
+        *   Quote: `"The minimum Capital Commitment of each Limited Partner, other than an Affiliated Limited Partner, is $1,000,000"`
+
+    *   **lockup_period**:
+        *   Search: "Lock-up", "Redeemable".
+        *   Text: Section 9.2: "No Limited Partner has the right to withdraw from the Partnership, or to redeem... at any time or for any reason... The Interests are not redeemable..."
+        *   Value: `Not Applicable (Closed-end, no redemptions)`
+        *   Citation: `Section 9.2`
+        *   Quote: `"No Limited Partner has the right to withdraw from the Partnership, or to redeem, withdraw or require the Partnership to repurchase all or any part of its Interest or its Capital Account, at any time or for any reason"`
+
+    *   **redemption_frequency**:
+        *   Search: "Redeem", "Frequency".
+        *   Text: Section 9.2: "The Interests are not redeemable..."
+        *   Value: `NOT_APPLICABLE` (Closed-end)
+        *   Citation: `Section 9.2`
+        *   Quote: `"The Interests are not redeemable"`
+
+    *   **redemption_notice_days**:
+        *   Search: "Notice", "Redeem".
+        *   Text: Section 9.2 says no redemption. Section 9.3 mentions withdrawal notice (15 days) but that's a forced withdrawal, not voluntary redemption.
+        *   Value: `NOT_FOUND` (Since there is no redemption mechanism).
+        *   Citation: ``
+        *   Quote: ``
+
+    *   **gate_provision**:
+        *   Search: "Gate", "Redemption Gate".
+        *   Text: No mention of gates in the document. Section 9.2 says not redeemable.
+        *   Value: `NOT_FOUND`
+        *   Citation: ``
+        *   Quote: ``
+
+    *   **key_man_provision**:
+        *   Search: "Key Person", "Event".
+        *   Text: Section 4.2: "The 'Key Persons' are Delphine Wrexcombe and Tobias Quennell..."
+        *   Text: Section 4.3(a): "A 'Key Person Event' occurs if, during the Investment Period, either Key Person dies or becomes permanently incapacitated, ceases to devote substantially all of his or her business time and attention to the affairs of the Partnership and the Affiliated Funds, or ceases to be a managing member of the General Partner."
+        *   Text: Section 4.3(b): "Upon a Key Person Event, the Investment Period is suspended automatically..."
+        *   Value: `Delphine Wrexcombe and Tobias Quennell; triggers suspension of Investment Period`
+        *   Citation: `Section 4.2`, `Section 4.3`
+        *   Quote: `"The 'Key Persons' are Delphine Wrexcombe and Tobias Quennell"`
+
+    *   **gp_commitment**:
+        *   Search: "General Partner Commitment", "GP Commitment".
+        *   Text: Section 3.2: "The General Partner... shall make a Capital Commitment to the Partnership equal to not less than two percent (2.0%) of the aggregate Capital Commitments of all Partners..."
+        *   Value: `Not less than 2.0% of aggregate Capital Commitments`
+        *   Citation: `Section 3.2`
+        *   Quote: `"The General Partner... shall make a Capital Commitment to the Partnership equal to not less than two percent (2.0%) of the aggregate Capital Commitments of all Partners"`
+
+    *   **fund_term**:
+        *   Search: "Term", "Anniversary".
+        *   Text: Section 2.3: "The term of the Partnership shall continue until the tenth (10th) anniversary of the Initial Closing Date... provided that the General Partner may extend the term for up to three (3) successive periods of one (1) year each..."
+        *   Value: `10 years, extendable by up to 3 one-year periods`
+        *   Citation: `Section 2.3`
+        *   Quote: `"The term of the Partnership shall continue until the tenth (10th) anniversary of the Initial Closing Date... provided that the General Partner may extend the term for up to three (3) successive periods of one (1) year each"`
+
+    *   **auditor**:
+        *   Search: "Auditor", "Accountants".
+        *   Text: Section 8.1: "The General Partner has appointed Brisley Ashcombe LLP, independent certified public accountants, as auditor of the Partnership..."
+        *   Value: `Brisley Ashcombe LLP`
+        *   Citation: `Section 8.1`
+        *   Quote: `"The General Partner has appointed Brisley Ashcombe LLP, independent certified public accountants, as auditor of the Partnership"`
+
+    *   **administrator**:
+        *   Search: "Administrator".
+        *   Text: Section 8.2: "The Partnership has engaged Stavely Rook Fund Services, LLC (the 'Administrator')..."
+        *   Value: `Stavely Rook Fund Services, LLC`
+        *   Citation: `Section 8.2`
+        *   Quote: `"The Partnership has engaged Stavely Rook Fund Services, LLC (the 'Administrator')"`
+
+    *   **prime_broker**:
+        *   Search: "Prime Broker".
+        *   Text: Section 8.4: "The Partnership does not engage, and does not intend to engage, a prime broker..."
+        *   Value: `NOT_APPLICABLE` (Explicitly stated they do not engage one)
+        *   Citation: `Section 8.4`
+        *   Quote: `"The Partnership does not engage, and does not intend to engage, a prime broker"`
+
+    *   **legal_counsel**:
+        *   Search: "Counsel", "Law Firm".
+        *   Text: Section 8.3: "Quarrington Voss LLP acts as counsel to the Partnership..."
+        *   Value: `Quarrington Voss LLP`
+        *   Citation: `Section 8.3`
+        *   Quote: `"Quarrington Voss LLP acts as counsel to the Partnership"`
+
+    *   **mfn_election**:
+        *   Search: "Most Favored Nation", "Side Letters".
+        *   Text: Section 10.2: "Each MFN Eligible Limited Partner may elect... to receive the benefit of any provision granted in a side letter..."
+        *   Value: `Yes, for Limited Partners with Capital Commitment >= $10,000,000`
+        *   Citation: `Section 10.2`
+        *   Quote: `"Each MFN Eligible Limited Partner may elect... to receive the benefit of any provision granted in a side letter"`
+
+3.  **Refine Values and Citations:**
+    *   Ensure JSON validity (escape quotes if necessary, though none expected in values).
+    *   Ensure `NOT_FOUND` vs `NOT_APPLICABLE`.
+        *   `redemption_frequency`: Since it's closed-end, redemption isn't applicable. `NOT_APPLICABLE` is better than `NOT_FOUND` because the concept exists but doesn't apply to this structure. However, the prompt says "If the document does not state a term, the value is exactly NOT_FOUND". If the document states it doesn't exist (Section 9.2), then `NOT_APPLICABLE`. Section 9.2 explicitly says "The Interests are not redeemable". So `NOT_APPLICABLE` is correct for redemption fields in a closed-end fund where the text explicitly negates the possibility.
+        *   `redemption_notice_days`: Same logic. `NOT_APPLICABLE`.
+        *   `gate_provision`: No mention of gates at all. `NOT_FOUND`.
+    *   Check `management_fee` citation: Section 5.1 covers it.
+    *   Check `performance_fee` citation: Section 6.2 covers the splits.
+    *   Check `hurdle_rate`: Section 6.3 explicitly says no hurdle. `NOT_APPLICABLE`.
+    *   Check `high_water_mark`: Section 6.6(b) explicitly says no high water mark. `NOT_APPLICABLE`.
+
+4.  **Final Review against Constraints:**
+    *   JSON only? Yes.
+    *   No markdown fences? Yes.
+    *   Keys match exactly? Yes.
+    *   Values supported by text? Yes.
+    *   Quotes verbatim? Yes.
+    *   Citations accurate? Yes.
+
+5.  **Construct JSON:**
+    *   Assemble the extracted data into the required structure.
+    *   Double check quotes inside strings (e.g., "Fenlight Carrow Ventures II, L.P."). Need to escape double quotes if they appear in the value string itself, but I will use single quotes or ensure escaping. The prompt asks for a JSON object. Standard JSON requires double quotes for keys and string values. Internal double quotes must be escaped `\"`.
+    *   Wait, the instruction says "Return ONLY a JSON object. No markdown fence".
+    *   Check specific field requirements: "Each field maps to an object with exactly three string keys: 'value', 'citation', 'quote'".
+
+    *   *Self-Correction on `redemption_frequency` and `redemption_notice_days`*: The document states "The Interests are not redeemable". This makes the term effectively non-existent for this fund. `NOT_APPLICABLE` is appropriate per Rule 3 ("If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE").
+    *   *Self-Correction on `gate_provision`*: The document does not mention gates. `NOT_FOUND`.
+    *   *Self-Correction on `prime_broker`*: Document says "does not engage... a prime broker". This means the term exists but is null/not applicable. `NOT_APPLICABLE`.
+
+    *   *Refining `management_fee` value*: Needs to be concise but accurate. "2.50% per annum on aggregate Capital Commitments of Limited Partners (other than Affiliated Limited Partners) for Fee Years 1-5; declining by 0.25% annually thereafter to

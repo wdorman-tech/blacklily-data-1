@@ -1,0 +1,38 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, return `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown, no preamble.
+    *   Question: "How frequently are advisory fees billed, and on what asset value are they calculated?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "frequently", "billed", "asset value", "calculated", "fee", "billing".
+
+3.  **Evaluate Document Content:**
+
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section: Item 5. Fees and Compensation > 5.2 Billing Method
+        *   Text: "Fees are billed quarterly in advance, based on the market value of the assets in each account on the last business day of the preceding calendar quarter."
+    *   `05_fee_schedule.md` (April 1, 2026):
+        *   Section: SECTION 5. BILLING > 5.1 Frequency and Basis
+        *   Text: "Wealth management and Fixed Income Mandate fees are billed quarterly in advance, based on the Billing Value of each account on the last business day of the preceding calendar quarter."
+    *   `06_policy_update_memo.md` (August 17, 2026):
+        *   Section: SECTION 5. FEE SCHEDULE: TOP BREAKPOINT
+        *   Text: "The change is effective for the billing period that began July 1, 2026." (Supersedes earlier fee schedules regarding breakpoints).
+
+4.  **Determine the Best Answer:**
+    *   The question asks about frequency and asset value basis.
+    *   `05_fee_schedule.md` is dated April 1, 2026. `01_brochure.md` is dated March 27, 2026. `06_policy_update_memo.md` is dated August 17, 2026.
+    *   The question asks generally about advisory fees.
+    *   `05_fee_schedule.md` Section 5.1 explicitly states: "Wealth management and Fixed Income Mandate fees are billed quarterly in advance, based on the Billing Value of each account on the last business day of the preceding calendar quarter."
+    *   `01_brochure.md` Section 5.2 says: "Fees are billed quarterly in advance, based on the market value of the assets..."
+    *   `06_policy_update_memo.md` updates fee breakpoints but doesn't change billing frequency or basis definition directly, though it references the Schedule and Brochure.
+    *   Since `05_fee_schedule.md` is more specific about "Billing Value" vs "market value" (though they are defined similarly) and is dated after the brochure but before the memo, I need to check if the memo changes anything relevant to frequency/basis. The memo says

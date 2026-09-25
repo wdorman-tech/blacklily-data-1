@@ -1,0 +1,45 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "What is the amount of capital that Quenby Holt Trust Company currently maintains, and what is its regulatory minimum?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "capital", "Quenby Holt Trust Company", "QHTC", "minimum", "maintains".
+
+3.  **Evaluate Document 1 (01_brochure.md):**
+    *   Section: Item 10. Other Financial Industry Activities and Affiliations > 10.1 Quenby Holt Trust Company.
+    *   Text: "QHTC is a trust company chartered under the laws of the State of South Dakota, with its office at 101 South Phillips Avenue, Suite 610, Sioux Falls, South Dakota 57104. QHTC is subject to supervision and examination by the South Dakota Division of Banking and is required to maintain minimum capital as prescribed by South Dakota law."
+    *   Analysis: This mentions that QHTC is *required* to maintain minimum capital as prescribed by law, but it does not state the *amount* currently maintained or the specific regulatory minimum amount. It just says "as prescribed by South Dakota law".
+
+4.  **Evaluate Document 2 (03_valuation_policy.md):**
+    *   Section: SECTION 1. PURPOSE AND SCOPE > 1.2 Scope.
+    *   Text: Discusses valuation of assets, QHTC values trust assets for fiduciary accountings. No mention of capital amounts.
+
+5.  **Evaluate Document 3 (05_fee_schedule.md):**
+    *   Section: SECTION 1. SCOPE > 1.1 Applicability.
+    *   Section: SECTION 3. TRUST COMPANY FEES > 3.1 Full Trustee.
+    *   Text: Discusses fees ($10,000 minimum per trust per year). No mention of QHTC's own capital requirements or current capital levels.
+
+6.  **Synthesize Findings:**
+    *   The question asks for the specific amount of capital currently maintained and the regulatory minimum.
+    *   Document 01_brochure.md states QHTC is "required to maintain minimum capital as prescribed by South Dakota law."
+    *   It does *not* provide the specific dollar amount or the current level of capital maintained.
+    *   Therefore, the specific detail asked for (the amount) is not in the documents.
+
+7.  **Determine Answer:**
+    *   Since the specific numbers/amounts are not provided, the answer must be "NOT_IN_DOCUMENTS".
+    *   Source document: "" (empty string as per instructions for NOT_IN_DOCUMENTS).
+    *   Section: "" (empty string).
+    *   Quote: "" (empty string).
+
+8.

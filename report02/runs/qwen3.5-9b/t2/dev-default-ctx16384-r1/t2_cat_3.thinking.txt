@@ -1,0 +1,128 @@
+The user wants me to compare two versions of a document (Prior Version vs Current Version) and identify material changes.
+I need to output a JSON object with a key "changes" containing a list of objects.
+Each object must have keys: "type", "heading", "description", "quote".
+
+Let's analyze the text provided.
+
+**Prior Version:**
+- Title: Caterpillar Inc.: Form 10-K for fiscal year ended 2024-12-31
+- Item 1A. Risk Factors (excerpt, prior year)
+- Section: **LEGAL & REGULATORY RISKS**
+- Subsection: ### New regulations or changes in financial services regulation could adversely impact Caterpillar and Cat Financial.
+- Subsection: ### We are subject to stringent environmental laws and regulations that impose significant compliance costs.
+- Subsection: ### The Company’s amended and restated bylaws provide that the Court of Chancery of the State of Delaware will be the exclusive forum for certain legal actions between the Company and its shareholders, which could discourage claims or limit the ability of the Company’s shareholders to bring a claim in a judicial forum viewed by the shareholders as more favorable for disputes with the Company or the Company’s directors, officers or other employees.
+- Page number "18" appears after the first subsection text.
+- "Table of Contents" appears after the page number.
+
+**Current Version:**
+- Title: Caterpillar Inc.: Form 10-K for fiscal year ended 2025-12-31
+- Item 1A. Risk Factors (excerpt, current year)
+- Section: **LEGAL & REGULATORY RISKS**
+- Subsection: ### New regulations or changes in financial services regulation could adversely impact Caterpillar and Cat Financial.
+- Subsection: ### We are subject to stringent environmental laws and regulations that impose significant compliance costs.
+- Subsection: ### The Company’s amended and restated bylaws provide that the Court of Chancery of the State of Delaware will be the exclusive forum for certain legal actions between the Company and its shareholders, which could discourage claims or limit the ability of the Company’s shareholders to bring a claim in a judicial forum viewed by the shareholders as more favorable for disputes with the Company or the Company’s directors, officers or other employees.
+- Page number "18" appears after the first subsection text.
+- "Table of Contents" appears after the page number.
+
+**Comparison:**
+1.  **Header/Title:**
+    - Prior: `# Caterpillar Inc.: Form 10-K for fiscal year ended 2024-12-31`
+    - Current: `# Caterpillar Inc.: Form 10-K for fiscal year ended 2025-12-31`
+    - This is a change in the document title (fiscal year). Is this material? Usually, the fiscal year change is expected and might be considered a routine date roll-forward. However, the instruction says "a change to a number, rate, threshold, period or deadline other than a routine date roll-forward." Changing the fiscal year from 2024 to 2025 in the title of a 10-K is a standard annual update. Is it material? The rule says "Do not report minor edits: a date rolled forward with nothing else changed". This looks like exactly that. The document is for a different year. I should check if there are other changes.
+    - Wait, looking closely at the text content under the headings.
+    - Let's compare the body text section by section.
+
+2.  **Section: LEGAL & REGULATORY RISKS**
+    - Text appears identical in both versions.
+
+3.  **Subsection: New regulations or changes in financial services regulation...**
+    - Text appears identical.
+    - There is a page number "18" and "Table of Contents" inserted between the first subsection and the second subsection in both versions. It seems to be part of the raw text provided.
+
+4.  **Subsection: We are subject to stringent environmental laws...**
+    - Text appears identical.
+
+5.  **Subsection: The Company’s amended and restated bylaws...**
+    - Text appears identical.
+
+6.  **Header/Title Change:**
+    - Prior: `2024-12-31`
+    - Current: `2025-12-31`
+    - Item 1A description: `prior year` vs `current year`.
+    - Rule 5 says: "Do not report minor edits: a date rolled forward with nothing else changed".
+    - The fiscal year change is the primary purpose of an annual document review (comparing this year's 10-K to last year's). However, usually, the instruction implies looking for substantive changes in the risk factors.
+    - If I strictly follow "Do not report minor edits: a date rolled forward with nothing else changed", then the fiscal year change in the title and the `prior year` vs `current year` label might be considered routine updates associated with the filing cycle, not material changes to the substance of the risk factors.
+    - However, the instruction says "Compare the two versions of the document below". The document *is* the text provided.
+    - If I treat the fiscal year change as a "routine date roll-forward", I should not report it.
+    - Let's check if there are any other differences.
+    - Scanning the text character by character (mentally).
+    - Prior: `# Caterpillar Inc.: Form 10-K for fiscal year ended 2024-12-31`
+    - Current: `# Caterpillar Inc.: Form 10-K for fiscal year ended 2025-12-31`
+    - Prior: `## Item 1A. Risk Factors (excerpt, prior year)`
+    - Current: `## Item 1A. Risk Factors (excerpt, current year)`
+    - All other text seems identical.
+
+    - Is the fiscal year change material? The rule says "a date rolled forward with nothing else changed". This is exactly that. The document represents a new filing year. The content of the risk factors hasn't substantively changed (no new risks added, no numbers changed).
+    - Therefore, I should not report this as a material change based on Rule 5 ("Do not report minor edits: a date rolled forward with nothing else changed").
+
+    - Wait, is there anything else?
+    - Let's look at the "Table of Contents" and page number "18". They appear in both.
+    - Let's check the text content again very carefully.
+    - Prior: `Cat Financial’s operations are highly regulated...`
+    - Current: `Cat Financial’s operations are highly regulated...`
+    - Prior: `Our facilities, operations and products are subject to increasingly stringent environmental laws...`
+    - Current: `Our facilities, operations and products are subject to increasingly stringent environmental laws...`
+    - Prior: `The Company’s amended and restated bylaws provide that the Court of Chancery...`
+    - Current: `The Company’s amended and restated bylaws provide that the Court of Chancery...`
+
+    - It seems the only differences are the Fiscal Year in the title and the "prior year" vs "current year" label.
+    - Under Rule 5 ("Do not report minor edits: a date rolled forward with nothing else changed"), these changes should be ignored.
+    - Therefore, the list of changes should be empty.
+
+    - Wait, I need to be careful. Sometimes "prior year" vs "current year" in the header might be considered metadata rather than document content. But even if it is content, Rule 5 explicitly excludes date roll-forwards.
+    - Is there any other difference?
+    - Let's check the very end of the text. Both end with `...rules and regulations promulgated thereunder.` followed by `--- END CURRENT VERSION ---`.
+    - Prior ends with `--- END PRIOR VERSION ---`.
+    - The text content is identical.
+
+    - Conclusion: No material changes found based on the rules provided (specifically Rule 5 regarding date roll-forwards and minor edits).
+
+    - Wait, I need to check if there are any subtle differences I missed.
+    - Prior: `18` then newline then `Table of Contents`.
+    - Current: `18` then newline then `Table of Contents`.
+    - Prior: `## Item 1A. Risk Factors (excerpt, prior year)`
+    - Current: `## Item 1A. Risk Factors (excerpt, current year)`
+    - Prior: `# Caterpillar Inc.: Form 10-K for fiscal year ended 2024-12-31`
+    - Current: `# Caterpillar Inc.: Form 10-K for fiscal year ended 2025-12-31`
+
+    - These are the only differences.
+    - Rule 5: "Do not report minor edits: a date rolled forward with nothing else changed".
+    - The change from 2024 to 2025 is a date roll-forward.
+    - The change from "prior year" to "current year" is likely associated with the date roll-forward of the document itself.
+    - So, I should return an empty list.
+
+    - Wait, one more check. Is there any substantive change in the text?
+    - Scanning...
+    - `Cat Financial’s operations are highly regulated by governmental authorities in the locations where it operates, which can impose significant additional costs and/or restrictions on its business.` (Identical)
+    - `In the United States, for example, certain Cat Financial activities are subject to the U.S. Dodd-Frank Wall Street Reform and Consumer Protection Act (Dodd-Frank), which includes extensive provisions regulating the financial services industry.` (Identical)
+    - `As a result, Cat Financial has become and could continue to become subject to additional regulatory costs that could be significant and have an adverse effect on Cat Financial’s and our results of operations and financial condition.` (Identical)
+    - `Changes in regulations or additional regulations in the United States or internationally impacting the financial services industry could also add significant cost or operational constraints that might have an adverse effect on Cat Financial’s and our results of operations and financial condition.` (Identical)
+
+    - `Our facilities, operations and products are subject to increasingly stringent environmental laws and regulations globally, including laws and regulations governing emissions to noise, air, releases to soil and discharges to water and the generation, handling, storage, transportation, treatment and disposal of non-hazardous and hazardous waste materials.` (Identical)
+    - `Some environmental laws impose strict, retroactive and joint and several liability for the remediation of the release of hazardous substances, even for conduct that was lawful at the time it occurred, or for the conduct of, or conditions caused by, prior operators, predecessors or other third parties.` (Identical)
+    - `Failure to comply with environmental laws could expose us to penalties or clean-up costs, civil or criminal liability and sanctions on certain of our activities, as well as damage to property or natural resources.` (Identical)
+    - `The potential liabilities, sanctions, damages and remediation efforts related to any non-compliance with such laws and regulations could negatively impact our ability to conduct our operations and our financial condition and results of operations.` (Identical)
+    - `In addition, there can be no assurances that we will not be adversely affected by costs, liabilities or claims with respect to existing or subsequently acquired operations or under present laws and regulations or those that may be adopted or imposed in the future.` (Identical)
+
+    - `Environmental laws and regulations may change from time to time, as may related interpretations and other guidance.` (Identical)
+    - `Changes in environmental laws or regulations could result in higher expenses and payments.` (Identical)
+    - `Uncertainty relating to environmental laws or regulations may also affect how we conduct our operations and structure our investments and could limit our ability to enforce our rights.` (Identical)
+    - `Changes in environmental and climate change laws or regulations, including laws relating to greenhouse gas emissions, could lead to new or additional investment in product designs and could increase environmental compliance expenditures.` (Identical)
+    - `Changes in climate change concerns, or in the regulation of such concerns, including greenhouse gas emissions, could subject us to additional costs and restrictions, including increased energy and raw materials costs.` (Identical)
+    - `If environmental laws or regulations are either changed or adopted and impose significant operational restrictions and compliance requirements upon us or our products, they could negatively impact our reputation, business, capital expenditures, results of operations, financial condition and competitive position.` (Identical)
+
+    - `The Company’s amended and restated bylaws provide that the Court of Chancery of the State of Delaware will be the exclusive forum for certain legal actions between the Company and its shareholders, which could discourage claims or limit the ability of the Company’s shareholders to bring a claim in a judicial forum viewed by the shareholders as more favorable for disputes with the Company or the Company’s directors, officers or other employees.` (Identical)
+
+    - `The Company’s amended and restated bylaws provide to the fullest extent permitted by law that unless the Company consents in writing to the selection of an alternative forum, the Court of Chancery of the State of Delaware will be the sole and exclusive forum for (i) any derivative action or proceeding brought on behalf of the Company, (ii) any action asserting a claim of breach of fiduciary duty owed by any director, officer or other employee of the Company to the Company or the Company’s shareholders, (iii) any action asserting a claim against the Company or any director or officer or other employee of the Company arising pursuant to any provision of the Delaware General Corporation Law or the Company’s certificate of incorporation or bylaws (as either may be amended from time to time) or (iv) any action asserting a claim against the Company or any director or officer or other employee of the Company governed by the internal affairs doctrine.` (Identical)
+
+    - `The exclusive forum provisions in our bylaws could limit our shareholders’ ability to bring a claim in a judicial forum that it finds favorable for disputes with the Company or its directors, officers or other employees.` (Identical)

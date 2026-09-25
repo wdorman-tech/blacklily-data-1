@@ -1,0 +1,35 @@
+*   Question: "How frequently does the Valuation Committee meet?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   `01_brochure.md`: Mentions "Valuation Policy" in Item 15.3, but doesn't specify meeting frequency.
+    *   `02_compliance_manual.md`: Mentions "Valuation Policy" in Section 1.3, but doesn't specify meeting frequency.
+    *   `03_valuation_policy.md`: Section 2.3 "Meetings" says: "The Committee meets quarterly, within ten business days after the end of each calendar quarter, and on an ad hoc basis..."
+    *   `04_business_continuity_plan.md`: No mention of Valuation Committee meeting frequency.
+    *   `05_fee_schedule.md`: No mention of Valuation Committee meeting frequency.
+    *   `06_policy_update_memo.md`: Section 2.4 "Valuation Policy Section 2.3 (Meetings)" states: "The Valuation Committee will meet monthly, within ten business days after the end of each calendar month, rather than quarterly, so that the Committee reviews Level 3 values, overrides and stale price reports within each monthly net asset value cycle."
+
+    *   `03_valuation_policy.md` (dated Nov 3, 2025) says "quarterly".
+    *   `06_policy_update_memo.md` (dated Aug 24, 2026) says "monthly".
+    *   Rule 3: "Later-dated documents supersede earlier ones."
+    *   The memo is dated August 24, 2026. The Valuation Policy is dated November 3, 2025.
+    *   The memo explicitly states: "The Valuation Committee will meet monthly, within ten business days after the end of each calendar month, rather than quarterly... This amendment supersedes Section 2.3 of the Valuation Policy."
+
+    *   Answer: monthly, within ten business days after the end of each calendar month.
+    *   Source: 06_policy_update_memo.md
+    *   Section: Section 2.4
+    *   Quote: "The Valuation Committee will meet monthly, within ten business days after the end of each calendar month, rather than quarterly, so that the Committee reviews Level 3 values, overrides and stale price reports within each monthly net asset value cycle."
+
+    *   The question asks "How frequently does the Valuation Committee meet?".
+    *   The memo says "monthly, within ten business days after the end of each calendar month".
+
+    *   Answer: monthly, within ten business days after the end of each calendar month
+    *   Source: 06_policy_update_memo.md
+    *   Section: Section 2.4
+    *   Quote: "The Valuation Committee will meet monthly, within ten business days after the end of each calendar month, rather than quarterly, so that the Committee reviews Level 3 values, overrides and stale price reports within each monthly net asset value cycle."
+
+    *   Wait, the prompt says "the answer

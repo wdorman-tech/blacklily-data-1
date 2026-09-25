@@ -1,0 +1,142 @@
+{
+ "gemma4:12b": {
+  "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+  "size_bytes": 7556508396,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "gemma4",
+   "families": [
+    "gemma4"
+   ],
+   "parameter_size": "11.9B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 3840
+  },
+  "fully_on_gpu": true,
+  "size_vram_bytes": 8076467895,
+  "loaded_size_bytes": 8076467895,
+  "context_length": 16384,
+  "vram_before_mib": 3289,
+  "peak_vram_mib": 11537,
+  "wall_seconds": 98.14,
+  "output_tps": 51.7,
+  "prompt_tps": 533.9,
+  "output_tokens": 4096,
+  "thinks_by_default": true,
+  "thinking_chars": 14145,
+  "done_reason": "length",
+  "server": {
+   "flash_attention": "true",
+   "kv_cache_type": "q8_0",
+   "version": "0.34.2",
+   "num_parallel": 1
+  }
+ },
+ "qwen3.5:9b": {
+  "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+  "size_bytes": 6594474711,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "qwen35",
+   "families": [
+    "qwen35"
+   ],
+   "parameter_size": "9.7B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 4096
+  },
+  "fully_on_gpu": true,
+  "size_vram_bytes": 5763005151,
+  "loaded_size_bytes": 5763005151,
+  "context_length": 16384,
+  "vram_before_mib": 11537,
+  "peak_vram_mib": 11537,
+  "wall_seconds": 49.26,
+  "output_tps": 83.4,
+  "prompt_tps": 512.8,
+  "output_tokens": 2479,
+  "thinks_by_default": true,
+  "thinking_chars": 2235,
+  "done_reason": "stop",
+  "server": {
+   "flash_attention": "true",
+   "kv_cache_type": "q8_0",
+   "version": "0.34.2",
+   "num_parallel": 1
+  }
+ },
+ "qwen2.5:14b-instruct-q4_K_M": {
+  "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+  "size_bytes": 8988124069,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "qwen2",
+   "families": [
+    "qwen2"
+   ],
+   "parameter_size": "14.8B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 32768,
+   "embedding_length": 5120
+  },
+  "fully_on_gpu": true,
+  "size_vram_bytes": 10388735261,
+  "loaded_size_bytes": 10388735261,
+  "context_length": 16384,
+  "vram_before_mib": 9990,
+  "peak_vram_mib": 11564,
+  "wall_seconds": 162.65,
+  "output_tps": 22.2,
+  "prompt_tps": 101.6,
+  "output_tokens": 1943,
+  "thinks_by_default": false,
+  "thinking_chars": 0,
+  "done_reason": "stop",
+  "server": {
+   "flash_attention": "true",
+   "kv_cache_type": "q8_0",
+   "version": "0.34.2",
+   "num_parallel": 1
+  }
+ },
+ "ministral-3:14b": {
+  "digest": "4760c35aeb9d9e9c6174c2492562c0b999e80a222804fd96b1915ab72bbcdcf7",
+  "size_bytes": 9082537546,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "mistral3",
+   "families": [
+    "mistral3"
+   ],
+   "parameter_size": "13.9B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 5120
+  },
+  "fully_on_gpu": true,
+  "size_vram_bytes": 9491709951,
+  "loaded_size_bytes": 9491709951,
+  "context_length": 16384,
+  "vram_before_mib": 11563,
+  "peak_vram_mib": 11563,
+  "wall_seconds": 47.04,
+  "output_tps": 52.3,
+  "prompt_tps": 2416.0,
+  "output_tokens": 1979,
+  "thinks_by_default": false,
+  "thinking_chars": 0,
+  "done_reason": "stop",
+  "server": {
+   "flash_attention": "true",
+   "kv_cache_type": "q8_0",
+   "version": "0.34.2",
+   "num_parallel": 1
+  }
+ }
+}

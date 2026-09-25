@@ -1,0 +1,41 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "If Quenby Holt Trust Company serves as full trustee of a client trust, what does it charge, and is that fee credited against the Firm's advisory fee?"
+    *   Key components to find:
+        1.  Fee charged by QHTC when serving as full trustee.
+        2.  Whether that fee is credited against (offset) the Firm's advisory fee.
+
+3.  **Scan Documents for Information:**
+
+    *   *Document 1:* `01_brochure.md` (Form ADV Part 2A, dated March 27, 2026).
+        *   Section: Item 5. Fees and Compensation > 5.4 Trust Company Fees.
+        *   Text: "When a client appoints QHTC as trustee, QHTC charges trustee fees under its own schedule. Trustee fees charged by Quenby Holt Trust Company are in addition to, and are not offset against, the Firm's advisory fee."
+        *   This answers part 2 (not credited/offset).
+        *   It mentions "under its own schedule" but doesn't give the specific number here.
+
+    *   *Document 2:* `05_fee_schedule.md` (Schedule of Fees, dated January 1, 2026).
+        *   Section: SECTION 3. TRUST COMPANY FEES > 3.1 Full Trustee.
+        *   Text: "Where Quenby Holt Trust Company serves as full trustee, it charges an annual fee of 0.10% of trust assets, subject to a minimum of $10,000 per trust per year."
+        *   This answers part 1 (fee amount).
+
+    *   *Date Check:*
+        *   `05_fee_schedule.md`: January 1, 2026.
+        *   `01_brochure.md`: March 27, 2026.
+        *   Rule 3: Later-dated documents supersede earlier ones. However, these are different types of documents (Brochure vs Fee Schedule). Usually, a Fee Schedule is an exhibit or attachment to the Brochure/Agreement. The Brochure states "Trustee fees charged by Quenby Holt Trust Company are in addition to...". The Fee Schedule provides the specific numbers.
+        *   There is no explicit contradiction between them. The Brochure says "under its own schedule" and the Fee Schedule *is* that schedule.
+        *   I need to combine the information from both documents to answer fully, or determine if one supersedes the other regarding the fee amount.
+        *   Rule 3 says "Later-dated documents supersede earlier ones." March

@@ -1,0 +1,41 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones (all docs here seem to be the same date: February 10, 2026).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "How does the firm identify and escalate stale prices?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "stale price", "identify", "escalate", "monitoring".
+    *   Document: `03_valuation_policy.md`
+    *   Section: Look for "Stale Price Monitoring" or similar.
+
+4.  **Locate Relevant Information:**
+    *   Found Section: `SECTION 6. STALE PRICE MONITORING > 6.1 Daily Stale Price Report`.
+    *   Text: "Operations produces a daily stale price report that flags any security whose price has not changed for five consecutive business days. Operations investigates each flagged security and documents whether the unchanged price reflects actual market conditions, such as an illiquid municipal issue, or a failure of the pricing feed. A security whose price has not changed for ten consecutive business days is escalated to the Valuation Committee, which determines whether to continue using the price, obtain a broker quotation, or apply a fair value under Section 4."
+
+5.  **Synthesize the Answer:**
+    *   Identification: Operations produces a daily stale price report flagging securities whose price has not changed for five consecutive business days.
+    *   Investigation: Operations investigates each flagged security.
+    *   Escalation: A security whose price has not changed for ten consecutive business days is escalated to the Valuation Committee.
+
+6.  **Draft the JSON Content:**
+    *   "answer": Needs to summarize the process based on the text.
+    *   "source_document": "03_valuation_policy.md"
+    *   "section": "SECTION 6. STALE PRICE MONITORING > 6.1 Daily Stale Price Report" (or just "SECTION 6. STALE PRICE MONITORING > 6.1 Daily Stale Price Report" as labelled). Let's use the label provided in the header: `SECTION 6. STALE PRICE MONITORING > 6.1 Daily Stale Price Report`.
+    *   "quote": "Operations produces a daily stale price report that flags any security whose price has not changed for five consecutive business days. Operations investigates each flagged security and documents whether the unchanged price reflects actual market conditions, such as an illiquid municipal issue, or a failure of the pricing feed. A security whose price has not changed for ten consecutive business days is escalated to the Valuation Committee, which determines whether to continue using the price, obtain a broker quotation, or apply a fair value under Section 4."
+
+7.  **Review Constraints:**
+    *   JSON object only? Yes.
+    *   No markdown fences? Yes.
+    *   Keys: "answer

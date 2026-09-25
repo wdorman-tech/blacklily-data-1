@@ -1,0 +1,35 @@
+*   Question: Identify the Funds' prime brokers.
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer NOT_IN_DOCUMENTS.
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "01_brochure.md": Item 12.2 "Prime Brokers" mentions "Brisworth Tallent Securities LLC serves as the primary prime broker to the Flagship Fund and the Co-Investment Fund, and Quarrington Prime Services LLC serves as a second prime broker to the Flagship Fund."
+    *   "02_compliance_manual.md": Section 5.1 "Critical Vendor List" mentions "Brisworth Tallent Securities LLC, primary prime broker, and Quarrington Prime Services LLC, second prime broker."
+    *   "03_valuation_policy.md": No mention of prime brokers.
+    *   "04_business_continuity_plan.md": Section 5.1 "Critical Vendor List" mentions "Brisworth Tallent Securities LLC, primary prime broker, and Quarrington Prime Services LLC, second prime broker."
+    *   "05_fee_schedule.md": No mention of prime brokers.
+    *   "06_policy_update_memo.md": No mention of prime brokers.
+
+    *   The question asks for the "Funds' prime brokers".
+    *   The brochure (01_brochure.md) explicitly names them in Item 12.2.
+    *   The Compliance Manual (02_compliance_manual.md) and Business Continuity Plan (04_business_continuity_plan.md) also list them.
+    *   The latest document (06_policy_update_memo.md) does not change these specific names.
+
+    *   Answer: Brisworth Tallent Securities LLC (primary) and Quarrington Prime Services LLC (secondary).
+    *   Source: 01_brochure.md
+    *   Section: Item 12.2
+    *   Quote: "Brisworth Tallent Securities LLC serves as the primary prime broker to the Flagship Fund and the Co-Investment Fund, and Quarrington Prime Services LLC serves as a second prime broker to the Flagship Fund."
+
+    *   The question asks to "Identify the Funds' prime brokers."
+    *   The text in 01_brochure.md, Item 12.2 is: "Brisworth Tallent Securities LLC serves as the primary prime broker to the Flagship Fund and the Co-Investment Fund, and Quarrington Prime Services LLC serves as a second prime broker to the Flagship Fund."
+
+    *   "answer": "Brisworth Tallent Securities LLC (primary) and Quarrington Prime Services LLC (second)"
+    *   "source_document": "01_brochure.md"
+    *   "section": "Item 12.2"
+    *   "quote": "Brisworth Tallent Securities LLC serves as the primary prime broker to the Flagship Fund and the Co-Investment Fund, and Quarrington Prime Services LLC serves as a second prime broker to the Flagship Fund."
+
+    *   Wait, the prompt says "Identify the Funds' prime brokers."
+    *   The text says: "Brisworth Tallent Securities LLC serves as the primary prime broker to

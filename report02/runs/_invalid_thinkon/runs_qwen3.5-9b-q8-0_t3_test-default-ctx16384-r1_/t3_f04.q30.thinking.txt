@@ -1,0 +1,40 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones (not relevant here as dates seem consistent or one is clearly the source).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "How long does the Firm retain its required books and records?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "retain", "books and records", "years", "retention".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Discusses custody, fees, financial condition. No mention of record retention periods.
+    *   `02_compliance_manual.md`:
+        *   Section 13.1 Required Records: Lists what records are kept.
+        *   Section 13.2 Retention Period: "The Firm retains all required books and records for not less than seven years from the end of the fiscal year during which the last entry was made on the record, the first two years in an appropriate office of the Firm."
+        *   Section 13.3 Electronic Storage: Discusses storage methods.
+        *   Section 13.4 Production and Legal Holds: Discusses production.
+        *   Section 15. Annual Review: Discusses CCO reviews.
+        *   Section 16. Training: Mentions retention under Section 13.
+
+5.  **Determine the Answer:**
+    *   The specific detail is found in `02_compliance_manual.md`, Section 13.2 Retention Period.
+    *   Text: "The Firm retains all required books and records for not less than seven years from the end of the fiscal year during which the last entry was made on the record, the first two years in an appropriate office of the Firm."
+
+6.  **Format the Output:**
+    *   Construct JSON object.
+    *   "answer": Needs to be specific based on the text. The question asks "How long". The text says "not less than seven years... the first two years in an appropriate office". I should quote the relevant part or summarize accurately based on the rule. The instruction says "Quote the supporting text verbatim" for the `quote` field, but the `answer` field should be the answer itself (short and specific). However, looking at the constraints: "Answer only from the documents provided." and "Keep answers short and specific: the number, name, frequency, threshold or rule that was asked for".
+    *   Let's draft the `answer`: "not less than seven years from the end of the fiscal year during which the last entry was made on the record, the first two years in an appropriate office of the Firm" (This is the specific rule). Or I can extract the core duration. Usually, for DDQs, the full retention period description is best.
+    *   "source_document": "02_compliance_manual.md"
+    *

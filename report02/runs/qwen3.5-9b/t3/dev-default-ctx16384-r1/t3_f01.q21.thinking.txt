@@ -1,0 +1,44 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What were the firm's regulatory assets under management as of its most recent fiscal year-end, and how much of that total was managed on a discretionary basis?"
+    *   Key data points needed:
+        *   Regulatory Assets Under Management (AUM).
+        *   Date (most recent fiscal year-end).
+        *   Discretionary portion.
+
+3.  **Scan the Documents:**
+    *   `01_brochure.md`:
+        *   Section: Item 4. Advisory Business > 4.2 Wealth Management Services (No AUM data here).
+        *   Section: Item 4. Advisory Business > 4.6 Assets Under Management and Personnel (Found relevant text).
+            *   Text: "As of December 31, 2025, the Firm managed $2,046,300,000 of regulatory assets under management, of which $1,982,100,000 was managed on a discretionary basis and $64,200,000 on a non-discretionary basis."
+        *   Date of document: March 27, 2026.
+    *   `02_compliance_manual.md`: No AUM data.
+    *   `03_valuation_policy.md`: No AUM data.
+    *   `05_fee_schedule.md`: No AUM data.
+
+4.  **Evaluate Findings:**
+    *   Document: `01_brochure.md`.
+    *   Section: Item 4. Advisory Business > 4.6 Assets Under Management and Personnel.
+    *   Data found: $2,046,300,000 total regulatory AUM as of December 31, 2025. Discretionary portion: $1,982,100,000.
+    *   Is this the most recent fiscal year-end? The document is dated March 27, 2026. The data point is December 31, 2025. This appears to be the most recent specific date provided in the documents for AUM.
+    *   Constraint Check: "Answer only from the documents provided." -> Yes.
+    *   Constraint Check: "If the documents do not answer the question... the answer is exactly NOT_IN_DOCUMENTS." -> The document answers it.
+    *   Constraint Check: "Later-dated documents supersede earlier ones." -> Only one brochure provided with this info.
+    *   Constraint Check: "Quote the supporting text verbatim." -> Need to extract the exact sentence.
+
+5.  **Draft the JSON:**
+    *   `

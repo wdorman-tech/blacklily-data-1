@@ -1,0 +1,48 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (not applicable here as there's only one document).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What percentage of the Firm's total revenue is attributable to its largest client and to its five largest clients?"
+    *   Key information needed: Revenue percentages for largest client(s) and top five clients.
+
+3.  **Scan the Documents:**
+    *   Document: `01_brochure.md` (Form ADV Part 2A: Firm Brochure, dated March 27, 2026).
+    *   Sections provided in text:
+        *   Item 4. Advisory Business > 4.3 Client Guidelines and Restrictions
+        *   Item 7. Types of Clients > 7.1 Clients (Lists client types and counts as of Dec 31, 2025: 24 separate accounts for 20 clients).
+        *   Item 7. Types of Clients > 7.2 Account Minimums
+        *   Item 10. Other Financial Industry Activities and Affiliations > 10.3 Relationships with Investment Consultants
+        *   Item 12. Brokerage Practices > 12.4 Directed Brokerage and Diverse Broker-Dealer Programs
+        *   Item 14. Client Referrals and Other Compensation > 14.1 Compensation for Client Referrals
+        *   Item 15. Custody > 15.1 Separate Accounts
+        *   Item 18. Financial Information > 18.1 Financial Condition
+
+4.  **Evaluate Findings:**
+    *   I need to find specific revenue percentages attributed to clients.
+    *   Scanning `01_brochure.md`:
+        *   Section 7.1 mentions client counts (20 clients, 24 accounts) and types (public pension, insurance). No revenue breakdown.
+        *   Section 18.1 mentions financial condition regarding fee prepayment ($1,200 limit), bankruptcy history, balance sheet requirement. No revenue breakdown by client.
+        *   Other sections discuss guidelines, custody, brokerage, referrals, etc.
+    *   There is no mention of total revenue figures or the percentage of revenue attributable to specific clients in any of the provided text snippets.
+
+5.  **Formulate Answer:**
+    *   Since the information is not present in the documents, the answer must be `NOT_IN_DOCUMENTS`.
+    *   `source_document`: "" (as per instruction for NOT_IN_DOCUMENTS case).
+    *   `section`: "" (as per instruction for NOT_IN_DOCUMENTS case).
+    *   `quote`: "" (as per instruction for NOT_IN_DOCUMENTS case).
+
+6.  **Verify Constraints:**
+    *   JSON object only.
+    *   Keys: `

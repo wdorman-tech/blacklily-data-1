@@ -1,0 +1,41 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (not relevant here as dates are consistent or close).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Does the firm maintain a diversity, equity and inclusion policy, and can it provide demographic data for its investment team?"
+    *   Key information needed: Existence of DE&I policy, availability of demographic data for the investment team.
+
+3.  **Scan the Documents:**
+    *   `01_brochure.md`:
+        *   Item 4.2 Wealth Management Services: Discusses services, custodians, IPS, strategies, IP Committee (chaired by Mr. Arlow), tax-aware implementation. No mention of DE&I policy or team demographics.
+        *   Item 4.3 Investment Strategies Offered: Lists strategies (Core Equity, Dividend Growth, etc.). No mention of DE&I.
+        *   Item 4.5 Tailoring and Client Restrictions: Discusses IPS restrictions. No mention of DE&I.
+        *   Item 4.6 Assets Under Management and Personnel: Mentions $2B+ AUM, 1,140 households, 41 employees including 17 wealth advisors across three offices. No mention of DE&I policy or specific demographic data (race, gender, etc.).
+        *   Item 8.2 Investment Strategies: Discusses asset allocation, holding periods, margin/shorting rules. No mention of DE&I.
+        *   Item 9.1 Legal and Disciplinary Events: Disciplinary history. No mention of DE&I.
+        *   Item 17.2 Proxy Voting Service Provider: Mentions Veridane Proxy Services, Inc., Chief Compliance Officer reviews annually. No mention of DE&I policy or team demographics.
+    *   `02_compliance_manual.md`:
+        *   Section 1.1 Purpose: Sets out policies under Rule 206(4)-7 and Code of Ethics (Rule 204A-1). Mentions risks (discretionary management, financial planning, third-party private funds). No mention of DE&I policy or team demographics.
+
+4.  **Evaluate Findings:**
+    *   I have scanned all provided text segments.
+    *   There is no mention of a "diversity, equity and inclusion policy".
+    *   There is no mention of "demographic data for its investment team" (e.g., gender, race, ethnicity breakdown).
+    *   The personnel section mentions the number of employees (41) and wealth advisors (17), but not demographics.
+
+5.  **Formulate Answer:**
+    *   Since the information is not present in the documents, the answer must be `NOT_IN_DOCUMENTS`.
+    *   `source_document` should be `""`.
+    *

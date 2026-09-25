@@ -1,0 +1,47 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   No guessing, no general knowledge.
+        *   Short and specific answers.
+        *   Cite document file name and section.
+        *   Quote verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What percentage of the Funds' aggregate net asset value is classified as Level 3 in the fair value hierarchy?"
+    *   Key information needed: A specific percentage figure representing the proportion of NAV classified as Level 3.
+
+3.  **Scan the Documents:**
+    *   Document: `03_valuation_policy.md` (dated November 3, 2025).
+    *   Section 1.2 Scope and Frequency: Discusses valuation applicability (monthly NAV, daily estimates, annual statements). No percentage mentioned.
+    *   Section 1.3 Fair Value Standard: Defines fair value and hierarchy levels (Level 1, 2, 3). No specific percentages or aggregate amounts mentioned.
+    *   Section 2.4 Responsibilities: Discusses Committee responsibilities. No percentages.
+    *   Section 4.1 Scope: Describes what Level 3 investments currently consist of (Convertible Note, Co-Investment Issuer security, suspended securities). No percentage of NAV mentioned.
+    *   Section 4.4 Documentation: Discusses valuation memorandums. No percentages.
+    *   Section 7.1 Back-Testing Procedures: Discusses back-testing frequency and tolerance (5%). No Level 3 NAV percentage.
+    *   Section 8.1 Independent Valuation Firm: Discusses quarterly review by Kilbride Sayer. No Level 3 NAV percentage.
+    *   Section 8.2 Administrator: Discusses Administrator duties. No Level 3 NAV percentage.
+
+4.  **Evaluate Findings:**
+    *   The documents describe the *policy* for valuation, the *composition* of Level 3 assets (specifically mentioning a Convertible Note and Co-Investment Issuer security), and the *process* for determining values.
+    *   However, none of the provided text states what *percentage* of the aggregate net asset value is currently classified as Level 3.
+    *   The document describes the policy, not the current portfolio composition statistics (which would typically be in a portfolio report or specific disclosure statement, not necessarily a valuation policy).
+    *   Therefore, the specific detail asked for (a percentage) is not present in the provided documents.
+
+5.  **Formulate the Answer:**
+    *   According to Rule 2: "If the documents do not answer the question... the answer is exactly NOT_IN_DOCUMENTS."
+    *   Source document: "" (empty string as per rule for NOT_IN_DOCUMENTS).
+    *   Section: "" (empty string).
+    *   Quote: "" (empty string).
+
+6.  **Construct JSON:**
+    *   `answer`: "NOT_IN_DOCUMENTS"
+    *   `source_document`: ""
+    *   `section`: ""
+    *

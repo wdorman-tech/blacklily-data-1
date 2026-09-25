@@ -1,0 +1,41 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What were the Firm's regulatory assets under management at the most recent year end, and how much was discretionary versus non-discretionary?"
+    *   Key data points needed:
+        *   Regulatory Assets Under Management (AUM) at the most recent year end.
+        *   Discretionary portion.
+        *   Non-discretionary portion.
+
+3.  **Scan the Documents:**
+
+    *   `01_brochure.md` (Form ADV Part 2A: Firm Brochure, dated March 27, 2026):
+        *   Section: Item 2. Material Changes > 2.1 Changes Since the Last Annual Amendment. Mentions last annual amendment was March 28, 2025. Mentions Item 4 reports AUM as of December 31, 2025.
+        *   Section: Item 4. Advisory Business > 4.5 Assets Under Management.
+            *   Text: "As of December 31, 2025, the Firm had regulatory assets under management of approximately $16,418 million, of which $15,962 million was managed on a discretionary basis and $456 million on a non-discretionary basis."
+            *   This looks like the specific data point.
+        *   Section: Item 9. Disciplinary Information. Irrelevant.
+        *   Section: Item 16. Investment Discretion. Irrelevant to AUM figures.
+
+    *   `02_compliance_manual.md` (Compliance Manual: Policies and Procedures, dated January 15, 2026). Irrelevant to AUM figures.
+
+    *   `05_fee_schedule.md` (Fee Schedule, dated January 1, 2026). Irrelevant to AUM figures.
+
+    *   `06_policy_update_memo.md` (Compliance Memorandum 2026-03: Amendments to Firm Policies, dated August 14, 2026).
+        *   This document is dated August 14, 2026. It mentions amendments to policies, Valuation Policy, Business Continuity Plan, and Fee Schedule.
+        *   It does not contain AUM figures.
+        *   The Brochure (March 27, 2026) cites Item 4 reports AUM as of December 31, 2025.
+        *   Is there a more recent document with updated AUM? The Compliance Manual is Jan 15, 2026. The Fee Schedule is Jan 1, 2026. The Policy Update Memo is Aug 1

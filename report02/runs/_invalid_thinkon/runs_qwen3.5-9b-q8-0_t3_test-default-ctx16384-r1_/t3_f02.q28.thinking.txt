@@ -1,0 +1,43 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones (all docs here seem to be the same date: January 15, 2026).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "What proportion of expert network consultations does Compliance chaperone, and what other controls govern expert network use?"
+    *   Key information needed:
+        1.  Proportion of expert network consultations chaperoned by Compliance.
+        2.  Other controls governing expert network use.
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "expert network", "chaperone", "consultation", "controls", "Compliance".
+
+4.  **Locate Relevant Section:**
+    *   Scanning `02_compliance_manual.md`.
+    *   Found Section: `SECTION 7. INSIDER TRADING AND MATERIAL NONPUBLIC INFORMATION > 7.4 Expert Networks`.
+    *   Text: "Supervised persons may use only expert network firms approved by the CCO after due diligence on the firm's compliance procedures. Each consultation must be scheduled through the approved network's platform and pre-approved by the Compliance department. The Adviser does not consult current employees of any public company or of any government agency, or any person subject to a duty of confidentiality regarding the topic of the call. Each call opens with a reminder that the expert may not disclose MNPI or confidential information. The Compliance department chaperones the first call with each new expert and at least 10% of all subsequent calls, selected at random. Analysts must retain notes of every call in the research management system."
+
+5.  **Extract Information:**
+    *   Proportion chaperoned: "the first call with each new expert and at least 10% of all subsequent calls, selected at random".
+    *   Other controls:
+        *   Use only approved firms (approved by CCO after due diligence).
+        *   Schedule through approved network's platform.
+        *   Pre-approved by Compliance department.
+        *   No consultation with current employees of public companies/government agencies or persons subject to duty of confidentiality.
+        *   Call opens with reminder about MNPI/confidential info.
+        *   Analysts retain notes in research management system.
+
+6.  **Draft the Answer:**
+    *   The question asks for the proportion and other controls. I need to synthesize this into a concise answer string based *only* on the text.
+    *   Draft: Compliance chaperones the first call with each new expert and at least 10% of all subsequent calls, selected at random. Other controls include using only CCO-approved firms after due diligence, scheduling through the approved platform, pre-approval by Compliance, no consultation with current employees or persons subject to confidentiality duties, opening calls with MNPI reminders, and retaining notes in the research management system.
+
+7.  **Verify Constraints:**

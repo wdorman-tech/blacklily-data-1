@@ -1,0 +1,199 @@
+{
+ "pair_id": "t2_jnj_2",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "Johnson & Johnson",
+ "ticker": "JNJ",
+ "split": "test",
+ "prior": {
+  "fiscal_year_end": "2024-12-29",
+  "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040625000038/jnj-20241229.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2025-12-28",
+  "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000016/jnj-20251228.htm"
+ },
+ "words": 5920,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "modified",
+   "prior_heading": "Significant challenges or delays in the Company’s innovation, development and implementation of new products, technologies and indications could have an adverse impact on the Company’s long-term success.",
+   "current_heading": "Significant challenges or delays in the Company’s innovation, development and implementation of new products, technologies and indications could have an adverse impact on the Company’s long-term success.",
+   "similarity": 1.0,
+   "diff": [
+    "replace: [2024] -> [2025]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The new-product sales share rolls forward from approximately 25% of 2024 sales to approximately 25% of 2025 sales, with the percentage and all other text unchanged.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "Minor: the only change is a fiscal-year roll-forward (2024 to 2025) with the 25% figure unchanged."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: the only change is a fiscal-year roll-forward (2024 to 2025) with the 25% figure and all other text identical."
+    }
+   }
+  },
+  {
+   "aid": "a02",
+   "status": "modified",
+   "prior_heading": "The Company faces a variety of financial, economic, legal, social and political risks associated with conducting business internationally.",
+   "current_heading": "The Company faces a variety of financial, economic, legal, social and political risks associated with conducting business internationally.",
+   "similarity": 0.994,
+   "diff": [
+    "replace: [2024,] -> [2025,]",
+    "delete: [(beginning in the fiscal fourth quarter of 2024)] -> []",
+    "replace: [Anti-bribery] -> [Anti-corruption]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The foreign sales mix rolls forward from fiscal 2024 to fiscal 2025 with identical percentages (43% outside the U.S., 23% Europe, 5% Western Hemisphere, 15% Asia-Pacific and Africa), the stale parenthetical dating Egypt's highly inflationary treatment to the fiscal fourth quarter of 2024 is dropped while Egypt stays on the list, and the subheading label changes from Anti-bribery to Anti-corruption with the same FCPA and U.K. Bribery Act content.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "Minor: every change is a fiscal-year roll-forward, removal of an outdated date qualifier with no change in the listed countries, or a relabeled subheading with no change in substance."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: every change is a fiscal-year roll-forward, removal of a stale start-date qualifier with the same four highly inflationary jurisdictions still disclosed, or a relabeled subheading over unchanged FCPA and U.K. Bribery Act text."
+    }
+   }
+  },
+  {
+   "aid": "a03",
+   "status": "modified",
+   "prior_heading": "Due to the international nature of the Company's business, geopolitical or economic changes or events, including global tensions and war, could adversely affect our business, results of operations or financial condition.",
+   "current_heading": "Due to the international nature of the Company's business, geopolitical or economic changes or events, including global tensions and war, could adversely affect our business, results of operations or financial condition.",
+   "similarity": 0.624,
+   "diff": [
+    "delete: [rising] -> []",
+    "insert: [] -> [- including data localization laws and restrictions on data transfers -]",
+    "delete: [such as in Russia,] -> []",
+    "delete: [in Russia] -> []",
+    "replace: [products in and into Russia.] -> [products.]",
+    "replace: [recently] -> [has imposed and/or]",
+    "delete: [tariffs on products manufactured in several jurisdictions, including China, Mexico and Canada, and has made announcements regarding] -> []",
+    "insert: [] -> [products manufactured in]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Russia is dropped as the named jurisdiction for patent exploitation and sales restrictions, the named tariff targets China, Mexico and Canada are dropped while tariffs move from recently announced to has imposed and/or announced, data localization laws and data transfer restrictions are added as protective policies, and rising is removed from conflict in the Middle East.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "Criterion 2: named jurisdictions (Russia, China, Mexico, Canada) are dropped, and criteria 1 and 3 also apply because a new exposure (data localization and transfer restrictions) is added and tariffs move from announced to imposed."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3 (tariffs go from announced to has imposed, and rising is dropped from the Middle East conflict) plus criterion 2 (Russia, China, Mexico and Canada are dropped as named jurisdictions) plus criterion 1 (data localization and data transfer restrictions are a newly disclosed exposure)."
+    }
+   }
+  },
+  {
+   "aid": "a04",
+   "status": "unchanged",
+   "prior_heading": "Weak financial performance, failure to maintain a satisfactory credit rating or disruptions in the financial markets could adversely affect our liquidity, capital position, borrowing costs and access to capital markets.",
+   "current_heading": "Weak financial performance, failure to maintain a satisfactory credit rating or disruptions in the financial markets could adversely affect our liquidity, capital position, borrowing costs and access to capital markets.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a05",
+   "status": "added",
+   "prior_heading": "",
+   "current_heading": "The planned separation of the Company's Orthopaedics business may not be completed on the terms or timeline currently contemplated, if at all, and may not achieve the expected results",
+   "similarity": 0.0,
+   "diff": [],
+   "material": true,
+   "rationale": "",
+   "description": "The Orthopaedics separation announced in October 2025, targeted for completion 18 to 24 months after announcement, may be delayed or not completed on the contemplated terms because it depends on works council consultations, final Board approval and regulatory approvals."
+  },
+  {
+   "aid": "a06",
+   "status": "added",
+   "prior_heading": "",
+   "current_heading": "The costs to complete the planned separation will be significant. In addition, the Company may be unable to achieve some of the strategic and financial benefits that it expects to achieve from the planned separation of the Company's Orthopaedics business",
+   "similarity": 0.0,
+   "diff": [],
+   "material": true,
+   "rationale": "",
+   "description": "The planned Orthopaedics separation will involve significant costs, and the Company may not achieve its expected strategic and financial benefits because they rest on assumptions that may prove incorrect."
+  },
+  {
+   "aid": "a07",
+   "status": "added",
+   "prior_heading": "",
+   "current_heading": "Following the planned separation, the price of shares of the Company's common stock may fluctuate significantly",
+   "similarity": 0.0,
+   "diff": [],
+   "material": true,
+   "rationale": "",
+   "description": "The Company cannot predict the separation's effect on its common stock price, which may fall below its pre-separation value and be more volatile around the time of the separation."
+  },
+  {
+   "aid": "a08",
+   "status": "unchanged",
+   "prior_heading": "Our business depends on our ability to recruit and retain talented and highly skilled employees.",
+   "current_heading": "Our business depends on our ability to recruit and retain talented and highly skilled employees.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a09",
+   "status": "unchanged",
+   "prior_heading": "Climate change or legal, regulatory or market measures to address climate change may negatively affect our business and results of operations.",
+   "current_heading": "Climate change or legal, regulatory or market measures to address climate change may negatively affect our business and results of operations.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a10",
+   "status": "modified",
+   "prior_heading": "An information security incident, including a cybersecurity breach, could have a negative impact on the Company’s business or reputation.",
+   "current_heading": "An information security incident, including a cybersecurity breach, could have a negative impact on the Company’s business or reputation.",
+   "similarity": 0.982,
+   "diff": [
+    "replace: [attacks,] -> [attacks and increasing use and reliance on third parties,]",
+    "replace: [Also,] -> [The]",
+    "insert: [] -> [and other emerging technology]",
+    "insert: [] -> [also]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Increasing use of and reliance on third parties is added as a driver of cybersecurity risk, and the AI risk driver is widened from AI alone to AI and other emerging technology.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "Criterion 1: a new dependency (reliance on third parties) is disclosed as increasing attack exposure, and criterion 3 applies because the scope of the technology risk widens to other emerging technology."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1 (third-party reliance is newly disclosed as a factor increasing breach risk) plus criterion 3 (scope of the technology risk widened beyond AI to other emerging technology)."
+    }
+   }
+  },
+  {
+   "aid": "a11",
+   "status": "unchanged",
+   "prior_heading": "A breach of privacy laws or unauthorized access, loss or misuse of personal data could have a negative impact on the Company’s business or reputation.",
+   "current_heading": "A breach of privacy laws or unauthorized access, loss or misuse of personal data could have a negative impact on the Company’s business or reputation.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  }
+ ]
+}

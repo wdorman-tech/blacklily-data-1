@@ -1,0 +1,42 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones (check dates).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "What are the Firm's restrictions on political contributions by employees?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "political contributions", "employees", "restrictions", "limits", "pre-clearance".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Discusses Code of Ethics, Personal Trading (Item 11). No mention of political contributions.
+    *   `02_compliance_manual.md`:
+        *   Section 5. GIFTS AND ENTERTAINMENT: Discusses gifts received and given. Not political contributions.
+        *   Section 6. POLITICAL CONTRIBUTIONS: This is the relevant section.
+            *   6.1 Scope: Mentions Rule 206(4)-5 ("pay-to-play rule"), treats every employee as a covered associate.
+            *   6.2 Pre-Clearance and Limits: "Every employee must obtain the CCO's written pre-clearance before making any political contribution, regardless of amount...". Sets limits ($350 per election for officials they can vote for, $150 for others). Mentions spouse/household member contributions treated as employee's.
+            *   6.3 Pre-Employment Review: Candidates must disclose contributions made in two years before start date.
+            *   6.4 Solicitation, Coordination and Placement Agents: Employees may not solicit or coordinate contributions where Firm provides advisory services. No compensation to agents for soliciting government entities.
+            *   6.5 Records: CCO maintains records.
+
+5.  **Determine the Best Answer:**
+    *   The question asks for "restrictions on political contributions by employees".
+    *   Section 6 of `02_compliance_manual.md` covers this comprehensively.
+    *   Since there is only one document dated January 15, 2026 (and the brochure is March 27, 2026 but doesn't cover political contributions), I need to check if the Compliance Manual supersedes anything regarding this topic. The Compliance Manual is the primary source for policies/procedures.
+    *   I should synthesize the key restrictions found in Section 6 of `02_compliance_manual.md`.
+    *   Key restrictions:
+        1.  Pre-clearance required from CCO (Section 6.2).
+        2.  Limits based on election type and relationship ($350/$150) (Section 6.2).
+        3.  No solicitation/coordination where Firm provides advisory services (Section 6.4).
+        4.  Disclosure required for new hires (Section 6.3).
+    *   The prompt asks

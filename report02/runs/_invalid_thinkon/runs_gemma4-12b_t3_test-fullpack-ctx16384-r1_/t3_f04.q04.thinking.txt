@@ -1,0 +1,39 @@
+*   Question: Which pricing services does the Firm use to value fixed income securities, and which one is primary?
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+
+    *   "pricing services"
+    *   "fixed income securities"
+    *   "primary"
+
+    *   Document: `01_valuation_policy.md`
+    *   Section 3.2: "Lanthorn Evaluated Pricing, Inc. is the primary pricing service for all fixed income securities held by the Firm's clients..."
+    *   Section 3.3: "Brayford Pricing Data LLC is the secondary pricing service. Its evaluations are used for the daily tolerance comparison in Section 5.1 and as the pricing source for any security that Lanthorn Evaluated Pricing does not cover or whose Lanthorn price has been rejected."
+
+    *   The Firm uses Lanthorn Evaluated Pricing, Inc. and Brayford Pricing Data LLC.
+    *   Lanthorn Evaluated Pricing, Inc. is the primary pricing service.
+
+    *   `answer`: "The Firm uses Lanthorn Evaluated Pricing, Inc. as the primary pricing service and Brayford Pricing Data LLC as the secondary pricing service." (or similar phrasing based on the text).
+    *   `source_document`: "01_valuation_policy.md"
+    *   `section`: "3.2" (and 3.3)
+    *   `quote`: "Lanthorn Evaluated Pricing, Inc. is the primary pricing service for all fixed income securities held by the Firm's clients... Brayford Pricing Data LLC is the secondary pricing service."
+
+    *   "Lanthorn Evaluated Pricing, Inc. is the primary pricing service for all fixed income securities held by the Firm's clients, including U.S. Treasury and agency securities, agency mortgage-backed pools and to-be-announced contracts, corporate and taxable municipal bonds, and asset-backed and commercial mortgage-backed securities. Brayford Pricing Data LLC is the secondary pricing service."
+
+    *   `answer`: "The Firm uses Lanthorn Evaluated Pricing, Inc. as the primary pricing service and Brayford Pricing Data LLC as the secondary pricing service."
+    *   `source_document`: "01_valuation_policy.md"
+    *   `section`: "3.2"
+    *   `quote`: "Lanthorn Evaluated Pricing, Inc. is the primary pricing service for all fixed income securities held by the Firm's clients... Brayford Pricing Data LLC is the secondary pricing service."
+
+    *Self-Correction on Section:* Section 3.2 contains the primary info, 3.3 contains the secondary. I'll list 3.2 or 3.2-3.3. Usually, the specific section where the primary is defined is 3.2.
+
+    *Refining the Quote:*
+    "Lanthorn Evaluated Pricing, Inc. is the primary pricing service for all fixed income securities held by the Firm's clients... Brayford Pricing Data LLC is the secondary pricing service."
+
+    *Wait, the question asks "which pricing services... and which one is primary?".*
+    The text says:
+    3.2: "Lanthorn Evaluated Pricing, Inc. is the primary pricing service..."
+    3.3: "Brayford Pricing Data LLC is the secondary pricing service."
+
+    *JSON Construction:*
+    {
+      "answer": "The Firm uses Lanthorn Evaluated Pricing, Inc. as the primary pricing service and

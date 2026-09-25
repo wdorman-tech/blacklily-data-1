@@ -1,0 +1,383 @@
+{
+  "meeting_id": "t5_m04",
+  "title": "Tech employee with RSUs and ISOs: concentration, AMT and a house down payment",
+  "notes": "Jonah gives his vested RSU holding as 2,800 shares and corrects it to 2,080 about ten minutes later (2,800 is the count released before tax withholding), the CPA's ISO number is transcribed once as nineteen hundred before being clarified as 900, and the retirement target moves from 55 on file to a floated 45 to an agreed 50. The grant-paperwork task moves from Jonah to Tessa, the pre-approval due date moves from end of next week to October 2, and the declined same-day sale of 1,500 ISOs sits right next to the accepted 900-share exercise-and-hold, so the two must not be merged. The closing recap omits the $9,000 estimated payment, the sell-at-vest election and Nell's November 20 projection follow-up, and neither the T-bill carve-out nor Maren's 'I'd be moderate' is a risk tolerance change.",
+  "scalar_fields": {
+    "meeting_date": {
+      "expected": "2026-09-10 (Thursday, September 10, 2026)",
+      "accept": [
+        "2026-0?9-10|\\b0?9/10/(20)?26\\b|\\bsep(t|tember)?\\.?\\s+10(th)?,?\\s+2026|\\b10(th)?\\s+(of\\s+)?sep(t|tember)?\\.?,?\\s+2026"
+      ],
+      "reject": {}
+    },
+    "client_names": {
+      "expected": "Jonah Castellvi; Maren Tolliver",
+      "accept": [
+        "^(?!.*(tessa|varnum|ashcombe|\\bnell\\b|delacroix|\\brhea\\b)).*(jonah\\s+castellvi|castellvi,\\s*jonah)",
+        "^(?!.*(tessa|varnum|ashcombe|\\bnell\\b|delacroix|\\brhea\\b)).*(maren\\s+tolliver|tolliver,\\s*maren)"
+      ],
+      "match": "all",
+      "reject": {
+        "NON_CLIENT_LISTED": [
+          "tessa|varnum|ashcombe|\\bnell\\b|delacroix|\\brhea\\b"
+        ]
+      }
+    },
+    "primary_goal": {
+      "expected": "Fund the down payment and closing costs (about $185,000: 20% down on a home around $850,000 plus about $15,000 of closing costs) for a home purchase in spring 2027",
+      "accept": [
+        "down[\\s-]?payment|\\bhome\\b|\\bhouse\\b|propert(y|ies)|residence|real estate|mortgage|\\bcondo\\b"
+      ],
+      "reject": {
+        "CONCENTRATION_OR_TAX_AS_GOAL": [
+          "^(?!.*(down[\\s-]?payment|\\bhome\\b|\\bhouse\\b|propert(y|ies)|residence|real estate|mortgage|\\bcondo\\b)).*(concentrat|diversif|\\brsus?\\b|\\bisos?\\b|\\bamt\\b)"
+        ],
+        "RETIREMENT_AS_GOAL": [
+          "^(?!.*(down[\\s-]?payment|\\bhome\\b|\\bhouse\\b|propert(y|ies)|residence|real estate|mortgage|\\bcondo\\b)).*retire"
+        ]
+      }
+    },
+    "retirement_target": {
+      "expected": "Jonah: age 50 (about 19 years out; changed in the plan from 55 after Jonah first floated 45); no target set for Maren",
+      "accept": [
+        "^((?!(\\b45\\b|forty[\\s-]?five|\\b55\\b|fifty[\\s-]?five)).)*(\\b50\\b|fifty(?![\\s-]?five)|\\b2045\\b)",
+        "(\\b45\\b|forty[\\s-]?five|\\b55\\b|fifty[\\s-]?five).{0,60}(\\bto\\s+(age\\s+)?|revis\\w*|chang\\w*|agreed|settled|\\bnow\\b|final\\w*|updat\\w*|\\bthen\\b|instead|lower\\w*|moved|reduc\\w*|compromis\\w*|\\s-\\s|→|\\s*/\\s*|\\s*=\\s*).{0,30}(\\b50\\b|fifty(?![\\s-]?five)|\\b2045\\b)",
+        "(\\b45\\b|forty[\\s-]?five|\\b55\\b|fifty[\\s-]?five).{0,80}(\\b50\\b|fifty(?![\\s-]?five)).{0,20}(agreed|final|current|new|now|target)",
+        "(\\b45\\b|forty[\\s-]?five|\\b55\\b|fifty[\\s-]?five).{0,80}\\b(plan|planning|uses?|using|current(ly)?|new|set|entered|recorded)\\b\\W+(\\w+\\W+)?(age\\W+)?(\\b50\\b|fifty(?![\\s-]?five))"
+      ],
+      "reject": {
+        "STALE_45": [
+          "^(?!.*(\\b50\\b|fifty(?![\\s-]?five)|\\b2045\\b)).*(\\b45\\b|forty[\\s-]?five)",
+          "^(?!.*(\\b45\\b|forty[\\s-]?five|\\b55\\b|fifty[\\s-]?five).{0,60}(\\bto\\s+(age\\s+)?|revis\\w*|chang\\w*|agreed|settled|\\bnow\\b|final\\w*|updat\\w*|\\bthen\\b|instead|lower\\w*|moved|reduc\\w*|compromis\\w*|\\s-\\s|→|\\s*/\\s*|\\s*=\\s*).{0,30}(\\b50\\b|fifty(?![\\s-]?five)|\\b2045\\b))(?!.*(\\b45\\b|forty[\\s-]?five|\\b55\\b|fifty[\\s-]?five).{0,80}(\\b50\\b|fifty(?![\\s-]?five)).{0,20}(agreed|final|current|new|now|target))(?!.*(\\b45\\b|forty[\\s-]?five|\\b55\\b|fifty[\\s-]?five).{0,80}\\b(plan|planning|uses?|using|current(ly)?|new|set|entered|recorded)\\b\\W+(\\w+\\W+)?(age\\W+)?(\\b50\\b|fifty(?![\\s-]?five)))\\W*(jonah\\W*(s\\W+)?)?(target\\W*)?(age\\W*)?(\\b45\\b|forty[\\s-]?five)"
+        ],
+        "STALE_55": [
+          "^(?!.*(\\b50\\b|fifty(?![\\s-]?five)|\\b2045\\b)).*(\\b55\\b|fifty[\\s-]?five)",
+          "^(?!.*(\\b45\\b|forty[\\s-]?five|\\b55\\b|fifty[\\s-]?five).{0,60}(\\bto\\s+(age\\s+)?|revis\\w*|chang\\w*|agreed|settled|\\bnow\\b|final\\w*|updat\\w*|\\bthen\\b|instead|lower\\w*|moved|reduc\\w*|compromis\\w*|\\s-\\s|→|\\s*/\\s*|\\s*=\\s*).{0,30}(\\b50\\b|fifty(?![\\s-]?five)|\\b2045\\b))(?!.*(\\b45\\b|forty[\\s-]?five|\\b55\\b|fifty[\\s-]?five).{0,80}(\\b50\\b|fifty(?![\\s-]?five)).{0,20}(agreed|final|current|new|now|target))(?!.*(\\b45\\b|forty[\\s-]?five|\\b55\\b|fifty[\\s-]?five).{0,80}\\b(plan|planning|uses?|using|current(ly)?|new|set|entered|recorded)\\b\\W+(\\w+\\W+)?(age\\W+)?(\\b50\\b|fifty(?![\\s-]?five)))\\W*(jonah\\W*(s\\W+)?)?(target\\W*)?(age\\W*)?(\\b55\\b|fifty[\\s-]?five)"
+        ]
+      }
+    },
+    "risk_tolerance": {
+      "expected": "Aggressive (long-term accounts); the down payment is carved out separately in T-bills",
+      "accept": [
+        "(?<!moderately )(?<!moderately-)\\baggressive\\b"
+      ],
+      "reject": {
+        "MODERATELY_AGGRESSIVE": [
+          "^(?!.*(?<!moderately )(?<!moderately-)\\baggressive\\b).*moderately[\\s-]aggressive"
+        ],
+        "MODERATE_OR_CONSERVATIVE": [
+          "^(?!.*aggressive).*(conservative|\\bmoderate\\b)"
+        ]
+      }
+    },
+    "risk_tolerance_change": {
+      "expected": "no change",
+      "accept": [
+        "^\\W*(no\\s+changes?|unchanged|not\\s+changed)\\b",
+        "\\bfrom\\s+aggressive\\s+to\\s+aggressive\\b",
+        "^(?!.*(\\bfrom\\s+\\w+(\\s+\\w+)?\\s+to\\s+(moderate|moderately|conservative)|\\b(changed|lowered|reduced|stepped\\s+down|moved|shifted|decreased|downgraded)\\s+(\\w+\\s+)?to\\s+(moderate|moderately|conservative))).*(no\\s+changes?|unchanged|not\\s+changed|remain\\w*|\\bstay(s|ed|ing)?\\b|\\bsame\\b|maintain\\w*|\\bkept\\b|\\bkeep\\w*)",
+        "^\\W*none\\b"
+      ],
+      "reject": {
+        "INVENTED_CHANGE": [
+          "^(?!\\W*none\\b)(?!.*(no\\s+changes?|unchanged|not\\s+changed|remain\\w*|\\bstay(s|ed|ing)?\\b|\\bsame\\b|maintain\\w*|\\bkept\\b|\\bkeep\\w*|\\bfrom\\s+aggressive\\s+to\\s+aggressive\\b)).*(\\bfrom\\b.{0,40}\\bto\\b|moderately|conservative|\\bmoderate\\b|\\blower|reduc|decreas)",
+          "^(?!\\W*(no\\s+changes?|unchanged|not\\s+changed|none)\\b)(?!.*\\bfrom\\s+aggressive\\s+to\\s+aggressive\\b).*(\\bfrom\\s+\\w+(\\s+\\w+)?\\s+to\\s+(moderate|moderately|conservative)|\\b(changed|lowered|reduced|stepped\\s+down|moved|shifted|decreased|downgraded)\\s+(\\w+\\s+)?to\\s+(moderate|moderately|conservative))"
+        ]
+      }
+    },
+    "next_meeting": {
+      "expected": "Thursday, December 3, 2026, 11:30 AM Mountain",
+      "accept": [
+        "\\bdec(ember)?\\.?\\s+0?3(rd)?\\b|\\b12/0?3\\b|2026-12-03|\\b3(rd)?\\s+(of\\s+)?dec"
+      ],
+      "reject": {}
+    }
+  },
+  "life_events": [
+    {
+      "eid": "e1",
+      "expected": "Engaged (announced to Nell by email in July 2026; proposal in Portugal); wedding set for June 12, 2027",
+      "match": [
+        "engag|fianc|june\\s+12|2027-06-12|\\b0?6/12/(20)?27|wedding\\s+(date\\s+)?(is\\s+|set\\s+|planned\\s+|scheduled\\s+)?(for\\s+|on\\s+)?june",
+        "^(?!.*\\b(home|house|down[\\s-]?payment|residence|condo)\\b).*(wedding|marr(y|ied|iage))"
+      ],
+      "reject": {}
+    },
+    {
+      "eid": "e2",
+      "expected": "Promoted to staff engineer at Orrinfell effective October 1, 2026: base salary from $212,000 to $236,000, plus a refresh grant of 1,600 RSUs vesting quarterly over four years starting February 2027",
+      "match": [
+        "promot|staff\\s+(software\\s+)?engineer|refresh|\\braise\\b|salary|\\b236"
+      ],
+      "reject": {}
+    },
+    {
+      "eid": "e3",
+      "expected": "Planning a home purchase: offers February to March 2027, closing by April 2027, target price about $850,000 with 20% down (looking in Lafayette and Louisville)",
+      "match": [
+        "\\bhome\\b|\\bhouse\\b|real estate|property|down[\\s-]?payment|residence|\\bcondo\\b"
+      ],
+      "reject": {}
+    }
+  ],
+  "account_actions": [
+    {
+      "aid": "a1",
+      "expected": "Sell all 2,080 vested RSU shares of Orrinfell in the Parrish Lane stock plan account (market order placed during the meeting, filled at $96.05, proceeds about $199,784)",
+      "match": [
+        "\\b2,?080\\b",
+        "^(?!.*\\b(transfer\\w*|wire\\w*|t-?bills?|treasur\\w*|ladder|4471|pellbrook)\\b).*(sell|sold|sale|liquidat)\\w*.{0,60}\\brsus?\\b",
+        "^(?!.*\\b(transfer\\w*|wire\\w*|t-?bills?|treasur\\w*|ladder|4471|pellbrook)\\b).*\\brsus?\\b.{0,60}(sell|sold|sale|liquidat)"
+      ],
+      "amount_accept": [
+        "\\b2,?080\\b|two thousand (and )?eighty",
+        "^(?!(?!.*(\\b2,?080\\b|two thousand (and )?eighty|\\b720\\b)).*(\\b2,?800\\b|twenty[\\s-]eight hundred|\\b269,?\\d{3}\\b|\\b270,?000\\b|\\$?2(69|70)\\s*k\\b)).*\\ball\\b.{0,30}(shares|rsus?|vested)",
+        "^(?!(?!.*(\\b2,?080\\b|two thousand (and )?eighty|\\b720\\b)).*(\\b2,?800\\b|twenty[\\s-]eight hundred|\\b269,?\\d{3}\\b|\\b270,?000\\b|\\$?2(69|70)\\s*k\\b)).*(199[,.]?[78]\\d{0,2}|\\$?199\\.?[78]?\\s*k\\b|\\$?200,000|\\$?200\\s*k\\b)"
+      ],
+      "amount_reject": {
+        "STALE_2800": [
+          "^(?!.*(\\b2,?080\\b|two thousand (and )?eighty|\\b720\\b)).*(\\b2,?800\\b|twenty[\\s-]eight hundred|\\b269,?\\d{3}\\b|\\b270,?000\\b|\\$?2(69|70)\\s*k\\b)"
+        ]
+      }
+    },
+    {
+      "aid": "a2",
+      "expected": "Transfer the full sale proceeds (about $199,784) from the Parrish Lane stock plan account to the Wrenfield-managed individual account at Pellbrook ending 4471, scheduled during the meeting for settlement on Friday, September 11, 2026",
+      "match": [
+        "^(?!.*\\b(buy|bought|purchas\\w*|invest\\w*)\\b.{0,40}(t-?bills?|treasur|ladder)).*\\b(transfer\\w*|wire\\w*|sweep\\w*|ach)\\b.{0,120}(4471|pellbrook|wrenfield|proceeds|individual)",
+        "^(?!.*(t-?bills?|treasur|ladder|exercis)).*(4471|pellbrook)"
+      ],
+      "amount_accept": [
+        "^(?!.*(\\b2(69|70),?\\d{3}\\b|\\$?2(69|70)\\s*k\\b)).*(199[,.]?[78]\\d{0,2}|\\$?199\\.?[78]?\\s*k\\b|\\$?200,000|\\$?200\\s*k\\b|\\ball\\b|entire|\\bfull\\b|100\\s*%|proceeds)"
+      ],
+      "amount_reject": {
+        "STALE_2800_VALUE": [
+          "^(?!.*199).*(\\b2(69|70),?\\d{3}\\b|\\$?2(69|70)\\s*k\\b)"
+        ],
+        "LADDER_AMOUNT_NOT_TRANSFER": [
+          "^(?!.*(199|200|\\ball\\b|entire|\\bfull\\b|100\\s*%|proceeds)).*\\b185\\b"
+        ]
+      }
+    },
+    {
+      "aid": "a3",
+      "expected": "Buy a $185,000 Treasury bill ladder (three maturities: January, February and March 2027) in the individual account ending 4471 once the funds arrive; the remaining ~$14,784 stays in the money market",
+      "match": [
+        "t-?bills?|treasur|ladder"
+      ],
+      "amount_accept": [
+        "\\b185\\b|185,000|\\b185\\s*k\\b|one hundred (and )?eighty[\\s-]five thousand"
+      ],
+      "amount_reject": {
+        "DOWN_PAYMENT_ONLY_170K": [
+          "^(?!.*(\\b185|eighty[\\s-]five)).*\\b170\\b"
+        ],
+        "FULL_PROCEEDS": [
+          "^(?!.*(\\b185|eighty[\\s-]five)).*199[,.]?\\d"
+        ]
+      }
+    },
+    {
+      "aid": "a4",
+      "expected": "Exercise and hold 900 ISOs (strike $31.40) in the Parrish Lane account in the first week of December 2026, after the December 3 meeting; exercise cost $28,260 in cash",
+      "match": [
+        "^(?!.*(same[\\s-]?day|cashless|exercise[\\s-](and|&)[\\s-]sell|disqualif|t-?bills?|treasur|ladder|donor|\\bdaf\\b|charit|exchange\\s+fund)).*(exercis|\\bisos?\\b)",
+        "(?<![\\d,])900(?![\\d,])|nine hundred|28,?260"
+      ],
+      "amount_accept": [
+        "(?<![\\d,])900(?![\\d,])|nine hundred|28,?260|\\$?28\\.26\\s*k"
+      ],
+      "amount_reject": {
+        "STALE_TRANSCRIBED_1900": [
+          "^(?!.*((?<![\\d,])900(?![\\d,])|nine hundred|28,?260|\\$?28\\.26\\s*k)).*(\\b1,?900\\b|nineteen hundred)"
+        ],
+        "DECLINED_1500": [
+          "^(?!.*((?<![\\d,])900(?![\\d,])|nine hundred|28,?260|\\$?28\\.26\\s*k)).*(\\b1,?500\\b|fifteen hundred)"
+        ]
+      }
+    }
+  ],
+  "action_items": [
+    {
+      "iid": "i1",
+      "expected_task": "Send Jonah's ISO grant agreement and the Parrish Lane vesting export (already in the onboarding file) to CPA Rhea Delacroix for her final AMT run. Owner: Tessa Varnum (reassigned from Jonah Castellvi). Due: tomorrow morning (Friday, September 11, 2026).",
+      "match": [
+        "(grant|agreement|paperwork|documents?|\\bdocs?\\b|vesting\\s+(schedule|export))\\b.{0,100}(rhea|delacroix|\\bcpa\\b|accountant)",
+        "\\b(send|sends|sending|forward\\w*|email\\w*|provide\\w*)\\b.{0,60}(grant|agreement|paperwork|documents?|\\bdocs?\\b|vesting\\s+(schedule|export))",
+        "(rhea|delacroix|\\bcpa\\b|accountant)\\b.{0,40}(grant|agreement|paperwork|documents?|\\bdocs?\\b|vesting\\s+(schedule|export))"
+      ],
+      "owner_accept": [
+        "tessa|varnum|paraplanner"
+      ],
+      "owner_reject": {
+        "STALE_OWNER": [
+          "^(?!.*(tessa|varnum|paraplanner)).*(jonah|castellvi|client)"
+        ]
+      },
+      "due_accept": [
+        "tomorrow|\\bsep(t|tember)?\\.?\\s+11(th)?\\b|\\b0?9/11\\b|2026-09-11|friday",
+        "next\\s+(day|morning)",
+        "\\b11(th)?\\s+(of\\s+)?sep"
+      ],
+      "due_reject": {},
+      "trap": "reassigned"
+    },
+    {
+      "iid": "i2",
+      "expected_task": "Get Rhea Delacroix's final AMT projection and confirm how many ISOs to exercise in December. Owner: Nell Ashcombe. Due: November 20, 2026 (the Friday before Thanksgiving).",
+      "match": [
+        "^(?!\\W*((send|sends|sending|forward\\w*|email\\w*|provide\\w*)\\b.{0,60}|get\\s+(rhea|delacroix|(the\\s+)?cpa|(the\\s+)?accountant)\\b.{0,30})(grant|agreement|paperwork|documents?|\\bdocs?\\b|vesting\\s+(schedule|export))).*(projection|final\\s+(\\w+\\s+){0,3}(number|count|quantity|figure|run|projection|calc\\w*)|amt\\s+(\\w+\\s+)?(run|analysis|number|calc\\w*|projection|estimate)|confirm\\w*.{0,60}(exercise|isos?|number|quantity|shares))"
+      ],
+      "owner_accept": [
+        "nell|ashcombe|advis|rhea|delacroix|\\bcpa\\b"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "\\bnov(ember)?\\.?\\s+20(th)?\\b|\\b11/20\\b|2026-11-20|before thanksgiving",
+        "\\b20(th)?\\s+(of\\s+)?nov|\\b20/11\\b"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i3",
+      "expected_task": "Pay the $9,000 federal third-quarter estimated tax payment through IRS Direct Pay from checking (RSU vests are under-withheld at the flat 22%). Owner: Jonah Castellvi. Due: Tuesday, September 15, 2026.",
+      "match": [
+        "estimated\\s+(federal\\s+)?(tax|payment)|quarterly\\s+(tax|estimate|payment)|\\bq3\\b|third[\\s-]quarter|\\birs\\b|direct pay|\\b9,000\\b|\\$9k\\b|nine thousand"
+      ],
+      "owner_accept": [
+        "jonah|castellvi"
+      ],
+      "owner_reject": {
+        "WRONG_OWNER": [
+          "^(?!.*(jonah|castellvi)).*(tessa|varnum|nell|ashcombe|rhea|delacroix|\\bcpa\\b)"
+        ]
+      },
+      "due_accept": [
+        "\\bsep(t|tember)?\\.?\\s+15(th)?\\b|\\b0?9/15\\b|2026-09-15|tuesday|\\bthe 15th\\b",
+        "\\b15(th)?\\s+(of\\s+)?sep|\\b15/0?9\\b"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i4",
+      "expected_task": "Get the mortgage pre-approval letter from Ferncastle Mortgage. Owner: Maren Tolliver. Due: Friday, October 2, 2026 (moved from the end of next week, September 18, because Maren is at a conference in San Diego next week).",
+      "match": [
+        "pre[\\s-]?approv|mortgage|ferncastle|\\blender\\b|\\bloan\\b"
+      ],
+      "owner_accept": [
+        "maren|tolliver"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "\\boct(ober)?\\.?\\s+0?2(nd)?\\b|\\b10/0?2\\b|2026-10-02|october second|2nd of october",
+        "\\b0?2(nd)?\\s+(of\\s+)?oct"
+      ],
+      "due_reject": {
+        "STALE_DUE": [
+          "^(?!.*(\\boct|\\b10/0?2\\b|2026-10-02)).*(end of (the )?next week|\\bsep(t|tember)?\\.?\\s+18(th)?\\b|\\b0?9/18\\b|2026-09-18|next friday)"
+        ]
+      },
+      "trap": "due_changed"
+    },
+    {
+      "iid": "i5",
+      "expected_task": "Turn on the Parrish Lane standing election to sell all shares automatically at each vest, for the rest of the original RSU grant and the 1,600-RSU refresh. Owner: Jonah Castellvi. Due: before the next vest on November 15, 2026.",
+      "match": [
+        "sell[\\s-]+(all\\s+)?(shares\\s+)?(at|on|upon)[\\s-]+(each\\s+|every\\s+)?vest|standing\\s+(sell|sale|order|instruction|election)|auto(matic|matically)?[\\s-]?(sell|sale)|sell\\w*\\s+automatically|(sell|sale)\\w*\\s+(election|instruction)|vest[\\s-]day\\s+sale|future\\s+(rsu\\s+)?vests?",
+        "(sell|sold|sale)\\w*.{0,40}\\b(when|as|upon|at|on)\\s+(they\\s+|each\\s+|every\\s+|the\\s+)?vest|sell[\\s-]+all[\\s-]+at[\\s-]+vest|(sell|sold)\\s+automatically"
+      ],
+      "owner_accept": [
+        "jonah|castellvi"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "\\bnov(ember)?\\.?\\s+15(th)?\\b|\\b11/15\\b|2026-11-15|(next|november|nov\\.?)\\s+(\\d{4}\\s+)?(rsu\\s+|scheduled\\s+)?vest|before\\s+(the\\s+)?vest",
+        "\\b15(th)?\\s+(of\\s+)?nov|\\b15/11\\b"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i6",
+      "expected_task": "Change the Orrinfell 401(k) beneficiary from his mother to Maren Tolliver in the Orrinfell benefits portal (the firm cannot do it). Owner: Jonah Castellvi. Due: end of September (September 30, 2026).",
+      "match": [
+        "beneficiar"
+      ],
+      "owner_accept": [
+        "jonah|castellvi"
+      ],
+      "owner_reject": {
+        "FIRM_AS_OWNER": [
+          "^(?!.*(jonah|castellvi)).*(tessa|varnum|nell|ashcombe|wrenfield|advis)"
+        ]
+      },
+      "due_accept": [
+        "end of (the )?(month|september)|\\bsep(t|tember)?\\.?\\s+30(th)?\\b|\\b0?9/30\\b|2026-09-30",
+        "month[\\s-]end|\\beom\\b",
+        "\\b30(th)?\\s+(of\\s+)?sep|\\b30/0?9\\b"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    }
+  ],
+  "non_actions": [
+    {
+      "nid": "n1",
+      "what": "Donor-advised fund funded with appreciated Orrinfell shares: raised by Jonah; Nell deferred it to a future high-income year (for example the year a big block of ISO shares is sold). Not now.",
+      "match": [
+        "^(?!.*(declin|\\bnote|document|record|\\blog\\b|\\bfiled?\\b)).*(donor[\\s-]advised|\\bdaf\\b|charit\\w*|donat\\w*|gift\\w*\\s+(of\\s+)?(shares|stock))"
+      ],
+      "kind": "tentative"
+    },
+    {
+      "nid": "n2",
+      "what": "Exchange fund for Orrinfell stock: raised by Jonah; Nell said maybe someday once he holds a large block of exercised shares (seven-year lockup, larger minimums). Not now.",
+      "match": [
+        "^(?!.*(declin|\\bnote|document|record|\\blog\\b|\\bfiled?\\b)).*(exchange\\s+fund)"
+      ],
+      "kind": "tentative"
+    },
+    {
+      "nid": "n3",
+      "what": "Nell's recommendation to exercise and sell 1,500 ISOs in a same-day sale before the window closes on Tuesday, September 15 (about $97,200 of ordinary income): Jonah declined and Nell documented the declined recommendation.",
+      "match": [
+        "^(?!.*(declin|\\bnote|document|record|\\blog\\b|\\bfiled?\\b))(?!.*((?<![\\d,])900(?![\\d,])|nine hundred|\\brsus?\\b|\\b(at|each|every|upon|on)\\s+(each\\s+|every\\s+)?vest)).*same[\\s-]?day",
+        "^(?!.*(declin|\\bnote|document|record|\\blog\\b|\\bfiled?\\b))(?!.*((?<![\\d,])900(?![\\d,])|nine hundred|\\brsus?\\b|\\b(at|each|every|upon|on)\\s+(each\\s+|every\\s+)?vest)).*cashless",
+        "^(?!.*(declin|\\bnote|document|record|\\blog\\b|\\bfiled?\\b))(?!.*((?<![\\d,])900(?![\\d,])|nine hundred|\\brsus?\\b|\\b(at|each|every|upon|on)\\s+(each\\s+|every\\s+)?vest)).*exercise[\\s-](and|&)[\\s-]sell",
+        "^(?!.*(declin|\\bnote|document|record|\\blog\\b|\\bfiled?\\b))(?!.*((?<![\\d,])900(?![\\d,])|nine hundred|\\brsus?\\b|\\b(at|each|every|upon|on)\\s+(each\\s+|every\\s+)?vest)).*disqualif",
+        "^(?!.*(declin|\\bnote|document|record|\\blog\\b|\\bfiled?\\b))(?!.*((?<![\\d,])900(?![\\d,])|nine hundred)).*(\\b1,?500\\b|fifteen hundred)"
+      ],
+      "kind": "declined_proposal"
+    },
+    {
+      "nid": "n4",
+      "what": "Stepping the long-term risk profile down to moderately aggressive around the house purchase: floated by Nell as an option, declined by Jonah; risk tolerance left at aggressive.",
+      "match": [
+        "^(?!.*(declin|\\bnote|document|record|\\blog\\b|\\bfiled?\\b))(?!.*(no\\s+changes?|unchanged|\\bkeep\\w*|\\bkept\\b|remain\\w*|\\bstay(s|ed|ing)?\\b|rather\\s+than|instead\\s+of)).*(moderately[\\s-]aggressive)"
+      ],
+      "kind": "tentative"
+    }
+  ],
+  "corrected_figures": [
+    {
+      "what": "Vested RSU shares held at Parrish Lane (the quantity sold in a1)",
+      "said_first": "2,800 ('twenty-eight hundred shares', Jonah at 00:04:16; that is the count released before tax withholding)",
+      "corrected_to": "2,080 (read from the Parrish Lane screen at 00:14:58 and explained at 00:15:17: 720 shares were withheld for taxes)",
+      "field": "account_actions"
+    },
+    {
+      "what": "Retirement target age for Jonah",
+      "said_first": "45 (Jonah at 00:23:40; the plan on file from March said 55)",
+      "corrected_to": "50 (Jonah agrees at 00:24:04 and Nell enters it at 00:24:08)",
+      "field": "scalar:retirement_target"
+    },
+    {
+      "what": "ISO exercise quantity from the CPA's first pass (transcription error)",
+      "said_first": "nineteen hundred (as transcribed at 00:10:16)",
+      "corrected_to": "900 (clarified by Tessa at 00:10:42)",
+      "field": "account_actions"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+*   Question: "What is the amount of capital that Quenby Holt Trust Company currently maintains, and what is its regulatory minimum?"
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+    *   Keys: "answer", "source_document", "section", "quote".
+
+    *   Document 1: `05_fee_schedule.md`
+        *   Section 3.1: "Where Quenby Holt Trust Company serves as full trustee, it charges an annual fee of 0.10% of trust assets, subject to a minimum of $10,000 per trust per year."
+        *   Section 3.2: "Where QHTC serves as directed trustee... it charges a flat annual fee of $6,000 per trust."
+        *   Section 1.2: "Family Relationship" and "Reporting-only assets".
+        *   Section 2.1: Tiered rates for advisory fees.
+        *   Section 4.1: Minimum annual fee of $150,000 for Family Relationships.
+    *   Document 2: `06_policy_update_memo.md`
+        *   Section 2: Personal trading de minimis.
+        *   Section 3: Quarterly transaction report deadline.
+        *   Section 4: Valuation Committee meeting frequency.
+        *   Section 5: Approval of price overrides.
+        *   Section 6: Offsite data backup vendor.
+        *   Section 7: Fee schedule breakpoint.
+
+    *   The question asks for the "amount of capital that Quenby Holt Trust Company currently maintains" and its "regulatory minimum".
+    *   Looking at Section 3.1 of `05_fee_schedule.md`: "Where Quenby Holt Trust Company serves as full trustee, it charges an annual fee of 0.10% of trust assets, subject to a minimum of $10,000 per trust per year."
+    *   Does "minimum of $10,000 per trust per year" refer to the *capital* or the *fee*? The text says "it charges an annual fee... subject to a minimum of $10,000". This is a fee minimum, not a capital minimum.
+    *   Is there any mention of "capital" or "regulatory minimum" for the trust company's capital?
+    *   Scanning the text for "capital", "minimum", "regulatory", "requirement".
+    *   Section 3.1 mentions a fee minimum.
+    *   Section 4.1 mentions a minimum annual advisory fee of $150,000.
+    *   Section 7.3 in the first snippet (which seems to be part of a BCP or Compliance manual, though the filename isn't explicitly given in the prompt, it's the first block of text) mentions "South Dakota Division of Banking" but doesn't mention capital amounts.
+    *   The question asks for "amount of capital... currently maintains" and "regulatory minimum".
+    *   The text does not provide the amount of capital the trust company maintains. It only mentions fee minimums.
+
+    *   The information is not in the documents.
+
+    *   answer: "NOT_IN_DOCUMENTS"
+    *   source_document: ""
+    *   section: ""
+    *   quote: ""
+
+    *   Wait, let me double-check the text for "capital".

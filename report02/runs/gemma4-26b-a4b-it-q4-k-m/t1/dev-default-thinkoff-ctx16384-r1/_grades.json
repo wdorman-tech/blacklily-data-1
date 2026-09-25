@@ -1,0 +1,324 @@
+{
+ "task": "t1",
+ "model": "gemma4:26b-a4b-it-q4_K_M",
+ "items": {
+  "doc1_meridian_ridge": {
+   "units": [
+    {
+     "uid": "fund_name",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Meridian Ridge Global Opportunities Fund, L.P.",
+     "expected": "Meridian Ridge Global Opportunities Fund, L.P.",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_domicile",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Delaware",
+     "expected": "Delaware",
+     "extra": {
+      "citation_valid": false,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_structure",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "open-end (redeemable), master-feeder",
+     "expected": "Open-end Delaware LP in a master-feeder structure; feeds into a Cayman master fund",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "management_fee",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Class A: 1.75% annual rate of net asset value; Class B: 1.25% annual rate of net asset value",
+     "expected": "Class A 1.75% per annum; Class B 1.25% per annum, on NAV of capital account, accrued monthly / paid quarterly in arrears",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "performance_fee",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "20% of Net Profits (applies to Class A and Class B)",
+     "expected": "20% of Net Profits, identical for Class A and Class B",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "hurdle_rate",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "NOT_APPLICABLE, the Performance Allocation is not subject to a preferred return, hurdle rate or benchmark",
+     "expected": "None — performance allocation is expressly not subject to a hurdle, preferred return or benchmark",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "high_water_mark",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "perpetual high water mark on a per-investor basis",
+     "expected": "Yes — perpetual, per-investor Loss Carryforward Account; reduced pro rata on partial redemption; does not reset",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "minimum_initial_investment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "$2,000,000",
+     "expected": "$2,000,000",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "lockup_period",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Class A: 12 month hard lock; Class B: 24 month hard lock; both subject to 3% early redemption fee",
+     "expected": "Class A 12 months; Class B 24 months; FIFO per subscription. Early redemption permitted with GP consent subject to 3% fee",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_frequency",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "last business day of each calendar quarter",
+     "expected": "Quarterly — last business day of each calendar quarter",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_notice_days",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "90 calendar days",
+     "expected": "90 calendar days",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gate_provision",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "fund-level gate of 20% of net asset value",
+     "expected": "Fund-level gate at 20% of NAV per Redemption Date; excess reduced pro rata and carried forward with priority",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "key_man_provision",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Dr. Elena Vasquez-Hartmann; triggers right to redeem all or any portion of Interests without lock-up, without early redemption fee, and without application of the Gate",
+     "expected": "Yes — Dr. Elena Vasquez-Hartmann. On a Key Man Event, LPs may redeem next quarter-end free of lock-up, early redemption fee and the Gate, on 30 days' notice",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gp_commitment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "the greater of $25,000,000 or 2% of the aggregate net asset value of the Master Fund",
+     "expected": "Greater of $25,000,000 or 2% of aggregate Master Fund NAV, maintained for so long as the Partnership operates",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_term",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "perpetual",
+     "expected": "Perpetual — open-end, no fixed termination date, no investment period",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "auditor",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Thornbury & Associates LLP",
+     "expected": "Thornbury & Associates LLP",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "administrator",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Calderon Fund Services (Cayman) Ltd.",
+     "expected": "Calderon Fund Services (Cayman) Ltd.",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "prime_broker",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Harrington Sloan Securities LLC and Beaumont Clarke International Ltd.",
+     "expected": "Harrington Sloan Securities LLC and Beaumont Clarke International Ltd.",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "legal_counsel",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Whitlock Barr & Nunes LLP (U.S. counsel); Kentish Drummond (Cayman) (Cayman Islands counsel)",
+     "expected": "Whitlock Barr & Nunes LLP (U.S.); Kentish Drummond (Cayman)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "mfn_election",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "NOT_APPLICABLE, the Partnership does not offer a \"most favored nation\" election to Limited Partners",
+     "expected": "No — the Partnership expressly does not offer an MFN election",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "doc1_meridian_ridge",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 51.06,
+    "prompt_tokens": 6988,
+    "output_tokens": 1926,
+    "output_tokens_per_sec": 41.8,
+    "prompt_tokens_per_sec": 1436.5,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11522
+   }
+  }
+ }
+}

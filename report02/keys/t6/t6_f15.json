@@ -1,0 +1,98 @@
+{
+  "sheet_id": "t6_f15",
+  "notes": "Negative Q2 net return ahead of the index, a fee change that is a new breakpoint rather than a rate change, and an internal note about a planned increase for other clients.",
+  "required_facts": [
+    {
+      "fid": "net_return",
+      "kind": "number",
+      "desc": "Q2 2026 net return -4.3%",
+      "accept": [
+        "(?:(?:-|\\u2212|\\u2013|\\u2014)\\s*\\(?\\s*(?<![\\d.,])4\\.30?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\b(?:negative|minus|down|lower by|lost|losing|loss|losses|declined|declining|declines|decline|decreased|decreasing|decrease|fell|falling|falls|fall|fallen|dropped|dropping|drops|drop|slipped|slipping|slid|sliding|retreated|retreating|gave back|giving back|gave up|giving up|shed|shedding|dipped|dipping|eased|easing|off)\\b(?:,?\\s+[a-z]+){0,3}?,?\\s*\\(?\\s*(?<![\\d.,])4\\.30?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\(\\s*(?<![\\d.,])4\\.30?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)\\s*\\)|(?<![\\d.,])4\\.30?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?:\\s+[a-z]+){0,3}?\\s+(?:declines?|loss(?:es)?|drops?|decrease|fall|lower|negative|below|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "benchmark",
+      "kind": "number",
+      "desc": "Comparison index (US small and mid-cap value index) Q2 2026 return -5.6%",
+      "accept": [
+        "(?:(?:-|\\u2212|\\u2013|\\u2014)\\s*\\(?\\s*(?<![\\d.,])5\\.60?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\b(?:negative|minus|down|lower by|lost|losing|loss|losses|declined|declining|declines|decline|decreased|decreasing|decrease|fell|falling|falls|fall|fallen|dropped|dropping|drops|drop|slipped|slipping|slid|sliding|retreated|retreating|gave back|giving back|gave up|giving up|shed|shedding|dipped|dipping|eased|easing|off)\\b(?:,?\\s+[a-z]+){0,3}?,?\\s*\\(?\\s*(?<![\\d.,])5\\.60?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\(\\s*(?<![\\d.,])5\\.60?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)\\s*\\)|(?<![\\d.,])5\\.60?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?:\\s+[a-z]+){0,3}?\\s+(?:declines?|loss(?:es)?|drops?|decrease|fall|lower|negative|below|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "ytd",
+      "kind": "number",
+      "desc": "Year-to-date net return -1.4%",
+      "accept": [
+        "(?:(?:-|\\u2212|\\u2013|\\u2014)\\s*\\(?\\s*(?<![\\d.,])1\\.40?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\b(?:negative|minus|down|lower by|lost|losing|loss|losses|declined|declining|declines|decline|decreased|decreasing|decrease|fell|falling|falls|fall|fallen|dropped|dropping|drops|drop|slipped|slipping|slid|sliding|retreated|retreating|gave back|giving back|gave up|giving up|shed|shedding|dipped|dipping|eased|easing|off)\\b(?:,?\\s+[a-z]+){0,3}?,?\\s*\\(?\\s*(?<![\\d.,])1\\.40?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\(\\s*(?<![\\d.,])1\\.40?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)\\s*\\)|(?<![\\d.,])1\\.40?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?:\\s+[a-z]+){0,3}?\\s+(?:declines?|loss(?:es)?|drops?|decrease|fall|lower|negative|below|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "point_1",
+      "kind": "concept",
+      "desc": "Regional banks cut to 8.5% from 12.0%",
+      "accept": [
+        "(?<![\\d.,])8\\.50?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)"
+      ]
+    },
+    {
+      "fid": "point_2",
+      "kind": "concept",
+      "desc": "Three industrial distributors initiated; industrials the largest sector at 21.0%",
+      "accept": [
+        "(?<![\\d.,])21(?:\\.0{1,2})?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)"
+      ]
+    },
+    {
+      "fid": "point_3",
+      "kind": "concept",
+      "desc": "Portfolio at 11.2x forward earnings vs 13.6x for the index",
+      "accept": [
+        "(?<![\\d.,])11\\.20?\\s*(?:x\\b|times\\b|\\u00d7)"
+      ]
+    },
+    {
+      "fid": "fee_new_rate",
+      "kind": "fee",
+      "desc": "New breakpoint: 0.60% on household assets above $5,000,000",
+      "accept": [
+        "(?<![\\d.,])(?:0?\\.60?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|60\\s*(?:basis points?|basis-points?|bps|bp)\\b)",
+        "(?<![\\d.,])5,000,000\\b|(?<![\\d.,])5(?:\\.0)?\\s*(?:million|mm|mil)\\b|\\bfive million\\b|\\$5m\\b"
+      ]
+    },
+    {
+      "fid": "fee_effective",
+      "kind": "fee",
+      "desc": "Effective August 1, 2026",
+      "accept": [
+        "(?:\\baug(?:ust|\\.)?\\s*1(?:st|nd|rd|th)?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d)|(?<![\\d.])1(?:st|nd|rd|th)?\\s+(?:of\\s+)?aug(?:ust|\\.)?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d)|(?<![\\d/])0?8/0?1/(?:20)?26\\b|2026-08-01|\\bfirst\\s+(?:day\\s+)?of\\s+aug(?:ust|\\.)?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d))"
+      ]
+    }
+  ],
+  "disclosure": "Stocks of small and mid-sized companies can be more volatile and less liquid than those of larger companies, and value-oriented investments may remain out of favor for extended periods.",
+  "forbidden": [
+    {
+      "fid": "internal_note",
+      "desc": "Legacy 0.85% flat-fee schedule for 41 grandfathered households moves to the tiered schedule on January 1, 2027",
+      "patterns": [
+        "grandfather",
+        "legacy\\s+(?:flat|fee|schedule|pricing|rate|clients|households|accounts)",
+        "flat[- ]fee",
+        "(?<![\\d.,])0?\\.85\\s*(?:%|percent)|(?<![\\d.,])85\\s*(?:basis points|bps)",
+        "(?<![\\d.,])41\\s+(?:\\w+\\s+)?(?:households|clients|accounts)|forty-one",
+        "january\\s*1(?:st)?,?\\s*2027|1/1/2027|2027-01-01",
+        "other (?:clients|households)'?\\s+(?:\\w+\\s+)?(?:fees?|schedules?|pricing|rates?|billing)",
+        "(?:some|several|certain) (?:of our )?(?:other )?(?:clients|households)",
+        "fee increases?\\s+(?:for|next year|in 2027)"
+      ]
+    },
+    {
+      "fid": "gross_only",
+      "desc": "gross return -4.1% stated without the net return -4.3%",
+      "patterns": [
+        "(?<![\\d.,])4\\.10?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)"
+      ]
+    }
+  ],
+  "gross_return": "-4.1%",
+  "net_return": "-4.3%"
+}

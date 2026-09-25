@@ -1,0 +1,29 @@
+*   Question: Who conducts the firm's annual review of its compliance program, and by what date is the resulting report delivered?
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not found, answer NOT_IN_DOCUMENTS.
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "annual review of its compliance program"
+    *   "report delivered"
+
+    *   *01_brochure.md*: Mentions "annual review" in Item 15.3 (Surprise Examination) and Item 15.2 (Conduct and Reporting). Item 15.2 says "The CCO conducts the annual review with the assistance of Hethersett Compliance Advisors, LLC... The CCO delivers a written report of its findings to the Management Committee no later than April 30 of each year."
+    *   *02_compliance_manual.md*: Section 15.2 (Conduct and Reporting) says "The CCO conducts the annual review with the assistance of Hethersett Compliance Advisors, LLC... The CCO delivers a written report of its findings to the Management Committee no later than April 30 of each year."
+    *   *03_valuation_policy.md*: Section 8.2 (Annual Policy Review) mentions the CCO tests the application of this Policy to advisory fee calculations as part of the annual review of the compliance program.
+    *   *04_business_continuity_plan.md*: Section 1.3 mentions the CCO reviews the Plan as part of the annual review of the compliance program.
+    *   *05_fee_schedule.md*: No mention of compliance review.
+    *   *06_policy_update_memo.md*: Mentions the CCO's role in the annual review in Section 8.
+
+    *   The question asks: "Who conducts the firm's annual review of its compliance program, and by what date is the resulting report delivered?"
+    *   The text in *02_compliance_manual.md* Section 15.2 states: "The CCO conducts the annual review with the assistance of Hethersett Compliance Advisors, LLC, ... The CCO delivers a written report of its findings to the Management Committee no later than April 30 of each year."
+
+    *   Answer: The CCO conducts the annual review with the assistance of Hethersett Compliance Advisors, LLC, and the report is delivered to the Management Committee no later than April 30 of each year.
+    *   Source: 02_compliance_manual.md
+    *   Section: 15.2
+    *   Quote: "The CCO conducts the annual review with the assistance of Hethersett Compliance Advisors, LLC, ... The CCO delivers a written report of its findings to the Management Committee no later than April 30 of each year."
+
+    *   Wait, let me check if any later documents override this.
+    *   *06_policy_update_memo.md* mentions the CCO's role in the annual review in Section 8, but it doesn't change the "who" or "date" of the report delivery for the compliance program specifically, it just mentions the CCO's role in testing the Valuation Policy as part of that review.
+    *   The

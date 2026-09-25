@@ -1,0 +1,29 @@
+*   Question: "What are the termination provisions of the advisory agreement, and how are prepaid fees handled on termination?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in docs, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "01_brochure.md" (Item 5.6: Termination and Refunds)
+    *   "02_compliance_manual.md" (No mention of termination of advisory agreement)
+    *   "03_valuation_policy.md" (No mention of termination of advisory agreement)
+    *   "04_business_continuity_plan.md" (No mention of termination of advisory agreement)
+    *   "05_fee_schedule.md" (Section 5.3: Termination and Refunds)
+    *   "06_policy_update_memo.md" (No mention of termination of advisory agreement)
+
+    *   *01_brochure.md*, Item 5.6: "Either the client or the Firm may terminate the Agreement on 30 days' written notice. Upon termination, the advisory fee is prorated to the effective date of termination, and any unearned fee paid in advance is refunded within 30 days after that date. A client who terminates within five business days of signing the Agreement receives a full refund of any fee paid. No termination fee is charged."
+    *   *05_fee_schedule.md*, Section 5.3: "Either party may terminate the investment management agreement on 30 days' written notice. Fees are prorated to the effective date of termination, and unearned fees paid in advance are refunded to the client on a pro rata basis within 30 days after the effective date of termination. A client may terminate within five business days after signing the agreement and receive a full refund. No termination fee is charged."
+
+    *   The question asks for "termination provisions of the advisory agreement" and "how are prepaid fees handled on termination".
+    *   The *05_fee_schedule.md* is a more specific document regarding fees and the agreement terms (it's the "Schedule of Fees").
+    *   However, the *01_brochure.md* is the Form ADV Part 2A.
+    *   The prompt says "Later-dated documents supersede earlier ones."
+    *   *01_brochure.md* is dated March 27, 2026.
+    *   *05_fee_schedule.md* is effective January 1, 2026.
+    *   *06_policy_update_memo.md* is dated September 8, 2026.
+    *   Wait, the rule says "Later-dated documents supersede earlier ones. Where a policy update memorandum or amendment changes a provision, answer with the provision currently in effect, not the original."
+    *   The *01_brochure.md* is dated March 27, 2026.
+    *   The *05_fee_schedule.md* is dated January 1, 2026.
+    *   The *06_policy_update_memo.md* (September 8

@@ -1,0 +1,36 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "When were the Adviser's compliance policies most recently amended, and who approved the amendments?"
+    *   Key information needed: Date of amendment, Approver(s).
+
+3.  **Scan the Documents:**
+    *   Document 1: `02_compliance_manual.md` (dated January 15, 2026).
+        *   Section 1.3 Amendments and Interpretation: Mentions amendments are approved by the Management Committee. Between full revisions, approved amendments are issued by written memorandum of the Chief Compliance Officer.
+    *   Document 2: `06_policy_update_memo.md` (dated August 24, 2026).
+        *   Section 1.1 Purpose and Approval: "Following the mid-year review... the Management Committee approved the amendments set out in Section 2 at its meeting on August 20, 2026."
+
+4.  **Evaluate Findings:**
+    *   The question asks for the *most recent* amendment date and who approved them.
+    *   Document `06_policy_update_memo.md` is dated August 24, 2026 (later than Jan 15, 2026).
+    *   Section 1.1 of `06_policy_update_memo.md` states: "the Management Committee approved the amendments set out in Section 2 at its meeting on August 20, 2026."
+    *   This provides both the date (August 20, 2026) and the approver (Management Committee).
+    *   The Compliance Manual (`02_compliance_manual.md`) Section 1.3 mentions the Management Committee approves amendments generally, but the specific recent amendment details are in the Memo.
+    *   Since the Memo is later dated (August 24, 2026) and discusses amendments approved at a meeting on August 20, 2026, this is the most recent information available regarding amendments.
+    *   I need to extract the specific text for the quote.
+    *   Quote candidate: "the Management Committee approved the amendments set out in Section 2 at its meeting on August 20, 2026."
+    *   Source Document: `06_policy_update_memo.md`
+    *   Section: `SECTION 1. PURPOSE, APPROVAL AND EFFECTIVE DATE` (or just `1.1 Purpose and Approval` based on the header in the text provided). The text shows `Section: SECTION 1. PURPOSE, APPROVAL AND EFFECTIVE DATE > 1.1 Purpose and Approval`. I should use the section label as it appears in the document header or content. The prompt

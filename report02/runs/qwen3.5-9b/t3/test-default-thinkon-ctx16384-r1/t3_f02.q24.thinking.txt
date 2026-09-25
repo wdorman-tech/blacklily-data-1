@@ -1,0 +1,37 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Who is the Adviser's outsourced IT managed service provider?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "IT managed service provider", "outsourced", "vendor".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Mentions employees, partners, but not specific IT vendor names.
+    *   `02_compliance_manual.md` (dated Jan 15, 2026): Section 11.4 Vendor Oversight mentions "Oskerby Technology Group LLC" as the Adviser's IT managed service provider.
+    *   `04_business_continuity_plan.md` (dated Feb 9, 2026): Section 5.2 IT Managed Service Provider mentions "Oskerby Technology Group LLC".
+    *   `06_policy_update_memo.md` (dated Aug 24, 2026): Section 2.5 Amendments states: "Effective September 1, 2026, Anselby Managed IT LLC replaces Oskerby Technology Group LLC as the Adviser's IT managed service provider... This amendment supersedes Section 5.2 of the Business Continuity Plan."
+
+5.  **Determine Current Status (Superseding Rule):**
+    *   Rule 3: Later-dated documents supersede earlier ones.
+    *   `06_policy_update_memo.md` is dated August 24, 2026.
+    *   `02_compliance_manual.md` is dated January 15, 2026.
+    *   `04_business_continuity_plan.md` is dated February 9, 2026.
+    *   The Memo (Aug 24, 2026) explicitly states that `Anselby Managed IT LLC` replaces `Oskerby Technology Group LLC` effective September 1, 2026.
+    *   The question asks "Who is the Adviser's outsourced IT managed service provider?" (Present tense).
+    *   Since the memo supersedes the earlier documents regarding this specific provision, the current provider is `Anselby Managed IT LLC`.
+    *   However, I need to check if the transition has completed. The memo says "on completion of the transition that began in July 2026" and is effective September 1, 2026. The document date is August 24, 2026. Usually, in these contexts, the amendment defines the current state for the purpose of the policy. The text says "Anselby Managed IT LLC replaces Oskerby...".
+    *   I must use the most recent document that addresses the specific

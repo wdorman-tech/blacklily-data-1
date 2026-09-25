@@ -1,0 +1,37 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "What approval requirements and dollar limits apply to political contributions by the Adviser's personnel?"
+    *   Key elements needed: Approval requirements (who must approve) and dollar limits (how much).
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "political contributions", "approval", "limits", "personnel", "covered associates", "supervised persons".
+
+4.  **Evaluate Document Content:**
+
+    *   `01_brochure.md`: Discusses proxy voting policies (Item 17). Not relevant to political contributions limits/approval.
+    *   `02_compliance_manual.md` (dated January 15, 2026):
+        *   Section 6.1 Scope: Mentions Rule 206(4)-5 and government entities as investors.
+        *   Section 6.2 Pre-Clearance and Limits: "All supervised persons... must obtain the prior written approval of the CCO before making any political contribution..." It also lists limits: "up to $350 per election to an official for whom the covered associate is entitled to vote, and up to $150 per election to an official for whom the covered associate is not entitled to vote."
+        *   Section 6.3 New Covered Associates: Mentions review of contributions for preceding two years/six months. CCO must approve hire if exceeded limits.
+        *   Section 6.4 Solicitation...: Mentions restrictions on soliciting.
+    *   `06_policy_update_memo.md` (dated August 24, 2026):
+        *   Section 2.3 Compliance Manual Section 5.2 (Gifts Received): Discusses amendments to gift limits ($250 to $100). Explicitly states "The limits on gifts given in Section 5.3 and on business entertainment in Section 5.4 are unchanged."
+        *   Does this memo update political contribution limits? No, it only mentions Gifts Received (Section 5.2) and says gifts given (Section 5.3) and entertainment (Section 5.4) are unchanged. It does not mention Section 6 (Political Contributions).
+        *   Therefore, the Compliance Manual dated January 15, 2026 remains the governing document for political contributions unless superseded by a later memo specifically addressing Section 6. The memo only addresses Sections 5.2, 5.3, and 5.4 regarding gifts/entertainment. It does not amend Section 6.
+
+5.  **Synthesize the Answer:**
+    *   Approval Requirement: Prior written approval of the CCO (Chief Compliance Officer).
+    *   Dollar Limits: Up to $350 per election to an official for whom

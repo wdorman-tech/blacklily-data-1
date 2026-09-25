@@ -1,0 +1,220 @@
+{
+ "pair_id": "t2_hd_2",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "The Home Depot, Inc.",
+ "ticker": "HD",
+ "split": "test",
+ "prior": {
+  "fiscal_year_end": "2025-02-02",
+  "url": "https://www.sec.gov/Archives/edgar/data/354950/000035495025000085/hd-20250202.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2026-02-01",
+  "url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026019436/hd-20260201.htm"
+ },
+ "words": 6390,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "modified",
+   "prior_heading": "Disruptions in our customer-facing technology systems could impair our interconnected retail strategy and give rise to negative customer experiences.",
+   "current_heading": "Disruptions in our customer-facing technology infrastructure could impair our interconnected experience strategy and give rise to negative customer experiences, damage our brand and reputation and adversely impact our sales.",
+   "similarity": 0.824,
+   "diff": [
+    "replace: [systems] -> [infrastructure]",
+    "replace: [retail] -> [experience]",
+    "replace: [experiences.] -> [experiences, damage our brand and reputation and adversely impact our sales.]",
+    "delete: [information] -> []",
+    "replace: [systems,] -> [infrastructure,]",
+    "delete: [help] -> []",
+    "replace: [Pros] -> [Pros, including those]",
+    "replace: [experience.] -> [experience, including adopting AI tools and other technology innovations to better serve our customers.]",
+    "replace: [failures] -> [failures, inaccuracies,]",
+    "insert: [] -> [in or]",
+    "insert: [] -> [or other technology]",
+    "replace: [interruptions;] -> [interruptions, launches of new or emerging technologies;]",
+    "..."
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The customer-facing technology risk now covers adopting AI tools and other technology innovations, adds inaccuracies and launches of new or emerging technologies as sources of disruption, and adds damage to brand and reputation as a consequence in both the headline and body.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: new exposures (AI tool adoption, inaccuracies, launches of new or emerging technologies) are disclosed, and criterion 3: the severity is widened to include brand and reputation damage."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: new exposures (AI tool adoption, new technology launches, inaccuracies) are disclosed, and criterion 3: severity widens to include brand and reputation damage."
+    }
+   }
+  },
+  {
+   "aid": "a02",
+   "status": "modified",
+   "prior_heading": "Disruptions in our supply chain and other factors affecting the availability and distribution of our merchandise could adversely impact our business, financial results, and reputation.",
+   "current_heading": "Disruptions in our supply chain and other factors affecting the availability and distribution of our merchandise could adversely impact our business, financial results, and reputation.",
+   "similarity": 0.514,
+   "diff": [
+    "replace: [in the past] -> [adversely affected]",
+    "replace: [affect] -> [affect,]",
+    "delete: [supply chain] -> []",
+    "insert: [] -> [political instability;]",
+    "insert: [] -> [tensions or conflicts,]",
+    "insert: [] -> [civil unrest;]",
+    "delete: [civil unrest;] -> []",
+    "delete: [Table of Contents] -> []",
+    "replace: [As we saw during the heights of the COVID-19 pandemic, these] -> [These]",
+    "insert: [] -> [has]",
+    "insert: [] -> [in some circumstances,]",
+    "replace: [affect] -> [affect,]",
+    "..."
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Political instability and geopolitical tensions are added to the list of supply chain disruption causes, while the specific COVID-19 pandemic references in the second paragraph are dropped and 'increased supply chain costs' is broadened to 'increased costs'.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: new disruption exposures (political instability, geopolitical tensions) are disclosed, and criterion 2: references to the COVID-19 pandemic as the illustrative event are dropped from the discussion of supply chain strain and online demand."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: new disruption sources (political instability, geopolitical tensions) are disclosed, and criterion 2: the COVID-19 pandemic references in the second paragraph are dropped."
+    }
+   }
+  },
+  {
+   "aid": "a03",
+   "status": "modified",
+   "prior_heading": "Failure to maintain a safe and secure shopping and working environment may adversely impact sales, costs, the customer and associate experience, and our brand and reputation.",
+   "current_heading": "Failure to maintain a safe and secure shopping and working environment may adversely impact sales, costs, the customer and associate experience, and our brand and reputation.",
+   "similarity": 0.345,
+   "diff": [
+    "insert: [] -> [and secure]",
+    "delete: [loss or theft of our] -> []",
+    "insert: [] -> [losses]",
+    "replace: [“shrink”).] -> [“shrink”), including due to theft.]",
+    "replace: [have seen] -> [saw]",
+    "replace: [underway] -> [in place]",
+    "replace: [may] -> [can]",
+    "insert: [] -> [publicity regarding the Company or regarding]",
+    "replace: [and] -> [and/or]",
+    "replace: [facilities] -> [facilities, such as civil unrest, raids, protests, or similar activities,]",
+    "replace: [erode] -> [diminish]",
+    "replace: [or] -> [and]",
+    "..."
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The safety risk now names negative publicity regarding the Company and incidents such as civil unrest, raids and protests at stores or facilities, and widens the impact to store traffic and associate recruiting, while heightened shrink moves from 'have seen' to 'saw'.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: new exposures (negative publicity about the Company, civil unrest, raids, protests) are disclosed, and criterion 3: the scope of harm is widened to store traffic and associate recruiting."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: new exposures (Company publicity, civil unrest, raids, protests) and new impacts (store traffic, recruiting) are disclosed, and criterion 3: the shrink characterization shifts from ongoing to past."
+    }
+   }
+  },
+  {
+   "aid": "a04",
+   "status": "modified",
+   "prior_heading": "If our efforts to maintain the privacy and security of customer, associate, job applicant, business partner, and Company information are not successful, we could incur substantial costs and reputational damage and could become subject to litigation and enforcement actions.",
+   "current_heading": "If our efforts to maintain the privacy and security of customer, associate, jobseeker, business partner, and Company information are not successful, we could incur substantial costs and reputational damage and could become subject to litigation and enforcement actions.",
+   "similarity": 0.917,
+   "diff": [
+    "replace: [job applicant,] -> [jobseeker,]",
+    "replace: [job applicants,] -> [jobseekers,]",
+    "insert: [] -> [cybersecurity risks. Despite our efforts, our cybersecurity risk management processes may not be fully implemented, complied with or effective in preventing or mitigating future]",
+    "insert: [] -> [tensions or]",
+    "replace: [Europe and] -> [Europe,]",
+    "insert: [] -> [and South America]",
+    "delete: [Table of Contents] -> []",
+    "insert: [] -> [The availability of AI may enable new types of threat actors who may not otherwise have had the capabilities to engage in malicious activity to do so, or may enhance the capabilities of nation-state actors or organizing or coordinating groups to carry out attacks, or may generally enable novel types]",
+    "insert: [] -> [that]",
+    "insert: [] -> [Table of Contents]",
+    "insert: [] -> [or loss]",
+    "replace: [job applicant,] -> [jobseeker,]",
+    "..."
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The cybersecurity risk adds that AI may enable new threat actors and novel attacks, adds South America to the conflicts raising cyber-attack risk, concedes that risk management processes may not be fully implemented or effective, and extends the regulatory discussion to AI and emerging technologies and international privacy laws.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: new risks (AI-enabled threat actors, possible ineffectiveness of cybersecurity risk management processes, compliance costs of reporting and disclosure regimes) are disclosed, and criterion 2: a new jurisdiction (South America) and new regulation categories (AI, international privacy laws) are referenced."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: new risks (ineffective risk management processes, AI-enabled attacks, compliance cost) are disclosed, and criterion 2: a new jurisdiction (South America) and new regulation areas (AI, international privacy laws) are referenced."
+    }
+   }
+  },
+  {
+   "aid": "a05",
+   "status": "modified",
+   "prior_heading": "Our success depends upon our ability to attract, develop and retain highly qualified associates to provide excellent customer service and to support our strategic initiatives while also controlling our labor costs.",
+   "current_heading": "Our success depends upon our ability to attract, develop and retain highly qualified associates to provide excellent customer service and to support our strategic initiatives while also controlling our labor costs.",
+   "similarity": 0.171,
+   "diff": [
+    "replace: [associates] -> [associates, including those with specialized product and project knowledge who can help serve our Pros,]",
+    "delete: [Table of Contents] -> []",
+    "delete: [external] -> []",
+    "replace: [public health concerns;] -> [safety and security in our stores and other facilities;]",
+    "insert: [] -> [brand and]",
+    "delete: [also] -> []",
+    "delete: [store] -> []",
+    "insert: [] -> [Table of Contents]",
+    "delete: [at SRS] -> []",
+    "replace: [are also] -> [may be]",
+    "insert: [] -> [future]",
+    "replace: [execute] -> [deliver]",
+    "..."
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Union representation is no longer attributed to associates at SRS and ongoing union organizing efforts become a hypothetical future risk ('are also subject to' becomes 'may be subject to future'), while public health concerns are replaced by safety and security in stores as a labor factor and supply chain investments are dropped from the talent-needs sentence.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2: the SRS business reference and supply chain investments are dropped, and criterion 3: the union organizing risk is softened from present to hypothetical and a labor factor is swapped (public health concerns replaced by store safety and security)."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: a labor factor is swapped (public health removed, store safety added), criterion 2: the SRS business reference is dropped, and criterion 3: union organizing is softened from realized to hypothetical."
+    }
+   }
+  },
+  {
+   "aid": "a06",
+   "status": "modified",
+   "prior_heading": "We are subject to payment-related risks that could increase our operating costs, expose us to fraud or theft, subject us to potential liability, and potentially disrupt our business.",
+   "current_heading": "We are subject to payment-related risks that could increase our operating costs, expose us to fraud or theft, subject us to potential liability, and potentially disrupt our business.",
+   "similarity": 0.936,
+   "diff": [
+    "insert: [] -> [As we offer new payment options to our customers, we may be subject to additional rules, regulations, and compliance requirements, and higher fraud losses.]",
+    "delete: [Table of Contents] -> []",
+    "replace: [artificial intelligence,] -> [AI,]",
+    "replace: [House Account trade credit] -> [Trade Credit]",
+    "delete: [an increase in our] -> []"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "A new sentence discloses that offering new payment options may subject the company to additional rules, regulations and compliance requirements and higher fraud losses, alongside a rename of the Pro House Account trade credit program to the Pro Trade Credit program.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: a new risk (additional regulation and higher fraud losses from new payment options) is disclosed; the program rename and 'artificial intelligence' to 'AI' are minor on their own."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: a new exposure (added regulation and higher fraud losses tied to new payment options) is disclosed, which outweighs the program rename and stylistic edits."
+    }
+   }
+  }
+ ]
+}

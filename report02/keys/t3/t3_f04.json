@@ -1,0 +1,944 @@
+{
+  "firm_id": "t3_f04",
+  "firm_name": "Wrenholt Pryce Asset Management LLC",
+  "firm_type": "Institutional fixed income manager: separately managed accounts for public pension and insurance clients plus one commingled fund",
+  "documents": [
+    "01_brochure.md",
+    "02_compliance_manual.md",
+    "03_valuation_policy.md",
+    "04_business_continuity_plan.md",
+    "05_fee_schedule.md",
+    "06_policy_update_memo.md"
+  ],
+  "questions": [
+    {
+      "qid": "q01",
+      "question": "Identify the Firm's principal owners and the percentage of the Firm each owns.",
+      "answerable": true,
+      "trap": "none",
+      "expected": "Colette Varnum (Chief Executive Officer) owns 41%, Tobias Aldren (Chief Investment Officer) owns 34%, and Wrenholt Pryce Partners Pool LLC, a vehicle through which 14 employees hold economic interests, owns the remaining 25%.",
+      "accept": [
+        "(?=.*(varnum(?:(?!aldren|pool|\\d\\s*(%|percent))[^.;]){0,60}\\b(41|forty[- ]one)\\s*(%|percent|per cent)|\\b(41|forty[- ]one)\\s*(%|percent|per cent)(?:(?!aldren|pool|\\d\\s*(%|percent))[^.;]){0,60}varnum))(?=.*(aldren(?:(?!varnum|pool|\\d\\s*(%|percent))[^.;]){0,60}\\b(34|thirty[- ]four)\\s*(%|percent|per cent)|\\b(34|thirty[- ]four)\\s*(%|percent|per cent)(?:(?!varnum|pool|\\d\\s*(%|percent))[^.;]){0,60}aldren))|varnum(?:(?!aldren)[^.;]){0,80}aldren[^.;]{0,80}\\b(41|forty[- ]one)\\s*(%|percent|per cent)[^.;]{0,20}\\b(34|thirty[- ]four)\\s*(%|percent|per cent)[^.;]{0,30}respectively|aldren(?:(?!varnum)[^.;]){0,80}varnum[^.;]{0,80}\\b(34|thirty[- ]four)\\s*(%|percent|per cent)[^.;]{0,20}\\b(41|forty[- ]one)\\s*(%|percent|per cent)[^.;]{0,30}respectively"
+      ],
+      "partial": [
+        "^(?!.*(varnum(?:(?!aldren)[^.;]){0,80}aldren[^.;]{0,80}\\b(34|thirty[- ]four)\\s*(%|percent|per cent)[^.;]{0,20}\\b(41|forty[- ]one)\\s*(%|percent|per cent)|aldren(?:(?!varnum)[^.;]){0,80}varnum[^.;]{0,80}\\b(41|forty[- ]one)\\s*(%|percent|per cent)[^.;]{0,20}\\b(34|thirty[- ]four)\\s*(%|percent|per cent))[^.;]{0,30}respectively)(?!.*aldren(?:(?!varnum|pool|\\d\\s*(%|percent))[^.;]){0,60}\\b(41|forty[- ]one)\\s*(%|percent|per cent)).*(varnum(?:(?!aldren|pool|\\d\\s*(%|percent))[^.;]){0,60}\\b(41|forty[- ]one)\\s*(%|percent|per cent)|\\b(41|forty[- ]one)\\s*(%|percent|per cent)(?:(?!aldren|pool|\\d\\s*(%|percent))[^.;]){0,60}varnum)",
+        "^(?!.*(varnum(?:(?!aldren)[^.;]){0,80}aldren[^.;]{0,80}\\b(34|thirty[- ]four)\\s*(%|percent|per cent)[^.;]{0,20}\\b(41|forty[- ]one)\\s*(%|percent|per cent)|aldren(?:(?!varnum)[^.;]){0,80}varnum[^.;]{0,80}\\b(41|forty[- ]one)\\s*(%|percent|per cent)[^.;]{0,20}\\b(34|thirty[- ]four)\\s*(%|percent|per cent))[^.;]{0,30}respectively)(?!.*varnum(?:(?!aldren|pool|\\d\\s*(%|percent))[^.;]){0,60}\\b(34|thirty[- ]four)\\s*(%|percent|per cent)).*(aldren(?:(?!varnum|pool|\\d\\s*(%|percent))[^.;]){0,60}\\b(34|thirty[- ]four)\\s*(%|percent|per cent)|\\b(34|thirty[- ]four)\\s*(%|percent|per cent)(?:(?!varnum|pool|\\d\\s*(%|percent))[^.;]){0,60}aldren)",
+        "^(?!.*\\d\\s*(%|percent))(?=.*varnum)(?=.*aldren)"
+      ],
+      "reject": {},
+      "source_document": "01_brochure.md",
+      "section": "4.1",
+      "quote": "Colette Varnum, Chief Executive Officer, owns 41% of the Firm's membership interests; Tobias Aldren, Chief Investment Officer, owns 34%; and Wrenholt Pryce Partners Pool LLC, a vehicle through which 14 employees hold economic interests in the Firm, owns the remaining 25%.",
+      "also_needs": []
+    },
+    {
+      "qid": "q02",
+      "question": "What is the minimum holding period for personal investments in covered securities by access persons?",
+      "answerable": true,
+      "trap": "supersession",
+      "expected": "60 calendar days from the date of acquisition, under Compliance Memorandum 2026-03 Section 2.1 effective September 1, 2026, which supersedes the 30-day period in Compliance Manual Section 4.4. Exchange-traded funds tracking broad market indices remain excluded.",
+      "accept": [
+        "\\b(60|sixty)(\\s*\\(60\\))?[- ](calendar[- ])?days?"
+      ],
+      "partial": [],
+      "reject": {
+        "STALE_30_days": [
+          "^(?!.*\\b(60|sixty)(\\s*\\(60\\))?[- ](calendar[- ])?days?).*\\b(30|thirty)(\\s*\\(30\\))?[- ](calendar[- ])?days?"
+        ]
+      },
+      "source_document": "06_policy_update_memo.md",
+      "section": "2.1",
+      "quote": "covered securities must be held for at least 60 calendar days from the date of acquisition",
+      "also_needs": []
+    },
+    {
+      "qid": "q03",
+      "question": "Does the Firm maintain key-person life insurance on its principals? If so, identify the insurer and the coverage amount.",
+      "answerable": false,
+      "trap": "unanswerable_clean",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_coverage": [
+          "^(?!.*(not_in_documents|not\\s+in\\s+the\\s+documents|not\\s+(stated|specified|addressed|provided|disclosed|included|mentioned|identified|named)|do(es)?\\s+not\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|do(es)?n['’]?t\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|no\\s+information|\\b(no|none|nothing)\\b[^.;]{0,60}\\b(is|are|was|were|has\\s+been|have\\s+been)\\s+(disclosed|reported|mentioned|stated|identified|named|specified|addressed|described|listed|provided|given|recorded|included|found)\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|nothing\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|(documents|pack|materials)\\s+(is|are)\\s+silent)).*(\\$\\s?\\d|\\b\\d+(\\.\\d+)?\\s*(million|mm)\\b|\\byes\\b)"
+        ]
+      },
+      "source_document": "",
+      "section": "",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q04",
+      "question": "Which pricing services does the Firm use to value fixed income securities, and which one is primary?",
+      "answerable": true,
+      "trap": "multi_part",
+      "expected": "Lanthorn Evaluated Pricing, Inc. is the primary pricing service for all fixed income securities; Brayford Pricing Data LLC is the secondary pricing service, used for the daily tolerance comparison and where Lanthorn does not cover a security or its price has been rejected.",
+      "accept": [
+        "^(?!.*(brayford(?:(?!lanthorn)(?:llc\\.|[^.;])){0,60}\\b(is|as|being)\\s+(the\\s+|its\\s+)?primary|primary(?:(?!lanthorn|\\band\\b)[^.;]){0,40}(\\bis\\b|:)\\s*(the\\s+)?brayford))(?=.*brayford)(?=.*(lanthorn(?:(?!brayford|secondary)(?:inc\\.|[^.;])){0,80}primary|primary(?:(?!brayford|secondary|\\band\\b|\\bwhile\\b|\\bwhereas\\b|\\bbut\\b)[^.;]){0,60}lanthorn))"
+      ],
+      "partial": [
+        "^(?!.*(brayford(?:(?!lanthorn)(?:llc\\.|[^.;])){0,60}\\b(is|as|being)\\s+(the\\s+|its\\s+)?primary|primary(?:(?!lanthorn|\\band\\b)[^.;]){0,40}(\\bis\\b|:)\\s*(the\\s+)?brayford)).*(lanthorn(?:(?!brayford|secondary)(?:inc\\.|[^.;])){0,80}primary|primary(?:(?!brayford|secondary|\\band\\b|\\bwhile\\b|\\bwhereas\\b|\\bbut\\b)[^.;]){0,60}lanthorn)",
+        "(?=.*lanthorn)(?=.*brayford)"
+      ],
+      "reject": {
+        "HALLUCINATED_swapped_primary": [
+          "^(?!.*(lanthorn(?:(?!brayford|secondary)(?:inc\\.|[^.;])){0,80}primary|primary(?:(?!brayford|secondary|\\band\\b|\\bwhile\\b|\\bwhereas\\b|\\bbut\\b)[^.;]){0,60}lanthorn)).*(brayford(?:(?!lanthorn)(?:llc\\.|[^.;])){0,60}\\b(is|as|being)\\s+(the\\s+|its\\s+)?primary|primary(?:(?!lanthorn|\\band\\b)[^.;]){0,40}(\\bis\\b|:)\\s*(the\\s+)?brayford)"
+        ]
+      },
+      "source_document": "03_valuation_policy.md",
+      "section": "3.2",
+      "quote": "Lanthorn Evaluated Pricing, Inc. is the primary pricing service for all fixed income securities held by the Firm's clients",
+      "also_needs": [
+        {
+          "source_document": "03_valuation_policy.md",
+          "section": "3.3",
+          "quote": "Brayford Pricing Data LLC is the secondary pricing service."
+        }
+      ]
+    },
+    {
+      "qid": "q05",
+      "question": "What are the coverage limits of the Firm's cyber liability insurance policy, and who is the carrier?",
+      "answerable": false,
+      "trap": "near_miss",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_limit": [
+          "^(?!.*(not_in_documents|not\\s+in\\s+the\\s+documents|not\\s+(stated|specified|addressed|provided|disclosed|included|mentioned|identified|named)|do(es)?\\s+not\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|do(es)?n['’]?t\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|no\\s+information|\\b(no|none|nothing)\\b[^.;]{0,60}\\b(is|are|was|were|has\\s+been|have\\s+been)\\s+(disclosed|reported|mentioned|stated|identified|named|specified|addressed|described|listed|provided|given|recorded|included|found)\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|nothing\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|(documents|pack|materials)\\s+(is|are)\\s+silent)).*(\\$\\s?\\d|\\b\\d+(\\.\\d+)?\\s*(million|mm|m)\\b)"
+        ],
+        "HALLUCINATED_carrier": [
+          "^(?!.*(not_in_documents|not\\s+in\\s+the\\s+documents|not\\s+(stated|specified|addressed|provided|disclosed|included|mentioned|identified|named)|do(es)?\\s+not\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|do(es)?n['’]?t\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|no\\s+information|\\b(no|none|nothing)\\b[^.;]{0,60}\\b(is|are|was|were|has\\s+been|have\\s+been)\\s+(disclosed|reported|mentioned|stated|identified|named|specified|addressed|described|listed|provided|given|recorded|included|found)\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|nothing\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|(documents|pack|materials)\\s+(is|are)\\s+silent)).*(grisby|quenby|dunmore)"
+        ]
+      },
+      "source_document": "",
+      "section": "",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q06",
+      "question": "Who owns the business continuity plan, and where is the Firm's alternate site?",
+      "answerable": true,
+      "trap": "multi_part",
+      "expected": "The Chief Operating Officer, Dmitri Halloway, owns the Plan. The alternate site is a dedicated recovery suite operated by Norcastle Recovery Services in Glastonbury, Connecticut, about eight miles from the Hartford office.",
+      "accept": [
+        "(?=.*(halloway|chief operating officer|\\bcoo\\b))(?=.*(glastonbury|norcastle(?=.*\\b(eight|8)[- ]?(miles?|mi)\\b)))"
+      ],
+      "partial": [
+        "halloway|chief operating officer|\\bcoo\\b",
+        "glastonbury|norcastle"
+      ],
+      "reject": {},
+      "source_document": "04_business_continuity_plan.md",
+      "section": "1.1",
+      "quote": "The Chief Operating Officer, Dmitri Halloway, is the owner of this Plan",
+      "also_needs": [
+        {
+          "source_document": "04_business_continuity_plan.md",
+          "section": "2.1",
+          "quote": "The Firm's alternate site is a dedicated recovery suite operated by Norcastle Recovery Services in Glastonbury, Connecticut, approximately eight miles from the Firm's Hartford office."
+        }
+      ]
+    },
+    {
+      "qid": "q07",
+      "question": "Once a personal trade has been pre-cleared, how long does the approval remain valid?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "Through the close of regular trading on the business day following the day on which approval is granted; an order not executed in that window, including an unfilled limit order, must be pre-cleared again.",
+      "accept": [
+        "(next|following|subsequent)\\s+((business|trading)\\s+)?day|(business|trading)\\s+day\\s+(after|following)|\\b(two|2)\\s+(business|trading)\\s+days|day\\s+after"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_same_day_only": [
+          "^(?!.*(next|following|subsequent|after|\\btwo\\b|\\b2\\b)).*((same|that)\\s+(business\\s+|trading\\s+)?day|only\\s+(for\\s+)?the\\s+day)"
+        ]
+      },
+      "source_document": "02_compliance_manual.md",
+      "section": "4.2",
+      "quote": "A pre-clearance approval is valid through the close of regular trading on the business day following the day on which the approval is granted",
+      "also_needs": []
+    },
+    {
+      "qid": "q08",
+      "question": "Under the Core Fixed Income separate account fee schedule, up to what account size does the highest (0.20%) rate apply before the first breakpoint?",
+      "answerable": true,
+      "trap": "supersession",
+      "expected": "The first $75 million. Compliance Memorandum 2026-03 Section 5.1 moved the first breakpoint from $100 million to $75 million for billing periods beginning on or after July 1, 2026, superseding Fee Schedule Section 2.1 and Brochure Item 5.2; the next $175 million is charged 0.15%.",
+      "accept": [
+        "(\\b75(\\.0+)?\\s*(million|mm|m\\b)|75,000,000|seventy[- ]five\\s+(\\(75\\)\\s+)?million)"
+      ],
+      "partial": [],
+      "reject": {
+        "STALE_100_million": [
+          "^(?!.*(\\b75(\\.0+)?\\s*(million|mm|m\\b)|75,000,000|seventy[- ]five\\s+(\\(75\\)\\s+)?million)).*(\\b100(\\.0+)?\\s*(million|mm|m\\b)|100,000,000|one hundred million)"
+        ]
+      },
+      "source_document": "06_policy_update_memo.md",
+      "section": "5.1",
+      "quote": "the first breakpoint in the Core Fixed Income schedule moves from $100 million to $75 million",
+      "also_needs": []
+    },
+    {
+      "qid": "q09",
+      "question": "What management fee does the Commingled Fund pay, and how is it calculated and paid?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "An annual rate of 0.28% of the Fund's net asset value, accrued monthly and payable quarterly in arrears. There is no performance fee or allocation, and the fee is waived on employee interests.",
+      "accept": [
+        "(0?\\.28\\s*(%|percent)|\\b28\\s*(basis points|bps|bp)\\b)"
+      ],
+      "partial": [
+        "quarterly.*arrears|arrears.*quarterly"
+      ],
+      "reject": {
+        "HALLUCINATED_performance_fee": [
+          "^(?!.*\\bno\\s+performance).*\\b(10|15|20)\\s*(%|percent)\\s+(performance|incentive)"
+        ]
+      },
+      "source_document": "05_fee_schedule.md",
+      "section": "3.1",
+      "quote": "The Commingled Fund pays the Firm a management fee at an annual rate of 0.28% of the Fund's net asset value, accrued monthly and payable quarterly in arrears.",
+      "also_needs": []
+    },
+    {
+      "qid": "q10",
+      "question": "What has been the Firm's turnover of investment professionals over the past three years? Please list any senior departures.",
+      "answerable": false,
+      "trap": "unanswerable_clean",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_turnover": [
+          "^(?!.*(not_in_documents|not\\s+in\\s+the\\s+documents|not\\s+(stated|specified|addressed|provided|disclosed|included|mentioned|identified|named)|do(es)?\\s+not\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|do(es)?n['’]?t\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|no\\s+information|\\b(no|none|nothing)\\b[^.;]{0,60}\\b(is|are|was|were|has\\s+been|have\\s+been)\\s+(disclosed|reported|mentioned|stated|identified|named|specified|addressed|described|listed|provided|given|recorded|included|found)\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|nothing\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|(documents|pack|materials)\\s+(is|are)\\s+silent)).*(\\b\\d+(\\.\\d+)?\\s*(%|percent)|\\bno\\s+(senior\\s+)?departures|\\bnone\\b|\\bzero\\b)"
+        ]
+      },
+      "source_document": "",
+      "section": "",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q11",
+      "question": "Describe the Firm's best execution oversight: which committee reviews execution quality, who chairs it, how often it meets and what data it reviews.",
+      "answerable": true,
+      "trap": "multi_part",
+      "expected": "The Best Execution Committee, chaired by the Chief Operating Officer, Dmitri Halloway (other members: Head of Trading Marcus Ebbing, Chief Risk Officer Yuki Ashbury, Director of Portfolio Operations Leopold Sarkis and the CCO), meets quarterly. It reviews Orrinmoor Analytics transaction cost analysis comparing executions with the primary pricing service's evaluated price at the time of trade and composite dealer quotes, the number of competitive quotes (target at least three for investment grade trades over $1 million par), volume by dealer and electronic platform, settlement failures and use of minority-, women- and veteran-owned broker-dealers.",
+      "accept": [
+        "(?=.*(quarterly|(each|every|per|a|once\\s+a)\\s+(calendar\\s+)?quarter|every\\s+three\\s+months|four\\s+times\\s+(a|per|each)\\s+year))(?=.*(halloway|chief operating officer|\\bcoo\\b))"
+      ],
+      "partial": [
+        "(quarterly|(each|every|per|a|once\\s+a)\\s+(calendar\\s+)?quarter|every\\s+three\\s+months|four\\s+times\\s+(a|per|each)\\s+year)",
+        "orrinmoor|transaction cost"
+      ],
+      "reject": {
+        "HALLUCINATED_monthly": [
+          "^(?!.*quarter).*\\bmonthly\\b"
+        ]
+      },
+      "source_document": "02_compliance_manual.md",
+      "section": "10.2",
+      "quote": "The Best Execution Committee is chaired by the Chief Operating Officer, Dmitri Halloway.",
+      "also_needs": [
+        {
+          "source_document": "02_compliance_manual.md",
+          "section": "10.3",
+          "quote": "The Committee meets quarterly. At each meeting it reviews transaction cost analysis prepared by Orrinmoor Analytics"
+        }
+      ]
+    },
+    {
+      "qid": "q12",
+      "question": "When was the Commingled Fund's current administrator appointed, and has the Fund changed administrators since launch?",
+      "answerable": false,
+      "trap": "near_miss",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_appointment_date": [
+          "^(?!.*(not_in_documents|not\\s+in\\s+the\\s+documents|not\\s+(stated|specified|addressed|provided|disclosed|included|mentioned|identified|named)|do(es)?\\s+not\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|do(es)?n['’]?t\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|no\\s+information|\\b(no|none|nothing)\\b[^.;]{0,60}\\b(is|are|was|were|has\\s+been|have\\s+been)\\s+(disclosed|reported|mentioned|stated|identified|named|specified|addressed|described|listed|provided|given|recorded|included|found)\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|nothing\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|(documents|pack|materials)\\s+(is|are)\\s+silent)).*\\b(19|20)\\d\\d\\b"
+        ],
+        "HALLUCINATED_since_inception": [
+          "^(?!.*(not_in_documents|not\\s+in\\s+the\\s+documents|not\\s+(stated|specified|addressed|provided|disclosed|included|mentioned|identified|named)|do(es)?\\s+not\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|do(es)?n['’]?t\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|no\\s+information|\\b(no|none|nothing)\\b[^.;]{0,60}\\b(is|are|was|were|has\\s+been|have\\s+been)\\s+(disclosed|reported|mentioned|stated|identified|named|specified|addressed|described|listed|provided|given|recorded|included|found)\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|nothing\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|(documents|pack|materials)\\s+(is|are)\\s+silent)).*(since\\s+(the\\s+fund's\\s+|its\\s+)?(inception|launch)|at\\s+(inception|launch))"
+        ]
+      },
+      "source_document": "",
+      "section": "",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q13",
+      "question": "What were the Firm's regulatory assets under management at the most recent year end, and how much was discretionary versus non-discretionary?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "As of December 31, 2025, approximately $16,418 million (about $16.4 billion), of which $15,962 million was discretionary and $456 million non-discretionary; the total includes the Commingled Fund's $1,944 million net asset value.",
+      "accept": [
+        "(?=.*(16[,.]418|16\\.4\\d*\\s*(billion|bn|b\\b)))(?=.*(15[,.]962|15\\.9\\d*\\s*(billion|bn|b\\b)|\\b16\\.0\\s*(billion|bn|b\\b)|\\b456\\b|\\b0\\.46\\s*(billion|bn)|\\b0\\.5\\s*(billion|bn|b\\b)))"
+      ],
+      "partial": [
+        "16[,.]418|16\\.4\\d*\\s*(billion|bn)"
+      ],
+      "reject": {},
+      "source_document": "01_brochure.md",
+      "section": "4.5",
+      "quote": "the Firm had regulatory assets under management of approximately $16,418 million, of which $15,962 million was managed on a discretionary basis and $456 million on a non-discretionary basis",
+      "also_needs": []
+    },
+    {
+      "qid": "q14",
+      "question": "After how many consecutive business days without a price change is a security flagged as stale?",
+      "answerable": true,
+      "trap": "supersession",
+      "expected": "Three consecutive business days, under Compliance Memorandum 2026-03 Section 3.1 effective September 1, 2026, which supersedes the five-day threshold in Valuation Policy Section 6.1. Securities unchanged for 20 consecutive business days are still escalated to the Valuation Committee.",
+      "accept": [
+        "\\b(3|three)(\\s*\\(3\\))?[- ]?(consecutive\\s+)?(business\\s+|trading\\s+)?days?\\b"
+      ],
+      "partial": [],
+      "reject": {
+        "STALE_5_days": [
+          "^(?!.*\\b(3|three)(\\s*\\(3\\))?[- ]?(consecutive\\s+)?(business\\s+|trading\\s+)?days?\\b).*\\b(5|five)(\\s*\\(5\\))?[- ]?(consecutive\\s+)?(business\\s+|trading\\s+)?days?\\b"
+        ]
+      },
+      "source_document": "06_policy_update_memo.md",
+      "section": "3.1",
+      "quote": "a security whose price from its assigned source has not changed for three consecutive business days is flagged as stale",
+      "also_needs": []
+    },
+    {
+      "qid": "q15",
+      "question": "What are the Firm's restrictions on political contributions by employees?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "Every employee is treated as a covered associate and must obtain the CCO's written pre-clearance for any contribution, regardless of amount, to a state or local official or candidate, a state or local political party or a PAC. The CCO approves contributions to an official or candidate only up to $350 per election where the employee is entitled to vote for that person and $150 per election otherwise. Solicitation and coordination of contributions are prohibited, placement agents are not used, and candidates for employment must disclose two years of contributions.",
+      "accept": [
+        "(?=.*\\b350\\b)(?=.*\\b150\\b)(?=.*(clear|approv))"
+      ],
+      "partial": [
+        "\\b350\\b|\\b150\\b",
+        "pre-?\\s?clear"
+      ],
+      "reject": {},
+      "source_document": "02_compliance_manual.md",
+      "section": "6.2",
+      "quote": "Every employee must obtain the CCO's written pre-clearance before making any political contribution, regardless of amount",
+      "also_needs": []
+    },
+    {
+      "qid": "q16",
+      "question": "When was the business continuity plan last tested in full, and what issues were identified?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "Saturday, October 18, 2025. All critical systems were restored within their recovery time objectives; the one issue, market data entitlements at the alternate site not updated for two traders hired in 2025, was corrected in November 2025.",
+      "accept": [
+        "((october|oct\\.?)\\s+18(th)?,?\\s+2025|18(th)?\\s+(of\\s+)?october,?\\s+2025|10/18/(20)?25|2025-10-18)"
+      ],
+      "partial": [
+        "october\\s+2025|entitlement"
+      ],
+      "reject": {
+        "HALLUCINATED_tabletop_date": [
+          "^(?!.*((october|oct\\.?)\\s+18(th)?,?\\s+2025|18(th)?\\s+(of\\s+)?october,?\\s+2025|10/18/(20)?25|2025-10-18)).*june\\s+2025"
+        ]
+      },
+      "source_document": "04_business_continuity_plan.md",
+      "section": "6.2",
+      "quote": "The most recent full test was conducted on Saturday, October 18, 2025.",
+      "also_needs": []
+    },
+    {
+      "qid": "q17",
+      "question": "What percentage of the Firm's total revenue is attributable to its largest client and to its five largest clients?",
+      "answerable": false,
+      "trap": "unanswerable_clean",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_percentage": [
+          "^(?!.*(not_in_documents|not\\s+in\\s+the\\s+documents|not\\s+(stated|specified|addressed|provided|disclosed|included|mentioned|identified|named)|do(es)?\\s+not\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|do(es)?n['’]?t\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|no\\s+information|\\b(no|none|nothing)\\b[^.;]{0,60}\\b(is|are|was|were|has\\s+been|have\\s+been)\\s+(disclosed|reported|mentioned|stated|identified|named|specified|addressed|described|listed|provided|given|recorded|included|found)\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|nothing\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|(documents|pack|materials)\\s+(is|are)\\s+silent)).*\\b\\d+(\\.\\d+)?\\s*(%|percent)"
+        ]
+      },
+      "source_document": "",
+      "section": "",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q18",
+      "question": "Describe the composition of the Valuation Committee, including voting and non-voting members, and its quorum requirement.",
+      "answerable": true,
+      "trap": "multi_part",
+      "expected": "Voting members are the Chief Financial Officer, Ines Morrow-Tate (Chair), the Chief Risk Officer, Yuki Ashbury, and the Director of Portfolio Operations, Leopold Sarkis. The CCO, Priya Castellane, and the Head of Credit Research, Rafael Denholm, attend as non-voting members; portfolio managers and traders are not members. A quorum is two voting members, at least one of whom must be the CFO or the CRO.",
+      "accept": [
+        "(?=.*(morrow|chief financial|\\bcfo\\b))(?=.*(ashbury|chief risk|\\bcro\\b))(?=.*(sarkis|portfolio operations))(?=.*(quorum(?:\\d\\.\\d|[^.;]){0,60}(?<![\\w.])(two|2)(?!\\w|\\.\\d)|(?<![\\w.])(two|2)(?!\\w|\\.\\d)(?:\\d\\.\\d|[^.;]){0,80}quorum|(?<![\\w.])(two|2)(?!\\w|\\.\\d)\\s+(of\\s+(the\\s+)?(three|3)\\s+)?voting\\s+members))"
+      ],
+      "partial": [
+        "(morrow|chief financial|\\bcfo\\b).*(ashbury|chief risk|\\bcro\\b)",
+        "quorum"
+      ],
+      "reject": {
+        "HALLUCINATED_pm_voting": [
+          "portfolio managers?\\s+(are|is)\\s+(a\\s+)?voting"
+        ]
+      },
+      "source_document": "03_valuation_policy.md",
+      "section": "2.1",
+      "quote": "The voting members of the Valuation Committee (the \"Committee\") are the Chief Financial Officer, Ines Morrow-Tate, who chairs the Committee; the Chief Risk Officer, Yuki Ashbury; and the Director of Portfolio Operations, Leopold Sarkis.",
+      "also_needs": [
+        {
+          "source_document": "03_valuation_policy.md",
+          "section": "2.2",
+          "quote": "A quorum consists of two voting members, at least one of whom must be the Chief Financial Officer or the Chief Risk Officer."
+        }
+      ]
+    },
+    {
+      "qid": "q19",
+      "question": "Under what conditions does the Firm effect cross trades between client accounts, and does it engage in principal transactions?",
+      "answerable": true,
+      "trap": "multi_part",
+      "expected": "Cross trades are effected only when the portfolio manager determines the trade is in the best interest of both accounts and consistent with each account's guidelines, the CCO or Deputy CCO has approved it in advance, and it is executed at the current evaluated price supplied by the Firm's independent primary pricing service; neither the Firm nor any affiliate receives compensation, and cross trades are not effected where an IMA or governing law prohibits them. The Firm does not engage in principal transactions or agency cross transactions.",
+      "accept": [
+        "(?=.*(compliance officer|\\bcco\\b|castellane|fenwick|(approv|consent)[^.;]{0,40}\\bcompliance\\b|\\bcompliance\\b[^.;]{0,30}(approv|pre-?approv|sign[- ]off)))(?=.*(evaluated price|independent (primary )?pricing|pricing service|lanthorn))(?=.*((\\bno\\b|\\bnot\\b|n't|never|prohibit)[^.;]{0,60}principal|principal(?:(?!permitted|allowed|\\bmay\\b)[^.;]){0,40}(\\bnot\\b|prohibited|never|\\bnone\\b)))"
+      ],
+      "partial": [
+        "(?=.*(compliance officer|\\bcco\\b|castellane|fenwick|(approv|consent)[^.;]{0,40}\\bcompliance\\b|\\bcompliance\\b[^.;]{0,30}(approv|pre-?approv|sign[- ]off)))(?=.*(evaluated price|independent (primary )?pricing|pricing service|lanthorn))",
+        "(?=.*((\\bno\\b|\\bnot\\b|n't|never|prohibit)[^.;]{0,60}principal|principal(?:(?!permitted|allowed|\\bmay\\b)[^.;]){0,40}(\\bnot\\b|prohibited|never|\\bnone\\b)))(?=.*((compliance officer|\\bcco\\b|castellane|fenwick|(approv|consent)[^.;]{0,40}\\bcompliance\\b|\\bcompliance\\b[^.;]{0,30}(approv|pre-?approv|sign[- ]off))|(evaluated price|independent (primary )?pricing|pricing service|lanthorn)))"
+      ],
+      "reject": {
+        "HALLUCINATED_principal_permitted": [
+          "^(?!.*(does not|doesn't|do not|\\bno\\b)\\s+(engage|effect|enter|conduct|principal)).*principal (transactions|trades) (are|is) (permitted|allowed)"
+        ]
+      },
+      "source_document": "01_brochure.md",
+      "section": "11.3",
+      "quote": "the Chief Compliance Officer or the Deputy Chief Compliance Officer has approved the transaction in advance; and the transaction is executed at the current evaluated price supplied by the Firm's independent primary pricing service",
+      "also_needs": [
+        {
+          "source_document": "01_brochure.md",
+          "section": "11.4",
+          "quote": "The Firm does not engage in principal transactions"
+        }
+      ]
+    },
+    {
+      "qid": "q20",
+      "question": "Which firm performs the Firm's annual external penetration test, and when was the most recent penetration test completed?",
+      "answerable": false,
+      "trap": "near_miss",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_named_vendor": [
+          "^(?!.*(not_in_documents|not\\s+in\\s+the\\s+documents|not\\s+(stated|specified|addressed|provided|disclosed|included|mentioned|identified|named)|do(es)?\\s+not\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|do(es)?n['’]?t\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|no\\s+information|\\b(no|none|nothing)\\b[^.;]{0,60}\\b(is|are|was|were|has\\s+been|have\\s+been)\\s+(disclosed|reported|mentioned|stated|identified|named|specified|addressed|described|listed|provided|given|recorded|included|found)\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|nothing\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|(documents|pack|materials)\\s+(is|are)\\s+silent)).*(grisby|quenby|hessendale|dunmore)"
+        ],
+        "HALLUCINATED_date": [
+          "^(?!.*(not_in_documents|not\\s+in\\s+the\\s+documents|not\\s+(stated|specified|addressed|provided|disclosed|included|mentioned|identified|named)|do(es)?\\s+not\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|do(es)?n['’]?t\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|no\\s+information|\\b(no|none|nothing)\\b[^.;]{0,60}\\b(is|are|was|were|has\\s+been|have\\s+been)\\s+(disclosed|reported|mentioned|stated|identified|named|specified|addressed|described|listed|provided|given|recorded|included|found)\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|nothing\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|(documents|pack|materials)\\s+(is|are)\\s+silent)).*\\b20\\d\\d\\b"
+        ]
+      },
+      "source_document": "",
+      "section": "",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q21",
+      "question": "What is the recovery time objective for the Firm's order management and trading systems?",
+      "answerable": true,
+      "trap": "supersession",
+      "expected": "Two hours from the declaration of a business disruption, under Compliance Memorandum 2026-03 Section 4.1 effective September 1, 2026, which supersedes the four-hour objective in Business Continuity Plan Section 3.1. The recovery point objective remains 15 minutes.",
+      "accept": [
+        "(\\b(2|two)(\\s*\\(2\\))?[- ]?(hours?|hrs?)\\b|\\b120\\s*minutes)"
+      ],
+      "partial": [],
+      "reject": {
+        "STALE_4_hours": [
+          "^(?!.*(\\b(2|two)(\\s*\\(2\\))?[- ]?(hours?|hrs?)\\b|\\b120\\s*minutes)).*\\b(4|four)(\\s*\\(4\\))?[- ]?(hours?|hrs?)\\b"
+        ]
+      },
+      "source_document": "06_policy_update_memo.md",
+      "section": "4.1",
+      "quote": "the recovery time objective for order management, trading platforms and market data is two hours from the declaration of a business disruption",
+      "also_needs": []
+    },
+    {
+      "qid": "q22",
+      "question": "How are partially filled aggregated orders allocated among participating accounts?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "Pro rata among the participating accounts based on their pre-allocated amounts entered in the order management system; where a pro rata share would be below $250,000 par or the minimum denomination, the trader may reallocate it pro rata among the other accounts. Each account receives the average price, and any departure from the pre-allocation needs CCO or Deputy CCO approval before the end of the trade date.",
+      "accept": [
+        "pro[- ]?rata|proportion"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_rotation": [
+          "^(?!.*(pro[- ]?rata|proportion)).*(rotation|random|first[- ]come)"
+        ]
+      },
+      "source_document": "02_compliance_manual.md",
+      "section": "9.2",
+      "quote": "the executed amount is allocated pro rata among participating accounts based on their pre-allocated amounts",
+      "also_needs": []
+    },
+    {
+      "qid": "q23",
+      "question": "Under the standard Long Duration Credit schedule, what annual management fee would a $350 million separate account pay?",
+      "answerable": true,
+      "trap": "multi_part",
+      "expected": "$900,000 per year: 0.30% on the first $100 million ($300,000), 0.25% on the next $200 million ($500,000) and 0.20% on the remaining $50 million ($100,000), because each tier's rate applies only to the assets in that tier.",
+      "accept": [
+        "(\\b900,000|\\b900\\s*(k|thousand)\\b|\\b0?\\.9\\s*(million|mm|m)\\b|nine hundred thousand)"
+      ],
+      "partial": [
+        "\\b(300|500),000(?!,\\d)|\\b(300|500)\\s*(k|thousand)\\b"
+      ],
+      "reject": {
+        "HALLUCINATED_flat_or_mis_tiered": [
+          "^(?!.*(\\b900,000|\\b900\\s*(k|thousand)\\b|\\b0?\\.9\\s*(million|mm|m)\\b|nine hundred thousand)).*(\\b700,000|\\b700\\s*(k|thousand)\\b|\\b0?\\.7\\s*(million|mm)\\b|\\b875,000|\\b875\\s*(k|thousand)\\b|\\b1,050,000|\\b1\\.05\\s*(million|mm|m)\\b|\\b925,000|\\b925\\s*(k|thousand)\\b)"
+        ]
+      },
+      "source_document": "05_fee_schedule.md",
+      "section": "2.2",
+      "quote": "| First $100 million | 0.30% |",
+      "also_needs": [
+        {
+          "source_document": "05_fee_schedule.md",
+          "section": "2.2",
+          "quote": "| Next $200 million | 0.25% |"
+        },
+        {
+          "source_document": "05_fee_schedule.md",
+          "section": "2.2",
+          "quote": "| Over $300 million | 0.20% |"
+        },
+        {
+          "source_document": "05_fee_schedule.md",
+          "section": "SECTION 2",
+          "quote": "An account's fee is the sum of the fees calculated for each tier."
+        }
+      ]
+    },
+    {
+      "qid": "q24",
+      "question": "Is the Firm a signatory to the Principles for Responsible Investment, and how does it integrate ESG factors into its credit research?",
+      "answerable": false,
+      "trap": "unanswerable_clean",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_signatory": [
+          "^(?!.*(not_in_documents|not\\s+in\\s+the\\s+documents|not\\s+(stated|specified|addressed|provided|disclosed|included|mentioned|identified|named)|do(es)?\\s+not\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|do(es)?n['’]?t\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|no\\s+information|\\b(no|none|nothing)\\b[^.;]{0,60}\\b(is|are|was|were|has\\s+been|have\\s+been)\\s+(disclosed|reported|mentioned|stated|identified|named|specified|addressed|described|listed|provided|given|recorded|included|found)\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|nothing\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|(documents|pack|materials)\\s+(is|are)\\s+silent)).*(\\bis\\s+a\\s+signatory|became\\s+a\\s+signatory|integrates?\\s+esg|esg\\s+(scores?|ratings?|factors\\s+are))"
+        ]
+      },
+      "source_document": "",
+      "section": "",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q25",
+      "question": "What is the annual limit on gifts a supervised person may accept from a single business contact, and who must approve business entertainment above the per-event threshold?",
+      "answerable": true,
+      "trap": "multi_part",
+      "expected": "$100 per business contact per calendar year, under Compliance Memorandum 2026-03 Section 2.2 effective September 1, 2026, which supersedes the $250 limit in Compliance Manual Section 5.2. Entertainment exceeding $500 per person per event requires the prior approval of the CCO (unchanged).",
+      "accept": [
+        "(?=.*(\\$\\s?100\\b|\\busd\\s?100\\b|\\b100\\s+(dollars|usd)|one hundred dollars))(?=.*(\\bcco\\b|chief compliance|castellane))"
+      ],
+      "partial": [
+        "(\\$\\s?100\\b|\\busd\\s?100\\b|\\b100\\s+(dollars|usd)|one hundred dollars)",
+        "\\bcco\\b|chief compliance"
+      ],
+      "reject": {
+        "STALE_250": [
+          "^(?!.*(\\$\\s?100\\b|\\busd\\s?100\\b|\\b100\\s+(dollars|usd)|one hundred dollars)).*(\\$\\s?250\\b|\\busd\\s?250\\b|\\b250\\s+(dollars|usd)|two hundred (and )?fifty dollars)"
+        ]
+      },
+      "source_document": "06_policy_update_memo.md",
+      "section": "2.2",
+      "quote": "supervised persons may not accept gifts from any single business contact with an aggregate value exceeding $100 per calendar year",
+      "also_needs": [
+        {
+          "source_document": "02_compliance_manual.md",
+          "section": "5.3",
+          "quote": "Entertainment with a value exceeding $500 per person per event requires the prior approval of the CCO."
+        }
+      ]
+    },
+    {
+      "qid": "q26",
+      "question": "Who audits the Commingled Fund, and within what period after fiscal year end are audited financial statements delivered to investors?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "Marrick Tolland LLP, an independent public accountant registered with and inspected by the PCAOB. Audited GAAP financial statements are distributed to all investors within 120 days after the Fund's December 31 fiscal year end.",
+      "accept": [
+        "(?=.*marrick)(?=.*(\\b120\\b|one hundred (and )?twenty))"
+      ],
+      "partial": [
+        "marrick",
+        "\\b120\\b"
+      ],
+      "reject": {
+        "HALLUCINATED_other_deadline": [
+          "^(?!.*\\b120\\b).*\\b(90|180)\\s+days"
+        ]
+      },
+      "source_document": "01_brochure.md",
+      "section": "15.2",
+      "quote": "by having the Fund audited annually by Marrick Tolland LLP, an independent public accountant registered with and subject to regular inspection by the Public Company Accounting Oversight Board, and by distributing audited financial statements prepared in accordance with U.S. generally accepted accounting principles to all investors within 120 days after the end of the Fund's fiscal year",
+      "also_needs": []
+    },
+    {
+      "qid": "q27",
+      "question": "Who performs the independent review of the Firm's Level 3 valuations, how often, and which positions are covered?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "Selwick Harrow Valuation Advisors LLC, each quarter. The review covers every Level 3 position held by the Commingled Fund and every separate account Level 3 position with a market value above $10 million; Selwick Harrow provides a range of values, and the Committee documents its conclusion where the Firm's value falls outside the range.",
+      "accept": [
+        "(?=.*selwick)(?=.*quarter)"
+      ],
+      "partial": [
+        "selwick",
+        "\\b10\\s*(million|mm|m)\\b"
+      ],
+      "reject": {
+        "HALLUCINATED_auditor_as_reviewer": [
+          "^(?!.*selwick).*marrick"
+        ]
+      },
+      "source_document": "03_valuation_policy.md",
+      "section": "8.1",
+      "quote": "Selwick Harrow Valuation Advisors LLC performs an independent review of Level 3 positions each quarter.",
+      "also_needs": []
+    },
+    {
+      "qid": "q28",
+      "question": "What were the results of the Firm's most recent valuation back-testing, for example the average difference between prior-day valuations and actual sale prices?",
+      "answerable": false,
+      "trap": "near_miss",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_result": [
+          "^(?!.*(not_in_documents|not\\s+in\\s+the\\s+documents|not\\s+(stated|specified|addressed|provided|disclosed|included|mentioned|identified|named)|do(es)?\\s+not\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|do(es)?n['’]?t\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|no\\s+information|\\b(no|none|nothing)\\b[^.;]{0,60}\\b(is|are|was|were|has\\s+been|have\\s+been)\\s+(disclosed|reported|mentioned|stated|identified|named|specified|addressed|described|listed|provided|given|recorded|included|found)\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|nothing\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|(documents|pack|materials)\\s+(is|are)\\s+silent)).*\\b\\d+(\\.\\d+)?\\s*(%|percent|points?|bps|basis\\s+points)"
+        ]
+      },
+      "source_document": "",
+      "section": "",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q29",
+      "question": "Who must approve a price override before it is applied?",
+      "answerable": true,
+      "trap": "supersession",
+      "expected": "Both the Chief Financial Officer and the Chief Risk Officer, in writing, under Compliance Memorandum 2026-03 Section 3.2 effective September 1, 2026; approval by the CFO alone under Valuation Policy Section 5.3 is no longer sufficient. If either officer is unavailable, the Valuation Committee must approve at a special meeting with a quorum present.",
+      "accept": [
+        "(?=.*(chief financial|\\bcfo\\b|morrow))(?=.*(chief risk|\\bcro\\b|ashbury))"
+      ],
+      "partial": [],
+      "reject": {
+        "STALE_cfo_alone": [
+          "^(?!.*(chief risk|\\bcro\\b|ashbury)).*(chief financial|\\bcfo\\b|morrow)"
+        ]
+      },
+      "source_document": "06_policy_update_memo.md",
+      "section": "3.2",
+      "quote": "a price override must be approved in writing by both the Chief Financial Officer and the Chief Risk Officer before it is applied",
+      "also_needs": []
+    },
+    {
+      "qid": "q30",
+      "question": "How long does the Firm retain its required books and records?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "Not less than seven years from the end of the fiscal year in which the last entry was made, the first two years in an appropriate Firm office, which exceeds the five-year Rule 204-2 period; organizational documents are kept for the life of the Firm and three years after termination.",
+      "accept": [
+        "\\b(7|seven)(\\s*\\(7\\))?[- ]?years?"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_five_years": [
+          "^(?!.*\\b(7|seven)(\\s*\\(7\\))?[- ]?years?).*\\b(5|five)(\\s*\\(5\\))?[- ]?years?"
+        ]
+      },
+      "source_document": "02_compliance_manual.md",
+      "section": "13.2",
+      "quote": "The Firm retains all required books and records for not less than seven years from the end of the fiscal year during which the last entry was made on the record, the first two years in an appropriate office of the Firm.",
+      "also_needs": []
+    },
+    {
+      "qid": "q31",
+      "question": "How frequently is Firm data backed up, and where are the backups stored?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "Nightly immutable backups of all Firm-hosted systems, cloud email and cloud document storage are taken at 11:00 p.m. Eastern time and written to Ferrowby Cloud Backup data centers in Columbus, Ohio and Hillsboro, Oregon, encrypted with AES-256. Nightly backups are kept 35 days, weekly backups 13 months and month-end backups seven years.",
+      "accept": [
+        "(?=.*(nightly|daily|every\\s+night|each\\s+night))(?=.*(ferrowby|columbus|hillsboro))"
+      ],
+      "partial": [
+        "nightly|daily",
+        "ferrowby"
+      ],
+      "reject": {},
+      "source_document": "04_business_continuity_plan.md",
+      "section": "5.2",
+      "quote": "Nightly immutable backups of all Firm-hosted systems, cloud email and cloud document storage are taken at 11:00 p.m. Eastern time and written to Ferrowby Cloud Backup data centers in Columbus, Ohio and Hillsboro, Oregon.",
+      "also_needs": []
+    },
+    {
+      "qid": "q32",
+      "question": "When was the Firm's most recent SEC examination, and were any deficiencies cited?",
+      "answerable": false,
+      "trap": "unanswerable_clean",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_exam_result": [
+          "^(?!.*(not_in_documents|not\\s+in\\s+the\\s+documents|not\\s+(stated|specified|addressed|provided|disclosed|included|mentioned|identified|named)|do(es)?\\s+not\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|do(es)?n['’]?t\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|no\\s+information|\\b(no|none|nothing)\\b[^.;]{0,60}\\b(is|are|was|were|has\\s+been|have\\s+been)\\s+(disclosed|reported|mentioned|stated|identified|named|specified|addressed|described|listed|provided|given|recorded|included|found)\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|nothing\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|(documents|pack|materials)\\s+(is|are)\\s+silent)).*(no\\s+(material\\s+)?deficienc|without\\s+(any\\s+)?deficienc|\\b20\\d\\d\\b)"
+        ]
+      },
+      "source_document": "",
+      "section": "",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q33",
+      "question": "How are separate account fees billed? State the frequency, timing and valuation basis.",
+      "answerable": true,
+      "trap": "none",
+      "expected": "Quarterly in arrears, based on the average of the three month-end market values of the account during the quarter, including accrued interest, determined under the Firm's Valuation Policy and reconciled to custodian records. Invoices are delivered within 15 business days after quarter end and are payable within 30 days; fees are not deducted from accounts.",
+      "accept": [
+        "(?=.*(quarterly|(each|every|per|a|once\\s+a)\\s+(calendar\\s+)?quarter|every\\s+three\\s+months|four\\s+times\\s+(a|per|each)\\s+year))(?=.*arrears)(?=.*(month[- ]end|average))"
+      ],
+      "partial": [
+        "(?=.*(quarterly|(each|every|per|a|once\\s+a)\\s+(calendar\\s+)?quarter|every\\s+three\\s+months|four\\s+times\\s+(a|per|each)\\s+year))(?=.*arrears)"
+      ],
+      "reject": {
+        "HALLUCINATED_in_advance": [
+          "^(?!.*arrears).*in\\s+advance"
+        ]
+      },
+      "source_document": "05_fee_schedule.md",
+      "section": "4.1",
+      "quote": "Separate account fees are billed quarterly in arrears based on the average of the three month-end market values of the account during the quarter, including accrued interest.",
+      "also_needs": []
+    },
+    {
+      "qid": "q34",
+      "question": "Who is the Firm's Chief Compliance Officer, and to whom does the CCO report?",
+      "answerable": true,
+      "trap": "multi_part",
+      "expected": "Priya Castellane, CCO since March 2018, reports directly to the Chief Executive Officer, Colette Varnum, and has direct and unrestricted access to the Management Committee. Nadia Fenwick is Deputy CCO.",
+      "accept": [
+        "(?=.*castellane)(?=.*(varnum|chief executive|\\bceo\\b))"
+      ],
+      "partial": [
+        "castellane"
+      ],
+      "reject": {
+        "HALLUCINATED_other_superior": [
+          "^(?!.*(varnum|chief executive|\\bceo\\b)).*reports?\\s+(directly\\s+)?to\\s+(the\\s+)?(chief operating|\\bcoo\\b|halloway|general counsel|chief financial)"
+        ]
+      },
+      "source_document": "02_compliance_manual.md",
+      "section": "2.2",
+      "quote": "The CCO reports directly to the Chief Executive Officer, Colette Varnum, and has direct and unrestricted access to the Management Committee.",
+      "also_needs": [
+        {
+          "source_document": "02_compliance_manual.md",
+          "section": "2.1",
+          "quote": "The Management Committee has designated Priya Castellane as the Firm's CCO."
+        }
+      ]
+    },
+    {
+      "qid": "q35",
+      "question": "Who leads the Firm's response to a cyber incident, and which outside forensic firm and legal counsel are engaged?",
+      "answerable": true,
+      "trap": "multi_part",
+      "expected": "The Incident Response Team is led by the Information Security Officer, Samuel Treloar (Chief Technology Officer). Quenby Digital Forensics LLC is retained for forensic investigation, and Dunmore Achterberg LLP serves as outside counsel for cyber incidents and engages the forensic firm where appropriate.",
+      "accept": [
+        "(?=.*(treloar|information security officer|\\biso\\b|chief technology officer|\\bcto\\b))(?=.*quenby)(?=.*dunmore)"
+      ],
+      "partial": [
+        "treloar|information security officer|\\biso\\b|chief technology officer|\\bcto\\b",
+        "quenby"
+      ],
+      "reject": {
+        "HALLUCINATED_mssp_as_forensics": [
+          "^(?!.*quenby).*grisby[^.]{0,40}forensic"
+        ]
+      },
+      "source_document": "04_business_continuity_plan.md",
+      "section": "9.1",
+      "quote": "The Incident Response Team is led by the Information Security Officer",
+      "also_needs": [
+        {
+          "source_document": "04_business_continuity_plan.md",
+          "section": "9.3",
+          "quote": "Quenby Digital Forensics LLC is retained to provide forensic investigation services. Dunmore Achterberg LLP serves as outside counsel for cyber incidents"
+        },
+        {
+          "source_document": "02_compliance_manual.md",
+          "section": "11.1",
+          "quote": "The Chief Technology Officer, Samuel Treloar, serves as the Firm's Information Security Officer"
+        }
+      ]
+    },
+    {
+      "qid": "q36",
+      "question": "How many Code of Ethics violations has the Firm recorded in the past three years, and were any of them material?",
+      "answerable": false,
+      "trap": "near_miss",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_none_or_count": [
+          "^(?!.*(not_in_documents|not\\s+in\\s+the\\s+documents|not\\s+(stated|specified|addressed|provided|disclosed|included|mentioned|identified|named)|do(es)?\\s+not\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|do(es)?n['’]?t\\s+(state|specify|address|disclose|mention|identify|name|provide|say|contain|include)|no\\s+information|\\b(no|none|nothing)\\b[^.;]{0,60}\\b(is|are|was|were|has\\s+been|have\\s+been)\\s+(disclosed|reported|mentioned|stated|identified|named|specified|addressed|described|listed|provided|given|recorded|included|found)\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|nothing\\s+in\\s+the\\s+(provided\\s+)?(documents|document\\s+pack|pack|materials)|(documents|pack|materials)\\s+(is|are)\\s+silent)).*(\\bno\\s+(material\\s+)?violations|\\bnone\\b|\\bzero\\b|\\b\\d+\\s+(material\\s+)?violations)"
+        ]
+      },
+      "source_document": "",
+      "section": "",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q37",
+      "question": "How does the Firm value privately placed notes, which are Level 3 positions?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "By a matrix method: a spread over the interpolated U.S. Treasury curve equal to the spread of comparable public securities of the same issuer (or of comparable issuers with similar internal rating, sector and maturity), plus an illiquidity premium set quarterly by the Valuation Committee (currently 15 to 40 basis points), plus adjustments for covenants, make-whole provisions, security and subordination; scheduled cash flows are discounted at the resulting yield.",
+      "accept": [
+        "(?=.*(matrix|comparable))(?=.*((il)?liquidity\\s+(premium|spread|adjustment)|premium\\s+(for|reflecting)\\s+(il)?liquidity))"
+      ],
+      "partial": [
+        "matrix|comparable",
+        "15\\s*(to|-)\\s*40"
+      ],
+      "reject": {
+        "HALLUCINATED_vendor_priced": [
+          "^(?!.*(matrix|comparable)).*(lanthorn|brayford)"
+        ]
+      },
+      "source_document": "03_valuation_policy.md",
+      "section": "4.2",
+      "quote": "The Firm determines a spread over the interpolated U.S. Treasury curve equal to the spread of comparable public securities of the same issuer or, where none exist, of comparable issuers with a similar internal rating, sector and maturity, plus an illiquidity premium",
+      "also_needs": []
+    },
+    {
+      "qid": "q38",
+      "question": "Does the Firm file class action claims on behalf of separately managed account clients?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "No. The Firm does not file proofs of claim in securities class actions or bankruptcy proceedings for separate account clients; those clients and their custodians retain that responsibility, and the Firm forwards any notice it receives. The Firm files eligible claims only for the Commingled Fund, with the administrator's assistance.",
+      "accept": [
+        "^(?!\\W*yes\\b).*(^\\W*no\\b|(does\\s+not|doesn't|do\\s+not|will\\s+not|won't|never|\\bnot\\b)[^.;]{0,30}(file|submit|participat|responsib|handle|pursue)|\\bonly\\b[^.;]{0,40}(for|on\\s+behalf\\s+of)\\s+the\\s+(commingled|fund)|(clients|custodians)[^.;]{0,40}(retain|remain\\s+responsib|are\\s+responsib|bear\\s+(the\\s+)?responsib)|responsibility\\s+of\\s+(the\\s+)?(separate\\s+account\\s+)?(clients?|custodians?))"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_files_for_sma": [
+          "^\\W*yes\\b",
+          "^(?!.*(^\\W*no\\b|(does\\s+not|doesn't|do\\s+not|will\\s+not|won't|never|\\bnot\\b)[^.;]{0,30}(file|submit|participat|responsib|handle|pursue)|\\bonly\\b[^.;]{0,40}(for|on\\s+behalf\\s+of)\\s+the\\s+(commingled|fund)|(clients|custodians)[^.;]{0,40}(retain|remain\\s+responsib|are\\s+responsib|bear\\s+(the\\s+)?responsib)|responsibility\\s+of\\s+(the\\s+)?(separate\\s+account\\s+)?(clients?|custodians?))).*\\b(files|will\\s+file|file[sd]?\\s+(the\\s+)?claims)\\b"
+        ]
+      },
+      "source_document": "01_brochure.md",
+      "section": "17.2",
+      "quote": "The Firm does not file proofs of claim in securities class actions or bankruptcy proceedings on behalf of separate account clients.",
+      "also_needs": []
+    },
+    {
+      "qid": "q39",
+      "question": "What is the minimum account size for a separately managed account, and what minimum annual fee applies?",
+      "answerable": true,
+      "trap": "multi_part",
+      "expected": "$100 million minimum account size (smaller accounts may be accepted at the Firm's discretion) and a minimum annual fee of $150,000 per separate account, billed in equal quarterly amounts and prorated for partial years.",
+      "accept": [
+        "(?=.*(\\b100\\s*(million|mm|m)\\b|100,000,000|one hundred million))(?=.*(150,000|\\b150\\s*(k|thousand)\\b|one hundred (and )?fifty thousand))"
+      ],
+      "partial": [
+        "\\b100\\s*(million|mm|m)\\b|100,000,000|one hundred million",
+        "150,000|\\b150\\s*(k|thousand)|one hundred (and )?fifty thousand"
+      ],
+      "reject": {
+        "HALLUCINATED_fund_minimum": [
+          "^(?!.*(\\b100\\s*(million|mm|m)\\b|100,000,000|one hundred million)).*\\b10\\s*(million|mm)\\b"
+        ]
+      },
+      "source_document": "05_fee_schedule.md",
+      "section": "5.1",
+      "quote": "The minimum account size for a separate account is $100 million.",
+      "also_needs": [
+        {
+          "source_document": "05_fee_schedule.md",
+          "section": "5.2",
+          "quote": "Each separate account is subject to a minimum annual fee of $150,000"
+        }
+      ]
+    },
+    {
+      "qid": "q40",
+      "question": "Who conducts the annual review of the compliance program, and does an outside firm participate?",
+      "answerable": true,
+      "trap": "multi_part",
+      "expected": "The CCO conducts the annual Rule 206(4)-7 review of the preceding calendar year and reports to the Management Committee by March 31. Every second year, Hessendale Compliance Advisors performs an independent assessment as part of the review; the most recent was for calendar year 2024, completed in the first quarter of 2025.",
+      "accept": [
+        "^(?!^(?!.*(\\bsecond\\b|\\b2nd\\b|every\\s+other|\\btwo\\b|\\b2\\s+years|biennial|alternate)).*hessendale(?:(?!part\\s+of)[^.]){0,60}(annually|every\\s+year|each\\s+year|yearly|(each|every)\\s+annual|an\\s+annual\\s+(independent\\s+|external\\s+)?(assessment|review|audit|test)))(?=.*(\\bcco\\b|chief compliance|castellane))(?=.*hessendale)"
+      ],
+      "partial": [
+        "hessendale",
+        "every\\s+(second|other|2nd)\\s+year|biennial|every\\s+(two|2)\\s+years|alternate\\s+years"
+      ],
+      "reject": {
+        "HALLUCINATED_annual_outside": [
+          "^(?!.*(\\bsecond\\b|\\b2nd\\b|every\\s+other|\\btwo\\b|\\b2\\s+years|biennial|alternate)).*hessendale(?:(?!part\\s+of)[^.]){0,60}(annually|every\\s+year|each\\s+year|yearly|(each|every)\\s+annual|an\\s+annual\\s+(independent\\s+|external\\s+)?(assessment|review|audit|test))"
+        ]
+      },
+      "source_document": "02_compliance_manual.md",
+      "section": "15.2",
+      "quote": "Every second year, Hessendale Compliance Advisors, an outside compliance consulting firm, performs an independent assessment of the compliance program as part of the annual review",
+      "also_needs": [
+        {
+          "source_document": "02_compliance_manual.md",
+          "section": "15.1",
+          "quote": "The CCO conducts an annual review of the adequacy of the Firm's policies and procedures and the effectiveness of their implementation"
+        }
+      ]
+    }
+  ]
+}

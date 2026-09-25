@@ -1,0 +1,64 @@
+The user wants a JSON object representing the provided text. I need to identify the key sections and subsections and structure them into a JSON format.
+
+    *   Section 9: Service Providers (9.1 Administrator, 9.2 Prime Brokers, Clearing and Custody, 9.3 Independent Auditor, 9.4 Legal Counsel)
+    *   Section 10: Side Letters (10.1 Side Letters and Most Favored Nation Rights)
+    *   Section 11: Certain Risk Factors (11.1 Limited Operating History, 11.2 Multi-Manager Platform Risk, 11.3 Pass-Through Expenses, 11.4 Leverage, Short Selling and Derivatives, 11.5 Limited Liquidity of Interests, 11.6 Counterparty, Valuation and Operational Risk)
+    *   Section 12: Conflicts of Interest (12.1 Allocation Between the Fund and the Parallel Fund, 12.2 Differing Class Economics, 12.3 Pass-Through Expenses and Principal Transactions)
+    *   Section 13: Certain Tax Considerations (13.1 Partnership Classification, 13.2 Character of Income and Deductions, 13.3 Tax-Exempt Investors and Partnership Audits)
+    *   Section 14: ERISA Considerations (14.1 Plan Asset Limitation)
+    *   Section 15: Valuation, Reports and Amendments (15.1 Net Asset Value and Reports, 15.2 Amendments)
+
+    *   Root object.
+    *   Keys for each section (e.g., "Section 9: Service Providers").
+    *   Nested objects or arrays for subsections.
+
+    *   *Section 9:*
+        *   9.1 Administrator: Wendlebury Fund Services, LLC.
+        *   9.2 Prime Brokers: Orrinshaw Securities LLC, Kestermoor Prime Services LLC. Clearing: Pendlebrook Clearing LLC.
+        *   9.3 Independent Auditor: Marrable Oakshott LLP.
+        *   9.4 Legal Counsel: Hollinrake Vaux LLP.
+    *   *Section 10:*
+        *   10.1 Side Letters: GP can enter side letters; no "most favored nation" rights.
+    *   *Section 11:*
+        *   11.1 Limited Operating History: Started April 1, 2025.
+        *   11.2 Multi-Manager Platform Risk: Recruitment/retention of PMs, crowded trades.
+        *   11.3 Pass-Through Expenses: Uncapped, may exceed Management Fee.
+        *   11.4 Leverage, Short Selling and Derivatives: Margin, repo, derivatives; short selling risks.
+        *   11.5 Limited Liquidity of Interests: Illiquid, lock-ups, gates.
+        *   11.6 Counterparty, Valuation and Operational Risk: Credit risk, valuation differences, cyber risks.
+    *   *Section 12:*
+        *   12.1 Allocation: Pro rata between Fund and Parallel Fund.
+        *   12.2 Differing Class Economics: Different fees/incentives; Founders Class exempt from fees.
+        *   12.3 Pass-Through Expenses and Principal Transactions: Incentive to hire; compliance with 206(3).
+    *   *Section 13:*
+        *   13.1 Partnership Classification: Not a publicly traded partnership.
+        *   13.2 Character of Income and Deductions: Short-term capital gains, Section 1061.
+        *   13.3 Tax-Exempt Investors and Partnership Audits: UBTI risk, partnership audit rules.
+    *   *Section 14:*
+        *   14.1 Plan Asset Limitation: <25% limit for ERISA plans.
+    *   *Section 15:*
+        *   15.1 Net Asset Value and Reports: Monthly NAV, quarterly letters, annual audits.
+        *   15.2 Amendments: GP can amend; specific changes require consent or notice.
+
+    ```json
+    {
+      "Section 9: Service Providers": {
+        "9.1 Administrator": "Wendlebury Fund Services, LLC serves as the Fund's administrator under an administration agreement dated as of February 14, 2025. The Administrator calculates the NAV of the Fund and of each Capital Account monthly, maintains the register of Limited Partners, processes subscriptions and redemptions and performs anti-money laundering screening. It relies on the Investment Manager for pricing of positions lacking readily available quotations.",
+        "9.2 Prime Brokers, Clearing and Custody": "Orrinshaw Securities LLC and Kestermoor Prime Services LLC serve as the Fund's prime brokers (each, a \"Prime Broker\"), providing custody, margin financing, securities borrowing and clearing. Assets held as collateral may be rehypothecated to the extent permitted by the prime brokerage agreements and SEC Rule 15c3-3. The Fund clears exchange-traded futures through Pendlebrook Clearing LLC, a futures commission merchant registered with the CFTC, which does not act as a prime broker to the Fund. Over-the-counter derivatives are entered into with dealer counterparties under ISDA master agreements.",
+        "9.3 Independent Auditor": "Marrable Oakshott LLP, an independent registered public accounting firm, has been appointed as the Fund's independent auditor. It audited the Fund's financial statements for the period from April 1, 2025 through December 31, 2025 and will audit the Fund's GAAP financial statements for each subsequent fiscal year.",
+        "9.4 Legal Counsel": "Hollinrake Vaux LLP acts as counsel to the Fund, the General Partner and the Investment Manager in connection with the offering of Interests. Hollinrake Vaux LLP does not represent the Limited Partners, and no independent counsel has been engaged to represent them."
+      },
+      "Section 10: Side Letters": {
+        "10.1 Side Letters and Most Favored Nation Rights": "The General Partner may enter into side letters with one or more Limited Partners granting terms different from, or in addition to, those described in this Memorandum, including a reduced Management Fee or Incentive Allocation, a shorter notice period, a waiver of the lock-up, enhanced reporting and capacity rights. The General Partner is not required to disclose side letter terms to other Limited Partners or to offer them the same terms. The Fund does not offer a \"most favored nation\" election: no Limited Partner is entitled to elect the benefit of terms granted to another Limited Partner, regardless of the size of its investment or the date of its admission."
+      },
+      "Section 11: Certain Risk Factors": {
+        "11.1 Limited Operating History": "The Fund commenced operations on April 1, 2025, and the prior performance of Ms. Penhallow or of any portfolio manager is not indicative of its future results.",
+        "11.2 Multi-Manager Platform Risk": "The Fund depends on the Investment Manager's ability to recruit and retain capable portfolio managers, whose rising compensation the Fund bears as Pass-Through Expenses. Portfolio managers may leave on short notice, and crowding among multi-manager firms in similar trades may cause correlated losses across Sub-Portfolios in periods of market stress.",
+        "11.3 Pass-Through Expenses": "Because Pass-Through Expenses are uncapped and depend on the performance of individual Sub-Portfolios, the Fund may bear substantial compensation expense in a period in which it is unprofitable, and Pass-Through Expenses may exceed the Management Fee. The ratio disclosed in Section 4.5 is not necessarily indicative of future periods.",
+        "11.4 Leverage, Short Selling and Derivatives": "The Fund uses substantial leverage through margin borrowing, repurchase agreements and derivatives, which magnifies gains and losses. An increase in margin or haircut requirements could force the Fund to liquidate positions at disadvantageous prices. Short sales expose the Fund to theoretically unlimited loss, and fixed income relative value trades can incur large losses when spreads widen rather than converge.",
+        "11.5 Limited Liquidity of Interests": "Interests are illiquid and no market for them is expected to develop. Redemptions are restricted by the lock-up, early redemption charge, notice and gate provisions described in Sections 2.2, 2.3 and 6, and by the General Partner's suspension rights. Because of the Investor-Level Gate, a Limited Partner seeking a full redemption will remain exposed to the Fund over several Redemption Dates. Founders Class Interests carry the longest lock-up and notice period of any Class.",
+        "11.6 Counterparty, Valuation and Operational Risk": "Assets held by the Prime Brokers, the futures commission merchant and derivatives counterparties are subject to their credit risk, and rehypothecated assets may not be recoverable in full on an insolvency. Valuations of positions lacking quotations may differ from amounts ultimately realized, and systems failures or cyber intrusions could cause losses."
+      },
+      "Section 12: Conflicts of Interest": {
+        "12.1 Allocation Between the Fund and the Parallel Fund": "The Investment Manager allocates investment opportunities between the Fund and the Parallel Fund pro rata to their net assets, except where legal, tax or regulatory considerations make a different allocation appropriate, and may effect cross trades between them at independent market prices.",
+        "12.2 Differing Class Economics": "Because the Classes bear different Management Fee and Incentive Allocation rates, the Investment Manager and

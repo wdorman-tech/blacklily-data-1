@@ -1,0 +1,1606 @@
+{
+ "task": "t3",
+ "model": "claude-opus-5",
+ "items": {
+  "t3_f02.q01": {
+   "units": [
+    {
+     "uid": "q01",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "$1,874,612,000 of regulatory assets under management as of December 31, 2025, all managed on a discretionary basis; none managed on a non-discretionary basis.",
+     "expected": "$1,874,612,000 as of December 31, 2025, all managed on a discretionary basis (no non-discretionary assets).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "As of December 31, 2025, the Adviser managed regulatory assets under management of $1,874,612,000, all on a discretionary basis. The Adviser does not manage any assets on a non-discretionary basis."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:01_brochure.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 3.02,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35963,
+    "output_tokens": 177,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q02": {
+   "units": [
+    {
+     "uid": "q02",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "near_miss",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:03_valuation_policy.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 2.02,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35949,
+    "output_tokens": 39,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q03": {
+   "units": [
+    {
+     "uid": "q03",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "60 calendar days (increased from 30 days effective September 1, 2026); positions acquired before September 1, 2026 remain subject to the 30-day period, and a short position may not be closed within 60 calendar days of opening it",
+     "expected": "60 calendar days from acquisition (and a short position may not be closed within 60 calendar days of opening), under the August 24, 2026 memorandum effective September 1, 2026, which superseded the 30-day period in Compliance Manual Section 4.5.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The minimum holding period in Section 4.5 of the Compliance Manual is extended from 30 calendar days to 60 calendar days. Access persons must hold any position in a reportable security acquired in a covered account for at least 60 calendar days from the date of acquisition, and may not close a short position within 60 calendar days of opening it. Positions acquired before September 1, 2026 remain subject to the 30-day period."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:06_policy_update_memo.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 4.28,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35933,
+    "output_tokens": 272,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q04": {
+   "units": [
+    {
+     "uid": "q04",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "November 14, 2025. Six employees operated from the Norwalk alternate site for the full trading day, the remaining employees worked remotely, and all Tier 1 systems were available within the four-hour RTO. The exercise identified a delay in activating the recorded softphone licenses, which was remediated in December 2025.",
+     "expected": "November 14, 2025: six employees operated from the Norwalk alternate site for a full trading day while the rest worked remotely, and all Tier 1 systems were available within the four-hour RTO (a softphone licensing delay was remediated in December 2025).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The most recent full exercise was conducted on November 14, 2025. Six employees operated from the Norwalk alternate site for the full trading day, the remaining employees worked remotely, and all Tier 1 systems were available within the four-hour RTO. The exercise identified a delay in activating the recorded softphone licenses, which was remediated in December 2025."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:04_business_continuity_plan.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 3.64,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35937,
+    "output_tokens": 267,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q05": {
+   "units": [
+    {
+     "uid": "q05",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "unanswerable_clean",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:unanswerable",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 1.82,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35960,
+    "output_tokens": 39,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q06": {
+   "units": [
+    {
+     "uid": "q06",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "Flagship Fund: Sallowmere Partners GP, LLC receives an incentive allocation of 20% of net profits from each Class A capital account and 15% from each Class F capital account (Class E bears none), determined as of December 31 each year and as of the effective date of any redemption, subject to a high water mark with loss carryforward and no hurdle rate. Co-Investment Fund: Sallowmere Co-Invest GP, LLC receives carried interest of 10% of net realized profits, distributed only after investors have received distributions equal to 100% of their capital contributions and their share of expenses, with no carried interest on unrealized gains.",
+     "expected": "Flagship Fund: an annual incentive allocation to the general partner of 20% of net profits on Class A capital accounts (15% for Class F, none for Class E), subject to a high water mark with loss carryforward and no hurdle, determined each December 31 and on redemption. Co-Investment Fund: carried interest of 10% of net realized profits, paid only after investors receive 100% of their capital contributions and expenses; no carried interest on unrealized gains and no management fee.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": "The general partner of the Flagship Fund receives an incentive allocation equal to 20% of the net profits allocated to each Class A capital account and 15% of the net profits allocated to each Class F capital account. Class E capital accounts bear no incentive allocation. ... The incentive allocation is subject to a high water mark with a loss carryforward, and there is no hurdle rate. It is determined as of December 31 of each year and as of the effective date of any redemption. ... The general"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:01_brochure.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 5.81,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35956,
+    "output_tokens": 524,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q07": {
+   "units": [
+    {
+     "uid": "q07",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "Harriet Lomasney, General Counsel, serves as Chief Compliance Officer; she reports to Callum R. Everdeen, Managing Partner and Chief Investment Officer (with direct access to the Management Committee and the Offshore Fund's board of directors).",
+     "expected": "Harriet Lomasney, General Counsel, has been CCO since 2019; she reports to Callum R. Everdeen, Managing Partner and Chief Investment Officer, and has direct access to the Management Committee and the Offshore Fund's board.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The Management Committee has designated Harriet Lomasney, General Counsel, as Chief Compliance Officer (\"CCO\"). Ms. Lomasney has served in that role since 2019. ... The CCO reports to Callum R. Everdeen, Managing Partner and Chief Investment Officer, and has direct access to the Management Committee and to the board of directors of the Offshore Fund."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:02_compliance_manual.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 3.83,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35942,
+    "output_tokens": 284,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q08": {
+   "units": [
+    {
+     "uid": "q08",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "near_miss",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:02_compliance_manual.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 1.97,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35945,
+    "output_tokens": 39,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q09": {
+   "units": [
+    {
+     "uid": "q09",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "Four voting members: Oren Pellisier, Chief Financial Officer (chair); Mireille Dansby, President and Chief Operating Officer; Ingrid Vallancey, Head of Risk; and Lydia Marchbanks, Controller (also secretary). The General Counsel and Chief Compliance Officer attends as a non-voting member. A quorum is three voting members, one of whom must be the Chief Financial Officer or the Chief Operating Officer.",
+     "expected": "Four voting members: the CFO, Oren Pellisier (chair); the President and COO, Mireille Dansby; the Head of Risk, Ingrid Vallancey; and the Controller, Lydia Marchbanks (secretary). The CCO attends as a non-voting member and the CIO and investment team may not vote. A quorum is three voting members, one of whom must be the CFO or the COO.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The Valuation Committee (the \"Committee\") has four voting members: the Chief Financial Officer, Oren Pellisier, who chairs the Committee; the President and Chief Operating Officer, Mireille Dansby; the Head of Risk, Ingrid Vallancey; and the Controller, Lydia Marchbanks, who also acts as secretary. The General Counsel and Chief Compliance Officer attends every meeting as a non-voting member. ... A quorum consists of three voting members, one of whom must be the Chief Financial Officer or the Chi"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:03_valuation_policy.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 5.27,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35939,
+    "output_tokens": 409,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q10": {
+   "units": [
+    {
+     "uid": "q10",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "$100 per source per calendar year, effective September 1, 2026 (reduced from $250 by the August 24, 2026 policy update memorandum)",
+     "expected": "$100 per source per calendar year, under the August 24, 2026 memorandum effective September 1, 2026, which reduced the $250 limit in Compliance Manual Section 5.2.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The limit on gifts that supervised persons may accept from any person or entity that does business or seeks to do business with the Adviser or the Funds is reduced from $250 to $100 per source per calendar year. Gifts received on or after September 1, 2026 count against the reduced limit together with gifts received from the same source earlier in 2026."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:06_policy_update_memo.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 3.02,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35937,
+    "output_tokens": 217,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q11": {
+   "units": [
+    {
+     "uid": "q11",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "unanswerable_clean",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:unanswerable",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 1.65,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35938,
+    "output_tokens": 43,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q12": {
+   "units": [
+    {
+     "uid": "q12",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Brisworth Tallent Securities LLC is the primary prime broker to the Flagship Fund and the Co-Investment Fund; Quarrington Prime Services LLC is a second prime broker to the Flagship Fund.",
+     "expected": "Brisworth Tallent Securities LLC (primary prime broker to the Flagship Fund and the Co-Investment Fund) and Quarrington Prime Services LLC (second prime broker to the Flagship Fund).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Brisworth Tallent Securities LLC serves as the primary prime broker to the Flagship Fund and the Co-Investment Fund, and Quarrington Prime Services LLC serves as a second prime broker to the Flagship Fund."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:01_brochure.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 3.48,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35925,
+    "output_tokens": 210,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q13": {
+   "units": [
+    {
+     "uid": "q13",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "No single long position may exceed 8% of the Flagship Fund's net asset value (measured at market value). Purchases of Co-Investment Issuer securities are allocated first to the Flagship Fund until it reaches that single long position limit, with the balance allocated to the Co-Investment Fund; the CCO reviews every such allocation on the trade date.",
+     "expected": "No single long position may exceed 8% of the Flagship Fund's net asset value at market value. Purchases of the Co-Investment Issuer's securities are allocated first to the Flagship Fund until its position reaches that limit, with the balance to the Co-Investment Fund; sales are allocated pro rata to holdings unless the CCO approves otherwise in writing, and the CCO reviews every such allocation on the trade date.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": "No single long position may exceed 8% of the Flagship Fund's net asset value, measured at market value. ... Purchases of securities of the Co-Investment Issuer are allocated first to the Flagship Fund until the Flagship Fund's position reaches the single long position limit in its portfolio guidelines, and the balance of the order is allocated to the Co-Investment Fund. ... The CCO reviews every allocation in securities of the Co-Investment Issuer on the trade date."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:02_compliance_manual.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 4.55,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35974,
+    "output_tokens": 391,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q14": {
+   "units": [
+    {
+     "uid": "q14",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Norwalk, Connecticut; operated by Ravensholt Recovery Services LLC; available within four hours of the Adviser's declaration of a significant business disruption (eight dedicated seats, including two trading positions).",
+     "expected": "A workspace recovery facility in Norwalk, Connecticut, operated by Ravensholt Recovery Services LLC, providing eight dedicated seats (including two trading positions) available within four hours of the Adviser's declaration of a significant business disruption.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The Adviser subscribes to a workspace recovery facility in Norwalk, Connecticut, operated by Ravensholt Recovery Services LLC. The subscription provides eight dedicated seats, including two trading positions with dual market data displays and recorded telephone lines, available within four hours of the Adviser's declaration of an SBD."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:04_business_continuity_plan.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 3.17,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35945,
+    "output_tokens": 232,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q15": {
+   "units": [
+    {
+     "uid": "q15",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "near_miss",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:01_brochure.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 2.03,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35930,
+    "output_tokens": 43,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q16": {
+   "units": [
+    {
+     "uid": "q16",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Minimum initial investment $1,000,000; minimum additional (subsequent) investment $250,000. The general partner may accept lesser amounts in its discretion.",
+     "expected": "$1,000,000 minimum initial investment and $250,000 minimum additional investment (the general partner may accept lesser amounts).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The minimum initial investment in each of the Flagship Fund and the Offshore Fund is $1,000,000, and the minimum additional investment is $250,000. The minimum commitment to the Co-Investment Fund was $5,000,000. The general partner of each Fund, or the board of directors of the Offshore Fund, may accept lesser amounts in its discretion."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:05_fee_schedule.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 3.29,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35939,
+    "output_tokens": 215,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q17": {
+   "units": [
+    {
+     "uid": "q17",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "unanswerable_clean",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:unanswerable",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 1.89,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35956,
+    "output_tokens": 39,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q18": {
+   "units": [
+    {
+     "uid": "q18",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "All supervised persons (whether or not covered associates) must obtain the CCO's prior written approval before any political contribution to a candidate or holder of federal, state or local office, a political party or a PAC, and before any fundraising activity. For covered associates, the CCO will approve contributions only up to $350 per election to an official the covered associate may vote for, and up to $150 per election to an official the covered associate may not vote for. Contributions by a spouse or household member directed or funded by a supervised person are treated as the supervised person's own.",
+     "expected": "Every supervised person needs the CCO's prior written approval for any political contribution or fundraising activity. The CCO approves covered associates' contributions only up to $350 per election to an official the covered associate is entitled to vote for and up to $150 per election otherwise; prospective covered associates are subject to a two-year look-back (six months for non-solicitors).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "All supervised persons, whether or not covered associates, must obtain the prior written approval of the CCO before making any political contribution to a candidate for or holder of federal, state or local office, a political party, or a political action committee, and before engaging in any fundraising activity. The CCO will approve contributions by covered associates only within the following limits: up to $350 per election to an official for whom the covered associate is entitled to vote, and"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:02_compliance_manual.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 5.4,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35941,
+    "output_tokens": 424,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q19": {
+   "units": [
+    {
+     "uid": "q19",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "Monthly, within ten business days after the end of each calendar month (amended from quarterly, effective September 1, 2026), plus ad hoc meetings as needed.",
+     "expected": "Monthly, within ten business days after the end of each calendar month (plus ad hoc meetings), under the August 24, 2026 memorandum effective September 1, 2026, which replaced the quarterly schedule in Valuation Policy Section 2.3.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The Valuation Committee will meet monthly, within ten business days after the end of each calendar month, rather than quarterly, so that the Committee reviews Level 3 values, overrides and stale price reports within each monthly net asset value cycle. The first monthly meeting will address the September 30, 2026 month-end. The provisions for ad hoc meetings in Section 2.3, and the quorum and voting requirements in Section 2.2, are unchanged. This amendment supersedes Section 2.3 of the Valuation"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:06_policy_update_memo.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 3.47,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35927,
+    "output_tokens": 285,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q20": {
+   "units": [
+    {
+     "uid": "q20",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "Hourly incremental snapshots during each business day and a full backup nightly at 11:00 p.m. Eastern Time; encrypted backup copies are stored in two geographically separate data centers in Ashburn, Virginia and Columbus, Ohio, neither within 100 miles of the Adviser's office. Daily backups are retained 35 days and month-end backups seven years. (The August 24, 2026 policy update memo changed the IT managed service provider to Anselby Managed IT LLC but left the backup platform, schedule and storage locations unchanged.)",
+     "expected": "Hourly incremental snapshots during each business day and a nightly full backup at 11:00 p.m. Eastern Time on a third-party immutable backup platform; encrypted copies are stored in two geographically separate data centers in Ashburn, Virginia and Columbus, Ohio, with daily backups kept 35 days and month-end backups seven years, and restores are verified quarterly.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Hourly incremental snapshots are taken during each business day, and a full backup is taken nightly at 11:00 p.m. Eastern Time. ... Backup copies are encrypted in transit and at rest and are stored in two geographically separate data centers in Ashburn, Virginia and Columbus, Ohio, neither of which is located within 100 miles of the Adviser's office. Daily backups are retained for 35 days, and month-end backups are retained for seven years consistent with Section 13.2 of the Compliance Manual."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:04_business_continuity_plan.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 5.18,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35932,
+    "output_tokens": 425,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q21": {
+   "units": [
+    {
+     "uid": "q21",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "Flagship and Offshore Fund investors receive: a monthly capital account statement (Offshore: monthly statement of shareholding and NAV per share) from the Administrator within 15 business days after month-end; an estimated monthly performance figure within 5 business days after month-end; and a quarterly investor letter with exposure and attribution data within 45 days after quarter-end. Co-Investment Fund investors receive quarterly capital account statements from the Administrator. All investors receive annual audited financial statements (distributed within 120 days after each December 31 fiscal year-end) and tax information as soon as practicable after year-end.",
+     "expected": "The Administrator sends monthly capital account statements (monthly shareholding and NAV statements for the Offshore Fund) within fifteen business days after month-end; Investor Relations sends an estimated monthly performance figure within five business days and a quarterly investor letter with exposure and attribution data within 45 days after quarter-end; Co-Investment Fund investors receive quarterly statements; and all investors receive audited financial statements within 120 days after the December 31 fiscal year-end, plus tax information.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The Administrator delivers a monthly capital account statement (or, for the Offshore Fund, a monthly statement of shareholding and net asset value per share) to each investor in the Flagship Fund and the Offshore Fund within fifteen business days after each month-end. The Head of Investor Relations, Celia Brandvold, distributes an estimated monthly performance figure within five business days after each month-end and a quarterly investor letter, including exposure and attribution data, within 45"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:01_brochure.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 6.1,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35929,
+    "output_tokens": 590,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q22": {
+   "units": [
+    {
+     "uid": "q22",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "near_miss",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:01_brochure.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 1.76,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35956,
+    "output_tokens": 39,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q23": {
+   "units": [
+    {
+     "uid": "q23",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Members: the President and Chief Operating Officer (chair), the Head of Trading, the Chief Financial Officer and the Chief Compliance Officer. It meets quarterly.",
+     "expected": "The President and Chief Operating Officer (chair), the Head of Trading, the Chief Financial Officer and the CCO; it meets quarterly and reviews Tessingham Execution Analytics transaction cost analysis, commissions by broker, execution exceptions, the soft dollar budget and gifts and entertainment from brokers.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The Best Execution Committee consists of the President and Chief Operating Officer (chair), the Head of Trading, the Chief Financial Officer and the CCO. The Committee meets quarterly and reviews independent transaction cost analysis prepared by Tessingham Execution Analytics LLC, commission rates and totals by broker, execution quality exceptions, the soft dollar budget and gifts and entertainment received from brokers."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:02_compliance_manual.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 3.53,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35933,
+    "output_tokens": 248,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q24": {
+   "units": [
+    {
+     "uid": "q24",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "Anselby Managed IT LLC (replaced Oskerby Technology Group LLC effective September 1, 2026)",
+     "expected": "Anselby Managed IT LLC, effective September 1, 2026 under the August 24, 2026 memorandum, replacing Oskerby Technology Group LLC (still named in Business Continuity Plan Section 5.2 and Compliance Manual Section 11.4).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Effective September 1, 2026, Anselby Managed IT LLC replaces Oskerby Technology Group LLC as the Adviser's IT managed service provider, on completion of the transition that began in July 2026."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:06_policy_update_memo.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 2.81,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35932,
+    "output_tokens": 179,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q25": {
+   "units": [
+    {
+     "uid": "q25",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Yes. Kilbride Sayer Valuation Advisors LLC performs a quarterly review of each Level 3 investment and provides a written range of reasonable values. (Note: the August 24, 2026 policy update memo changed the Valuation Committee's own meeting frequency to monthly, but did not change the independent valuation firm's quarterly review.)",
+     "expected": "Yes. Kilbride Sayer Valuation Advisors LLC reviews each Level 3 investment quarterly and provides a written range of reasonable values; if the Committee's value falls outside the range, the CFO must reconvene the Committee before the quarter-end NAV is finalized and the CCO is notified.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Kilbride Sayer Valuation Advisors LLC performs a quarterly review of each Level 3 investment and provides a written range of reasonable values. If the value approved by the Committee falls outside that range, the Chief Financial Officer must convene the Committee to reconsider the value before the Administrator finalizes the quarter-end net asset value, and the Chief Compliance Officer must be notified of the outcome."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:03_valuation_policy.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 3.77,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35951,
+    "output_tokens": 302,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q26": {
+   "units": [
+    {
+     "uid": "q26",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "unanswerable_clean",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:unanswerable",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 2.12,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35940,
+    "output_tokens": 43,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q27": {
+   "units": [
+    {
+     "uid": "q27",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Mireille Dansby, President and Chief Operating Officer",
+     "expected": "Mireille Dansby, President and Chief Operating Officer (Kofi Brannigan, Director of Technology, serves as BCP Coordinator).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The President and Chief Operating Officer, Mireille Dansby, is the owner of the Plan and is accountable for its maintenance, resourcing and execution."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:04_business_continuity_plan.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 2.53,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35926,
+    "output_tokens": 122,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q28": {
+   "units": [
+    {
+     "uid": "q28",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Compliance chaperones the first call with each new expert and at least 10% of all subsequent calls, selected at random. Other controls: only CCO-approved expert network firms may be used (following due diligence on the firm's compliance procedures); each consultation must be scheduled through the approved network's platform and pre-approved by the Compliance department; the Adviser does not consult current employees of any public company or government agency, or any person under a duty of confidentiality on the call topic; each call opens with a reminder that the expert may not disclose MNPI or confidential information; and analysts must retain notes of every call in the research management system.",
+     "expected": "Compliance chaperones the first call with each new expert and at least 10% of all subsequent calls, selected at random. Only CCO-approved networks may be used, each consultation is scheduled through the network's platform and pre-approved by Compliance, current employees of public companies or government agencies and persons with a confidentiality duty on the topic are excluded, each call opens with an MNPI reminder, and analysts retain call notes.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Supervised persons may use only expert network firms approved by the CCO after due diligence on the firm's compliance procedures. Each consultation must be scheduled through the approved network's platform and pre-approved by the Compliance department. The Adviser does not consult current employees of any public company or of any government agency, or any person subject to a duty of confidentiality regarding the topic of the call. Each call opens with a reminder that the expert may not disclose "
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:02_compliance_manual.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 5.0,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35944,
+    "output_tokens": 445,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q29": {
+   "units": [
+    {
+     "uid": "q29",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "near_miss",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:01_brochure.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 1.86,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35942,
+    "output_tokens": 39,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q30": {
+   "units": [
+    {
+     "uid": "q30",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "Books and records are retained for at least seven years from the end of the fiscal year during which the last entry was made (first two years in an appropriate office of the Adviser or immediately accessible electronic form). All business communications on approved channels (firm email, the approved messaging platform, and the captured text messaging application on firm-issued mobile devices) are captured and archived by Quillon Archive Services, Inc. in a non-rewriteable, non-erasable format, indexed and searchable by Compliance, and retained for that same seven-year period.",
+     "expected": "At least seven years from the end of the fiscal year of the last entry (longer than the five years Rule 204-2 requires), the first two years in an office of the Adviser or immediately accessible electronic form. Email, the approved messaging platform and captured text messages on firm-issued devices are archived by Quillon Archive Services, Inc. in non-rewriteable, non-erasable format; personal and consumer messaging for business is prohibited.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The Adviser retains all required books and records for at least seven years from the end of the fiscal year during which the last entry was made on the record, which exceeds the five-year period required by Rule 204-2. Records are kept for the first two years in an appropriate office of the Adviser or in electronic form that is immediately accessible. ... All communications on approved channels are captured and archived by Quillon Archive Services, Inc. in a non-rewriteable, non-erasable format,"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:02_compliance_manual.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 4.84,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35940,
+    "output_tokens": 408,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q31": {
+   "units": [
+    {
+     "uid": "q31",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "Aggregate capital of $25 million or more in the Flagship Fund and the Offshore Fund (together with affiliates' capital) as of the first day of a calendar quarter qualifies for the Large Investor Rate of 1.50% per annum, effective for fee periods beginning on or after October 1, 2026 (reduced from the prior $50 million threshold).",
+     "expected": "Aggregate capital in the Flagship and Offshore Funds (with affiliates) of $25 million or more as of the first day of a calendar quarter qualifies for the 1.50% Large Investor Rate on the entire Class A capital account, for fee periods beginning on or after October 1, 2026, under the August 24, 2026 memorandum superseding the $50 million threshold in Fee Schedule Section 2.2.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The aggregate capital threshold for the Large Investor Rate is reduced from $50 million to $25 million. For fee periods beginning on or after October 1, 2026, the Large Investor Rate of 1.50% per annum applies to the entire Class A capital account of an investor whose aggregate capital in the Flagship Fund and the Offshore Fund, together with the capital of its affiliates, is $25 million or more as of the first day of a calendar quarter."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:06_policy_update_memo.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 4.58,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35952,
+    "output_tokens": 332,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q32": {
+   "units": [
+    {
+     "uid": "q32",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "The President and Chief Operating Officer, Mireille Dansby, approves pre-clearance requests submitted by the Chief Compliance Officer.",
+     "expected": "The President and Chief Operating Officer, Mireille Dansby, who also reviews the CCO's holdings and transaction reports.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Pre-clearance requests submitted by the CCO are approved by the President and Chief Operating Officer, Mireille Dansby."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:02_compliance_manual.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 2.3,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35942,
+    "output_tokens": 145,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q33": {
+   "units": [
+    {
+     "uid": "q33",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "unanswerable_clean",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:unanswerable",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 1.94,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35942,
+    "output_tokens": 39,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q34": {
+   "units": [
+    {
+     "uid": "q34",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Most recently amended by memorandum dated August 24, 2026 (amendments effective September 1, 2026, except the Fee Schedule Large Investor Rate change effective for fee periods beginning on or after October 1, 2026); approved by the Management Committee at its meeting on August 20, 2026.",
+     "expected": "By the CCO's memorandum dated August 24, 2026, effective September 1, 2026 (the fee change from October 1, 2026); the amendments were approved by the Management Committee at its meeting on August 20, 2026.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "This memorandum is issued under Section 1.3 of the Compliance Manual. Following the mid-year review of the compliance program conducted with Ferrisburg Regulatory Consulting LLC and the Management Committee's review of the Adviser's technology vendors, the Management Committee approved the amendments set out in Section 2 at its meeting on August 20, 2026.\n\nEach amendment in Section 2 is effective September 1, 2026, except the amendment in Section 2.6, which is effective for fee periods beginning"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:06_policy_update_memo.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 4.19,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35939,
+    "output_tokens": 350,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q35": {
+   "units": [
+    {
+     "uid": "q35",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Yes. The Adviser has engaged Wexcombe Partners Ltd., a London-based placement agent, to introduce non-U.S. institutional investors to the Offshore Fund in the United Kingdom and Switzerland. The placement agreement was renewed in 2025 for a further three-year term. Wexcombe receives 20% of the management fees and incentive compensation received by the Adviser and the General Partner attributable to investors it introduces, for as long as those investors remain invested; these fees are paid by the Adviser from its own resources and are not charged to the Offshore Fund or its shareholders.",
+     "expected": "Yes. Wexcombe Partners Ltd., a London-based placement agent that introduces non-U.S. institutional investors to the Offshore Fund in the United Kingdom and Switzerland, receives 20% of the management fees and incentive compensation attributable to investors it introduces for as long as they remain invested, paid by the Adviser from its own resources and not charged to the Offshore Fund. The agreement was renewed in 2025 for three years.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The Adviser has engaged Wexcombe Partners Ltd., a London-based placement agent, to introduce non-U.S. institutional investors to the Offshore Fund in the United Kingdom and Switzerland. The placement agreement was renewed in 2025 for a further three-year term. Wexcombe Partners Ltd. receives 20% of the management fees and incentive compensation received by the Adviser and the General Partner that are attributable to investors it introduces, for as long as those investors remain invested. These f"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:01_brochure.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 5.34,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35947,
+    "output_tokens": 485,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q36": {
+   "units": [
+    {
+     "uid": "q36",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "The Administrator and the Controller each produce a daily report of positions whose price has not changed. A price unchanged for three consecutive business days is flagged and investigated by the Controller; unchanged for five consecutive business days is escalated to the Chief Financial Officer; and unchanged for ten consecutive business days may not continue to be used without a fair value determination by the Valuation Committee. Positions subject to a trading halt are escalated immediately.",
+     "expected": "The Administrator and the Controller each run a daily unchanged-price report. A price unchanged for three consecutive business days is flagged and investigated by the Controller; five consecutive business days is escalated to the CFO; after ten consecutive business days it may not be used without a Valuation Committee fair value determination. Trading halts are escalated immediately.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The Administrator and the Controller each produce a daily report of positions whose price has not changed. A price that is unchanged for three consecutive business days is flagged and investigated by the Controller. A price that is unchanged for five consecutive business days is escalated to the Chief Financial Officer. A price that is unchanged for ten consecutive business days may not continue to be used without a fair value determination by the Committee. Positions subject to a trading halt a"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:03_valuation_policy.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 4.39,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35942,
+    "output_tokens": 338,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q37": {
+   "units": [
+    {
+     "uid": "q37",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "The Chief Financial Officer plus one other voting member of the Valuation Committee must give written approval; the Chief Investment Officer and investment team members may not approve an override.",
+     "expected": "The Chief Financial Officer and one other voting member of the Valuation Committee, in writing; the CIO and investment team may not approve, and the Controller notifies the Administrator on the day of approval.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Any override of a vendor price, broker quote or model value used by the Administrator requires the written approval of the Chief Financial Officer and one other voting member of the Committee. The request must state the reason for the override, the proposed price, its source and the effect on net asset value. The Chief Investment Officer and members of the investment team may not approve an override."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:03_valuation_policy.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 3.69,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35933,
+    "output_tokens": 207,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q38": {
+   "units": [
+    {
+     "uid": "q38",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "Quarterly redemptions as of the last business day of any calendar quarter, on at least 65 days' prior written notice. Redemptions effective within 12 months of an investor's initial subscription incur a 3% early redemption fee, retained by the Fund (not payable to the Adviser) and not applicable to Class E interests. An investor-level gate applies: aggregate redemptions as of any quarter-end may be limited to 20% of the Fund's net asset value. In addition, 90% of proceeds are ordinarily paid within 30 days after the redemption date, with a 10% holdback on a full redemption pending completion of the annual audit.",
+     "expected": "Quarterly, as of the last business day of each calendar quarter, on at least 65 days' prior written notice; redemptions within 12 months of initial subscription pay a 3% early redemption fee retained by the Fund (not applicable to Class E); a fund-level gate of 20% of NAV per quarter-end; 90% of proceeds ordinarily paid within 30 days, with a 10% holdback on full redemptions until the annual audit.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Interests in the Flagship Fund and shares of the Offshore Fund may be redeemed as of the last business day of any calendar quarter on at least 65 days' prior written notice. Each Fund may limit aggregate redemptions as of any quarter-end to 20% of its net asset value. Ninety percent of redemption proceeds are ordinarily paid within 30 days after the redemption date, and a holdback of 10% applies to a full redemption until completion of the annual audit. Investors in the Co-Investment Fund have n"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:05_fee_schedule.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 5.91,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35949,
+    "output_tokens": 562,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q39": {
+   "units": [
+    {
+     "uid": "q39",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "New employees must complete compliance training covering the Compliance Manual and Code of Ethics within 30 days after their start date; all employees must attend annual compliance training conducted by the CCO in the fourth quarter of each year, plus additional targeted training on topics such as MNPI, expert networks, marketing and cybersecurity.",
+     "expected": "New employees complete training on the Compliance Manual and Code of Ethics within 30 days after their start date; all employees attend annual compliance training conducted by the CCO in the fourth quarter, plus targeted training on topics such as MNPI, expert networks, marketing and cybersecurity, and every supervised person certifies compliance annually.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Each new employee must complete compliance training covering this Manual and the Code of Ethics within 30 days after his or her start date. All employees must attend annual compliance training, conducted by the CCO in the fourth quarter of each year, and additional targeted training is provided on topics such as MNPI, expert networks, marketing and cybersecurity. Attendance is recorded by the Compliance department."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:02_compliance_manual.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 3.8,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35928,
+    "output_tokens": 273,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f02.q40": {
+   "units": [
+    {
+     "uid": "q40",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "The Incident Response Team is led by the Director of Technology, Kofi Brannigan, acting as Information Security Officer, and includes the Chief Compliance Officer, the President and Chief Operating Officer, a representative of the IT managed service provider (Anselby Managed IT LLC from September 1, 2026) and, as needed, outside counsel and a forensic investigation firm. On detection of a suspected incident the team classifies severity, contains it by isolating affected systems and disabling compromised credentials, preserves evidence, and eradicates the threat before restoring systems from clean backups; the CCO determines whether notification to investors, affected individuals, regulators or law enforcement is required; the COO notifies the cyber liability insurance carrier; and after each incident the team documents root cause and remediation and reports to the Management Committee. Affected individuals must be notified as soon as practicable, but not later than 30 days after the Adviser becomes aware that sensitive customer information has been, or is reasonably likely to have been, accessed or used without authorization (unless an exception applies).",
+     "expected": "An Incident Response Team led by the Director of Technology (Kofi Brannigan) acting as Information Security Officer, with the CCO, the COO, the IT managed service provider and, as needed, outside counsel and a forensic firm, classifies, contains, preserves evidence, eradicates and restores from clean backups; the CCO decides on notifications. Affected individuals are notified as soon as practicable and no later than 30 days after the Adviser becomes aware of the unauthorized access, and service providers must notify the Adviser within 72 hours.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": "The Incident Response Team is led by the Director of Technology, acting as Information Security Officer, and includes the Chief Compliance Officer, the President and Chief Operating Officer, a representative of the IT managed service provider and, as needed, outside counsel and a forensic investigation firm. On detection of a suspected incident, the Incident Response Team classifies its severity, contains the incident by isolating affected systems and disabling compromised credentials, preserves"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f02:04_business_continuity_plan.md",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 9.65,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 35961,
+    "output_tokens": 900,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  }
+ }
+}

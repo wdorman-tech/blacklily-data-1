@@ -1,0 +1,34 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (check dates).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What are the firm's primary and secondary pricing sources for fixed income securities?"
+
+3.  **Scan the Documents:**
+    *   Document 1: `01_brochure.md` (Form ADV Part 2A, dated March 27, 2026).
+        *   Section 8.1 Methods of Analysis: Mentions fundamental analysis for individual securities, credit quality for fixed income. Does not mention specific pricing vendors/sources.
+    *   Document 2: `01_brochure.md` (Form ADV Part 2A, dated March 27, 2026).
+        *   Section 8.3 Risk of Loss: Discusses risks, valuation risk mentions "Firm's Valuation Policy". Does not list specific vendors for fixed income pricing.
+    *   Document 3: `03_valuation_policy.md` (Valuation Policy, dated February 10, 2026).
+        *   Section 3.1 Hierarchy: General hierarchy (vendor, custodian, broker, fair value).
+        *   Section 3.2 Listed Securities: Mentions Ostrander Valuation Data, Inc. for equities/ETFs.
+        *   Section 3.3 Fixed Income: "For fixed income securities, including municipal, Treasury, agency, corporate and securitized debt, **Ostrander Valuation Data, Inc. is the primary pricing source** and supplies evaluated bid prices. **Kilbride Evaluated Pricing LLC serves as the secondary source**..."
+        *   Section 3.5 Custodian Price Comparison: Mentions Norrell Bay Trust & Custody, N.A. and Corvedale Clay Securities, LLC for comparison.
+        *   Section 6.1 Daily Stale Price Report: Mentions escalation to Valuation Committee.
+
+4.  **Evaluate Findings:**
+    *   The question asks for primary and secondary pricing sources for fixed income securities.
+    *   Document `03_valuation_policy.md`, Section `3.3 Fixed Income` explicitly states: "Ostrander Valuation Data, Inc. is the primary pricing source" and "Kilbride Evaluated Pricing LLC serves as the secondary source".
+    *   Date check: `03_valuation_policy.md` is dated February 10, 2026. `01_brochure.md` is dated March 27, 2026. The question asks about firm policy. Usually, specific policies (Valuation Policy) supersede general brochure statements if there's a conflict, but here the brochure doesn't contradict it. The Valuation Policy is the specific document governing pricing sources. Since the prompt says "Later-dated

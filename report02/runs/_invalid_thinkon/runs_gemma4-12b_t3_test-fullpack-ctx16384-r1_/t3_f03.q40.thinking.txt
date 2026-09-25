@@ -1,0 +1,39 @@
+The user wants to know when the firm's compliance policies were most recently amended and who issued them.
+
+    *   "06_policy_update_memo.md" (Memorandum: Amendments to Policies and Procedures)
+    *   "04_business_continuity_plan.md"
+    *   "05_fee_schedule.md"
+    *   "03_valuation_policy.md" (implied by the text in 06, though the file name provided in the prompt is 03_valuation_policy.md, wait, the prompt text for 03 is actually the content of the Valuation Policy).
+
+    *   "06_policy_update_memo.md"
+    *   "Section 1. Purpose and Effect"
+    *   "This memorandum, issued by the Chief Compliance Officer on September 8, 2026, records six amendments to the Firm's policies and procedures."
+
+    *   Date: September 8, 2026
+    *   Issuer: Chief Compliance Officer (Theresa L. Vannoy)
+
+    *   "answer": "The firm's compliance policies were most recently amended on September 8, 2026, and the amendments were issued by the Chief Compliance Officer."
+    *   "source_document": "06_policy_update_memo.md"
+    *   "section": "SECTION 1. PURPOSE AND EFFECT"
+    *   "quote": "This memorandum, issued by the Chief Compliance Officer on September 8, 2026, records six amendments to the Firm's policies and procedures."
+
+    *   "answer": "The amendments were issued by the Chief Compliance Officer on September 8, 2026."
+    *   "source_document": "06_policy_update_memo.md"
+    *   "section": "SECTION 1. PURPOSE AND EFFECT"
+    *   "quote": "This memorandum, issued by the Chief Compliance Officer on September 8, 2026, records six amendments to the Firm's policies and procedures."
+
+    *   "answer": "The amendments were issued by the Chief Compliance Officer on September 8, 2026."
+    *   "source_document": "06_policy_update_memo.md"
+    *   "section": "SECTION 1. PURPOSE AND EFFECT"
+    *   "quote": "This memorandum, issued by the Chief Compliance Officer on September 8, 2026, records six amendments to the Firm's policies and procedures."
+
+    Wait, the question asks "When were the firm's compliance policies most recently amended, and who issued the amendments?".
+    The memo says "This memorandum... records six amendments...". The memo itself is dated Sept 8, 2026.
+
+    Let's check if there are other dates.
+    Section 2: "The amendments in Sections 2 through 6 were approved by the Management Committee on September 3, 2026".
+    Section 7: "The amendment in Section 7 was approved by the Management Committee on June 9, 2026".
+
+    However, the *memorandum* (the document recording the amendments) was issued by the Chief Compliance Officer on September 8, 2026.
+
+    The question asks "who issued the amendments". The memo says "This memorandum, issued by the Chief Compliance Officer on September 8, 2026, records six

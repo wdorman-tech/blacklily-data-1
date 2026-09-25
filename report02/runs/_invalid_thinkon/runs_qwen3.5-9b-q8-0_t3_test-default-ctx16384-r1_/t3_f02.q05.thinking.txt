@@ -1,0 +1,45 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraint 1: Answer only from documents provided.
+    *   Constraint 2: If documents don't answer, return exactly `NOT_IN_DOCUMENTS`.
+    *   Constraint 3: Later-dated documents supersede earlier ones (not relevant here as dates seem consistent or not conflicting on this topic).
+    *   Constraint 4: Keep answers short and specific.
+    *   Constraint 5: Cite document file name and section.
+    *   Constraint 6: Quote supporting text verbatim.
+    *   Output Format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: Provide the carrier, limits and retention of the Adviser's directors and officers (D&O) and errors and omissions (E&O) insurance coverage.
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "insurance", "coverage", "carrier", "limits", "retention", "D&O", "directors and officers", "E&O", "errors and omissions".
+
+3.  **Review Document Content:**
+    *   `01_brochure.md`:
+        *   Item 9: Disciplinary Information (No insurance info).
+        *   Item 12: Brokerage Practices (Trade errors, reimbursement, no insurance limits mentioned).
+        *   Item 18: Financial Information (Prepayment fees, bankruptcy, no insurance info).
+    *   `02_compliance_manual.md`:
+        *   Section 3: Code of Ethics (No insurance info).
+        *   Section 10: Best Execution (No insurance info).
+        *   Section 11: Cybersecurity and Information Security.
+            *   11.4 Vendor Oversight (Mentions cyber liability insurance policy, but not D&O/E&O specific limits/carriers).
+            *   11.5 Incident Response and Insurance ("The Adviser maintains a cyber liability insurance policy..."). No mention of D&O or E&O carrier, limits, or retention.
+    *   `04_business_continuity_plan.md`:
+        *   Section 1: Purpose and Scope (References Compliance Manual, no insurance details).
+
+4.  **Evaluate Findings:**
+    *   The documents mention "cyber liability insurance policy" in `02_compliance_manual.md` Section 11.5.
+    *   The question asks for "directors and officers (D&O) and errors and omissions (E&O) insurance coverage".
+    *   There is no mention of D&O or E&O insurance, let alone carrier, limits, or retention, in any of the provided text.
+
+5.  **Formulate Answer:**
+    *   Since the specific information requested (carrier, limits, retention for D&O and E&O) is not present in the documents, the answer must be `NOT_IN_DOCUMENTS`.
+    *   Source document: "" (empty string as per instructions for NOT_IN_DOCUMENTS).
+    *   Section: "" (empty string).
+    *   Quote: "" (empty string).
+
+6.  **Construct JSON:**
+    *   Ensure valid JSON syntax.
+    *   Ensure no markdown code blocks (```json ... ```).

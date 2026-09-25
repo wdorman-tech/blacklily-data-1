@@ -1,0 +1,223 @@
+{
+ "pair_id": "t2_cat_2",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "Caterpillar Inc.",
+ "ticker": "CAT",
+ "split": "dev",
+ "prior": {
+  "fiscal_year_end": "2024-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/18230/000001823025000008/cat-20241231.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2025-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/18230/000001823026000008/cat-20251231.htm"
+ },
+ "words": 6593,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "unchanged",
+   "prior_heading": "Unexpected events may increase our cost of doing business or disrupt our operations.",
+   "current_heading": "Unexpected events may increase our cost of doing business or disrupt our operations.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a02",
+   "status": "unchanged",
+   "prior_heading": "Disruptions or volatility in global financial markets could limit our sources of liquidity, or the liquidity of our customers, dealers and suppliers.",
+   "current_heading": "Disruptions or volatility in global financial markets could limit our sources of liquidity, or the liquidity of our customers, dealers and suppliers.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a03",
+   "status": "unchanged",
+   "prior_heading": "Failure to maintain our credit ratings could increase our cost of borrowing and could adversely affect our cost of funds, liquidity, competitive position and access to capital markets.",
+   "current_heading": "Failure to maintain our credit ratings could increase our cost of borrowing and could adversely affect our cost of funds, liquidity, competitive position and access to capital markets.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a04",
+   "status": "unchanged",
+   "prior_heading": "Our Financial Products segment is subject to risks associated with the financial services industry.",
+   "current_heading": "Our Financial Products segment is subject to risks associated with the financial services industry.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a05",
+   "status": "unchanged",
+   "prior_heading": "Changes in interest rates or market liquidity conditions could adversely affect Cat Financial's and our earnings and/or cash flow.",
+   "current_heading": "Changes in interest rates or market liquidity conditions could adversely affect Cat Financial's and our earnings and/or cash flow.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a06",
+   "status": "unchanged",
+   "prior_heading": "An increase in delinquencies, repossessions or net losses of Cat Financial customers could adversely affect its results.",
+   "current_heading": "An increase in delinquencies, repossessions or net losses of Cat Financial customers could adversely affect its results.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a07",
+   "status": "modified",
+   "prior_heading": "Currency exchange rate fluctuations affect our results of operations.",
+   "current_heading": "Currency exchange rate fluctuations affect our results of operations.",
+   "similarity": 0.994,
+   "diff": [
+    "insert: [] -> [16 Table of Contents]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The only change is a page-number and Table of Contents marker (\"16 Table of Contents\") now falling after this section; the risk factor text is identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "Minor: a pagination artifact with no change to wording or substance, comparable to a cross-reference or punctuation change."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: pagination artifact only, no change to any disclosed risk, reference, characterization or number."
+    }
+   }
+  },
+  {
+   "aid": "a08",
+   "status": "modified",
+   "prior_heading": "Restrictive covenants in our debt agreements could limit our financial and operating flexibility.",
+   "current_heading": "Restrictive covenants in our debt agreements could limit our financial and operating flexibility.",
+   "similarity": 0.995,
+   "diff": [
+    "delete: [16 Table of Contents] -> []"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The only change is removal of a mid-sentence page break marker (\"16 Table of Contents\") that split the Cat Financial leverage covenant sentence; the covenant text is identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "Minor: a pagination artifact with no change to wording or substance."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: pagination artifact only, no change in substance."
+    }
+   }
+  },
+  {
+   "aid": "a09",
+   "status": "modified",
+   "prior_heading": "Sustained increases in funding obligations under our pension plans may impair our liquidity or financial condition.",
+   "current_heading": "Sustained increases in funding obligations under our pension plans may impair our liquidity or financial condition.",
+   "similarity": 0.635,
+   "diff": [
+    "delete: [We employ a liability-driven investment strategy, where the interest rate sensitivity of the pension investments and pension obligations are aligned to reduce funded status volatility.] -> []",
+    "delete: [significantly] -> []",
+    "insert: [] -> [We employ a liability-driven investment strategy, where the interest rate sensitivity of the pension investments and pension obligations are aligned to reduce funded status volatility.]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The statement that these factors \"could significantly increase our payment obligations\" under the pension plans now reads \"could increase our payment obligations\", and the liability-driven investment strategy sentence moves from the middle to the end of the paragraph.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "Criterion 3: dropping \"significantly\" softens the stated severity of the pension funding risk; the sentence relocation alone would be stylistic."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: removing \"significantly\" softens the stated severity of the pension funding risk; the sentence relocation alone would be stylistic, but a section with both kinds is material."
+    }
+   }
+  },
+  {
+   "aid": "a10",
+   "status": "modified",
+   "prior_heading": "Our global operations are subject to a wide range of trade and anti-corruption laws and regulations.",
+   "current_heading": "Our global operations are subject to a wide range of trade and anti-corruption laws and regulations.",
+   "similarity": 0.995,
+   "diff": [
+    "insert: [] -> [17 Table of Contents]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The only change is a page-number and Table of Contents marker (\"17 Table of Contents\") now falling after this section; the trade and anti-corruption risk text is identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "Minor: a pagination artifact with no change to wording or substance."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: pagination artifact only, no change to any disclosed risk, regulator or law referenced."
+    }
+   }
+  },
+  {
+   "aid": "a11",
+   "status": "modified",
+   "prior_heading": "International trade policies may impact demand for our products and our competitive position.",
+   "current_heading": "International trade policies may impact demand for our products and our competitive position.",
+   "similarity": 0.989,
+   "diff": [
+    "delete: [17 Table of Contents] -> []"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The only change is the page-number and Table of Contents marker (\"17 Table of Contents\") no longer trailing this section; the international trade policy text is identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "Minor: a pagination artifact with no change to wording or substance."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: pagination artifact only, no change in substance."
+    }
+   }
+  },
+  {
+   "aid": "a12",
+   "status": "unchanged",
+   "prior_heading": "We may incur additional tax expense or become subject to additional tax exposure.",
+   "current_heading": "We may incur additional tax expense or become subject to additional tax exposure.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a13",
+   "status": "unchanged",
+   "prior_heading": "Costs associated with lawsuits or investigations or adverse rulings in enforcement or other legal proceedings may have an adverse effect on our results of operations.",
+   "current_heading": "Costs associated with lawsuits or investigations or adverse rulings in enforcement or other legal proceedings may have an adverse effect on our results of operations.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  }
+ ]
+}

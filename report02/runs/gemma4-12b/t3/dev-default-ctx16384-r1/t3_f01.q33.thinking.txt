@@ -1,0 +1,26 @@
+*   Question: "How frequently is firm data backed up, and where are the backup copies stored?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in docs, use "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Use the latest document (dates are 2026).
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   `02_compliance_manual.md`: Mentions storage (Norcastle), archiving (Marrowgate), and disposal. Doesn't mention backup frequency or specific backup storage locations.
+    *   `04_business_continuity_plan.md`:
+        *   Section 6.1 Backup Frequency: "Norcastle performs incremental backups of the Firm's file server and document management system every four hours between 6:00 a.m. and 10:00 p.m. Eastern time on business days, and a full backup every night. Cloud applications provided by Tessaline and the Firm's client relationship management provider are backed up by those providers under their own controls, which the BCP Coordinator reviews annually."
+        *   Section 6.2 Storage Location and Retention: "Backup copies are replicated to Norcastle's secondary data center in Columbus, Ohio, more than 300 miles from each Firm office. Nightly backups are held in immutable storage for 35 days, and a monthly full backup is retained for 12 months."
+
+    *   Frequency: "every four hours between 6:00 a.m. and 10:00 p.m. Eastern time on business days, and a full backup every night" (for file server and document management system). Cloud apps are backed up by providers.
+    *   Location: "Norcastle's secondary data center in Columbus, Ohio, more than 300 miles from each Firm office."
+
+    *   Answer: "Norcastle performs incremental backups of the Firm's file server and document management system every four hours between 6:00 a.m. and 10:00 p.m. Eastern time on business days, and a full backup every night. Backup copies are replicated to Norcastle's secondary data center in Columbus, Ohio, more than 300 miles from each Firm office."
+    *   Source: `04_business_continuity_plan.md`
+    *   Sections: `SECTION 6. DATA BACKUP AND RECOVERY > 6.1 Backup Frequency` and `SECTION 6. DATA BACKUP AND RECOVERY > 6.2 Storage Location and Retention`.
+
+    *   The question asks for "How frequently is firm data backed up, and where are the backup copies stored?".
+    *   The answer should combine the info from 6.1 and 6.2.
+
+    *   Answer: "Norcastle performs incremental backups of the Firm's file server and document management system every four hours between 6:00 a.m. and 10:00 p.m. Eastern time on business days, and a full backup every night. Backup copies are replicated to Norcastle's secondary data center in Columbus, Ohio, more than 300 miles from each Firm office."
+    *   Source: `04_business_continuity_plan.md`
+    *   Section: `SECTION 6. DATA BACKUP AND RECOVERY` (or specifically 

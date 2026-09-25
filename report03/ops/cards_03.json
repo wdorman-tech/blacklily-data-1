@@ -1,0 +1,1389 @@
+{
+ "generated_by": "report03/ops/cards_03.py",
+ "generated": "2026-09-24T11:26:40-0400",
+ "purpose": "plan Section 6 and exhibit 7: the smallest single current NVIDIA card whose stated memory holds each model's measured loaded footprint plus the measured desktop reserve",
+ "reference_machine": "the reference machine: NVIDIA GeForce RTX 5070 (12 GB), AMD Ryzen 7 7700X, 63 GB system memory, Windows 11 Pro",
+ "settings": {
+  "context_tokens": [
+   16384
+  ],
+  "kv_cache": [
+   "q8_0"
+  ],
+  "flash_attention": [
+   "true"
+  ],
+  "num_parallel": [
+   1
+  ]
+ },
+ "units": {
+  "assumption": "NVIDIA's spec pages state memory in GB and none of them defines GB. This table reads NVIDIA GB as 10^9 bytes (decimal), the conservative reading, and applies it to every card and every row. Ollama reports bytes; nvidia-smi and the runner log report MiB (2^20 B).",
+  "evidence_against_decimal": {
+   "vram_total_mib_reported_by_driver": [
+    12227
+   ],
+   "card": "GeForce RTX 5070",
+   "memory_as_stated": "12 GB GDDR7",
+   "driver_total_bytes": [
+    12820938752
+   ],
+   "note": "on the one card measured, the driver reports more than the decimal reading of its stated memory, so the decimal reading understates capacity; each row also shows the answer if NVIDIA GB is read as GiB and at the reference driver's scale, and whether either changes it"
+  },
+  "reference_driver_scale": {
+   "vram_total_mib": 12227,
+   "stated_gb": 12,
+   "bytes_per_stated_gb": 1068411563,
+   "gib_bytes": 1073741824,
+   "note": "the reference card's driver reports 12,227 MiB for 12 GB stated, 1,068,411,563 B per stated GB against 1,073,741,824 B for a GiB, so the GiB reading overstates what the driver exposes; applied to other cards as a sensitivity only, since no other card's driver was read"
+  }
+ },
+ "desktop_reserve": {
+  "mib": 1385,
+  "bytes": 1452277760,
+  "gb": 1.45,
+  "source_entry": "gemma4:12b",
+  "rule": "the minimum vram_before_mib across fit_03.json entries: graphics memory already in use before any model loads, with the desktop display driven by the same card",
+  "observed_mib": {
+   "gemma4:12b": 1385,
+   "gemma4:26b-a4b-it-q4_K_M": 1471,
+   "qwen3.8:27b-q4_K_M": 1472,
+   "gemma4:31b-it-q4_K_M": 1472,
+   "qwen3.6:35b-a3b-q4_K_M": 1404
+  }
+ },
+ "generation_excess_check": {
+  "by_model": {
+   "gemma4:12b": {
+    "status": "measured",
+    "bytes": 638247241,
+    "gb": 0.64,
+    "placement": "fully resident"
+   },
+   "gemma4:26b-a4b-it-q4_K_M": {
+    "status": "measured",
+    "bytes": 1356941233,
+    "gb": 1.36,
+    "placement": "spilled"
+   },
+   "qwen3.8:27b-q4_K_M": {
+    "status": "measured",
+    "bytes": 985860672,
+    "gb": 0.99,
+    "placement": "spilled"
+   },
+   "gemma4:31b-it-q4_K_M": {
+    "status": "measured",
+    "bytes": 1562252412,
+    "gb": 1.56,
+    "placement": "spilled"
+   },
+   "qwen3.6:35b-a3b-q4_K_M": {
+    "status": "measured",
+    "bytes": 712423508,
+    "gb": 0.71,
+    "placement": "spilled"
+   },
+   "qwen3.5:9b": {
+    "status": "not measured",
+    "bytes": null,
+    "gb": null,
+    "placement": null
+   },
+   "qwen2.5:14b-instruct-q4_K_M": {
+    "status": "not measured",
+    "bytes": null,
+    "gb": null,
+    "placement": null
+   },
+   "ministral-3:14b": {
+    "status": "not measured",
+    "bytes": null,
+    "gb": null,
+    "placement": null
+   },
+   "gpt-oss:120b": {
+    "status": "unknown",
+    "bytes": null,
+    "gb": null,
+    "placement": null
+   }
+  },
+  "definition": "(peak graphics memory during generation - graphics memory in use before the load) x 2^20 B, minus the part of the loaded footprint Ollama placed in graphics memory (size_vram_bytes; on a fully resident load that is the whole loaded footprint). Computed for every entry with a peak reading whose before reading was taken with no earlier model resident",
+  "use": "not part of the sizing rule. Each row compares its margin only with the excess measured for that same model; no model's excess stands in for another's, and where a model's own excess was not measured margin_covers_generation_excess is null",
+  "verdicts": {
+   "covered": "the decimal-reading margin holds this model's own excess",
+   "marginal": "the decimal-reading margin does not hold it, but the same card does if GB is read as GiB or at the reference driver's scale",
+   "not covered": "no reading holds it on that card",
+   "unknown": "this model's own excess was not measured"
+  },
+  "caveat": "an excess measured while the model was spilled is the GPU-side compute buffer of a split load; a fully resident load on a larger card may need a different amount, so a spilled model's excess may not carry over to a fully resident load"
+ },
+ "pending": {
+  "rows": {},
+  "why": "these rows' fit entries carry no per-layer cache inputs (gemma4:12b's entry predates the per-layer arithmetic) or, for the No. 02 rows, no numeric parameter count",
+  "resolve": "when the GPU is free, call report03/ops/fit_probe_03.py's arithmetic(model, size_bytes) for each pending model (it issues /api/show only and loads no model), save the results to report03/ops/show_03.json as {model: arithmetic}, and rerun this script",
+  "render": "a rendered table shows these cells as 'pending', never blank or zero"
+ },
+ "cards": [
+  {
+   "card": "GeForce RTX 5070",
+   "line": "GeForce RTX 50 series",
+   "memory_gb_stated": 12,
+   "memory_as_stated": "12 GB GDDR7",
+   "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5070-family/",
+   "section": "Specifications: Memory Specs, Standard Memory Config",
+   "note": "the reference machine's card",
+   "checked": "2026-09-23"
+  },
+  {
+   "card": "GeForce RTX 5060 Ti 16 GB",
+   "line": "GeForce RTX 50 series",
+   "memory_gb_stated": 16,
+   "memory_as_stated": "16 GB / 8 GB GDDR7",
+   "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5060-family/",
+   "section": "Specifications: Memory Specs, Standard Memory Config",
+   "note": "the page lists two memory variants; only the 16 GB variant is in the card list",
+   "checked": "2026-09-23"
+  },
+  {
+   "card": "GeForce RTX 5070 Ti",
+   "line": "GeForce RTX 50 series",
+   "memory_gb_stated": 16,
+   "memory_as_stated": "16 GB GDDR7",
+   "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5070-family/",
+   "section": "Specifications: Memory Specs, Standard Memory Config",
+   "checked": "2026-09-23"
+  },
+  {
+   "card": "GeForce RTX 5080",
+   "line": "GeForce RTX 50 series",
+   "memory_gb_stated": 16,
+   "memory_as_stated": "16 GB GDDR7",
+   "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5080/",
+   "section": "Specifications: Memory Specs, Standard Memory Config",
+   "checked": "2026-09-23"
+  },
+  {
+   "card": "NVIDIA RTX PRO 4000 Blackwell",
+   "line": "RTX PRO Blackwell workstation",
+   "memory_gb_stated": 24,
+   "memory_as_stated": "24GB GDDR7 with error-correcting code (ECC)",
+   "url": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-4000/",
+   "section": "Specifications: Memory Configuration",
+   "checked": "2026-09-23"
+  },
+  {
+   "card": "GeForce RTX 5090",
+   "line": "GeForce RTX 50 series",
+   "memory_gb_stated": 32,
+   "memory_as_stated": "32 GB GDDR7",
+   "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/",
+   "section": "Specifications: Memory Specs, Standard Memory Config",
+   "checked": "2026-09-23"
+  },
+  {
+   "card": "NVIDIA RTX PRO 4500 Blackwell Workstation Edition",
+   "line": "RTX PRO Blackwell workstation",
+   "memory_gb_stated": 32,
+   "memory_as_stated": "32GB GDDR7 with error-correcting code (ECC)",
+   "url": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-4500/",
+   "section": "Specifications: Memory Configuration",
+   "checked": "2026-09-23"
+  },
+  {
+   "card": "NVIDIA RTX PRO 5000 Blackwell 48 GB",
+   "line": "RTX PRO Blackwell workstation",
+   "memory_gb_stated": 48,
+   "memory_as_stated": "48 GB GDDR7 with ECC",
+   "url": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-5000/",
+   "section": "Specifications: Memory Configuration",
+   "note": "the page lists a 48 GB and a 72 GB variant",
+   "checked": "2026-09-23"
+  },
+  {
+   "card": "NVIDIA RTX PRO 5000 Blackwell 72 GB",
+   "line": "RTX PRO Blackwell workstation",
+   "memory_gb_stated": 72,
+   "memory_as_stated": "72 GB GDDR7 with ECC",
+   "url": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-5000/",
+   "section": "Specifications: Memory Configuration",
+   "note": "the page lists a 48 GB and a 72 GB variant",
+   "checked": "2026-09-23"
+  },
+  {
+   "card": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+   "line": "RTX PRO Blackwell workstation",
+   "memory_gb_stated": 96,
+   "memory_as_stated": "96 GB GDDR7 with error-correcting code (ECC)",
+   "url": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000/",
+   "section": "Specifications: Memory Configuration",
+   "checked": "2026-09-23"
+  }
+ ],
+ "cards_dropped": [],
+ "cards_dropped_note": "every card in the list had its memory stated on its nvidia.com specification page",
+ "models": [
+  {
+   "model": "gemma4:12b",
+   "class": "resident baseline (No. 02)",
+   "parameters": 11907350576,
+   "active_parameters_b_library": null,
+   "quantization": "Q4_K_M",
+   "bits_per_weight": 5.08,
+   "context_tokens": 16384,
+   "weights_file_bytes": 7556508396,
+   "weights_file_gb": 7.56,
+   "kv": {
+    "method": "per-layer (plan Section 6)",
+    "attention_layers": 48,
+    "block_count": 48,
+    "sliding_window_layers": 40,
+    "sliding_window": 1024,
+    "head_count_kv": [
+     1,
+     8
+    ],
+    "key_length": 512,
+    "value_length": 512,
+    "kv_bytes_per_token_full_layers_q8_0": 8704,
+    "kv_bytes_at_ctx": 320864256,
+    "kv_gb_at_ctx": 0.32,
+    "arithmetic": [
+     "full-context attention layers: 8,704 B/token x 16,384 tokens = 142,606,336 B",
+     "sliding-window layers (40 of 48, window 1,024 tokens): 178,257,920 B",
+     "total at 16,384 tokens, q8_0 (1.0625 B/element): 320,864,256 B = 0.32 GB"
+    ],
+    "source": "report03/ops/show_03.json"
+   },
+   "computed_footprint_bytes": 7877372652,
+   "computed_footprint_gb": 7.88,
+   "loaded_footprint_bytes": 8076467895,
+   "loaded_footprint_gb": 8.08,
+   "loaded_footprint_gib": 7.52,
+   "loaded_minus_weights_bytes": 519959499,
+   "measured_overhead_bytes": 199095243,
+   "measured_overhead_gb": 0.2,
+   "size_vram_bytes_reference_machine": 8076467895,
+   "resident_fraction_reference_machine": 1.0,
+   "manifest_check": {
+    "manifests": 7,
+    "distinct": [
+     {
+      "size_bytes": 8076467895,
+      "size_vram_bytes": 8076467895,
+      "tasks": [
+       "t1",
+       "t2",
+       "t3",
+       "t4",
+       "t5",
+       "t6",
+       "t7"
+      ]
+     }
+    ],
+    "matches_probe": true
+   },
+   "need_bytes": 9528745655,
+   "need_gb": 9.53,
+   "need_arithmetic": "loaded 8,076,467,895 B + desktop reserve 1,452,277,760 B = 9,528,745,655 B = 9.53 GB",
+   "generation_excess": {
+    "status": "measured",
+    "bytes": 638247241,
+    "gb": 0.64,
+    "source": "report03/ops/fit_03.json",
+    "placement": "fully resident",
+    "arithmetic": "(peak 9,696 MiB - before 1,385 MiB) x 2^20 B = 8,714,715,136 B, minus the 8,076,467,895 B Ollama placed in graphics memory = 638,247,241 B = 0.64 GB"
+   },
+   "smallest_card": {
+    "tier_gb_stated": 12,
+    "cards": [
+     "GeForce RTX 5070"
+    ],
+    "capacity_bytes": 12000000000,
+    "margin_bytes": 2471254345,
+    "margin_gb": 2.47,
+    "margin_covers_generation_excess": true,
+    "margin_after_own_excess_bytes": 1833007104,
+    "margin_after_own_excess_gb": 1.83
+   },
+   "if_gb_read_as_gib": {
+    "tier_gb_stated": 12,
+    "cards": [
+     "GeForce RTX 5070"
+    ],
+    "capacity_bytes": 12884901888,
+    "margin_bytes": 3356156233,
+    "margin_gb": 3.36,
+    "margin_covers_generation_excess": true,
+    "margin_after_own_excess_bytes": 2717908992,
+    "margin_after_own_excess_gb": 2.72,
+    "changes_answer": false
+   },
+   "if_gb_read_at_reference_driver_scale": {
+    "tier_gb_stated": 12,
+    "cards": [
+     "GeForce RTX 5070"
+    ],
+    "capacity_bytes": 12820938752,
+    "margin_bytes": 3292193097,
+    "margin_gb": 3.29,
+    "margin_covers_generation_excess": true,
+    "margin_after_own_excess_bytes": 2653945856,
+    "margin_after_own_excess_gb": 2.65,
+    "changes_answer": false
+   },
+   "with_own_generation_excess": {
+    "need_bytes": 10166992896,
+    "need_gb": 10.17,
+    "arithmetic": "need 9,528,745,655 B + this model's own generation excess 638,247,241 B = 10,166,992,896 B = 10.17 GB",
+    "tier_gb_stated": 12,
+    "cards": [
+     "GeForce RTX 5070"
+    ],
+    "margin_gb": 1.83,
+    "changes_answer": false
+   },
+   "verdict": {
+    "status": "covered",
+    "note": "the 2.47 GB margin covers this model's own generation excess of 0.64 GB with 1.83 GB left"
+   },
+   "rule_check_on_reference_card": {
+    "fits_by_rule": true,
+    "fully_resident_measured": true,
+    "agree": true
+   },
+   "pending": []
+  },
+  {
+   "model": "gemma4:26b-a4b-it-q4_K_M",
+   "class": "moe",
+   "parameters": 25805936462,
+   "active_parameters_b_library": 4.0,
+   "quantization": "Q4_K_M",
+   "bits_per_weight": 5.58,
+   "context_tokens": 16384,
+   "weights_file_bytes": 17987581215,
+   "weights_file_gb": 17.99,
+   "kv": {
+    "method": "per-layer (plan Section 6)",
+    "attention_layers": 30,
+    "block_count": 30,
+    "sliding_window_layers": 25,
+    "sliding_window": 1024,
+    "head_count_kv": [
+     2,
+     8
+    ],
+    "key_length": 512,
+    "value_length": 512,
+    "kv_bytes_per_token_full_layers_q8_0": 10880,
+    "kv_bytes_at_ctx": 289669120,
+    "kv_gb_at_ctx": 0.29,
+    "arithmetic": [
+     "full-context attention layers: 10,880 B/token x 16,384 tokens = 178,257,920 B",
+     "sliding-window layers (25 of 30, window 1,024 tokens): 111,411,200 B",
+     "total at 16,384 tokens, q8_0 (1.0625 B/element): 289,669,120 B = 0.29 GB"
+    ],
+    "source": "report03/ops/fit_03.json"
+   },
+   "computed_footprint_bytes": 18277250335,
+   "computed_footprint_gb": 18.28,
+   "loaded_footprint_bytes": 18101850599,
+   "loaded_footprint_gb": 18.1,
+   "loaded_footprint_gib": 16.86,
+   "loaded_minus_weights_bytes": 114269384,
+   "measured_overhead_bytes": -175399736,
+   "measured_overhead_gb": -0.18,
+   "size_vram_bytes_reference_machine": 9158178895,
+   "resident_fraction_reference_machine": 0.5059,
+   "manifest_check": {
+    "manifests": 7,
+    "distinct": [
+     {
+      "size_bytes": 18101850599,
+      "size_vram_bytes": 9158178895,
+      "tasks": [
+       "t1",
+       "t2",
+       "t3",
+       "t4",
+       "t5",
+       "t6",
+       "t7"
+      ]
+     }
+    ],
+    "matches_probe": true
+   },
+   "need_bytes": 19554128359,
+   "need_gb": 19.55,
+   "need_arithmetic": "loaded 18,101,850,599 B + desktop reserve 1,452,277,760 B = 19,554,128,359 B = 19.55 GB",
+   "generation_excess": {
+    "status": "measured",
+    "bytes": 1356941233,
+    "gb": 1.36,
+    "source": "report03/ops/fit_03.json",
+    "placement": "spilled",
+    "arithmetic": "(peak 11,499 MiB - before 1,471 MiB) x 2^20 B = 10,515,120,128 B, minus the 9,158,178,895 B Ollama placed in graphics memory = 1,356,941,233 B = 1.36 GB",
+    "caveat": "measured while spilled (49.4% of the loaded footprint in system memory): the compute buffer of a split load may differ from that of a fully resident load on a larger card, so this excess may not carry over to a fully resident load"
+   },
+   "smallest_card": {
+    "tier_gb_stated": 24,
+    "cards": [
+     "NVIDIA RTX PRO 4000 Blackwell"
+    ],
+    "capacity_bytes": 24000000000,
+    "margin_bytes": 4445871641,
+    "margin_gb": 4.45,
+    "margin_covers_generation_excess": true,
+    "margin_after_own_excess_bytes": 3088930408,
+    "margin_after_own_excess_gb": 3.09
+   },
+   "if_gb_read_as_gib": {
+    "tier_gb_stated": 24,
+    "cards": [
+     "NVIDIA RTX PRO 4000 Blackwell"
+    ],
+    "capacity_bytes": 25769803776,
+    "margin_bytes": 6215675417,
+    "margin_gb": 6.22,
+    "margin_covers_generation_excess": true,
+    "margin_after_own_excess_bytes": 4858734184,
+    "margin_after_own_excess_gb": 4.86,
+    "changes_answer": false
+   },
+   "if_gb_read_at_reference_driver_scale": {
+    "tier_gb_stated": 24,
+    "cards": [
+     "NVIDIA RTX PRO 4000 Blackwell"
+    ],
+    "capacity_bytes": 25641877504,
+    "margin_bytes": 6087749145,
+    "margin_gb": 6.09,
+    "margin_covers_generation_excess": true,
+    "margin_after_own_excess_bytes": 4730807912,
+    "margin_after_own_excess_gb": 4.73,
+    "changes_answer": false
+   },
+   "with_own_generation_excess": {
+    "need_bytes": 20911069592,
+    "need_gb": 20.91,
+    "arithmetic": "need 19,554,128,359 B + this model's own generation excess 1,356,941,233 B = 20,911,069,592 B = 20.91 GB",
+    "tier_gb_stated": 24,
+    "cards": [
+     "NVIDIA RTX PRO 4000 Blackwell"
+    ],
+    "margin_gb": 3.09,
+    "changes_answer": false
+   },
+   "verdict": {
+    "status": "covered",
+    "note": "the 4.45 GB margin covers this model's own generation excess of 1.36 GB with 3.09 GB left"
+   },
+   "rule_check_on_reference_card": {
+    "fits_by_rule": false,
+    "fully_resident_measured": false,
+    "agree": true
+   },
+   "pending": []
+  },
+  {
+   "model": "qwen3.8:27b-q4_K_M",
+   "class": "dense",
+   "parameters": 27320697856,
+   "active_parameters_b_library": null,
+   "quantization": "Q4_K_M",
+   "bits_per_weight": 5.2,
+   "context_tokens": 16384,
+   "weights_file_bytes": 17741872132,
+   "weights_file_gb": 17.74,
+   "kv": {
+    "method": "per-layer (plan Section 6)",
+    "attention_layers": 16,
+    "block_count": 65,
+    "sliding_window_layers": 0,
+    "sliding_window": null,
+    "head_count_kv": [
+     4
+    ],
+    "key_length": 256,
+    "value_length": 256,
+    "kv_bytes_per_token_full_layers_q8_0": 34816,
+    "kv_bytes_at_ctx": 570425344,
+    "kv_gb_at_ctx": 0.57,
+    "arithmetic": [
+     "full-context attention layers: 34,816 B/token x 16,384 tokens = 570,425,344 B",
+     "hybrid: 16 of 65 layers keep a KV cache (every 4th); the recurrent state of the rest lands in overhead",
+     "total at 16,384 tokens, q8_0 (1.0625 B/element): 570,425,344 B = 0.57 GB"
+    ],
+    "source": "report03/ops/fit_03.json"
+   },
+   "computed_footprint_bytes": 18312297476,
+   "computed_footprint_gb": 18.31,
+   "loaded_footprint_bytes": 17824565161,
+   "loaded_footprint_gb": 17.82,
+   "loaded_footprint_gib": 16.6,
+   "loaded_minus_weights_bytes": 82693029,
+   "measured_overhead_bytes": -487732315,
+   "measured_overhead_gb": -0.49,
+   "size_vram_bytes_reference_machine": 9550230976,
+   "resident_fraction_reference_machine": 0.5358,
+   "manifest_check": {
+    "manifests": 7,
+    "distinct": [
+     {
+      "size_bytes": 17824565161,
+      "size_vram_bytes": 9550230976,
+      "tasks": [
+       "t1",
+       "t2",
+       "t3",
+       "t4",
+       "t5",
+       "t6",
+       "t7"
+      ]
+     }
+    ],
+    "matches_probe": true
+   },
+   "need_bytes": 19276842921,
+   "need_gb": 19.28,
+   "need_arithmetic": "loaded 17,824,565,161 B + desktop reserve 1,452,277,760 B = 19,276,842,921 B = 19.28 GB",
+   "generation_excess": {
+    "status": "measured",
+    "bytes": 985860672,
+    "gb": 0.99,
+    "source": "report03/ops/fit_03.json",
+    "placement": "spilled",
+    "arithmetic": "(peak 11,520 MiB - before 1,472 MiB) x 2^20 B = 10,536,091,648 B, minus the 9,550,230,976 B Ollama placed in graphics memory = 985,860,672 B = 0.99 GB",
+    "caveat": "measured while spilled (46.4% of the loaded footprint in system memory): the compute buffer of a split load may differ from that of a fully resident load on a larger card, so this excess may not carry over to a fully resident load"
+   },
+   "smallest_card": {
+    "tier_gb_stated": 24,
+    "cards": [
+     "NVIDIA RTX PRO 4000 Blackwell"
+    ],
+    "capacity_bytes": 24000000000,
+    "margin_bytes": 4723157079,
+    "margin_gb": 4.72,
+    "margin_covers_generation_excess": true,
+    "margin_after_own_excess_bytes": 3737296407,
+    "margin_after_own_excess_gb": 3.74
+   },
+   "if_gb_read_as_gib": {
+    "tier_gb_stated": 24,
+    "cards": [
+     "NVIDIA RTX PRO 4000 Blackwell"
+    ],
+    "capacity_bytes": 25769803776,
+    "margin_bytes": 6492960855,
+    "margin_gb": 6.49,
+    "margin_covers_generation_excess": true,
+    "margin_after_own_excess_bytes": 5507100183,
+    "margin_after_own_excess_gb": 5.51,
+    "changes_answer": false
+   },
+   "if_gb_read_at_reference_driver_scale": {
+    "tier_gb_stated": 24,
+    "cards": [
+     "NVIDIA RTX PRO 4000 Blackwell"
+    ],
+    "capacity_bytes": 25641877504,
+    "margin_bytes": 6365034583,
+    "margin_gb": 6.37,
+    "margin_covers_generation_excess": true,
+    "margin_after_own_excess_bytes": 5379173911,
+    "margin_after_own_excess_gb": 5.38,
+    "changes_answer": false
+   },
+   "with_own_generation_excess": {
+    "need_bytes": 20262703593,
+    "need_gb": 20.26,
+    "arithmetic": "need 19,276,842,921 B + this model's own generation excess 985,860,672 B = 20,262,703,593 B = 20.26 GB",
+    "tier_gb_stated": 24,
+    "cards": [
+     "NVIDIA RTX PRO 4000 Blackwell"
+    ],
+    "margin_gb": 3.74,
+    "changes_answer": false
+   },
+   "verdict": {
+    "status": "covered",
+    "note": "the 4.72 GB margin covers this model's own generation excess of 0.99 GB with 3.74 GB left"
+   },
+   "rule_check_on_reference_card": {
+    "fits_by_rule": false,
+    "fully_resident_measured": false,
+    "agree": true
+   },
+   "pending": []
+  },
+  {
+   "model": "gemma4:31b-it-q4_K_M",
+   "class": "dense",
+   "parameters": 31273089132,
+   "active_parameters_b_library": null,
+   "quantization": "Q4_K_M",
+   "bits_per_weight": 5.08,
+   "context_tokens": 16384,
+   "weights_file_bytes": 19868981791,
+   "weights_file_gb": 19.87,
+   "kv": {
+    "method": "per-layer (plan Section 6)",
+    "attention_layers": 60,
+    "block_count": 60,
+    "sliding_window_layers": 50,
+    "sliding_window": 1024,
+    "head_count_kv": [
+     4,
+     16
+    ],
+    "key_length": 512,
+    "value_length": 512,
+    "kv_bytes_per_token_full_layers_q8_0": 43520,
+    "kv_bytes_at_ctx": 1158676480,
+    "kv_gb_at_ctx": 1.16,
+    "arithmetic": [
+     "full-context attention layers: 43,520 B/token x 16,384 tokens = 713,031,680 B",
+     "sliding-window layers (50 of 60, window 1,024 tokens): 445,644,800 B",
+     "total at 16,384 tokens, q8_0 (1.0625 B/element): 1,158,676,480 B = 1.16 GB"
+    ],
+    "source": "report03/ops/fit_03.json"
+   },
+   "computed_footprint_bytes": 21027658271,
+   "computed_footprint_gb": 21.03,
+   "loaded_footprint_bytes": 21054367987,
+   "loaded_footprint_gb": 21.05,
+   "loaded_footprint_gib": 19.61,
+   "loaded_minus_weights_bytes": 1185386196,
+   "measured_overhead_bytes": 26709716,
+   "measured_overhead_gb": 0.03,
+   "size_vram_bytes_reference_machine": 8986422148,
+   "resident_fraction_reference_machine": 0.4268,
+   "manifest_check": {
+    "manifests": 7,
+    "distinct": [
+     {
+      "size_bytes": 21054367987,
+      "size_vram_bytes": 8986422148,
+      "tasks": [
+       "t1",
+       "t2",
+       "t3",
+       "t4",
+       "t5",
+       "t6",
+       "t7"
+      ]
+     }
+    ],
+    "matches_probe": true
+   },
+   "need_bytes": 22506645747,
+   "need_gb": 22.51,
+   "need_arithmetic": "loaded 21,054,367,987 B + desktop reserve 1,452,277,760 B = 22,506,645,747 B = 22.51 GB",
+   "generation_excess": {
+    "status": "measured",
+    "bytes": 1562252412,
+    "gb": 1.56,
+    "source": "report03/ops/fit_03.json",
+    "placement": "spilled",
+    "arithmetic": "(peak 11,532 MiB - before 1,472 MiB) x 2^20 B = 10,548,674,560 B, minus the 8,986,422,148 B Ollama placed in graphics memory = 1,562,252,412 B = 1.56 GB",
+    "caveat": "measured while spilled (57.3% of the loaded footprint in system memory): the compute buffer of a split load may differ from that of a fully resident load on a larger card, so this excess may not carry over to a fully resident load"
+   },
+   "smallest_card": {
+    "tier_gb_stated": 24,
+    "cards": [
+     "NVIDIA RTX PRO 4000 Blackwell"
+    ],
+    "capacity_bytes": 24000000000,
+    "margin_bytes": 1493354253,
+    "margin_gb": 1.49,
+    "margin_covers_generation_excess": false,
+    "margin_after_own_excess_bytes": -68898159,
+    "margin_after_own_excess_gb": -0.07
+   },
+   "if_gb_read_as_gib": {
+    "tier_gb_stated": 24,
+    "cards": [
+     "NVIDIA RTX PRO 4000 Blackwell"
+    ],
+    "capacity_bytes": 25769803776,
+    "margin_bytes": 3263158029,
+    "margin_gb": 3.26,
+    "margin_covers_generation_excess": true,
+    "margin_after_own_excess_bytes": 1700905617,
+    "margin_after_own_excess_gb": 1.7,
+    "changes_answer": false
+   },
+   "if_gb_read_at_reference_driver_scale": {
+    "tier_gb_stated": 24,
+    "cards": [
+     "NVIDIA RTX PRO 4000 Blackwell"
+    ],
+    "capacity_bytes": 25641877504,
+    "margin_bytes": 3135231757,
+    "margin_gb": 3.14,
+    "margin_covers_generation_excess": true,
+    "margin_after_own_excess_bytes": 1572979345,
+    "margin_after_own_excess_gb": 1.57,
+    "changes_answer": false
+   },
+   "with_own_generation_excess": {
+    "need_bytes": 24068898159,
+    "need_gb": 24.07,
+    "arithmetic": "need 22,506,645,747 B + this model's own generation excess 1,562,252,412 B = 24,068,898,159 B = 24.07 GB",
+    "tier_gb_stated": 32,
+    "cards": [
+     "GeForce RTX 5090",
+     "NVIDIA RTX PRO 4500 Blackwell Workstation Edition"
+    ],
+    "margin_gb": 7.93,
+    "changes_answer": true
+   },
+   "verdict": {
+    "status": "marginal",
+    "note": "need 22.51 GB + this model's own generation excess 1.56 GB = 24.07 GB, more than 24 x 10^9 B: the 1.49 GB margin is 0.07 GB short; the same card covers it if GB is read as GiB (1.7 GB left) and at the scale the reference card's driver reports (1.57 GB left); the excess was measured while spilled and may not carry over to a fully resident load"
+   },
+   "rule_check_on_reference_card": {
+    "fits_by_rule": false,
+    "fully_resident_measured": false,
+    "agree": true
+   },
+   "pending": []
+  },
+  {
+   "model": "qwen3.6:35b-a3b-q4_K_M",
+   "class": "moe",
+   "parameters": 35951822704,
+   "active_parameters_b_library": 3.0,
+   "quantization": "Q4_K_M",
+   "bits_per_weight": 5.33,
+   "context_tokens": 16384,
+   "weights_file_bytes": 23938333577,
+   "weights_file_gb": 23.94,
+   "kv": {
+    "method": "per-layer (plan Section 6)",
+    "attention_layers": 10,
+    "block_count": 40,
+    "sliding_window_layers": 0,
+    "sliding_window": null,
+    "head_count_kv": [
+     0,
+     2
+    ],
+    "key_length": 256,
+    "value_length": 256,
+    "kv_bytes_per_token_full_layers_q8_0": 10880,
+    "kv_bytes_at_ctx": 178257920,
+    "kv_gb_at_ctx": 0.18,
+    "arithmetic": [
+     "full-context attention layers: 10,880 B/token x 16,384 tokens = 178,257,920 B",
+     "hybrid: 10 of 40 layers keep a KV cache (every 4th); the recurrent state of the rest lands in overhead",
+     "total at 16,384 tokens, q8_0 (1.0625 B/element): 178,257,920 B = 0.18 GB"
+    ],
+    "source": "report03/ops/fit_03.json"
+   },
+   "computed_footprint_bytes": 24116591497,
+   "computed_footprint_gb": 24.12,
+   "loaded_footprint_bytes": 23367222554,
+   "loaded_footprint_gb": 23.37,
+   "loaded_footprint_gib": 21.76,
+   "loaded_minus_weights_bytes": -571111023,
+   "measured_overhead_bytes": -749368943,
+   "measured_overhead_gb": -0.75,
+   "size_vram_bytes_reference_machine": 9714616236,
+   "resident_fraction_reference_machine": 0.4157,
+   "manifest_check": {
+    "manifests": 7,
+    "distinct": [
+     {
+      "size_bytes": 23367222554,
+      "size_vram_bytes": 9714616236,
+      "tasks": [
+       "t1",
+       "t2",
+       "t3",
+       "t4",
+       "t5",
+       "t6",
+       "t7"
+      ]
+     }
+    ],
+    "matches_probe": true
+   },
+   "need_bytes": 24819500314,
+   "need_gb": 24.82,
+   "need_arithmetic": "loaded 23,367,222,554 B + desktop reserve 1,452,277,760 B = 24,819,500,314 B = 24.82 GB",
+   "generation_excess": {
+    "status": "measured",
+    "bytes": 712423508,
+    "gb": 0.71,
+    "source": "report03/ops/fit_03.json",
+    "placement": "spilled",
+    "arithmetic": "(peak 11,348 MiB - before 1,404 MiB) x 2^20 B = 10,427,039,744 B, minus the 9,714,616,236 B Ollama placed in graphics memory = 712,423,508 B = 0.71 GB",
+    "caveat": "measured while spilled (58.4% of the loaded footprint in system memory): the compute buffer of a split load may differ from that of a fully resident load on a larger card, so this excess may not carry over to a fully resident load"
+   },
+   "smallest_card": {
+    "tier_gb_stated": 32,
+    "cards": [
+     "GeForce RTX 5090",
+     "NVIDIA RTX PRO 4500 Blackwell Workstation Edition"
+    ],
+    "capacity_bytes": 32000000000,
+    "margin_bytes": 7180499686,
+    "margin_gb": 7.18,
+    "margin_covers_generation_excess": true,
+    "margin_after_own_excess_bytes": 6468076178,
+    "margin_after_own_excess_gb": 6.47
+   },
+   "if_gb_read_as_gib": {
+    "tier_gb_stated": 24,
+    "cards": [
+     "NVIDIA RTX PRO 4000 Blackwell"
+    ],
+    "capacity_bytes": 25769803776,
+    "margin_bytes": 950303462,
+    "margin_gb": 0.95,
+    "margin_covers_generation_excess": true,
+    "margin_after_own_excess_bytes": 237879954,
+    "margin_after_own_excess_gb": 0.24,
+    "changes_answer": true,
+    "note": "if GB is read as GiB, the answer moves to the 24 GB tier with a 0.95 GB margin, 0.24 GB after this model's own generation excess"
+   },
+   "if_gb_read_at_reference_driver_scale": {
+    "tier_gb_stated": 24,
+    "cards": [
+     "NVIDIA RTX PRO 4000 Blackwell"
+    ],
+    "capacity_bytes": 25641877504,
+    "margin_bytes": 822377190,
+    "margin_gb": 0.82,
+    "margin_covers_generation_excess": true,
+    "margin_after_own_excess_bytes": 109953682,
+    "margin_after_own_excess_gb": 0.11,
+    "changes_answer": true,
+    "note": "at the scale the reference card's driver reports, the answer moves to the 24 GB tier with a 0.82 GB margin, 0.11 GB after this model's own generation excess"
+   },
+   "with_own_generation_excess": {
+    "need_bytes": 25531923822,
+    "need_gb": 25.53,
+    "arithmetic": "need 24,819,500,314 B + this model's own generation excess 712,423,508 B = 25,531,923,822 B = 25.53 GB",
+    "tier_gb_stated": 32,
+    "cards": [
+     "GeForce RTX 5090",
+     "NVIDIA RTX PRO 4500 Blackwell Workstation Edition"
+    ],
+    "margin_gb": 6.47,
+    "changes_answer": false
+   },
+   "verdict": {
+    "status": "covered",
+    "note": "the 7.18 GB margin covers this model's own generation excess of 0.71 GB with 6.47 GB left"
+   },
+   "rule_check_on_reference_card": {
+    "fits_by_rule": false,
+    "fully_resident_measured": false,
+    "agree": true
+   },
+   "pending": []
+  }
+ ],
+ "no02_resident": [
+  {
+   "model": "qwen3.5:9b",
+   "class": "resident baseline (No. 02)",
+   "parameters": 9653104368,
+   "parameter_size_library": "9.7B",
+   "quantization": "Q4_K_M",
+   "bits_per_weight": 5.47,
+   "context_tokens": 16384,
+   "weights_file_bytes": 6594474711,
+   "weights_file_gb": 6.59,
+   "kv": {
+    "method": "per-layer (plan Section 6)",
+    "attention_layers": 8,
+    "block_count": 32,
+    "sliding_window_layers": 0,
+    "sliding_window": null,
+    "head_count_kv": [
+     0,
+     4
+    ],
+    "key_length": 256,
+    "value_length": 256,
+    "kv_bytes_per_token_full_layers_q8_0": 17408,
+    "kv_bytes_at_ctx": 285212672,
+    "kv_gb_at_ctx": 0.29,
+    "arithmetic": [
+     "full-context attention layers: 17,408 B/token x 16,384 tokens = 285,212,672 B",
+     "hybrid: 8 of 32 layers keep a KV cache (every 4th); the recurrent state of the rest lands in overhead",
+     "total at 16,384 tokens, q8_0 (1.0625 B/element): 285,212,672 B = 0.29 GB"
+    ],
+    "source": "report03/ops/show_03.json"
+   },
+   "computed_footprint_bytes": 6879687383,
+   "computed_footprint_gb": 6.88,
+   "loaded_footprint_bytes": 5763005151,
+   "loaded_footprint_gb": 5.76,
+   "loaded_footprint_gib": 5.37,
+   "loaded_minus_weights_bytes": -831469560,
+   "measured_overhead_bytes": -1116682232,
+   "measured_overhead_gb": -1.12,
+   "size_vram_bytes_reference_machine": 5763005151,
+   "resident_fraction_reference_machine": 1.0,
+   "manifest_check": {
+    "manifests": 7,
+    "distinct": [
+     {
+      "size_bytes": 5763005151,
+      "size_vram_bytes": 5763005151,
+      "tasks": [
+       "t1",
+       "t2",
+       "t3",
+       "t4",
+       "t5",
+       "t6",
+       "t7"
+      ]
+     }
+    ],
+    "matches_probe": true
+   },
+   "need_bytes": 7215282911,
+   "need_gb": 7.22,
+   "need_arithmetic": "loaded 5,763,005,151 B + desktop reserve 1,452,277,760 B = 7,215,282,911 B = 7.22 GB",
+   "generation_excess": {
+    "status": "not measured",
+    "bytes": null,
+    "gb": null,
+    "why": "report02/ops/fit.json records vram_before_mib 11,537 and peak_vram_mib 11,537: graphics memory rose by 0 B, less than the 5,763,005,151 B Ollama placed there, so the before reading was taken with an earlier model still resident"
+   },
+   "smallest_card": {
+    "tier_gb_stated": 12,
+    "cards": [
+     "GeForce RTX 5070"
+    ],
+    "capacity_bytes": 12000000000,
+    "margin_bytes": 4784717089,
+    "margin_gb": 4.78,
+    "margin_covers_generation_excess": null,
+    "margin_after_own_excess_bytes": null,
+    "margin_after_own_excess_gb": null
+   },
+   "if_gb_read_as_gib": {
+    "tier_gb_stated": 12,
+    "cards": [
+     "GeForce RTX 5070"
+    ],
+    "capacity_bytes": 12884901888,
+    "margin_bytes": 5669618977,
+    "margin_gb": 5.67,
+    "margin_covers_generation_excess": null,
+    "margin_after_own_excess_bytes": null,
+    "margin_after_own_excess_gb": null,
+    "changes_answer": false
+   },
+   "if_gb_read_at_reference_driver_scale": {
+    "tier_gb_stated": 12,
+    "cards": [
+     "GeForce RTX 5070"
+    ],
+    "capacity_bytes": 12820938752,
+    "margin_bytes": 5605655841,
+    "margin_gb": 5.61,
+    "margin_covers_generation_excess": null,
+    "margin_after_own_excess_bytes": null,
+    "margin_after_own_excess_gb": null,
+    "changes_answer": false
+   },
+   "verdict": {
+    "status": "unknown",
+    "note": "this model's generation excess is unknown (report02/ops/fit.json records vram_before_mib 11,537 and peak_vram_mib 11,537: graphics memory rose by 0 B, less than the 5,763,005,151 B Ollama placed there, so the before reading was taken with an earlier model still resident), so whether the margin covers it is unknown; no other model's measurement stands in for it"
+   },
+   "pending": []
+  },
+  {
+   "model": "qwen2.5:14b-instruct-q4_K_M",
+   "class": "resident baseline (No. 02)",
+   "parameters": 14770033664,
+   "parameter_size_library": "14.8B",
+   "quantization": "Q4_K_M",
+   "bits_per_weight": 4.87,
+   "context_tokens": 16384,
+   "weights_file_bytes": 8988124069,
+   "weights_file_gb": 8.99,
+   "kv": {
+    "method": "per-layer (plan Section 6)",
+    "attention_layers": 48,
+    "block_count": 48,
+    "sliding_window_layers": 0,
+    "sliding_window": null,
+    "head_count_kv": [
+     8
+    ],
+    "key_length": 128,
+    "value_length": 128,
+    "kv_bytes_per_token_full_layers_q8_0": 104448,
+    "kv_bytes_at_ctx": 1711276032,
+    "kv_gb_at_ctx": 1.71,
+    "arithmetic": [
+     "full-context attention layers: 104,448 B/token x 16,384 tokens = 1,711,276,032 B",
+     "total at 16,384 tokens, q8_0 (1.0625 B/element): 1,711,276,032 B = 1.71 GB"
+    ],
+    "source": "report03/ops/show_03.json"
+   },
+   "computed_footprint_bytes": 10699400101,
+   "computed_footprint_gb": 10.7,
+   "loaded_footprint_bytes": 10388735261,
+   "loaded_footprint_gb": 10.39,
+   "loaded_footprint_gib": 9.68,
+   "loaded_minus_weights_bytes": 1400611192,
+   "measured_overhead_bytes": -310664840,
+   "measured_overhead_gb": -0.31,
+   "size_vram_bytes_reference_machine": 10388735261,
+   "resident_fraction_reference_machine": 1.0,
+   "manifest_check": {
+    "manifests": 7,
+    "distinct": [
+     {
+      "size_bytes": 10388735261,
+      "size_vram_bytes": 10388735261,
+      "tasks": [
+       "t1",
+       "t2",
+       "t3",
+       "t4",
+       "t5",
+       "t6",
+       "t7"
+      ]
+     }
+    ],
+    "matches_probe": true
+   },
+   "need_bytes": 11841013021,
+   "need_gb": 11.84,
+   "need_arithmetic": "loaded 10,388,735,261 B + desktop reserve 1,452,277,760 B = 11,841,013,021 B = 11.84 GB",
+   "generation_excess": {
+    "status": "not measured",
+    "bytes": null,
+    "gb": null,
+    "why": "report02/ops/fit.json records vram_before_mib 9,990 and peak_vram_mib 11,564: graphics memory rose by 1,650,458,624 B, less than the 10,388,735,261 B Ollama placed there, so the before reading was taken with an earlier model still resident"
+   },
+   "smallest_card": {
+    "tier_gb_stated": 12,
+    "cards": [
+     "GeForce RTX 5070"
+    ],
+    "capacity_bytes": 12000000000,
+    "margin_bytes": 158986979,
+    "margin_gb": 0.16,
+    "margin_covers_generation_excess": null,
+    "margin_after_own_excess_bytes": null,
+    "margin_after_own_excess_gb": null
+   },
+   "if_gb_read_as_gib": {
+    "tier_gb_stated": 12,
+    "cards": [
+     "GeForce RTX 5070"
+    ],
+    "capacity_bytes": 12884901888,
+    "margin_bytes": 1043888867,
+    "margin_gb": 1.04,
+    "margin_covers_generation_excess": null,
+    "margin_after_own_excess_bytes": null,
+    "margin_after_own_excess_gb": null,
+    "changes_answer": false
+   },
+   "if_gb_read_at_reference_driver_scale": {
+    "tier_gb_stated": 12,
+    "cards": [
+     "GeForce RTX 5070"
+    ],
+    "capacity_bytes": 12820938752,
+    "margin_bytes": 979925731,
+    "margin_gb": 0.98,
+    "margin_covers_generation_excess": null,
+    "margin_after_own_excess_bytes": null,
+    "margin_after_own_excess_gb": null,
+    "changes_answer": false
+   },
+   "verdict": {
+    "status": "unknown",
+    "note": "this model's generation excess is unknown (report02/ops/fit.json records vram_before_mib 9,990 and peak_vram_mib 11,564: graphics memory rose by 1,650,458,624 B, less than the 10,388,735,261 B Ollama placed there, so the before reading was taken with an earlier model still resident), so whether the margin covers it is unknown; no other model's measurement stands in for it"
+   },
+   "pending": []
+  },
+  {
+   "model": "ministral-3:14b",
+   "class": "resident baseline (No. 02)",
+   "parameters": 13945031680,
+   "parameter_size_library": "13.9B",
+   "quantization": "Q4_K_M",
+   "bits_per_weight": 5.21,
+   "context_tokens": 16384,
+   "weights_file_bytes": 9082537546,
+   "weights_file_gb": 9.08,
+   "kv": {
+    "method": "per-layer (plan Section 6)",
+    "attention_layers": 40,
+    "block_count": 40,
+    "sliding_window_layers": 0,
+    "sliding_window": null,
+    "head_count_kv": [
+     8
+    ],
+    "key_length": 128,
+    "value_length": 128,
+    "kv_bytes_per_token_full_layers_q8_0": 87040,
+    "kv_bytes_at_ctx": 1426063360,
+    "kv_gb_at_ctx": 1.43,
+    "arithmetic": [
+     "full-context attention layers: 87,040 B/token x 16,384 tokens = 1,426,063,360 B",
+     "total at 16,384 tokens, q8_0 (1.0625 B/element): 1,426,063,360 B = 1.43 GB"
+    ],
+    "source": "report03/ops/show_03.json"
+   },
+   "computed_footprint_bytes": 10508600906,
+   "computed_footprint_gb": 10.51,
+   "loaded_footprint_bytes": 9491709951,
+   "loaded_footprint_gb": 9.49,
+   "loaded_footprint_gib": 8.84,
+   "loaded_minus_weights_bytes": 409172405,
+   "measured_overhead_bytes": -1016890955,
+   "measured_overhead_gb": -1.02,
+   "size_vram_bytes_reference_machine": 9491709951,
+   "resident_fraction_reference_machine": 1.0,
+   "manifest_check": {
+    "manifests": 7,
+    "distinct": [
+     {
+      "size_bytes": 9491709951,
+      "size_vram_bytes": 9491709951,
+      "tasks": [
+       "t1",
+       "t2",
+       "t3",
+       "t4",
+       "t5",
+       "t6",
+       "t7"
+      ]
+     }
+    ],
+    "matches_probe": true
+   },
+   "need_bytes": 10943987711,
+   "need_gb": 10.94,
+   "need_arithmetic": "loaded 9,491,709,951 B + desktop reserve 1,452,277,760 B = 10,943,987,711 B = 10.94 GB",
+   "generation_excess": {
+    "status": "not measured",
+    "bytes": null,
+    "gb": null,
+    "why": "report02/ops/fit.json records vram_before_mib 11,563 and peak_vram_mib 11,563: graphics memory rose by 0 B, less than the 9,491,709,951 B Ollama placed there, so the before reading was taken with an earlier model still resident"
+   },
+   "smallest_card": {
+    "tier_gb_stated": 12,
+    "cards": [
+     "GeForce RTX 5070"
+    ],
+    "capacity_bytes": 12000000000,
+    "margin_bytes": 1056012289,
+    "margin_gb": 1.06,
+    "margin_covers_generation_excess": null,
+    "margin_after_own_excess_bytes": null,
+    "margin_after_own_excess_gb": null
+   },
+   "if_gb_read_as_gib": {
+    "tier_gb_stated": 12,
+    "cards": [
+     "GeForce RTX 5070"
+    ],
+    "capacity_bytes": 12884901888,
+    "margin_bytes": 1940914177,
+    "margin_gb": 1.94,
+    "margin_covers_generation_excess": null,
+    "margin_after_own_excess_bytes": null,
+    "margin_after_own_excess_gb": null,
+    "changes_answer": false
+   },
+   "if_gb_read_at_reference_driver_scale": {
+    "tier_gb_stated": 12,
+    "cards": [
+     "GeForce RTX 5070"
+    ],
+    "capacity_bytes": 12820938752,
+    "margin_bytes": 1876951041,
+    "margin_gb": 1.88,
+    "margin_covers_generation_excess": null,
+    "margin_after_own_excess_bytes": null,
+    "margin_after_own_excess_gb": null,
+    "changes_answer": false
+   },
+   "verdict": {
+    "status": "unknown",
+    "note": "this model's generation excess is unknown (report02/ops/fit.json records vram_before_mib 11,563 and peak_vram_mib 11,563: graphics memory rose by 0 B, less than the 9,491,709,951 B Ollama placed there, so the before reading was taken with an earlier model still resident), so whether the margin covers it is unknown; no other model's measurement stands in for it"
+   },
+   "pending": []
+  }
+ ],
+ "stretch": [
+  {
+   "model": "gpt-oss:120b",
+   "class": "moe",
+   "parameters": 116829156672,
+   "active_parameters_b_library": 5.1,
+   "bits_per_weight": 4.48,
+   "context_tokens": 16384,
+   "loaded": false,
+   "outcome": "did not load usably: the expert buffer exceeds available system memory, Windows grew the page file until commit reached its limit and the machine paged at about 340,000 pages per second. Load aborted by hand after about two minutes to protect the desktop. A fact about the reference machine's 63 GB of memory, not about the model.",
+   "weights_file_bytes": 65369818941,
+   "weights_file_gb": 65.37,
+   "kv": {
+    "method": "per-layer (plan Section 6)",
+    "attention_layers": 36,
+    "block_count": 36,
+    "sliding_window_layers": 18,
+    "sliding_window": 128,
+    "head_count_kv": [
+     8
+    ],
+    "key_length": 64,
+    "value_length": 64,
+    "kv_bytes_per_token_full_layers_q8_0": 19584,
+    "kv_bytes_at_ctx": 323371008,
+    "kv_gb_at_ctx": 0.32,
+    "arithmetic": [
+     "full-context attention layers: 19,584 B/token x 16,384 tokens = 320,864,256 B",
+     "sliding-window layers (18 of 36, window 128 tokens): 2,506,752 B",
+     "total at 16,384 tokens, q8_0 (1.0625 B/element): 323,371,008 B = 0.32 GB"
+    ],
+    "source": "report03/ops/fit_03.json"
+   },
+   "observed_at_load": {
+    "at": "2026-09-23T15:30",
+    "source": "Ollama runner log during the aborted load (fit_03.json load_observed)",
+    "gpu_model_buffer_mib": 8911.93,
+    "gpu_model_buffer_bytes": 9344835912,
+    "gpu_model_buffer_gb": 9.34,
+    "gpu_model_buffer_gib": 8.7,
+    "cpu_model_buffer_mib": 53416.41,
+    "cpu_model_buffer_bytes": 56011165532,
+    "cpu_model_buffer_gb": 56.01,
+    "cpu_model_buffer_gib": 52.16,
+    "buffers_sum_bytes": 65356001444,
+    "weights_file_bytes": 65369818941,
+    "units_note": "the runner logs MiB. 8911.93 MiB is 9.34 GB or 8.7 GiB; 53416.41 MiB is 56.01 GB or 52.16 GiB. A figure written as the MiB value divided by 1,000 is neither unit.",
+    "layers_on_gpu": "37/37 (attention and shared weights; experts held in the CPU buffer)",
+    "load_mode": "none (no mmap)"
+   },
+   "analytic_not_measured": {
+    "a_smallest_single_card": {
+     "label": "not measured: arithmetic only, no such card was tested",
+     "need_bytes": 67131650212,
+     "need_gb": 67.13,
+     "arithmetic": [
+      "GPU model buffer 8911.93 MiB = 9,344,835,912 B",
+      "+ CPU model buffer 53416.41 MiB = 56,011,165,532 B",
+      "+ KV cache at 16,384 tokens, per-layer arithmetic = 323,371,008 B",
+      "+ desktop reserve = 1,452,277,760 B",
+      "= 67,131,650,212 B = 67.13 GB",
+      "the compute buffer used during generation is unknown for this model: it never generated on the reference machine, the buffer is not included in the need, and no other model's measurement stands in for it, so margin_covers_generation_excess is null"
+     ],
+     "generation_compute_buffer": "unknown for this model: never observed, not included",
+     "smallest_card": {
+      "tier_gb_stated": 72,
+      "cards": [
+       "NVIDIA RTX PRO 5000 Blackwell 72 GB"
+      ],
+      "capacity_bytes": 72000000000,
+      "margin_bytes": 4868349788,
+      "margin_gb": 4.87,
+      "margin_covers_generation_excess": null,
+      "margin_after_own_excess_bytes": null,
+      "margin_after_own_excess_gb": null
+     },
+     "if_gb_read_as_gib": {
+      "tier_gb_stated": 72,
+      "cards": [
+       "NVIDIA RTX PRO 5000 Blackwell 72 GB"
+      ],
+      "capacity_bytes": 77309411328,
+      "margin_bytes": 10177761116,
+      "margin_gb": 10.18,
+      "margin_covers_generation_excess": null,
+      "margin_after_own_excess_bytes": null,
+      "margin_after_own_excess_gb": null,
+      "changes_answer": false
+     },
+     "if_gb_read_at_reference_driver_scale": {
+      "tier_gb_stated": 72,
+      "cards": [
+       "NVIDIA RTX PRO 5000 Blackwell 72 GB"
+      ],
+      "capacity_bytes": 76925632512,
+      "margin_bytes": 9793982300,
+      "margin_gb": 9.79,
+      "margin_covers_generation_excess": null,
+      "margin_after_own_excess_bytes": null,
+      "margin_after_own_excess_gb": null,
+      "changes_answer": false
+     },
+     "verdict": {
+      "status": "unknown",
+      "note": "this model's generation excess is unknown (the model did not load, so its compute buffer during generation was never observed), so whether the margin covers it is unknown; no other model's measurement stands in for it"
+     }
+    },
+    "b_reference_machine_with_more_memory": {
+     "label": "not measured: the reference machine with 128 GB of system memory instead of 63 was not tested",
+     "question": "is there room for the CPU model buffer",
+     "arithmetic": [
+      "installed now: 63 GB, read as GiB = 67,645,734,912 B",
+      "available before the load (measured): 33.9 GB = 33,900,000,000 B",
+      "desktop workload and system use = 67,645,734,912 - 33,900,000,000 = 33,745,734,912 B (33.75 GB), assumed unchanged after the upgrade",
+      "upgrade: 128 GB, read as 10^9 B each (conservative) = 128,000,000,000 B",
+      "available after the upgrade = 128,000,000,000 - 33,745,734,912 = 94,254,265,088 B (94.25 GB)",
+      "host memory needed, at least: the larger of the CPU model buffer 56,011,165,532 B and the runner's private memory when the load was aborted, 61.6 GB read as GiB = 66,142,496,358 B, so 66,142,496,358 B (66.14 GB)",
+      "left over = 94,254,265,088 - 66,142,496,358 = 28,111,768,730 B (28.11 GB)",
+      "GPU side, unchanged by the upgrade: buffer 9,344,835,912 B + KV 323,371,008 B + desktop reserve 1,452,277,760 B = 11,120,484,680 B (11.12 GB); the buffer was allocated on the reference card during the observed load"
+     ],
+     "available_after_upgrade_bytes": 94254265088,
+     "host_need_lower_bound_bytes": 66142496358,
+     "left_over_bytes": 28111768730,
+     "left_over_gb": 28.11,
+     "room_for_cpu_buffer": true,
+     "caveats": [
+      "the runner's private memory is a lower bound: the load was aborted before it finished",
+      "room to hold the model is not a speed claim; no speed is estimated for this configuration",
+      "the desktop's other memory use is assumed to stay at the level measured before the load"
+     ]
+    }
+   }
+  }
+ ],
+ "assumptions": [
+  "NVIDIA GB is read as 10^9 bytes (see units); the GiB reading and the reference driver's scale are shown as sensitivities, never as the answer",
+  "the sizing rule is loaded footprint plus desktop reserve; each row's own measured generation excess is checked against the margin and reported as a verdict, and with_own_generation_excess shows the answer with that excess added to the need",
+  "desktop reserve is 1385 MiB, the minimum measured on the reference machine with its display attached to the same card; a card that drives no display would need less, and it is applied to every card",
+  "loaded footprint is Ollama's reported size at the settings above; another context length, cache type or parallel request count changes it",
+  "single card only; splitting a model across two cards is not considered",
+  "the card list is the one fixed for this study (GeForce RTX 50 series and RTX PRO Blackwell workstation line); the RTX 5060 Ti is its 16 GB variant; both RTX PRO 5000 variants are listed",
+  "no prices (plan Section 6 open question)",
+  "measured overhead = loaded footprint - weights file - per-layer KV arithmetic",
+  "gpt-oss:120b row (b): installed memory of 63 GB is read as GiB (the larger, conservative desktop use), measured available memory as 10^9 B (how fit_probe_03.py records it), the upgrade kit as 10^9 B (conservative), and the runner's private memory at abort as GiB (conservative)"
+ ],
+ "not_verified": [
+  "whether NVIDIA's GB means 10^9 or 2^30 bytes: no spec page says",
+  "why measured overhead is negative for most models (Ollama's loaded footprint is smaller than the weights file plus the computed cache); the cause was not investigated",
+  "whether the generation excess of gemma4:26b-a4b-it-q4_K_M, qwen3.8:27b-q4_K_M, gemma4:31b-it-q4_K_M, qwen3.6:35b-a3b-q4_K_M carries over to a fully resident load: each was measured while spilled",
+  "the generation excess of qwen3.5:9b, qwen2.5:14b-instruct-q4_K_M, ministral-3:14b: not measured (see each row's generation_excess)",
+  "gpt-oss:120b analytic rows: no card or memory upgrade was tested, and its generation compute buffer is unknown: it was never observed",
+  "whether each card suits a given chassis, power supply or cooling: not assessed"
+ ]
+}

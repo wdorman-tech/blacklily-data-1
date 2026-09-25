@@ -1,0 +1,42 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "How are private fund interests held in client accounts valued for billing and client reporting purposes?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "private fund", "interests", "valued", "billing", "reporting".
+
+4.  **Evaluate Document Content:**
+
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section 5.2 Billing Method: Mentions fees billed quarterly based on market value. Mentions custodian values or "values determined under our Valuation Policy" for assets custodian doesn't price and private fund interests.
+        *   Section 10.4 Third-Party Private Funds: Recommends unaffiliated funds, no sponsorship. No specific valuation method details here.
+
+    *   `03_valuation_policy.md` (February 10, 2026):
+        *   Section 1.2 Scope: Applies to every asset held in an account for which the Firm charges a fee. Mentions custodian is book of record. Firm does not calculate NAV for pooled vehicles.
+        *   Section 2.5 Conflicts of Interest: Discusses incentives, overrides, etc.
+        *   Section 3.5 Held-Away and Accommodation Assets: Discusses unmanaged assets.
+        *   Section 5.1 Level 3 Assets: Lists "interests in private funds recommended by the Firm" as Level 3 assets.
+        *   Section 5.2 Private Funds: "Interests in private funds are valued at the most recent net asset value reported by the fund's administrator or general partner, adjusted for capital contributions and distributions made after the date of that net asset value."
+
+    *   `05_fee_schedule.md` (April 1, 2026):
+        *   Section 1.2 Definitions: Defines "Billable Assets" and "Billing Value". Mentions "for Level 3 assets such as private fund interests, as determined under the Firm's Valuation Policy".
+
+5.  **Determine the Best Answer:**
+    *   The question asks specifically about valuation for billing and reporting purposes.
+    *   `03_valuation_policy.md` Section 5.2 Private Funds provides the specific methodology: "Interests in private funds are valued at the most recent net asset value reported by the fund's administrator or general partner, adjusted for capital contributions and distributions made after the date of that net asset value."
+    *   `01_brochure.md` Section 5.2 Billing Method mentions using values determined under the Valuation Policy but doesn't give the specific method itself.
+    *   `05_fee_schedule.md` Section 1.2 Definitions references the

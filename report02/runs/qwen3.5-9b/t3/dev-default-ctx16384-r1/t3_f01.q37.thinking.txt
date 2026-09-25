@@ -1,0 +1,38 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Documents:**
+    *   `01_brochure.md`: Dated March 27, 2026. Section: Item 5. Fees and Compensation > 5.7 Termination and Refunds.
+        *   Content: "Either party may terminate the advisory agreement upon 30 days' written notice. Prepaid fees are refunded on a pro rata basis for the number of days remaining in the quarter after the effective date of termination, and refunds are paid within 15 business days. A client who terminates within five business days of signing the advisory agreement receives a full refund of any fees paid. For standalone planning engagements terminated before delivery of the plan, we refund any portion of the fee paid that exceeds the value of the work performed to the termination date."
+    *   `05_fee_schedule.md`: Dated April 1, 2026. (Later dated than brochure).
+        *   Section: SECTION 6. TERMINATION AND REFUNDS > 6.1 Notice.
+            *   Content: "Either party may terminate the Investment Advisory Agreement upon 30 days' written notice to the other party."
+        *   Section: SECTION 6. TERMINATION AND REFUNDS > 6.2 Refund of Prepaid Fees.
+            *   Content: "On termination, the unearned portion of the prepaid fee is refunded pro rata based on the number of days remaining in the quarter after the effective date of termination. Refunds are paid within 15 business days of the effective date of termination. No termination fee is charged by the Firm."
+        *   Section: SECTION 6. TERMINATION AND REFUNDS > 6.3 Five-Business-Day Cancellation.
+            *   Content: "A client who terminates within five business days of signing the Investment Advisory Agreement receives a full refund of any fees paid."
+
+3.  **Analyze the Question:**
+    *   "What are the termination provisions of the advisory agreement, and how are prepaid fees refunded?"
+
+4.  **Determine the Best Source:**
+    *   Rule 3: Later-dated documents supersede earlier ones.
+    *   `05_fee_schedule.md` (April 1, 2026) is later than `01_brochure.md` (March 27, 2026).
+    *   Therefore, I must use information from `05_fee_schedule.md`.
+    *   The question asks for termination provisions and refund methods.
+    *   Section 6 of `05_fee_schedule.md` covers both notice periods (termination provision) and refund calculations/timing.
+
+5.  **Draft the Answer:**
+    *   I need to combine the relevant text from `05_fee_schedule.md`.

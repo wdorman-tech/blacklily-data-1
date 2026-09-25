@@ -1,0 +1,71 @@
+{
+ "task": "t2",
+ "model": "gemma4:31b-it-q4_K_M",
+ "split": "dev",
+ "run": "r1",
+ "variant": "default",
+ "think": "off",
+ "num_gpu": null,
+ "items": 1,
+ "started": "2026-09-23T15:53:21-0400",
+ "prompt_hashes": [
+  "2ab5c25bf8bc7da3fc867dd658211db92ac7a96cc3d6692b32b3b7a2af40a3e3",
+  "..."
+ ],
+ "system_hashes": [
+  "aa05aa43ac256ee3c7b839b175be263c78446bd9a9f3af84e122be084067c069"
+ ],
+ "subject": {
+  "via": "ollama /api/chat",
+  "model": "gemma4:31b-it-q4_K_M",
+  "digest": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7",
+  "size_bytes": 19868981791,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "gemma4",
+   "families": [
+    "gemma4"
+   ],
+   "parameter_size": "31.3B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 5376
+  }
+ },
+ "server": {
+  "flash_attention": "true",
+  "kv_cache_type": "q8_0",
+  "version": "0.34.2",
+  "num_parallel": 1
+ },
+ "options": {
+  "num_ctx": 16384,
+  "temperature": 0.0,
+  "top_p": 0.9,
+  "repeat_penalty": 1.0
+ },
+ "gpu_before": {
+  "vram_used_mib": 1492,
+  "vram_total_mib": 12227,
+  "gpu_util_pct": 5
+ },
+ "loaded": {
+  "size_bytes": 21054367987,
+  "size_vram_bytes": 8986422148,
+  "fully_on_gpu": false,
+  "context_length": 16384
+ },
+ "gpu_after_load": {
+  "vram_used_mib": 11411,
+  "vram_total_mib": 12227,
+  "gpu_util_pct": 7
+ },
+ "loaded_end": {
+  "size_bytes": 21054367987,
+  "size_vram_bytes": 8986422148,
+  "fully_on_gpu": false,
+  "context_length": 16384
+ },
+ "finished": "2026-09-23T15:54:03-0400"
+}

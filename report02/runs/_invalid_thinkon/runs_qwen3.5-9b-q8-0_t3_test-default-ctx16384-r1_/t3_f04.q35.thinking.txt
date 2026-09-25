@@ -1,0 +1,41 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Who leads the Firm's response to a cyber incident, and which outside forensic firm and legal counsel are engaged?"
+    *   Key information needed:
+        1.  Leader of the Firm's response to a cyber incident.
+        2.  Outside forensic firm engaged.
+        3.  Legal counsel engaged for cyber incidents.
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "leads", "response", "cyber incident", "forensic", "firm", "counsel", "legal".
+
+4.  **Evaluate Document Content:**
+
+    *   `02_compliance_manual.md` (dated January 15, 2026):
+        *   Section 11.2: Mentions Grisby Lane Security provides managed security services, monitoring 24/7. ISO tracks findings. No specific leader of response named here beyond general roles.
+        *   Section 11.4 Incident Reporting and Response: "Any supervised person who suspects an information security incident must report it to the ISO and the CCO immediately... The ISO leads the response under Section 9 of the Business Continuity Plan..." -> **Leader identified: Information Security Officer (ISO).**
+        *   Section 11.5: Mentions cyber insurance, CFO reviews coverage. No forensic/counsel names here.
+
+    *   `04_business_continuity_plan.md` (dated December 1, 2025):
+        *   Note on dates: Compliance Manual is Jan 15, 2026. Business Continuity Plan is Dec 1, 2025. The Compliance Manual is later dated. However, the question asks about specific roles and firms engaged for response. Section 9 of the BCP (dated Dec 1, 2025) is referenced in the Compliance Manual (Section 11.4 says "under Section 9 of the Business Continuity Plan").
+        *   Section 9.1 Incident Response Team: "The Incident Response Team is led by the Information Security Officer..." -> Confirms leader.
+        *   Section 9.3 Outside Advisers: "Quenby Digital Forensics LLC is retained to provide forensic investigation services. Dunmore Achterberg LLP serves as outside counsel for cyber incidents..." -> **Forensic firm identified: Quenby Digital Forensics LLC.** **Legal counsel identified: Dunmore Achterberg LLP.**
+
+5.  **Synthesize the Answer:**
+    *   Leader: Information Security Officer (ISO).
+    *   Forensic Firm: Quenby Digital Forensics LLC.
+    *   Legal Counsel: Dunmore Achterberg LLP.
+    *   Source Documents: Both documents contain relevant info, but Section 11.4 of the Compliance Manual

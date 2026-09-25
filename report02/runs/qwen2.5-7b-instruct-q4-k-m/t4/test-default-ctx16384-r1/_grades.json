@@ -1,0 +1,4784 @@
+{
+ "task": "t4",
+ "model": "qwen2.5:7b-instruct-q4_K_M",
+ "items": {
+  "t4_cvx": {
+   "units": [
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "12.1",
+     "expected": "",
+     "extra": {
+      "context": "# Results  - Reported earnings of $12.1 billion for the second quarter 2026. - "
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "21.4",
+     "expected": "",
+     "extra": {
+      "context": " - Return on capital employed (ROCE) of 21.4%. - Record U.S. production; worldwide p"
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "20",
+     "expected": "",
+     "extra": {
+      "context": "duction; worldwide production increased 20% from last year. - Crude unit throughpu"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.07",
+     "expected": "",
+     "extra": {
+      "context": "oughput at U.S. refineries was a record 1.07 million barrels per day. - Signed a 20-"
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3,541",
+     "expected": "",
+     "extra": {
+      "context": "vers  - **U.S. Upstream:** Earnings of $3,541 million, up 73% from the year-ago perio"
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 0.0,
+     "verdict": "UNGROUNDED",
+     "kind": "number",
+     "error_kind": "ungrounded",
+     "trap": "none",
+     "hallucination": true,
+     "got": "73",
+     "expected": "",
+     "extra": {
+      "context": "tream:** Earnings of $3,541 million, up 73% from the year-ago period, driven by hi"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4,641",
+     "expected": "",
+     "extra": {
+      "context": "*International Upstream:** Earnings of $4,641 million, up 221% from the year-ago peri"
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 0.0,
+     "verdict": "UNGROUNDED",
+     "kind": "number",
+     "error_kind": "ungrounded",
+     "trap": "none",
+     "hallucination": true,
+     "got": "221",
+     "expected": "",
+     "extra": {
+      "context": "tream:** Earnings of $4,641 million, up 221% from the year-ago period, due to highe"
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2,411",
+     "expected": "",
+     "extra": {
+      "context": "ns. - **U.S. Downstream:** Earnings of $2,411 million, up 481% from the year-ago peri"
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 0.0,
+     "verdict": "UNGROUNDED",
+     "kind": "number",
+     "error_kind": "ungrounded",
+     "trap": "none",
+     "hallucination": true,
+     "got": "481",
+     "expected": "",
+     "extra": {
+      "context": "tream:** Earnings of $2,411 million, up 481% from the year-ago period, primarily du"
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2,457",
+     "expected": "",
+     "extra": {
+      "context": "nternational Downstream:** Earnings of $2,457 million, up 197% from the year-ago peri"
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 0.0,
+     "verdict": "UNGROUNDED",
+     "kind": "number",
+     "error_kind": "ungrounded",
+     "trap": "none",
+     "hallucination": true,
+     "got": "197",
+     "expected": "",
+     "extra": {
+      "context": "tream:** Earnings of $2,457 million, up 197% from the year-ago period, driven by hi"
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "8.4",
+     "expected": "",
+     "extra": {
+      "context": "balance sheet  - Total debt reduced by $8.4 billion, to $37,075 million, strengthen"
+     }
+    },
+    {
+     "uid": "num_14",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "37,075",
+     "expected": "",
+     "extra": {
+      "context": "Total debt reduced by $8.4 billion, to $37,075 million, strengthening the balance shee"
+     }
+    },
+    {
+     "uid": "num_15",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0",
+     "expected": "",
+     "extra": {
+      "context": "ance sheet. - Net debt-to-CFFO ratio of 0.6x, indicating strong cash generation. "
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 234,
+   "group": "t4_cvx",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 7.26,
+    "prompt_tokens": 11020,
+    "output_tokens": 402,
+    "output_tokens_per_sec": 86.5,
+    "prompt_tokens_per_sec": 4338.9,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 6576
+   }
+  },
+  "t4_googl": {
+   "units": [
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "24",
+     "expected": "",
+     "extra": {
+      "context": "s  ## Results - **Revenues**: Increased 24% to $119.8 billion, or 23% in constant "
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "119.8",
+     "expected": "",
+     "extra": {
+      "context": "sults - **Revenues**: Increased 24% to $119.8 billion, or 23% in constant currency. -"
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "23",
+     "expected": "",
+     "extra": {
+      "context": "**: Increased 24% to $119.8 billion, or 23% in constant currency. - **Google Servi"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "15",
+     "expected": "",
+     "extra": {
+      "context": "**Google Services**: Revenues increased 15% to $94.5 billion, driven by 17% growth"
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "94.5",
+     "expected": "",
+     "extra": {
+      "context": " Services**: Revenues increased 15% to $94.5 billion, driven by 17% growth in Google"
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "17",
+     "expected": "",
+     "extra": {
+      "context": "creased 15% to $94.5 billion, driven by 17% growth in Google Search & other, 15% i"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "15",
+     "expected": "",
+     "extra": {
+      "context": "by 17% growth in Google Search & other, 15% in Google subscriptions, platforms, an"
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "13",
+     "expected": "",
+     "extra": {
+      "context": "scriptions, platforms, and devices, and 13% in YouTube ads. - **Google Cloud**: Re"
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "82",
+     "expected": "",
+     "extra": {
+      "context": " - **Google Cloud**: Revenues increased 82% to $24.8 billion, led by an increase i"
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "24.8",
+     "expected": "",
+     "extra": {
+      "context": "gle Cloud**: Revenues increased 82% to $24.8 billion, led by an increase in Google C"
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "30",
+     "expected": "",
+     "extra": {
+      "context": "ices. - **Operating Income**: Increased 30% to $40.8 billion. - **Net Income**: In"
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "40.8",
+     "expected": "",
+     "extra": {
+      "context": "**Operating Income**: Increased 30% to $40.8 billion. - **Net Income**: Increased 29"
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "298",
+     "expected": "",
+     "extra": {
+      "context": ".8 billion. - **Net Income**: Increased 298% to $112.1 billion. - **Earnings Per Sh"
+     }
+    },
+    {
+     "uid": "num_14",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "112.1",
+     "expected": "",
+     "extra": {
+      "context": "n. - **Net Income**: Increased 298% to $112.1 billion. - **Earnings Per Share (EPS)**"
+     }
+    },
+    {
+     "uid": "num_15",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "294",
+     "expected": "",
+     "extra": {
+      "context": "**Earnings Per Share (EPS)**: Increased 294% to $9.11.  ## Segments and Drivers - *"
+     }
+    },
+    {
+     "uid": "num_16",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "9.11",
+     "expected": "",
+     "extra": {
+      "context": "s Per Share (EPS)**: Increased 294% to $9.11.  ## Segments and Drivers - **Google Se"
+     }
+    },
+    {
+     "uid": "num_17",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "94.5",
+     "expected": "",
+     "extra": {
+      "context": "ers - **Google Services**: Contributed $94.5 billion in revenues, with strong growth"
+     }
+    },
+    {
+     "uid": "num_18",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "82",
+     "expected": "",
+     "extra": {
+      "context": "ion in growth, with revenues increasing 82% to $24.8 billion, driven by enterprise"
+     }
+    },
+    {
+     "uid": "num_19",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "24.8",
+     "expected": "",
+     "extra": {
+      "context": "rowth, with revenues increasing 82% to $24.8 billion, driven by enterprise AI Soluti"
+     }
+    },
+    {
+     "uid": "num_20",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "382",
+     "expected": "",
+     "extra": {
+      "context": " **Other Bets**: Revenues increased to $382 million, but operating income decreased"
+     }
+    },
+    {
+     "uid": "num_21",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.8",
+     "expected": "",
+     "extra": {
+      "context": "perating income decreased to a loss of $1.8 billion.  ## Outlook - No specific guid"
+     }
+    },
+    {
+     "uid": "num_22",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "49.6",
+     "expected": "",
+     "extra": {
+      "context": "eet - **Equity Capital Raise**: Issued $49.6 billion in Class A and Class C stock an"
+     }
+    },
+    {
+     "uid": "num_23",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "20.3",
+     "expected": "",
+     "extra": {
+      "context": ". - **Senior Unsecured Notes**: Issued $20.3 billion in senior unsecured notes for g"
+     }
+    },
+    {
+     "uid": "num_24",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "12.15",
+     "expected": "",
+     "extra": {
+      "context": " Declared a quarterly cash dividend of $12.15 per share on Series A and B mandatory c"
+     }
+    },
+    {
+     "uid": "num_25",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.22",
+     "expected": "",
+     "extra": {
+      "context": "atory convertible preferred stock, and $0.22 per share on Class A, Class B, and Clas"
+     }
+    },
+    {
+     "uid": "num_26",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "90",
+     "expected": "",
+     "extra": {
+      "context": "erprise adoption is strong, with nearly 90% of the Fortune 100 using it. - **YouTu"
+     }
+    },
+    {
+     "uid": "num_27",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "100",
+     "expected": "",
+     "extra": {
+      "context": " strong, with nearly 90% of the Fortune 100 using it. - **YouTube Engagement**: Ove"
+     }
+    },
+    {
+     "uid": "num_28",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.7",
+     "expected": "",
+     "extra": {
+      "context": "sing it. - **YouTube Engagement**: Over 1.7 billion unique viewers watched World Cu"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 317,
+   "group": "t4_googl",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 7.85,
+    "prompt_tokens": 8659,
+    "output_tokens": 530,
+    "output_tokens_per_sec": 90.5,
+    "prompt_tokens_per_sec": 4623.3,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 6576
+   }
+  },
+  "t4_hd": {
+   "units": [
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "47.9",
+     "expected": "",
+     "extra": {
+      "context": " 2026 Results  ## Results - **Sales**: $47.9 billion, up $2.6 billion, or 5.7% from "
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.6",
+     "expected": "",
+     "extra": {
+      "context": "Results - **Sales**: $47.9 billion, up $2.6 billion, or 5.7% from the second quarte"
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5.7",
+     "expected": "",
+     "extra": {
+      "context": "s**: $47.9 billion, up $2.6 billion, or 5.7% from the second quarter of fiscal 2025"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.7",
+     "expected": "",
+     "extra": {
+      "context": "of fiscal 2025. - **Comparable Sales**: 1.7% increase. - **Net Earnings**: $4.8 bil"
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.8",
+     "expected": "",
+     "extra": {
+      "context": "**: 1.7% increase. - **Net Earnings**: $4.8 billion, or $4.79 per diluted share, co"
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.79",
+     "expected": "",
+     "extra": {
+      "context": ". - **Net Earnings**: $4.8 billion, or $4.79 per diluted share, compared to $4.6 bil"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.6",
+     "expected": "",
+     "extra": {
+      "context": "r $4.79 per diluted share, compared to $4.6 billion, or $4.58 per diluted share, in"
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.58",
+     "expected": "",
+     "extra": {
+      "context": "ed share, compared to $4.6 billion, or $4.58 per diluted share, in the same period o"
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.92",
+     "expected": "",
+     "extra": {
+      "context": "Adjusted Diluted Earnings Per Share**: $4.92, up from $4.68 in the same period of fi"
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.68",
+     "expected": "",
+     "extra": {
+      "context": "d Earnings Per Share**: $4.92, up from $4.68 in the same period of fiscal 2025.  ## "
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.5",
+     "expected": "",
+     "extra": {
+      "context": "- **Total Sales Growth**: Approximately 2.5% to 4.5%. - **Comparable Sales Growth**"
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.5",
+     "expected": "",
+     "extra": {
+      "context": "l Sales Growth**: Approximately 2.5% to 4.5%. - **Comparable Sales Growth**: Approx"
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.0",
+     "expected": "",
+     "extra": {
+      "context": "e Sales Growth**: Approximately flat to 2.0%. - **New Stores**: Approximately 15 ne"
+     }
+    },
+    {
+     "uid": "num_14",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "15",
+     "expected": "",
+     "extra": {
+      "context": "o 2.0%. - **New Stores**: Approximately 15 new stores. - **Gross Margin**: Approxi"
+     }
+    },
+    {
+     "uid": "num_15",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "33.1",
+     "expected": "",
+     "extra": {
+      "context": "ores. - **Gross Margin**: Approximately 33.1%. - **Operating Margin**: Approximately"
+     }
+    },
+    {
+     "uid": "num_16",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "12.4",
+     "expected": "",
+     "extra": {
+      "context": ". - **Operating Margin**: Approximately 12.4% to 12.6%. - **Adjusted Operating Margi"
+     }
+    },
+    {
+     "uid": "num_17",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "12.6",
+     "expected": "",
+     "extra": {
+      "context": "rating Margin**: Approximately 12.4% to 12.6%. - **Adjusted Operating Margin**: Appr"
+     }
+    },
+    {
+     "uid": "num_18",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "12.8",
+     "expected": "",
+     "extra": {
+      "context": "usted Operating Margin**: Approximately 12.8% to 13.0%.  ## Capital and Balance Shee"
+     }
+    },
+    {
+     "uid": "num_19",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "13.0",
+     "expected": "",
+     "extra": {
+      "context": "rating Margin**: Approximately 12.8% to 13.0%.  ## Capital and Balance Sheet - **Cap"
+     }
+    },
+    {
+     "uid": "num_20",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.5",
+     "expected": "",
+     "extra": {
+      "context": "**Capital Expenditures**: Approximately 2.5% of total sales. - **Total Assets**: $1"
+     }
+    },
+    {
+     "uid": "num_21",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "109,384",
+     "expected": "",
+     "extra": {
+      "context": "5% of total sales. - **Total Assets**: $109,384 million. - **Total Liabilities**: $92,7"
+     }
+    },
+    {
+     "uid": "num_22",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "92,767",
+     "expected": "",
+     "extra": {
+      "context": ",384 million. - **Total Liabilities**: $92,767 million. - **Total Stockholders' Equity"
+     }
+    },
+    {
+     "uid": "num_23",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "16,617",
+     "expected": "",
+     "extra": {
+      "context": "ion. - **Total Stockholders' Equity**: $16,617 million.  ## Watch Items - **Amortizati"
+     }
+    },
+    {
+     "uid": "num_24",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "40",
+     "expected": "",
+     "extra": {
+      "context": "Impact**: The release notes an expected 40 basis point impact from acquired intang"
+     }
+    },
+    {
+     "uid": "num_25",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "15",
+     "expected": "",
+     "extra": {
+      "context": "- **New Store Impact**: The addition of 15 new stores could affect comparable sale"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 253,
+   "group": "t4_hd",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 6.18,
+    "prompt_tokens": 5756,
+    "output_tokens": 472,
+    "output_tokens_per_sec": 96.5,
+    "prompt_tokens_per_sec": 4917.0,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 6576
+   }
+  },
+  "t4_ibm": {
+   "units": [
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "17.2",
+     "expected": "",
+     "extra": {
+      "context": "026 Results  ## Results - **Revenue:** $17.2 billion, up 1% year-over-year (YoY), wi"
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1",
+     "expected": "",
+     "extra": {
+      "context": "esults - **Revenue:** $17.2 billion, up 1% year-over-year (YoY), with constant cu"
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4",
+     "expected": "",
+     "extra": {
+      "context": "(YoY), with constant currency growth of 4-5%. - **Gross Profit:** $9.9 billion, d"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5",
+     "expected": "",
+     "extra": {
+      "context": "oY), with constant currency growth of 4-5%. - **Gross Profit:** $9.9 billion, dow"
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "9.9",
+     "expected": "",
+     "extra": {
+      "context": "cy growth of 4-5%. - **Gross Profit:** $9.9 billion, down 1% YoY. - **Pre-tax Incom"
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1",
+     "expected": "",
+     "extra": {
+      "context": " - **Gross Profit:** $9.9 billion, down 1% YoY. - **Pre-tax Income:** $2.5 billio"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.5",
+     "expected": "",
+     "extra": {
+      "context": "on, down 1% YoY. - **Pre-tax Income:** $2.5 billion, down 5% YoY. - **Net Income:**"
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5",
+     "expected": "",
+     "extra": {
+      "context": " **Pre-tax Income:** $2.5 billion, down 5% YoY. - **Net Income:** $2.2 billion, d"
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.2",
+     "expected": "",
+     "extra": {
+      "context": "illion, down 5% YoY. - **Net Income:** $2.2 billion, down 9% YoY. - **Diluted Earni"
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "9",
+     "expected": "",
+     "extra": {
+      "context": "Y. - **Net Income:** $2.2 billion, down 9% YoY. - **Diluted Earnings Per Share:**"
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.27",
+     "expected": "",
+     "extra": {
+      "context": "YoY. - **Diluted Earnings Per Share:** $2.27, down 3% YoY.  ## Segments and Drivers "
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3",
+     "expected": "",
+     "extra": {
+      "context": "luted Earnings Per Share:** $2.27, down 3% YoY.  ## Segments and Drivers - **High"
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5",
+     "expected": "",
+     "extra": {
+      "context": "rtfolio, HashiCorp, and Confluent, grew 5% with strong performance. - **Infrastru"
+     }
+    },
+    {
+     "uid": "num_14",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "37",
+     "expected": "",
+     "extra": {
+      "context": "ture:** Distributed Infrastructure grew 37% with an order backlog of nearly $500 m"
+     }
+    },
+    {
+     "uid": "num_15",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "500",
+     "expected": "",
+     "extra": {
+      "context": "ew 37% with an order backlog of nearly $500 million. - **Consulting:** Flat revenue"
+     }
+    },
+    {
+     "uid": "num_16",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1",
+     "expected": "",
+     "extra": {
+      "context": "ion. - **Consulting:** Flat revenue, up 1% at constant currency. - **Revenue Guid"
+     }
+    },
+    {
+     "uid": "num_17",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4",
+     "expected": "",
+     "extra": {
+      "context": "revenue growth expected in the range of 4-5%. - **Free Cash Flow:** Expected to i"
+     }
+    },
+    {
+     "uid": "num_18",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5",
+     "expected": "",
+     "extra": {
+      "context": "venue growth expected in the range of 4-5%. - **Free Cash Flow:** Expected to inc"
+     }
+    },
+    {
+     "uid": "num_19",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1",
+     "expected": "",
+     "extra": {
+      "context": " Flow:** Expected to increase by about $1 billion year-over-year.  ## Outlook - *"
+     }
+    },
+    {
+     "uid": "num_20",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4",
+     "expected": "",
+     "extra": {
+      "context": "revenue growth expected in the range of 4-5%. - **Free Cash Flow:** Expected to i"
+     }
+    },
+    {
+     "uid": "num_21",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5",
+     "expected": "",
+     "extra": {
+      "context": "venue growth expected in the range of 4-5%. - **Free Cash Flow:** Expected to inc"
+     }
+    },
+    {
+     "uid": "num_22",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1",
+     "expected": "",
+     "extra": {
+      "context": " Flow:** Expected to increase by about $1 billion year-over-year. - **Investment "
+     }
+    },
+    {
+     "uid": "num_23",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.6",
+     "expected": "",
+     "extra": {
+      "context": " net cash from operating activities of $2.6 billion in the second quarter, up $0.9 "
+     }
+    },
+    {
+     "uid": "num_24",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.9",
+     "expected": "",
+     "extra": {
+      "context": "$2.6 billion in the second quarter, up $0.9 billion YoY. - **Free Cash Flow:** $2.5"
+     }
+    },
+    {
+     "uid": "num_25",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.5",
+     "expected": "",
+     "extra": {
+      "context": "0.9 billion YoY. - **Free Cash Flow:** $2.5 billion, down $0.3 billion YoY. - **Cas"
+     }
+    },
+    {
+     "uid": "num_26",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.3",
+     "expected": "",
+     "extra": {
+      "context": "**Free Cash Flow:** $2.5 billion, down $0.3 billion YoY. - **Cash Position:** Ended"
+     }
+    },
+    {
+     "uid": "num_27",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "8.2",
+     "expected": "",
+     "extra": {
+      "context": "ash Position:** Ended the quarter with $8.2 billion of cash, restricted cash, and m"
+     }
+    },
+    {
+     "uid": "num_28",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "6.3",
+     "expected": "",
+     "extra": {
+      "context": " cash, and marketable securities, down $6.3 billion from year-end 2025. - **Acquisi"
+     }
+    },
+    {
+     "uid": "num_29",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "10.5",
+     "expected": "",
+     "extra": {
+      "context": "end 2025. - **Acquisitions:** Invested $10.5 billion in acquisitions year-to-date.  "
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 303,
+   "group": "t4_ibm",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 8.3,
+    "prompt_tokens": 10078,
+    "output_tokens": 529,
+    "output_tokens_per_sec": 89.0,
+    "prompt_tokens_per_sec": 4576.8,
+    "load_seconds": 0.04,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 6576
+   }
+  },
+  "t4_jnj": {
+   "units": [
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "6.6",
+     "expected": "",
+     "extra": {
+      "context": "  ## Results - Reported sales growth of 6.6% to $25.3 billion. - Earnings per share"
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "25.3",
+     "expected": "",
+     "extra": {
+      "context": "lts - Reported sales growth of 6.6% to $25.3 billion. - Earnings per share (EPS) of "
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.27",
+     "expected": "",
+     "extra": {
+      "context": "billion. - Earnings per share (EPS) of $2.27. - Adjusted EPS of $2.90. - Raised 2026"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.90",
+     "expected": "",
+     "extra": {
+      "context": "hare (EPS) of $2.27. - Adjusted EPS of $2.90. - Raised 2026 guidance with estimated "
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "101.1",
+     "expected": "",
+     "extra": {
+      "context": "dance with estimated reported sales of $101.1 billion or 7.3% at the midpoint, and in"
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "7.3",
+     "expected": "",
+     "extra": {
+      "context": "ted reported sales of $101.1 billion or 7.3% at the midpoint, and increased adjuste"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.13",
+     "expected": "",
+     "extra": {
+      "context": "and increased adjusted EPS guidance by $0.13 to $11.68 or 8.2% at the midpoint.  ## "
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "11.68",
+     "expected": "",
+     "extra": {
+      "context": "ased adjusted EPS guidance by $0.13 to $11.68 or 8.2% at the midpoint.  ## Segments a"
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "8.2",
+     "expected": "",
+     "extra": {
+      "context": "sted EPS guidance by $0.13 to $11.68 or 8.2% at the midpoint.  ## Segments and Driv"
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "6.8",
+     "expected": "",
+     "extra": {
+      "context": "ine**: Worldwide operational sales grew 6.8%, driven by products like DARZALEX, CAR"
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3.6",
+     "expected": "",
+     "extra": {
+      "context": "ech**: Worldwide operational sales grew 3.6%, driven by wound closure products, bio"
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "6.2",
+     "expected": "",
+     "extra": {
+      "context": "dance for adjusted operational sales to 6.2% – 6.8% at the midpoint. - Increased ad"
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "6.8",
+     "expected": "",
+     "extra": {
+      "context": "or adjusted operational sales to 6.2% – 6.8% at the midpoint. - Increased adjusted "
+     }
+    },
+    {
+     "uid": "num_14",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "11.50",
+     "expected": "",
+     "extra": {
+      "context": "d adjusted operational EPS guidance to $11.50 – $11.65 at the midpoint. - Increased a"
+     }
+    },
+    {
+     "uid": "num_15",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "11.65",
+     "expected": "",
+     "extra": {
+      "context": "d operational EPS guidance to $11.50 – $11.65 at the midpoint. - Increased adjusted E"
+     }
+    },
+    {
+     "uid": "num_16",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "11.60",
+     "expected": "",
+     "extra": {
+      "context": ". - Increased adjusted EPS guidance to $11.60 – $11.75 at the midpoint.  ## Capital a"
+     }
+    },
+    {
+     "uid": "num_17",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "11.75",
+     "expected": "",
+     "extra": {
+      "context": "ased adjusted EPS guidance to $11.60 – $11.75 at the midpoint.  ## Capital and Balanc"
+     }
+    },
+    {
+     "uid": "num_18",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "8.7",
+     "expected": "",
+     "extra": {
+      "context": "e Sheet - Free cash flow estimated at ~$8.7 billion for the second quarter.  ## Wat"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 202,
+   "group": "t4_jnj",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 5.14,
+    "prompt_tokens": 4826,
+    "output_tokens": 393,
+    "output_tokens_per_sec": 98.4,
+    "prompt_tokens_per_sec": 5097.9,
+    "load_seconds": 0.01,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 6576
+   }
+  },
+  "t4_jpm": {
+   "units": [
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "21.2",
+     "expected": "",
+     "extra": {
+      "context": " Release  ## Results - **Net income of $21.2 billion ($7.70 per share)** - **Net inc"
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "7.70",
+     "expected": "",
+     "extra": {
+      "context": "sults - **Net income of $21.2 billion ($7.70 per share)** - **Net income excluding s"
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "16.9",
+     "expected": "",
+     "extra": {
+      "context": " income excluding significant items of $16.9 billion ($6.14 per share)** - **Reporte"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "6.14",
+     "expected": "",
+     "extra": {
+      "context": "ng significant items of $16.9 billion ($6.14 per share)** - **Reported revenue of $5"
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "57.3",
+     "expected": "",
+     "extra": {
+      "context": "4 per share)** - **Reported revenue of $57.3 billion** - **Managed revenue of $58.0 "
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "58.0",
+     "expected": "",
+     "extra": {
+      "context": "$57.3 billion** - **Managed revenue of $58.0 billion** - **Provision for credit loss"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.5",
+     "expected": "",
+     "extra": {
+      "context": "n** - **Provision for credit losses of $2.5 billion** - **Net charge-offs of $2.4 b"
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.4",
+     "expected": "",
+     "extra": {
+      "context": " $2.5 billion** - **Net charge-offs of $2.4 billion** - **Net reserve build of $149"
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "149",
+     "expected": "",
+     "extra": {
+      "context": "2.4 billion** - **Net reserve build of $149 million**  ## Segments and drivers - **"
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "20.3",
+     "expected": "",
+     "extra": {
+      "context": " Banking (CCB):**   - **Net revenue of $20.3 billion (up 8%)**   - **Card Services &"
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "8",
+     "expected": "",
+     "extra": {
+      "context": "   - **Net revenue of $20.3 billion (up 8%)**   - **Card Services & Auto net reve"
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "7.8",
+     "expected": "",
+     "extra": {
+      "context": " **Card Services & Auto net revenue of $7.8 billion (up 12%)**   - **Home Lending n"
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "12",
+     "expected": "",
+     "extra": {
+      "context": " & Auto net revenue of $7.8 billion (up 12%)**   - **Home Lending net revenue of $"
+     }
+    },
+    {
+     "uid": "num_14",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.3",
+     "expected": "",
+     "extra": {
+      "context": "%)**   - **Home Lending net revenue of $1.3 billion (up 3%)** - **Commercial & Inve"
+     }
+    },
+    {
+     "uid": "num_15",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3",
+     "expected": "",
+     "extra": {
+      "context": "Lending net revenue of $1.3 billion (up 3%)** - **Commercial & Investment Banking"
+     }
+    },
+    {
+     "uid": "num_16",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "24.9",
+     "expected": "",
+     "extra": {
+      "context": " Banking (CIB):**   - **Net revenue of $24.9 billion (up 27%)**   - **Investment Ban"
+     }
+    },
+    {
+     "uid": "num_17",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "27",
+     "expected": "",
+     "extra": {
+      "context": "   - **Net revenue of $24.9 billion (up 27%)**   - **Investment Banking revenue of"
+     }
+    },
+    {
+     "uid": "num_18",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3.9",
+     "expected": "",
+     "extra": {
+      "context": "**   - **Investment Banking revenue of $3.9 billion (up 45%)**   - **Markets revenu"
+     }
+    },
+    {
+     "uid": "num_19",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "45",
+     "expected": "",
+     "extra": {
+      "context": "ent Banking revenue of $3.9 billion (up 45%)**   - **Markets revenue of $12.1 bill"
+     }
+    },
+    {
+     "uid": "num_20",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "12.1",
+     "expected": "",
+     "extra": {
+      "context": "on (up 45%)**   - **Markets revenue of $12.1 billion (up 35%)** - **Asset & Wealth M"
+     }
+    },
+    {
+     "uid": "num_21",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "35",
+     "expected": "",
+     "extra": {
+      "context": " **Markets revenue of $12.1 billion (up 35%)** - **Asset & Wealth Management (AWM)"
+     }
+    },
+    {
+     "uid": "num_22",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "6.9",
+     "expected": "",
+     "extra": {
+      "context": "nagement (AWM):**   - **Net revenue of $6.9 billion (up 19%)**   - **Assets under m"
+     }
+    },
+    {
+     "uid": "num_23",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "19",
+     "expected": "",
+     "extra": {
+      "context": "*   - **Net revenue of $6.9 billion (up 19%)**   - **Assets under management of $5"
+     }
+    },
+    {
+     "uid": "num_24",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5.1",
+     "expected": "",
+     "extra": {
+      "context": "9%)**   - **Assets under management of $5.1 trillion (up 18%)**  ## Outlook - **No "
+     }
+    },
+    {
+     "uid": "num_25",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "18",
+     "expected": "",
+     "extra": {
+      "context": "s under management of $5.1 trillion (up 18%)**  ## Outlook - **No specific guidanc"
+     }
+    },
+    {
+     "uid": "num_26",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "14.1",
+     "expected": "",
+     "extra": {
+      "context": "l Ratios:**   - **Standardized ratio of 14.1%**   - **Advanced ratio of 14.2%** - **"
+     }
+    },
+    {
+     "uid": "num_27",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "14.2",
+     "expected": "",
+     "extra": {
+      "context": "atio of 14.1%**   - **Advanced ratio of 14.2%** - **Total Loss-Absorbing Capacity: $"
+     }
+    },
+    {
+     "uid": "num_28",
+     "score": 0.0,
+     "verdict": "UNGROUNDED",
+     "kind": "number",
+     "error_kind": "ungrounded",
+     "trap": "none",
+     "hallucination": true,
+     "got": "590",
+     "expected": "",
+     "extra": {
+      "context": "%** - **Total Loss-Absorbing Capacity: $590 billion** - **Cash and marketable secur"
+     }
+    },
+    {
+     "uid": "num_29",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.5",
+     "expected": "",
+     "extra": {
+      "context": " - **Cash and marketable securities of $1.5 trillion** - **Average loans of $1.5 tr"
+     }
+    },
+    {
+     "uid": "num_30",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.5",
+     "expected": "",
+     "extra": {
+      "context": "f $1.5 trillion** - **Average loans of $1.5 trillion (up 10% YoY, up 2% QoQ)**  ## "
+     }
+    },
+    {
+     "uid": "num_31",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "10",
+     "expected": "",
+     "extra": {
+      "context": " - **Average loans of $1.5 trillion (up 10% YoY, up 2% QoQ)**  ## Watch items - **"
+     }
+    },
+    {
+     "uid": "num_32",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2",
+     "expected": "",
+     "extra": {
+      "context": " loans of $1.5 trillion (up 10% YoY, up 2% QoQ)**  ## Watch items - **Credit cost"
+     }
+    },
+    {
+     "uid": "num_33",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.5",
+     "expected": "",
+     "extra": {
+      "context": " - **Credit costs:** The firm reported $2.5 billion in credit costs, with $2.4 bill"
+     }
+    },
+    {
+     "uid": "num_34",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.4",
+     "expected": "",
+     "extra": {
+      "context": "ted $2.5 billion in credit costs, with $2.4 billion in net charge-offs and a $149 m"
+     }
+    },
+    {
+     "uid": "num_35",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "149",
+     "expected": "",
+     "extra": {
+      "context": " $2.4 billion in net charge-offs and a $149 million net reserve build. Monitor the "
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 270,
+   "group": "t4_jpm",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 7.68,
+    "prompt_tokens": 7529,
+    "output_tokens": 552,
+    "output_tokens_per_sec": 91.9,
+    "prompt_tokens_per_sec": 4734.1,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 6576
+   }
+  },
+  "t4_meta": {
+   "units": [
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "60.80",
+     "expected": "",
+     "extra": {
+      "context": "ngs Release  ## Results - **Revenue**: $60.80 billion, up 28% year-over-year. - **Inc"
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "28",
+     "expected": "",
+     "extra": {
+      "context": "sults - **Revenue**: $60.80 billion, up 28% year-over-year. - **Income from operat"
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "18.78",
+     "expected": "",
+     "extra": {
+      "context": "er-year. - **Income from operations**: $18.78 billion, down 8% year-over-year. - **Fa"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "8",
+     "expected": "",
+     "extra": {
+      "context": "from operations**: $18.78 billion, down 8% year-over-year. - **Family daily activ"
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3.60",
+     "expected": "",
+     "extra": {
+      "context": "- **Family daily active people (DAP)**: 3.60 billion, up 3% year-over-year. - **Ad i"
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3",
+     "expected": "",
+     "extra": {
+      "context": "active people (DAP)**: 3.60 billion, up 3% year-over-year. - **Ad impressions**: "
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "14",
+     "expected": "",
+     "extra": {
+      "context": "ear. - **Ad impressions**: Increased by 14% year-over-year. - **Average price per "
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "12",
+     "expected": "",
+     "extra": {
+      "context": " **Average price per ad**: Increased by 12% year-over-year.  ## Segments and drive"
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "60.37",
+     "expected": "",
+     "extra": {
+      "context": "ivers - **Family of Apps**: Revenue of $60.37 billion, up 24% year-over-year.   - **A"
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 0.0,
+     "verdict": "UNGROUNDED",
+     "kind": "number",
+     "error_kind": "ungrounded",
+     "trap": "none",
+     "hallucination": true,
+     "got": "24",
+     "expected": "",
+     "extra": {
+      "context": "f Apps**: Revenue of $60.37 billion, up 24% year-over-year.   - **Advertising reve"
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "59.36",
+     "expected": "",
+     "extra": {
+      "context": "ver-year.   - **Advertising revenue**: $59.36 billion, up 27% year-over-year. - **Rea"
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "27",
+     "expected": "",
+     "extra": {
+      "context": "vertising revenue**: $59.36 billion, up 27% year-over-year. - **Reality Labs**: Re"
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "431",
+     "expected": "",
+     "extra": {
+      "context": "r-year. - **Reality Labs**: Revenue of $431 million, up 16% year-over-year. - **Ope"
+     }
+    },
+    {
+     "uid": "num_14",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "16",
+     "expected": "",
+     "extra": {
+      "context": "ity Labs**: Revenue of $431 million, up 16% year-over-year. - **Operating margin**"
+     }
+    },
+    {
+     "uid": "num_15",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "31",
+     "expected": "",
+     "extra": {
+      "context": "year-over-year. - **Operating margin**: 31%, down from 43% year-over-year. - **Pro"
+     }
+    },
+    {
+     "uid": "num_16",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "43",
+     "expected": "",
+     "extra": {
+      "context": " - **Operating margin**: 31%, down from 43% year-over-year. - **Pro forma revenue "
+     }
+    },
+    {
+     "uid": "num_17",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "60.12",
+     "expected": "",
+     "extra": {
+      "context": "o forma revenue (constant currency)**: $60.12 billion, up 27% year-over-year.  ## Out"
+     }
+    },
+    {
+     "uid": "num_18",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "27",
+     "expected": "",
+     "extra": {
+      "context": "onstant currency)**: $60.12 billion, up 27% year-over-year.  ## Outlook - **Third "
+     }
+    },
+    {
+     "uid": "num_19",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "61",
+     "expected": "",
+     "extra": {
+      "context": "Third quarter 2026 revenue guidance**: $61-64 billion. - **Full year 2026 expense "
+     }
+    },
+    {
+     "uid": "num_20",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "64",
+     "expected": "",
+     "extra": {
+      "context": "rd quarter 2026 revenue guidance**: $61-64 billion. - **Full year 2026 expense out"
+     }
+    },
+    {
+     "uid": "num_21",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "165",
+     "expected": "",
+     "extra": {
+      "context": " - **Full year 2026 expense outlook**: $165-169 billion. - **Operating income**: Ex"
+     }
+    },
+    {
+     "uid": "num_22",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "169",
+     "expected": "",
+     "extra": {
+      "context": "*Full year 2026 expense outlook**: $165-169 billion. - **Operating income**: Expect"
+     }
+    },
+    {
+     "uid": "num_23",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "130",
+     "expected": "",
+     "extra": {
+      "context": "25 levels. - **Capital expenditures**: $130-145 billion.  ## Capital and balance sh"
+     }
+    },
+    {
+     "uid": "num_24",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "145",
+     "expected": "",
+     "extra": {
+      "context": "evels. - **Capital expenditures**: $130-145 billion.  ## Capital and balance sheet "
+     }
+    },
+    {
+     "uid": "num_25",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "90.26",
+     "expected": "",
+     "extra": {
+      "context": "ivalents, and marketable securities**: $90.26 billion. - **Long-term debt**: $83.66 b"
+     }
+    },
+    {
+     "uid": "num_26",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "83.66",
+     "expected": "",
+     "extra": {
+      "context": " $90.26 billion. - **Long-term debt**: $83.66 billion. - **Free cash flow**: $784 mil"
+     }
+    },
+    {
+     "uid": "num_27",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "784",
+     "expected": "",
+     "extra": {
+      "context": " $83.66 billion. - **Free cash flow**: $784 million.  ## Watch items - **Family dai"
+     }
+    },
+    {
+     "uid": "num_28",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3",
+     "expected": "",
+     "extra": {
+      "context": "aily active people (DAP)**: Monitor the 3% year-over-year growth, as it is a key "
+     }
+    },
+    {
+     "uid": "num_29",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "31",
+     "expected": "",
+     "extra": {
+      "context": "margin**: Keep an eye on the decline to 31%, as it may indicate cost pressures. - "
+     }
+    },
+    {
+     "uid": "num_30",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.4",
+     "expected": "",
+     "extra": {
+      "context": "res. - **Legal proceedings**: Note the $2.4 billion charges related to legal procee"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 240,
+   "group": "t4_meta",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 6.17,
+    "prompt_tokens": 6321,
+    "output_tokens": 454,
+    "output_tokens_per_sec": 95.3,
+    "prompt_tokens_per_sec": 4843.5,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 6576
+   }
+  },
+  "t4_ms": {
+   "units": [
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "21.3",
+     "expected": "",
+     "extra": {
+      "context": "esults  ## Results - **Net Revenues:** $21.3 billion (up 27% from $16.8 billion in 2"
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "27",
+     "expected": "",
+     "extra": {
+      "context": "s - **Net Revenues:** $21.3 billion (up 27% from $16.8 billion in 2025) - **Net In"
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "16.8",
+     "expected": "",
+     "extra": {
+      "context": "Revenues:** $21.3 billion (up 27% from $16.8 billion in 2025) - **Net Income Applica"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5.6",
+     "expected": "",
+     "extra": {
+      "context": "Income Applicable to Morgan Stanley:** $5.6 billion (up 58% from $3.5 billion in 20"
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "58",
+     "expected": "",
+     "extra": {
+      "context": "e to Morgan Stanley:** $5.6 billion (up 58% from $3.5 billion in 2025) - **Earning"
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3.5",
+     "expected": "",
+     "extra": {
+      "context": "n Stanley:** $5.6 billion (up 58% from $3.5 billion in 2025) - **Earnings Per Dilut"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3.46",
+     "expected": "",
+     "extra": {
+      "context": "025) - **Earnings Per Diluted Share:** $3.46 (up 62% from $2.13 in 2025) - **Return "
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "62",
+     "expected": "",
+     "extra": {
+      "context": "Earnings Per Diluted Share:** $3.46 (up 62% from $2.13 in 2025) - **Return on Tang"
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.13",
+     "expected": "",
+     "extra": {
+      "context": "er Diluted Share:** $3.46 (up 62% from $2.13 in 2025) - **Return on Tangible Common "
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "26.6",
+     "expected": "",
+     "extra": {
+      "context": "rn on Tangible Common Equity (ROTCE):** 26.6% (up from 18.2% in 2025)  ## Segments a"
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "18.2",
+     "expected": "",
+     "extra": {
+      "context": "Common Equity (ROTCE):** 26.6% (up from 18.2% in 2025)  ## Segments and Drivers - **"
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "11.0",
+     "expected": "",
+     "extra": {
+      "context": "al Securities:**   - **Net Revenues:** $11.0 billion (up 45% from $7.6 billion in 20"
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 0.0,
+     "verdict": "UNGROUNDED",
+     "kind": "number",
+     "error_kind": "ungrounded",
+     "trap": "none",
+     "hallucination": true,
+     "got": "45",
+     "expected": "",
+     "extra": {
+      "context": "  - **Net Revenues:** $11.0 billion (up 45% from $7.6 billion in 2025)   - **Recor"
+     }
+    },
+    {
+     "uid": "num_14",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "7.6",
+     "expected": "",
+     "extra": {
+      "context": "Revenues:** $11.0 billion (up 45% from $7.6 billion in 2025)   - **Record Revenues "
+     }
+    },
+    {
+     "uid": "num_15",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "69",
+     "expected": "",
+     "extra": {
+      "context": "tment Banking:** Equity net revenues up 69%, Investment Banking net revenues up 58"
+     }
+    },
+    {
+     "uid": "num_16",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "58",
+     "expected": "",
+     "extra": {
+      "context": "69%, Investment Banking net revenues up 58% - **Wealth Management:**   - **Net Rev"
+     }
+    },
+    {
+     "uid": "num_17",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "8.9",
+     "expected": "",
+     "extra": {
+      "context": "th Management:**   - **Net Revenues:** $8.9 billion (up 14% from $7.8 billion in 20"
+     }
+    },
+    {
+     "uid": "num_18",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "14",
+     "expected": "",
+     "extra": {
+      "context": "   - **Net Revenues:** $8.9 billion (up 14% from $7.8 billion in 2025)   - **Recor"
+     }
+    },
+    {
+     "uid": "num_19",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "7.8",
+     "expected": "",
+     "extra": {
+      "context": " Revenues:** $8.9 billion (up 14% from $7.8 billion in 2025)   - **Record Net New A"
+     }
+    },
+    {
+     "uid": "num_20",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "148",
+     "expected": "",
+     "extra": {
+      "context": "n 2025)   - **Record Net New Assets:** $148 billion, with $74 billion from IPOs in "
+     }
+    },
+    {
+     "uid": "num_21",
+     "score": 0.0,
+     "verdict": "UNGROUNDED",
+     "kind": "number",
+     "error_kind": "ungrounded",
+     "trap": "none",
+     "hallucination": true,
+     "got": "74",
+     "expected": "",
+     "extra": {
+      "context": "d Net New Assets:** $148 billion, with $74 billion from IPOs in the Workplace chan"
+     }
+    },
+    {
+     "uid": "num_22",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.6",
+     "expected": "",
+     "extra": {
+      "context": "nt Management:**   - **Net Revenues:** $1.6 billion (up 6% from $1.5 billion in 202"
+     }
+    },
+    {
+     "uid": "num_23",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "6",
+     "expected": "",
+     "extra": {
+      "context": "   - **Net Revenues:** $1.6 billion (up 6% from $1.5 billion in 2025)   - **Asset"
+     }
+    },
+    {
+     "uid": "num_24",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.5",
+     "expected": "",
+     "extra": {
+      "context": "t Revenues:** $1.6 billion (up 6% from $1.5 billion in 2025)   - **Asset Management"
+     }
+    },
+    {
+     "uid": "num_25",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "14.8",
+     "expected": "",
+     "extra": {
+      "context": "n Equity Tier 1 (CET1) Capital Ratio:** 14.8% - **Book Value Per Share:** $67.80 - *"
+     }
+    },
+    {
+     "uid": "num_26",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "67.80",
+     "expected": "",
+     "extra": {
+      "context": "o:** 14.8% - **Book Value Per Share:** $67.80 - **Tangible Book Value Per Share:** $5"
+     }
+    },
+    {
+     "uid": "num_27",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "53.18",
+     "expected": "",
+     "extra": {
+      "context": "0 - **Tangible Book Value Per Share:** $53.18  ## Watch Items - **Expense Efficiency "
+     }
+    },
+    {
+     "uid": "num_28",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "65",
+     "expected": "",
+     "extra": {
+      "context": "h Items - **Expense Efficiency Ratio:** 65% (down from 71% in 2025), indicating im"
+     }
+    },
+    {
+     "uid": "num_29",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "71",
+     "expected": "",
+     "extra": {
+      "context": "ense Efficiency Ratio:** 65% (down from 71% in 2025), indicating improved operatin"
+     }
+    },
+    {
+     "uid": "num_30",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "148",
+     "expected": "",
+     "extra": {
+      "context": "Net New Assets in Wealth Management:** $148 billion, with a significant portion fro"
+     }
+    },
+    {
+     "uid": "num_31",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "98",
+     "expected": "",
+     "extra": {
+      "context": "rm. - **Provision for Credit Losses:** $98 million, down from $196 million in 2025"
+     }
+    },
+    {
+     "uid": "num_32",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "196",
+     "expected": "",
+     "extra": {
+      "context": "redit Losses:** $98 million, down from $196 million in 2025, reflecting portfolio g"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 241,
+   "group": "t4_ms",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 7.58,
+    "prompt_tokens": 7903,
+    "output_tokens": 532,
+    "output_tokens_per_sec": 92.2,
+    "prompt_tokens_per_sec": 4768.6,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 6576
+   }
+  },
+  "t4_msft": {
+   "units": [
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "90.0",
+     "expected": "",
+     "extra": {
+      "context": "026 Results  ## Results - **Revenue**: $90.0 billion, up 18% (17% in constant curren"
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "18",
+     "expected": "",
+     "extra": {
+      "context": "esults - **Revenue**: $90.0 billion, up 18% (17% in constant currency) - **Operati"
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "17",
+     "expected": "",
+     "extra": {
+      "context": "s - **Revenue**: $90.0 billion, up 18% (17% in constant currency) - **Operating In"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "40.6",
+     "expected": "",
+     "extra": {
+      "context": "tant currency) - **Operating Income**: $40.6 billion, up 18% - **Net Income**: $35.8"
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "18",
+     "expected": "",
+     "extra": {
+      "context": "**Operating Income**: $40.6 billion, up 18% - **Net Income**: $35.8 billion, up 31"
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "35.8",
+     "expected": "",
+     "extra": {
+      "context": "40.6 billion, up 18% - **Net Income**: $35.8 billion, up 31% on a GAAP basis, and $3"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "31",
+     "expected": "",
+     "extra": {
+      "context": "18% - **Net Income**: $35.8 billion, up 31% on a GAAP basis, and $35.3 billion, up"
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "35.3",
+     "expected": "",
+     "extra": {
+      "context": "8 billion, up 31% on a GAAP basis, and $35.3 billion, up 22% on a non-GAAP basis - *"
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "22",
+     "expected": "",
+     "extra": {
+      "context": " on a GAAP basis, and $35.3 billion, up 22% on a non-GAAP basis - **Diluted Earnin"
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.81",
+     "expected": "",
+     "extra": {
+      "context": "asis - **Diluted Earnings per Share**: $4.81, up 32% on a GAAP basis, and $4.74, up "
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "32",
+     "expected": "",
+     "extra": {
+      "context": "Diluted Earnings per Share**: $4.81, up 32% on a GAAP basis, and $4.74, up 23% on "
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.74",
+     "expected": "",
+     "extra": {
+      "context": "**: $4.81, up 32% on a GAAP basis, and $4.74, up 23% on a non-GAAP basis  ## Segment"
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "23",
+     "expected": "",
+     "extra": {
+      "context": ", up 32% on a GAAP basis, and $4.74, up 23% on a non-GAAP basis  ## Segments and D"
+     }
+    },
+    {
+     "uid": "num_14",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "59.3",
+     "expected": "",
+     "extra": {
+      "context": "**Microsoft Cloud and AI**: Revenue of $59.3 billion, up 27% year-over-year, with Az"
+     }
+    },
+    {
+     "uid": "num_15",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "27",
+     "expected": "",
+     "extra": {
+      "context": " and AI**: Revenue of $59.3 billion, up 27% year-over-year, with Azure and other c"
+     }
+    },
+    {
+     "uid": "num_16",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "43",
+     "expected": "",
+     "extra": {
+      "context": "other cloud services revenue increasing 43% - **Productivity and Business Processe"
+     }
+    },
+    {
+     "uid": "num_17",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "37.8",
+     "expected": "",
+     "extra": {
+      "context": "y and Business Processes**: Revenue of $37.8 billion, up 14%, driven by 16% growth i"
+     }
+    },
+    {
+     "uid": "num_18",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "14",
+     "expected": "",
+     "extra": {
+      "context": "ocesses**: Revenue of $37.8 billion, up 14%, driven by 16% growth in Microsoft 365"
+     }
+    },
+    {
+     "uid": "num_19",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "16",
+     "expected": "",
+     "extra": {
+      "context": "nue of $37.8 billion, up 14%, driven by 16% growth in Microsoft 365 Commercial clo"
+     }
+    },
+    {
+     "uid": "num_20",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "365",
+     "expected": "",
+     "extra": {
+      "context": " 14%, driven by 16% growth in Microsoft 365 Commercial cloud revenue (14% on a repo"
+     }
+    },
+    {
+     "uid": "num_21",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "14",
+     "expected": "",
+     "extra": {
+      "context": "Microsoft 365 Commercial cloud revenue (14% on a reported basis) - **More Personal"
+     }
+    },
+    {
+     "uid": "num_22",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "12.9",
+     "expected": "",
+     "extra": {
+      "context": "*More Personal Computing**: Revenue of $12.9 billion, down 4% (5% in constant curren"
+     }
+    },
+    {
+     "uid": "num_23",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4",
+     "expected": "",
+     "extra": {
+      "context": "uting**: Revenue of $12.9 billion, down 4% (5% in constant currency), with Window"
+     }
+    },
+    {
+     "uid": "num_24",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5",
+     "expected": "",
+     "extra": {
+      "context": "g**: Revenue of $12.9 billion, down 4% (5% in constant currency), with Windows OE"
+     }
+    },
+    {
+     "uid": "num_25",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "7",
+     "expected": "",
+     "extra": {
+      "context": "dows OEM and Devices revenue decreasing 7%  ## Outlook - **No guidance or outlook"
+     }
+    },
+    {
+     "uid": "num_26",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "331.8",
+     "expected": "",
+     "extra": {
+      "context": "pital and Balance Sheet - **Revenue**: $331.8 billion, up 18% (16% in constant curren"
+     }
+    },
+    {
+     "uid": "num_27",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "18",
+     "expected": "",
+     "extra": {
+      "context": "Sheet - **Revenue**: $331.8 billion, up 18% (16% in constant currency) - **Operati"
+     }
+    },
+    {
+     "uid": "num_28",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "16",
+     "expected": "",
+     "extra": {
+      "context": " - **Revenue**: $331.8 billion, up 18% (16% in constant currency) - **Operating In"
+     }
+    },
+    {
+     "uid": "num_29",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "155.2",
+     "expected": "",
+     "extra": {
+      "context": "tant currency) - **Operating Income**: $155.2 billion, up 21% (19% in constant curren"
+     }
+    },
+    {
+     "uid": "num_30",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "21",
+     "expected": "",
+     "extra": {
+      "context": "*Operating Income**: $155.2 billion, up 21% (19% in constant currency) - **Net Inc"
+     }
+    },
+    {
+     "uid": "num_31",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "19",
+     "expected": "",
+     "extra": {
+      "context": "ating Income**: $155.2 billion, up 21% (19% in constant currency) - **Net Income**"
+     }
+    },
+    {
+     "uid": "num_32",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "133.7",
+     "expected": "",
+     "extra": {
+      "context": "n constant currency) - **Net Income**: $133.7 billion, up 31% on a GAAP basis, and 22"
+     }
+    },
+    {
+     "uid": "num_33",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "31",
+     "expected": "",
+     "extra": {
+      "context": "y) - **Net Income**: $133.7 billion, up 31% on a GAAP basis, and 22% (20% in const"
+     }
+    },
+    {
+     "uid": "num_34",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "22",
+     "expected": "",
+     "extra": {
+      "context": ".7 billion, up 31% on a GAAP basis, and 22% (20% in constant currency) on a non-GA"
+     }
+    },
+    {
+     "uid": "num_35",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "20",
+     "expected": "",
+     "extra": {
+      "context": "llion, up 31% on a GAAP basis, and 22% (20% in constant currency) on a non-GAAP ba"
+     }
+    },
+    {
+     "uid": "num_36",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "17.95",
+     "expected": "",
+     "extra": {
+      "context": "asis - **Diluted Earnings per Share**: $17.95, up 32% on a GAAP basis, and 22% (21% i"
+     }
+    },
+    {
+     "uid": "num_37",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "32",
+     "expected": "",
+     "extra": {
+      "context": "iluted Earnings per Share**: $17.95, up 32% on a GAAP basis, and 22% (21% in const"
+     }
+    },
+    {
+     "uid": "num_38",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "22",
+     "expected": "",
+     "extra": {
+      "context": "**: $17.95, up 32% on a GAAP basis, and 22% (21% in constant currency) on a non-GA"
+     }
+    },
+    {
+     "uid": "num_39",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "21",
+     "expected": "",
+     "extra": {
+      "context": "17.95, up 32% on a GAAP basis, and 22% (21% in constant currency) on a non-GAAP ba"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 286,
+   "group": "t4_msft",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 7.57,
+    "prompt_tokens": 8428,
+    "output_tokens": 519,
+    "output_tokens_per_sec": 91.7,
+    "prompt_tokens_per_sec": 4706.1,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 6576
+   }
+  },
+  "t4_nvda": {
+   "units": [
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "96.2",
+     "expected": "",
+     "extra": {
+      "context": "ngs Release  ## Results - **Revenue:** $96.2 billion, up 106% from a year ago. - **D"
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "106",
+     "expected": "",
+     "extra": {
+      "context": "esults - **Revenue:** $96.2 billion, up 106% from a year ago. - **Data Center Reven"
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "89.0",
+     "expected": "",
+     "extra": {
+      "context": "a year ago. - **Data Center Revenue:** $89.0 billion, up 117% from a year ago. - **G"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "117",
+     "expected": "",
+     "extra": {
+      "context": "ata Center Revenue:** $89.0 billion, up 117% from a year ago. - **GAAP and Non-GAAP"
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "75.0",
+     "expected": "",
+     "extra": {
+      "context": ". - **GAAP and Non-GAAP Gross Margin:** 75.0%. - **GAAP and Non-GAAP Earnings per Di"
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.46",
+     "expected": "",
+     "extra": {
+      "context": "Non-GAAP Earnings per Diluted Share:** $2.46 and $2.22, respectively.  ## Segments a"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.22",
+     "expected": "",
+     "extra": {
+      "context": "arnings per Diluted Share:** $2.46 and $2.22, respectively.  ## Segments and Drivers"
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "89.0",
+     "expected": "",
+     "extra": {
+      "context": "a Center:** Second-quarter revenue was $89.0 billion, up 18% from the previous quart"
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "18",
+     "expected": "",
+     "extra": {
+      "context": "d-quarter revenue was $89.0 billion, up 18% from the previous quarter and up 117% "
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "117",
+     "expected": "",
+     "extra": {
+      "context": "up 18% from the previous quarter and up 117% from a year ago. - **Edge Computing:**"
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "7.2",
+     "expected": "",
+     "extra": {
+      "context": "omputing:** Second-quarter revenue was $7.2 billion, up 13% from the previous quart"
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "13",
+     "expected": "",
+     "extra": {
+      "context": "nd-quarter revenue was $7.2 billion, up 13% from the previous quarter and up 27% f"
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "27",
+     "expected": "",
+     "extra": {
+      "context": "up 13% from the previous quarter and up 27% from a year ago. - **Key Highlights:**"
+     }
+    },
+    {
+     "uid": "num_14",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "6",
+     "expected": "",
+     "extra": {
+      "context": "ction, and unveiled the NVIDIA Spectrum-6 switch systems, among other advancement"
+     }
+    },
+    {
+     "uid": "num_15",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "108.0",
+     "expected": "",
+     "extra": {
+      "context": "vancements.  ## Outlook - **Revenue:** $108.0 billion, plus or minus 2%. - **GAAP and"
+     }
+    },
+    {
+     "uid": "num_16",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2",
+     "expected": "",
+     "extra": {
+      "context": "evenue:** $108.0 billion, plus or minus 2%. - **GAAP and Non-GAAP Gross Margins:*"
+     }
+    },
+    {
+     "uid": "num_17",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "74.0",
+     "expected": "",
+     "extra": {
+      "context": " - **GAAP and Non-GAAP Gross Margins:** 74.0%, plus or minus 50 basis points. - **GA"
+     }
+    },
+    {
+     "uid": "num_18",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "50",
+     "expected": "",
+     "extra": {
+      "context": "P Gross Margins:** 74.0%, plus or minus 50 basis points. - **GAAP and Non-GAAP Ope"
+     }
+    },
+    {
+     "uid": "num_19",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "9.2",
+     "expected": "",
+     "extra": {
+      "context": "AP Operating Expenses:** Approximately $9.2 billion and $9.0 billion, respectively."
+     }
+    },
+    {
+     "uid": "num_20",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "9.0",
+     "expected": "",
+     "extra": {
+      "context": "nses:** Approximately $9.2 billion and $9.0 billion, respectively.  ## Capital and "
+     }
+    },
+    {
+     "uid": "num_21",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "26.0",
+     "expected": "",
+     "extra": {
+      "context": "dends:** NVIDIA returned approximately $26.0 billion to shareholders in the form of "
+     }
+    },
+    {
+     "uid": "num_22",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "99.0",
+     "expected": "",
+     "extra": {
+      "context": "urchase Authorization:** Approximately $99.0 billion remaining under the share repur"
+     }
+    },
+    {
+     "uid": "num_23",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "22.443",
+     "expected": "",
+     "extra": {
+      "context": "tion. - **Cash and Cash Equivalents:** $22.443 billion at the end of the quarter.  ## "
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 254,
+   "group": "t4_nvda",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 6.73,
+    "prompt_tokens": 7863,
+    "output_tokens": 454,
+    "output_tokens_per_sec": 91.9,
+    "prompt_tokens_per_sec": 4697.6,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 6576
+   }
+  },
+  "t4_t": {
+   "units": [
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "31.6",
+     "expected": "",
+     "extra": {
+      "context": "Results  ## Results - Revenues totaled $31.6 billion, up 2.3% from the year-ago quar"
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.3",
+     "expected": "",
+     "extra": {
+      "context": "ts - Revenues totaled $31.6 billion, up 2.3% from the year-ago quarter. - Diluted E"
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.66",
+     "expected": "",
+     "extra": {
+      "context": "ted EPS from continuing operations was $0.66, versus $0.62 in the year-ago quarter; "
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.62",
+     "expected": "",
+     "extra": {
+      "context": "ontinuing operations was $0.66, versus $0.62 in the year-ago quarter; adjusted EPS w"
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.65",
+     "expected": "",
+     "extra": {
+      "context": "the year-ago quarter; adjusted EPS was $0.65, versus $0.54 in the year-ago quarter. "
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.54",
+     "expected": "",
+     "extra": {
+      "context": "uarter; adjusted EPS was $0.65, versus $0.54 in the year-ago quarter. - Operating in"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "7.0",
+     "expected": "",
+     "extra": {
+      "context": "ar-ago quarter. - Operating income was $7.0 billion; adjusted operating income was "
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "7.5",
+     "expected": "",
+     "extra": {
+      "context": "billion; adjusted operating income was $7.5 billion. - Income from continuing opera"
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5.0",
+     "expected": "",
+     "extra": {
+      "context": " Income from continuing operations was $5.0 billion, up 3.6% year over year; adjust"
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3.6",
+     "expected": "",
+     "extra": {
+      "context": "tinuing operations was $5.0 billion, up 3.6% year over year; adjusted EBITDA was $1"
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "12.3",
+     "expected": "",
+     "extra": {
+      "context": "6% year over year; adjusted EBITDA was $12.3 billion, up 5.2% year over year. - Cash"
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5.2",
+     "expected": "",
+     "extra": {
+      "context": "; adjusted EBITDA was $12.3 billion, up 5.2% year over year. - Cash from operating "
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "10.8",
+     "expected": "",
+     "extra": {
+      "context": "ivities from continuing operations was $10.8 billion, versus $9.8 billion in the yea"
+     }
+    },
+    {
+     "uid": "num_14",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "9.8",
+     "expected": "",
+     "extra": {
+      "context": "g operations was $10.8 billion, versus $9.8 billion in the year-ago quarter. - Capi"
+     }
+    },
+    {
+     "uid": "num_15",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5.7",
+     "expected": "",
+     "extra": {
+      "context": " related to continuing operations were $5.7 billion; capital investment was $6.1 bi"
+     }
+    },
+    {
+     "uid": "num_16",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "6.1",
+     "expected": "",
+     "extra": {
+      "context": "e $5.7 billion; capital investment was $6.1 billion. - Free cash flow was $4.7 bill"
+     }
+    },
+    {
+     "uid": "num_17",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.7",
+     "expected": "",
+     "extra": {
+      "context": "was $6.1 billion. - Free cash flow was $4.7 billion, versus $4.4 billion in the yea"
+     }
+    },
+    {
+     "uid": "num_18",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.4",
+     "expected": "",
+     "extra": {
+      "context": "ree cash flow was $4.7 billion, versus $4.4 billion in the year-ago quarter.  ## Se"
+     }
+    },
+    {
+     "uid": "num_19",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1",
+     "expected": "",
+     "extra": {
+      "context": "- **Advanced Connectivity**: Added over 1 million Advanced Connectivity customers"
+     }
+    },
+    {
+     "uid": "num_20",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "23.5",
+     "expected": "",
+     "extra": {
+      "context": "vanced Connectivity service revenue of $23.5 billion, up 5.1% year over year. - **Le"
+     }
+    },
+    {
+     "uid": "num_21",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5.1",
+     "expected": "",
+     "extra": {
+      "context": "ty service revenue of $23.5 billion, up 5.1% year over year. - **Legacy**: Revenues"
+     }
+    },
+    {
+     "uid": "num_22",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "25.9",
+     "expected": "",
+     "extra": {
+      "context": "ntinued to decline year over year, down 25.9% due to the decommissioning of the copp"
+     }
+    },
+    {
+     "uid": "num_23",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "523",
+     "expected": "",
+     "extra": {
+      "context": "work. Operating income and EBITDA were $523 million, down $436 million year over ye"
+     }
+    },
+    {
+     "uid": "num_24",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "436",
+     "expected": "",
+     "extra": {
+      "context": "ome and EBITDA were $523 million, down $436 million year over year. - **Latin Ameri"
+     }
+    },
+    {
+     "uid": "num_25",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "16.1",
+     "expected": "",
+     "extra": {
+      "context": "tin America**: Segment revenues were up 16.1% year over year, primarily driven by fa"
+     }
+    },
+    {
+     "uid": "num_26",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3",
+     "expected": "",
+     "extra": {
+      "context": "usted EBITDA**: Expected to grow in the 3% to 4% range in 2026, improving to 5% o"
+     }
+    },
+    {
+     "uid": "num_27",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4",
+     "expected": "",
+     "extra": {
+      "context": "EBITDA**: Expected to grow in the 3% to 4% range in 2026, improving to 5% or bett"
+     }
+    },
+    {
+     "uid": "num_28",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5",
+     "expected": "",
+     "extra": {
+      "context": "he 3% to 4% range in 2026, improving to 5% or better in 2028. - **Adjusted EPS**:"
+     }
+    },
+    {
+     "uid": "num_29",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.25",
+     "expected": "",
+     "extra": {
+      "context": "28. - **Adjusted EPS**: Expected to be $2.25 to $2.35 in 2026 with a double-digit 3-"
+     }
+    },
+    {
+     "uid": "num_30",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.35",
+     "expected": "",
+     "extra": {
+      "context": "djusted EPS**: Expected to be $2.25 to $2.35 in 2026 with a double-digit 3-year CAGR"
+     }
+    },
+    {
+     "uid": "num_31",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "23",
+     "expected": "",
+     "extra": {
+      "context": "al Investment**: Expected to be in the $23 billion to $24 billion range annually d"
+     }
+    },
+    {
+     "uid": "num_32",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "24",
+     "expected": "",
+     "extra": {
+      "context": ": Expected to be in the $23 billion to $24 billion range annually during 2026-2028"
+     }
+    },
+    {
+     "uid": "num_33",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "18",
+     "expected": "",
+     "extra": {
+      "context": ". - **Free Cash Flow**: Expected to be $18 billion+ in 2026, $19 billion+ in 2027,"
+     }
+    },
+    {
+     "uid": "num_34",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "19",
+     "expected": "",
+     "extra": {
+      "context": ": Expected to be $18 billion+ in 2026, $19 billion+ in 2027, and $21 billion+ in 2"
+     }
+    },
+    {
+     "uid": "num_35",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "21",
+     "expected": "",
+     "extra": {
+      "context": "on+ in 2026, $19 billion+ in 2027, and $21 billion+ in 2028. - **Net Debt-to-Adjus"
+     }
+    },
+    {
+     "uid": "num_36",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2",
+     "expected": "",
+     "extra": {
+      "context": "o return to a level consistent with the 2.5x range within approximately three yea"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 421,
+   "group": "t4_t",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 9.16,
+    "prompt_tokens": 6878,
+    "output_tokens": 703,
+    "output_tokens_per_sec": 93.2,
+    "prompt_tokens_per_sec": 4612.6,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 6576
+   }
+  },
+  "t4_v": {
+   "units": [
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5.6",
+     "expected": "",
+     "extra": {
+      "context": "s**  ## Results - **GAAP Net Income:** $5.6 billion or $2.97 per share (7% increase"
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.97",
+     "expected": "",
+     "extra": {
+      "context": "- **GAAP Net Income:** $5.6 billion or $2.97 per share (7% increase over prior year)"
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "7",
+     "expected": "",
+     "extra": {
+      "context": "ome:** $5.6 billion or $2.97 per share (7% increase over prior year) - **Non-GAAP"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "6.3",
+     "expected": "",
+     "extra": {
+      "context": "prior year) - **Non-GAAP Net Income:** $6.3 billion or $3.32 per share (8% increase"
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3.32",
+     "expected": "",
+     "extra": {
+      "context": "Non-GAAP Net Income:** $6.3 billion or $3.32 per share (8% increase over prior year)"
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "8",
+     "expected": "",
+     "extra": {
+      "context": "ome:** $6.3 billion or $3.32 per share (8% increase over prior year) - **Net Reve"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "11.6",
+     "expected": "",
+     "extra": {
+      "context": "se over prior year) - **Net Revenue:** $11.6 billion, up 14% year-over-year, or 13% "
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "14",
+     "expected": "",
+     "extra": {
+      "context": "r) - **Net Revenue:** $11.6 billion, up 14% year-over-year, or 13% on a constant-d"
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "13",
+     "expected": "",
+     "extra": {
+      "context": "11.6 billion, up 14% year-over-year, or 13% on a constant-dollar basis - **Payment"
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "10",
+     "expected": "",
+     "extra": {
+      "context": "ant-dollar basis - **Payments Volume:** 10% increase year-over-year - **Cross-Bord"
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "12",
+     "expected": "",
+     "extra": {
+      "context": "rder Volume (excluding intra-Europe):** 12% increase year-over-year - **Processed "
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "10",
+     "expected": "",
+     "extra": {
+      "context": "over-year - **Processed Transactions:** 10% increase year-over-year  ## Segments a"
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "13.9",
+     "expected": "",
+     "extra": {
+      "context": "ivalents, and Investment Securities:** $13.9 billion as of June 30, 2026 - **Share R"
+     }
+    },
+    {
+     "uid": "num_14",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "6.2",
+     "expected": "",
+     "extra": {
+      "context": "- **Share Repurchases and Dividends:** $6.2 billion in share repurchases and divide"
+     }
+    },
+    {
+     "uid": "num_15",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "12",
+     "expected": "",
+     "extra": {
+      "context": "e Excluding Intra-Europe:** Monitor the 12% growth in cross-border volume, as it d"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 210,
+   "group": "t4_v",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 6.31,
+    "prompt_tokens": 9539,
+    "output_tokens": 368,
+    "output_tokens_per_sec": 89.7,
+    "prompt_tokens_per_sec": 4594.7,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 6576
+   }
+  }
+ }
+}

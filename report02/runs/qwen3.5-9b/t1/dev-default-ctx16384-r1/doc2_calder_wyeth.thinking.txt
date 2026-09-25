@@ -1,0 +1,28 @@
+The user wants me to extract key investment terms from the provided private fund offering document and return them as a JSON object. I need to follow strict rules about accuracy, citing sources, and handling missing information.
+
+Let me go through each field systematically:
+
+1. **fund_name**: "Calder & Wyeth Private Credit Fund III, L.P." - This is stated in the title and Section 1.1
+2. **fund_domicile**: "Delaware" - Stated in Section 1.1 as "organized as a limited partnership under the laws of the State of Delaware"
+3. **fund_structure**: "closed-end, drawdown private investment fund" with "no redemption rights" - Section 1.1 and 4.4 confirm this is closed-end with no redemptions
+4. **management_fee**: Multiple tiers based on commitment size (Section 5.2) and different rates during Investment Period vs after (Section 5.1). Need to capture all variants.
+5. **performance_fee**: Carried Interest at 20% - Section 6.2
+6. **hurdle_rate**: 7% preferred return - Section 6.1 Second tier
+7. **high_water_mark**: "There is no high water mark" - Section 6.2
+8. **minimum_initial_investment**: $10,000,000 minimum commitment - Section 2.2 (also mentions lesser commitments possible but that's discretionary)
+9. **lockup_period**: No lock-up period as stated in Section 4.4 - "There is no lock-up period as that term is used in open-end funds"
+10. **redemption_frequency**: Not applicable - Section 4.4 states no redemption rights
+11. **redemption_notice_days**: Not applicable - Section 4.4
+12. **gate_provision**: Not applicable - Section 4.4
+13. **key_man_provision**: Key Person Event defined in Section 7.2 - involves Rosalind Adeyemi-Clarke and Theodore Vance Kirkpatrick, or any 3 of 4 committee members
+14. **gp_commitment**: 2.0% of aggregate commitments, min $20M, max $30M - Section 7.3
+15. **fund_term**: Initial Term is 8 years from final closing date, can extend up to 10 years total, plus up to 12 months for winding up - Section 4.2
+16. **auditor**: "Halloran Meade & Co. LLP" - Section 9.2
+
+
+17. **administrator**: "Pemberton Vaux Fund Administration LLC" - Section 9.1
+18. **prime_broker**: Not appointed - Section 9.5 states "The Fund has not appointed a prime broker"
+19. **legal_counsel**: "Ashford Petrakis & Lowe LLP" - Section 9.4
+20. **mfn_election**: Yes, with specific scope and restrictions - Section 10.3
+
+I need to verify each field against the document text to ensure accuracy and proper citation.

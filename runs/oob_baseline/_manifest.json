@@ -1,0 +1,40 @@
+{
+  "model": "qwen2.5:14b-instruct-q4_K_M",
+  "tag": "oob_baseline",
+  "num_ctx": 4096,
+  "temperature": 0.0,
+  "json_mode": true,
+  "prompt": "naive",
+  "docs": {
+    "doc3_ashgrove": {
+      "wall_seconds": 9.36,
+      "prompt_tokens": 2050,
+      "output_tokens": 515,
+      "output_tokens_per_sec": 55.7,
+      "load_seconds": 0.0,
+      "parse_problems": [
+        "missing_field:fund_name",
+        "missing_field:fund_domicile",
+        "missing_field:fund_structure",
+        "missing_field:management_fee",
+        "missing_field:performance_fee",
+        "missing_field:hurdle_rate",
+        "missing_field:high_water_mark",
+        "missing_field:minimum_initial_investment",
+        "missing_field:lockup_period",
+        "missing_field:redemption_frequency",
+        "missing_field:redemption_notice_days",
+        "missing_field:gate_provision",
+        "missing_field:key_man_provision",
+        "missing_field:gp_commitment",
+        "missing_field:fund_term",
+        "missing_field:auditor",
+        "missing_field:administrator",
+        "missing_field:prime_broker",
+        "missing_field:legal_counsel",
+        "missing_field:mfn_election",
+        "extra_field:supplement"
+      ]
+    }
+  }
+}

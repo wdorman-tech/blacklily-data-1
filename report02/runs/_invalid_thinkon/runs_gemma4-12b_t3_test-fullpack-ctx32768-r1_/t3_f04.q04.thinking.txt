@@ -1,0 +1,35 @@
+*   Question: "Which pricing services does the Firm use to value fixed income securities, and which one is primary?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in docs, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "03_valuation_policy.md" contains information about pricing services.
+    *   Section 3.2: "Lanthorn Evaluated Pricing, Inc. is the primary pricing service for all fixed income securities held by the Firm's clients..."
+    *   Section 3.3: "Brayford Pricing Data LLC is the secondary pricing service. Its evaluations are used for the daily tolerance comparison in Section 5.1 and as the pricing source for any security that Lanthorn Evaluated Pricing does not cover or whose Lanthorn price has been rejected."
+
+    *   The question asks for the pricing services used and which one is primary.
+    *   The document "03_valuation_policy.md" lists Lanthorn Evaluated Pricing, Inc. as the primary and Brayford Pricing Data LLC as the secondary.
+    *   Check for updates in "06_policy_update_memo.md".
+        *   Section 3.1 (Stale Price Threshold) - No mention of pricing service names.
+        *   Section 3.2 (Price Override Approval) - No mention of pricing service names.
+    *   The primary and secondary services are clearly defined in "03_valuation_policy.md".
+
+    *   Answer: Lanthorn Evaluated Pricing, Inc. is the primary pricing service; Brayford Pricing Data LLC is the secondary pricing service.
+    *   Source: 03_valuation_policy.md
+    *   Section: 3.2 and 3.3
+    *   Quote: "Lanthorn Evaluated Pricing, Inc. is the primary pricing service for all fixed income securities held by the Firm's clients... Brayford Pricing Data LLC is the secondary pricing service."
+
+    *   "Lanthorn Evaluated Pricing, Inc. is the primary pricing service for all fixed income securities held by the Firm's clients, including U.S. Treasury and agency securities, agency mortgage-backed pools and to-be-announced contracts, corporate and taxable municipal bonds, and asset-backed and commercial mortgage-backed securities."
+    *   "Brayford Pricing Data LLC is the secondary pricing service."
+
+    *   "answer": "Lanthorn Evaluated Pricing, Inc. is the primary pricing service; Brayford Pricing Data LLC is the secondary pricing service."
+    *   "source_document": "03_valuation_policy.md"
+    *   "section": "3.2, 3.3"
+    *   "quote": "Lanthorn Evaluated Pricing, Inc. is the primary pricing service for all fixed income securities held by the Firm's clients... Brayford Pricing Data LLC is the secondary pricing service."
+
+    *   Wait, the prompt says "the answer is exactly NOT_IN_DOCUMENTS" if not found.
+    *   The question asks "Which pricing services does the Firm use... and which one is primary?".
+    *   The text in 3.2 says "Lanthorn Evaluated Pricing, Inc. is the primary pricing

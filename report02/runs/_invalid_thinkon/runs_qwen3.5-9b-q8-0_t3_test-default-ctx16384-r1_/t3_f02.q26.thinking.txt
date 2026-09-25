@@ -1,0 +1,46 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "What is the Adviser's estimate of the asset capacity of its long/short equity strategy?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "asset capacity", "capacity", "long/short equity strategy", "estimate", "limit", "threshold".
+    *   Document 1: `01_brochure.md` (Form ADV Part 2A).
+        *   Section 4.1 Firm Overview: Mentions firm formation, employees, management committee. No mention of asset capacity.
+        *   Section 4.2 The Funds: Describes the Flagship Fund (long/short equity), Offshore Fund, Co-Investment Fund. No mention of asset capacity limits or estimates.
+        *   Section 4.4 Assets Under Management: Mentions AUM ($1.87B as of Dec 31, 2025). No mention of capacity.
+        *   Section 8.1 Methods of Analysis: Describes research and strategy. No mention of capacity.
+        *   Section 8.2 Investment Strategy and Portfolio Guidelines: Describes Flagship Fund strategy (long/short equity), portfolio guidelines (gross exposure, net exposure, position limits). No mention of asset capacity.
+    *   Document 2: `03_valuation_policy.md` (Valuation Policy).
+        *   Section 1.2 Scope and Frequency: Discusses NAV calculation frequency. No mention of asset capacity.
+    *   Document 3: `04_business_continuity_plan.md` (Business Continuity Plan).
+        *   Section 3.1 Alternate Site: Discusses recovery facility. No mention of asset capacity.
+
+3.  **Evaluate Findings:**
+    *   I have scanned all provided text for "asset capacity", "capacity", or similar terms regarding the firm's ability to manage additional assets in its long/short equity strategy.
+    *   The documents discuss AUM, portfolio guidelines (exposure limits), and fund structures, but do not explicitly state an estimate of asset capacity (e.g., "$X billion capacity").
+    *   Therefore, the information is NOT_IN_DOCUMENTS.
+
+4.  **Format Output:**
+    *   Construct JSON object.
+    *   "answer": "NOT_IN_DOCUMENTS"
+    *   "source_document": ""
+    *   "section": ""
+    *   "quote": ""
+
+5.  **Final Review:**
+    *   Does any document mention capacity?
+        *   Brochure mentions AUM ($1,874,612,000).
+        *   Brochure mentions portfolio guidelines (Gross exposure max 250%, Net exposure -10% to 80%).
+        *   None of these are "asset capacity estimates".
+    *

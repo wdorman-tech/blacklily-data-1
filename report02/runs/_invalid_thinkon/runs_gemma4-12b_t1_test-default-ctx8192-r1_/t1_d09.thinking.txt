@@ -1,0 +1,28 @@
+*   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from a fund offering document into a specific JSON structure.
+    *   Constraints:
+        *   Accuracy is paramount.
+        *   No invented terms.
+        *   Use `NOT_FOUND` if not stated.
+        *   Use `NOT_APPLICABLE` if stated as not applicable.
+        *   Amendments/supplements supersede original text.
+        *   Report all variants for different share classes/tiers.
+        *   Distinguish between commitment and current holding.
+        *   Citations must be section/appendix identifiers.
+        *   Quotes must be verbatim.
+        *   Output format: JSON only, no markdown, no preamble.
+
+    *   `fund_name`: "Castellow Wexcombe Multi-Manager Fund, L.P." (Section 1.1)
+    *   `fund_domicile`: "Delaware" (Section 1.1: "organized on September 17, 2019 under the Delaware Revised Uniform Limited Partnership Act")
+    *   `fund_structure`: "open-end (redeemable)" and "not a feeder fund in a master-feeder structure" (Section 1.2).
+    *   `management_fee`: "1.00% of the net asset value of each Limited Partner's capital account" (Section 4.1).
+    *   `performance_fee`: "10% of the Excess Net Profits of each Limited Partner's capital account" (Section 4.2).
+    *   `hurdle_rate`: "5.00% per annum" (Section 4.3). It's a "hard hurdle" with no catch-up.
+    *   `high_water_mark`: "Loss Carryforward... functions as a high-water mark for each capital account. It does not expire and is not reset at the end of any fiscal year or for any other reason" (Section 4.3).
+    *   `minimum_initial_investment`: "$1,000,000" (Section 5.2).
+    *   `lockup_period`: "soft lock-up of one year" (Section 5.4). Note: "The Partnership does not impose a hard lock-up." (Section 5.4).
+    *   `redemption_frequency`: "quarterly" (Section 5.3).
+    *   `redemption_notice_days`: "95 days" (Section 5.3).
+    *   `gate_provision`: "Investor-Level Gate" (Section 5.5). "No Limited Partner may withdraw, as of any single Withdrawal Date, more than 25% of the net asset value of its capital account".
+    *   `key_man_provision`: "The success of the Partnership depends on the Investment Manager's ability to select and monitor Portfolio Managers and, in particular, on the judgment of Ms. Throckford and Mr. Varrell as the voting members of the Investment Committee. The loss of the services of either of them could adversely affect the Partnership." (Section 8.3). *Wait, is there a specific "key person clause" that triggers a specific action?* Section 8.3 describes the risk, but doesn't explicitly state a "key person clause" in the sense of a specific trigger for a dissolution or management change. Let's look closer. Section 8.3 describes the risk of losing them, but doesn't define a "key person clause" as a specific legal mechanism. However, the prompt asks for "who is named and what it triggers". If it's not a specific clause, I should check if it's mentioned. Section 8.3 mentions them, but doesn't state a "key person clause" trigger.
+    *   `gp_commitment`: Section 3.2 says: "Neither the General Partner nor the Investment Manager has made, or is required by the Partnership Agreement

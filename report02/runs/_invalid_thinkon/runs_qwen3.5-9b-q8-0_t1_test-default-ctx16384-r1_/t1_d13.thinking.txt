@@ -1,0 +1,157 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from the provided fund offering document into a structured JSON object.
+    *   Constraints:
+        *   Accurate above all else. No invented terms, no guessing, no inferring market standards.
+        *   If not found: `NOT_FOUND`.
+        *   If not applicable: `NOT_APPLICABLE` (with quote support).
+        *   Amendments/Supplements supersede original text.
+        *   Report every variant if differs by class/tier/period.
+        *   Citations must be section/appendix identifiers from the document.
+        *   Quotes must be verbatim.
+        *   Output: ONLY a JSON object. No markdown, no preamble, no commentary.
+    *   Fields to extract: `fund_name`, `fund_domicile`, `fund_structure`, `management_fee`, `performance_fee`, `hurdle_rate`, `high_water_mark`, `minimum_initial_investment`, `lockup_period`, `redemption_frequency`, `redemption_notice_days`, `gate_provision`, `key_man_provision`, `gp_commitment`, `fund_term`, `auditor`, `administrator`, `prime_broker`, `legal_counsel`, `mfn_election`.
+
+2.  **Scan the Document for Each Field:**
+
+    *   **fund_name**:
+        *   Search: "Quarrendon Vale Infrastructure Secondaries Fund II, L.P." appears in the title and Section 1 table ("Partnership").
+        *   Quote: "Quarrendon Vale Infrastructure Secondaries Fund II, L.P. (the "Partnership")" (Section 1 table). Or Title "# QUARRENDON VALE INFRASTRUCTURE SECONDARIES FUND II, L.P."
+        *   Citation: Section 1 table or Title. Let's use the Table in Section 1 for precision on the entity name definition. Actually, the title is explicit. Section 2.1 also confirms it. Let's use Section 1 table as it defines "Partnership".
+        *   Value: Quarrendon Vale Infrastructure Secondaries Fund II, L.P.
+
+    *   **fund_domicile**:
+        *   Search: "Delaware", "Minnesota".
+        *   Section 1 table: "a Delaware limited partnership formed on November 3, 2025."
+        *   Section 2.1: "formed ... under the Delaware Revised Uniform Limited Partnership Act ... Its principal office is in Minneapolis, Minnesota, and its registered office in Delaware..."
+        *   Value: Delaware (Registered office/Jurisdiction of organization). The prompt asks for "Jurisdiction of organization".
+        *   Quote: "a Delaware limited partnership formed on November 3, 2025." (Section 1 table) or "formed ... under the Delaware Revised Uniform Limited Partnership Act" (Section 2.1).
+        *   Citation: Section 1 table.
+
+    *   **fund_structure**:
+        *   Search: "closed-end", "master-feeder".
+        *   Section 1 table: "A closed-end, drawdown vehicle; not a feeder fund and does not invest through a master fund."
+        *   Section 2.2: "The Partnership is a closed-end fund... The Partnership is not part of a master-feeder structure."
+        *   Value: Closed-end (drawdown), Not Master-Feeder.
+        *   Quote: "A closed-end, drawdown vehicle; not a feeder fund and does not invest through a master fund." (Section 1 table).
+
+    *   **management_fee**:
+        *   Search: "Management Fee".
+        *   Section 1 table: "During the Investment Period, 1.00% per annum of Capital Commitments; thereafter, 0.75% per annum of Net Invested Capital."
+        *   Section 7.1: "(a) for each calendar quarter from the Initial Closing Date through the last day of the Investment Period, 0.25% (1.00% per annum) of that Limited Partner's Capital Commitment; and (b) for each calendar quarter thereafter, 0.1875% (0.75% per annum) of that Limited Partner's pro rata share of Net Invested Capital... No Management Fee shall be charged for any period after the twelfth anniversary of the Final Closing Date..."
+        *   Value: 1.00% per annum of Capital Commitments during Investment Period; 0.75% per annum of Net Invested Capital thereafter (until 12th anniversary).
+        *   Quote: "During the Investment Period, 1.00% per annum of Capital Commitments; thereafter, 0.75% per annum of Net Invested Capital." (Section 1 table) or Section 7.1 text. I will use the detailed Section 7.1 for accuracy on timing.
+        *   Citation: Section 7.1.
+
+    *   **performance_fee**:
+        *   Search: "Carried Interest", "Performance Fee".
+        *   Section 1 table: "Carried Interest | 12.5%, after the Preferred Return and a full catch-up."
+        *   Section 6.2(d)(ii): "12.5% to the General Partner."
+        *   Section 6.4: "No high water mark, loss carryforward or similar mechanism applies to the Carried Interest".
+        *   Value: 12.5%.
+        *   Quote: "Carried Interest | 12.5%, after the Preferred Return and a full catch-up." (Section 1 table).
+
+    *   **hurdle_rate**:
+        *   Search: "Preferred Return", "Hurdle".
+        *   Section 1 table: "Preferred Return | 8% per annum, compounded annually, on outstanding Capital Contributions."
+        *   Section 6.2(b): "Preferred Return: second, 100% to that Limited Partner until it has received its Preferred Return;"
+        *   Section 1.1 Defined Terms: "Preferred Return" means... a return of 8% per annum...
+        *   Value: 8% per annum (Hard/Soft not explicitly stated as hard/soft, but waterfall implies hard hurdle for GP carry). The prompt asks to state type if given. It's a preferred return hurdle.
+        *   Quote: "Preferred Return | 8% per annum, compounded annually, on outstanding Capital Contributions." (Section 1 table).
+
+    *   **high_water_mark**:
+        *   Search: "High Water Mark", "Loss Carryforward".
+        *   Section 6.4: "No high water mark, loss carryforward or similar mechanism applies to the Carried Interest; Section 6.3 is the exclusive adjustment for Carried Interest distributed in excess of entitlement."
+        *   Value: NOT_APPLICABLE (Explicitly stated it does not apply).
+        *   Quote: "No high water mark, loss carryforward or similar mechanism applies to the Carried Interest" (Section 6.4).
+
+    *   **minimum_initial_investment**:
+        *   Search: "Minimum Commitment", "Minimum Initial Investment".
+        *   Section 1 table: "Minimum Commitment | $10,000,000, subject to the General Partner's discretion to accept lesser amounts of not less than $5,000,000."
+        *   Section 3.1: "The minimum Capital Commitment of a Limited Partner is $10,000,000; provided that the General Partner may in its sole discretion accept Capital Commitments of lesser amounts, but not less than $5,000,000..."
+        *   Value: $10,000,000 (GP discretion to accept as low as $5,000,000).
+        *   Quote: "The minimum Capital Commitment of a Limited Partner is $10,000,000; provided that the General Partner may in its sole discretion accept Capital Commitments of lesser amounts, but not less than $5,000,000" (Section 3.1).
+
+    *   **lockup_period**:
+        *   Search: "Lock-up", "Redemption".
+        *   Section 1 table: "Withdrawals and Redemptions | None. Limited Partners may not withdraw or redeem any part of their Interests. There is no lock-up period..."
+        *   Section 10.1: "No Limited Partner shall have the right to withdraw from the Partnership... before the dissolution and winding up of the Partnership."
+        *   Value: NOT_APPLICABLE (Closed-end, no redemptions).
+        *   Quote: "There is no lock-up period, redemption notice period, redemption date or gate." (Section 1 table).
+
+    *   **redemption_frequency**:
+        *   Search: "Redeem", "Frequency".
+        *   Section 10.1: "No Limited Partner shall have the right to withdraw from the Partnership... before the dissolution and winding up of the Partnership."
+        *   Value: NOT_APPLICABLE (Closed-end).
+        *   Quote: "Interests are not redeemable at the option of any Partner." (Section 2.2).
+
+    *   **redemption_notice_days**:
+        *   Search: "Notice", "Redemption".
+        *   Section 1 table: "There is no lock-up period, redemption notice period..."
+        *   Value: NOT_APPLICABLE.
+        *   Quote: "There is no lock-up period, redemption notice period, redemption date or gate." (Section 1 table).
+
+    *   **gate_provision**:
+        *   Search: "Gate", "Redemption Gate".
+        *   Section 1 table: "...and none shall be implied from any provision of this Agreement governing Transfers." (Referring to redemptions/gates).
+        *   Section 10.1: "The Partnership has no redemption dates, lock-up period, redemption notice requirement or gate..."
+        *   Value: NOT_APPLICABLE.
+        *   Quote: "The Partnership has no redemption dates, lock-up period, redemption notice requirement or gate" (Section 10.1).
+
+    *   **key_man_provision**:
+        *   Search: "Key Person", "Key Persons".
+        *   Section 1 table: "Key Persons | Helena Strathdee, Marcus Vellacott and Priya Lathcombe. If during the Investment Period fewer than two Key Persons devote substantially all of their business time to the Partnership... the Investment Period is automatically suspended."
+        *   Section 8.3: "If at any time during the Investment Period fewer than two (2) of the Key Persons devote substantially all of their business time to the affairs of the Partnership... (a) the General Partner shall notify the Limited Partners within ten (10) Business Days; (b) the Investment Period shall be automatically suspended..."
+        *   Value: Helena Strathdee, Marcus Vellacott and Priya Lathcombe. Trigger: If fewer than two Key Persons devote substantially all of their business time to the Partnership during the Investment Period, Investment Period is automatically suspended.
+        *   Quote: "If during the Investment Period fewer than two Key Persons devote substantially all of their business time to the Partnership, Fund I, the Parallel Funds and the Manager, the Investment Period is automatically suspended." (Section 1 table).
+
+    *   **gp_commitment**:
+        *   Search: "GP Commitment", "General Partner Commitment".
+        *   Section 1 table: "GP Commitment | The General Partner and its Affiliates will commit, in the aggregate, 1.0% of total Capital Commitments to the Partnership and the Parallel Funds, funded in cash."
+        *   Section 3.2: "...Capital Commitments to the Partnership and the Parallel Funds that are, in the aggregate, not less than two percent (2%) of the aggregate Capital Commitments of all partners..."
+        *   Conflict Resolution: Rule 4 says "Amendments, supplements and amended-and-restated sections SUPERSEDE the original body text." Section 2 is the "AMENDED AND RESTATED AGREEMENT". Section 1 is the "Summary". The Summary states 1.0%, but Section 3.2 (in the Amended and Restated Agreement) states "not less than two percent (2%)".
+        *   Value: 2% of aggregate Capital Commitments of all partners.
+        *   Quote: "The General Partner shall make, directly or through its Affiliates... Capital Commitments to the Partnership and the Parallel Funds that are, in the aggregate, not less than two percent (2%) of the aggregate Capital Commitments of all partners of the Partnership and the Parallel Funds" (Section 3.2).
+
+    *   **fund_term**:
+        *   Search: "Term", "Twelve years".
+        *   Section 1 table: "Term | Twelve years from the Final Closing Date, subject to up to three consecutive one-year extensions..."
+        *   Section 2.3: "The term of the Partnership shall continue until the twelfth (12th) anniversary of the Final Closing Date... The General Partner may extend the term for up to two (2) successive periods of one (1) year each... The General Partner has no right to extend the term beyond the second such extension, and the Partnership shall not continue... after the fourteenth (14th) anniversary of the Final Closing Date."
+        *   Conflict Resolution: Section 2.3 (Amended and Restated Agreement) supersedes Section 1 table. Section 1 says "three consecutive one-year extensions". Section 2.3 says "two (2) successive periods of one (1) year each... no right to extend the term beyond the second such extension".
+        *   Value: Twelve years from Final Closing Date, subject to up to two successive one-year extensions (max 14 years).
+        *   Quote: "The General Partner may extend the term for up to two (2) successive periods of one (1) year each... The General Partner has no right to extend the term beyond the second such extension" (Section 2.3).
+
+    *   **auditor**:
+        *   Search: "Auditor", "Merriwick".
+        *   Section 1 table: "Auditor | Merriwick Sowerby LLP."
+        *   Section 13.2: "The General Partner has appointed Merriwick Sowerby LLP as the independent auditors of the Partnership..."
+        *   Value: Merriwick Sowerby LLP.
+        *   Quote: "Merriwick Sowerby LLP" (Section 1 table) or Section 13.2.
+
+    *   **administrator**:
+        *   Search: "Administrator", "Orrelby".
+        *   Section 1 table: "Administrator | Orrelby Fund Services (US) LLC."
+        *   Section 13.3: "The General Partner has engaged Orrelby Fund Services (US) LLC (the "Administrator")..."
+        *   Value: Orrelby Fund Services (US) LLC.
+        *   Quote: "Orrelby Fund Services (US) LLC" (Section 1 table).
+
+    *   **prime_broker**:
+        *   Search: "Prime Broker".
+        *   Section 1 table: "Prime Broker | None. The Partnership does not engage a prime broker."
+        *   Section 13.4: "The Partnership does not engage, and does not intend to engage, a prime broker."
+        *   Value: NOT_APPLICABLE (or None). The prompt asks for "Prime broker(s)". If none, `NOT_FOUND` or `None`. Usually if explicitly stated as none, `NOT_FOUND` might be appropriate if the field implies existence, but here it's a specific term. However, Rule 2 says "If the document does not state a term, the value is exactly NOT_FOUND." The document *does* state there isn't one. But usually for this type of extraction, if it says "None", we report that. Let's look at the instruction: "Every value must be supported by text that actually appears in the document." If I put "None", it is supported. If I put `NOT_FOUND`, it implies the term isn't mentioned. The term "Prime Broker" is mentioned, but the status is None. I will use "None" as the value to reflect the document's explicit statement, or `NOT_APPLICABLE` if it doesn't apply. Given the field asks for "Prime broker(s)", and the doc says "None", I will report "None". Wait, Rule 2: "If the document does not state a term, the value is exactly NOT_FOUND." The document states the *existence* of a prime broker is None. So `NOT_FOUND` might be technically correct if interpreted as "No Prime Broker exists in the fund structure", but usually analysts want to know it's explicitly excluded. However, looking at other fields like `lockup_period`, I used `NOT_APPLICABLE`. For `prime_broker`, since the field asks for the broker(s), and there are none, `None` is accurate to the text "The Partnership does not engage a prime broker." Let's check Rule 3: "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE". A prime broker *does not exist* for this fund. So `NOT_APPLICABLE` fits better than `None`.
+        *   Quote: "The Partnership does not engage a prime broker." (Section 1 table).
+
+    *   **legal_counsel**:
+        *   Search: "Legal Counsel", "Haskett".
+        *   Section 1 table: "Legal Counsel | Haskett Voorlan LLP, counsel to the Partnership, the General Partner and the Manager."
+        *   Section 15.3: "Haskett Voorlan LLP ("Fund Counsel") has acted as counsel..."
+        *   Value: Haskett Voorlan LLP.
+        *   Quote: "Haskett Voorlan LLP" (Section 1 table).
+
+    *   **mfn_election**:
+        *   Search: "MFN", "Side Letters".
+        *   Section 1 table: "Side Letters; MFN | Side letters permitted. Limited Partners with Capital Commitments of $50,000,000 or more may elect the benefit of side letter provisions granted to Limited Partners with equal or smaller Capital Commitments..."
+        *   Section 14.2: "Most F

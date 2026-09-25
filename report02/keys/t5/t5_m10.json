@@ -1,0 +1,345 @@
+{
+  "meeting_id": "t5_m10",
+  "title": "Small business owner weighing a SEP against a solo 401(k), with a cash sweep and key person insurance",
+  "notes": "Marisol gives her W-2 salary as $150,000 at 00:06:29 and corrects it to $132,000 at 00:19:07, so the 2026 employer contribution is $33,000 (not $37,500) and the solo 401(k) total $57,500 (not $62,000); a1 is the whole 2026 solo 401(k) funding and is scored on a corrected figure, so one combined item at $57,500 is correct, and in a split answer a1 pairs with the employer item while the separate $24,500 deferral item is genuine and should be adjudicated as supported. The cash sweep is proposed at $250,000 and settled at $200,000, the CPA hand-off is reassigned from Anneliese to Marisol, Graham's pension estimate moves from September 25 to October 9, the risk profile is argued toward Moderate 60/40 but ends with no change, the next meeting moves from December 3 to December 8, rolling the SEP into the 401(k) is floated and parked while discontinuing the SEP itself is keyed (a3), and the closing recap omits three genuine items (sending the line of credit agreement, Devin's review of it, and the pension estimate). Two things are deliberately not keyed and should be adjudicated as supported if listed: the December look at business cash after the Brantmoor milestone (a soft follow-up) and placing the new solo 401(k) in the same growth model (an allocation decision).",
+  "scalar_fields": {
+    "meeting_date": {
+      "expected": "2026-09-17",
+      "accept": [
+        "2026-0?9-17",
+        "2026/0?9/17",
+        "0?9/17/(20)?26",
+        "sep(t|tember)?\\.? 17(th)?(?!\\d)",
+        "(?<!\\d)17(th)?[\\s-]+(of\\s+)?sep",
+        "(?<!\\d)17[/.]0?9[/.](20)?26"
+      ],
+      "reject": {}
+    },
+    "client_names": {
+      "expected": "Marisol Tendry, Graham Tendry",
+      "accept": [
+        "^(?!.*(anneliese|corvath|devin|oakes|jonas|peltier|pelletier))(?!.*(^|[;,]|\\band\\b)\\s*(owen|tess)( tendry)?\\s*($|[;,(])).*\\bmarisol\\b",
+        "^(?!.*(anneliese|corvath|devin|oakes|jonas|peltier|pelletier))(?!.*(^|[;,]|\\band\\b)\\s*(owen|tess)( tendry)?\\s*($|[;,(])).*\\bgraham\\b"
+      ],
+      "match": "all",
+      "reject": {
+        "STAFF_AS_CLIENT": [
+          "anneliese|corvath|devin|oakes"
+        ],
+        "NON_CLIENT_LISTED": [
+          "jonas|peltier|pelletier|(^|[;,]|\\band\\b)\\s*(owen|tess)( tendry)?\\s*($|[;,(])"
+        ]
+      }
+    },
+    "primary_goal": {
+      "expected": "Move more of the business income into tax-advantaged retirement accounts so that retiring at 58 does not depend on selling the business",
+      "accept": [
+        "(retire|401|\\bsep\\b|tax.?(deferred|advantaged|sheltered|favored)|pre.?tax|qualified plan).{0,80}(sav|contribut|shelter|max|build|more|increase|grow|accumulat)",
+        "(sav|contribut|shelter|max|build|more|increase|grow|move|shift|get|accumulat)\\w*.{0,80}(retire|401|\\bsep\\b|tax.?(deferred|advantaged|sheltered|favored))",
+        "(depend|rel(y|ies|iance|ying)|rid(e|ing)|bet(ting)?|hing(e|ing)).{0,60}(sale|sell)",
+        "(outside( of)?|out of|independen\\w* of|separate from|apart from|not tied to|not dependent on) (the |her |their )?(business|company|firm)|diversif\\w*.{0,40}(away|business)"
+      ],
+      "reject": {}
+    },
+    "retirement_target": {
+      "expected": "Marisol retires at 58 (2038); Graham retires at the same time, at 61",
+      "accept": [
+        "(?<!\\d)58(?!\\d)|fifty.?eight|2038"
+      ],
+      "reject": {
+        "STALE_AGE_60": [
+          "^(?!.*((?<!\\d)58(?!\\d)|fifty.?eight|2038)).*((?<!\\d)60(?!\\d)|sixty|2040)"
+        ]
+      }
+    },
+    "risk_tolerance": {
+      "expected": "Growth (80/20)",
+      "accept": [
+        "^(?!\\W*(moderate|conservative|aggressive|balanced)\\b)(?!.*(?<!not )(?<!n.t )(?<!never )(?<!not been )(?<!n.t been )\\b(changed|moved|lowered|reduced|downgraded|shifted|dropped) (to|from)\\b)(?!.*\\b(previously|formerly) (growth|80|eighty)\\b).*(growth|eighty|80 ?%?.{0,30}20)"
+      ],
+      "reject": {
+        "FLOATED_MODERATE": [
+          "^(?!.*(growth|eighty|80 ?%?.{0,30}20)).*(moderate|60 ?%?.{0,30}40|sixty)",
+          "^\\W*(moderate|60 ?%?.{0,30}40|sixty)",
+          "(?<!not )(?<!n.t )(?<!never )(?<!not been )(?<!n.t been )\\b(changed|moved|lowered|reduced|downgraded|shifted|dropped) (from (growth|80 ?%?.{0,30}20) )?to (moderate|60|sixty)"
+        ]
+      }
+    },
+    "risk_tolerance_change": {
+      "expected": "no change",
+      "accept": [
+        "no change|unchanged|not chang|no (adjustment|modification)|\\bnone\\b|\\bkept\\b",
+        "(remain|stay|keep|maintain|leave|retain)\\w*.{0,40}(growth|same|80|where|current|as is|unchanged)",
+        "(growth|same|current).{0,20}(maintained|retained|kept)"
+      ],
+      "reject": {
+        "FLOATED_CHANGE": [
+          "^(?!.*(no change|unchanged|not chang|no (adjustment|modification)|\\bnone\\b|\\bkept\\b|(remain|stay|keep|maintain|leave|retain))).*(\\bto\\b.{0,25}(moderate|60)|moderate|lower|reduc|decreas|more conservative|de-?risk)"
+        ]
+      }
+    },
+    "next_meeting": {
+      "expected": "Tuesday, December 8, 2026, 4:00 PM",
+      "accept": [
+        "12-08|12/0?8(?!\\d)|dec(ember)?\\.? 0?8(th)?(?!\\d)|(?<!\\d)0?8(th)?[\\s-]+(of\\s+)?dec|tuesday,? (the )?8th"
+      ],
+      "reject": {
+        "STALE_DEC_3": [
+          "^(?!.*(12-08|12/0?8(?!\\d)|dec(ember)?\\.? 0?8(th)?(?!\\d)|(?<!\\d)0?8(th)?[\\s-]+(of\\s+)?dec|tuesday,? (the )?8th)).*(dec(ember)?\\.? 0?3(rd)?(?!\\d)|12/0?3(?!\\d)|12-03|(?<!\\d)0?3(rd)?[\\s-]+(of\\s+)?dec|(?<!\\d)3rd)"
+        ]
+      }
+    }
+  },
+  "life_events": [
+    {
+      "eid": "e1",
+      "expected": "Tendry Acoustic Design signed a three-year contract with Brantmoor Regional Health for its new patient tower: about $1.2 million total, billed on milestones, first milestone about $180,000 in November 2026",
+      "match": [
+        "brantmoor|brant moore|hospital|patient tower",
+        "(sign|won|award|land|secur)\\w*.{0,40}contract|contract.{0,40}(sign|won|award|1\\.2|million)"
+      ],
+      "reject": {}
+    },
+    {
+      "eid": "e2",
+      "expected": "Marisol plans to hire the firm's first full-time W-2 employee, a project engineer, around February 2027 at about $95,000 to $100,000",
+      "match": [
+        "hir(e|es|ed|ing)\\b|first (full.?time )?(w-?2 )?employee|project engineer|new employee|engineer|\\bstaff\\b"
+      ],
+      "reject": {}
+    },
+    {
+      "eid": "e3",
+      "expected": "Son Owen, a high school senior, is applying to college (two early action applications due November 1) and starts college in fall 2027",
+      "match": [
+        "\\bowen\\b|college|universit|\\bson\\b"
+      ],
+      "reject": {}
+    }
+  ],
+  "account_actions": [
+    {
+      "aid": "a1",
+      "expected": "Open a solo 401(k) sponsored by Tendry Acoustic Design, Inc. at Pellrose Custody Services and fund it for 2026: Marisol's $24,500 pre-tax employee deferral through the October, November and December payrolls (starting October 30) plus a $33,000 employer profit-sharing contribution (25% of the corrected $132,000 W-2) deposited after year-end and before the S-corp return is filed in March 2027, a 2026 total of $57,500",
+      "match": [
+        "\\bsolo\\b|401|individual \\(?k|one.?participant|\\bdefer|elective",
+        "employer|profit.?shar|(?<![\\d,.])(33,?000|37,?500|57,?500|62,?000|33 ?k\\b|37\\.5 ?k|57\\.5 ?k|62 ?k\\b)|thirty.?(three|seven) thousand|fifty.?seven thousand|sixty.?two thousand"
+      ],
+      "amount_accept": [
+        "(?<![\\d,.])57(,?500|\\.5 ?(k|thousand))|fifty.?seven (thousand )?five( hundred)?",
+        "(?<![\\d,.])33(,?000| ?k\\b| thousand)|thirty.?three thousand",
+        "(25 ?%|25 percent|twenty.?five percent) of .{0,30}(?<![\\d,.])132(,?000| ?k\\b| thousand)?"
+      ],
+      "amount_reject": {
+        "STALE_W2_150K": [
+          "^(?!.*((?<![\\d,.])57(,?500|\\.5 ?(k|thousand))|fifty.?seven (thousand )?five( hundred)?|(?<![\\d,.])33(,?000| ?k\\b| thousand)|thirty.?three thousand|(?<![\\d,.])132(,?000| ?k\\b| thousand)|one thirty.?two)).*((?<![\\d,.])62(,?000| ?k\\b| thousand)|sixty.?two thousand|(?<![\\d,.])37(,?500|\\.5 ?(k|thousand))|thirty.?seven (thousand )?five|(?<![\\d,.])150(,?000| ?k\\b| thousand)|one.?fifty)"
+        ]
+      }
+    },
+    {
+      "aid": "a2",
+      "expected": "Move $200,000 from the Tendry Acoustic Design operating account at Marrowgate Community Bank to a government money market fund in a new business brokerage account at Pellrose titled to the corporation, authorized on the account application",
+      "match": [
+        "money.?market|money fund|treasur|sweep|operating|brokerage",
+        "(?<![\\d,.])200(,?000| ?k\\b)"
+      ],
+      "amount_accept": [
+        "(?<![\\d,.])200(,?000| ?k\\b| thousand)|two hundred thousand"
+      ],
+      "amount_reject": {
+        "STALE_PROPOSED_250K": [
+          "^(?!.*((?<![\\d,.])200(,?000| ?k\\b| thousand)|two hundred thousand)).*((?<![\\d,.])250(,?000| ?k\\b| thousand)|two.?fifty|two hundred (and )?fifty)"
+        ]
+      }
+    },
+    {
+      "aid": "a3",
+      "expected": "Discontinue the model SEP for 2026: a letter from Tendry Acoustic Design to Pellrose ending the SEP agreement with no 2026 contribution, plus a written notice to Marisol; the SEP IRA itself stays open and no money moves",
+      "match": [
+        "\\bsep\\b.{0,60}(discontinu|terminat|\\bend(s|ed|ing)?\\b|\\bstop|ceas|freez|frozen|no (\\w+ ){0,3}contributions?|not (be )?(funded|contributed|used))",
+        "(discontinu|terminat|\\bend(s|ed|ing)?\\b|\\bstop|ceas|freez|wind(ing)? down)\\w*.{0,40}\\bsep\\b"
+      ],
+      "amount_accept": [
+        "(?<![\\d,.$])\\$?0(\\.00)?(?![\\d,.%])|\\bnone\\b|\\bn/?a\\b|not_found|not found|not applicable|\\bnil\\b|\\bzero\\b|\\bnothing\\b|no (\\w+ ){0,3}(contributions?|amount|funding|deposit|transfer|money)|no (dollar|funds)|not (be )?(funded|contributed)",
+        "amount:\\s*($|action:|account:)"
+      ],
+      "amount_reject": {}
+    }
+  ],
+  "action_items": [
+    {
+      "iid": "i1",
+      "expected_task": "Send the solo 401(k) package for e-signature: adoption agreement (sponsor Tendry Acoustic Design, Inc.), Pellrose plan account application and deferral election form, the SEP discontinuance letter to Pellrose and participant notice, plus the business brokerage account application and corporate resolution. Owner: Devin Oakes. Due: Tuesday the 22nd (2026-09-22).",
+      "match": [
+        "adoption|paperwork|plan documents?|\\be-?sign|deferral election|corporate resolution|discontinu",
+        "(package|application|forms?)\\b.{0,40}(solo|individual|401|brokerage)",
+        "(solo|individual|401|brokerage).{0,40}(package|application|forms?)\\b",
+        "(open|establish)\\w*.{0,30}(solo|individual|401|brokerage)"
+      ],
+      "owner_accept": [
+        "devin|oakes|associate"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "tuesday|(?<!\\d)22(nd)?(?!\\d)|9/22|09-22"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i2",
+      "expected_task": "Obtain key-person term life quotes on Marisol at $1,000,000 and $1,500,000, 10-year and 15-year level term, company-owned with the company as beneficiary, with the section 101(j) notice-and-consent form in the application packet. Owner: Devin Oakes. Due: Thursday, October 1 (2026-10-01).",
+      "match": [
+        "key.?(person|man)|term (life|polic|insurance|quote)|insurance quotes?",
+        "quotes?\\b.{0,40}(insurance|life|term|polic)",
+        "101\\s?\\(?j\\)?|notice.{0,5}consent"
+      ],
+      "owner_accept": [
+        "devin|oakes|associate"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "oct(ober)?\\.? 0?1(st)?(?!\\d)|10/0?1(?!\\d)|10-01|thursday|two weeks|2 weeks",
+        "(?<!\\d)0?1(st)?\\s+(of\\s+)?oct"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i3",
+      "expected_task": "Take the solo 401(k) numbers to CPA Jonas Peltier: confirm the $132,000 2026 W-2 and the $33,000 employer contribution, and have the deferral set up to start with the October 30 payroll. Owner: Marisol Tendry (reassigned from Anneliese Corvath). Due: her October 6 meeting with Jonas (2026-10-06).",
+      "match": [
+        "\\bcpa\\b|jonas|peltier|accountant|payroll"
+      ],
+      "owner_accept": [
+        "marisol"
+      ],
+      "owner_reject": {
+        "STALE_OWNER": [
+          "^(?!.*marisol).*(anneliese|corvath|advis)"
+        ]
+      },
+      "due_accept": [
+        "oct(ober)?\\.? 0?6(th)?(?!\\d)|10/0?6(?!\\d)|10-06|(?<!\\d)6th|(?<!\\d)0?6(th)?\\s+(of\\s+)?oct",
+        "(meeting|sit down|appointment) with (jonas|the cpa|peltier)|cpa meeting"
+      ],
+      "due_reject": {},
+      "trap": "reassigned"
+    },
+    {
+      "iid": "i4",
+      "expected_task": "Request a pension benefit estimate at age 61 from the state retirement system through the member portal and send it to Anneliese. Owner: Graham Tendry. Due: October 9 (2026-10-09), moved from next Friday the 25th.",
+      "match": [
+        "pension|benefit estimate|retirement system"
+      ],
+      "owner_accept": [
+        "graham"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "oct(ober)?\\.? 0?9(th)?(?!\\d)|10/0?9(?!\\d)|10-09|(?<!\\d)9th|(?<!\\d)0?9(th)?\\s+(of\\s+)?oct"
+      ],
+      "due_reject": {
+        "STALE_DUE": [
+          "^(?!.*(oct(ober)?\\.? 0?9(th)?(?!\\d)|10/0?9(?!\\d)|10-09|(?<!\\d)9th|(?<!\\d)0?9(th)?\\s+(of\\s+)?oct)).*(sep(t|tember)?\\.? 25|9/25|09-25|25th|(?<!\\d)25\\s+(of\\s+)?sep|next friday)"
+        ]
+      },
+      "trap": "due_changed"
+    },
+    {
+      "iid": "i5",
+      "expected_task": "Rerun the retirement projection with Marisol retiring at 58, Graham at 61 and $57,500 going into the solo 401(k) for 2026, ready before the December meeting. Owner: Anneliese Corvath. Due: before the December 8 meeting (2026-12-08).",
+      "match": [
+        "projection|re-?run|monte carlo|retirement (analysis|model|plan update)",
+        "(update|refresh)\\w*.{0,30}(financial|retirement) plan"
+      ],
+      "owner_accept": [
+        "anneliese|corvath|advis[oe]r"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "12-08|12/0?8(?!\\d)|dec(ember)?\\.? 0?8(th)?(?!\\d)|(?<!\\d)0?8(th)?[\\s-]+(of\\s+)?dec",
+        "^(?!.*(dec(ember)?\\.? 0?3(rd)?(?!\\d)|12/0?3(?!\\d)|12-03|(?<!\\d)0?3(rd)?[\\s-]+(of\\s+)?dec)).*(next (review|meeting)|(december|dec) (review|meeting)|before .{0,30}meeting|\\bdec(ember)?\\b)"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i6",
+      "expected_task": "Send the Marrowgate Community Bank line of credit agreement to Devin Oakes. Owner: Marisol Tendry. Due: Monday the 21st (2026-09-21).",
+      "match": [
+        "line of credit|\\bloc\\b|credit (line|facility|agreement)|loan (agreement|document)",
+        "(send|forward|upload|share|email|provide)\\w*.{0,60}(line of credit|\\bloc\\b|credit|loan|bank)"
+      ],
+      "owner_accept": [
+        "marisol"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "monday|sep(t|tember)?\\.? 21(st)?(?!\\d)|9/21|09-21|(?<!\\d)21st|(?<!\\d)21(st)?\\s+(of\\s+)?sep|(?<!\\d)21[/.]0?9(?!\\d)"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i7",
+      "expected_task": "Read the line of credit agreement for any life insurance, collateral assignment or covenant requirement before the quotes come back. Owner: Devin Oakes. Due: before the quotes return (quotes due Thursday, October 1, 2026).",
+      "match": [
+        "\\b(review|read(s|ing)?\\b|check|look (at|over|through)|go (through|over)|going (through|over)|examin|analy[sz])\\w*.{0,60}(line of credit|\\bloc\\b|credit|loan|agreement)|(line of credit|\\bloc\\b|credit|loan) (agreement |documents? )?(review|analysis)",
+        "covenant|collateral assignment"
+      ],
+      "owner_accept": [
+        "devin|oakes|associate"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "oct(ober)?\\.? 0?1(st)?(?!\\d)|10/0?1(?!\\d)|10-01|thursday|quote|before .{0,40}(insurance|polic)",
+        "(?<!\\d)0?1(st)?\\s+(of\\s+)?oct"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    }
+  ],
+  "non_actions": [
+    {
+      "nid": "n1",
+      "what": "Rolling the existing SEP IRA (about $268,000) into the new solo 401(k). Marisol floats it at [00:15:18] (\"Could we just roll the SEP money into the new 401(k)?\") and it is deferred at [00:16:02] (\"Let's not do it now. Maybe next year, once it's all running.\").",
+      "match": [
+        "^(?!.*\\b(not|never|without|(is|was|are|were|do|does|did|wo|should|would|will|can)n.t|cannot|defer(red|ring)?|postpon\\w*|park(ed|ing)?|hold(ing)? off( on)?|decided against|declin\\w*|no(?!\\W+(20)?\\d\\d\\b)(?!\\W+.\\d\\d\\b))\\W+(\\w+\\W+){0,2}roll)(?!.*\\broll\\w*.{0,60}\\b(deferred|postponed|parked|parking lot|on hold|not now|not (this|in) (year|2026)|declined|decided against|tabled|not (being |be )?(done|pursued|happening))\\b)(?=.*(\\broll\\w*( over)?.{0,40}\\bsep\\b|\\bsep\\b.{0,40}\\broll\\w*.{0,30}\\b(into|to|in)\\b.{0,30}(401|plan|solo)|(consolidat|combin|merg)\\w* (the )?(existing |old |current )?sep( ira)? (money |balance |assets |account |funds )?(into|with|and) (the )?(new |solo )?(401|plan|solo)|(move|transfer)\\w* (the )?(existing |old |current )?sep( ira)? (money |balance |assets |account |funds )?(in)?to (the )?(new |solo )?(401|plan|solo)))"
+      ],
+      "kind": "tentative"
+    },
+    {
+      "nid": "n2",
+      "what": "A cash balance (defined benefit) plan layered on top of the 401(k), proposed by Anneliese at [00:11:35] and declined by Marisol at [00:12:21] (\"No. Not with a hire coming.\").",
+      "match": [
+        "cash.?balance (plan|pension|db)|defined.?benefit|\\bdb plan"
+      ],
+      "kind": "declined_proposal"
+    },
+    {
+      "nid": "n3",
+      "what": "A business overhead expense (disability) policy, proposed by Anneliese at [00:24:06] and declined by Marisol at [00:24:24] (\"I'm not paying for another disability policy.\").",
+      "match": [
+        "overhead (expense|insurance|policy|coverage)|\\bboe\\b|disabilit"
+      ],
+      "kind": "declined_proposal"
+    },
+    {
+      "nid": "n4",
+      "what": "A T-bill ladder in place of the money market fund, raised and set aside by Anneliese at [00:18:00] (\"could we do a T-bill ladder instead? We could, but for money you might need for payroll, I'd rather have next-day liquidity\").",
+      "match": [
+        "ladder"
+      ],
+      "kind": "tentative"
+    }
+  ],
+  "corrected_figures": [
+    {
+      "what": "Marisol's 2026 W-2 salary from Tendry Acoustic Design, which sets the 25% employer profit-sharing contribution to the solo 401(k)",
+      "said_first": "$150,000 at [00:06:29] (\"Um, one-fifty. A hundred and fifty.\"), giving an employer contribution of $37,500 and a 2026 solo 401(k) total of $62,000",
+      "corrected_to": "$132,000 at [00:19:07] (\"I told you one-fifty. That's wrong. It's one thirty-two.\"), giving an employer contribution of $33,000 and a 2026 total of $57,500",
+      "field": "account_actions"
+    }
+  ]
+}

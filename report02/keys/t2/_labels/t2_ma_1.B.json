@@ -1,0 +1,48 @@
+{
+  "pair_id": "t2_ma_1",
+  "labeler": "B",
+  "labels": [
+    {
+      "aid": "a01",
+      "status": "modified",
+      "material": false,
+      "description": "The only change is the embedded page footer, which rolls from \"MASTERCARD 2024 FORM 10-K 25\" to \"MASTERCARD 2025 FORM 10-K 27\"; the risk factor text is otherwise identical.",
+      "rationale": "minor: a filing-year roll-forward and page number in a page footer, with no change in substance."
+    },
+    {
+      "aid": "a02",
+      "status": "modified",
+      "material": false,
+      "description": "The cross-reference to the Legal and Regulatory Proceedings note changes from Note 21 to Note 19; the risk factor text is otherwise identical.",
+      "rationale": "minor: a cross-reference update only."
+    },
+    {
+      "aid": "a04",
+      "status": "modified",
+      "material": true,
+      "description": "The example of concerns that could push jurisdictions toward local payment networks drops the specific reference to \"our decision to suspend business operations in Russia\" and replaces it with a generic \"any decisions we may make relating to entering or exiting a particular market\".",
+      "rationale": "criterion 2: a specific named jurisdiction and event (the Russia suspension) is dropped, and criterion 3: a realized action is recast as a hypothetical, broader scope."
+    },
+    {
+      "aid": "a05",
+      "status": "modified",
+      "material": true,
+      "description": "The privacy, data, AI and security risk factor adds cybersecurity and cyber-risk regulation to its scope, a new disclosure that a single breach could require parallel notifications to data protection authorities, cyber authorities and law enforcement under differing thresholds and deadlines, criminal (not only civil) penalties, restrictions on access to data abroad, and agentic commerce as an AI application, while dropping the GDPR reference and recasting Recorded Future from an acquisition to a threat intelligence service Mastercard provides.",
+      "rationale": "criterion 1: new exposures (multi-authority breach notification, cybersecurity regulation) are disclosed, criterion 2: agentic commerce is newly referenced and the EU GDPR reference is dropped, and criterion 3: severity escalates with the addition of criminal penalties."
+    },
+    {
+      "aid": "a06",
+      "status": "modified",
+      "material": true,
+      "description": "The issuer and acquirer practices example widens from \"regulations that impact\" to \"regulations or legislation that do or could impact\" issuers and acquirers and adds a new specific example, caps on issuer interest rates.",
+      "rationale": "criterion 2: a new specific regulatory development (caps on issuer interest rates) is referenced, and criterion 3: scope widens to include legislation and prospective impacts."
+    },
+    {
+      "aid": "a07",
+      "status": "modified",
+      "material": false,
+      "description": "The only change is the position and content of the embedded page footer (\"28 MASTERCARD 2024 FORM 10-K\" at the end becomes \"30 MASTERCARD 2025 FORM 10-K\" before the last paragraph); the tax risk factor text is identical.",
+      "rationale": "minor: a page-break relocation with a filing-year and page-number roll-forward, with no change in substance."
+    }
+  ]
+}

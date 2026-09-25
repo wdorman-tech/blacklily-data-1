@@ -1,0 +1,28 @@
+{
+ "control": {
+  "spent_s": {},
+  "did_not_complete": {}
+ },
+ "dev": {
+  "spent_s": {},
+  "did_not_complete": {}
+ },
+ "test": {
+  "spent_s": {
+   "gemma4:26b-a4b-it-q4_K_M": 2141.8964269161224,
+   "qwen3.6:35b-a3b-q4_K_M": 2518.7957949638367,
+   "qwen3.8:27b-q4_K_M": 19808.696081638336,
+   "gemma4:31b-it-q4_K_M": 23866.11940741539
+  },
+  "did_not_complete": {},
+  "pauses": [
+   {
+    "stopped": "2026-09-23T19:30:14",
+    "resume_at": "2026-09-24T00:00:00",
+    "reason": "GPU released to its owner until midnight",
+    "credited_s": 6546,
+    "job": "t2 qwen3.8:27b-q4_K_M, partial"
+   }
+  ]
+ }
+}

@@ -1,0 +1,99 @@
+{
+  "sheet_id": "t6_f10",
+  "notes": "Target-risk retirement income household with a positive Q3 and a fee decrease effective 2027; the internal note is the firm's pending acquisition.",
+  "required_facts": [
+    {
+      "fid": "net_return",
+      "kind": "number",
+      "desc": "Q3 2026 net return 0.97%",
+      "accept": [
+        "^(?!.*\\b(?:negative|minus|down|declin\\w*|decreas\\w*|fell|lost|loss of|dropped|drop of|slipped|slid|dipped|gave back|gave up|setback)\\s+(?:by\\s+|of\\s+)?(?<![\\d.])0?\\.970{0,2}(?!\\d)).*?(?:(?<![-\\u2212\\u2013(])(?:(?<![-\\u2212\\u2013(]\\s)|(?<=^-\\s)|(?<=[.:;!?)]\\s-\\s)|(?<=[.:;!?)]-\\s))(?:(?<![\\d.])0?\\.970{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)|(?<![\\d.])97\\s?(?:basis points?|bps|bp)\\b)|\\(\\s?(?:(?<![\\d.])0?\\.970{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)|(?<![\\d.])97\\s?(?:basis points?|bps|bp)\\b)(?!\\s?\\)))"
+      ]
+    },
+    {
+      "fid": "benchmark",
+      "kind": "number",
+      "desc": "Conservative Allocation Index (35% global equity / 65% US aggregate bond) Q3 2026 return 1.09%",
+      "accept": [
+        "^(?!.*\\b(?:negative|minus|down|declin\\w*|decreas\\w*|fell|lost|loss of|dropped|drop of|slipped|slid|dipped|gave back|gave up|setback)\\s+(?:by\\s+|of\\s+)?(?<![\\d.])1\\.090{0,2}(?!\\d)).*?(?:(?<![-\\u2212\\u2013(])(?:(?<![-\\u2212\\u2013(]\\s)|(?<=^-\\s)|(?<=[.:;!?)]\\s-\\s)|(?<=[.:;!?)]-\\s))(?:(?<![\\d.])1\\.090{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b))|\\(\\s?(?:(?<![\\d.])1\\.090{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b))(?!\\s?\\)))"
+      ]
+    },
+    {
+      "fid": "ytd",
+      "kind": "number",
+      "desc": "Year-to-date net return 3.29%",
+      "accept": [
+        "^(?!.*\\b(?:negative|minus|down|declin\\w*|decreas\\w*|fell|lost|loss of|dropped|drop of|slipped|slid|dipped|gave back|gave up|setback)\\s+(?:by\\s+|of\\s+)?(?<![\\d.])3\\.290{0,2}(?!\\d)).*?(?:(?<![-\\u2212\\u2013(])(?:(?<![-\\u2212\\u2013(]\\s)|(?<=^-\\s)|(?<=[.:;!?)]\\s-\\s)|(?<=[.:;!?)]-\\s))(?:(?<![\\d.])3\\.290{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b))|\\(\\s?(?:(?<![\\d.])3\\.290{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b))(?!\\s?\\)))"
+      ]
+    },
+    {
+      "fid": "point_1",
+      "kind": "concept",
+      "desc": "24 months of $6,500 monthly withdrawals held in cash and short-term bonds",
+      "accept": [
+        "(?:24|twenty-four)[\\s-]months?|two years"
+      ]
+    },
+    {
+      "fid": "point_2",
+      "kind": "concept",
+      "desc": "Added TIPS, now 9% of the bond allocation",
+      "accept": [
+        "\\btips\\b|inflation[- ](?:protected|linked|indexed)"
+      ]
+    },
+    {
+      "fid": "point_3",
+      "kind": "concept",
+      "desc": "2026 required minimum distribution of $41,280 completed September 30",
+      "accept": [
+        "41,?280"
+      ]
+    },
+    {
+      "fid": "fee_new_rate",
+      "kind": "fee",
+      "desc": "New rate 0.75% for households above $1,000,000 in the Target-Risk series, down from 0.85%",
+      "accept": [
+        "(?:(?<![\\d.])0?\\.750{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)|(?<![\\d.])75\\s?(?:basis points?|bps|bp)\\b)"
+      ]
+    },
+    {
+      "fid": "fee_effective",
+      "kind": "fee",
+      "desc": "Fee change effective January 1, 2027",
+      "accept": [
+        "(?:\\b(?:january|jan\\.?)\\s+1(?:st|nd|rd|th)?(?![\\da-z])(?!,?\\s+20(?!27)\\d\\d)(?:,?\\s+2027)?|(?<!\\d)1(?:st|nd|rd|th)?\\s+(?:of\\s+)?(?:january|jan\\.?)(?![a-z])(?!,?\\s+20(?!27)\\d\\d)(?:,?\\s+2027)?|(?<!\\d)0?1/0?1/(?:20)?27(?!\\d)|2027-01-01|\\bfirst\\s+(?:day\\s+)?of\\s+(?:january|jan\\.?)(?![a-z])(?!,?\\s+20(?!27)\\d\\d))"
+      ]
+    }
+  ],
+  "disclosure": "Periodic withdrawals reduce your account balance, and a withdrawal rate that can be sustained in one market environment may not be sustainable in another.",
+  "forbidden": [
+    {
+      "fid": "internal_note",
+      "desc": "Letter of intent for Thistlecombe to be acquired by Brackmoor Sterne Wealth Partners; client announcement planned for November",
+      "patterns": [
+        "brackmoor|sterne",
+        "letter of intent",
+        "acquisition|acquired by|(?:be|been|being) acquired",
+        "merger|merging|merge with",
+        "change (?:of|in) (?:ownership|control)|new owner",
+        "sale of (?:the|our) firm",
+        "join(?:s|ing)? (?:a larger|another|forces)",
+        "being purchased|purchased by (?:a |an |another |brackmoor)",
+        "combin(?:e|ing) with (?:a |an |another |brackmoor)",
+        "partner(?:ing|ship)? with (?:a |an |another |brackmoor)",
+        "(?:changes?|transition) (?:at|to|in) (?:our|the) firm"
+      ]
+    },
+    {
+      "fid": "gross_only",
+      "desc": "gross return 1.18% stated without the net return 0.97%",
+      "patterns": [
+        "^(?!.*(?:(?<![\\d.])0?\\.970{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)|(?<![\\d.])97\\s?(?:basis points?|bps|bp)\\b)).*?(?:(?<![\\d.])1\\.180{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b))"
+      ]
+    }
+  ],
+  "gross_return": "1.18%",
+  "net_return": "0.97%"
+}

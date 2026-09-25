@@ -1,0 +1,30 @@
+*   Question: "How frequently is Firm data backed up, and where are the backups stored?"
+    *   Constraint: Return only a JSON object with keys "answer", "source_document", "section", "quote".
+
+    *   Document 1 (Fee Schedule snippet):
+        *   Section 6.1: Termination.
+        *   Section 6.2: Final Fees and Refunds.
+        *   Content: Mentions minimum annual fee, termination notice, and prorated fees. No mention of data backups.
+    *   Document 2 (06_policy_update_memo.md):
+        *   Section 1: Purpose, Approval, Effective Dates.
+        *   Section 2: Compliance Manual (Holding Period, Gifts Received).
+        *   Section 3: Valuation Policy (Stale Price, Price Override).
+        *   Section 4: Business Continuity Plan (Recovery Time Objective).
+        *   Section 5: Fee Schedule (Core Fixed Income Breakpoint).
+        *   Section 6: Implementation and Acknowledgment.
+        *   Content: Mentions trading systems, recovery time objectives, and fee structures. No mention of backup frequency or storage location.
+
+    *   The question asks about "Firm data backed up" and "where are the backups stored".
+    *   Scanning the text:
+        *   "Recovery point objective of 15 minutes" is mentioned in Section 4.1 of the memo, but this refers to the amount of data lost in a disruption, not the frequency of backups or the location of storage.
+        *   No other mention of "backup", "storage", "server", or "data retention" (in the context of backups) exists in the provided text.
+
+    *   answer: "NOT_IN_DOCUMENTS"
+    *   source_document: ""
+    *   section: ""
+    *   quote: ""
+
+    *   JSON format? Yes.
+    *   No markdown? Yes.
+    *   No preamble? Yes.
+    *   Correct keys? Yes.

@@ -1,0 +1,513 @@
+{
+  "doc_id": "t1_d04",
+  "doc_title": "Varrick Onslade Long/Short Equity Fund, L.P. Confidential Private Placement Memorandum",
+  "doc_type": "PPM",
+  "difficulty": "adversarial",
+  "notes": "Open-end long/short equity PPM whose final appendix reproduces an executed side letter with a county pension plan that cuts that investor's Class A fee to 1.00%, shortens its redemption notice to 30 days, waives its lock-up, grants it key person rights the PPM body says the Partnership does not have, and widens its MFN beyond the $25,000,000 threshold. Every fund-level answer must come from the PPM body, so each side-letter value is a reject pattern. The document also carries a disclosed $6.4 million insider holding that is expressly not a commitment, an express no-hurdle statement, and class variants on fee, allocation, lock-up and minimum.",
+  "traps": {
+    "management_fee": "Appendix B reduces the Tollmead County Employees' Retirement System's fee to 1.00% (0.25% per quarter); the fund-level fee is 1.75% for Class A and 1.25% for Class B under Section 4.1.",
+    "redemption_notice_days": "Appendix B lets the Tollmead system redeem on 30 days' notice; the fund-level notice is 60 days under Section 6.2, and the 10-day (key person, compulsory) and 15-day (class exchange) periods are distractors.",
+    "lockup_period": "Appendix B waives the lock-up and Early Redemption Charge for the Tollmead system only; the fund-level terms are a 12-month soft lock (3% charge) for Class A and a 24-month hard lock for Class B under Section 6.3.",
+    "key_man_provision": "Appendix B defines a Key Person Event around Maren Oakhurst with notice and monthly redemption rights for one investor, but Section 10.2 states the Partnership Agreement contains no key person provision, so the fund-level answer is NOT_APPLICABLE.",
+    "mfn_election": "Appendix B lets the Tollmead system elect governmental-plan side letter terms regardless of size; the fund-level MFN in Section 9.3 is limited to Limited Partners with at least $25,000,000 and to side letters of equal or smaller investors.",
+    "gp_commitment": "Section 3.3 discloses about $6,400,000 of Class A Interests held by insiders but states the General Partner is not required to and has not agreed to make any capital contribution, so the answer is NOT_APPLICABLE.",
+    "hurdle_rate": "Section 4.2 states there is no hurdle or preferred return and no index comparison; the Loss Carryforward Amount is a high-water mark, not a hurdle.",
+    "performance_fee": "The Incentive Allocation differs by class (20% Class A, 17.5% Class B) and the side letter leaves it unchanged; both classes must be reported.",
+    "minimum_initial_investment": "Minimums differ by class ($1,000,000 Class A, $5,000,000 Class B); the $100,000 additional-contribution minimum, the $40,000,000 side-letter subscription and the $25,000,000 MFN threshold are distractors."
+  },
+  "fields": {
+    "fund_name": {
+      "expected": "Varrick Onslade Long/Short Equity Fund, L.P.",
+      "citation": "Section 1.1",
+      "quote": "Varrick Onslade Long/Short Equity Fund, L.P. (the \"Partnership\") is a limited partnership organized on October 14, 2025",
+      "accept": [
+        "varrick onslade long\\s*[/-]?\\s*short equity fund,?\\s*l\\.?\\s*p\\b"
+      ],
+      "partial": [
+        "varrick onslade long\\s*[/-]?\\s*short equity fund"
+      ],
+      "reject": {
+        "WRONG_ENTITY_OFFSHORE_FUND": [
+          "^(?!.*equity fund,?\\s*l\\.?\\s*p\\b).*offshore fund"
+        ],
+        "WRONG_ENTITY_GP_OR_MANAGER": [
+          "^(?!.*equity fund).*varrick onslade (gp|capital management)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "fund_domicile": {
+      "expected": "Delaware (limited partnership organized under the Delaware Revised Uniform Limited Partnership Act)",
+      "citation": "Section 1.1",
+      "quote": "is a limited partnership organized on October 14, 2025 under the Delaware Revised Uniform Limited Partnership Act",
+      "accept": [
+        "delaware"
+      ],
+      "partial": [],
+      "reject": {
+        "OFFSHORE_FUND_DOMICILE": [
+          "^(?!.*delaware).*cayman"
+        ],
+        "MANAGER_LOCATION": [
+          "^(?!.*delaware).*connecticut"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "fund_structure": {
+      "expected": "Open-end (quarterly redeemable) stand-alone fund; not master-feeder (a parallel Cayman Offshore Fund trades alongside it but holds no interest in the Partnership)",
+      "citation": "Section 1.2",
+      "quote": "The Partnership is an open-end, stand-alone fund: it does not invest through a master fund, no feeder fund invests in it",
+      "accept": [
+        "^(?=.*(open[\\s-]?end|redeemable|evergreen))(?=.*(stand[\\s-]?alone|\\b(not|no|non|neither|nor|without)\\b[^.;]{0,40}(master|feeder)|non[\\s-]?master|master[\\s-]?feeder\\W{0,3}\\s*no\\b))",
+        "^(?!.*master)(?=.*(open[\\s-]?end|redeemable|evergreen)).*(parallel|side[\\s-]?by[\\s-]?side)"
+      ],
+      "partial": [
+        "^(?!.*(?<!not )(?<!no )(?<!non-)(?<!non )master[\\s-]?feeder).*(open[\\s-]?end|redeemable|evergreen)"
+      ],
+      "reject": {
+        "HALLUCINATED_MASTER_FEEDER": [
+          "^(?!.*(stand[\\s-]?alone|\\bnot\\b|\\bno\\b|\\bnon\\b|neither)).*master[\\s-]?feeder"
+        ],
+        "HALLUCINATED_CLOSED_END": [
+          "^(?!.*open[\\s-]?end).*closed[\\s-]?end"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "management_fee": {
+      "expected": "Class A: 1.75% per annum; Class B: 1.25% per annum; charged quarterly in advance on the net asset value of each Limited Partner's capital account as of the first Business Day of each calendar quarter (0.4375% and 0.3125% per quarter)",
+      "citation": "Section 4.1",
+      "quote": "The Management Fee is charged at an annual rate of 1.75% (0.4375% per quarter) for Class A Interests and 1.25% (0.3125% per quarter) for Class B Interests.",
+      "accept": [
+        "^(?=(?:(?!(\\b1(\\.0+)?\\s*(%|percent|per\\s*cent)|\\b100\\s*(bps|basis points)|\\bone\\s*(percent|per\\s*cent)\\b)).)*(1\\.750*\\s*(%|percent|per\\s*cent)|175\\s*(bps|basis points)|one and three[\\s-]quarters?\\s*(%|percent|per\\s*cent)))(?=.*(1\\.250*\\s*(%|percent|per\\s*cent)|125\\s*(bps|basis points)|one and (a|one)[\\s-]quarter\\s*(%|percent|per\\s*cent)))(?=.*(net asset|\\bnav\\b|capital account))",
+        "^(?=.*(?:^|[;:,(.]\\s*|\\band\\s+)(?:the\\s+)?(fund[\\s-]?level|standard|general(ly)?|in general|partnership[\\s-]?level|ppm|memorandum|section 4\\.1|all (other )?(limited partners|lps|investors|partners)|(all )?other (limited partners|lps|investors|partners)|otherwise|everyone else|everybody else|base|default|regular|ordinary|normal(ly)?)[^.;]{0,40}(1\\.750*\\s*(%|percent|per\\s*cent)|175\\s*(bps|basis points)|one and three[\\s-]quarters?\\s*(%|percent|per\\s*cent)))(?=.*(1\\.250*\\s*(%|percent|per\\s*cent)|125\\s*(bps|basis points)|one and (a|one)[\\s-]quarter\\s*(%|percent|per\\s*cent)))(?=.*(net asset|\\bnav\\b|capital account))",
+        "^(?=.*(1\\.750*\\s*(%|percent|per\\s*cent)|175\\s*(bps|basis points)|one and three[\\s-]quarters?\\s*(%|percent|per\\s*cent)))(?=.*(1\\.250*\\s*(%|percent|per\\s*cent)|125\\s*(bps|basis points)|one and (a|one)[\\s-]quarter\\s*(%|percent|per\\s*cent)))(?=.*(net asset|\\bnav\\b|capital account))(?!.*?(?:^|;|\\.(?!\\d))\\W*(management fee\\W*)?(the )?class a\\b[^.;\\d]{0,15}(\\b1(\\.0+)?\\s*(%|percent|per\\s*cent)|\\b100\\s*(bps|basis points)|\\bone\\s*(percent|per\\s*cent)\\b))(?!.*?(?:^|;|\\.(?!\\d))(?:(?!(?:;|\\.(?!\\d))|(tollmead|retirement|pension|\\bcounty\\b|governmental plan|\\b(that|one|single|certain|particular|specific|individual) (investor|limited partner|lp)\\b|side[\\s-]?letter)).)*?(\\b1(\\.0+)?\\s*(%|percent|per\\s*cent)|\\b100\\s*(bps|basis points)|\\bone\\s*(percent|per\\s*cent)\\b)(?:(?!(?:;|\\.(?!\\d))|(tollmead|retirement|pension|\\bcounty\\b|governmental plan|\\b(that|one|single|certain|particular|specific|individual) (investor|limited partner|lp)\\b|side[\\s-]?letter)).)*(?=;|\\.(?!\\d)|$))"
+      ],
+      "partial": [
+        "^(?=(?:(?!(\\b1(\\.0+)?\\s*(%|percent|per\\s*cent)|\\b100\\s*(bps|basis points)|\\bone\\s*(percent|per\\s*cent)\\b)).)*(1\\.750*\\s*(%|percent|per\\s*cent)|175\\s*(bps|basis points)|one and three[\\s-]quarters?\\s*(%|percent|per\\s*cent)))(?=.*(1\\.250*\\s*(%|percent|per\\s*cent)|125\\s*(bps|basis points)|one and (a|one)[\\s-]quarter\\s*(%|percent|per\\s*cent)))",
+        "^(?!(?!.*(1\\.250*\\s*(%|percent|per\\s*cent)|125\\s*(bps|basis points)|one and (a|one)[\\s-]quarter\\s*(%|percent|per\\s*cent))).*(\\b(all|both|each|every)\\s+(share\\s+)?(class(es)?|interests|investors|limited partners|lps)\\b|\\bclass(es)? a and (class )?b\\b|\\bsame (rate|fee|terms?) for\\b|regardless of class))(?:(?!(\\b1(\\.0+)?\\s*(%|percent|per\\s*cent)|\\b100\\s*(bps|basis points)|\\bone\\s*(percent|per\\s*cent)\\b)).)*(1\\.750*\\s*(%|percent|per\\s*cent)|175\\s*(bps|basis points)|one and three[\\s-]quarters?\\s*(%|percent|per\\s*cent))"
+      ],
+      "reject": {
+        "SIDE_LETTER_FEE_1_00": [
+          "^(?!.*(1\\.750*\\s*(%|percent|per\\s*cent)|175\\s*(bps|basis points)|one and three[\\s-]quarters?\\s*(%|percent|per\\s*cent))).*0\\.25\\s*(%|percent|per\\s*cent) per quarter",
+          "^(?!.*?(?:^(?=(?:(?!(\\b1(\\.0+)?\\s*(%|percent|per\\s*cent)|\\b100\\s*(bps|basis points)|\\bone\\s*(percent|per\\s*cent)\\b)).)*(1\\.750*\\s*(%|percent|per\\s*cent)|175\\s*(bps|basis points)|one and three[\\s-]quarters?\\s*(%|percent|per\\s*cent)))(?=.*(1\\.250*\\s*(%|percent|per\\s*cent)|125\\s*(bps|basis points)|one and (a|one)[\\s-]quarter\\s*(%|percent|per\\s*cent)))(?=.*(net asset|\\bnav\\b|capital account)))|.*?(?:^(?=.*(?:^|[;:,(.]\\s*|\\band\\s+)(?:the\\s+)?(fund[\\s-]?level|standard|general(ly)?|in general|partnership[\\s-]?level|ppm|memorandum|section 4\\.1|all (other )?(limited partners|lps|investors|partners)|(all )?other (limited partners|lps|investors|partners)|otherwise|everyone else|everybody else|base|default|regular|ordinary|normal(ly)?)[^.;]{0,40}(1\\.750*\\s*(%|percent|per\\s*cent)|175\\s*(bps|basis points)|one and three[\\s-]quarters?\\s*(%|percent|per\\s*cent)))(?=.*(1\\.250*\\s*(%|percent|per\\s*cent)|125\\s*(bps|basis points)|one and (a|one)[\\s-]quarter\\s*(%|percent|per\\s*cent)))(?=.*(net asset|\\bnav\\b|capital account)))|.*?(?:^(?=.*(1\\.750*\\s*(%|percent|per\\s*cent)|175\\s*(bps|basis points)|one and three[\\s-]quarters?\\s*(%|percent|per\\s*cent)))(?=.*(1\\.250*\\s*(%|percent|per\\s*cent)|125\\s*(bps|basis points)|one and (a|one)[\\s-]quarter\\s*(%|percent|per\\s*cent)))(?=.*(net asset|\\bnav\\b|capital account))(?!.*?(?:^|;|\\.(?!\\d))\\W*(management fee\\W*)?(the )?class a\\b[^.;\\d]{0,15}(\\b1(\\.0+)?\\s*(%|percent|per\\s*cent)|\\b100\\s*(bps|basis points)|\\bone\\s*(percent|per\\s*cent)\\b))(?!.*?(?:^|;|\\.(?!\\d))(?:(?!(?:;|\\.(?!\\d))|(tollmead|retirement|pension|\\bcounty\\b|governmental plan|\\b(that|one|single|certain|particular|specific|individual) (investor|limited partner|lp)\\b|side[\\s-]?letter)).)*?(\\b1(\\.0+)?\\s*(%|percent|per\\s*cent)|\\b100\\s*(bps|basis points)|\\bone\\s*(percent|per\\s*cent)\\b)(?:(?!(?:;|\\.(?!\\d))|(tollmead|retirement|pension|\\bcounty\\b|governmental plan|\\b(that|one|single|certain|particular|specific|individual) (investor|limited partner|lp)\\b|side[\\s-]?letter)).)*(?=;|\\.(?!\\d)|$))))(?:(?!(1\\.750*\\s*(%|percent|per\\s*cent)|175\\s*(bps|basis points)|one and three[\\s-]quarters?\\s*(%|percent|per\\s*cent))).)*(\\b1(\\.0+)?\\s*(%|percent|per\\s*cent)|\\b100\\s*(bps|basis points)|\\bone\\s*(percent|per\\s*cent)\\b)"
+        ],
+        "HALLUCINATED_SINGLE_RATE": [
+          "^(?!.*(1\\.250*\\s*(%|percent|per\\s*cent)|125\\s*(bps|basis points)|one and (a|one)[\\s-]quarter\\s*(%|percent|per\\s*cent)))(?=.*(1\\.750*\\s*(%|percent|per\\s*cent)|175\\s*(bps|basis points)|one and three[\\s-]quarters?\\s*(%|percent|per\\s*cent))).*(\\b(all|both|each|every)\\s+(share\\s+)?(class(es)?|interests|investors|limited partners|lps)\\b|\\bclass(es)? a and (class )?b\\b|\\bsame (rate|fee|terms?) for\\b|regardless of class)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "side_letter"
+    },
+    "performance_fee": {
+      "expected": "Incentive Allocation to the General Partner of 20% of Net Profits for Class A and 17.5% of Net Profits for Class B, calculated per capital account at the end of each Performance Period (fiscal year, or redemption date for amounts redeemed), only on Net Profits exceeding the Loss Carryforward Amount",
+      "citation": "Section 4.2",
+      "quote": "equal to 20% of the Net Profits allocated to that capital account for Class A Interests and 17.5% of such Net Profits for Class B Interests",
+      "accept": [
+        "^(?=.*(\\b20(\\.0+)?\\s*(%|percent|per\\s*cent)|twenty\\s*(percent|per\\s*cent)))(?=.*(17\\.50*\\s*(%|percent|per\\s*cent)|seventeen and (a|one)[\\s-]half))"
+      ],
+      "partial": [
+        "^(?!(?!.*(17\\.50*\\s*(%|percent|per\\s*cent)|seventeen and (a|one)[\\s-]half)).*(\\b(all|both|each|every)\\s+(share\\s+)?(class(es)?|interests|investors|limited partners|lps)\\b|\\bclass(es)? a and (class )?b\\b|\\bsame (rate|fee|terms?) for\\b|regardless of class)).*(\\b20(\\.0+)?\\s*(%|percent|per\\s*cent)|twenty\\s*(percent|per\\s*cent))",
+        "^(?!(?!.*(\\b20(\\.0+)?\\s*(%|percent|per\\s*cent)|twenty\\s*(percent|per\\s*cent))).*(\\b(all|both|each|every)\\s+(share\\s+)?(class(es)?|interests|investors|limited partners|lps)\\b|\\bclass(es)? a and (class )?b\\b|\\bsame (rate|fee|terms?) for\\b|regardless of class)).*(17\\.50*\\s*(%|percent|per\\s*cent)|seventeen and (a|one)[\\s-]half)"
+      ],
+      "reject": {
+        "HALLUCINATED_SINGLE_RATE": [
+          "^(?!.*(17\\.50*\\s*(%|percent|per\\s*cent)|seventeen and (a|one)[\\s-]half))(?=.*(\\b20(\\.0+)?\\s*(%|percent|per\\s*cent)|twenty\\s*(percent|per\\s*cent))).*(\\b(all|both|each|every)\\s+(share\\s+)?(class(es)?|interests|investors|limited partners|lps)\\b|\\bclass(es)? a and (class )?b\\b|\\bsame (rate|fee|terms?) for\\b|regardless of class)",
+          "^(?!.*(\\b20(\\.0+)?\\s*(%|percent|per\\s*cent)|twenty\\s*(percent|per\\s*cent)))(?=.*(17\\.50*\\s*(%|percent|per\\s*cent)|seventeen and (a|one)[\\s-]half)).*(\\b(all|both|each|every)\\s+(share\\s+)?(class(es)?|interests|investors|limited partners|lps)\\b|\\bclass(es)? a and (class )?b\\b|\\bsame (rate|fee|terms?) for\\b|regardless of class)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "class_variants"
+    },
+    "hurdle_rate": {
+      "expected": "NOT_APPLICABLE: the Incentive Allocation is not subject to any hurdle rate or preferred return and is not measured against any market index",
+      "citation": "Section 4.2",
+      "quote": "The Incentive Allocation is not subject to any hurdle rate or preferred return, and it is not measured against any market index.",
+      "accept": [
+        "not[_\\s]applicable",
+        "not[_\\s]found",
+        "\\bnone\\b",
+        "\\bn/a\\b",
+        "not stated",
+        "does not (state|specify|provide|contain|impose|have|include|apply)",
+        "\\bno\\b[^.;]{0,40}(hurdle|preferred return|benchmark|index)",
+        "not subject to (any |a )?(hurdle|preferred)",
+        "without (a |any )?(hurdle|preferred)",
+        "lacks?\\b[^.;]{0,30}(hurdle|preferred)",
+        "not (specified|mentioned|disclosed|provided|included|addressed|offered)",
+        "^\\W*no\\b",
+        "\\babsent\\b",
+        "\\bsilent\\b",
+        "\\bno such\\b",
+        "does not exist"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_HURDLE_RATE": [
+          "^(?!.*(\\bnot\\b|\\bno\\b|\\bnone\\b|not_applicable|not_found|n/a|without)).*\\d+(\\.\\d+)?\\s*(%|percent|per\\s*cent)"
+        ],
+        "HALLUCINATED_INDEX_BENCHMARK": [
+          "^(?!.*(\\bnot\\b|\\bno\\b|\\bnone\\b|not_applicable|not_found|n/a|without)).*(index|s&p|benchmark)"
+        ],
+        "LOSS_CARRYFORWARD_AS_HURDLE": [
+          "^(?!.*(\\bnot\\b|\\bno\\b|\\bnone\\b|not_applicable|not_found|n/a|without)).*(loss carry|high[\\s-]?water)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    },
+    "high_water_mark": {
+      "expected": "Yes: a Loss Carryforward Amount per capital account operates as a high-water mark; it is perpetual (not reset at the end of any Performance Period or after any period of time) and is reduced only by later Net Profits and proportionately on a partial redemption",
+      "citation": "Section 4.3",
+      "quote": "The Loss Carryforward Amount operates as a high-water mark for each capital account and is not reset at the end of any Performance Period or after any period of time",
+      "accept": [
+        "^(?=.*(high[\\s-]?water|loss carry[\\s-]?forward|loss recovery|\\bhwm\\b))(?=.*((\\bnot\\b|\\bno\\b|never|without|n't|cannot)[^.;]{0,25}reset|non[\\s-]?reset|(?<!not )(?<!non-)(perpetual|permanent|indefinite)|lifetime|no time limit|does not expire|no expir|until[^.;]{0,30}(recovered|recouped)|reduced only by))"
+      ],
+      "partial": [
+        "^(?!(?!.*((\\b(not|never|no|without|non|cannot)|n't)[\\s-]+(\\w+[\\s-]+){0,3}reset|(\\bnot\\b|\\bno\\b|never|without)[^.;]{0,25}reset)).*\\breset(s|ting)?\\b)(?!.*(\\bno\\b|\\bnot\\b|\\bnone\\b|without)\\s+(\\w+\\s+){0,2}(high[\\s-]?water|loss carry|\\bhwm\\b)).*(high[\\s-]?water|loss carry[\\s-]?forward|\\bhwm\\b)"
+      ],
+      "reject": {
+        "HALLUCINATED_RESET": [
+          "^(?!.*((\\b(not|never|no|without|non|cannot)|n't)[\\s-]+(\\w+[\\s-]+){0,3}reset|(\\bnot\\b|\\bno\\b|never|without)[^.;]{0,25}reset)).*\\breset(s|ting)?\\b"
+        ],
+        "HALLUCINATED_NO_HWM": [
+          "^(?!.*(high[\\s-]?water|loss carry|\\bhwm\\b)).*(\\bnone\\b|not_applicable|not_found|\\bno\\b)",
+          "^(?!.*((\\bnot\\b|\\bno\\b|never|without|n't|cannot)[^.;]{0,25}reset|non[\\s-]?reset|(?<!not )(?<!non-)(perpetual|permanent|indefinite)|lifetime|no time limit|does not expire|no expir|until[^.;]{0,30}(recovered|recouped)|reduced only by)).*(\\bno\\b|\\bnot\\b|\\bnone\\b|without)\\s+(\\w+\\s+){0,2}(high[\\s-]?water|loss carry|\\bhwm\\b)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "minimum_initial_investment": {
+      "expected": "Class A: $1,000,000; Class B: $5,000,000 (the General Partner may accept lesser amounts; additional Capital Contributions at least $100,000)",
+      "citation": "Section 5.2",
+      "quote": "The minimum initial Capital Contribution is $1,000,000 for Class A Interests and $5,000,000 for Class B Interests.",
+      "accept": [
+        "^(?=.*(\\b1,000,000|\\b1(\\.0+)?\\s*(million|mm|m)\\b|one million))(?=.*(\\b5,000,000|\\b5(\\.0+)?\\s*(million|mm|m)\\b|five million))"
+      ],
+      "partial": [
+        "(\\b1,000,000|\\b1(\\.0+)?\\s*(million|mm|m)\\b|one million)",
+        "(\\b5,000,000|\\b5(\\.0+)?\\s*(million|mm|m)\\b|five million)"
+      ],
+      "reject": {
+        "ADDITIONAL_AS_INITIAL": [
+          "^(?!.*(\\b1,000,000|\\b1(\\.0+)?\\s*(million|mm|m)\\b|one million)).*(\\b100,000\\b|\\b100\\s*(k|thousand)\\b)"
+        ],
+        "SIDE_LETTER_SUBSCRIPTION_AS_MINIMUM": [
+          "^(?!.*(\\b1,000,000|\\b1(\\.0+)?\\s*(million|mm|m)\\b|one million)).*(40,000,000|\\b40(\\.0+)?\\s*(million|mm|m)\\b)"
+        ],
+        "MFN_THRESHOLD_AS_MINIMUM": [
+          "^(?!.*(\\b1,000,000|\\b1(\\.0+)?\\s*(million|mm|m)\\b|one million)).*(25,000,000|\\b25(\\.0+)?\\s*(million|mm|m)\\b|twenty[\\s-]*five million)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "class_variants"
+    },
+    "lockup_period": {
+      "expected": "Class A: 12-month soft lock-up (redemption before the first anniversary of each Subscription Date permitted subject to a 3% Early Redemption Charge retained by the Partnership); Class B: 24-month hard lock-up (no redemption before the second anniversary); measured separately for each Capital Contribution",
+      "citation": "Section 6.3",
+      "quote": "Class A Interests are subject to a soft lock-up of 12 months and Class B Interests are subject to a hard lock-up of 24 months",
+      "accept": [
+        "^(?=.*((\\b12|twelve)[\\s-]*months?|one[\\s-]*year|\\b1[\\s-]*year))(?=.*(soft|early redemption (charge|fee)|\\b3\\s*(%|percent|per\\s*cent)|three percent))(?=.*((\\b24|twenty[\\s-]*four)[\\s-]*months?|two[\\s-]*years?|\\b2[\\s-]*years?))(?=.*(hard|no (early )?redemption|may not (be )?redeem|not (be )?redeemable|prohibit))"
+      ],
+      "partial": [
+        "^(?=.*((\\b12|twelve)[\\s-]*months?|one[\\s-]*year|\\b1[\\s-]*year))(?=.*((\\b24|twenty[\\s-]*four)[\\s-]*months?|two[\\s-]*years?|\\b2[\\s-]*years?))",
+        "^(?!(?!.*((\\b24|twenty[\\s-]*four)[\\s-]*months?|two[\\s-]*years?|\\b2[\\s-]*years?)).*(\\b(all|both|each|every)\\s+(share\\s+)?(class(es)?|interests|investors|limited partners|lps)\\b|\\bclass(es)? a and (class )?b\\b|\\bsame (rate|fee|terms?) for\\b|regardless of class)).*((\\b12|twelve)[\\s-]*months?|one[\\s-]*year|\\b1[\\s-]*year).{0,40}soft",
+        "^(?!(?!.*((\\b12|twelve)[\\s-]*months?|one[\\s-]*year|\\b1[\\s-]*year)).*(\\b(all|both|each|every)\\s+(share\\s+)?(class(es)?|interests|investors|limited partners|lps)\\b|\\bclass(es)? a and (class )?b\\b|\\bsame (rate|fee|terms?) for\\b|regardless of class)).*((\\b24|twenty[\\s-]*four)[\\s-]*months?|two[\\s-]*years?|\\b2[\\s-]*years?).{0,40}hard"
+      ],
+      "reject": {
+        "SIDE_LETTER_LOCKUP_WAIVED": [
+          "^(?!.*(((\\b12|twelve)[\\s-]*months?|one[\\s-]*year|\\b1[\\s-]*year)|((\\b24|twenty[\\s-]*four)[\\s-]*months?|two[\\s-]*years?|\\b2[\\s-]*years?))).*(waiv|no lock|\\bnone\\b|not_applicable|not_found|not subject to (any )?lock)"
+        ],
+        "HALLUCINATED_SINGLE_LOCKUP": [
+          "^(?!.*((\\b24|twenty[\\s-]*four)[\\s-]*months?|two[\\s-]*years?|\\b2[\\s-]*years?))(?=.*((\\b12|twelve)[\\s-]*months?|one[\\s-]*year|\\b1[\\s-]*year)).*(\\b(all|both|each|every)\\s+(share\\s+)?(class(es)?|interests|investors|limited partners|lps)\\b|\\bclass(es)? a and (class )?b\\b|\\bsame (rate|fee|terms?) for\\b|regardless of class)",
+          "^(?!.*((\\b12|twelve)[\\s-]*months?|one[\\s-]*year|\\b1[\\s-]*year))(?=.*((\\b24|twenty[\\s-]*four)[\\s-]*months?|two[\\s-]*years?|\\b2[\\s-]*years?)).*(\\b(all|both|each|every)\\s+(share\\s+)?(class(es)?|interests|investors|limited partners|lps)\\b|\\bclass(es)? a and (class )?b\\b|\\bsame (rate|fee|terms?) for\\b|regardless of class)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "side_letter"
+    },
+    "redemption_frequency": {
+      "expected": "Quarterly, as of the last Business Day of each calendar quarter (after the applicable lock-up, on 60 days' notice and subject to the fund-level gate)",
+      "citation": "Section 6.1",
+      "quote": "as of the last Business Day of each calendar quarter (each, a \"Redemption Date\")",
+      "accept": [
+        "quarter"
+      ],
+      "partial": [],
+      "reject": {
+        "MONTHLY_SUBSCRIPTION_OR_SIDE_LETTER_KEY_PERSON_DATE": [
+          "^(?!.*quarter).*\\bmonth"
+        ],
+        "HALLUCINATED_ANNUAL": [
+          "^(?!.*quarter).*(annual|yearly)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "redemption_notice_days": {
+      "expected": "60 days' prior written notice before the applicable Redemption Date (the General Partner may waive or shorten it)",
+      "citation": "Section 6.2",
+      "quote": "at least 60 days before the applicable Redemption Date",
+      "accept": [
+        "^(?:(?!\\b(30|thirty)\\b).)*\\b(60|sixty)\\b",
+        "(?:^|[;:,(.]\\s*|\\band\\s+)(?:the\\s+)?(fund[\\s-]?level|standard|general(ly)?|in general|partnership[\\s-]?level|ppm|memorandum|section 6\\.2|all (other )?(limited partners|lps|investors|partners)|(all )?other (limited partners|lps|investors|partners)|otherwise|everyone else|everybody else|base|default|regular|ordinary|normal(ly)?)[^.;]{0,30}\\b(60|sixty)\\b",
+        "\\b(60|sixty)\\b[^.;]{0,20}\\b(standard|generally|in general|fund[\\s-]?level|partnership[\\s-]?level|for (all )?(other )?(limited partners|lps|investors|partners)|under (the )?(ppm|memorandum|section 6\\.2))",
+        "^(?=.*\\b(60|sixty)\\b)(?!.*?(?:^|;|\\.(?!\\d))(?:(?!(?:;|\\.(?!\\d))|(tollmead|retirement|pension|\\bcounty\\b|governmental plan|\\b(that|one|single|certain|particular|specific|individual) (investor|limited partner|lp)\\b|side[\\s-]?letter|proceeds|payment|\\bpaid\\b|\\bpay\\b|audit)).)*?\\b(30|thirty)\\b(?:(?!(?:;|\\.(?!\\d))|(tollmead|retirement|pension|\\bcounty\\b|governmental plan|\\b(that|one|single|certain|particular|specific|individual) (investor|limited partner|lp)\\b|side[\\s-]?letter|proceeds|payment|\\bpaid\\b|\\bpay\\b|audit)).)*(?=;|\\.(?!\\d)|$))"
+      ],
+      "partial": [],
+      "reject": {
+        "SIDE_LETTER_NOTICE_30_DAYS": [
+          "^(?!.*\\b(60|sixty)\\b).*\\b(30|thirty)\\b",
+          "^(?!.*?(?:^(?:(?!\\b(30|thirty)\\b).)*\\b(60|sixty)\\b)|.*?(?:(?:^|[;:,(.]\\s*|\\band\\s+)(?:the\\s+)?(fund[\\s-]?level|standard|general(ly)?|in general|partnership[\\s-]?level|ppm|memorandum|section 6\\.2|all (other )?(limited partners|lps|investors|partners)|(all )?other (limited partners|lps|investors|partners)|otherwise|everyone else|everybody else|base|default|regular|ordinary|normal(ly)?)[^.;]{0,30}\\b(60|sixty)\\b)|.*?(?:\\b(60|sixty)\\b[^.;]{0,20}\\b(standard|generally|in general|fund[\\s-]?level|partnership[\\s-]?level|for (all )?(other )?(limited partners|lps|investors|partners)|under (the )?(ppm|memorandum|section 6\\.2)))|.*?(?:^(?=.*\\b(60|sixty)\\b)(?!.*?(?:^|;|\\.(?!\\d))(?:(?!(?:;|\\.(?!\\d))|(tollmead|retirement|pension|\\bcounty\\b|governmental plan|\\b(that|one|single|certain|particular|specific|individual) (investor|limited partner|lp)\\b|side[\\s-]?letter|proceeds|payment|\\bpaid\\b|\\bpay\\b|audit)).)*?\\b(30|thirty)\\b(?:(?!(?:;|\\.(?!\\d))|(tollmead|retirement|pension|\\bcounty\\b|governmental plan|\\b(that|one|single|certain|particular|specific|individual) (investor|limited partner|lp)\\b|side[\\s-]?letter|proceeds|payment|\\bpaid\\b|\\bpay\\b|audit)).)*(?=;|\\.(?!\\d)|$))))(?:(?!\\b(60|sixty)\\b).)*\\b(30|thirty)\\b"
+        ],
+        "SIDE_LETTER_KEY_PERSON_OR_COMPULSORY_NOTICE": [
+          "^(?!.*\\b(60|sixty)\\b).*\\b(10|ten)\\b"
+        ],
+        "CLASS_EXCHANGE_NOTICE": [
+          "^(?!.*\\b(60|sixty)\\b).*\\b(15|fifteen)\\b"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "side_letter"
+    },
+    "gate_provision": {
+      "expected": "Fund-level gate: if aggregate redemption requests for a Redemption Date exceed 20% of Partnership net asset value, the General Partner may reduce them pro rata to 20%; the unsatisfied portion carries forward with priority; the gate is not applied separately by class or Limited Partner",
+      "citation": "Section 6.5",
+      "quote": "exceed 20% of the net asset value of the Partnership as of that Redemption Date",
+      "accept": [
+        "^(?!(?!.*(fund[\\s-]?(level|wide)|partnership[\\s-]?(level|wide)|(partnership|fund) as a whole|\\bnot\\b)).*((investor|limited partner|\\blp)[\\s-]?level|\\bper[\\s-](investor|limited partner|lp)\\b|\\b(each|any|a|the) (investor|limited partner|lp)'?s? (capital account|interests?|nav|net asset value|holding)))(?!.*\\b(no|not|without)\\b[^.;]{0,20}(fund|partnership)[\\s-]?(level|wide))(?=.*(\\b20(\\.0+)?\\s*(%|percent|per\\s*cent)|twenty\\s*(percent|per\\s*cent)))(?=.*(fund[\\s-]?(level|wide)|partnership[\\s-]?(level|wide)|partnership as a whole|fund as a whole|aggregate|(partnership|fund)('s)? (net asset value|nav)|(net asset value|nav) of the (partnership|fund)|\\blevel\\W{0,3}\\s*(fund|partnership)\\b|\\b(fund|partnership)\\W{0,3}\\s*(\\b20(\\.0+)?\\s*(%|percent|per\\s*cent)|twenty\\s*(percent|per\\s*cent))))"
+      ],
+      "partial": [
+        "^(?!(?!.*(fund[\\s-]?(level|wide)|partnership[\\s-]?(level|wide)|(partnership|fund) as a whole|\\bnot\\b)).*((investor|limited partner|\\blp)[\\s-]?level|\\bper[\\s-](investor|limited partner|lp)\\b|\\b(each|any|a|the) (investor|limited partner|lp)'?s? (capital account|interests?|nav|net asset value|holding)))(?!.*\\b(no|not|without)\\b[^.;]{0,20}(fund|partnership)[\\s-]?(level|wide)).*(\\b20(\\.0+)?\\s*(%|percent|per\\s*cent)|twenty\\s*(percent|per\\s*cent))"
+      ],
+      "reject": {
+        "HOLDBACK_AS_GATE": [
+          "^(?!.*(\\b20(\\.0+)?\\s*(%|percent|per\\s*cent)|twenty\\s*(percent|per\\s*cent))).*(\\b10\\s*(%|percent|per\\s*cent)|holdback|hold back|retain)"
+        ],
+        "HALLUCINATED_NO_GATE": [
+          "^(?!.*(\\b20(\\.0+)?\\s*(%|percent|per\\s*cent)|twenty\\s*(percent|per\\s*cent))).*(\\bno gate\\b|\\bnone\\b|not_applicable|not_found|does not impose)"
+        ],
+        "HALLUCINATED_INVESTOR_LEVEL": [
+          "^(?!.*(fund[\\s-]?(level|wide)|partnership[\\s-]?(level|wide)|(partnership|fund) as a whole|\\bnot\\b)).*((investor|limited partner|\\blp)[\\s-]?level|\\bper[\\s-](investor|limited partner|lp)\\b|\\b(each|any|a|the) (investor|limited partner|lp)'?s? (capital account|interests?|nav|net asset value|holding))"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "key_man_provision": {
+      "expected": "NOT_APPLICABLE: the Partnership Agreement does not contain a key person provision (the key person notice and redemption rights in the Appendix B side letter belong only to that investor)",
+      "citation": "Section 10.2",
+      "quote": "The Partnership Agreement does not contain a key person provision.",
+      "accept": [
+        "not[_\\s]applicable",
+        "not[_\\s]found",
+        "\\bnone\\b",
+        "\\bn/a\\b",
+        "not stated",
+        "does not (state|specify|provide|contain|impose|have|include|apply(?! to (the )?(other|any other|remaining|all other)\\b))",
+        "\\bno (fund[\\s-]?level |partnership[\\s-]?level )?key[\\s-]?(person|man)",
+        "does not (contain|have|include|provide)[^.;]{0,40}key[\\s-]?(person|man)",
+        "\\bno\\b[^.;]{0,40}(key[\\s-]?(person|man)|provision|clause)",
+        "lacks?\\b[^.;]{0,30}(key|provision|clause)",
+        "not (specified|mentioned|disclosed|provided|included|addressed|offered)",
+        "^\\W*no\\b",
+        "\\babsent\\b",
+        "\\bsilent\\b",
+        "\\bno such\\b",
+        "does not exist"
+      ],
+      "partial": [],
+      "reject": {
+        "SIDE_LETTER_KEY_PERSON": [
+          "^(?!.*(not[_\\s]applicable|not[_\\s]found|\\bnone\\b|\\bno (fund[\\s-]?level |partnership[\\s-]?level )?key|does not (contain|have|include|provide)|only (to|for) (the )?(tollmead|investor|that)|side letter only)).*(oakhurst|key person event|special redemption|\\b10 days|five business days)"
+        ],
+        "HALLUCINATED_OTHER_PERSON": [
+          "^(?!.*(\\bnot\\b|\\bno\\b|\\bnone\\b|not_applicable|not_found|n/a|without)).*(assard|fenwright)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "side_letter"
+    },
+    "gp_commitment": {
+      "expected": "NOT_APPLICABLE: the General Partner is not required to make, and has not agreed to make, any capital contribution; the approximately $6,400,000 of Class A Interests held by Ms. Oakhurst, the General Partner and employees is a disclosed holding, not a commitment",
+      "citation": "Section 3.3",
+      "quote": "The General Partner is not required to make, and has not agreed to make, any capital contribution to the Partnership",
+      "accept": [
+        "not[_\\s]applicable",
+        "not[_\\s]found",
+        "\\bnone\\b",
+        "\\bn/a\\b",
+        "not stated",
+        "does not (state|specify|provide|contain|impose|have|include|apply)",
+        "not required",
+        "no requirement",
+        "not (obligated|obliged)",
+        "\\bno (gp |general partner |sponsor |required |minimum )?(capital )?(commitment|contribution)",
+        "has not agreed",
+        "\\bno\\b[^.;]{0,40}(commitment|obligation|requirement)",
+        "not a (capital )?commitment",
+        "under no obligation",
+        "lacks?\\b[^.;]{0,30}(commitment|requirement|obligation)",
+        "^(?!\\W*(approximately |about |approx\\.? |~)?(us\\s?\\$|usd|\\$)\\s*\\d).*\\bvoluntar",
+        "not (specified|mentioned|disclosed|provided|included|addressed|offered)",
+        "^\\W*no\\b",
+        "\\babsent\\b",
+        "\\bsilent\\b",
+        "\\bno such\\b",
+        "does not exist"
+      ],
+      "partial": [],
+      "reject": {
+        "HOLDING_AS_COMMITMENT": [
+          "^(?!.*(\\bnot\\b|\\bno\\b|\\bnone\\b|not_applicable|not_found|n/a|without)).*(6,400,000|\\b6\\.4\\s*(million|mm|m)\\b)"
+        ],
+        "HALLUCINATED_COMMITMENT_PERCENT": [
+          "^(?!.*(\\bnot\\b|\\bno\\b|\\bnone\\b|not_applicable|not_found|n/a|without)).*\\d+(\\.\\d+)?\\s*(%|percent|per\\s*cent)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "holding_not_commitment"
+    },
+    "fund_term": {
+      "expected": "No fixed term (indefinite): the Partnership continues until dissolved on a General Partner determination (90 days' notice), withdrawal or bankruptcy of the General Partner absent a successor, or judicial decree",
+      "citation": "Section 1.3",
+      "quote": "The Partnership has no fixed term.",
+      "accept": [
+        "no fixed term|indefinite|perpetual|until (it is |its )?dissol|\\bno (fixed |set |stated |specified )?(term|duration|maturity|end date|termination date)\\b|evergreen|open[\\s-]?ended|unlimited|\\bnot? (have a |has a )?fixed (term|duration)"
+      ],
+      "partial": [
+        "not[_\\s]applicable"
+      ],
+      "reject": {
+        "HALLUCINATED_FIXED_TERM": [
+          "^(?!.*(no fixed term|indefinite|perpetual|until (it is |its )?dissol|\\bno (fixed |set |stated |specified )?(term|duration|maturity|end date|termination date)\\b|evergreen|open[\\s-]?ended|unlimited|\\bnot? (have a |has a )?fixed (term|duration))).*\\b\\d+[\\s-]*(years?|yrs?)\\b"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "auditor": {
+      "expected": "Castellane Rook LLP",
+      "citation": "Section 8.3",
+      "quote": "Castellane Rook LLP, an independent registered public accounting firm, has been appointed as the Partnership's independent auditor",
+      "accept": [
+        "castellane\\s+rook"
+      ],
+      "partial": [],
+      "reject": {
+        "WRONG_SERVICE_PROVIDER": [
+          "^(?!.*castellane).*(tessford|lindqvist|pembury|norcaster|denholm)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "administrator": {
+      "expected": "Tessford Loame Fund Services, LLC",
+      "citation": "Section 8.1",
+      "quote": "Tessford Loame Fund Services, LLC (the \"Administrator\") serves as administrator of the Partnership.",
+      "accept": [
+        "tessford\\s+loame"
+      ],
+      "partial": [],
+      "reject": {
+        "WRONG_SERVICE_PROVIDER": [
+          "^(?!.*tessford).*(castellane|lindqvist|pembury|norcaster)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "prime_broker": {
+      "expected": "Pembury Hask Securities LLC and Norcaster Prime Services, LLC",
+      "citation": "Section 8.2",
+      "quote": "Pembury Hask Securities LLC and Norcaster Prime Services, LLC (each, a \"Prime Broker\") provide prime brokerage",
+      "accept": [
+        "^(?=.*pembury\\s+hask)(?=.*norcaster)"
+      ],
+      "partial": [
+        "pembury\\s+hask|norcaster"
+      ],
+      "reject": {
+        "WRONG_SERVICE_PROVIDER": [
+          "^(?!.*(pembury|norcaster)).*(tessford|castellane|lindqvist)"
+        ],
+        "HALLUCINATED_NONE": [
+          "^(?!.*(pembury|norcaster)).*(\\bnone\\b|not_applicable|not_found|does not)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "legal_counsel": {
+      "expected": "Lindqvist Ambrose LLP (counsel to the Partnership, the General Partner and the Investment Manager)",
+      "citation": "Section 8.4",
+      "quote": "Lindqvist Ambrose LLP acts as counsel to the Partnership, the General Partner and the Investment Manager.",
+      "accept": [
+        "^(?!(?=.*denholm)(?!.*denholm[^;]{0,60}(investor|tollmead|retirement|pension|\\bnot\\b))(?!.*(investor|tollmead|retirement|pension|\\bnot\\b)[^;]{0,40}denholm)).*lindqvist\\s+ambrose"
+      ],
+      "partial": [],
+      "reject": {
+        "SIDE_LETTER_INVESTOR_COUNSEL": [
+          "^(?!.*lindqvist).*denholm",
+          "^(?=.*lindqvist)(?=.*denholm)(?!.*denholm[^;]{0,60}(investor|tollmead|retirement|pension|\\bnot\\b))(?!.*(investor|tollmead|retirement|pension|\\bnot\\b)[^;]{0,40}denholm)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "mfn_election": {
+      "expected": "Yes: Limited Partners whose aggregate Capital Contributions (net of redemptions, aggregated for commonly controlled Limited Partners) are at least $25,000,000 (MFN Investors) may elect the benefit of any side letter term granted to another Limited Partner with equal or smaller aggregate Capital Contributions, excluding (a) investor-specific legal, regulatory, tax or public records terms, (b) fee terms for the General Partner, the Investment Manager and their affiliates and personnel, (c) terms granted to Limited Partners admitted at the January 2, 2026 commencement of operations, (d) capacity rights and (e) consents to transfer to affiliates; elections are due within 45 days after delivery of the quarterly compendium",
+      "citation": "Section 9.3",
+      "quote": "are at least $25,000,000 (an \"MFN Investor\") may elect to receive the benefit of any term of a side letter entered into with any other Limited Partner whose aggregate Capital Contributions (net of redemptions) are equal to or less than those of the MFN Investor",
+      "accept": [
+        "^(?=.*(25,000,000|\\b25(\\.0+)?\\s*(million|mm|m)\\b|twenty[\\s-]*five million))(?=.*(mfn|most[\\s-]*favou?red|\\byes\\b|offered|elect|available))"
+      ],
+      "partial": [
+        "^(?!.*(\\bno mfn\\b|\\bno most|not offered|not available|does not offer|regardless of (the )?(amount|size)|governmental plan|40,000,000|\\b40(\\.0+)?\\s*(million|mm|m)\\b|10,000,000|\\b10(\\.0+)?\\s*(million|mm|m)\\b)).*(mfn|most[\\s-]*favou?red|\\byes\\b)"
+      ],
+      "reject": {
+        "SIDE_LETTER_MFN_EXPANSION": [
+          "^(?!.*(25,000,000|\\b25(\\.0+)?\\s*(million|mm|m)\\b|twenty[\\s-]*five million)).*(regardless of (the )?(amount|size)|governmental plan)"
+        ],
+        "SIDE_LETTER_AMOUNT_AS_THRESHOLD": [
+          "^(?!.*(25,000,000|\\b25(\\.0+)?\\s*(million|mm|m)\\b|twenty[\\s-]*five million)).*(40,000,000|\\b40(\\.0+)?\\s*(million|mm|m)\\b|30,000,000|\\b30(\\.0+)?\\s*(million|mm|m)\\b)"
+        ],
+        "REPORTING_THRESHOLD_AS_MFN": [
+          "^(?!.*(25,000,000|\\b25(\\.0+)?\\s*(million|mm|m)\\b|twenty[\\s-]*five million)).*(10,000,000|\\b10(\\.0+)?\\s*(million|mm|m)\\b)"
+        ],
+        "HALLUCINATED_NO_MFN": [
+          "^(?!.*(25,000,000|\\b25(\\.0+)?\\s*(million|mm|m)\\b|twenty[\\s-]*five million)).*(\\bno mfn\\b|not offered|\\bnone\\b|not_applicable|not_found)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "side_letter"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "piece_id": "t7_p16",
+  "form": "pitch deck slide text",
+  "notes": "Private fund long/short equity deck (so C3 does not apply) with a gross-only year-to-date callout, a trough-start compounding claim and an undated, unattributed ranking, set against a properly paired gross/net track record and a contributor list shown with the total fund return.",
+  "planted": [
+    {
+      "iid": "p1",
+      "category": "C2",
+      "span": "In the first half of 2026, the Fund returned 9.4% gross of fees, against 3.1% for the Tennock U.S. Small/Mid Cap Index, with gross exposure held between 140% and 165%.",
+      "explanation": "The 2026 year-to-date return is given only gross of fees, and no net figure for that period appears anywhere in the deck, let alone with equal prominence."
+    },
+    {
+      "iid": "p2",
+      "category": "C4",
+      "span": "Measured from September 30, 2022, the month-end closest to the market low, through June 30, 2026, the Fund compounded at 14.6% annualized net of fees, turning $1 million into $1.67 million.",
+      "explanation": "The start date is expressly chosen at the market trough, excluding the 2022 drawdown and producing 14.6% against the 10.9% annualized since inception shown on Slide 5."
+    },
+    {
+      "iid": "p3",
+      "category": "C7",
+      "span": "Named a Top 10 Long/Short Equity Manager by a leading independent hedge fund research service, reflecting the Fund's risk-adjusted returns.",
+      "explanation": "The ranking omits the date it was given, the period it was based on, the identity of the rater and whether the adviser paid anything to obtain or use it; a reviewer may also read \"Top 10\" as a C6 statement, but the missing rater disclosures make C7 the primary code."
+    }
+  ],
+  "decoys": [
+    {
+      "did": "d1",
+      "looks_like": "C2",
+      "span": "| Year | Fund gross | Fund net | Index |\n|---|---|---|---|\n| 2019 | 21.4% | 15.8% | 24.0% |\n| 2020 | 26.3% | 19.8% | 17.5% |\n| 2021 | 18.7% | 13.7% | 16.3% |\n| 2022 | -10.4% | -12.0% | -18.9% |\n| 2023 | 17.9% | 15.8% | 17.2% |\n| 2024 | 14.9% | 10.6% | 12.4% |\n| 2025 | 21.6% | 16.0% | 9.8% |\n| Annualized, Jan. 1, 2019 to Dec. 31, 2025 | 15.2% | 10.9% | 10.3% |",
+      "why_ok": "Every gross figure sits in an adjacent column beside the net figure for the same period in the same format, so net has at least equal prominence."
+    },
+    {
+      "did": "d2",
+      "looks_like": "C8",
+      "span": "Contribution to 2025 gross return, in basis points; shorts described, not named.\n\n- Top five contributors: Ormsby Valve & Controls (long, +312), Tarnwell Packaging (long, +248), Castlereagh Freight Components (long, +221), regional consumer lender (short, +187), Glaisdale Foods (long, +164).\n- Top five detractors: Vintrell Home Furnishings (long, -141), specialty apparel retailer (short, -118), Rushworth Tile & Stone (long, -96), payments processor (short, -88), Kinloss Pet Supply (long, -73).\n- Fund total return for 2025, the year these positions are drawn from: 21.6% gross and 16.0% net of fees and expenses.",
+      "why_ok": "The winners are shown with the five largest detractors and, on the same slide, the total fund's 2025 return gross and net, which is the portfolio they were drawn from."
+    }
+  ]
+}

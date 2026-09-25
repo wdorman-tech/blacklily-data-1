@@ -1,0 +1,114 @@
+The user wants a JSON object representing the CRM update based on the provided meeting transcript.
+I need to extract specific information and adhere to strict rules about what to record (only what was said, final versions of figures/dates, action items vs ideas).
+
+**Key Fields to Extract:**
+1.  **meeting_date**: "Tuesday, September 15, 2026" (from transcript header).
+2.  **client_names**: ["Colleen Rasmund"] (Renata Szalai is Advisor, Imogen Staveley is Paraplanner).
+3.  **primary_goal**: "stay in the house while the estate gets settled" / "okay on one income". Renata explicitly states: "If I write down one goal for you, your primary goal, it's this: you're okay on one income... and you can stay in the house while the estate gets settled."
+4.  **retirement_target**: Originally discussed as 65, then changed to 67. Colleen says "Then let's say 67." Renata confirms "Sixty-seven it is." So final is 67.
+5.  **risk_tolerance**: Changed from "moderately aggressive" (on file) to "moderate". Renata states: "we're changing your risk profile from moderately aggressive to moderate."
+6.  **risk_tolerance_change**: "from moderately aggressive to moderate".
+7.  **life_events**:
+    *   Walter's death (implied by funeral, estate settlement).
+    *   Siobhan pregnant, due in February (first grandchild).
+    *   Insurance claim received ($262,400 net after loan).
+    *   House sale decision deferred.
+    *   Retirement age change.
+    *   Need to list significant life events discussed with figures if applicable. The prompt asks for "each significant life event discussed, with figures".
+    *   Events: Walter's death (estate settlement), Siobhan pregnant (due Feb), Insurance claim ($262,400).
+8.  **account_actions**:
+    *   Transfer $50,000 stays at Esker Valley checking.
+    *   Transfer remaining insurance money to new Treasury money market account. Amount corrected from 300k to 262,400 (net), so transfer is 212,400.
+    *   Standing monthly transfer $1,800 from new money market to Esker Valley checking starting Oct 15.
+    *   Rollover Walter's IRA ($418,000) into Colleen's IRA.
+    *   Update beneficiaries on IRA and new account (Siobhan Kearsley and Declan Thomas Rasmund, 50/50).
+    *   Update Marrowfield 403(b) and group life beneficiaries (Colleen says she will do this by end of month).
+    *   Wait, the rule says "An action item is a task someone agreed to do." vs "account_actions". Account actions usually refer to specific financial transactions or account changes initiated by the firm. Action items are tasks for people.
+    *   Looking at the transcript:
+        *   Renata suggests keeping $50k at Esker Valley, rest to new account. Colleen agrees ("I like parked"). Imogen confirms transfer authorization.
+        *   Standing transfer $18k/month (wait, transcript says 1,800). "1,800 a month".
+        *   Rollover IRA.
+        *   Beneficiary updates.
+    *   Let's check the JSON schema for `account_actions`. It expects `action`, `account`, `amount`.
+    *   Action: Transfer insurance proceeds to new Treasury money market account. Amount: 212,400 (after loan deduction). Account: New Individual Account / Treasury Money Market.
+    *   Action: Keep $50,000 at Esker Valley checking. (This is a decision not to move it, but effectively an action on the existing account). Or maybe just the transfer out.
+    *   Action: Standing monthly transfer $1,800 from new money market to Esker Valley checking. Account: New Money Market -> Esker Valley Checking. Amount: 1,800.
+    *   Action: Rollover Walter's IRA into Colleen's IRA. Account: Walter's IRA -> Colleen's IRA. Amount: 418,000 (approx).
+    *   Action: Update beneficiaries on IRA and new account. Account: IRA / New Individual Account. Amount: NOT_FOUND (or N/A).
+    *   Action: Update Marrowfield 403(b) and group life. Account: Marrowfield 403(b) / Group Life. Amount: NOT_FOUND.
+    *   Wait, the rule says "Record only what was said in the meeting." and "An action item is a task someone agreed to do."
+    *   The `account_actions` field seems to be for financial actions taken or authorized.
+    *   Let's refine account_actions based on explicit agreements:
+        1.  Transfer $212,400 from insurance proceeds to new Treasury money market account (after keeping $50k at Esker Valley).
+        2.  Set up standing transfer of $1,800/month from new money market to Esker Valley checking starting Oct 15.
+        3.  Rollover Walter's IRA ($418,000) into Colleen's IRA.
+        4.  Update beneficiaries on IRA and new account (Siobhan/Declan).
+    *   However, usually `account_actions` implies specific financial moves. The beneficiary update is often an action item or account action depending on interpretation. Given the schema has `action_items` for tasks, `account_actions` likely refers to the financial setup.
+    *   Let's look at the instruction: "An action item is a task someone agreed to do." vs "account_actions". Usually, account actions are things like "Transfer funds", "Open account", "Update beneficiary".
+    *   I will include the specific fund movements and rollovers as account actions. Beneficiary updates might fit better in action items if they are tasks for the client or advisor, but often they are account changes. Let's put the financial transfers there. The beneficiary update is a task (Imogen to prepare forms, Colleen to sign).
+    *   Actually, looking at the transcript: "Imogen sends one e-sign packet tomorrow...". This implies the actions will happen after signatures.
+    *   I'll list the specific account changes agreed upon.
+9.  **action_items**:
+    *   Call Kessling pension center for withholding form and benefit confirmation letter (Owner changed from Colleen to Imogen). Deadline: Before Oct 1 payment.
+    *   Send bills list by Friday the 25th (Colleen).
+    *   Update Marrowfield 403(b) and group life beneficiaries by end of month (Colleen).
+    *   Ask Harriet about updating will, POA, health care proxy on Thursday meeting (Colleen/Declan/Siobhan).
+    *   Social Security analysis ready for next meeting (Renata/Imogen).
+10. **next_meeting**: "Thursday, December 3rd at 10" (In person).
+
+**Refining Values:**
+*   **meeting_date**: "2026-09-15" (Tuesday, September 15, 2026).
+*   **client_names**: ["Colleen Rasmund"].
+*   **primary_goal**: "stay in the house while the estate gets settled and be okay on one income".
+*   **retirement_target**: "67".
+*   **risk_tolerance**: "moderate".
+*   **risk_tolerance_change**: "from moderately aggressive to moderate".
+*   **life_events**: ["Walter's death (estate settlement)", "Siobhan pregnant due February", "Insurance claim received ($262,400 net)"]. I need to format these with figures if applicable. The prompt says "with figures". So maybe include the insurance amount there.
+*   **account_actions**:
+    *   Transfer $50,000 stays at Esker Valley checking (Action: Keep funds).
+    *   Transfer $212,400 to new Treasury money market account.
+    *   Standing transfer $1,800/month from new money market to Esker Valley checking starting Oct 15.
+    *   Rollover Walter's IRA ($418,000) into Colleen's IRA.
+    *   Update beneficiaries on IRA and new account (Siobhan Kearsley, Declan Thomas Rasmund).
+*   **action_items**:
+    *   Task: Call Kessling pension center for withholding form/confirmation. Owner: Imogen Staveley. Due: Before October 1.
+    *   Task: Send bills list. Owner: Colleen Rasmund. Due: Friday the 25th (2026-09-25).
+    *   Task: Update Marrowfield 403(b) and group life beneficiaries. Owner: Colleen Rasmund. Due: End of month (September 30, 2026).
+    *   Task: Ask Harriet Vosburgh about updating will/POA/health care proxy. Owner: Colleen Rasmund. Due: Thursday meeting (Sept 17? Transcript says "Declan's the executor... meeting with her Thursday". Meeting date is Sept 15. So Thursday is Sept 17).
+    *   Task: Social Security analysis. Owner: Renata Szalai / Imogen Staveley. Due: Next meeting (Dec 3).
+*   **next_meeting**: "Thursday, December 3rd at 10".
+
+**Correction Check:**
+*   Insurance amount: Initially said 300k. Later corrected to 262,400 due to loan. Final agreed transfer is 212,400 (262,400 - 50,000).
+*   Retirement target: Changed from 65 to 67.
+*   Risk tolerance: Changed from moderately aggressive to moderate.
+*   Action item owner for Kessling call: Imogen Staveley took over the task explicitly ("Imogen, can you take the Kessling call? ... So that's Imogen's now").
+*   Bills list deadline: Originally Friday (Sept 18?), changed to Friday the 25th.
+*   Next meeting date: December 3rd, 2026.
+
+**Formatting:**
+*   JSON only.
+*   No markdown.
+*   Keys exactly as specified.
+*   Dates in ISO format or readable string? Transcript uses "Tuesday, September 15, 2026". I will use standard date strings like "2026-09-15" for consistency, or follow the transcript style if it's clearer. The prompt says "Record due dates as stated; add the calendar date where the meeting date makes it unambiguous."
+*   Meeting date: "Tuesday, September 15, 2026". I'll use "2026-09-15" for consistency with standard JSON date handling, or keep the text if it's better. Usually ISO is safer. Let's look at `next_meeting`. "Thursday, December 3rd". I will format as "2026-12-03".
+*   Wait, rule 5: "Record due dates as stated; add the calendar date where the meeting date makes it unambiguous."
+    *   Meeting is Sept 15.
+    *   Bills list: "Friday the 25th" -> 2026-09-25.
+    *   Next meeting: "Thursday, December 3rd" -> 2026-12-03.
+    *   Kessling call: "Before October 1".
+*   `life_events`: Needs to be a list of strings. "Walter's death", "Siobhan pregnant due February", "Insurance claim $262,400".
+*   `account_actions`: List of objects.
+    *   Action: Transfer insurance proceeds to new Treasury money market account. Account: New Individual Account. Amount: 212,400.
+    *   Action: Keep funds at Esker Valley checking. Account: Esker Valley Checking. Amount: 50,000. (Or maybe just the transfer out). Let's focus on the movements.
+    *   Action: Set up standing monthly transfer. Account: New Money Market -> Esker Valley Checking. Amount: 1,800.
+    *   Action: Rollover Walter's IRA. Account: Walter's IRA -> Colleen's IRA. Amount: 418,000.
+    *   Action: Update beneficiaries. Account: IRA / New Individual Account. Amount: NOT_FOUND.
+*   `action_items`: List of objects.
+    *   Task: Call Kessling pension center. Owner: Imogen Staveley. Due: 2026-10-01 (Before Oct 1).
+    *   Task: Send bills list. Owner: Colleen Rasmund. Due: 2026-09-25.
+    *   Task: Update Marrowfield beneficiaries. Owner: Colleen Rasmund. Due: 2026-09-30 (End of month).
+    *   Task: Ask Harriet about estate docs. Owner: Colleen Rasmund. Due: 2026-09-17 (Thursday after meeting).
+    *   Task: Social Security analysis. Owner: Renata Szalai / Imogen Staveley. Due: 2026-12-03.
+
+Let's double check the `account_actions` vs `action_items

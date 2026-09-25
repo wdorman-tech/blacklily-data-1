@@ -1,0 +1,108 @@
+The user wants a JSON object representing the provided text. I need to identify the key sections and information.
+
+    *   Section 12.3: Consequences of Plan Asset Status (ERISA, Section 406, Section 4975).
+    *   Section 12.4: Reporting of Indirect Compensation (Form 5500, Schedule C).
+    *   Section 12.5: Governmental and Other Plans (ERISA, Section 4975).
+    *   Section 13.1: Investment Company Act and Securities Act (Section 3(c)(7), Rule 506(b)).
+    *   Section 13.2: Investment Advisers Act (Form PF, Form ADV Part 2A).
+    *   Section 13.3: Commodity Exchange Act (CFTC Rule 4.7).
+    *   Section 13.4: Cayman Islands Regulation (CIMA, Mutual Funds Act, AML).
+    *   Section 13.5: Sanctions and Anti-Money Laundering (OFAC).
+    *   Section 13.6: Privacy (Regulation S-P).
+    *   Section 13.7: Administrator (Stellmoor Fund Services Ltd.).
+    *   Section 13.8: Prime Brokers and Custody (Kittering Hale, Mallory Quenby).
+    *   Section 13.9: Independent Auditor (Brennick Tallow LLP - note: this is updated in Section 14).
+    *   Section 13.10: Legal Counsel (Tregarth Ellingsby, Carrick Mowbray).
+    *   Section 13.11: Directory (Addresses for all entities).
+    *   Section 14: Summary of Changes Effective July 1, 2026.
+        *   14.1: Redemption Notice Period (increased to 45 days).
+        *   14.2: Fund-Level Gate (15% cap).
+        *   14.3: Independent Auditor (Change to Marbeck Pennycott LLP).
+        *   14.4: Other Terms (Management Fee, Incentive Allocation, etc., remain unchanged).
+
+    *   `regulatory_matters`:
+        *   `investment_company_act`: "Section 3(c)(7) of the Investment Company Act; Rule 506(b) of Regulation D."
+        *   `investment_advisers_act`: "Registered under Investment Advisers Act of 1940; files Form PF and Part 2A of Form ADV."
+        *   `commodity_exchange_act`: "Operated as commodity pools under CFTC Rule 4.7."
+        *   `cayman_islands_regulation`: "Registered with CIMA; subject to Anti-Money Laundering Regulations and Data Protection Act."
+        *   `sanctions_aml`: "Complies with OFAC and Cayman Islands sanctions."
+        *   `privacy`: "Complies with Regulation S-P and state laws."
+    *   `service_providers`:
+        *   `administrator`: "Stellmoor Fund Services Ltd."
+        *   `prime_brokers`: ["Kittering Hale Securities LLC", "Mallory Quenby & Co. LLC"]
+        *   `independent_auditor`: "Marbeck Pennycott LLP (Effective July 1, 2026)"
+        *   `legal_counsel_us`: "Tregarth Ellingsby LLP"
+        *   `legal_counsel_cayman`: "Carrick Mowbray"
+    *   `amendments_july_1_2026`:
+        *   `redemption_notice_period`: "Increased from 30 to 45 days."
+        *   `fund_level_gate`: "15% cap on aggregate redemptions."
+        *   `auditor_change`: "Brennick Tallow LLP replaced by Marbeck Pennycott LLP."
+    *   `plan_asset_status`: "Fiduciary status and potential non-exempt prohibited transactions under ERISA/Code."
+
+    *   The user wants a JSON object. I should structure it logically based on the headings provided.
+
+    *   *Self-Correction during drafting:* The prompt asks for a JSON object of the text. I should capture the key entities and terms.
+
+    *   *Structure:*
+        *   `section_12_plan_assets_and_reporting`
+        *   `section_13_regulatory_and_service_providers`
+        *   `section_14_amendments_july_2026`
+
+    *   *Refining content:*
+        *   `plan_asset_status`: "Fiduciary status, ERISA Section 406, Section 4975."
+        *   `indirect_compensation`: "Form 5500 Schedule C."
+        *   `investment_company_act`: "3(c)(7), Rule 506(b)."
+        *   `commodity_exchange_act`: "CFTC Rule 4.7."
+        *   `cayman_regulations`: "CIMA, Mutual Funds Act, AML."
+        *   `service_providers`: { "administrator": "Stellmoor Fund Services Ltd.", "prime_brokers": ["Kittering Hale Securities LLC", "Mallory Quenby & Co. LLC"], "auditor": "Marbeck Pennycott LLP", "us_counsel": "Tregarth Ellingsby LLP", "cayman_counsel": "Carrick Mowbray" }
+        *   `amendments`: { "redemption_notice": "45 days", "gate": "15%", "auditor_change": "Marbeck Pennyott" }
+
+    *   *Final check of the text:*
+        *   12.3: Plan assets/ERISA.
+        *   12.4: Form 5500.
+        *   12.5: Gov/Church/Non-US plans.
+        *   13.1: 3(c)(7), 506(b).
+        *   13.2: Form PF, Form ADV.
+        *   13.3: CFTC 4.7.
+        *   13.4: CIMA.
+        *   13.5: OFAC.
+        *   13.6: Reg S-P.
+        *   13.7: Stellmoor.
+        *   13.8: Kittering Hale, Mallory Quenby.
+        *   13.9: Brennick Tallow (Old) -> Marbeck Pennycott (New).
+        *   13.10: Tregarth Ellingsby, Carrick Mowbray.
+        *   14.1: 45 days.
+        *   14.2: 15% gate.
+        *   14.3: Marbeck Pennycott.
+
+    *   *Constructing JSON:*
+
+    ```json
+    {
+      "section_12_plan_assets_and_reporting": {
+        "plan_asset_status": "Fiduciary status under ERISA Section 406 and Section 4975 of the Code.",
+        "indirect_compensation_reporting": "Complies with Schedule C of Form 5500.",
+        "governmental_and_other_plans": "Not subject to Title I of ERISA or Section 4975 of the Code."
+      },
+      "section_13_regulatory_matters_and_service_providers": {
+        "investment_company_act": "Exclusion under Section 3(c)(7); offered under Rule 506(b).",
+        "investment_advisers_act": "Registered under Investment Advisers Act of 1940; files Form PF and Form ADV Part 2A.",
+        "commodity_exchange_act": "Operated as commodity pools under CFTC Rule 4.7.",
+        "cayman_islands_regulation": "Registered with CIMA under Mutual Funds Act; subject to AML and Data Protection Act.",
+        "sanctions_and_aml": "Complies with OFAC and Cayman Islands sanctions.",
+        "privacy": "Complies with Regulation S-P and state laws.",
+        "service_providers": {
+          "administrator": "Stellmoor Fund Services Ltd.",
+          "prime_brokers": [
+            "Kittering Hale Securities LLC",
+            "Mallory Quenby & Co. LLC"
+          ],
+          "independent_auditor": "Marbeck Pennycott LLP (Effective July 1, 2026)",
+          "us_legal_counsel": "Tregarth Ellingsby LLP",
+          "cayman_legal_counsel": "Carrick Mowbray"
+        }
+      },
+      "section_14_amendments_effective_july_1_2026": {
+        "redemption_notice_period": "Increased from 30 to 45 days.",
+        "fund_level_gate": "15% cap on aggregate redemptions.",
+        "auditor_

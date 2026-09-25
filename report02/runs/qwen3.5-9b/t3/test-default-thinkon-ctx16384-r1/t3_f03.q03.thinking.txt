@@ -1,0 +1,51 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What is the firm's limit on gifts given to or received from any single source, and what approval is required above it?"
+    *   Key elements needed: Limit amount, Approval requirement above limit.
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "gift", "limit", "value", "approval", "source", "recipient".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Discusses advisory business, services, code of ethics (participation/interest). No specific gift limits mentioned here.
+    *   `02_compliance_manual.md`:
+        *   Section 5.1 General Principles: Mentions Supervised Persons may not give or accept gifts that influence judgment. Prohibits cash/gift cards. Prohibits soliciting.
+        *   Section 5.2 Gifts: "No Supervised Person may give or accept gifts with an aggregate value exceeding $250 per source or recipient per calendar year without the prior written approval of the CCO."
+        *   Section 5.3 Business Entertainment: Mentions entertainment value exceeding $500 requires CCO approval. (Not general gifts).
+        *   Section 5.4 Gifts from Client Families: Refers back to Section 5.2.
+
+5.  **Synthesize the Answer:**
+    *   Limit: $250 per source or recipient per calendar year.
+    *   Approval required above limit: Prior written approval of the CCO (Chief Compliance Officer).
+    *   Document: `02_compliance_manual.md`.
+    *   Section: `SECTION 5. GIFTS AND ENTERTAINMENT > 5.2 Gifts`.
+    *   Quote: "No Supervised Person may give or accept gifts with an aggregate value exceeding $250 per source or recipient per calendar year without the prior written approval of the CCO."
+
+6.  **Verify Constraints:**
+    *   JSON format? Yes.
+    *   Keys: "answer", "source_document", "section", "quote".
+    *   Verbatim quote? Yes.
+    *   No markdown fences? Yes.
+    *   No preamble? Yes.
+
+7.  **Draft the JSON:**
+    ```json
+    {
+      "answer": "$250 per source or recipient per calendar year; prior written approval of the CCO is required above this limit",
+      "source_document": "02_compliance_manual.md",
+      "section": "SECTION 5. GIFTS AND ENTERTAINMENT > 5.2 Gifts",
+      "quote": "No Supervised Person may give or accept gifts with an aggregate value exceeding $250 per source

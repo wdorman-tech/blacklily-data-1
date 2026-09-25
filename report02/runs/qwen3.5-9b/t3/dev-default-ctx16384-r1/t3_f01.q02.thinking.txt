@@ -1,0 +1,37 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Documents:**
+    *   Document 1: `04_business_continuity_plan.md` (dated May 4, 2026).
+        *   Section 3.1 Recovery Time Objectives: States Tier 1 systems recovery time objective is 24 hours.
+    *   Document 2: `06_policy_update_memo.md` (dated August 17, 2026).
+        *   Section 4. BUSINESS CONTINUITY: TIER 1 RECOVERY TIME OBJECTIVE: States this amends Business Continuity Plan, Section 3.1. It shortens the Tier 1 recovery time objective from 24 hours to **8 hours**.
+        *   Explicitly states: "This change supersedes the 24-hour objective stated in Section 3.1 of the Business Continuity Plan."
+
+3.  **Determine the Correct Answer:**
+    *   The question asks for the recovery time objective set for Tier 1 critical systems.
+    *   There are two documents. Document 2 (`06_policy_update_memo.md`) is dated August 17, 2026. Document 1 (`04_business_continuity_plan.md`) is dated May 4, 2026.
+    *   Rule 3: "Later-dated documents supersede earlier ones."
+    *   Document 2 explicitly amends Document 1 regarding Tier 1 recovery time objectives.
+    *   Therefore, the current objective is 8 hours.
+    *   Source document for the *current* effective rule: `06_policy_update_memo.md`.
+    *   Section in that document: `SECTION 4. BUSINESS CONTINUITY: TIER 1 RECOVERY TIME OBJECTIVE`.
+    *   Quote: "The recovery time objective for Tier 1 systems is shortened from 24 hours to 8 hours from the declaration of a Significant Business Disruption." (Or similar verbatim text). Let's find the most precise quote.
+    *   Text in `06_policy_update_memo.md`: "**Amends:** Business Continuity Plan, Section 3.1 (Recovery Time Objectives). The recovery time objective for Tier 1 systems is shortened from 24 hours to 8 hours from the declaration of a Significant Business Disruption."
+    *   Text in `04_business_continuity_plan.md` (superseded): "The recovery time objective for Tier 1 systems is 24 hours from the declaration of a Significant Business Disruption."
+
+    *   Decision: Use the later document (`06_policy_update_memo.md`) because it supersedes the earlier one.
+    *   Answer: 8 hours.
+    *   Source: `06_policy_update_memo.md`.
+    *   Section: `

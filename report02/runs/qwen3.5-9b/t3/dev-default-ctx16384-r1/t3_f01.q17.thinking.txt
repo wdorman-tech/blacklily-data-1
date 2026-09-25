@@ -1,0 +1,42 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What has the firm's staff turnover rate been in each of the last three years, including departures of investment professionals?"
+    *   Key information needed: Staff turnover rate, last three years, including departures of investment professionals.
+
+3.  **Scan the Documents:**
+    *   `01_brochure.md` (March 27, 2026):
+        *   Item 2. Material Changes: Mentions new office, account minimum, custodian, standing letters. No turnover info.
+        *   Item 4. Advisory Business > 4.6 Assets Under Management and Personnel: Mentions "The Firm has 41 employees, including 17 wealth advisors, across its three offices." No turnover rate or history.
+        *   Item 8. Investment Strategies: Discusses portfolio management, options, etc. No HR data.
+        *   Item 9. Disciplinary Information: Legal/disciplinary events. No HR data.
+        *   Item 13. Review of Accounts: Meeting frequency, rebalancing. No HR data.
+    *   `03_valuation_policy.md` (February 10, 2026):
+        *   Section 8. Independent Review > 8.1 Annual Compliance Review: Chief Compliance Officer reviews policy annually. No turnover info.
+        *   Section 8. Independent Review > 8.2 External Review: External valuation firm review every two years. No turnover info.
+    *   `05_fee_schedule.md` (April 1, 2026):
+        *   Section 6. Termination and Refunds > 6.3 Five-Business-Day Cancellation: Fee refund policy. No turnover info.
+
+4.  **Evaluate Findings:**
+    *   None of the provided documents contain information regarding staff turnover rates for the last three years or departures of investment professionals.
+    *   The only personnel-related statistic is the total number of employees (41) and wealth advisors (17) as of December 31, 2025 (`01_brochure.md`, Item 4.6).
+    *   Since the specific data point (turnover rate for last three years) is missing, I must follow Rule 2: "If the documents do not answer the question... the answer is exactly NOT_IN_DOCUMENTS."
+
+5.  **Construct the JSON:**
+    *   `answer`: "NOT_IN_DOCUMENTS"
+    *   `source_document`: "" (empty string as per rule for NOT_IN_DOCUMENTS)
+    *   `section`: "" (empty string as per rule for NOT_IN_DOCUMENTS)
+    *   `quote`: "" (empty string as per rule for NOT

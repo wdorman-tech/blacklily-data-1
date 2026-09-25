@@ -1,0 +1,42 @@
+*   Question: "What is the management company's annual operating budget, and at what level of assets under management does the Adviser break even?"
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+    *   Keys: "answer", "source_document", "section", "quote".
+
+    *   `05_fee_schedule.md`: Contains information about management fees, incentive allocation, carried interest, minimum investments, and redemption charges.
+    *   `06_policy_update_memo.md`: Contains amendments to the Compliance Manual, Valuation Policy, Business Continuity Plan, and Fee Schedule.
+
+    *   "annual operating budget"
+    *   "break even"
+    *   "assets under management" (AUM)
+
+    *   `05_fee_schedule.md`:
+        *   Section 2: Management Fees (Rates by Class, Large Investor Rate, Billing Frequency, Proration).
+        *   Section 3: Incentive Allocation.
+        *   Section 4: Co-Investment Fund (Management Fee, Carried Interest, Expenses).
+        *   Section 5: Redemptions, Termination, and Refunds.
+        *   Section 6: Minimum Investments.
+    *   `06_policy_update_memo.md`:
+        *   Section 2.1: Compliance Manual Section 4.5 (Minimum Holding Period).
+        *   Section 2.2: Compliance Manual Section 4.6 (Quarterly Transaction Reports).
+        *   Section 2.3: Compliance Manual Section 5.2 (Gifts Received).
+        *   Section 2.4: Valuation Policy Section 2.3 (Meetings).
+        *   Section 2.5: Business Continuity Plan Section 5.2 (IT Managed Service Provider).
+        *   Section 2.6: Fee Schedule Section 2.2 (Large Investor Rate).
+
+    *   The documents mention "management fees" and "minimum investments", but they do not mention the "annual operating budget" or the "break-even" point for the Adviser.
+
+    *   answer: "NOT_IN_DOCUMENTS"
+    *   source_document: ""
+    *   section: ""
+    *   quote: ""
+
+    *   The question asks for specific financial figures (operating budget, break-even point) that are typically internal firm data and not included in the provided fee schedule or policy update memo.
+
+    ```json
+    {
+      "answer": "NOT_IN_DOCUMENTS",
+      "source_document": "",
+      "section": "",
+      "quote": ""
+    }
+    ```

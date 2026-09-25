@@ -1,0 +1,21 @@
+*   Question: Describe the composition of the Valuation Committee, including voting and non-voting members, and its quorum requirement.
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+    *   Keys: "answer", "source_document", "section", "quote".
+
+    *   Document: `01_valuation_policy.md` (implied by the content, but the prompt shows it as the first block).
+    *   Section: 2.1 Composition and 2.2 Quorum and Voting.
+    *   Content:
+        *   Voting members: Chief Financial Officer, Ines Morrow-Tate (Chair); Chief Risk Officer, Yuki Ashbury; and the Director of Portfolio Operations, Leopold Sarkis.
+        *   Non-voting members: Chief Compliance Officer, Priya Castellane, and the Head of Credit Research, Rafael Denholm.
+        *   Quorum: Two voting members, at least one of whom must be the Chief Financial Officer or the Chief Risk Officer.
+
+    *   "answer": The voting members are the Chief Financial Officer (Ines Morrow-Tate, who chairs the Committee), the Chief Risk Officer (Yuki Ashbury), and the Director of Portfolio Operations (Leopold Sarkis). The non-voting members are the Chief Compliance Officer (Priya Castellane) and the Head of Credit Research (Rafael Denholm). A quorum consists of two voting members, at least one of whom must be the Chief Financial Officer or the Chief Risk Officer.
+    *   "source_document": 01_valuation_policy.md (Wait, the prompt shows the first block as `01_valuation_policy.md`? No, the prompt shows the content of the first document but doesn't explicitly name it in the text block, but the prompt structure implies the first block is the first document. Let's look at the prompt's structure: `<<< 01_valuation_policy.md >>>` is not there, but the content is clearly the Valuation Policy. Looking at the prompt again, the first block is the Valuation Policy. The second is `04_business_continuity_plan.md`. The third is `05_fee_schedule.md`. The fourth is `06_policy_update_memo.md`. Wait, the first block doesn't have a filename in the prompt's text, but the question asks for the source document. Let's look at the prompt again. Ah, the prompt shows:
+        `[Content of Valuation Policy]`
+        `<<< 04_business_continuity_plan.md >>>`
+        `[Content of BCP]`
+        `<<< 05_fee_schedule.md >>>`
+        `[Content of Fee Schedule]`
+        `<<< 06_policy_update_memo.md >>>`
+        `[Content of Memo]`
+        The first block doesn't have a filename in the prompt's text, but usually, in these tasks, if the first block is the Valuation Policy, and the next is 04, the first is 01. Let's check the prompt text again. It doesn't actually show a filename for the first block. It just starts with "This Policy establishes...". However, looking at the structure, the first block is the Valuation Policy. I will check if there's a standard naming convention. Since the next is 04, the first is likely 01. Wait, I see the prompt text: `<<< 04_business_continuity_plan.md >>>`.

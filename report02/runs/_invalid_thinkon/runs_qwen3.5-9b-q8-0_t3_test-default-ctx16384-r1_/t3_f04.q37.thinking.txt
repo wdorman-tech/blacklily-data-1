@@ -1,0 +1,40 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "How does the Firm value privately placed notes, which are Level 3 positions?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "privately placed notes", "value", "Level 3", "valuation".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Mentions MNPI and restricted lists, not valuation methodology for private placements specifically.
+    *   `02_compliance_manual.md`: Mentions sources of MNPI in Fixed Income, including private placements, but not valuation methodology.
+    *   `03_valuation_policy.md`:
+        *   Section 3.5: "Privately placed notes are valued under Section 4.2." (Points to the right section).
+        *   Section 4.1: Classifies Level 3 positions, mentions private placement matrix.
+        *   Section 4.2 "Privately Placed Notes": Explicitly describes the valuation method.
+            *   Text: "Privately placed notes are valued by a matrix method. The Firm determines a spread over the interpolated U.S. Treasury curve equal to the spread of comparable public securities of the same issuer or, where none exist, of comparable issuers with a similar internal rating, sector and maturity, plus an illiquidity premium, plus adjustments for structural features such as financial covenants, make-whole provisions, security and subordination. The note's scheduled cash flows are discounted at the resulting yield."
+        *   Section 4.3: Discusses distressed/defaulted securities.
+        *   Section 4.4: Discusses documentation/approval.
+        *   Section 8.1: Discusses independent review.
+
+5.  **Determine the Best Answer:**
+    *   The question asks "How does the Firm value privately placed notes".
+    *   Document `03_valuation_policy.md`, Section `4.2 Privately Placed Notes` contains the specific methodology.
+    *   Date: February 10, 2026. (This is the only valuation policy document provided, so no conflict with earlier/later dates regarding this specific topic).
+    *   The text in Section 4.2 directly answers "How".
+
+6.  **Draft the JSON:**
+    *   `answer`: Summarize the method described in Section 4.2 (Matrix method, spread over interpolated U.S. Treasury curve, etc.). Or use the verbatim quote as the answer content? The instructions say "Quote the supporting text verbatim" for the `quote` key. The `answer` key should contain the actual answer to the question. Usually, in these tasks, the `answer` field is a concise summary or the direct response derived from the document, while `quote` provides the

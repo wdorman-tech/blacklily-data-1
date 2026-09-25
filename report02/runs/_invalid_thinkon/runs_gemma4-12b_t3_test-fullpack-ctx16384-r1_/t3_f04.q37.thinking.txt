@@ -1,0 +1,20 @@
+*   Question: "How does the Firm value privately placed notes, which are Level 3 positions?"
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+    *   Keys: "answer", "source_document", "section", "quote".
+
+    *   Document 1: `01_valuation_policy.md` (implied by the content, though the filename isn't explicitly given in the prompt, the text starts with "1.1 Purpose" and "SECTION 4. LEVEL 3 METHODOLOGY"). Wait, the prompt shows `01_valuation_policy.md` content (though the filename isn't explicitly in the prompt, it's the first block). Let's look at the content.
+    *   Section 4.2 of the first document (Valuation Policy) specifically addresses "Privately Placed Notes".
+
+    *   Section 4.2: "Privately placed notes are valued by a matrix method. The Firm determines a spread over the interpolated U.S. Treasury curve equal to the spread of comparable public securities of the same issuer or, where none exist, of comparable issuers with a similar internal rating, sector and maturity, plus an illiquidity premium, plus adjustments for structural features such as financial covenants, make-whole provisions, security and subordination. The note's scheduled cash flows are discounted at the resulting yield. The illiquidity premium is set by the Committee quarterly and currently ranges from 15 to 40 basis points depending on issue size and structure."
+
+    *   "answer": Privately placed notes are valued using a matrix method. The Firm determines a spread over the interpolated U.S. Treasury curve based on comparable public securities (or comparable issuers with similar ratings, sectors, and maturities), plus an illiquidity premium (set quarterly by the Committee, currently 15-40 basis points), plus adjustments for structural features (financial covenants, make-whole provisions, security, and subordination). The note's scheduled cash flows are then discounted at the resulting yield.
+    *   "source_document": The first document provided. Looking at the prompt structure, it's the first block. The prompt doesn't give the filename explicitly in the text, but the prompt structure shows `01_valuation_policy.md` (implied by the context of the other files like `04_business_continuity_plan.md`). Wait, looking at the prompt, the first block doesn't have a filename header, but the others do. Let's check the prompt again.
+    *   Actually, the prompt shows:
+        `1.1 Purpose` ... `SECTION 4. LEVEL 3 METHODOLOGY` ... `4.2 Privately Placed Notes`.
+        The prompt doesn't explicitly name the first file, but the question asks for the "source_document". Looking at the structure:
+        `01_valuation_policy.md` (implied)
+        `04_business_continuity_plan.md`
+        `05_fee_schedule.md`
+        `06_policy_update_memo.md`
+        Wait, the prompt doesn't actually show the filename for the first one. It just starts with "1.1 Purpose". However, looking at the prompt's structure, the first block is the Valuation Policy. Let's look at the prompt again.
+        Ah, I see. The prompt doesn't provide the filename for the first block. I will check if there's a standard way to refer to it. Usually, if the

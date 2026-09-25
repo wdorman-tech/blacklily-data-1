@@ -1,0 +1,34 @@
+*   Question: "What is the maximum aggregate value of gifts an employee may accept from a single source?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   `01_brochure.md`: Mentions "Gifts and entertainment" in Item 5, but doesn't specify the dollar amount for gifts received.
+    *   `02_compliance_manual.md`: Section 5.2 "Gifts Received" states: "Supervised persons may accept gifts from any person or entity that does business or seeks to do business with the Adviser or the Funds, including brokers and research providers, with an aggregate value not exceeding $250 per source per calendar year."
+    *   `03_valuation_policy.md`: No mention of gifts.
+    *   `04_business_continuity_plan.md`: No mention of gifts.
+    *   `05_fee_schedule.md`: No mention of gifts.
+    *   `06_policy_update_memo.md`: Section 2.3 "Compliance Manual Section 5.2 (Gifts Received)" states: "The limit on gifts that supervised persons may accept from any person or entity that does business or seeks to do business with the Adviser or the Funds is reduced from $250 to $100 per source per calendar year."
+
+    *   The `06_policy_update_memo.md` is dated August 24, 2026.
+    *   The `02_compliance_manual.md` is dated January 15, 2026.
+    *   The memo explicitly states: "This amendment supersedes Section 5.2 of the Compliance Manual."
+    *   The memo says the limit is reduced from $250 to $100.
+    *   The question asks for the maximum aggregate value.
+    *   The current rule (as of the latest document) is $100.
+
+    *   Answer: $100 per source per calendar year.
+    *   Source Document: 06_policy_update_memo.md
+    *   Section: Section 2.3
+    *   Quote: "The limit on gifts that supervised plans may accept from any person or entity that does business or seeks to do business with the Adviser or the Funds is reduced from $250 to $100 per source per calendar year." (Wait, let me check the exact wording in the memo).
+    *   Actual text in 06_policy_update_memo.md Section 2.3: "The limit on gifts that supervised persons may accept from any person or entity that does business or seeks to do business with the Adviser or the Funds is reduced from $250 to $100 per source per calendar year."
+
+    *   Question: "What is the maximum aggregate value of gifts an employee may accept from a single source?"
+    *   The memo says "supervised persons". An employee is a supervised person.
+    *   The limit is $100 per source per calendar year.
+
+    *   Answer: $100 per source per calendar year.
+    *   

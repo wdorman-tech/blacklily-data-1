@@ -1,0 +1,39 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   "How long does the Adviser retain its books and records, and how are electronic communications captured and archived?"
+    *   This question has two parts:
+        1.  Retention period for books and records.
+        2.  How electronic communications are captured and archived.
+
+3.  **Scan Documents for Part 1 (Books and Records Retention):**
+    *   Document: `02_compliance_manual.md`
+    *   Section: `SECTION 13. BOOKS AND RECORDS > 13.2 Retention Period`
+    *   Text: "The Adviser retains all required books and records for at least seven years from the end of the fiscal year during which the last entry was made on the record, which exceeds the five-year period required by Rule 204-2."
+    *   Date: January 15, 2026.
+
+4.  **Scan Documents for Part 2 (Electronic Communications Capture and Archive):**
+    *   Document: `02_compliance_manual.md`
+    *   Section: `SECTION 14. ELECTRONIC COMMUNICATIONS > 14.2 Capture and Archiving`
+    *   Text: "All communications on approved channels are captured and archived by Quillon Archive Services, Inc. in a non-rewriteable, non-erasable format, indexed and searchable by the Compliance department, and retained for the period in Section 13.2."
+    *   Date: January 15, 2026.
+
+5.  **Synthesize the Answer:**
+    *   The question asks for both pieces of information.
+    *   Both pieces are found in `02_compliance_manual.md`.
+    *   I need to combine them into a single coherent answer string within the JSON `answer` field, or determine if I should cite multiple sections. The instructions say "Cite the document file name and the section where the answer appears". Since both parts are in the same document but different sections, I should probably reference the specific sections relevant to each part or combine them if possible. However, the JSON structure implies a single `source_document` and single `section`.
+    *   Looking at the instruction: "Cite the document file name and the section where the answer appears". If the answer spans two sections, I need to decide how to handle the citation. Usually, in these tasks, if multiple sections are needed, I might need to pick the most relevant or combine them. However, the schema provided in the prompt example (though not explicitly shown as an example, just described) suggests a single object.
+    *   Let's check the constraint: "The object has exactly four string keys". This implies one `source_document` and one

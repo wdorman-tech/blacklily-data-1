@@ -1,0 +1,42 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What percentage of the Flagship Fund's capital is held by the Adviser's principals and employees?"
+
+3.  **Scan the Documents for Keywords:**
+    *   Keywords: "Flagship Fund", "capital", "principals", "employees", "percentage", "held", "interests".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section 4.2 The Funds: Describes Flagship Fund, Offshore Fund, Co-Investment Fund. Mentions Class E interests are held only by Adviser's principals and employees. Does not mention the percentage of capital held.
+        *   Section 4.4 Assets Under Management: Gives NAV figures ($1,182.4 million for Flagship), but does not break down ownership percentages by class or holder type.
+        *   Section 5.1 Management Fees: Describes Class A, Large Investor Rate, Class F, Class E (no fee). Does not mention capital percentage held.
+    *   `02_compliance_manual.md` (January 15, 2026):
+        *   Section 6. Political Contributions: Mentions government entities are investors. No ownership percentages.
+        *   Section 8. Marketing and Investor Communications: Discusses performance presentation. No ownership percentages.
+    *   `05_fee_schedule.md` (January 1, 2026):
+        *   Section 3. Incentive Allocation: Discusses incentive allocation rates for Class A, F, E. Does not mention capital percentage held.
+
+5.  **Synthesize Findings:**
+    *   The documents state that the Adviser's principals and employees invest in the Flagship Fund through Class E interests (`01_brochure.md`, Section 4.2).
+    *   However, none of the provided documents specify the *percentage* or *amount* of capital held by these principals and employees relative to the total Flagship Fund capital.
+    *   The question asks for a specific percentage ("What percentage...").
+    *   Since the documents do not contain this specific data point (only that they hold Class E interests, which bear no fee), I cannot answer with a number.
+    *   According to Rule 2: "If the documents do not answer the question... the answer is exactly NOT_IN_DOCUMENTS."
+
+6.  **Formulate the Output:**
+    *   `answer`: "NOT_IN_DOCUMENTS"
+    *   `source_document`: "" (since the answer is NOT_IN_DOCUMENTS, per instructions for that field when answer is NOT_IN_DOCUMENTS? Wait, let's check the instruction: "The object

@@ -1,0 +1,26 @@
+*   Question: "What advisory fee rate applies to Family Relationship assets above $250 million?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   `01_brochure.md`: Item 5.1 lists "Above $250,000,000" as "0.20%".
+    *   `05_fee_schedule.md`: Section 2.1 lists "Above $250,000,000" as "0.20%".
+    *   `06_policy_update_memo.md`: Section 7 (Fee Schedule Breakpoint) mentions: "The first breakpoint is lowered from $25,000,000 to $20,000,000. The 0.80% rate now applies to the first $20,000,000 of Family Relationship assets, and the 0.60% rate applies to Family Relationship assets above $20,000,000 up to $50,000,000. The rates and breakpoints for assets above $50,000,000 are unchanged."
+
+    *   The question asks for the rate for assets above $250 million.
+    *   `01_brochure.md` (dated March 27, 2026) says 0.20%.
+    *   `05_fee_schedule.md` (effective January 1, 2026) says 0.20%.
+    *   `06_policy_update_memo.md` (dated September 8, 2026) states that the first breakpoint changed, but "The rates and breakpoints for assets above $50,000,000 are unchanged."
+    *   Since the question is about the $250 million tier, and the update memo confirms that the rates/breakpoints above $50 million are unchanged, the rate remains 0.20%.
+
+    *   The most recent document is `06_policy_update_memo.md`.
+    *   However, the question is about the specific rate for the $250M+ tier.
+    *   `01_brochure.md` Item 5.1: "Above $250,000,000 | 0.20%"
+    *   `05_fee_schedule.md` Section 2.1: "Above $250,000,000 | 0.20%"
+    *   `06_policy_update_memo.md` Section 7: "The rates and breakpoints for assets above $50,000,000 are unchanged."
+
+    *   The question asks for the rate. The rate is 0.20%.
+    *   The most current document confirming this is `06_policy_update_memo.md` (because it's the latest) or `01_brochure.md` (which is

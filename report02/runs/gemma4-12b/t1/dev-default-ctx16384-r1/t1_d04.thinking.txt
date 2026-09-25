@@ -1,0 +1,144 @@
+*   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from a fund offering document into a structured JSON.
+    *   Constraint 1: Accuracy is paramount. No invented terms.
+    *   Constraint 2: Use `NOT_FOUND` if not stated.
+    *   Constraint 3: Use `NOT_APPLICABLE` if stated as not applicable.
+    *   Constraint 4: Amendments/Supplements supersede original text.
+    *   Constraint 5: Report all variants (class/tier) in one string.
+    *   Constraint 6: Distinguish commitment vs. holding.
+    *   Constraint 7: Citations must be section/appendix identifiers.
+    *   Constraint 8: Quotes must be verbatim.
+    *   Output Format: JSON only, no markdown, no preamble.
+
+    *   `fund_name`: Varrick Onslade Long/Short Equity Fund, L.P. (Section 1.1)
+    *   `fund_domicile`: Delaware (Section 1.1)
+    *   `fund_structure`: Open-end, stand-alone fund (Section 1.2).
+    *   `management_fee`:
+        *   Standard: 1.75% (Class A), 1.25% (Class B) (Section 4.1).
+        *   Amendment (Side Letter): 1.00% for Tollmead County Employees' Retirement System (Class A) (Appendix B, Section 1).
+    *   `performance_fee`:
+        *   Class A: 20% (Section 4.2).
+        *   Class B: 17.5% (Section 4.2).
+    *   `hurdle_rate`: "The Incentive Allocation is not subject to any hurdle rate or preferred return" (Section 4.2).
+    *   `high_water_mark`: "The Loss Carryforward Amount operates as a high-water mark for each capital account and is not reset at the end of any Performance Period or after any period of time" (Section 4.3).
+    *   `minimum_initial_investment`:
+        *   Class A: $1,000,000 (Section 5.2).
+        *   Class B: $5,000,000 (Section 5.2).
+    *   `lockup_period`:
+        *   Class A: soft lock-up of 12 months (Section 6.3).
+        *   Class B: hard lock-up of 24 months (Section 6.3).
+        *   Amendment (Side Letter): Tollmead County Employees' Retirement System (Class A) has no lock-up (Appendix B, Section 3).
+    *   `redemption_frequency`: "quarterly" (Section 6.1).
+    *   `redemption_notice_days`:
+        *   Standard: 60 days (Section 6.2).
+        *   Amendment (Side Letter): 30 days for Tollmead County Employees' Retirement System (Appendix B, Section 2).
+    *   `gate_provision`: "If aggregate redemption requests for any Redemption Date... exceed 20% of the net asset value... the General Partner may reduce each request pro rata" (Section 6.5).
+    *   `key_man_provision`: "The Partnership Agreement does not contain a key person provision." (Section 10.2). Note: The side letter has a "Key Person Notification" (Appendix B, Section 5), but the prompt asks for the "key_man_provision" (the clause in the main agreement). However, the prompt asks for the "key_man_provision" which is a "key person clause: who is named and what it triggers". Section 10.2 explicitly says it doesn't exist in the main agreement.
+    *   `gp_commitment`: "The General Partner is not required to make, and has not agreed to make, any capital contribution to the Partnership" (Section 3.3).
+    *   `fund_term`: "The Partnership has no fixed term." (Section 1.3).
+    *   `auditor`: Castellane Rook LLP (Section 8.3).
+    *   `administrator`: Tessford Loame Fund Services, LLC (Section 8.1).
+    *   `prime_broker`: Pembury Hask Securities LLC and Norcaster Prime Services, LLC (Section 8.2).
+    *   `legal_counsel`: Lindqvist Ambrose LLP (Section 8.4).
+    *   `mfn_election`: "Each Limited Partner whose aggregate Capital Contributions (net of redemptions) are at least $25,000,000 (an "MFN Investor") may elect to receive the benefit of any term of a side letter..." (Section 9.3).
+
+    *   `fund_name`: "Varrick Onslade Long/Short Equity Fund, L.P." (Section 1.1)
+    *   `fund_domicile`: "Delaware" (Section 1.1)
+    *   `fund_structure`: "open-end, stand-alone fund" (Section 1.2)
+    *   `management_fee`: "Class A: 1.75% (0.4375% per quarter); Class B: 1.25% (0.3125% per quarter); Tollmead County Employees' Retirement System (Class A): 1.00% (0.25% per quarter)" (Section 4.1; Appendix B, Section 1)
+    *   `performance_fee`: "Class A: 20% of the Net Profits; Class B: 17.5% of the Net Profits" (Section 4.2)
+    *   `hurdle_rate`: "NOT_APPLICABLE" (Section 4.2)
+    *   `high_water_mark`: "The Loss Carryforward Amount operates as a high-water mark for each capital account and is not reset at the end of any Performance Period or after any period of time" (Section 4.3)
+    *   `minimum_initial_investment`: "Class A: $1,000,000; Class B: $5,000,000" (Section 5.2)
+    *   `lockup_period`: "Class A: soft lock-up of 12 months; Class B: hard lock-up of 24 months; Tollmead County Employees' Retirement System (Class A): no lock-up" (Section 6.3; Appendix B, Section 3)
+    *   `redemption_frequency`: "quarterly" (Section 6.1)
+    *   `redemption_notice_days`: "Standard: 60 days; Tollmead County Employees' Retirement System: 30 days" (Section 6.2; Appendix B, Section 2)
+    *   `gate_provision`: "If aggregate redemption requests for any Redemption Date... exceed 20% of the net asset value of the Partnership... the General Partner may reduce each request pro rata" (Section 6.5)
+    *   `key_man_provision`: "NOT_APPLICABLE" (Section 10.2) - Wait, the prompt says "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE, and you say so in the quote." Section 10.2 says "The Partnership Agreement does not contain a key person provision."
+    *   `gp_commitment`: "NOT_APPLICABLE" (Section 3.3) - "The General Partner is not required to make, and has not agreed to make, any capital contribution to the Partnership"
+    *   `fund_term`: "no fixed term" (Section 1.3)
+    *   `auditor`: "Castellane Rook LLP" (Section 8.3)
+    *   `administrator`: "Tessford Loame Fund Services, LLC" (Section 8.1)
+    *   `prime_broker`: "Pembury Hask Securities LLC and Norcaster Prime Services, LLC" (Section 8.2)
+    *   `legal_counsel`: "Lindqvist Ambrose LLP" (Section 8.4)
+    *   `mfn_election`: "Each Limited Partner whose aggregate Capital Contributions (net of redemptions) are at least $25,000,000 (an "MFN Investor") may elect to receive the benefit of any term of a side letter entered into with any other Limited Partner whose aggregate Capital Contributions (net of redemptions) are equal to or less than those of the MFN Investor." (Section 9.3)
+
+    *   *Management Fee*: Need to combine the standard and the amendment.
+        *   Value: "Class A: 1.75% (0.4375% per quarter); Class B: 1.25% (0.3125% per quarter); Tollmead County Employees' Retirement System (Class A): 1.00% (0.25% per quarter)"
+        *   Citation: "Section 4.1; Appendix B, Section 1"
+        *   Quote: "The Management Fee is charged at an annual rate of 1.75% (0.4375% per quarter) for Class A Interests and 1.25% (0.3125% per quarter) for Class B Interests. ... the Management Fee charged to the Investor's capital account in respect of its Class A Interests will be calculated at an annual rate of 1.00% (0.25% per quarter), in lieu of the annual rate of 1.75% otherwise applicable to Class A Interests."
+    *   *Performance Fee*:
+        *   Value: "Class A: 20% of the Net Profits; Class B: 17.5% of the Net Profits"
+        *   Citation: "Section 4.2"
+        *   Quote: "the General Partner is allocated from each Limited Partner's capital account an amount (the \"Incentive Allocation\") equal to 20% of the Net Profits allocated to that capital account for Class A Interests and 17.5% of such Net Profits for Class B Interests"
+    *   *Hurdle Rate*:
+        *   Value: "NOT_APPLICABLE"
+        *   Citation: "Section 4.2"
+        *   Quote: "The Incentive Allocation is not subject to any hurdle rate or preferred return, and it is not measured against any market index."
+    *   *High Water Mark*:
+        *   Value: "Loss Carryforward Amount operates as a high-water mark"
+        *   Citation: "Section 4.3"
+        *   Quote: "The Loss Carryforward Amount operates as a high-water mark for each capital account and is not reset at the end of any Performance Period or after any period of time; it is reduced only by subsequent Net Profits and, proportionately, upon a partial redemption."
+    *   *Minimum Initial Investment*:
+        *   Value: "Class A: $1,000,000; Class B: $5,000,000"
+        *   Citation: "Section 5.2"
+        *   Quote: "The minimum initial Capital Contribution is $1,000,000 for Class A Interests and $5,000,000 for Class B Interests."
+    *   *Lock-up Period*:
+        *   Value: "Class A: soft lock-up of 12 months; Class B: hard lock-up of 24 months; Tollmead County Employees' Retirement System (Class A): no lock-up"
+        *   Citation: "Section 6.3; Appendix B, Section 3"
+        *   Quote: "Class A Interests are subject to a soft lock-up of 12 months and Class B Interests are subject to a hard lock-up of 24 months... The General Partner waives the lock-up and the Early Redemption Charge described in Section 6.3 of the Memorandum with respect to all of the Investor's Class A Interests."
+    *   *Redemption Frequency*:
+        *   Value: "quarterly"
+        *   Citation: "Section 6.1"
+        *   Quote: "a Limited Partner may redeem all or part of its capital account as of the last Business Day of each calendar quarter (each, a \"Redemption Date\")."
+    *   *Redemption Notice Days*:
+        *   Value: "Standard: 60 days; Tollmead County Employees' Retirement System: 30 days"
+        *   Citation: "Section 6.2; Appendix B, Section 2"
+        *   Quote: "A Limited Partner must deliver an irrevocable written redemption request to the Administrator, with a copy to the General Partner, at least 60 days before the applicable Redemption Date. ... the Investor may redeem all or part of its Interests as of any Redemption Date on not less than 30 days' prior written notice, rather than the 60 days' notice otherwise required."
+    *   *Gate Provision*:
+        *   Value: "20% of the net asset value of the Partnership"
+        *   Citation: "Section 6.5"
+        *   Quote: "If aggregate redemption requests for any Redemption Date, including requests carried forward from earlier Redemption Dates, exceed 20% of the net asset value of the Partnership as of that Redemption Date, determined before giving effect to redemptions, the General Partner may reduce each request pro rata so that the aggregate amount redeemed equals 20% of net asset value."
+    *   *Key Man Provision*:
+        *   Value: "NOT_APPLICABLE"
+        *   Citation: "Section 10.2"
+        *   Quote: "The Partnership Agreement does not contain a key person provision."
+    *   *GP Commitment*:
+        *   Value: "NOT_APPLICABLE"
+        *   Citation: "Section 3.3"
+        *   Quote: "The General Partner is not required to make, and has not agreed to make, any capital contribution to the Partnership, and neither the General Partner nor any principal or employee of the Investment Manager is obligated to acquire or maintain any investment in it."
+    *   *Fund Term*:
+        *   Value: "no fixed term"
+        *   Citation: "Section 1.3"
+        *   Quote: "The Partnership has no fixed term."
+    *   *Auditor*:
+        *   Value: "Castellane Rook LLP"
+        *   Citation: "Section 8.3"
+        *   Quote: "Castellane Rook LLP, an independent registered public accounting firm, has been appointed as the Partnership's independent auditor for the fiscal year ending December 31, 2026."
+    *   *Administrator*:
+        *   Value: "Tessford Loame Fund Services, LLC"
+        *   Citation: "Section 8.1"
+        *   Quote: "Tessford Loame Fund Services, LLC (the \"Administrator\") serves as administrator of the Partnership."
+    *   *Prime Broker*:
+        *   Value: "Pembury Hask Securities LLC and Norcaster Prime Services, LLC"
+        *   Citation: "Section 8.2"
+        *   Quote: "Pembury Hask Securities LLC and Norcaster Prime Services, LLC (each, a \"Prime Broker\") provide prime brokerage, clearing, securities lending and margin financing to the Partnership and hold its assets in custody."
+    *   *Legal Counsel*:
+        *   Value: "Lindqvist Ambrose LLP"
+        *   Citation: "Section 8.4"
+        *   Quote: "Lindqvist Ambrose LLP acts as counsel to the Partnership, the General Partner and the Investment Manager."
+    *   *MFN Election*:
+        *   Value: "Available to investors with at least $25,000,000 in capital contributions"
+        *   Citation: "Section 9.3"
+        *   Quote: "Each Limited Partner whose aggregate Capital Contributions (net of redemptions) are at least $25,000,000 (an \"MFN Investor\") may elect to receive the benefit of any term of a side letter entered into with any other Limited Partner whose aggregate Capital Contributions (net of redemptions) are equal to or less than those of the MFN Investor."
+
+    *   *Management Fee*: The prompt says "Give every class or tier." I must include the standard and the side letter.
+    *   *Lock-up*: Same, include standard and side letter.
+    *   *Redemption Notice*: Same, include standard and side letter.
+    *   *Key Man*: The prompt says "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE, and you say so in the quote." Section 10.2 says "The Partnership Agreement does not contain a key person provision." This fits the "not exist" condition.
+    *   *GP Commitment*: Section 3.3 says "The General Partner is not required to make, and has not agreed to make, any capital contribution to the Partnership". This means the term "GP Commitment" (as a requirement) does not exist/apply.
+
+    *   *Management Fee*:
+        *   Value: "Class A: 1.75% (0.4375% per quarter); Class B: 1.25% (0.3125% per quarter); Tollmead County Employees' Retirement System (Class A): 1.00% (0.25% per quarter)"
+        *   Citation: "Section 4.1; Appendix B, Section 1"
+        *   Quote: "The Management Fee is charged at an annual rate of 1.75% (0.4375% per quarter) for Class A Interests and 1.25% (0.3125% per quarter) for Class B Interests. ... the Management Fee charged to the Investor's capital account in respect of its Class A Interests will be calculated at an annual rate of 1.00% (0.25% per quarter), in lieu of the annual rate of 1.75

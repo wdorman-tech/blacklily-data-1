@@ -1,0 +1,1230 @@
+{
+ "task": "t4",
+ "model": "qwen2.5:14b-instruct-q4_K_M",
+ "items": {
+  "t4_aapl": {
+   "units": [
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "109.4",
+     "expected": "",
+     "extra": {
+      "context": " Results - Revenue for the quarter was $109.4 billion, a 16% increase year over year."
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "16",
+     "expected": "",
+     "extra": {
+      "context": "e for the quarter was $109.4 billion, a 16% increase year over year. - Gross margi"
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "50.1",
+     "expected": "",
+     "extra": {
+      "context": "ease year over year. - Gross margin was 50.1%, including a favorable impact of appro"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2",
+     "expected": "",
+     "extra": {
+      "context": "ing a favorable impact of approximately 2 percentage points from tariff refunds. "
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.02",
+     "expected": "",
+     "extra": {
+      "context": "unds. - Diluted earnings per share was $2.02, a 29% increase year over year, includi"
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "29",
+     "expected": "",
+     "extra": {
+      "context": "Diluted earnings per share was $2.02, a 29% increase year over year, including a f"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.11",
+     "expected": "",
+     "extra": {
+      "context": " year, including a favorable impact of $0.11 from tariff refunds.  ## Segments and d"
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "54.252",
+     "expected": "",
+     "extra": {
+      "context": "venue set a new June quarter record at $54.252 billion, up 21% year over year. - Mac r"
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 0.0,
+     "verdict": "UNGROUNDED",
+     "kind": "number",
+     "error_kind": "ungrounded",
+     "trap": "none",
+     "hallucination": true,
+     "got": "21",
+     "expected": "",
+     "extra": {
+      "context": "e quarter record at $54.252 billion, up 21% year over year. - Mac revenue also set"
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "10.352",
+     "expected": "",
+     "extra": {
+      "context": " also set a new June quarter record at $10.352 billion, up 29% year over year. - Servi"
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "29",
+     "expected": "",
+     "extra": {
+      "context": "e quarter record at $10.352 billion, up 29% year over year. - Services revenue rea"
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "30.739",
+     "expected": "",
+     "extra": {
+      "context": " over year. - Services revenue reached $30.739 billion, a 12% increase year over year."
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 0.0,
+     "verdict": "UNGROUNDED",
+     "kind": "number",
+     "error_kind": "ungrounded",
+     "trap": "none",
+     "hallucination": true,
+     "got": "12",
+     "expected": "",
+     "extra": {
+      "context": "ices revenue reached $30.739 billion, a 12% increase year over year.  ## Outlook -"
+     }
+    },
+    {
+     "uid": "num_14",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.27",
+     "expected": "",
+     "extra": {
+      "context": "he company declared a cash dividend of $0.27 per share, payable on August 13, 2026, "
+     }
+    },
+    {
+     "uid": "num_15",
+     "score": 0.0,
+     "verdict": "UNGROUNDED",
+     "kind": "number",
+     "error_kind": "ungrounded",
+     "trap": "none",
+     "hallucination": true,
+     "got": "62.399",
+     "expected": "",
+     "extra": {
+      "context": "nts, and marketable securities totaled $62.399 billion as of June 27, 2026.  ## Watch "
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 212,
+   "group": "t4_aapl",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 8.88,
+    "prompt_tokens": 4222,
+    "output_tokens": 346,
+    "output_tokens_per_sec": 49.9,
+    "prompt_tokens_per_sec": 2203.3,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11300
+   }
+  },
+  "t4_gs": {
+   "units": [
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "20.34",
+     "expected": "",
+     "extra": {
+      "context": "ings**  ## Results - **Net Revenues**: $20.34 billion for 2Q26, a 39% increase from 2"
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "39",
+     "expected": "",
+     "extra": {
+      "context": " Revenues**: $20.34 billion for 2Q26, a 39% increase from 2Q25 and 18% from 1Q26. "
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "18",
+     "expected": "",
+     "extra": {
+      "context": " for 2Q26, a 39% increase from 2Q25 and 18% from 1Q26. - **Net Earnings**: $6.63 b"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "6.63",
+     "expected": "",
+     "extra": {
+      "context": "and 18% from 1Q26. - **Net Earnings**: $6.63 billion for 2Q26, a 78% increase from 2"
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "78",
+     "expected": "",
+     "extra": {
+      "context": "t Earnings**: $6.63 billion for 2Q26, a 78% increase from 2Q25 and 18% from 1Q26. "
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "18",
+     "expected": "",
+     "extra": {
+      "context": " for 2Q26, a 78% increase from 2Q25 and 18% from 1Q26. - **EPS**: $20.98 for 2Q26,"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "20.98",
+     "expected": "",
+     "extra": {
+      "context": "rom 2Q25 and 18% from 1Q26. - **EPS**: $20.98 for 2Q26, compared to $10.91 for 2Q25 a"
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "10.91",
+     "expected": "",
+     "extra": {
+      "context": " **EPS**: $20.98 for 2Q26, compared to $10.91 for 2Q25 and $17.55 for 1Q26. - **ROE**"
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "17.55",
+     "expected": "",
+     "extra": {
+      "context": " 2Q26, compared to $10.91 for 2Q25 and $17.55 for 1Q26. - **ROE**: 23.5% for 2Q26, co"
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "23.5",
+     "expected": "",
+     "extra": {
+      "context": "or 2Q25 and $17.55 for 1Q26. - **ROE**: 23.5% for 2Q26, compared to 21.7% for the fi"
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "21.7",
+     "expected": "",
+     "extra": {
+      "context": " - **ROE**: 23.5% for 2Q26, compared to 21.7% for the first half of 2026.  ## Segmen"
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "15.52",
+     "expected": "",
+     "extra": {
+      "context": "l Banking & Markets**: Net revenues of $15.52 billion for 2Q26, a 53% increase from 2"
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "53",
+     "expected": "",
+     "extra": {
+      "context": " revenues of $15.52 billion for 2Q26, a 53% increase from 2Q25 and 22% from 1Q26, "
+     }
+    },
+    {
+     "uid": "num_14",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "22",
+     "expected": "",
+     "extra": {
+      "context": " for 2Q26, a 53% increase from 2Q25 and 22% from 1Q26, driven by higher investment"
+     }
+    },
+    {
+     "uid": "num_15",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.60",
+     "expected": "",
+     "extra": {
+      "context": "& Wealth Management**: Net revenues of $4.60 billion for 2Q26, a 20% increase from 2"
+     }
+    },
+    {
+     "uid": "num_16",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "20",
+     "expected": "",
+     "extra": {
+      "context": "t revenues of $4.60 billion for 2Q26, a 20% increase from 2Q25 and 13% from 1Q26, "
+     }
+    },
+    {
+     "uid": "num_17",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "13",
+     "expected": "",
+     "extra": {
+      "context": " for 2Q26, a 20% increase from 2Q25 and 13% from 1Q26, primarily due to higher man"
+     }
+    },
+    {
+     "uid": "num_18",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "221",
+     "expected": "",
+     "extra": {
+      "context": "*Platform Solutions**: Net revenues of $221 million for 2Q26, a 64% decrease from 2"
+     }
+    },
+    {
+     "uid": "num_19",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "64",
+     "expected": "",
+     "extra": {
+      "context": "et revenues of $221 million for 2Q26, a 64% decrease from 2Q25 and 46% from 1Q26, "
+     }
+    },
+    {
+     "uid": "num_20",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "46",
+     "expected": "",
+     "extra": {
+      "context": " for 2Q26, a 64% decrease from 2Q25 and 46% from 1Q26, reflecting markdowns relate"
+     }
+    },
+    {
+     "uid": "num_21",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5.00",
+     "expected": "",
+     "extra": {
+      "context": "ase**: Quarterly dividend increased to $5.00 per common share for 3Q26 from $4.50. -"
+     }
+    },
+    {
+     "uid": "num_22",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.50",
+     "expected": "",
+     "extra": {
+      "context": "o $5.00 per common share for 3Q26 from $4.50. - **Capital Return**: Returned $5.36 b"
+     }
+    },
+    {
+     "uid": "num_23",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5.36",
+     "expected": "",
+     "extra": {
+      "context": " $4.50. - **Capital Return**: Returned $5.36 billion of capital to common shareholde"
+     }
+    },
+    {
+     "uid": "num_24",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.00",
+     "expected": "",
+     "extra": {
+      "context": "common shareholders in 2Q26, including $4.00 billion in share repurchases and $1.36 "
+     }
+    },
+    {
+     "uid": "num_25",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.36",
+     "expected": "",
+     "extra": {
+      "context": "$4.00 billion in share repurchases and $1.36 billion in dividends. - **No Guidance P"
+     }
+    },
+    {
+     "uid": "num_26",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "555",
+     "expected": "",
+     "extra": {
+      "context": " Core Liquid Assets (GCLA)**: Averaged $555 billion for 2Q26, compared to $494 bill"
+     }
+    },
+    {
+     "uid": "num_27",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "494",
+     "expected": "",
+     "extra": {
+      "context": "ged $555 billion for 2Q26, compared to $494 billion for 1Q26. - **Supplementary Lev"
+     }
+    },
+    {
+     "uid": "num_28",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.3",
+     "expected": "",
+     "extra": {
+      "context": "**Supplementary Leverage Ratio (SLR)**: 4.3% for 2Q26, compared to 4.7% for 1Q26. -"
+     }
+    },
+    {
+     "uid": "num_29",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.7",
+     "expected": "",
+     "extra": {
+      "context": "tio (SLR)**: 4.3% for 2Q26, compared to 4.7% for 1Q26. - **Common Equity Tier 1 Cap"
+     }
+    },
+    {
+     "uid": "num_30",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "12.9",
+     "expected": "",
+     "extra": {
+      "context": "**Common Equity Tier 1 Capital Ratio**: 12.9% for 2Q26, compared to 12.5% for 1Q26. "
+     }
+    },
+    {
+     "uid": "num_31",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "12.5",
+     "expected": "",
+     "extra": {
+      "context": "al Ratio**: 12.9% for 2Q26, compared to 12.5% for 1Q26.  ## Watch Items - **Investme"
+     }
+    },
+    {
+     "uid": "num_32",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "58.8",
+     "expected": "",
+     "extra": {
+      "context": "The firm's efficiency ratio improved to 58.8% for the first half of 2026 from 62.0% "
+     }
+    },
+    {
+     "uid": "num_33",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "62.0",
+     "expected": "",
+     "extra": {
+      "context": "o 58.8% for the first half of 2026 from 62.0% for the same period in 2025, but the c"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 353,
+   "group": "t4_gs",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 21.05,
+    "prompt_tokens": 9257,
+    "output_tokens": 719,
+    "output_tokens_per_sec": 44.2,
+    "prompt_tokens_per_sec": 2008.1,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11300
+   }
+  },
+  "t4_mcd": {
+   "units": [
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5",
+     "expected": "",
+     "extra": {
+      "context": "lts - Global Systemwide sales increased 5% (4% in constant currencies) to $37 bil"
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4",
+     "expected": "",
+     "extra": {
+      "context": "- Global Systemwide sales increased 5% (4% in constant currencies) to $37 billion"
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "37",
+     "expected": "",
+     "extra": {
+      "context": "ased 5% (4% in constant currencies) to $37 billion for the quarter. - Global compa"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.3",
+     "expected": "",
+     "extra": {
+      "context": "er. - Global comparable sales increased 1.3%, with U.S. comparable sales up 0.8% an"
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.8",
+     "expected": "",
+     "extra": {
+      "context": "sed 1.3%, with U.S. comparable sales up 0.8% and International Operated Markets up "
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.5",
+     "expected": "",
+     "extra": {
+      "context": "% and International Operated Markets up 1.5%. - Diluted earnings per share was $3.3"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3.32",
+     "expected": "",
+     "extra": {
+      "context": "1.5%. - Diluted earnings per share was $3.32, a 6% increase (5% in constant currenci"
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "6",
+     "expected": "",
+     "extra": {
+      "context": "Diluted earnings per share was $3.32, a 6% increase (5% in constant currencies). "
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5",
+     "expected": "",
+     "extra": {
+      "context": "ngs per share was $3.32, a 6% increase (5% in constant currencies). - Pre-tax cha"
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "52",
+     "expected": "",
+     "extra": {
+      "context": "tant currencies). - Pre-tax charges of $52 million were recorded for the quarter, "
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 221,
+   "group": "t4_mcd",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 8.51,
+    "prompt_tokens": 4172,
+    "output_tokens": 322,
+    "output_tokens_per_sec": 50.3,
+    "prompt_tokens_per_sec": 2376.0,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11300
+   }
+  },
+  "t4_xom": {
+   "units": [
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "14.5",
+     "expected": "",
+     "extra": {
+      "context": "eports Second-Quarter 2026 Earnings of $14.5 Billion**  ## Results - **Adjusted EPS "
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3.52",
+     "expected": "",
+     "extra": {
+      "context": "lion**  ## Results - **Adjusted EPS of $3.52**: Up from $2.09 in the first quarter. "
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.09",
+     "expected": "",
+     "extra": {
+      "context": "s - **Adjusted EPS of $3.52**: Up from $2.09 in the first quarter. - **Record Permia"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "9",
+     "expected": "",
+     "extra": {
+      "context": "ion**: Exceeding all competitors with a 9% CAGR through 2030. - **Fifth Guyana FP"
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "250",
+     "expected": "",
+     "extra": {
+      "context": "lanned for 4Q26, increasing capacity by 250 Kbd. - **Record Diesel Production**: Ba"
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "16.3",
+     "expected": "",
+     "extra": {
+      "context": "*Cumulative Structural Cost Savings**: $16.3 billion, more than all other IOCs combi"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "9.189",
+     "expected": "",
+     "extra": {
+      "context": "nd Drivers - **Upstream**: Earnings of $9.189 billion, up from $6.265 billion in the "
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "6.265",
+     "expected": "",
+     "extra": {
+      "context": "*: Earnings of $9.189 billion, up from $6.265 billion in the first quarter, driven by"
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.099",
+     "expected": "",
+     "extra": {
+      "context": "on. - **Energy Products**: Earnings of $4.099 billion, up from $2.799 billion in the "
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.799",
+     "expected": "",
+     "extra": {
+      "context": "*: Earnings of $4.099 billion, up from $2.799 billion in the first quarter, supported"
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.214",
+     "expected": "",
+     "extra": {
+      "context": ". - **Chemical Products**: Earnings of $1.214 billion, up from $110 million in the fi"
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "110",
+     "expected": "",
+     "extra": {
+      "context": "*: Earnings of $1.214 billion, up from $110 million in the first quarter, benefitin"
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "969",
+     "expected": "",
+     "extra": {
+      "context": " - **Specialty Products**: Earnings of $969 million, up from $651 million in the fi"
+     }
+    },
+    {
+     "uid": "num_14",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "651",
+     "expected": "",
+     "extra": {
+      "context": "s**: Earnings of $969 million, up from $651 million in the first quarter, driven by"
+     }
+    },
+    {
+     "uid": "num_15",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "20",
+     "expected": "",
+     "extra": {
+      "context": "Expenditures**: Planned investments are 20% higher than the nearest IOC, with $13."
+     }
+    },
+    {
+     "uid": "num_16",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "13.0",
+     "expected": "",
+     "extra": {
+      "context": " 20% higher than the nearest IOC, with $13.0 billion invested year-to-date. - **Divi"
+     }
+    },
+    {
+     "uid": "num_17",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.03",
+     "expected": "",
+     "extra": {
+      "context": ": Declared a third-quarter dividend of $1.03 per share, payable on September 10, 202"
+     }
+    },
+    {
+     "uid": "num_18",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "17.2",
+     "expected": "",
+     "extra": {
+      "context": "eet - **Cash Flow**: Free cash flow of $17.2 billion, up from $2.7 billion in the fi"
+     }
+    },
+    {
+     "uid": "num_19",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.7",
+     "expected": "",
+     "extra": {
+      "context": "ee cash flow of $17.2 billion, up from $2.7 billion in the first quarter. - **Capit"
+     }
+    },
+    {
+     "uid": "num_20",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "12.974",
+     "expected": "",
+     "extra": {
+      "context": "**: Total cash capital expenditures of $12.974 billion year-to-date, up from $12.539 b"
+     }
+    },
+    {
+     "uid": "num_21",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "12.539",
+     "expected": "",
+     "extra": {
+      "context": " $12.974 billion year-to-date, up from $12.539 billion in the same period last year. -"
+     }
+    },
+    {
+     "uid": "num_22",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "9.4",
+     "expected": "",
+     "extra": {
+      "context": "areholder Distributions**: Distributed $9.4 billion, including $4.3 billion in divi"
+     }
+    },
+    {
+     "uid": "num_23",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.3",
+     "expected": "",
+     "extra": {
+      "context": "*: Distributed $9.4 billion, including $4.3 billion in dividends and $5.1 billion i"
+     }
+    },
+    {
+     "uid": "num_24",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5.1",
+     "expected": "",
+     "extra": {
+      "context": "ncluding $4.3 billion in dividends and $5.1 billion in share repurchases.  ## Watch"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 339,
+   "group": "t4_xom",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 18.4,
+    "prompt_tokens": 9932,
+    "output_tokens": 579,
+    "output_tokens_per_sec": 44.1,
+    "prompt_tokens_per_sec": 1966.2,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11300
+   }
+  }
+ }
+}

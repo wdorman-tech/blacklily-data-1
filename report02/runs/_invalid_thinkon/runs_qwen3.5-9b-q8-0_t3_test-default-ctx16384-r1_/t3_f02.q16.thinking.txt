@@ -1,0 +1,39 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "What are the minimum initial and subsequent investment amounts for the Flagship Fund?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "minimum", "initial", "subsequent", "additional", "investment", "Flagship Fund".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section: Item 7. Types of Clients > 7.2 Minimum Investment.
+        *   Text: "The minimum initial investment in each of the Flagship Fund and the Offshore Fund is $1,000,000, and the minimum additional investment is $250,000."
+    *   `05_fee_schedule.md` (January 1, 2026):
+        *   Section: SECTION 6. MINIMUM INVESTMENTS > 6.1 Minimums.
+        *   Text: "The minimum initial investment in each of the Flagship Fund and the Offshore Fund is $1,000,000, and the minimum additional investment is $250,000."
+    *   `06_policy_update_memo.md` (August 24, 2026):
+        *   Section: SECTION 2. AMENDMENTS > 2.6 Fee Schedule Section 2.2 (Large Investor Rate).
+        *   Text: Discusses fee thresholds and rates, not minimum investments.
+
+5.  **Determine the Correct Document:**
+    *   Both `01_brochure.md` (March 27, 2026) and `05_fee_schedule.md` (January 1, 2026) contain the information.
+    *   Rule 3: "Later-dated documents supersede earlier ones."
+    *   Brochure date: March 27, 2026.
+    *   Fee Schedule date: January 1, 2026.
+    *   The Brochure is later dated (March vs January). However, the Fee Schedule is often a specific schedule referenced in the brochure. The prompt asks to answer from the documents provided. Usually, if there's a conflict or update, the later document prevails. Here, the text is identical regarding minimums.
+    *   Let's check if there are any amendments affecting minimums. `06_policy_update_memo.md` (August 24, 2026) only mentions fee schedule amendments (Large Investor Rate). It does not mention minimum investment changes.
+    *   So the information is consistent across the relevant documents. I should cite the most recent document that contains the specific information to be safe regarding Rule

@@ -1,0 +1,69 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Marketing review analyst at an SEC-registered investment adviser.
+    *   Task: Review draft marketing materials against a fixed checklist (Rule 206(4)-1 derived).
+    *   Input: A draft marketing piece (invitation to a retirement income workshop).
+    *   Output Format: JSON object with key "flags", containing a list of objects. Each object has keys "category" (C1-C9), "quote" (verbatim text), "reason" (one sentence).
+    *   Constraints: No markdown, no preamble, no commentary. Only the JSON object.
+    *   Checklist Rules:
+        *   C1: Testimonial/endorsement without disclosure (client status, compensation, conflicts).
+        *   C2: Gross performance without net performance shown with equal prominence.
+        *   C3: Performance of portfolio other than private fund without 1-, 5-, 10-year periods.
+        *   C4: Performance time periods/results not fair and balanced (favorable window).
+        *   C5: Hypothetical/model/backtested/projected performance without criteria/assumptions/risks.
+        *   C6: Material statement of fact untrue or unsubstantiated (absolute claims, top/best without support).
+        *   C7: Third-party rating/ranking without date, period, source, compensation.
+        *   C8: Performance of selected positions/subset without total portfolio performance.
+        *   C9: Benefits described without fair and balanced treatment of material risks/limitations.
+
+2.  **Analyze the Draft Text:**
+    *   Header: "From Savings to Paycheck", "A Retirement Income Workshop".
+    *   Host: Hollin & Starke Wealth Management, LLC | Grand Rapids, Michigan.
+    *   Disclaimer: "SYNTHETIC DOCUMENT: FOR BENCHMARK USE ONLY... This document is fictional..." (This indicates it's a test case, but I must review the content as if it were real marketing material for the purpose of the exercise).
+    *   Content: Invitation to a free workshop.
+    *   Section "Why This Matters":
+        *   Example: "A couple who retired on January 1, 2000 with $1,000,000 and followed the Three-Bucket Income Plan we use today could have withdrawn $35,000 a year, raised it each year for inflation, and still had $1.4 million at the end of 2025."
+        *   Analysis: This is a specific performance claim (hypothetical scenario). It describes a result ($1.4 million remaining) based on a specific plan ("Three-Bucket Income Plan we use today"). It does not explicitly state assumptions, risks, or limitations regarding this hypothetical outcome in the text provided (though it mentions stocks can fall sharply later). However, C5 covers "Hypothetical, model, backtested or projected performance without the criteria, assumptions, risks and limitations needed to understand it."
+        *   Is there a clear disclosure of assumptions? The text says "Consider what a disciplined plan can do." It presents a specific outcome ($1.4 million). It mentions stocks can fall sharply later in the next paragraph, but does that qualify as sufficient disclosure for C5 regarding the specific hypothetical claim? Usually, specific numerical projections need clear assumptions (inflation rate, return assumptions, etc.). The text says "raised it each year for inflation" but doesn't specify the inflation assumption or investment return assumption.
+        *   Let's look closer at C5: "Hypothetical, model, backtested or projected performance without the criteria, assumptions, risks and limitations needed to understand it."
+        *   The claim: "A couple who retired on January 1, 2000 with $1,000,000... could have withdrawn $35,000 a year... and still had $1.4 million at the end of 2025."
+        *   This is a hypothetical scenario presented as a possibility ("could have"). However, it implies the firm's plan achieves this. It lacks specific investment return assumptions or risk disclosures attached to that specific number.
+        *   Wait, is there a testimonial? No.
+        *   Is there gross performance? No.
+        *   Is there portfolio performance (C3)? This is a hypothetical couple, not a real portfolio. C5 fits better for hypotheticals.
+        *   Is there a benefit without risk treatment (C9)? The text discusses annuities risks in section 3 ("That guarantee is only as strong as the insurance company..."). It discusses stock risks in "Why This Matters" ("Stocks can fall sharply..."). However, regarding the specific hypothetical withdrawal claim ($1.4 million), does it treat the risk fairly? It mentions stocks can fall later, but doesn't explicitly link that risk to the $1.4 million outcome's reliability.
+        *   Let's check C5 again. Does it need criteria/assumptions? Yes. The text says "raised it each year for inflation" but doesn't say what rate of return was assumed or what market conditions were assumed.
+        *   Let's check C9 again. Benefits described without fair and balanced treatment of material risks. Section 3 discusses annuities risks well. Section "Why This Matters" discusses the hypothetical plan outcome. Does it balance the risk? It says "Stocks can fall sharply, and refilling the cash bucket after a decline can mean selling at a loss or trimming your spending for a while." This is general risk disclosure. Is it sufficient for the specific claim of $1.4 million remaining? Probably not fully balanced against that specific outcome. However, C5 is often the catch-all for hypotheticals lacking assumptions.
+        *   Let's check C6: "A material statement of fact that is untrue or that the adviser could not substantiate". The disclaimer says this is a synthetic document. But assuming we treat it as real content: Is "$1.4 million at the end of 2025" unsubstantiated? It's a hypothetical example ("Consider what a disciplined plan can do").
+        *   Let's check C1: Testimonial/endorsement. No testimonials here.
+        *   Let's check C7: Third-party rating. None.
+        *   Let's check C8: Subset performance. None.
+
+    *   Re-evaluating the Hypothetical Claim (C5):
+        *   Text: "A couple who retired on January 1, 2000 with $1,000,000 and followed the Three-Bucket Income Plan we use today could have withdrawn $35,000 a year, raised it each year for inflation, and still had $1.4 million at the end of 2025."
+        *   This is a projection/hypothetical outcome.
+        *   Does it include criteria, assumptions, risks? It mentions "raised it each year for inflation" but doesn't specify the return assumption or the specific risk profile that led to this result. The next paragraph discusses general risks ("Stocks can fall sharply..."). However, C5 requires the criteria/assumptions/risks *needed to understand it*. Without knowing the assumed annual return (e.g., 7%?), the $1.4 million figure is hard to evaluate.
+        *   Decision: This looks like a C5 violation.
+
+    *   Re-evaluating C9 (Benefits without risk treatment):
+        *   The benefit is "withdraw $35,000 a year... and still had $1.4 million".
+        *   The risk mentioned is general ("Stocks can fall sharply").
+        *   Is the specific claim balanced? It presents a positive outcome as a possibility ("could have").
+        *   Often, C5 covers hypothetical performance claims specifically. C9 covers benefits (like annuities) without risk treatment. Section 3 handles annuity risks well. The "Three-Bucket" plan is described in section 2 and the example in section 1.
+        *   I will stick with C5 for the hypothetical performance claim lacking specific assumptions (return rates, etc.).
+
+    *   Are there other issues?
+        *   "Hollin & Starke Wealth Management, LLC is an investment adviser registered with the U.S. Securities and Exchange Commission." - This is a standard disclosure.
+        *   "Registration does not imply a certain level of skill or training." - Standard disclaimer.
+        *   "The workshop is educational: no individualized advice will be given and no products will be sold at the event." - Standard.
+        *   "Hollin & Starke does not provide legal advice, and the tax discussion is general in nature." - Standard.
+        *   "Investing involves risk, including possible loss of principal." - General risk warning.
+
+    *   Is there a C1 issue? No testimonials.
+    *   Is there a C2 issue? No performance numbers shown as gross vs net.
+    *   Is there a C3 issue? No real portfolio history.
+    *   Is there a C4 issue? No cherry-picked periods (it's a hypothetical from 2000 to 2025).
+    *   Is there a C6 issue? "Top or best firm"? No. "Never losing money"? No.
+    *   Is there a C7 issue? No ratings.
+    *   Is there a C

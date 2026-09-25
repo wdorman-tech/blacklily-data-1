@@ -1,0 +1,34 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, return `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+    *   Question: "How are separate account fees billed? State the frequency, timing and valuation basis."
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "separate account fees", "billed", "frequency", "timing", "valuation basis".
+    *   Document 1: `01_brochure.md` (dated March 27, 2026). Section: Item 5. Fees and Compensation > 5.4 Billing.
+        *   Text: "Separate account fees are billed quarterly in arrears based on the average of the three month-end market values of the account during the quarter, including accrued interest."
+    *   Document 2: `05_fee_schedule.md` (dated January 1, 2026). Section: SECTION 4. BILLING > 4.1 Frequency and Basis.
+        *   Text: "Separate account fees are billed quarterly in arrears based on the average of the three month-end market values of the account during the quarter, including accrued interest."
+
+3.  **Evaluate Document Dates:**
+    *   `01_brochure.md`: March 27, 2026.
+    *   `05_fee_schedule.md`: January 1, 2026.
+    *   Rule: Later-dated documents supersede earlier ones.
+    *   Comparison: March 27, 2026 is later than January 1, 2026.
+    *   However, the text in both documents regarding billing frequency/timing/valuation basis appears identical ("Separate account fees are billed quarterly in arrears based on the average of the three month-end market values of the account during the quarter, including accrued interest.").
+    *   Since the content is the same, either could technically be used, but per Rule 3 (Later-dated documents supersede earlier ones), I should prioritize the later document if there were a conflict. Since there isn't a conflict in this specific text, but the Brochure is the more recent official Form ADV Part 2A, it is the primary source for firm information usually. However, the Fee Schedule is also provided.
+    *   Let's check the instruction: "Answer only from the documents provided." "Later-dated documents supersede earlier ones."
+    *   Since the text is identical, I can cite either, but citing the later document (`01_brochure.md`) is safer under Rule 3 to ensure I'm using the most current version.
+    *   Wait, looking closely at `05_fee_schedule.md` Section 4.1 vs `01_brochure.md` Section 5.4.
+    *   `01_brochure.md` (March 27, 202

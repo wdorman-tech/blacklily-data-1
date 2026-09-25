@@ -1,0 +1,453 @@
+{
+  "meeting_id": "t5_m09",
+  "title": "Inherited Dayton rentals: stepped up basis, sell vs hold (Pellerin)",
+  "notes": "The trust distribution is stated as 86,000 at [00:05:53] and the adviser splits it into a 25,000 reserve and 61,000 to invest at [00:06:21], but Gavin only corrects it to 68,400 at [00:21:46], so two of the three account actions depend on a correction fifteen minutes later; the umbrella quote moves from Anneliese to Imani at [00:28:47], the listing agreement moves from Friday to October 2 at [00:27:50], and the adviser's closing recap at [00:30:21] omits both the umbrella quote and the projection. Risk tolerance is argued in both directions before an explicit no change, and five floated items (a 1031 exchange, an LLC, selling the duplex, a gift to Maren, investing the sale proceeds) must stay out of the action lists. For adjudication: the decided sales of the fourplex and Pennyroyal Court are executed through i3 and deliberately not keyed as account actions, and the September 30 walk-through of the fourplex with Tamsin is folded into i3, so a reported sale of those two properties is supported and a separate walk-through item is supported as a duplicate of i3.",
+  "scalar_fields": {
+    "meeting_date": {
+      "expected": "2026-09-15",
+      "accept": [
+        "2026-09-15",
+        "\\b0?9/15/(20)?26\\b",
+        "sep(t(ember)?)?\\.?\\s*15(th)?,?\\s*2026",
+        "\\b15(th)?\\s*(of\\s+)?sep(t(ember)?)?\\.?,?\\s*2026",
+        "2026[/.]0?9[/.]15\\b",
+        "\\b15[/.]0?9[/.](20)?26\\b"
+      ],
+      "reject": {}
+    },
+    "client_names": {
+      "expected": "Gavin Pellerin; Anneliese Pellerin",
+      "accept": [
+        "\\bgavin\\b",
+        "\\banneliese\\b",
+        "^(?!.*(celeste|harrowgate|\\bimani\\b|rourke|coralie|\\bmaren\\b|denise|tamsin|hollis|dunleavy|dunlevy|\\brick\\b|aldana))"
+      ],
+      "match": "all",
+      "reject": {
+        "NON_CLIENT": [
+          "celeste|harrowgate|\\bimani\\b|rourke|coralie|\\bmaren\\b|denise|tamsin|hollis|dunleavy|dunlevy|\\brick\\b|aldana"
+        ]
+      }
+    },
+    "primary_goal": {
+      "expected": "Retirement: Gavin retiring at 60 in spring 2032 with Anneliese retiring at the same time, with the rental properties they keep carrying part of the income until Social Security",
+      "accept": [
+        "retir",
+        "financial independence"
+      ],
+      "reject": {}
+    },
+    "retirement_target": {
+      "expected": "Gavin at age 60 in spring (April) 2032; Anneliese retires at the same time, at 58",
+      "accept": [
+        "\\b60\\b",
+        "\\bsixty\\b(?![\\s-]*two)",
+        "\\b2032\\b"
+      ],
+      "reject": {
+        "STALE_62": [
+          "^(?!.*(\\b60\\b|\\bsixty\\b(?![\\s-]*two)|\\b2032\\b)).*(\\b62\\b|sixty[\\s-]*two|\\b2034\\b)"
+        ]
+      }
+    },
+    "risk_tolerance": {
+      "expected": "Moderate",
+      "accept": [
+        "\\bmoderate\\b"
+      ],
+      "reject": {
+        "NOT_ADOPTED_UP": [
+          "^(?!.*\\bmoderate\\b).*aggressive"
+        ],
+        "NOT_ADOPTED_DOWN": [
+          "^(?!.*\\bmoderate\\b).*conservative"
+        ]
+      }
+    },
+    "risk_tolerance_change": {
+      "expected": "no change",
+      "accept": [
+        "no change",
+        "\\bunchanged\\b",
+        "not changed",
+        "did(n'?t| not) change",
+        "\\b(remain|remains|remained|stay|stays|stayed|kept|keep|keeps)\\b.{0,20}\\bmoderate\\b",
+        "\\bmaintain\\w*\\b.{0,20}\\bmoderate\\b",
+        "^none\\b",
+        "from moderate to moderate\\b",
+        "\\b(held|hold|left|leave|retain\\w*|confirm\\w*|reaffirm\\w*)\\b.{0,20}\\bmoderate\\b",
+        "\\bmoderate\\b.{0,20}\\b(retained|confirmed|reaffirmed|held)\\b"
+      ],
+      "reject": {
+        "NOT_ADOPTED_CHANGE": [
+          "^(?!.*(no change|\\bunchanged\\b|not changed|did(n'?t| not) change|\\b(remain|remains|remained|stay|stays|stayed|kept|keep|keeps|maintain\\w*|held|hold|left|leave|retain\\w*|confirm\\w*|reaffirm\\w*)\\b)).*\\bto\\s+(moderately\\s+)?(aggressive|conservative)"
+        ]
+      }
+    },
+    "next_meeting": {
+      "expected": "Tuesday, December 8, 2026, 4:00 PM, video call",
+      "accept": [
+        "dec(ember)?\\.?\\s*0?8(th)?\\b",
+        "\\b0?8(th)?\\s+(of\\s+)?dec",
+        "\\b12/0?8\\b",
+        "2026-12-08",
+        "tuesday,?\\s+(the\\s+)?8th"
+      ],
+      "reject": {
+        "STALE_DEC3": [
+          "^(?!.*(dec(ember)?\\.?\\s*0?8(th)?\\b|\\b0?8(th)?\\s+(of\\s+)?dec|\\b12/0?8\\b|2026-12-08|tuesday,?\\s+(the\\s+)?8th)).*(dec(ember)?\\.?\\s*0?3(rd)?\\b|\\b0?3(rd)?\\s+(of\\s+)?dec|\\b12/0?3\\b|2026-12-03|thursday,?\\s+(the\\s+)?3rd)"
+        ]
+      }
+    }
+  },
+  "life_events": [
+    {
+      "eid": "e1",
+      "expected": "Death of Gavin's mother on February 11, 2026; through her revocable trust Gavin (successor trustee) inherited her four Dayton-area rental properties (Haverill Road duplex, Larchmere fourplex, Cotswold Lane and Pennyroyal Court houses; $1,049,000 combined date-of-death appraisal), with basis stepped up to date-of-death value",
+      "match": [
+        "\\bmother\\b|\\bmom\\b|passed away|\\bdied\\b|\\bdeath\\b|inherit"
+      ],
+      "reject": {
+        "STALE_86K": [
+          "^(?!.*68,?4).*(86,?000|\\b86\\s*(k|thousand)\\b|eighty[\\s-]six)"
+        ]
+      }
+    },
+    {
+      "eid": "e2",
+      "expected": "Anneliese scheduled for right knee replacement surgery on November 10, 2026 (about six weeks out of work)",
+      "match": [
+        "\\bknee\\b",
+        "surger"
+      ],
+      "reject": {}
+    }
+  ],
+  "account_actions": [
+    {
+      "aid": "a1",
+      "expected": "Transfer (ACH) the $68,400 trust cash distribution from the Pellerins' checking account into their joint brokerage account",
+      "match": [
+        "68,?400",
+        "\\b68\\.4\\s*k?\\b",
+        "sixty[\\s-]eight thousand",
+        "86,?000",
+        "\\b86\\s*k\\b",
+        "eighty[\\s-]six thousand"
+      ],
+      "amount_accept": [
+        "68,?400",
+        "\\b68\\.4\\s*(k|thousand)",
+        "sixty[\\s-]eight thousand,? four hundred"
+      ],
+      "amount_reject": {
+        "STALE_86K": [
+          "^(?!.*68,?4).*(86,?000|\\b86\\s*k\\b|eighty[\\s-]six)"
+        ]
+      }
+    },
+    {
+      "aid": "a2",
+      "expected": "Invest $43,400 of the distribution in the moderate model portfolio within the joint brokerage account",
+      "match": [
+        "43,?400",
+        "\\b43\\.4\\s*k?\\b",
+        "forty[\\s-]three thousand",
+        "61,?000",
+        "\\b61\\s*k\\b",
+        "sixty[\\s-]one thousand",
+        "^(?!.*(68,?400|86,?000|\\b25,?000\\b|\\breserve\\b)).*\\bmodel\\b"
+      ],
+      "amount_accept": [
+        "43,?400",
+        "\\b43\\.4\\s*(k|thousand)",
+        "forty[\\s-]three thousand,? four hundred"
+      ],
+      "amount_reject": {
+        "STALE_61K": [
+          "^(?!.*43,?4).*(61,?000|\\b61\\s*k\\b|sixty[\\s-]one)"
+        ],
+        "WRONG_GROSS": [
+          "^(?!.*43,?4).*(68,?400|86,?000)"
+        ]
+      }
+    },
+    {
+      "aid": "a3",
+      "expected": "Open a second joint account (cash only, money market) as the property reserve and fund it with $25,000 moved from the joint brokerage account",
+      "match": [
+        "\\breserve\\b",
+        "\\b25,?000\\b",
+        "\\b25\\s*k\\b",
+        "twenty[\\s-]five thousand",
+        "\\b(second|new|separate)\\s+(joint\\s+)?(cash[\\s-]+)?(only\\s+)?(joint\\s+)?account"
+      ],
+      "amount_accept": [
+        "\\b25,?000\\b",
+        "\\b25\\s*(k|thousand)\\b",
+        "twenty[\\s-]five thousand"
+      ],
+      "amount_reject": {}
+    }
+  ],
+  "action_items": [
+    {
+      "iid": "i1",
+      "expected_task": "Send all four date-of-death appraisals (full reports with the land and building split) and Denise's rent ledger since February to CPA Rick Dunleavy, copying Celeste. Owner: Gavin Pellerin. Due: end of next week (Friday, September 25, 2026).",
+      "match": [
+        "^(?!.*\\b(call|meeting|conference|hollis(?!'?s? summary)|seller|estimated)\\b).*apprais",
+        "^(?!.*\\b(call|meeting|conference|hollis(?!'?s? summary)|seller|estimated)\\b).*\\b(send|email|e-mail|forward|deliver|provid|get|share|upload)\\w*\\b.{0,60}apprais",
+        "\\bledger\\b"
+      ],
+      "owner_accept": [
+        "\\bgavin\\b"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "end of next week(?!.{0,20}\\b(18|sep(t(ember)?)?\\.?\\s*18))",
+        "sep(t(ember)?)?\\.?\\s*25(th)?\\b",
+        "\\b25(th)?\\s+(of\\s+)?sep",
+        "\\b0?9/25\\b",
+        "2026-09-25",
+        "next friday(?!.{0,20}\\b(18|sep(t(ember)?)?\\.?\\s*18))"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i2",
+      "expected_task": "Get a quote to raise the umbrella liability policy from $1 million to $2 million with the rental properties scheduled on it, quoted together with landlord policies for the two kept properties through the firm's property and casualty partner. Owner: Imani Rourke (reassigned from Anneliese). Due: by the 29th (September 29, 2026).",
+      "match": [
+        "umbrella",
+        "landlord",
+        "(liability|p&c|property and casualty|insurance)\\b.{0,40}\\bquote",
+        "\\bquote\\b.{0,40}(liability|insurance|policy|policies|coverage)"
+      ],
+      "owner_accept": [
+        "\\bimani\\b",
+        "rourke",
+        "\\bassociate\\b"
+      ],
+      "owner_reject": {
+        "STALE_OWNER": [
+          "^(?!.*(\\bimani\\b|rourke|\\bassociate\\b)).*anneliese"
+        ]
+      },
+      "due_accept": [
+        "\\b29(th)?\\b",
+        "\\b0?9/29\\b",
+        "2026-09-29"
+      ],
+      "due_reject": {},
+      "trap": "reassigned"
+    },
+    {
+      "iid": "i3",
+      "expected_task": "Sign the listing agreement with realtor Tamsin, as trustee, covering the Larchmere fourplex (list now, as is with a roof credit) and Pennyroyal Court (list once vacant), after walking the fourplex with her. Owner: Gavin Pellerin. Due: October 2, 2026 (Friday the 2nd; changed from by Friday, September 18).",
+      "match": [
+        "\\blisting\\b",
+        "\\blist\\b.{0,40}(fourplex|pennyroyal|larchmere)",
+        "\\bsign\\w*\\b.{0,60}\\b(tamsin|realtor|broker)",
+        "\\b(tamsin|realtor)\\b.{0,60}\\bsign"
+      ],
+      "owner_accept": [
+        "\\bgavin\\b"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "oct(ober)?\\.?\\s*0?2(nd)?\\b",
+        "\\b0?2(nd)?\\s+(of\\s+)?oct",
+        "\\b10/0?2\\b",
+        "2026-10-02",
+        "friday the 2nd",
+        "\\bthe 2nd\\b"
+      ],
+      "due_reject": {
+        "STALE_DUE": [
+          "^(?!.*(oct(ober)?\\.?\\s*0?2(nd)?\\b|\\b0?2(nd)?\\s+(of\\s+)?oct|\\b10/0?2\\b|2026-10-02|\\bthe 2nd\\b)).*(friday|sep(t(ember)?)?\\.?\\s*18(th)?\\b|\\b18(th)?\\s+(of\\s+)?sep|\\b0?9/18\\b|2026-09-18|this week)"
+        ]
+      },
+      "trap": "due_changed"
+    },
+    {
+      "iid": "i4",
+      "expected_task": "Interview at least two property management companies (from the three names Tamsin gave) and pick one to manage the Haverill Road duplex and Cotswold Lane house before cousin Denise stops. Owner: Gavin Pellerin. Due: end of October (by October 31, 2026).",
+      "match": [
+        "property[\\s-]*manag",
+        "management (compan|firm)",
+        "\\bmanagers?\\b",
+        "\\breplac\\w*\\b.{0,30}\\bdenise\\b|\\bdenise\\b.{0,30}\\b(replacement|successor)"
+      ],
+      "owner_accept": [
+        "\\bgavin\\b"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "end of oct(ober)?",
+        "oct(ober)?\\.?\\s*3[01](st|th)?\\b",
+        "\\b3[01](st|th)?\\s+(of\\s+)?oct",
+        "\\b10/3[01]\\b",
+        "2026-10-3[01]",
+        "\\bthe 31st\\b"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i5",
+      "expected_task": "Send the ACH authorization (pull $68,400 from their checking into the joint brokerage account) and the new joint reserve account application for e-signature. Owner: Imani Rourke. Due: tomorrow (September 16, 2026).",
+      "match": [
+        "\\bach\\b",
+        "authoriz",
+        "\\be-?sign",
+        "(account|ach|transfer)\\b.{0,30}\\b(paperwork|forms?|application|documents?)"
+      ],
+      "owner_accept": [
+        "\\bimani\\b",
+        "rourke",
+        "\\bassociate\\b"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "tomorrow",
+        "sep(t(ember)?)?\\.?\\s*16(th)?\\b",
+        "\\b16(th)?\\s+(of\\s+)?sep",
+        "\\b0?9/16\\b",
+        "2026-09-16"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i6",
+      "expected_task": "Rerun the retirement projection with Gavin retiring at 60, the two kept properties at about $20,000 a year net and the sale proceeds as a range, and send it ahead of the next meeting. Owner: Celeste Harrowgate. Due: before the December meeting (December 8, 2026).",
+      "match": [
+        "projection",
+        "re-?run",
+        "retirement (plan|analysis|model|scenario)",
+        "financial plan",
+        "cash[\\s-]?flow (analysis|projection|plan)",
+        "\\bgavin\\b.{0,40}\\b(60|sixty)\\b"
+      ],
+      "owner_accept": [
+        "celeste",
+        "harrowgate",
+        "\\badvis[oe]r\\b"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "dec(ember)?\\.?\\s*0?8(th)?\\b",
+        "\\b0?8(th)?\\s+(of\\s+)?dec",
+        "\\b12/0?8\\b",
+        "2026-12-08",
+        "(before|ahead of|prior to|by)\\b.{0,30}\\b(next|december|dec)\\b.{0,20}\\b(meeting|review|call)",
+        "before we meet"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i7",
+      "expected_task": "Set up a joint call with CPA Rick Dunleavy and trust attorney Hollis on who the seller is (the trust or Gavin), whose return the fourplex loss lands on, and whether a fourth-quarter estimated tax payment is needed. Owner: Celeste Harrowgate. Due: the week of the 28th (week of September 28, 2026), once Rick has the appraisals.",
+      "match": [
+        "\\bhollis\\b",
+        "\\b(call|meeting|conference)\\b.{0,60}\\b(rick|dunleavy|dunlevy|cpa|accountant)",
+        "\\b(rick|dunleavy|dunlevy|cpa|accountant)\\b.{0,60}\\b(call|meeting|conference)\\b",
+        "estimated (tax )?payment",
+        "\\bseller\\b",
+        "estimated (tax|payment)",
+        "\\b(q4|fourth[\\s-]quarter)\\b",
+        "\\bcoordinat\\w*\\b.{0,60}\\b(rick|dunleavy|hollis|cpa)"
+      ],
+      "owner_accept": [
+        "celeste",
+        "harrowgate",
+        "\\badvis[oe]r\\b"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "\\b28(th)?\\b",
+        "\\b0?9/28\\b",
+        "2026-09-28",
+        "(once|after|when)\\b.{0,40}apprais"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    }
+  ],
+  "non_actions": [
+    {
+      "nid": "n1",
+      "what": "A gift to Maren (relationship not stated) toward a Denver condo down payment out of the sale money, floated by Anneliese at [00:25:59] as a someday idea; Celeste logs it as no action, nothing to model yet",
+      "match": [
+        "\\bmaren\\b",
+        "daughter",
+        "down[\\s-]*payment",
+        "\\bgift"
+      ],
+      "kind": "tentative"
+    },
+    {
+      "nid": "n2",
+      "what": "Moving the two kept properties into an LLC once they come out of the trust, raised by Gavin at [00:20:04] and deferred by both clients (not now), with Celeste putting it on no one's list",
+      "match": [
+        "\\bllc\\b",
+        "limited liability compan"
+      ],
+      "kind": "tentative"
+    },
+    {
+      "nid": "n3",
+      "what": "Selling the Haverill Road duplex along with the fourplex and Pennyroyal: Celeste recommends it at [00:15:47], Gavin says no at [00:16:29] and again, firmly, at [00:17:15]",
+      "match": [
+        "^(?!.*\\b(keep\\w*|kept|hold\\w*|held|retain\\w*|stay\\w*|remain\\w*|not (to be |be |being )?(sold|listed)|not for sale|(not|never|don'?t|do not) (sell|list)\\w*|won'?t (be )?(sold|listed)|declin\\w*|reject\\w*|refus\\w*|against|except|exclud\\w*|other than|projection|re-?run|proceeds)\\b).*\\b(sell|selling|sale of|list|listing)\\s+(the\\s+)?(haverill|duplex)",
+        "^(?!.*\\b(keep\\w*|kept|hold\\w*|held|retain\\w*|stay\\w*|remain\\w*|not (to be |be |being )?(sold|listed)|not for sale|(not|never|don'?t|do not) (sell|list)\\w*|won'?t (be )?(sold|listed)|declin\\w*|reject\\w*|refus\\w*|against|except|exclud\\w*|other than|projection|re-?run|proceeds)\\b).*\\b(sell|selling|list|listing)\\b[^.;]{0,60}\\b(and|plus|also)\\s+(the\\s+)?(haverill|duplex)",
+        "^(?!.*\\b(keep\\w*|kept|hold\\w*|held|retain\\w*|stay\\w*|remain\\w*|not (to be |be |being )?(sold|listed)|not for sale|(not|never|don'?t|do not) (sell|list)\\w*|won'?t (be )?(sold|listed)|declin\\w*|reject\\w*|refus\\w*|against|except|exclud\\w*|other than|projection|re-?run|proceeds)\\b).*\\b(sell|selling)\\b[^.;]{0,60},\\s*(the\\s+)?(haverill|duplex)",
+        "^(?!.*\\b(keep\\w*|kept|hold\\w*|held|retain\\w*|stay\\w*|remain\\w*|not (to be |be |being )?(sold|listed)|not for sale|(not|never|don'?t|do not) (sell|list)\\w*|won'?t (be )?(sold|listed)|declin\\w*|reject\\w*|refus\\w*|against|except|exclud\\w*|other than|projection|re-?run|proceeds)\\b).*\\b(haverill|duplex)\\b.{0,25}\\b(for sale|to be sold|be sold|to sell|sold|listed)\\b",
+        "^(?!.*\\b(keep\\w*|kept|hold\\w*|held|retain\\w*|stay\\w*|remain\\w*|not (to be |be |being )?(sold|listed)|not for sale|(not|never|don'?t|do not) (sell|list)\\w*|won'?t (be )?(sold|listed)|declin\\w*|reject\\w*|refus\\w*|against|except|exclud\\w*|other than|projection|re-?run|proceeds)\\b).*\\baction: [^:]*\\b(sell|sale|list)\\w*\\b[^:]*\\baccount: [^:]*\\b(haverill|duplex)\\b",
+        "^(?!.*\\b(keep\\w*|kept|hold\\w*|held|retain\\w*|stay\\w*|remain\\w*|not (to be |be |being )?(sold|listed)|not for sale|(not|never|don'?t|do not) (sell|list)\\w*|won'?t (be )?(sold|listed)|declin\\w*|reject\\w*|refus\\w*|against|except|exclud\\w*|other than|projection|re-?run|proceeds)\\b).*\\baccount: [^:]*\\b(haverill|duplex)\\b[^:]*\\baction: [^:]*\\b(sell|sale|list)\\w*\\b"
+      ],
+      "kind": "declined_proposal"
+    },
+    {
+      "nid": "n4",
+      "what": "A 1031 exchange of the fourplex into a replacement rental near Raleigh, raised by Gavin at [00:10:22] on the realtor's suggestion; Celeste advises against it because the stepped up basis leaves no gain to defer, and Gavin drops it",
+      "match": [
+        "1031",
+        "like[\\s-]kind",
+        "\\bexchange\\b",
+        "\\bdst\\b"
+      ],
+      "kind": "tentative"
+    },
+    {
+      "nid": "n5",
+      "what": "Deciding where to invest the roughly $550,000 of net sale proceeds from the fourplex and Pennyroyal, explicitly deferred at [00:26:33] until there is a closing date",
+      "match": [
+        "^(?!.*(projection|re-?run|\\brange\\b|43,?400|43\\.4|68,?400|68\\.4|forty[\\s-]three|sixty[\\s-]eight|distribution|\\breserve\\b|inheritance (cash|proceeds|distribution|money))).*\\b(invest|investing|invested|allocat\\w*|deploy\\w*|reinvest\\w*)\\b.{0,60}\\bproceeds\\b",
+        "^(?!.*(projection|re-?run|\\brange\\b|43,?400|43\\.4|68,?400|68\\.4|forty[\\s-]three|sixty[\\s-]eight|distribution|\\breserve\\b|inheritance (cash|proceeds|distribution|money))).*\\bproceeds\\b.{0,60}\\b(invest|investing|invested|allocat\\w*|deploy\\w*|reinvest\\w*)\\b"
+      ],
+      "kind": "tentative"
+    }
+  ],
+  "corrected_figures": [
+    {
+      "what": "Cash distribution from his mother's trust sitting in their checking account: stated by Gavin at [00:05:53], corrected by him from the bank app at [00:21:46]",
+      "said_first": "86,000",
+      "corrected_to": "68,400",
+      "field": "account_actions"
+    },
+    {
+      "what": "Amount to invest after the $25,000 reserve: Celeste computes it on the stale distribution at [00:06:21] and redoes it on the corrected one at [00:22:17]",
+      "said_first": "61,000",
+      "corrected_to": "43,400",
+      "field": "account_actions"
+    },
+    {
+      "what": "Gavin's retirement age on file (62, spring 2034) replaced by the new target he states at [00:03:05] and Celeste records at [00:03:47]",
+      "said_first": "62",
+      "corrected_to": "60",
+      "field": "scalar:retirement_target"
+    }
+  ]
+}

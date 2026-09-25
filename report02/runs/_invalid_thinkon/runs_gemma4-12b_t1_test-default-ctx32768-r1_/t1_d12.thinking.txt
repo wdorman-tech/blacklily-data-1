@@ -1,0 +1,124 @@
+*   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from a fund offering document into a specific JSON structure.
+    *   Constraints:
+        *   Accuracy is paramount. No invented terms.
+        *   Use `NOT_FOUND` if not stated.
+        *   Use `NOT_APPLICABLE` if stated as not applicable.
+        *   Amendments/Supplements supersede original text.
+        *   Report all variants (share class/tier) in one string.
+        *   Distinguish between commitment and current holding.
+        *   Citations must be section/appendix identifiers.
+        *   Quotes must be verbatim.
+        *   Output format: JSON only, no markdown, no preamble.
+
+    *   `fund_name`: Vessary Point Commodities Fund Ltd.
+    *   `fund_domicile`: Cayman Islands.
+    *   `fund_structure`: Open-end (redeemable), standalone (not master-feeder).
+    *   `management_fee`:
+        *   Original: Class A (2.00%), Class B (1.50%).
+        *   Supplement 1: Class A (1.75%), Class B (1.25%).
+        *   Supplement 2: Class B (1.00%).
+        *   Final: Class A (1.75% per annum of Net Asset Value), Class B (1.00% per annum of Net Asset Value).
+    *   `performance_fee`: Class A (20% of Net New Appreciation), Class B (15% of Net New Appreciation).
+    *   `hurdle_rate`: "No hurdle rate, preferred return or index-relative threshold applies."
+    *   `high_water_mark`: "The 'High Water Mark' of a Share is the greater of US$1,000 and the Net Asset Value per Share of its Series at the end of the most recent Calculation Period for which that Series paid a Performance Fee. The High Water Mark is never reset. A Series below its High Water Mark must recoup the shortfall in full before any further Performance Fee accrues, however many Calculation Periods that takes, so losses are carried forward indefinitely."
+    *   `minimum_initial_investment`: Class A (US$1,000,000), Class B (US$10,000,000). (Note: Section 5.2 mentions a minimum of US$100,000 for certain cases, but the specific class terms are in 1.1 and 5.2).
+    *   `lockup_period`: Class A (12 months, soft (3% early redemption charge)), Class B (12 months, hard).
+    *   `redemption_frequency`: "Last Business Day of each calendar quarter".
+    *   `redemption_notice_days`:
+        *   Original: 90 calendar days.
+        *   Supplement 1: 60 calendar days (for dates on/after 31 March 2025).
+    *   `gate_provision`: "The Fund does not impose any limit on the aggregate amount of redemptions that may be made as of any Redemption Day, whether at the level of the Fund or of an individual Shareholder".
+    *   `key_man_provision`: Section 10.2 mentions "The Fund's performance depends to a significant degree on the skills of a small number of individuals, in particular Mr. Rennard. The loss of the services of Mr. Rennard or of other members of the investment committee could adversely affect the Fund." (Does it trigger a specific action? The text doesn't explicitly state a "trigger" like a suspension or dissolution, just that it "could adversely affect the Fund").
+    *   `gp_commitment`: Not stated as a commitment. (Section 9.2 mentions holdings, but not a commitment).
+    *   `fund_term`: "The Fund has been incorporated for an unlimited duration and has no fixed termination date".
+    *   `auditor`: Kellaway Brandt (Cayman).
+    *   `administrator`: Marrowgate Fund Services (Cayman) Ltd.
+    *   `prime_broker`: Wexcombe Securities LLC.
+    *   `legal_counsel`: Carrow Pendle (Cayman), Linacre Stowe LLP (US).
+    *   `mfn_election`: Section 9.3 says "no Shareholder will be entitled to receive, or to elect to receive, the benefit of the terms of any side letter granted to another Shareholder."
+
+    *   `fund_name`: "Vessary Point Commodities Fund Ltd." (Title/Section 2.1)
+    *   `fund_domicile`: "Cayman Islands" (Intro/Section 2.1)
+    *   `fund_structure`: "The Fund is open-ended: the Shares are redeemable at the option of the holder under SECTION 6. The Fund is a standalone vehicle." (Section 2.3)
+    *   `management_fee`:
+        *   Class A: "one-twelfth of 1.75% (a rate of 1.75% per annum) of the Net Asset Value of the Class A Shares" (Supplement No. 1, Section S-2)
+        *   Class B: "one-twelfth of 1.00% (a rate of 1.00% per annum) of the Net Asset Value of the Class B Shares" (Supplement No. 2, Section S-6)
+    *   `performance_fee`: "20% of Net New Appreciation of each Class A Share and 15% of Net New Appreciation of each Class B Share" (Section 4.2)
+    *   `hurdle_rate`: "No hurdle rate, preferred return or index-relative threshold applies." (Section 4.2)
+    *   `high_water_mark`: "The 'High Water Mark' of a Share is the greater of US$1,000 and the Net Asset Value per Share of its Series at the end of the most recent Calculation Period for which that Series paid a Performance Fee. The High Water Mark is never reset. A Series below its High Water Mark must recoup the shortfall in full before any further Performance Fee accrues, however many Calculation Periods that takes, so losses are carried forward indefinitely." (Section 4.3)
+    *   `minimum_initial_investment`: "US$1,000,000 for Class A Shares and US$10,000,000 for Class B Shares" (Section 1.1 / Section 5.2)
+    *   `lockup_period`: "Class A Shares are subject to a soft lock-up: a Class A Share may be redeemed as of a Redemption Day falling before the first anniversary of its issue only on payment of an early redemption charge of 3% of the redemption proceeds... Class B Shares are subject to a hard lock-up: a Class B Share may not be redeemed as of any Redemption Day falling before the first anniversary of its issue." (Section 6.2)
+    *   `redemption_frequency`: "Last Business Day of each calendar quarter" (Section 1.1)
+    *   `redemption_notice_days`: "60 calendar days" (Supplement No. 1, Section S-3) - Note: The original was 90, but Supplement 1 changed it to 60 for dates on/after 31 March 2025.
+    *   `gate_provision`: "The Fund does not impose any limit on the aggregate amount of redemptions that may be made as of any Redemption Day, whether at the level of the Fund or of an individual Shareholder" (Section 6.4)
+    *   `key_man_provision`: "The Fund's performance depends to a significant degree on the skills of a small number of individuals, in particular Mr. Rennard. The loss of the services of Mr. Rennard or of other members of the investment committee could adversely affect the Fund." (Section 10.2) - Note: It doesn't specify a "trigger" action like a suspension, but it identifies the key person and the impact.
+    *   `gp_commitment`: NOT_FOUND (Section 9.2 mentions holdings, but not a commitment).
+    *   `fund_term`: "The Fund has been accrued for an unlimited duration and has no fixed termination date" (Section 2.1)
+    *   `auditor`: "Kellaway Brandt (Cayman), chartered accountants" (Section 7.5 / Appendix A)
+    *   `administrator`: "Marrowgate Fund Services (Cayman) Ltd." (Section 7.3 / Appendix A)
+    *   `prime_broker`: "Wexcombe Securities LLC" (Section 7.4 / Appendix A)
+    *   `legal_counsel`: "Carrow Pendle... Linacre Stowe LLP" (Section 7.6 / Appendix A)
+    *   `mfn_election`: "no Shareholder will be entitled to receive, or to elect to receive, the benefit of the terms of any side letter granted to another Shareholder." (Section 9.3)
+
+    *   *Management Fee:* Supplement 1 says "one-twelfth of 1.75% (a rate of 1.75% per annum) of the Net Asset Value of the Class A Shares". Supplement 2 says "one-twelfth of 1.00% (a rate of 1.00% per annum) of the Net Asset Value of the Class B Shares".
+    *   *Redemption Notice:* Supplement 1 says "reduced from 90 calendar days to 60 calendar days".
+    *   *Key Man:* The prompt asks "who is named and what it triggers". The text says "The loss of the services of Mr. Rennard... could adversely affect the Fund." It doesn't explicitly state a "trigger" (like "the fund will be liquidated" or "the manager must be replaced"). I will provide the text that identifies the person and the consequence.
+    *   *GP Commitment:* The prompt says "A disclosed current holding is NOT a commitment." Section 9.2 shows holdings, but no commitment is stated. So NOT_FOUND.
+
+    *   `fund_name`: "Vessary Point Commodities Fund Ltd." (Section 2.1)
+    *   `fund_domicile`: "Cayman Islands" (Section 2.1)
+    *   `fund_structure`: "The Fund is open-ended: the Shares are redeemable at the option of the holder under SECTION 6. The Fund is a standalone vehicle." (Section 2.3)
+    *   `management_fee`: "Class A: one-twelfth of 1.75% (a rate of 1.75% per annum) of the Net Asset Value of the Class A Shares (Supplement No. 1, Section S-2); Class B: one-twelfth of 1.00% (a rate of 1.00% per annum) of the Net Asset Value of the Class B Shares (Supplement No. 2, Section S-6)"
+    *   `performance_fee`: "20% of Net New Appreciation of each Class A Share and 15% of Net New Appreciation of each Class B Share" (Section 4.2)
+    *   `hurdle_rate`: "No hurdle rate, preferred return or index-relative threshold applies." (Section 4.2)
+    *   `high_water_mark`: "The 'High Water Mark' of a Share is the greater of US$1,000 and the Net Asset Value per Share of its Series at the end of the most recent Calculation Period for which that Series paid a Performance Fee. The High Water Mark is never reset. A Series below its High Water Mark must recoup the shortfall in full before any further Performance Fee accrues, however many Calculation Periods that takes, so losses are carried forward indefinitely." (Section 4.3)
+    *   `minimum_initial_investment`: "US$1,000,000 for Class A Shares and US$10,000,000 for Class B Shares" (Section 1.1)
+    *   `lockup_period`: "Class A Shares are subject to a soft lock-up: a Class A Share may be redeemed as of a Redemption Day falling before the first anniversary of its issue only on payment of an early redemption charge of 3% of the redemption proceeds... Class B Shares are subject to a hard lock-up: a Class B Share may not be redeemed as of any Redemption Day falling before the first anniversary of its issue." (Section 6.2)
+    *   `redemption_frequency`: "Last Business Day of each calendar quarter" (Section 1.1)
+    *   `redemption_notice_days`: "60 calendar days" (Supplement No. 1, Section S-3)
+    *   `gate_provision`: "The Fund does not impose any limit on the aggregate amount of redemptions that may be made as of any Redemption Day, whether at the level of the Fund or of an individual Shareholder" (Section 6.4)
+    *   `key_man_provision`: "The Fund's performance depends to a significant degree on the skills of a small number of individuals, in particular Mr. Rennard. The loss of the services of Mr. Rennard or of other members of the investment committee could adversely affect the Fund." (Section 10.2)
+    *   `gp_commitment`: "NOT_FOUND"
+    *   `fund_term`: "The Fund has been incorporated for an unlimited duration and has no fixed termination date" (Section 2.1)
+    *   `auditor`: "Kellaway Brandt (Cayman), chartered accountants" (Section 7.5)
+    *   `administrator`: "Marrowgate Fund Services (Cayman) Ltd." (Section 7.3)
+    *   `prime_broker`: "Wexcombe Securities LLC" (Section 7.4)
+    *   `legal_counsel`: "Carrow Pendle... Linacre Stowe LLP" (Section 7.6)
+    *   `mfn_election`: "no Share10.3: no Shareholder will be entitled to receive, or to elect to receive, the benefit of the terms of any side letter granted to another Shareholder." (Section 9.3)
+
+    *   *Management Fee:* The prompt asks for "every class or tier".
+        *   Class A: "one-twelfth of 1.75% (a rate of 1.75% per annum) of the Net Asset Value of the Class A Shares" (Supplement No. 1, Section S-2)
+        *   Class B: "one-twelfth of 1.00% (a rate of 1.00% per annum) of the Net Asset Value of the Class B Shares" (Supplement No. 2, Section S-6)
+    *   *Redemption Notice:* The prompt asks for the value. Since Supplement 1 overrides the original 90 days for dates after March 31, 2025, the current value is 60.
+    *   *Key Man:* "who is named and what it triggers". The text says "The loss of the services of Mr. Rennard... could adversely affect the Fund." This is the closest the text gets to a "trigger".
+
+    *   *Refining Management Fee:*
+        Value: "Class A: one-twelfth of 1.75% (a rate of 1.75% per annum) of the Net Asset Value of the Class A Shares; Class B: one-twelfth of 1.00% (a rate of 1.00% per annum) of the Net Asset Value of the Class B Shares"
+        Citation: "Supplement No. 1, Section S-2; Supplement No. 2, Section S-6"
+        Quote: "one-twelfth of 1.75% (a rate of 1.75% per annum) of the Net Asset Value of the Class A Shares... one-twelfth of 1.00% (a rate of 1.00% per annum) of the Net Asset Value of the Class B Shares"
+
+    *   *Refining Redemption Notice:*
+        Value: "60 calendar days"
+        Citation: "Supplement No. 1, Section S-3"
+        Quote: "the minimum period of prior written notice required for a Redemption Notice is reduced from 90 calendar days to 60 calendar days"
+
+    *   *Refining Legal Counsel:*
+        Value: "Carrow Pendle (Cayman Islands); Linacre Stowe LLP (United States)"
+        Citation: "Section 7.6"
+        Quote: "Carrow Pendle acts as Cayman Islands legal counsel to the Fund. Linacre Stowe LLP acts as United States legal counsel to the Fund"
+
+    *   *Refining MFN:*
+        Value: "No; no Shareholder will be entitled to receive, or to elect to receive, the benefit of the terms of any side letter granted to another Shareholder."
+        Citation: "Section 9.3"
+        Quote: "no Shareholder will be entitled to receive, or to elect to receive, the benefit of the terms of any side letter granted to another Shareholder."
+
+    *   *Refining Fund Term:*
+        Value: "Unlimited duration; no fixed termination date"
+        Citation: "Section 2.1"
+        Quote: "The Fund has been incorporated for an unlimited duration and has no fixed termination date"
+
+    *   *Refining Management Fee:*
+        Value: "Class A: one-twelfth of 1.75% (a rate of 1.75% per annum) of the Net Asset Value of the Class A Shares; Class B: one-twelfth of 1.00% (a rate of 1.00% per annum) of the Net Asset Value of the Class B Shares"
+        Citation: "Supplement No. 1, Section S-2; Supplement No. 2, Section S-6"
+        Quote: "one-twelfth of 1.75% (a rate of 1.75% per annum) of the Net Asset Value of the Class A Shares... one-twelfth of 1.00% (a rate of 1.00% per annum) of the Net Asset

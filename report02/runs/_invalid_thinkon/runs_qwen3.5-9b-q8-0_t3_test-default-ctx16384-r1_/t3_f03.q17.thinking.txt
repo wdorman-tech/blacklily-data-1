@@ -1,0 +1,37 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "How does the firm allocate capacity-constrained private fund and co-investment opportunities among client families?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "allocate", "capacity", "private fund", "co-investment", "opportunities", "client families", "Family Relationships".
+
+4.  **Evaluate Document 1 (`01_brochure.md`):**
+    *   Section 8.2 Investment Strategies mentions private markets funds and co-investments but doesn't detail allocation methodology for capacity constraints.
+    *   Section 11.3 Participation or Interest in Client Transactions mentions employees investing after allocations are satisfied, but not the general allocation process among families.
+
+5.  **Evaluate Document 2 (`02_compliance_manual.md`):**
+    *   Section 9.4 Limited Private Investment Opportunities (dated January 15, 2026).
+    *   Text: "Private funds with limited capacity and co-investment opportunities are allocated as follows. The Head of Private Investments presents the opportunity to the Investment Committee, which first determines which Family Relationships are eligible... Where aggregate eligible demand exceeds available capacity, the Investment Committee allocates the opportunity among eligible Family Relationships pro rata in proportion to each Family Relationship's shortfall relative to the private markets target allocation in its Investment Policy Statement, subject to a minimum allocation of $250,000 per Family Relationship."
+    *   This section directly answers the question.
+
+6.  **Evaluate Document 3 (`03_valuation_policy.md`):**
+    *   Section 4.1 Classification discusses Level 3 classification. Not relevant to allocation methodology.
+
+7.  **Check for Superseding Documents:**
+    *   `02_compliance_manual.md` is dated January 15, 2026.
+    *   `01_brochure.md` is dated March 27, 2026.
+    *   Rule 3 says: "Later-dated documents supersede earlier ones." However, the Brochure (Item 4 and Item 8) describes services and strategies generally. The Compliance Manual (Section 9.4) specifically details the allocation process for limited capacity opportunities. Usually, specific policy manuals override general brochure descriptions if there's a conflict, but here the question asks *how* they allocate. The Compliance Manual provides the specific procedural detail ("allocated as follows..."). The Brochure mentions "Opportunities of limited capacity cannot be made available to every family that wants them" (Item 8.3 Risk of Loss) but doesn't explain the *method*.
+    *   Is there a later document that changes Section 9.4 of the Compliance Manual? No other document updates the Compliance Manual's allocation policy specifically. The Brochure is dated later (March vs January), but it

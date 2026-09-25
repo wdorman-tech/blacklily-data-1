@@ -1,0 +1,21 @@
+*   Question: "When was the Firm's most recent SEC examination, and were any deficiencies cited?"
+    *   Constraint 1: Answer only from provided documents.
+    *   Constraint 2: If not in documents, answer is NOT_IN_DOCUMENTS.
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite document file name and section.
+    *   Constraint 6: Quote supporting text verbatim.
+
+    *   01_brochure.md: Mentions registration with SEC (Item 1.2), but no mention of specific examination dates or deficiencies.
+    *   02_compliance_manual.md: Mentions Rule 206(4)-7, Rule 204A-1, Rule 206(4)-5, Rule 204-2, and annual reviews, but no mention of a specific SEC examination date or deficiencies.
+    *   03_valuation_policy.md: Mentions valuation procedures, but no SEC examination details.
+    *   04_business_continuity_plan.md: Mentions business continuity, but no SEC examination details.
+    *   05_fee_schedule.md: Mentions fees, but no SEC examination details.
+    *   06_policy_update_memo.md: Mentions updates to policies, but no SEC examination details.
+
+    *   The documents do not contain information regarding the date of the most recent SEC examination or any deficiencies cited.
+
+    *   answer: "NOT_IN_DOCUMENTS"
+    *   source_document: ""
+    *   section: ""
+    *   quote: ""

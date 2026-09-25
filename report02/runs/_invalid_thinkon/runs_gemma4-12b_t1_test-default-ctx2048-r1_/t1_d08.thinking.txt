@@ -1,0 +1,72 @@
+The objective is to extract specific information from the provided text and format it as a JSON object.
+
+    *   *Audit Information:*
+        *   Current Auditor (from Section 13.4): Lindenhall Crewe LLP (Note: Section 13.4 says "All references... to Wexcombe Adair LLP... are to be read as references to Lindenhall Crewe LLP").
+        *   Previous Auditor: Wexcombe Adair LLP.
+        *   Audit Date/Period: Fiscal year ending December 31, 2026.
+    *   *Investment Details:*
+        *   Property 1: Mesa, Arizona (288-unit garden-style multifamily). Cost: $61,400,000.
+        *   Property 2: Aurora, Colorado (214,000 sq ft light industrial). Cost: $27,900,000.
+    *   *Financials:*
+        *   Capital Commitments: $312,500,000.
+        *   Sponsor Commitment: $7,500,000.
+        *   Subscription Facility: $75,000,000 (expandable to $120,000,000).
+    *   *Key Dates:*
+        *   Section 13 Addition Date: August 14, 2026.
+        *   Initial Closing Date: April 30, 2026.
+        *   Final Closing Date: April 30, 2027.
+        *   Auditor Change Date: June 1, 2026.
+    *   *Entities:*
+        *   GP/Manager: Tarrenfield Oakes Real Estate Partners III, L.P.
+        *   Administrator: Ostrander Pell Fund Services, LLC.
+        *   Legal Counsel: Haverill Quint LLP.
+        *   Placement Agent: Norcastle Lyle Securities, LLC.
+
+    *   *Audit:*
+        *   Current Auditor: Lindenhall Crewe LLP
+        *   Previous Auditor: Wexcombe Adair LLP
+        *   Audit Period: Fiscal year ending December 31, 2026
+    *   *Investments:*
+        *   Mesa, AZ: $61,400,000
+        *   Aurora, CO: $27,900,000
+    *   *Capital:*
+        *   Total Commitments: $312,500,000
+        *   Sponsor Commitment: $7,500,000
+    *   *Facility:*
+        *   Amount: $75,000,000
+        *   Max: $120,000,000
+    *   *Dates:*
+        *   Initial Closing: 2026-04-30
+        *   Final Closing: 2027-04-30
+        *   Audit Change: 2026-06-01
+
+    *   *Note:* The prompt asks for a "JSON object only". I should structure it logically based on the content provided.
+
+    *   *Refining the Auditor logic:* Section 13.4 explicitly states that all references to Wexcombe Adair are now Lindenhall Crewe.
+
+    *   *Refining the Investment logic:*
+        *   Mesa, AZ: 288-unit multifamily.
+        *   Aurora, CO: 214,000 sq ft light industrial.
+
+    ```json
+    {
+      "audit_information": {
+        "current_auditor": "Lindenhall Crewe LLP",
+        "previous_auditor": "Wexcombe Adair LLP",
+        "effective_date_of_change": "June 1, 2026",
+        "audit_period": "Fiscal year ending December 31, 2026"
+      },
+      "investment_details": [
+        {
+          "location": "Mesa, Arizona",
+          "type": "garden-style multifamily",
+          "units": 288,
+          "acquisition_cost": 61400000,
+          "funding_details": {
+            "capital_contributions": 24800000,
+            "loan_amount": 36600000
+          }
+        },
+        {
+          "location": "Aurora, Colorado",
+          "type": "light

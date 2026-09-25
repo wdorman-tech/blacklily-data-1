@@ -1,0 +1,45 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "When was the business continuity plan last exercised in a full-scale test?"
+
+2.  **Scan Documents:**
+    *   Document 1: `04_business_continuity_plan.md` (Business Continuity Plan, dated April 21, 2026).
+    *   Section: SECTION 6. TESTING > 6.2 Most Recent Tests.
+    *   Content found: "The most recent full-scale test was conducted on November 14, 2025."
+
+3.  **Verify Constraints:**
+    *   Does the document answer the question? Yes.
+    *   Is it the latest version? Yes, dated April 21, 2026.
+    *   Is the answer specific? Yes (November 14, 2025).
+    *   Citation needed: File name (`04_business_continuity_plan.md`), Section (`SECTION 6. TESTING > 6.2 Most Recent Tests` or similar label from text). The prompt asks for "section where the answer appears, as they are labelled in the documents". The header says `Section: SECTION 6. TESTING > 6.2 Most Recent Tests`. I should use the section label provided in the document structure.
+    *   Quote needed: Verbatim text supporting the date.
+
+4.  **Draft the JSON:**
+    *   "answer": "November 14, 2025"
+    *   "source_document": "04_business_continuity_plan.md"
+    *   "section": "SECTION 6. TESTING > 6.2 Most Recent Tests" (Looking at the provided text headers: `<<< 04_business_continuity_plan.md | Business Continuity Plan, dated April 21, 2026 | Section: SECTION 6. TESTING > 6.2 Most Recent Tests >>>`)
+    *   "quote": "The most recent full-scale test was conducted on November 14, 2025."
+
+5.  **Refine Section Label:**
+    The document header format is `<<< FILENAME | Title | Section: LABEL >>>`.
+    For the specific content, the header line says `Section: SECTION 6. TESTING > 6.2 Most Recent Tests`.
+    I will use that exact string for the "section" key to ensure accuracy per rule 5 ("Cite the document file name and the section where the answer appears, as they are labelled in the documents").
+
+6.  **Final Review:**
+    *   JSON format only? Yes.
+    *   No markdown fences? Yes.
+    *   Keys correct? Yes.
+    *   Values accurate based on text? Yes.
+
+    Text: "The most recent full-scale test was conducted on November 14, 202

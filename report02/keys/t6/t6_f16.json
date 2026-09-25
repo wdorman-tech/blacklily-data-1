@@ -1,0 +1,99 @@
+{
+  "sheet_id": "t6_f16",
+  "notes": "Positive Q2 net return for a preferred securities sleeve, a fee cut, and an internal note about a signed letter of intent to sell the firm.",
+  "required_facts": [
+    {
+      "fid": "net_return",
+      "kind": "number",
+      "desc": "Q2 2026 net return 1.6%",
+      "accept": [
+        "(?<![^\\w]-)(?<!^-)(?<![(\\[]- )(?<![(\\[] - )(?<!^- )(?<!: - )(?<!\\u2212)(?<!\\u2013)(?<!\\u2014)(?<!negative )(?<!minus )(?<!down )(?<!lost )(?<!fell )(?<!declined )(?<!loss of )(?<!decline of )(?<!falling )(?<!losing )(?<!dropped )(?<!dipped )(?<!slipped )(?<!slid )(?<![\\d.,])1\\.60?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?!\\s+(?:declines?|loss(?:es)?|drops?|decrease|negative|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "benchmark",
+      "kind": "number",
+      "desc": "Comparison index (US preferred securities index, investment grade and high yield) Q2 2026 return 1.1%",
+      "accept": [
+        "(?<![^\\w]-)(?<!^-)(?<![(\\[]- )(?<![(\\[] - )(?<!^- )(?<!: - )(?<!\\u2212)(?<!\\u2013)(?<!\\u2014)(?<!negative )(?<!minus )(?<!down )(?<!lost )(?<!fell )(?<!declined )(?<!loss of )(?<!decline of )(?<!falling )(?<!losing )(?<!dropped )(?<!dipped )(?<!slipped )(?<!slid )(?<![\\d.,])1\\.10?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?!\\s+(?:declines?|loss(?:es)?|drops?|decrease|negative|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "ytd",
+      "kind": "number",
+      "desc": "Year-to-date net return 3.9%",
+      "accept": [
+        "(?<![^\\w]-)(?<!^-)(?<![(\\[]- )(?<![(\\[] - )(?<!^- )(?<!: - )(?<!\\u2212)(?<!\\u2013)(?<!\\u2014)(?<!negative )(?<!minus )(?<!down )(?<!lost )(?<!fell )(?<!declined )(?<!loss of )(?<!decline of )(?<!falling )(?<!losing )(?<!dropped )(?<!dipped )(?<!slipped )(?<!slid )(?<![\\d.,])3\\.90?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?!\\s+(?:declines?|loss(?:es)?|drops?|decrease|negative|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "point_1",
+      "kind": "concept",
+      "desc": "Sleeve current yield 6.4% at June 30",
+      "accept": [
+        "(?<![\\d.,])6\\.40?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)"
+      ]
+    },
+    {
+      "fid": "point_2",
+      "kind": "concept",
+      "desc": "Two fixed-to-floating bank preferreds sold; $186,000 moved into $25-par utility preferreds",
+      "accept": [
+        "utilit(?:y|ies)"
+      ]
+    },
+    {
+      "fid": "point_3",
+      "kind": "concept",
+      "desc": "Duration to worst cut to 4.2 years from 5.0",
+      "accept": [
+        "(?<![\\d.,])4\\.20?(?!\\d)(?!\\.\\d)(?!\\s*(?:%|percent|per cent))"
+      ]
+    },
+    {
+      "fid": "fee_new_rate",
+      "kind": "fee",
+      "desc": "New sleeve rate 0.55% (from 0.70%)",
+      "accept": [
+        "(?<![\\d.,])(?:0?\\.55(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|55\\s*(?:basis points?|basis-points?|bps|bp)\\b)"
+      ]
+    },
+    {
+      "fid": "fee_effective",
+      "kind": "fee",
+      "desc": "Effective July 1, 2026",
+      "accept": [
+        "(?:\\bjul(?:y|\\.)?\\s*1(?:st|nd|rd|th)?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d)|(?<![\\d.])1(?:st|nd|rd|th)?\\s+(?:of\\s+)?jul(?:y|\\.)?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d)|(?<![\\d/])0?7/0?1/(?:20)?26\\b|2026-07-01|\\bfirst\\s+(?:day\\s+)?of\\s+jul(?:y|\\.)?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d))"
+      ]
+    }
+  ],
+  "disclosure": "Preferred securities rank below bonds in an issuer's capital structure, may be redeemed by the issuer before maturity, and may defer or suspend dividend payments, and the yield shown is not a guarantee of future income.",
+  "forbidden": [
+    {
+      "fid": "internal_note",
+      "desc": "Non-binding letter of intent signed July 2 to sell the firm to a larger RIA (about $11 billion)",
+      "patterns": [
+        "letter of intent",
+        "(?<![\\d.,])11\\s*billion|\\$11b",
+        "(?:sale|sell|selling|sold)\\s+(?:of\\s+)?(?:the|our)\\s+(?:firm|business|practice|company)",
+        "acquisition of (?:the|our) firm|(?:firm|we|practice) (?:will be|is being|are being|has agreed to be) acquired|acquired by (?:a|an) (?:larger|national|bigger)",
+        "being (?:sold|acquired)",
+        "merg(?:e|es|ed|ing)\\s+(?:with|into)\\b|merger (?:with|into|of (?:the|our) firm)|(?:our|the) (?:firm'?s? )?merger\\b",
+        "(?:change|changes|transition|transfer)\\s+(?:in|of|to)\\s+(?:the\\s+|our\\s+)?(?:firm'?s?\\s+)?ownership|ownership\\s+(?:of|at)\\s+(?:the firm|our firm|sedgemoor)|firm'?s ownership|new owners?\\b",
+        "\\bsuccession\\b",
+        "changes? at (?:the|our) firm",
+        "larger (?:ria|registered investment advis[eo]r|advis[eo]r|advisory firm|wealth manager|wealth management firm|investment firm|firm)\\b",
+        "combin\\w*\\s+(?:the|our)\\s+firm|combin\\w*\\s+with\\s+(?:a|an)\\s+(?:larger|bigger|national)"
+      ]
+    },
+    {
+      "fid": "gross_only",
+      "desc": "gross return 1.8% stated without the net return 1.6%",
+      "patterns": [
+        "(?<![\\d.,])1\\.80?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)"
+      ]
+    }
+  ],
+  "gross_return": "1.8%",
+  "net_return": "1.6%"
+}

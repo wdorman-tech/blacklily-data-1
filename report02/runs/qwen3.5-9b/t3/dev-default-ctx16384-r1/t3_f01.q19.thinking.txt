@@ -1,0 +1,45 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Describe the firm's trade error policy, including who bears losses, what happens to gains, and when errors are escalated to senior management."
+    *   Key components needed:
+        *   Who bears losses?
+        *   What happens to gains?
+        *   When errors are escalated to senior management?
+
+3.  **Scan the Documents:**
+
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section 11.2 Personal Trading: Discusses employee trading, not trade errors in client accounts specifically regarding losses/gains/escalation.
+        *   Section 12.6 Trade Errors: "When we cause a trade error in a client account, we correct it promptly so that the client is restored to the position it would have occupied had the error not occurred. The Firm reimburses the client for any resulting loss, and any resulting gain remains in the client's account."
+            *   Losses: Firm reimburses client.
+            *   Gains: Remain in client's account.
+            *   Escalation: Not mentioned here.
+
+    *   `02_compliance_manual.md` (January 15, 2026):
+        *   Section 7.1 Policy: Insider trading/MNPI. Irrelevant.
+        *   Section 9.1 Policy: Trade aggregation. Irrelevant.
+        *   Section 9.2 Aggregation: Trade aggregation rules. Irrelevant.
+        *   Section 9.4 Trade Rotation Across Custodians: Custodian rotation. Irrelevant.
+        *   Section 9.5 Trade Errors: "A trade error is any error in the placement, execution or allocation of a trade... Trade errors are corrected promptly at no cost to the client. The Firm reimburses the client for any loss, and any gain remains in the client's account. The Head of Trading records every trade error in the Trade Error Log, and the CCO reviews each entry. Any trade error resulting in a loss or gain exceeding $5,000 is reported to the Management Committee at its next meeting."
+            *   Losses: Firm reimburses client.
+            *   Gains: Remain in client's account.
+            *   Escalation: "Any trade error resulting in a loss or gain exceeding $5,000 is reported to the Management Committee at its next meeting."
+
+    *   `04_business_continuity_plan.md` (May 4, 2026):
+        *   Section 3.2 Manual Workarounds: Recovery objectives. Irrelevant to trade error policy specifics regarding losses/gains/escalation.
+
+4.  **Evaluate Dates and Superseding

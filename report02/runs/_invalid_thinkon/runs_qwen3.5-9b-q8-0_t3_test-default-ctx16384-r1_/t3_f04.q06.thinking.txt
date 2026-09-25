@@ -1,0 +1,36 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question using *only* the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (only one document provided here).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Who owns the business continuity plan, and where is the Firm's alternate site?"
+    *   This requires two pieces of information:
+        1.  Owner of the Business Continuity Plan (BCP).
+        2.  Location of the Firm's alternate site.
+
+3.  **Scan the Documents:**
+    *   Document: `04_business_continuity_plan.md` (dated December 1, 2025).
+    *   Section 1.1 Plan Ownership and Governance > 1.1 Plan Owner: "The Chief Operating Officer, Dmitri Halloway, is the owner of this Plan..."
+    *   Section 2. Alternate Site and Remote Operations > 2.1 Alternate Site: "The Firm's alternate site is a dedicated recovery suite operated by Norcastle Recovery Services in Glastonbury, Connecticut..."
+
+4.  **Synthesize the Answer:**
+    *   Owner: Chief Operating Officer, Dmitri Halloway.
+    *   Location: Glastonbury, Connecticut (operated by Norcastle Recovery Services).
+    *   Since both parts are found in the same document (`04_business_continuity_plan.md`), I can combine them into a single answer string or structure it clearly within the `answer` field. The prompt asks for "the answer" as a string. I need to make sure it addresses both parts of the question accurately based *only* on the text.
+    *   Quote selection: I need verbatim text that supports both facts.
+        *   Fact 1 (Owner): "The Chief Operating Officer, Dmitri Halloway, is the owner of this Plan" (Section 1.1).
+        *   Fact 2 (Location): "The Firm's alternate site is a dedicated recovery suite operated by Norcastle Recovery Services in Glastonbury, Connecticut" (Section 2.1).
+    *   Since I need to cite *the* section where the answer appears, and they are in different sections, I should probably combine the quotes or select the most relevant one. However, the instruction says "Cite the document file name and the section where the answer appears". If the answer spans two sections, I might need to list both or choose the one that covers the primary query. Usually, for JSON output like this, if multiple sections are needed, I should try to combine them in the quote or acknowledge the split. However, looking at the constraint "Cite the document file name and the section where the answer appears", singular "section".
+    *   Let's check if there is a way to answer both from one section? No, Owner is Section 1.1, Location is Section 2.1.
+    *   Strategy: I

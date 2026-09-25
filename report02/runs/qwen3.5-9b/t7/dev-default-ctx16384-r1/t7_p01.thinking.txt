@@ -1,0 +1,63 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   **Role:** Marketing review analyst at an SEC-registered investment adviser.
+    *   **Task:** Review draft marketing materials against a fixed checklist (Rule 206(4)-1 derived codes C1-C9).
+    *   **Input:** A draft marketing piece ("Our Performance" page copy).
+    *   **Output Format:** JSON object only, no markdown, no preamble. Key: "flags". Value: List of objects with keys "category", "quote", "reason".
+    *   **Constraints:**
+        *   Raise only items falling under C1-C9.
+        *   Quote verbatim text from the draft.
+        *   Do not flag compliant elements (e.g., testimonials with disclosures, gross/net shown equally, ratings with details, hypotheticals with assumptions).
+        *   One flag per distinct issue.
+        *   If nothing flags, return empty list.
+
+2.  **Analyze the Draft Content against Checklist Codes:**
+
+    *   **C1 (Testimonial/Endorsement):** No testimonials or endorsements found in the text.
+    *   **C2 (Gross vs Net Performance):**
+        *   Header: "Dividend Growth Equity: 14.62% over one year, 12.07% over five years and 11.84% over ten years, annualized, for periods ended December 31, 2025, gross of fees." -> This shows *only* gross performance in the header text without net performance shown with equal prominence immediately beside it.
+        *   Table: Shows both Gross and Net side-by-side.
+        *   Text under "Dividend Growth Equity": "For the ten years ended December 31, 2025, the composite returned 11.84% annualized gross of fees and 10.72% annualized net of fees." -> Shows both.
+        *   Text under "Intermediate Tax-Exempt": "Since its April 1, 2009 inception through December 31, 2025, the Intermediate Tax-Exempt Composite returned 3.28% annualized gross of fees and 2.76% annualized net of fees." -> Shows both.
+        *   Text under "Core Balanced": "Over the one year ended December 31, 2025, the Core Balanced Composite returned 11.26% gross and 10.31% net of fees..." -> Shows both.
+        *   *Issue:* The header text ("Dividend Growth Equity: 14.62% over one year...") presents gross performance without net performance shown with at least equal prominence. This is a potential C2 violation.
+    *   **C3 (Performance Periods):**
+        *   Dividend Growth Equity: Shows 1, 5, 10 years and since inception.
+        *   Intermediate Tax-Exempt: Shows since inception (April 1, 2009 to Dec 31, 2025). It does not explicitly show 1, 5, 10 year periods in the text block for this strategy, but it says "Since its April 1, 2009 inception...". The table for Dividend Growth Equity shows 1, 5, 10. The Core Balanced section says "Because the composite has existed for less than ten years, the since-inception period is shown in place of a ten-year period."
+        *   Rule C3 requires: "Performance of a portfolio other than a private fund without results for 1-, 5- and 10-year periods (or the life of the portfolio if shorter)."
+        *   Dividend Growth Equity Table: Shows 1, 5, 10. Compliant.
+        *   Intermediate Tax-Exempt Text: "Since its April 1, 2009 inception through December 31, 2025... returned 3.28% annualized". It does not show 1 or 5 year periods in the text description. However, is there a table? No table for this specific strategy section. Just the text. Does it violate C3? The rule says "without results for 1-, 5- and 10-year periods (or the life of the portfolio if shorter)". Since inception is April 2009 to Dec 2025 (approx 16 years). It should show 1, 5, 10. It only shows "Since inception". This looks like a C3 violation for the Intermediate Tax-Exempt section text.
+        *   Core Balanced Text: Shows 1 year, 5 years, and since inception (life of portfolio < 10 years). Compliant per rule exception ("or the life of the portfolio if shorter").
+    *   **C4 (Favorable Window):** No evidence of cherry-picking periods. The text explicitly states "for periods ended December 31, 2025" and shows inception dates.
+    *   **C5 (Hypothetical/Model):** No hypotheticals found.
+    *   **C6 (Untrue/Material Statement):** No absolute claims like "guaranteed". "Past performance does not guarantee future results." is present.
+    *   **C7 (Third-party Rating):** Mentions "Named to the Penwarden Adviser Review list of Top 50 Independent Advisers in the Mid-Atlantic". This is a third-party rating/ranking.
+        *   Text: "Named to the Penwarden Adviser Review list of Top 50 Independent Advisers in the Mid-Atlantic"
+        *   Missing info per C7: Date it was given, period it covers, who gave it (Penwarden Adviser Review), whether compensation was paid.
+        *   The text says "Named to the Penwarden Adviser Review list...". It identifies the source ("Penwarden Adviser Review"). It does not state the date of the list or the period covered by the ranking, nor explicitly state if compensation was paid (though it's a review list). C7 requires: "date it was given, the period it covers, who gave it, and whether compensation was paid for it."
+        *   Who gave it: Penwarden Adviser Review.
+        *   Date/Period: Not stated.
+        *   Compensation: Not stated.
+        *   This is a C7 violation.
+    *   **C8 (Selected Positions):** No mention of selected positions vs total portfolio. Composites are described as "every fee-paying, discretionary account".
+    *   **C9 (Benefits/Risks):** Risks are discussed under "What to weigh" for each strategy (stocks can lose value, bond prices fall, etc.). Seems balanced.
+
+3.  **Refine Flags:**
+
+    *   **Flag 1 (C2):** Header text shows gross only.
+        *   Quote: "Dividend Growth Equity: 14.62% over one year, 12.07% over five years and 11.84% over ten years, annualized, for periods ended December 31, 2025, gross of fees."
+        *   Reason: Gross performance is presented without net performance shown with at least equal prominence in the header section.
+    *   **Flag 2 (C7):** Third-party rating mentioned without full disclosure.
+        *   Quote: "Named to the Penwarden Adviser Review list of Top 50 Independent Advisers in the Mid-Atlantic"
+        *   Reason: A third-party rating is presented without the date it was given, the period it covers, or whether compensation was paid for it.
+    *   **Flag 3 (C3):** Intermediate Tax-Exempt section missing 1/5 year periods.
+        *   Quote: "Since its April 1, 2009 inception through December 31, 2025, the Intermediate Tax-Exempt Composite returned 3.28% annualized gross of fees and 2.76% annualized net of fees."
+        *   Reason: Performance is shown only for the life of the portfolio without results for 1-, 5-, and 10-year periods, despite the portfolio having existed longer than ten years (inception April 2009 to Dec 2025).
+
+    *Wait, let's re-evaluate C3.*
+    Rule C3: "Performance of a portfolio other than a private fund without results for 1-, 5- and 10-year periods (or the life of the portfolio if shorter)."
+    Intermediate Tax-Exempt Inception: April 1, 2009. End date shown: Dec 31, 2025. Duration > 10 years.
+    Text provided: "Since its April 1, 2009 inception through December 31, 2025... returned 3.28% annualized".
+    It does not show 1-year or 5-year results in that specific text block. The Dividend Growth Equity section has a table with 1, 5, 10. The Intermediate Tax-Exempt section does not have a table, just the text.
+    Is this a violation? Yes, because it fails to show 1, 5, and 10 year periods when the portfolio

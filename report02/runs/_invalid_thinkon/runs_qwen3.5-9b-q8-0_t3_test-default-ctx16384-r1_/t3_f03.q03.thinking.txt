@@ -1,0 +1,36 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "What is the firm's limit on gifts given to or received from any single source, and what approval is required above it?"
+    *   Key elements needed:
+        *   Limit on gifts (value).
+        *   Approval requirement above that limit.
+
+3.  **Scan Documents:**
+    *   `01_brochure.md`: Discusses advisory business, code of ethics, participation in client transactions. No specific gift limits mentioned here.
+    *   `02_compliance_manual.md`:
+        *   Section 5.1 General Principles: Prohibits gifts influencing judgment. Cash prohibited.
+        *   Section 5.2 Gifts: "No Supervised Person may give or accept gifts with an aggregate value exceeding $250 per source or recipient per calendar year without the prior written approval of the CCO."
+        *   Section 5.3 Business Entertainment: Mentions $500 per person per event for entertainment, but question asks about "gifts".
+        *   Section 5.4 Gifts from Client Families: Refers back to Section 5.2.
+
+4.  **Evaluate Findings:**
+    *   Document: `02_compliance_manual.md`
+    *   Section: `SECTION 5. GIFTS AND ENTERTAINMENT > 5.2 Gifts`
+    *   Limit: $250 per source or recipient per calendar year.
+    *   Approval: Prior written approval of the CCO (Chief Compliance Officer).
+    *   Date: January 15, 2026.
+    *   Brochure Date: March 27, 2026.
+    *   Rule Check: The compliance manual is dated Jan 15, 2026. The brochure is dated March 27, 2026. However, the specific policy detail regarding gift limits is in the Compliance Manual (Section 5.2). The Brochure doesn't contain this specific limit. Usually, the Compliance Manual contains the operational policies. The prompt says "Later-dated documents supersede earlier ones." The Brochure is later dated (March vs Jan), but it does not contain the answer. The Compliance Manual *does* contain the answer. I must use the document that actually answers the question. Since the Compliance Manual is the source of the policy text, I will cite that. Even if the Brochure is newer, it doesn't override the specific policy text in the manual unless it explicitly changes it (which it doesn't seem to do regarding gift limits). The instruction says "Later-dated documents supersede earlier ones. Where a policy update memorandum or amendment changes a provision, answer with the provision currently in effect". Since the Brochure doesn't mention the limit, I rely on the Compliance Manual which is the governing

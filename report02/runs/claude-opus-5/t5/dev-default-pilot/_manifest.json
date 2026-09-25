@@ -1,0 +1,25 @@
+{
+ "task": "t5",
+ "model": "claude-opus-5",
+ "split": "dev",
+ "run": "pilot",
+ "variant": "default",
+ "think": "auto",
+ "items": 3,
+ "started": "2026-09-22T00:05:11-0400",
+ "prompt_hashes": [
+  "6d236bf95dd6844f63402ea6eb439d36ce8be709a4adf34358c7a1d196d41c71",
+  "7aeb2f1040f2d51fc67e51426f68bb87d2e325c76a379466a56526a6a607cb58",
+  "80daf9386354b7316bcee27ace72a2c77ea5c1bba696115c8ca019b6eb16c6d5",
+  "..."
+ ],
+ "system_hashes": [
+  "8a96cf4ee0e7d1ec6e59cc7af41b5004fcd5b3fa4b6e73201c5831d286f19909"
+ ],
+ "subject": {
+  "via": "claude -p --safe-mode --tools \"\" --system-prompt-file",
+  "model": "claude-opus-5",
+  "workers": 6
+ },
+ "finished": "2026-09-22T00:06:47-0400"
+}

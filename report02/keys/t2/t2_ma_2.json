@@ -1,0 +1,173 @@
+{
+ "pair_id": "t2_ma_2",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "Mastercard Incorporated",
+ "ticker": "MA",
+ "split": "test",
+ "prior": {
+  "fiscal_year_end": "2024-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139125000011/ma-20241231.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2025-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm"
+ },
+ "words": 4851,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "modified",
+   "prior_heading": "Liabilities or business limitations resulting from litigation could materially and adversely affect our results of operations.",
+   "current_heading": "Liabilities or business limitations resulting from litigation could materially and adversely affect our results of operations.",
+   "similarity": 0.898,
+   "diff": [
+    "replace: [21] -> [19]",
+    "insert: [] -> [and litigation settlements (such as the Rules Relief Class settlement as described in Note 19 (Legal and Regulatory Proceedings) to the consolidated financial statements included in Part II, Item 8)]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds litigation settlements, specifically the Rules Relief Class settlement described in Note 19, as a source of future limitations on Mastercard's rules and business practices; the legal proceedings note cross-reference also moves from Note 21 to Note 19.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2: a new specific named proceeding (the Rules Relief Class settlement) is referenced as a source of business limitations; the Note 21 to Note 19 change alone would be a minor cross-reference update."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 2: a new specific proceeding (the Rules Relief Class settlement) is referenced as a source of future rule or business-practice limitations; the note renumbering alone would be minor."
+    }
+   }
+  },
+  {
+   "aid": "a02",
+   "status": "modified",
+   "prior_heading": "Substantial and intense competition worldwide in the global payments industry may materially and adversely affect our overall business and results of operations.",
+   "current_heading": "Substantial and intense competition worldwide in the global payments industry may materially and adversely affect our overall business and results of operations.",
+   "similarity": 0.991,
+   "diff": [
+    "insert: [] -> [MASTERCARD 2025 FORM 10-K 31 PART I ITEM 1A. RISK FACTORS]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "No substantive change; the only difference is a page header/footer artifact (MASTERCARD 2025 FORM 10-K 31 PART I ITEM 1A. RISK FACTORS) captured at the end of the section.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: the risk factor text is identical and the only change is a page layout artifact, which carries no change in substance."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: the risk factor text is identical and the difference is page-layout residue, not a change in disclosure."
+    }
+   }
+  },
+  {
+   "aid": "a03",
+   "status": "modified",
+   "prior_heading": "Disintermediation from stakeholders both within and outside of the payments value chain could harm our business.",
+   "current_heading": "Disintermediation from stakeholders both within and outside of the payments value chain could harm our business.",
+   "similarity": 0.887,
+   "diff": [
+    "delete: [MASTERCARD 2024 FORM 10-K 29 PART I ITEM 1A. RISK FACTORS] -> []",
+    "insert: [] -> [Participants may also withhold rights to data we use to power our solutions in order to support their own potential future solutions, potentially impacting the effectiveness of our solutions.]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds a new disintermediation risk that payments industry participants may withhold rights to data Mastercard uses to power its solutions in order to support their own future solutions, potentially impairing the effectiveness of Mastercard's solutions.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: a new risk and data dependency (participants withholding data rights) is disclosed; the removed page footer is only a layout artifact."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: a new risk and data dependency (participants withholding data rights) is disclosed that did not appear in the prior year."
+    }
+   }
+  },
+  {
+   "aid": "a04",
+   "status": "modified",
+   "prior_heading": "Continued intense pricing pressure may materially and adversely affect our overall business and results of operations.",
+   "current_heading": "Continued intense pricing pressure may materially and adversely affect our overall business and results of operations.",
+   "similarity": 0.983,
+   "diff": [
+    "replace: [enough] -> [to the extent necessary]",
+    "insert: [] -> [32 MASTERCARD 2025 FORM 10-K PART I ITEM 1A. RISK FACTORS]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "Rewords \"grow our volume and/or services enough\" to \"grow our volume and/or services to the extent necessary\" to offset higher incentives and pricing discounts, plus a page footer artifact.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: the only textual change is stylistic rewording with identical meaning, and the remaining difference is a page layout artifact."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: stylistic rewording with identical meaning plus page-footer residue; no change in risk, scope or numbers."
+    }
+   }
+  },
+  {
+   "aid": "a05",
+   "status": "modified",
+   "prior_heading": "Rapid and significant technological developments and changes could negatively impact our overall business and results of operations or limit our future growth.",
+   "current_heading": "Rapid and significant technological developments and changes could negatively impact our overall business and results of operations or limit our future growth.",
+   "similarity": 0.978,
+   "diff": [
+    "replace: [cryptocurrency] -> [digital assets]",
+    "replace: [changes;] -> [changes (including with regard to AI);]",
+    "delete: [30 MASTERCARD 2024 FORM 10-K PART I ITEM 1A. RISK FACTORS] -> []",
+    "delete: [safety and] -> []"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Broadens the example technology from \"cryptocurrency and blockchain\" to \"digital assets and blockchain\" and adds that third parties Mastercard relies on for new technologies may fail to keep pace with changes \"including with regard to AI\", while trimming \"safety and security technologies\" to \"security technologies\".",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1 and criterion 3: a newly specified dependency on third parties keeping pace with AI is disclosed, and replacing cryptocurrency with the broader category of digital assets widens the scope of the technology risk."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: scope widened (cryptocurrency to the broader category of digital assets) and the third-party dependency risk is newly extended to AI specifically."
+    }
+   }
+  },
+  {
+   "aid": "a06",
+   "status": "unchanged",
+   "prior_heading": "Operating a real-time account-based payments network presents risks that could materially affect our business.",
+   "current_heading": "Operating a real-time account-based payments network presents risks that could materially affect our business.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a07",
+   "status": "modified",
+   "prior_heading": "Working with new customers and end users as we continue to expand our products and services can present operational and onboarding challenges, be costly and result in reputational damage if the new products or services do not perform as intended.",
+   "current_heading": "Working with new customers and end users as we continue to expand our products and services can present operational and onboarding challenges, be costly and result in reputational damage if the new products or services do not perform as intended.",
+   "similarity": 0.985,
+   "diff": [
+    "insert: [] -> [MASTERCARD 2025 FORM 10-K 33 PART I ITEM 1A. RISK FACTORS]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "No substantive change; the only difference is a page header/footer artifact (MASTERCARD 2025 FORM 10-K 33 PART I ITEM 1A. RISK FACTORS) captured at the end of the section.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: the risk factor text is identical and the only change is a page layout artifact, which carries no change in substance."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: the risk factor text is identical and the difference is page-layout residue, not a change in disclosure."
+    }
+   }
+  }
+ ]
+}

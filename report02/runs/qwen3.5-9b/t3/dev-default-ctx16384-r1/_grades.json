@@ -1,0 +1,1526 @@
+{
+ "task": "t3",
+ "model": "qwen3.5:9b",
+ "items": {
+  "t3_f01.q01": {
+   "units": [
+    {
+     "uid": "q01",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "Margaret L. Tennick owns 46% and Daniel R. Arlow owns 34% of the membership interests; the remaining 20% is held by Tennick Arlow Employee Holdings, LLC, owned by nine senior employees, none with an indirect interest of 5% or more.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:01_brochure.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.29,
+    "prompt_tokens": 1955,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 88.4,
+    "prompt_tokens_per_sec": 3542.2,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 2731,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q02": {
+   "units": [
+    {
+     "uid": "q02",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "",
+     "expected": "8 hours from the declaration of a Significant Business Disruption (shortened from 24 hours by the CCO memorandum dated August 17, 2026).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:06_policy_update_memo.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.22,
+    "prompt_tokens": 1635,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 88.3,
+    "prompt_tokens_per_sec": 3569.9,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 2890,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q03": {
+   "units": [
+    {
+     "uid": "q03",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "unanswerable_clean",
+     "hallucination": false,
+     "got": "",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.31,
+    "prompt_tokens": 1633,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.5,
+    "prompt_tokens_per_sec": 3584.8,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 2990,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q04": {
+   "units": [
+    {
+     "uid": "q04",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "",
+     "expected": "The CCO or the Compliance Manager approves requests (the Compliance Manager approves the CCO's own requests); an approval is valid only until the close of regular trading on the business day on which it is granted.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:02_compliance_manual.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.21,
+    "prompt_tokens": 1543,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 88.4,
+    "prompt_tokens_per_sec": 3327.5,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3145,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q05": {
+   "units": [
+    {
+     "uid": "q05",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "near_miss",
+     "hallucination": false,
+     "got": "",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.16,
+    "prompt_tokens": 1362,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 88.5,
+    "prompt_tokens_per_sec": 3317.1,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3203,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q06": {
+   "units": [
+    {
+     "uid": "q06",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "At the most recent net asset value reported by the fund's administrator or general partner, adjusted for capital contributions and distributions made after the NAV date (a Level 3 methodology); a custodian-reported value differing by more than 1% is referred to the Director of Operations.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:03_valuation_policy.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.22,
+    "prompt_tokens": 1579,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 88.4,
+    "prompt_tokens_per_sec": 3407.4,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3179,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q07": {
+   "units": [
+    {
+     "uid": "q07",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "Quarterly in advance, based on the Billing Value of each account (custodian-reported value, or Valuation Policy value for assets the custodian does not price and for Level 3 assets such as private fund interests) on the last business day of the preceding calendar quarter.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:05_fee_schedule.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.31,
+    "prompt_tokens": 1709,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.8,
+    "prompt_tokens_per_sec": 3565.4,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 2941,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q08": {
+   "units": [
+    {
+     "uid": "q08",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "",
+     "expected": "60 calendar days for Reportable Securities acquired on or after August 17, 2026 (increased from 30 calendar days by the CCO memorandum; securities acquired before that date remain subject to 30 days).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:06_policy_update_memo.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.21,
+    "prompt_tokens": 1601,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.9,
+    "prompt_tokens_per_sec": 4876.9,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3145,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q09": {
+   "units": [
+    {
+     "uid": "q09",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "The Charlottesville office is the primary alternate site for trading, operations and client service; if both the Richmond and Charlottesville offices are unavailable, the Raleigh office is the secondary alternate site. All personnel can also work remotely on Firm-managed laptops.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:04_business_continuity_plan.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.3,
+    "prompt_tokens": 1647,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.9,
+    "prompt_tokens_per_sec": 3425.3,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3436,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q10": {
+   "units": [
+    {
+     "uid": "q10",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "unanswerable_clean",
+     "hallucination": false,
+     "got": "",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.29,
+    "prompt_tokens": 1530,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.4,
+    "prompt_tokens_per_sec": 3518.7,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3078,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q11": {
+   "units": [
+    {
+     "uid": "q11",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "",
+     "expected": "Gifts from any single source may not exceed $250 in aggregate per calendar year (every gift above $50 must be reported within ten business days); business entertainment with an estimated cost above $400 per person per event requires the CCO's prior approval.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:02_compliance_manual.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.27,
+    "prompt_tokens": 1517,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.7,
+    "prompt_tokens_per_sec": 3419.2,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 2933,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q12": {
+   "units": [
+    {
+     "uid": "q12",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "near_miss",
+     "hallucination": false,
+     "got": "",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.4,
+    "prompt_tokens": 1804,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.2,
+    "prompt_tokens_per_sec": 3508.2,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3052,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q13": {
+   "units": [
+    {
+     "uid": "q13",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "Because Margaret Tennick and two other supervised persons serve as trustees of certain client trusts, the Firm is deemed to have custody of those trusts' assets; Pemberline & Rusk LLP performs the annual surprise examination under Rule 206(4)-2.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:01_brochure.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.35,
+    "prompt_tokens": 1490,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.1,
+    "prompt_tokens_per_sec": 3271.6,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3096,
+    "peak_vram_mib": 7910
+   }
+  },
+  "t3_f01.q14": {
+   "units": [
+    {
+     "uid": "q14",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "",
+     "expected": "Chaired by the Chief Financial Officer (Graham Oyelaran), with the COO, the Director of Operations and a senior portfolio manager designated annually by the CIO as the other voting members and the CCO as a non-voting member; a quorum is three voting members including the Chair or the COO; it meets quarterly within 15 business days after each quarter-end and at other times on any member's request.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:03_valuation_policy.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.2,
+    "prompt_tokens": 1342,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 88.2,
+    "prompt_tokens_per_sec": 3450.2,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3100,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q15": {
+   "units": [
+    {
+     "uid": "q15",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "",
+     "expected": "On household assets above $7,500,000 (lowered from $10,000,000 by the CCO memorandum dated August 17, 2026, effective for the billing period that began July 1, 2026).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:06_policy_update_memo.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.41,
+    "prompt_tokens": 2162,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 88.1,
+    "prompt_tokens_per_sec": 3463.7,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 2535,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q16": {
+   "units": [
+    {
+     "uid": "q16",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "Compliance reviews lexicon alerts daily and reviews a random sample of not less than 50 messages each week drawn from all Supervised Persons, documenting each review and escalation in the Compliance Platform.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:02_compliance_manual.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.2,
+    "prompt_tokens": 1211,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.9,
+    "prompt_tokens_per_sec": 3204.7,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3059,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q17": {
+   "units": [
+    {
+     "uid": "q17",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "unanswerable_clean",
+     "hallucination": false,
+     "got": "",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.25,
+    "prompt_tokens": 1596,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.8,
+    "prompt_tokens_per_sec": 3658.5,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3007,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q18": {
+   "units": [
+    {
+     "uid": "q18",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "At least annually; the most recent full test was conducted on October 22, 2025 (a tabletop exercise combined with a live exercise), and the results were reported to the Management Committee on November 12, 2025.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:04_business_continuity_plan.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.2,
+    "prompt_tokens": 1304,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.7,
+    "prompt_tokens_per_sec": 3667.4,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3016,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q19": {
+   "units": [
+    {
+     "uid": "q19",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "The Firm reimburses the client for any loss and any gain remains in the client's account; every error is recorded in the Trade Error Log and reviewed by the CCO, and any error resulting in a loss or gain exceeding $5,000 is reported to the Management Committee at its next meeting.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:02_compliance_manual.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.22,
+    "prompt_tokens": 1423,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.9,
+    "prompt_tokens_per_sec": 3529.4,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3106,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q20": {
+   "units": [
+    {
+     "uid": "q20",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "near_miss",
+     "hallucination": false,
+     "got": "",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.3,
+    "prompt_tokens": 1500,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.4,
+    "prompt_tokens_per_sec": 3755.3,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3279,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q21": {
+   "units": [
+    {
+     "uid": "q21",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "$2,046,300,000 as of December 31, 2025, of which $1,982,100,000 was managed on a discretionary basis and $64,200,000 on a non-discretionary basis (about 1,140 households).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:01_brochure.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.36,
+    "prompt_tokens": 1830,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.8,
+    "prompt_tokens_per_sec": 3575.6,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 2740,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q22": {
+   "units": [
+    {
+     "uid": "q22",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "",
+     "expected": "Both the Chief Financial Officer and the Chief Compliance Officer must approve it in writing before it is applied (per the CCO memorandum dated August 17, 2026, replacing approval by the Director of Operations).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:06_policy_update_memo.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.3,
+    "prompt_tokens": 1588,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.6,
+    "prompt_tokens_per_sec": 3582.8,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3007,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q23": {
+   "units": [
+    {
+     "uid": "q23",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "Tallowmere Security Partners conducts an external penetration test of the network and client-facing applications annually (vulnerability scans and simulated phishing are quarterly).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:02_compliance_manual.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.17,
+    "prompt_tokens": 1435,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.8,
+    "prompt_tokens_per_sec": 4468.9,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3193,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q24": {
+   "units": [
+    {
+     "uid": "q24",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "unanswerable_clean",
+     "hallucination": false,
+     "got": "",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.26,
+    "prompt_tokens": 1459,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.3,
+    "prompt_tokens_per_sec": 3902.1,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3003,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q25": {
+   "units": [
+    {
+     "uid": "q25",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "$1,000,000 of Billable Assets and a minimum annual fee of $10,000 (billed $2,500 per quarter); households that became clients before July 1, 2025 remain under the $750,000 minimum, and the Managing Partner may waive either minimum.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:05_fee_schedule.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.46,
+    "prompt_tokens": 2269,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 86.9,
+    "prompt_tokens_per_sec": 4471.6,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 2703,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q26": {
+   "units": [
+    {
+     "uid": "q26",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "",
+     "expected": "A suspected incident must be reported to the Information Security Officer within one hour of discovery; the Incident Response Team is led by the Information Security Officer, Owen Stahlberg, and includes the COO, the CCO and outside counsel Garrow Whitcombe LLP.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:02_compliance_manual.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.21,
+    "prompt_tokens": 1410,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 88.0,
+    "prompt_tokens_per_sec": 3689.0,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3064,
+    "peak_vram_mib": 7911
+   }
+  },
+  "t3_f01.q27": {
+   "units": [
+    {
+     "uid": "q27",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "near_miss",
+     "hallucination": false,
+     "got": "",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.22,
+    "prompt_tokens": 1671,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.4,
+    "prompt_tokens_per_sec": 5178.9,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3087,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q28": {
+   "units": [
+    {
+     "uid": "q28",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "Yes, unless the client retains voting authority; the Firm has retained Veridane Proxy Services, Inc. to provide research and vote recommendations under Investment Policy Committee guidelines, execute votes and maintain voting records.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:01_brochure.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.31,
+    "prompt_tokens": 1442,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.4,
+    "prompt_tokens_per_sec": 3308.0,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3187,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q29": {
+   "units": [
+    {
+     "uid": "q29",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "A listed equity or ETF price unchanged for five consecutive business days, a fixed income price unchanged for ten consecutive business days, and a private fund NAV dated more than 120 days before the valuation date.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:03_valuation_policy.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.3,
+    "prompt_tokens": 1384,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 86.9,
+    "prompt_tokens_per_sec": 3530.3,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3024,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q30": {
+   "units": [
+    {
+     "uid": "q30",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "",
+     "expected": "Sennacott Retention Systems, LLC, which replaced Marrowgate Archiving, Inc. effective August 3, 2026.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:06_policy_update_memo.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.27,
+    "prompt_tokens": 1482,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.6,
+    "prompt_tokens_per_sec": 3337.6,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 2870,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q31": {
+   "units": [
+    {
+     "uid": "q31",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "Theodora K. Marsh; she reports to the Managing Partner and has direct and unrestricted access to the Management Committee.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:02_compliance_manual.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.35,
+    "prompt_tokens": 1666,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.4,
+    "prompt_tokens_per_sec": 3451.8,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 2957,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q32": {
+   "units": [
+    {
+     "uid": "q32",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "unanswerable_clean",
+     "hallucination": false,
+     "got": "",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.43,
+    "prompt_tokens": 1865,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.1,
+    "prompt_tokens_per_sec": 3510.9,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3057,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q33": {
+   "units": [
+    {
+     "uid": "q33",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "",
+     "expected": "Norcastle Managed Services performs incremental backups every four hours between 6:00 a.m. and 10:00 p.m. Eastern on business days and a full backup nightly; copies are replicated to Norcastle's secondary data center in Columbus, Ohio, more than 300 miles from each office, with nightly backups kept in immutable storage for 35 days and monthly full backups retained for 12 months.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:04_business_continuity_plan.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.22,
+    "prompt_tokens": 1273,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.5,
+    "prompt_tokens_per_sec": 3485.0,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 2853,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q34": {
+   "units": [
+    {
+     "uid": "q34",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "Yes. Kilnwick Tax Services, LLC, a tax preparation and planning firm under common control (wholly owned by Ms. Tennick and Mr. Arlow), prepares returns for some clients for separate fees not offset against advisory fees; the conflict is addressed by disclosure, no obligation to use Kilnwick, no referral compensation to wealth advisors, and sharing client information only with written consent.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:01_brochure.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.26,
+    "prompt_tokens": 1640,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.5,
+    "prompt_tokens_per_sec": 3855.6,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3354,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q35": {
+   "units": [
+    {
+     "uid": "q35",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "near_miss",
+     "hallucination": false,
+     "got": "",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.25,
+    "prompt_tokens": 1496,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.6,
+    "prompt_tokens_per_sec": 3756.9,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 2903,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q36": {
+   "units": [
+    {
+     "uid": "q36",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "",
+     "expected": "All Supervised Persons must obtain CCO pre-clearance before making any political contribution, regardless of amount, to a state or local official or candidate, a state or local party or a PAC; for candidates who will solicit clients or supervise those who do, the CCO reviews contributions made during the two years before hire (six months for other candidates).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:02_compliance_manual.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.25,
+    "prompt_tokens": 1501,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.0,
+    "prompt_tokens_per_sec": 4428.3,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3200,
+    "peak_vram_mib": 7908
+   }
+  },
+  "t3_f01.q37": {
+   "units": [
+    {
+     "uid": "q37",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "Either party may terminate on 30 days' written notice; the unearned portion of prepaid fees is refunded pro rata for the days remaining in the quarter after the effective termination date, paid within 15 business days, with no termination fee; a client who terminates within five business days of signing receives a full refund.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:05_fee_schedule.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.23,
+    "prompt_tokens": 1225,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.2,
+    "prompt_tokens_per_sec": 3280.0,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3111,
+    "peak_vram_mib": 7909
+   }
+  },
+  "t3_f01.q38": {
+   "units": [
+    {
+     "uid": "q38",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "Yes. Every two years an independent valuation firm, currently Wraxall Dunmore Advisory, LLC, reviews the Valuation Policy and tests a sample of Level 3 valuations and price overrides; the CCO also reviews the Policy annually.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:03_valuation_policy.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.3,
+    "prompt_tokens": 1347,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 86.5,
+    "prompt_tokens_per_sec": 3952.0,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3181,
+    "peak_vram_mib": 7908
+   }
+  },
+  "t3_f01.q39": {
+   "units": [
+    {
+     "uid": "q39",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "Wealth advisors meet with each household at least annually; portfolio management staff review every account at least quarterly; an account is rebalanced when any asset class deviates from its target weight by more than five percentage points.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:01_brochure.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.31,
+    "prompt_tokens": 1645,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.2,
+    "prompt_tokens_per_sec": 3781.1,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3223,
+    "peak_vram_mib": 7907
+   }
+  },
+  "t3_f01.q40": {
+   "units": [
+    {
+     "uid": "q40",
+     "score": 0.0,
+     "verdict": "MISSING",
+     "kind": "question",
+     "error_kind": "no_answer",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "The Management Committee approved the amendments on August 12, 2026; the CCO circulated them in a memorandum dated August 17, 2026.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [
+    "no_json_object_found"
+   ],
+   "group": "t3_f01:06_policy_update_memo.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.37,
+    "prompt_tokens": 1681,
+    "output_tokens": 768,
+    "output_tokens_per_sec": 87.2,
+    "prompt_tokens_per_sec": 3751.6,
+    "load_seconds": 0.0,
+    "done_reason": "length",
+    "thinking_chars": 3132,
+    "peak_vram_mib": 7912
+   }
+  }
+ }
+}

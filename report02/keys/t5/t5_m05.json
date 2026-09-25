@@ -1,0 +1,466 @@
+{
+  "meeting_id": "t5_m05",
+  "title": "Divorcing client: QDRO, joint account split and single-household cash flow",
+  "notes": "The client states her in-kind share of the joint brokerage account as $395,000 (a number from the July version of the agreement) and corrects it to $358,000 after pulling up MSA section 7.2, and the final hearing is first transcribed as October 30th and only clarified to October 13th some twenty minutes later. The refinance quote is reassigned from the adviser to the client, the expense worksheet slips from this Friday (September 18) to September 25, three plausible non-actions (resuming the maiden name, a penalty-free cash distribution from the QDRO share, a separate life policy on the ex-spouse) must stay out, and the adviser's closing recap omits the signed-MSA and beneficiary-change items. For adjudication, these are supported but not new keyed items: the $45,000 T-bill sale reported as an action item (it is in the adviser's recap; a3), Graciela e-signing the account applications and LOA packet (the client's side of i4), Graciela telling the Fallowbrook loan officer about the support up front (part of i3), the MSA's twelve-month obligation to refinance into her sole name (a settlement term, not the i3 loan-estimate task), the will and health care proxy completed in June (past estate documents, not a life event), Joanna sending the QDRO to Quillmoor for pre-approval (described process), opening the empty individual and rollover IRA accounts (i4, a1, a2), moving managed accounts to Moderate (the risk change plus the IPS in i4), the beneficiary change reported as an account action (i5), and releasing the journal once Joanna confirms entry of judgment (a1); Silas lining up two or three lenders for refinance quotes is unsupported, because he withdrew it when the task moved to Graciela (superseded by i3).",
+  "scalar_fields": {
+    "meeting_date": {
+      "expected": "September 16, 2026",
+      "accept": [
+        "sep(t(ember)?)?\\.?\\s*16(th)?\\b",
+        "\\b0?9/16\\b",
+        "2026-09-16",
+        "\\b16(th)?\\s+(of\\s+)?sep"
+      ],
+      "reject": {}
+    },
+    "client_names": {
+      "expected": "Graciela Kettridge",
+      "accept": [
+        "graciela",
+        "^(?!.*\\bgavin\\b)(?!.*(silas|hadderley|noor|haverkamp|lucia|mateo|joanna))"
+      ],
+      "match": "all",
+      "reject": {
+        "EX_SPOUSE_AS_CLIENT": [
+          "gavin"
+        ],
+        "STAFF_AS_CLIENT": [
+          "silas|hadderley|noor|haverkamp"
+        ],
+        "CHILD_AS_CLIENT": [
+          "lucia|mateo"
+        ]
+      }
+    },
+    "primary_goal": {
+      "expected": "Implement the divorce settlement cleanly (QDRO, splitting the joint account, retitling everything into Graciela's name) and make her cash flow work as a single household",
+      "accept": [
+        "qdro",
+        "settlement",
+        "retitl|(titled|title everything|titling).{0,30}(her|own|sole) name|in (her|graciela'?s) (own |sole )?name",
+        "split\\w*.{0,40}(joint|account|brokerage|assets?|401)|(joint|brokerage).{0,40}split",
+        "implement\\w*.{0,40}divorc|divorc\\w*.{0,40}(implement|terms|decree|agreement)",
+        "cash.?flow",
+        "(one|single|solo).?(household|income)",
+        "(post.?divorce|after (the |her )?divorce).{0,40}(financ|stabil|independ|transition)",
+        "(stabil|transition|financ\\w* security).{0,40}(post.?divorce|after (the |her )?divorce)"
+      ],
+      "reject": {
+        "RETIREMENT_AS_GOAL": [
+          "^(?!.*(settlement|qdro|cash.?flow|household|split|retitl)).*retire"
+        ]
+      }
+    },
+    "retirement_target": {
+      "expected": "Age 65 (2039)",
+      "accept": [
+        "\\b65\\b",
+        "sixty.?five",
+        "\\b2039\\b"
+      ],
+      "reject": {
+        "STALE_60": [
+          "^(?!.*(\\b65\\b|sixty.?five|\\b2039\\b)).*(\\b60\\b|\\bsixty\\b)"
+        ],
+        "WRONG_SS_FRA_67": [
+          "^(?!.*(\\b65\\b|sixty.?five|\\b2039\\b)).*(\\b67\\b|sixty.?seven)"
+        ]
+      }
+    },
+    "risk_tolerance": {
+      "expected": "Moderate (roughly 60% stocks, 40% bonds and cash)",
+      "accept": [
+        "\\bmoderate\\b"
+      ],
+      "reject": {
+        "STALE_GROWTH": [
+          "^(?!.*\\bmoderate\\b).*\\bgrowth\\b"
+        ],
+        "FLOATED_CONSERVATIVE": [
+          "^(?!.*\\bmoderate\\b).*conservative"
+        ]
+      }
+    },
+    "risk_tolerance_change": {
+      "expected": "from Growth to Moderate",
+      "accept": [
+        "growth.{0,80}\\bmoderate\\b",
+        "\\bmoderate\\b.{0,40}(from|was|previously|prior|down from).{0,20}growth"
+      ],
+      "reject": {
+        "NO_CHANGE": [
+          "^(?!.*growth.{0,80}moderate).*no change"
+        ],
+        "WRONG_DESTINATION": [
+          "\\bto\\s+(moderately\\s+)?conservative"
+        ]
+      }
+    },
+    "next_meeting": {
+      "expected": "Tuesday, November 10, 2026, 4:30 p.m.",
+      "accept": [
+        "nov(ember)?\\.?\\s*10(th)?\\b",
+        "\\b11/10\\b",
+        "2026-11-10",
+        "\\b10(th)?\\s+(of\\s+)?nov"
+      ],
+      "reject": {
+        "STALE_NOV_5": [
+          "^(?!.*(nov(ember)?\\.?\\s*10|\\b11/10\\b|2026-11-10|\\b10(th)?\\s+(of\\s+)?nov)).*(nov(ember)?\\.?\\s*0?5(th)?\\b|\\b11/0?5\\b|2026-11-05|\\b0?5(th)?\\s+(of\\s+)?nov)"
+        ]
+      }
+    }
+  },
+  "life_events": [
+    {
+      "eid": "e1",
+      "expected": "Divorce from Gavin Kettridge: marital settlement agreement signed September 10, 2026; final hearing October 13, 2026, with the decree expected to be entered that day",
+      "match": [
+        "divorc|dissolution|marital settlement|settlement agreement|decree|separat"
+      ],
+      "reject": {
+        "STALE_HEARING_DATE": [
+          "^(?!.*(oct(ober)?\\.?\\s*13|\\b10/13\\b|2026-10-13|\\b13(th)?\\s+(of\\s+)?oct|thirteenth|\\b13th\\b)).*(oct(ober)?\\.?\\s*30|\\b10/30\\b|2026-10-30|\\b30(th)?\\s+(of\\s+)?oct|(?<!june )(?<!jun )(thirtieth|\\b30th\\b))"
+        ]
+      }
+    },
+    {
+      "eid": "e2",
+      "expected": "Promoted to director of pharmacy operations effective October 1, 2026; base salary rises from $118,000 to $127,500",
+      "match": [
+        "promot|director|\\braise\\b|new (role|position|title|job)"
+      ],
+      "reject": {
+        "OLD_SALARY_AS_NEW": [
+          "^(?!.*127).*118"
+        ]
+      }
+    }
+  ],
+  "account_actions": [
+    {
+      "aid": "a1",
+      "expected": "Journal $358,000 in kind, pro rata by position, from the joint brokerage account into a new individual brokerage account titled Graciela M. Kettridge, released once the judgment is entered",
+      "match": [
+        "\\bjoint\\b",
+        "journal",
+        "in.?kind",
+        "\\b3(58|95)(k|\\b)",
+        "three hundred (and )?fifty.?eight"
+      ],
+      "amount_accept": [
+        "\\b358(,000|k|\\b)",
+        "358 ?thousand",
+        "three hundred (and )?fifty.?eight thousand",
+        "0?\\.358 ?(m|mm|million)\\b",
+        "48\\.9"
+      ],
+      "amount_reject": {
+        "STALE_395": [
+          "^(?!.*(358|48\\.9)).*(395|ninety.?five|53\\.9|\\b54 ?(%|percent)|fifty.?four percent)"
+        ]
+      }
+    },
+    {
+      "aid": "a2",
+      "expected": "Direct rollover of the $212,400 QDRO award (valued June 30, 2026, adjusted for gains and losses) from Gavin's Vellamy Freight 401(k) at Quillmoor into a new rollover IRA in Graciela's name",
+      "match": [
+        "qdro",
+        "alternate payee",
+        "rollover ira",
+        "401\\(?k\\)?",
+        "\\b212(,400|\\.4|k|\\b)",
+        "quillmoor|vellamy"
+      ],
+      "amount_accept": [
+        "212,?400",
+        "212\\.4 ?(k|thousand)",
+        "\\b212 ?k\\b",
+        "212 ?thousand",
+        "two hundred (and )?twelve thousand",
+        "\\bhalf\\b|\\b50 ?%|fifty percent",
+        "\\b212,000\\b"
+      ],
+      "amount_reject": {
+        "FULL_BALANCE": [
+          "^(?!.*(212|\\bhalf\\b|\\b50 ?%|fifty percent)).*424"
+        ],
+        "NET_OF_40K_CASH": [
+          "^(?!.*212).*(\\b40(,000|k| ?thousand)\\b|172,?400)"
+        ]
+      }
+    },
+    {
+      "aid": "a3",
+      "expected": "Sell $45,000 of Treasury bills in the new individual account and move the proceeds to Graciela's Fallowbrook Credit Union savings as the emergency reserve",
+      "match": [
+        "emergency",
+        "reserve",
+        "savings",
+        "fallowbrook",
+        "treasury bill|t-?bill|\\bbills\\b",
+        "\\b45(,000|k| ?thousand)\\b"
+      ],
+      "amount_accept": [
+        "\\b45(,000|k| ?thousand)\\b",
+        "forty.?five thousand"
+      ],
+      "amount_reject": {
+        "ROUGH_44K": [
+          "^(?!.*\\b45).*\\b44(,000|k| ?thousand)\\b"
+        ],
+        "FULL_BILL_SHARE": [
+          "^(?!.*\\b45).*53,?8"
+        ]
+      }
+    }
+  ],
+  "action_items": [
+    {
+      "iid": "i1",
+      "expected_task": "Email Silas the signed marital settlement agreement with all exhibits. Owner: Graciela Kettridge. Due: tomorrow, Thursday, September 17, 2026 (tonight if possible).",
+      "match": [
+        "(send|email|e-mail|forward|provide|share|upload).{0,60}(settlement agreement|\\bmsa\\b|signed (copy|agreement|version))",
+        "(settlement agreement|\\bmsa\\b).{0,40}(exhibit|signed|copy)",
+        "(signed|executed).{0,40}(settlement|agreement|decree|divorce|msa)",
+        "exhibits?\\b"
+      ],
+      "owner_accept": [
+        "graciela|\\bclient\\b|\\b(mrs?|ms|g)\\.? kettridge",
+        "^(?!.*gavin).*\\bkettridge\\b"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "tomorrow|tonight|sep(t(ember)?)?\\.?\\s*17|\\b0?9/17\\b|thursday",
+        "2026-09-17",
+        "\\b17(th)?\\s+(of\\s+)?sep"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i2",
+      "expected_task": "Complete and return the monthly expense worksheet (house costs once it is only her, her half of Lucia's college). Owner: Graciela Kettridge. Due: Friday, September 25, 2026.",
+      "match": [
+        "expense",
+        "worksheet",
+        "spending",
+        "budget"
+      ],
+      "owner_accept": [
+        "graciela|\\bclient\\b|\\b(mrs?|ms|g)\\.? kettridge",
+        "^(?!.*gavin).*\\bkettridge\\b"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "\\b25(th)?\\b",
+        "twenty.?fifth",
+        "\\b0?9/25\\b",
+        "friday.{0,25}next week|next week.{0,25}friday|following friday",
+        "next friday"
+      ],
+      "due_reject": {
+        "STALE_DUE": [
+          "^(?!.*(\\b25(th)?\\b|twenty.?fifth|\\b0?9/25\\b|next week|following friday|next friday)).*(\\b18(th)?\\b|eighteenth|this friday|\\bfriday\\b)"
+        ]
+      },
+      "trap": "due_changed"
+    },
+    {
+      "iid": "i3",
+      "expected_task": "Obtain a written loan estimate from Fallowbrook Credit Union to refinance the mortgage into Graciela's sole name and send it to Silas. Owner: Graciela Kettridge. Due: end of October 2026 (October 31, 2026).",
+      "match": [
+        "refinanc",
+        "\\brefi\\b",
+        "mortgage",
+        "loan estimate",
+        "lender",
+        "fallowbrook.{0,40}(loan|refi|mortgage|estimate|quote)|(estimate|quote).{0,40}fallowbrook",
+        "(loan|refi\\w*|mortgage|lender|rate)\\W+(\\w+\\W+){0,3}(estimate|quote)"
+      ],
+      "owner_accept": [
+        "graciela|\\bclient\\b|\\b(mrs?|ms|g)\\.? kettridge",
+        "^(?!.*gavin).*\\bkettridge\\b"
+      ],
+      "owner_reject": {
+        "STALE_OWNER": [
+          "^(?!.*(graciela|\\bclient\\b|kettridge)).*(silas|hadderley|advis[eo]r)"
+        ]
+      },
+      "due_accept": [
+        "end\\W{0,4}(of\\W{0,3})?oct",
+        "oct(ober)?\\W{0,3}(s\\W)?(month.?)?end\\b",
+        "oct(ober)?\\.?\\s*31",
+        "\\b10/31\\b",
+        "2026-10-31",
+        "\\b31(st)?\\s+(of\\s+)?oct"
+      ],
+      "due_reject": {
+        "STALE_DUE": [
+          "^(?!.*(end\\W{0,4}(of\\W{0,3})?oct|oct(ober)?\\W{0,3}(s\\W)?(month.?)?end\\b|oct(ober)?\\.?\\s*31|\\b10/31\\b|2026-10-31|\\b31(st)?\\s+(of\\s+)?oct)).*(next (meeting|time|review)|nov(ember)?\\.?\\s*10|\\b11/10\\b|2026-11-10)"
+        ],
+        "MSA_DEADLINE": [
+          "^(?!.*(end\\W{0,4}(of\\W{0,3})?oct|oct(ober)?\\W{0,3}(s\\W)?(month.?)?end\\b|oct(ober)?\\.?\\s*31|\\b10/31\\b|2026-10-31|\\b31(st)?\\s+(of\\s+)?oct)).*(2027|12 months|twelve months|one year|within a year)"
+        ]
+      },
+      "trap": "reassigned"
+    },
+    {
+      "iid": "i4",
+      "expected_task": "Send the e-signature packet: individual brokerage account application, rollover IRA application, letter of authorization for the joint account split (the custodian's platform sends Gavin's signature page to him directly), and the new risk questionnaire and updated IPS at Moderate. Owner: Noor Haverkamp. Due: Friday, September 18, 2026.",
+      "match": [
+        "packet",
+        "paperwork",
+        "letter of authori[sz]ation|\\bloa\\b",
+        "e-?signature",
+        "(open|new|individual|rollover).{0,30}(account|ira)",
+        "questionnaire",
+        "\\bips\\b|investment policy"
+      ],
+      "owner_accept": [
+        "noor|haverkamp|paraplanner"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "\\b18(th)?\\b|eighteenth|\\b0?9/18\\b",
+        "this friday|\\bfriday\\b"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i5",
+      "expected_task": "Change the primary beneficiary on her 403(b) and hospital group life insurance from Gavin to Lucia and Mateo (50/50, her sister as custodian for Mateo's share) in the HR benefits portal, only once the judgment is entered. Owner: Graciela Kettridge. Due: the day the judgment is entered, expected Tuesday, October 13, 2026 (not before, because of the automatic restraining order).",
+      "match": [
+        "beneficiar"
+      ],
+      "owner_accept": [
+        "graciela|\\bclient\\b|\\b(mrs?|ms|g)\\.? kettridge",
+        "^(?!.*gavin).*\\bkettridge\\b"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "^(?!.*(oct(ober)?\\.?\\s*30|\\b10/30\\b|2026-10-30|\\b30(th)?\\s+(of\\s+)?oct|thirtieth|\\b30th\\b)).*((after|once|when|upon|following|\\bday\\b|\\bdate\\b|\\bon\\b|\\bat\\b|post|not before).{0,40}(judgment|decree|divorce|final|entered|entry|hearing|judge)|(judgment|decree)\\W+(entry\\W+)?(date|day))",
+        "oct(ober)?\\.?\\s*1[34]",
+        "\\b10/1[34]\\b",
+        "2026-10-1[34]",
+        "\\b1[34](th)?\\s+(of\\s+)?oct",
+        "\\b13(th)?\\b|thirteenth"
+      ],
+      "due_reject": {
+        "STALE_HEARING_DATE": [
+          "^(?!.*(oct(ober)?\\.?\\s*1[34]|\\b10/1[34]\\b|2026-10-1[34]|\\b1[34](th)?\\s+(of\\s+)?oct|thirteenth|\\b13th\\b)).*(oct(ober)?\\.?\\s*30|\\b10/30\\b|2026-10-30|\\b30(th)?\\s+(of\\s+)?oct|thirtieth|\\b30th\\b)"
+        ],
+        "BEFORE_JUDGMENT": [
+          "^(?!.*(after|once|when|upon|following|judgment|decree|entered|entry|oct)).*(immediately|right away|asap|\\bnow\\b|this week|tonight)"
+        ]
+      },
+      "trap": "none"
+    },
+    {
+      "iid": "i6",
+      "expected_task": "Review the draft QDRO from Joanna (Graciela's divorce attorney) for the Vellamy Freight 401(k) (June 30 valuation with gains and losses, exclusion of Gavin's plan loan, separate alternate payee account with immediate direct rollover) and send comments to Joanna. Owner: Silas Hadderley. Due: Monday, September 21, 2026.",
+      "match": [
+        "qdro",
+        "domestic relations order",
+        "draft order"
+      ],
+      "owner_accept": [
+        "silas|hadderley|advis[eo]r"
+      ],
+      "owner_reject": {
+        "ATTORNEY_AS_OWNER": [
+          "^(?!.*(silas|hadderley|advis)).*(joanna|attorney)"
+        ]
+      },
+      "due_accept": [
+        "\\b21(st)?\\b|twenty.?first|\\b0?9/21\\b",
+        "monday"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i7",
+      "expected_task": "Prepare the full cash-flow projection and a retirement projection at age 65 with the Moderate allocation and spousal support ending in 2033, including the own-record versus divorced-spouse Social Security comparison. Owner: Silas Hadderley. Due: next meeting, Tuesday, November 10, 2026.",
+      "match": [
+        "projection",
+        "cash.?flow (plan|model|analysis|projection)",
+        "retirement (plan|projection|analysis|model)",
+        "social security",
+        "monte carlo",
+        "financial plan",
+        "\\bplan\\b.{0,40}\\b65\\b",
+        "\\b65\\b.{0,40}\\bplan\\b",
+        "scenario",
+        "\\b65\\b"
+      ],
+      "owner_accept": [
+        "silas|hadderley|advis[eo]r"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "nov(ember)?\\.?\\s*10(th)?\\b|\\b11/10\\b",
+        "next (meeting|review|appointment|session|call)",
+        "2026-11-10",
+        "\\b10(th)?\\s+(of\\s+)?nov",
+        "\\b10th\\b"
+      ],
+      "due_reject": {
+        "STALE_NOV_5": [
+          "^(?!.*(nov(ember)?\\.?\\s*10|\\b11/10\\b|2026-11-10|\\b10(th)?\\s+(of\\s+)?nov|\\b10th\\b|next (meeting|review|appointment|session|call))).*(nov(ember)?\\.?\\s*0?5(th)?\\b|\\b11/0?5\\b|2026-11-05|\\b0?5(th)?\\s+(of\\s+)?nov)"
+        ]
+      },
+      "trap": "none"
+    }
+  ],
+  "non_actions": [
+    {
+      "nid": "n1",
+      "what": "Resuming her maiden name (Salcedo) and titling the accounts in that name: floated by Graciela and explicitly deferred (maybe someday, not now); new accounts stay titled Graciela M. Kettridge",
+      "match": [
+        "^(?!.*(defer|not now|keep|kept|remain|retain|\\bnot\\b|rather than|instead of|declin)).*salcedo",
+        "^(?!.*(defer|not now|keep|kept|remain|retain|\\bnot\\b|rather than|instead of|declin)).*maiden",
+        "^(?!.*(defer|not now|keep|kept|remain|retain|\\bnot\\b|rather than|instead of|declin)).*(name.?change|change (her|my) (last )?name|former name|resum\\w* .{0,20}name)"
+      ],
+      "kind": "tentative"
+    },
+    {
+      "nid": "n2",
+      "what": "Adviser proposed that Graciela buy and own a separate ten-year term life policy (about $300,000) on Gavin's life as a backup to the $500,000 policy the MSA requires him to carry; she declined",
+      "match": [
+        "^(?!.*(declin|refus|reject|turned down|not (to )?(buy|purchase))).*(on gavin'?s life)",
+        "^(?!.*(declin|refus|reject|turned down|not (to )?(buy|purchase))).*(polic\\w* on gavin)",
+        "^(?!.*(declin|refus|reject|turned down|not (to )?(buy|purchase))).*(insur\\w* on gavin)",
+        "^(?!.*(declin|refus|reject|turned down|not (to )?(buy|purchase))).*((polic|insur|coverage)\\w*.{0,25}\\b(on|covering|insuring) (the |her )?(ex.?(spouse|husband)|former (spouse|husband)|gavin))",
+        "^(?!.*(declin|refus|reject|turned down|not (to )?(buy|purchase))).*((separate|additional|backup|second) (term )?(life )?(insurance )?polic)",
+        "^(?!.*(declin|refus|reject|turned down|not (to )?(buy|purchase))).*((ten|10).?year term)",
+        "^(?!.*(declin|refus|reject|turned down|not (to )?(buy|purchase))).*(\\b300(,000|k| ?thousand)\\b.{0,40}(term|life|polic)|(term|life|polic).{0,40}\\b300(,000|k| ?thousand)\\b)",
+        "^(?!.*(declin|refus|reject|turned down|not (to )?(buy|purchase))).*((buy|purchase|obtain|apply for)\\w*.{0,40}(life (insurance|polic|cover)|\\bterm (life|polic|insurance|cover)))"
+      ],
+      "kind": "declined_proposal"
+    },
+    {
+      "nid": "n3",
+      "what": "Taking about $40,000 of the QDRO award out of the plan as a cash distribution for the emergency fund (penalty-free for an alternate payee under 72(t)(2)(C) but taxable): floated by Graciela and declined in favor of a full direct rollover",
+      "match": [
+        "^(?!.*declin)(?!.*\\b(no|none|nothing|zero|without|not|instead of|rather than|against|avoid\\w*|skip\\w*|fore?go\\w*|refus\\w*)\\b.{0,25}(cash|\\b40(,000|k| ?thousand)\\b|withdraw|72\\(t\\))).*(\\b40(,000|k| ?thousand)\\b|72\\(t\\)|penalty.?free|cash (distribution|withdrawal)|cash.?out|(take|taking|withdraw\\w*).{0,30}in cash|withdraw\\w*.{0,30}(401|plan|qdro|quillmoor))"
+      ],
+      "kind": "tentative"
+    }
+  ],
+  "corrected_figures": [
+    {
+      "what": "Graciela's in-kind share of the joint brokerage account under MSA section 7.2",
+      "said_first": "$395,000",
+      "corrected_to": "$358,000",
+      "field": "account_actions"
+    },
+    {
+      "what": "Date of the final divorce hearing (decree expected to be entered that day)",
+      "said_first": "October 30th",
+      "corrected_to": "October 13th",
+      "field": "life_events"
+    }
+  ]
+}

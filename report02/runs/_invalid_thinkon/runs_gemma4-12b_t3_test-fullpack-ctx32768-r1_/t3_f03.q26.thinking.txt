@@ -1,0 +1,18 @@
+*   Question: "What is the coverage limit of the firm's cyber liability insurance policy?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   01_brochure.md: Mentions "Cybersecurity and Operational Risk" in Item 8.3, but no mention of insurance limits.
+    *   02_compliance_manual.md: Section 11.7 "Cyber Liability Insurance" says: "The Firm maintains a cyber liability insurance policy covering incident response costs, business interruption, funds transfer fraud and third-party liability." No specific dollar amount or limit is mentioned.
+    *   03_valuation_policy.md: No mention of cyber insurance.
+    *   04_business_continuity_plan.md: Section 8.2 "Cyber Incident Response" mentions the policy but no coverage limit.
+    *   05_fee_schedule.md: No mention of cyber insurance.
+    *   06_policy_update_memo.md: Mentions updates to the BCP and Compliance Manual, but no mention of insurance limits.
+
+    *   The documents state that the firm *has* a policy (02_compliance_manual.md, Section 11.7), but they do not state the *coverage limit* (the specific dollar amount).
+
+    *   Since the specific detail (the limit) is not in the documents, the answer must be NOT_IN_DOCUMENTS.

@@ -1,0 +1,44 @@
+*   Question: "Who is the firm's Chief Compliance Officer, and to whom does the CCO report?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones (not applicable here as only one document contains the info).
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   Document: `02_compliance_manual.md`
+    *   Section: `SECTION 2. CHIEF COMPLIANCE OFFICER > 2.1 Designation and Reporting Line`
+    *   Content: "The Management Committee has designated Theodora K. Marsh as the Firm's Chief Compliance Officer. The CCO reports to the Managing Partner and has direct and unrestricted access to the Management Committee."
+
+    *   Who is the CCO? Theodora K. Marsh.
+    *   To whom does the CCO report? The Managing Partner.
+
+    *   Answer: Theodora K. Marsh; the CCO reports to the Managing Partner.
+    *   Source: 02_compliance_manual.md
+    *   Section: SECTION 2. CHIEF COMPLIANCE OFFICER > 2.1 Designation and Reporting Line
+    *   Quote: "The Management Committee has designated Theodora K. Marsh as the Firm's Chief Compliance Officer. The CCO reports to the Managing Partner and has direct and unrestricted access to the Management Committee."
+
+    *   "The Management Committee has designated Theodora K. Marsh as the Firm's Chief Compliance Officer. The CCO reports to the Managing Partner and has direct and unrestricted access to the Management Committee."
+
+    *   Answer: Theodora K. Marsh; the CCO reports to the Managing Partner.
+    *   Source: 02_compliance_manual.md
+    *   Section: SECTION 2. CHIEF COMPLIANCE OFFICER > 2.1 Designation and Reporting Line
+    *   Quote: "The Management Committee has designated Theodora K. Marsh as the Firm's Chief Compliance Officer. The CCO reports to the Managing Partner and has direct and unrestricted access to the Management Committee."
+
+    *   Wait, the prompt says "Keep answers short and specific: the number, name, frequency, threshold or rule that was asked for, with enough words to be unambiguous."
+    *   Question: "Who is the firm's Chief Compliance Officer, and to whom does the CCO report?"
+    *   Answer: Theodora K. Marsh; the CCO reports to the Managing Partner.
+
+    *   Check section naming: "SECTION 2. CHIEF COMPLIANCE OFFICER > 2.1 Designation and Reporting Line"
+
+    *   JSON structure:
+        ```json
+        {
+          "answer": "Theodora K. Marsh; the CCO reports to the Managing Partner.",
+          "source_document": "02_compliance_manual.md",
+          "section": "SECTION 2. CHIEF COMPLIANCE OFFICER > 2.1 Designation and Reporting Line",
+          "quote": "The Management Committee has designated Theodora K. Marsh as the Firm's Chief Compliance Officer. The CCO reports to the Managing Partner and has direct and unrestricted access to the Management Committee."
+        }
+        ```
+
+    *   "The Management Committee has designated Theodora K. Marsh as the Firm's Chief Compliance Officer.

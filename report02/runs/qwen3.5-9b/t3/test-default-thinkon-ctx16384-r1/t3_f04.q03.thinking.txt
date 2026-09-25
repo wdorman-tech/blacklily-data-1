@@ -1,0 +1,32 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   No guessing, no general knowledge.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+    *   Question: "Does the Firm maintain key-person life insurance on its principals? If so, identify the insurer and the coverage amount."
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "key-person", "life insurance", "principals", "insurer", "coverage amount", "insurance".
+    *   Document 1: `01_brochure.md` (Form ADV Part 2A). Sections: Item 4 (Advisory Business), Item 7 (Types of Clients), Item 8 (Investment Strategies), Item 11 (Code of Ethics/Principal Transactions), Item 12 (Brokerage Practices).
+        *   Scanning for "insurance": Mentions "cyber liability insurance policy" in Doc 2. Mentions "Insurance Core" strategy in Doc 1. No mention of key-person life insurance on principals.
+    *   Document 2: `02_compliance_manual.md` (Compliance Manual). Sections: SECTION 11 (Cybersecurity), SECTION 12 (Privacy).
+        *   Scanning for "insurance": Section 11.5 mentions "The Firm maintains a cyber liability insurance policy." No mention of key-person life insurance.
+    *   Document 3: `06_policy_update_memo.md` (Compliance Memorandum 2026-03). Preamble only provided in the snippet.
+        *   Scanning for "insurance": Mentions amendments to policies, but no specific detail on key-person insurance found in the provided text.
+
+3.  **Evaluate Findings:**
+    *   I have searched all provided text segments (`01_brochure.md`, `02_compliance_manual.md`, `06_policy_update_memo.md`).
+    *   None of them contain information about "key-person life insurance", "principals", specific insurers for key-person coverage, or coverage amounts.
+    *   The only mention of insurance is cyber liability (`02_compliance_manual.md` Section 11.5).
+
+4.  **Formulate Answer:**
+    *   Since the information is not present in the documents, the answer must be `NOT_IN_DOCUMENTS`.
+    *   Source document: "" (empty string as per instructions for NOT_IN_DOCUMENTS cases usually, but looking at rule 2: "If the documents do not answer the question... the answer is exactly NOT_IN_DOCUMENTS." Rule 5 says "Cite the document file name...". If answer is NOT_IN_DOCUMENTS, source_document should likely be "" based on typical JSON schema for this task when no doc supports it. Let's check rule 2 again: "the answer is exactly NOT_IN_DOCUMENTS." It doesn't explicitly say what to put in source_document/section/quote if the answer is NOT_IN_DOCUMENTS, but standard practice for these tasks is empty strings or nulls. The

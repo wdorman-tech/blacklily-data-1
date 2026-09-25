@@ -1,0 +1,260 @@
+{
+ "pair_id": "t2_ko_2",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "The Coca-Cola Company",
+ "ticker": "KO",
+ "split": "test",
+ "prior": {
+  "fiscal_year_end": "2024-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/21344/000002134425000011/ko-20241231.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2025-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm"
+ },
+ "words": 5749,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "modified",
+   "prior_heading": "Obesity and other health-related concerns may reduce demand for some of our products.",
+   "current_heading": "Obesity and other health-related concerns may reduce demand for some of our products.",
+   "similarity": 0.849,
+   "diff": [
+    "insert: [] -> [ongoing]",
+    "replace: [Ongoing] -> [Recent activities and proposals by U.S. federal and state government agencies and initiatives have focused on potential drivers behind the rise in childhood chronic diseases. Continued governmental focus on such initiatives, as well as ongoing]",
+    "insert: [] -> [changes in funding for or restrictions on the inclusion of our products in benefit programs, such as the Supplemental Nutrition Assistance Program (SNAP) in the United States;]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds recent U.S. federal and state government activities and proposals focused on drivers of childhood chronic diseases, and adds changes in funding for or restrictions on inclusion of the company's products in benefit programs such as SNAP as a demand risk.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2: new specific government initiatives and a named program (SNAP) are referenced, which also discloses a new exposure under criterion 1."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1 and 2: a new regulatory exposure is disclosed and a named program (SNAP) and new government initiatives are referenced."
+    }
+   }
+  },
+  {
+   "aid": "a02",
+   "status": "modified",
+   "prior_heading": "If we do not address evolving consumer product and shopping preferences, our business could suffer.",
+   "current_heading": "If we do not address evolving consumer product and shopping preferences, our business could suffer.",
+   "similarity": 0.907,
+   "diff": [
+    "insert: [] -> [processed foods and ingredients and]",
+    "replace: [ingredients or processing;] -> [ingredients;]",
+    "insert: [] -> [affordability and]",
+    "replace: [lifestyles;] -> [lifestyles and spending patterns;]",
+    "insert: [] -> [The increasing use of data analytics, automation and artificial intelligence across digital platforms is further reshaping how consumers discover, evaluate and engage with brands.]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds affordability and consumer spending patterns, perceived undesirability of processed foods, and the reshaping of brand discovery and engagement by data analytics, automation and artificial intelligence on digital platforms as drivers of shifting consumer preferences.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: new risk drivers (affordability, spending patterns, AI-driven changes in consumer engagement) are disclosed."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: new risk drivers (affordability, spending patterns, AI-driven changes in brand discovery) are disclosed."
+    }
+   }
+  },
+  {
+   "aid": "a03",
+   "status": "modified",
+   "prior_heading": "Product safety and quality concerns could negatively affect our business.",
+   "current_heading": "Product safety and quality concerns could negatively affect our business.",
+   "similarity": 0.353,
+   "diff": [
+    "replace: [we or] -> [we,]",
+    "insert: [] -> [or contract manufacturers]",
+    "replace: [particularly] -> [including]",
+    "replace: [acquisitions into beverage categories, such as value-added dairy and plant-based beverages, that are beyond our traditional range of beverage products. We and] -> [acquisitions. We,]",
+    "insert: [] -> [or contract manufacturers]",
+    "replace: [had,] -> [recalled,]",
+    "replace: [may] -> [could]",
+    "replace: [need,] -> [recall, products due]",
+    "replace: [recall products if they become contaminated] -> [product quality]",
+    "replace: [adulterated] -> [safety issues, including actual or alleged mislabeling, misbranding, spoilage, undeclared allergens, contamination or adulteration]",
+    "replace: [if they are mislabeled or do not] -> [failure to]",
+    "insert: [] -> [or contract manufacturers]",
+    "..."
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Extends the admission of unmet safety standards and past recalls to contract manufacturers, drops the specific reference to value-added dairy and plant-based beverage expansion, broadens recall causes to misbranding, spoilage and undeclared allergens, and adds lost sales from production decreases during remediation and changes in consumer demand as consequences.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1 and 2: a new counterparty (contract manufacturers) and new recall causes and consequences are added while the named dairy and plant-based product categories are dropped."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1, 2 and 3: a new counterparty class and new recall causes are disclosed, named product categories are dropped, and the realized recall language is broadened."
+    }
+   }
+  },
+  {
+   "aid": "a04",
+   "status": "modified",
+   "prior_heading": "Public debate and concern about perceived negative health consequences of processing and of certain ingredients, such as nutritive and non-nutritive sweeteners, color additives and biotechnology-derived substances, and of other substances present in our beverage products or packaging materials, may reduce demand for our beverage products or result in additional governmental regulation.",
+   "current_heading": "Public debate and concern about perceived negative health consequences of processing and of certain ingredients, such as nutritive and non-nutritive sweeteners, color additives and biotechnology-derived substances, and of other substances present in our beverage products or packaging materials, may reduce demand for our beverage products or result in additional governmental regulation.",
+   "similarity": 0.854,
+   "diff": [
+    "insert: [] -> [16]",
+    "delete: [16] -> []",
+    "replace: [products,] -> [products]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "Only a page-break position shift and removal of a comma before \"or unintentional contaminants\"; the text is otherwise identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: punctuation and page-number artifact only, with no change in substance."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: punctuation and page-break placement only, no change in substance."
+    }
+   }
+  },
+  {
+   "aid": "a05",
+   "status": "unchanged",
+   "prior_heading": "If we are not successful in our efforts to digitalize the Coca-Cola system, our financial results could be negatively affected.",
+   "current_heading": "If we are not successful in our efforts to digitalize the Coca-Cola system, our financial results could be negatively affected.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a06",
+   "status": "modified",
+   "prior_heading": "If negative publicity, whether or not warranted, concerning product safety or quality, workplace and human rights, obesity or other issues damages our brand image, corporate reputation and social license to operate, our business may suffer.",
+   "current_heading": "If negative publicity, whether or not warranted, concerning product safety or quality, workplace and human rights, obesity or other issues damages our brand image, corporate reputation and social license to operate, our business may suffer.",
+   "similarity": 0.964,
+   "diff": [
+    "insert: [] -> [respecting]",
+    "insert: [] -> [17]",
+    "delete: [17] -> []"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "\"strong commitment to product safety and quality and human rights\" becomes \"and respecting human rights\", plus a page-break shift.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: stylistic rewording with identical meaning and a page-number artifact."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: stylistic rewording with identical meaning plus page-break placement."
+    }
+   }
+  },
+  {
+   "aid": "a07",
+   "status": "modified",
+   "prior_heading": "If we are unable to successfully manage new product launches, our business and financial results could be adversely affected.",
+   "current_heading": "If we are unable to successfully manage new product launches, our business and financial results could be adversely affected.",
+   "similarity": 0.976,
+   "diff": [
+    "replace: [produce] -> [produce, distribute]",
+    "delete: [certain regions of] -> []"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The U.S. alcohol subsidiary's activity is described as producing, distributing and selling alcohol products in the United States, where prior text said producing and selling in certain regions of the United States.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 3: the geographic and operational scope of the U.S. alcohol business is widened from certain regions to the United States and now includes distribution."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: the scope of the disclosed alcohol business is widened from certain U.S. regions to the U.S. generally, with distribution added."
+    }
+   }
+  },
+  {
+   "aid": "a08",
+   "status": "modified",
+   "prior_heading": "We rely on our bottling partners for a significant portion of our business. If we are unable to maintain good relationships with our bottling partners, our business could suffer.",
+   "current_heading": "We rely on our bottling partners for a significant portion of our business. If we are unable to maintain good relationships with our bottling partners, our business could suffer.",
+   "similarity": 0.735,
+   "diff": [
+    "insert: [] -> [For the year ended December 31, 2025, one bottler accounted for 10% of our net operating revenues, which are reflected in our EMEA and Asia Pacific operating segments.]",
+    "insert: [] -> [Further, actions by our bottling partners, including related to product quality, safety, marketing practices, labor relations, regulatory compliance, sustainability, or other matters could adversely affect the reputation, consumer perception, or value of our brands, even if we are not directly respo]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds that one bottler accounted for 10% of net operating revenues for 2025 (reflected in the EMEA and Asia Pacific segments), where no customer concentration figure was given before, and adds the risk that bottlers' actions on quality, safety, marketing, labor, compliance or sustainability could harm the company's brands even if it is not responsible.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 4 and 1: a new quantitative customer concentration figure (10% of revenue) and a new reputational risk from bottler conduct are disclosed."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1 and 4: a new customer concentration figure (10% of revenue) and a new reputational exposure are disclosed."
+    }
+   }
+  },
+  {
+   "aid": "a09",
+   "status": "modified",
+   "prior_heading": "If our bottling partners’ financial condition deteriorates, our business and financial results could be affected.",
+   "current_heading": "If our bottling partners’ financial condition deteriorates, our business and financial results could be affected.",
+   "similarity": 0.999,
+   "diff": [
+    "insert: [] -> [18]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "Only a page number (18) is picked up at the end of the section; the risk factor text is identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: page-number artifact with no textual change."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: page-break artifact only, no change in wording or substance."
+    }
+   }
+  },
+  {
+   "aid": "a10",
+   "status": "modified",
+   "prior_heading": "We may from time to time engage in refranchising activities or divestitures of certain brands or businesses, which could adversely affect our business and results of operations.",
+   "current_heading": "We may from time to time engage in refranchising activities or divestitures of certain brands or businesses, which could adversely affect our business and results of operations.",
+   "similarity": 0.999,
+   "diff": [
+    "delete: [18] -> []"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "Only a trailing page number (18) is dropped; the risk factor text is identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: page-number artifact with no textual change."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: page-break artifact only, no change in wording or substance."
+    }
+   }
+  }
+ ]
+}

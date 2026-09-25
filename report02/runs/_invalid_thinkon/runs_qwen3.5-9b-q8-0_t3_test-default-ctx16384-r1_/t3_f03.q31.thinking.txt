@@ -1,0 +1,43 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Describe the firm's proxy voting practices, including any third-party service provider used."
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "proxy", "voting", "practices", "third-party", "service provider".
+
+4.  **Evaluate Document 1 (`01_brochure.md`):**
+    *   Section: Item 17. Voting Client Securities > 17.1 Proxy Voting Authority.
+        *   Text: "The Firm votes proxies for securities held in discretionary accounts, other than securities held in sleeves managed by third-party managers, unless the client has retained voting authority in writing. The Firm has engaged Stannard Proxy Services, Inc. to provide proxy research, vote recommendations under guidelines adopted by the Firm, and vote execution and recordkeeping."
+        *   Relevance: High. Describes practices (votes discretionary accounts, exceptions) and third-party provider (Stannard Proxy Services, Inc.).
+    *   Section: Item 17. Voting Client Securities > 17.2 Conflicts of Interest.
+        *   Text: "Where the Firm has a conflict of interest in a vote... the Firm votes in accordance with the recommendation of Stannard Proxy Services, Inc. without exercising discretion..."
+        *   Relevance: High. Adds detail on conflicts.
+    *   Section: Item 17. Voting Client Securities > 17.3 Private Fund Consents and Class Actions.
+        *   Text: "Clients may obtain the Firm's proxy voting policies and their voting records from the Chief Compliance Officer."
+        *   Relevance: Medium. Mentions where to find policies/records.
+
+5.  **Evaluate Document 2 (`02_compliance_manual.md`):**
+    *   Section: SECTION 8. MARKETING AND COMMUNICATIONS REVIEW > 8.4 Testimonials...
+        *   Text: No mention of proxy voting.
+
+6.  **Evaluate Document 3 (`03_valuation_policy.md`):**
+    *   Section: SECTION 2. VALUATION COMMITTEE > 2.2 Quorum and Voting.
+        *   Text: Discusses valuation committee quorum, not proxy voting for client securities.
+
+7.  **Synthesize the Answer:**
+    *   The primary source is `01_brochure.md`, Section Item 17.1 Proxy Voting Authority.
+    *   It explicitly states the practices (votes discretionary accounts unless client retains authority) and the third-party provider (Stannard Proxy Services, Inc.).
+    *   I need to construct a concise answer based *only* on the text provided in that section (and potentially 17.2 if it adds necessary detail about the provider's role in conflicts, but 17.1 covers the engagement).

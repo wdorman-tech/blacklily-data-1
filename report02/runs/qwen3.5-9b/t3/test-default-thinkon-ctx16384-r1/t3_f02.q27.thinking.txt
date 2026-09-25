@@ -1,0 +1,37 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, return `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Who is the owner of the business continuity plan?"
+
+3.  **Scan the Documents:**
+    *   Document 1: `04_business_continuity_plan.md` (dated February 9, 2026).
+        *   Section: SECTION 2. PLAN GOVERNANCE > 2.1 Plan Owner.
+        *   Text: "The President and Chief Operating Officer, Mireille Dansby, is the owner of the Plan and is accountable for its maintenance, resourcing and execution."
+    *   Document 2: `06_policy_update_memo.md` (dated August 24, 2026).
+        *   Section: SECTION 2. AMENDMENTS > 2.5 Business Continuity Plan Section 5.2 (IT Managed Service Provider).
+        *   Text: Discusses IT provider change (Oskerby to Anselby), effective September 1, 2026. Mentions amendments to BCP Section 5.2 and Compliance Manual Section 11.4. Does not mention changing the Plan Owner.
+
+4.  **Evaluate Findings:**
+    *   The question asks for the owner of the business continuity plan.
+    *   Document `04_business_continuity_plan.md` explicitly states in Section 2.1 Plan Owner: "The President and Chief Operating Officer, Mireille Dansby, is the owner of the Plan..."
+    *   Document `06_policy_update_memo.md` does not contradict this regarding ownership, only updates IT provider details.
+    *   The most current information regarding ownership comes from the BCP itself (Feb 2026), as the memo (Aug 2026) doesn't change the owner role, only the IT vendor.
+    *   Therefore, the answer is found in `04_business_continuity_plan.md`, Section 2.1 Plan Owner.
+
+5.  **Draft the JSON:**
+    *   "answer": "The President and Chief Operating Officer, Mireille Dansby" (or full sentence from text). The instruction says "Keep answers short and specific: the number, name, frequency, threshold or rule that was asked for". So I should extract the specific identity.
+    *   "source_document": "04_business_continuity_plan.md"
+    *   "section": "SECTION 2. PLAN GOVERNANCE > 2.1 Plan Owner" (Need to check exact section label in text). The text says `SECTION 2. PLAN GOVERNANCE` then subsection `2.1 Plan Owner`. I will use the specific subsection header or the combination as labeled. Let's look at the provided text structure: `<<< 04_business_continuity_plan.md | Business Continuity

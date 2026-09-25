@@ -1,0 +1,37 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones (all docs here seem to be dated 2026, so check dates if conflicting).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "Is the Firm a signatory to the Principles for Responsible Investment, and how does it integrate ESG factors into its credit research?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "Principles for Responsible Investment", "PRI", "ESG", "Environmental", "Social", "Governance", "credit research".
+
+3.  **Review Document 1 (`01_brochure.md`):**
+    *   Section 4.2 (Advisory Services): Mentions strategies (Core Fixed Income, Long Duration Credit, Insurance Core). No mention of PRI or ESG.
+    *   Section 4.4 (Commingled Fund): Mentions fund details, administrator, custodian, auditor. No mention of PRI or ESG.
+    *   Section 8.1 (Methods of Analysis): Mentions top-down/bottom-up analysis, Investment Policy Committee, credit research team led by Rafael Denholm. Factors mentioned: business risk, leverage, cash flow coverage, liquidity, covenant protection, revenue pledge, legal structure. No mention of ESG or PRI.
+    *   Section 8.2 (Investment Strategies): Mentions sector allocation, issuer selection, Treasury futures, swaps, securities lending policy. No mention of ESG or PRI.
+    *   Section 10.3 (Relationships with Investment Consultants): Mentions consultant payments. No mention of PRI or ESG.
+    *   Section 12.2 (Research and Other Soft Dollar Benefits): Mentions research funding. No mention of ESG or PRI.
+    *   Section 17.1 (Proxy Voting): Mentions voting policy, conflicts. No mention of PRI or ESG.
+
+4.  **Review Document 2 (`02_compliance_manual.md`):**
+    *   Section 12.1 (Privacy): Mentions Regulation S-P, personal information. No mention of PRI or ESG.
+
+5.  **Evaluate Findings:**
+    *   There is no mention of the "Principles for Responsible Investment" (PRI) in any of the provided text.
+    *   There is no mention of how ESG factors are integrated into credit research (the credit research section lists specific financial and structural factors, but not ESG).
+
+6.  **Formulate Answer:**
+    *   Since the information is not present in the documents, the answer must be "NOT_IN_DOCUMENTS".
+    *   Source document: "" (empty string as per instructions for NOT_IN_DOCUMENTS cases usually, but looking at rule 2: "If the documents do not answer the question... the answer is exactly NOT_IN_DOCUMENTS." Rule 5 says "Cite the document file name and the section where the answer appears". If the answer is NOT_IN_DOCUMENTS, there is no

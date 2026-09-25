@@ -1,0 +1,33 @@
+*   Question: "Which third-party vendor currently performs the firm's offsite data backups?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in docs, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   `01_brochure.md`: Mentions "offsite data backup" in Section 11.3 (not applicable here as it's a different section number in the brochure).
+    *   `02_compliance_manual.md`: Section 11.3 mentions "Pellow Stack IT, LLC" and "Northgale Security Operations, Inc." but not specifically "offsite data backup" as a primary role for a specific vendor in the text provided (it mentions "managed information technology services" and "security monitoring").
+    *   `03_valuation_policy.md`: No mention of data backup.
+    *   `04_business_continuity_plan.md`: Section 5.1 says "Ferncastle Data Vault, Inc. performs the Firm's offsite data backups." Section 5.2 lists "Ferncastle Data Vault, Inc." as the vendor for "Offsite data backup".
+    *   `05_fee_schedule.md`: No mention of data backup.
+    *   `06_policy_update_memo.md`: Section 6 ("OFFSITE DATA BACKUP VENDOR") states: "Effective August 31, 2026, following completion of the data migration, Kelvedon Cloud Recovery, Inc. replaced Ferncastle Data Vault, Inc. as the Firm's offsite data backup provider."
+
+    *   The `06_policy_update_memo.md` is dated September 8, 2026.
+    *   The `04_business_continuity_plan.md` is dated April 21, 2026.
+    *   The memo (06) explicitly states that Kelvedon Cloud Recovery, Inc. replaced Ferncastle Data Vault, Inc. as of August 31, 2026.
+    *   Therefore, the current vendor is Kelvedon Cloud Recovery, Inc.
+
+    *   Answer: Kelvedon Cloud Recovery, Inc.
+    *   Source: 06_policy_update_memo.md
+    *   Section: SECTION 6. OFFSITE DATA BACKUP VENDOR
+    *   Quote: "Kelvedon Cloud Recovery, Inc. replaced Ferncastle Data Vault, Inc. as the Firm's offsite data backup provider."
+
+    *   The question asks "Which third-party vendor currently performs the firm's offsite data backups?"
+    *   The memo says: "Kelvedon Cloud Recovery, Inc. replaced Ferncastle Data Vault, Inc. as the Firm's offsite data backup provider."
+    *   The prompt says "Later-dated documents supersede earlier ones."
+    *   The memo is dated September 8, 2026. The BCP is April 21, 2026.
+    *   The memo's Section 6 is the correct place.
+
+    *   Answer: Kelvedon Cloud Recovery, Inc.
+    *   Source: 06_policy_update_

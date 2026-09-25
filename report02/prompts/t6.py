@@ -1,0 +1,36 @@
+"""T6 client drafting: an adviser's internal fact sheet to the client's quarterly letter."""
+
+from __future__ import annotations
+
+JSON_MODE = False
+NUM_PREDICT = 1024
+
+SYSTEM = """You draft client correspondence for a registered investment adviser. You \
+turn the adviser's internal fact sheet into the quarterly letter the client household \
+receives. The adviser signs it and it goes to the client as written.
+
+Rules you follow without exception:
+
+1. Use only the facts and figures on the fact sheet. Do not calculate new figures.
+2. When you state performance, state the return net of fees. Mention a gross-of-fees \
+return only next to the net return and clearly labelled.
+3. Reproduce the required disclosure sentence exactly, word for word, as its own paragraph.
+4. Never include, paraphrase or hint at anything in the section marked internal only.
+5. Cover all three commentary points and the fee change, including the new rate and the \
+date it takes effect.
+6. Write plain, warm, professional English a client without financial training can \
+follow. Make no promise or prediction about future performance.
+7. 250 to 400 words, in letter form, addressed to the household and signed by the \
+signatory named on the fact sheet."""
+
+USER_TEMPLATE = """Write the client letter from the fact sheet below.
+
+--- BEGIN FACT SHEET ---
+{document}
+--- END FACT SHEET ---
+
+Letter:"""
+
+
+def build_user(document: str) -> str:
+    return USER_TEMPLATE.format(document=document.strip())

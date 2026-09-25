@@ -1,0 +1,33 @@
+*   Question: Are any personal securities transactions by access persons exempt from pre-clearance on a de minimis basis? If so, state the threshold.
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+
+    *   Document 1: `03_business_continuity_plan.md` (implied by the text provided, though the filename isn't explicitly shown in the prompt, the content is about BCP).
+    *   Document 2: `05_fee_schedule.md`.
+    *   Document 3: `06_policy_update_memo.md`.
+
+    *   "personal securities transactions"
+    *   "access persons"
+    *   "pre-clearance"
+    *   "de minimis"
+
+    *   `06_policy_update_memo.md` contains a section "SECTION 2. PERSONAL TRADING DE MINIMIS EXEMPTION".
+    *   Text: "The aggregate amount below which transactions in an issuer with a market capitalization of at least $10 billion are exempt from pre-clearance is reduced from $25,000 to $10,000 in any 30 calendar day period."
+    *   The memo refers to "Supervised Persons" (which usually includes access persons in this context).
+    *   The question asks if they are exempt and what the threshold is.
+    *   The text says: "The aggregate amount below which transactions... are exempt from pre-clearance is... $10,000 in any 30 calendar day period."
+
+    *   Answer: Yes, transactions in an issuer with a market capitalization of at least $10 billion are exempt from pre-clearance if the aggregate amount is $10,000 or less in any 30 calendar day period.
+    *   Source: `06_policy_update_memo.md`
+    *   Section: "SECTION 2. PERSONAL TRADING DE MINIMIS EXEMPTION"
+    *   Quote: "The aggregate amount below which transactions in an issuer with a market capitalization of at least $10 billion are exempt from pre-clearance is reduced from $25,000 to $10,000 in any 30 calendar day period."
+
+    *   The question asks: "Are any personal securities transactions by access persons exempt from pre-clearance on a de minimis basis? If so, state the threshold."
+    *   The memo is addressed to "All Supervised Persons".
+    *   The specific threshold is $10,000 in any 30 calendar day period for issuers with a market capitalization of at least $10 billion.
+
+    *   answer: "Yes, transactions in an issuer with a market capitalization of at least $10 billion are exempt from pre-clearance if the aggregate amount is $10,000 or less in any 30 calendar day period."
+    *   source_document: "06_policy_update_memo.md"
+    *   section: "SECTION 2. PERSONAL TRADING DE MINIMIS EXEMPTION"
+    *   quote: "The aggregate amount below which transactions in an issuer with a market capitalization of at least $10 billion are exempt from pre-clearance is reduced from $25,000 to $10,000 in any 30 calendar day period."
+
+    *   Wait, the question asks for "access persons".

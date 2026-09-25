@@ -1,0 +1,28 @@
+The user wants me to extract key investment terms from the provided private fund offering document and return them as a JSON object. I need to follow strict rules about accuracy, citing text verbatim, and handling cases where information is not found or not applicable.
+
+Let me go through each field systematically:
+
+1. **fund_name**: "Castellow Wexcombe Multi-Manager Fund, L.P." - This appears in the title and Section 1.1
+2. **fund_domicile**: Delaware (from Section 1.1 - "organized on September 17, 2019 under the Delaware Revised Uniform Limited Partnership Act")
+3. **fund_structure**: Open-end fund of hedge funds (Section 1.2), stand-alone fund not master-feeder (Section 1.2)
+4. **management_fee**: 1.00% of net asset value (Section 4.1)
+5. **performance_fee**: 10% of Excess Net Profits (Section 4.2)
+6. **hurdle_rate**: 5.00% per annum, hard hurdle (Section 4.3)
+7. **high_water_mark**: Loss Carryforward functions as high-water mark, does not expire and is not reset (Section 4.3)
+8. **minimum_initial_investment**: $1,000,000 (Section 5.2)
+9. **lockup_period**: Soft lock-up of one year with 4% early withdrawal charge (Section 5.4), no hard lock-up (Section 5.4)
+10. **redemption_frequency**: Quarterly on Withdrawal Dates (last business day of each calendar quarter) (Section 5.3)
+11. **redemption_notice_days**: 95 days before Withdrawal Date (Section 5.3)
+12. **gate_provision**: Investor Gate - no Limited Partner may withdraw more than 25% of NAV per withdrawal date (Section 5.5)
+
+
+13. **key_man_provision**: Anneliese Throckford and Desmond Varrell are voting members of Investment Committee; loss of either could adversely affect Partnership (Section 8.3)
+14. **gp_commitment**: Neither General Partner nor Investment Manager has made or is required to make any capital commitment (Section 3.2)
+15. **fund_term**: No fixed term, continues perpetually unless dissolved (Section 1.3)
+16. **auditor**: Tamsford Keverne LLP (Section 7.2)
+17. **administrator**: Marrowdale Fund Services, LLC (Section 7.1)
+18. **prime_broker**: No prime broker engaged (Section 7.3)
+19. **legal_counsel**: Thursby Kilbride LLP (Section 7.4)
+20. **mfn_election**: Partnership does not offer Limited Partners any most favored nation election (Section 9.2)
+
+I need to verify each field against the document text and ensure I'm citing the exact sections where information appears. For fields that aren't explicitly stated, I'll mark them as NOT_FOUND or NOT_APPLICABLE with appropriate citations.

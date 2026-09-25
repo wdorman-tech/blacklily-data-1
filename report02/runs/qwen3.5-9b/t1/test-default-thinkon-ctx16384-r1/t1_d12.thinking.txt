@@ -1,0 +1,138 @@
+The user wants me to extract key investment terms from the provided fund offering document into a structured JSON format. I need to follow strict rules about accuracy, citing sources, and handling amendments/supplements correctly.
+
+Let me go through each field systematically:
+
+1. **fund_name**: Full legal name of the fund entity
+   - From header: "VESSARY POINT COMMODITIES FUND LTD."
+   - Citation: Document title/header
+   - Quote: "Vessary Point Commodities Fund Ltd."
+
+2. **fund_domicile**: Jurisdiction of organization
+   - From header: "(An exempted company incorporated with limited liability in the Cayman Islands)"
+   - Also Section 2.1: "under the Companies Act (As Revised) of the Cayman Islands"
+   - Citation: Header or Section 2.1
+   - Quote: "exempted company incorporated with limited liability in the Cayman Islands"
+
+3. **fund_structure**: Open-end/closed-end and master-feeder status
+   - Section 2.3: "The Fund is open-ended: the Shares are redeemable at the option of the holder under SECTION 6. The Fund is a standalone vehicle. It does not invest through a master fund and no feeder fund invests in it."
+   - Citation: Section 2.3
+   - Quote: "The Fund is open-ended: the Shares are redeemable at the option of the holder"
+
+4. **management_fee**: Annual management fee rate AND basis, every class/tier
+   - Original (Section 1.1 table): Class A: 2.00%, Class B: 1.50%
+   - Supplement No. 1 Section S-2 (effective 1 Jan 2025): Class A reduced to 1.75%, Class B reduced to 1.25%
+   - Supplement No. 2 Section S-6 (effective 1 July 2025): Class B further reduced to 1.00%
+   - Current effective: Class A: 1.75%, Class B: 1.00%
+   - Basis: "of the Net Asset Value of the Class"
+   - Citation: Section 4.1 (original), Supplement No. 1 Section S-2, Supplement No. 2 Section S-6
+   - Quote from current effective terms
+
+5. **performance_fee**: Performance allocation rate, every class
+   - Section 1.1 table: Class A: 20%, Class B: 15%
+   - Section 4.2: "equal to 20% of the Net New Appreciation of each Class A Share and 15% of the Net New Appreciation of each Class B Share"
+   - Supplements don't change this (Section S-2 says "The Performance Fee and the High Water Mark are unchanged", Section S-6 says "does not amend the Performance Fee")
+   - Citation: Section 4.2, Section 1.1
+   - Quote from Section 4.2
+
+6. **hurdle_rate**: Preferred return/hurdle/benchmark
+   - Section 4.2: "No hurdle rate, preferred return or index-relative threshold applies."
+   - Citation: Section 4.2
+   - Quote: "No hurdle rate, preferred return or index-relative threshold applies."
+
+7. **high_water_mark**: Whether it applies and reset terms
+   - Section 4.3: Describes the High Water Mark mechanism
+   - Supplement No. 1 Section S-2: "The Performance Fee and the High Water Mark are unchanged"
+   - Citation: Section 4.3, Supplement No. 1 Section S-2
+   - Quote from Section 4.3
+
+8. **minimum_initial_investment**: Minimum INITIAL subscription, every class
+   - Section 1.1 table: Class A: US$1,000,000, Class B: US$10,000,000
+   - Section 5.2 confirms these amounts
+   - Citation: Section 1.1, Section 5.2
+   - Quote from Section 5.2
+
+9. **lockup_period**: Lock-up terms, hard/soft distinction, every class
+   - Section 1.1 table: Class A: 12 months soft (3% charge), Class B: 12 months hard
+   - Section 6.2 confirms these terms
+   - Supplements don't change this (Section S-3 says "the lock-up and early redemption charge... are unchanged")
+   - Citation: Section 1.1, Section 6.2
+   - Quote from Section 6.2
+
+10. **redemption_frequency**: How often interests may be redeemed
+    - Section 1.1 table: "Last Business Day of each calendar quarter" for both classes
+    - Section 6.1 confirms this
+    - Citation: Section 1.1, Section 6.1
+    - Quote from Section 6.1
+
+11. **redemption_notice_days**: Advance written notice required
+    - Original (Section 1.1): 90 calendar days for both classes
+    - Supplement No. 1 Section S-3: reduced to 60 calendar days effective 31 March 2025
+    - Citation: Section 1.1, Section 6.1, Supplement No. 1 Section S-3
+    - Quote from Supplement No. 1 Section S-3
+
+12. **gate_provision**: Redemption gate level and threshold
+    - Section 6.4: "The Fund does not impose any limit on the aggregate amount of redemptions..."
+    - Citation: Section 6.4
+    - Quote from Section 6.4
+
+13. **key_man_provision**: Key person clause
+    - Section 10.2: "The Fund's performance depends to a significant degree on the skills of a small number of individuals, in particular Mr. Rennard."
+    - Citation: Section 10.2
+    - Quote from Section 10.2
+
+14. **gp_commitment**: Required GP/sponsor commitment
+    - Looking through document... I don't see any explicit GP commitment requirement stated. There's mention of Management Shares held by Vessary Point Holdings LLC (Section 2.2), but that's not a commitment to invest. Section 9.2 mentions principals may invest but aren't required to.
+    - Citation: "" (NOT_FOUND)
+    - Quote: ""
+
+15. **fund_term**: Term of the fund
+    - Section 2.1: "The Fund has been incorporated for an unlimited duration and has no fixed termination date; it continues until wound up by special resolution..."
+    - Citation: Section 2.1
+    - Quote from Section 2.1
+
+16. **auditor**: Independent registered public accounting firm CURRENTLY appointed
+    - Section 7.5: "Kellaway Brandt (Cayman), chartered accountants (the "Auditor"), has been appointed as independent auditor of the Fund"
+    - Appendix A also lists this
+    - Citation: Section 7.5, Appendix A
+    - Quote from Section 7.5
+
+17. **administrator**: Fund administrator
+    - Section 7.3: "Marrowgate Fund Services (Cayman) Ltd. (the "Administrator")"
+    - Appendix A also lists this
+    - Citation: Section 7.3, Appendix A
+    - Quote from Section 7.3
+
+18. **prime_broker**: Prime broker(s)
+    - Section 7.4: "Wexcombe Securities LLC (the "Prime Broker") is the prime broker of the Fund."
+    - Appendix A also lists this
+    - Citation: Section 7.4, Appendix A
+    - Quote from Section 7.4
+
+19. **legal_counsel**: Law firm(s) acting as counsel to the fund
+    - Section 7.6: "Carrow Pendle acts as Cayman Islands legal counsel to the Fund. Linacre Stowe LLP acts as United States legal counsel to the Fund"
+    - Appendix A also lists these
+    - Citation: Section 7.6, Appendix A
+    - Quote from Section 7.6
+
+20. **mfn_election**: Whether MFN election on side letters is offered
+    - Section 9.3: "no Shareholder will be entitled to receive, or to elect to receive, the benefit of the terms of any side letter granted to another Shareholder."
+    - This indicates no MFN election is offered
+    - Citation: Section 9.3
+    - Quote from Section 9.3
+
+Let me verify each field carefully against the document text and supplements. I need to make sure I'm using the most current terms where supplements apply.
+
+For management_fee, I need to be careful about which supplement applies:
+- Original: Class A 2.00%, Class B 1.50% (Section 4.1)
+- Supplement No. 1 Section S-2 (effective 1 Jan 2025): Class A 1.75%, Class B 1.25%
+- Supplement No. 2 Section S-6 (effective 1 July 2025): Class B further reduced to 1.00%, Class A unchanged at 1.75%
+
+So current effective: Class A 1.75%, Class B 1.00%
+
+For redemption_notice_days:
+- Original: 90 days (Section 6.1)
+- Supplement No. 1 Section S-3 (effective 31 March 2025): reduced to 60 days
+
+Since the document date is 1 July 2025 (latest supplement), the 60-day notice applies.
+
+Let me construct the JSON carefully.

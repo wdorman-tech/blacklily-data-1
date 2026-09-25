@@ -1,0 +1,36 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "What is the minimum holding period for personal investments in covered securities by access persons?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "holding period", "covered securities", "access persons", "minimum".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Section 11.2 mentions "must observe a minimum holding period" but doesn't specify the number of days.
+    *   `02_compliance_manual.md`:
+        *   Section 3.2: Defines access persons.
+        *   Section 4.1: Defines covered securities.
+        *   Section 4.2: Pre-clearance.
+        *   Section 4.3: Prohibited transactions.
+        *   Section 4.4 (Holding Period): States "Covered securities, other than exchange-traded funds that track broad market indices, must be held for at least 30 calendar days from the date of acquisition."
+    *   `06_policy_update_memo.md`:
+        *   Section 2.1 (Minimum Holding Period): States "This Section 2.1 amends Section 4.4 (Holding Period) of the Compliance Manual. Effective September 1, 2026, covered securities must be held for at least 60 calendar days from the date of acquisition. The 60-day period supersedes the 30-day period stated in Section 4.4."
+        *   Date of Memo: August 14, 2026.
+        *   Effective Date of Change: September 1, 2026.
+        *   Current Date Context: The documents provided are dated March 27, 2026 (Brochure) and January 15, 2026 (Compliance Manual). The Policy Update Memo is dated August 14, 2026.
+        *   Rule Application: Rule 3 says "Later-dated documents supersede earlier ones." The Memo (August 14, 2026) supersedes the Compliance Manual (January 15, 2026). The Memo explicitly states the new period is 60 days effective September 1, 2026.
+        *   Current Status: Since the question asks for the current rule ("What is the minimum holding period..."), and the memo amends the manual with a later date (August 14 vs January 15), the memo's provision applies as the current policy, even if the effective date is September 1, 2026. The document itself says "The 60-day period supersedes the 30-day period".
+        *   Wait, I need

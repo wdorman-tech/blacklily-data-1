@@ -1,0 +1,114 @@
+The user wants a JSON object representing the provided legal document. I need to extract key information such as the entity names, key dates, fees, distribution rules, and other relevant clauses.
+
+    *   *Partnership Name:* Not explicitly stated in the text provided (it's a "Partnership"), but the GP is "Quarrendon Vale ISF II GP, L.L.C." and the Manager is "Quarrendon Vale Capital Partners, LLC".
+    *   *General Partner (GP):* Quarrendon Vale ISF II GP, L.L.C.
+    *   *Manager:* Quarrendon Vale Capital Partners, LLC.
+    *   *Key Persons:* Mentioned in 8.3, but names aren't listed (just "Key Persons").
+    *   *Investment Period:* Starts on Initial Closing Date, ends on earliest of (a) 4th anniversary of Final Closing Date, (b) notice of full investment, (c) termination under 8.3, (d) manager fee to successor fund.
+    *   *Management Fee:*
+        *   Initial period (until end of Investment Period): 0.25% per quarter (1.00% per annum) of Capital Commitment.
+        *   Post-Investment Period: 0.1875% per quarter (0.75% per annum) of pro-rata share of Net Invested Capital.
+        *   No fee after 12th anniversary of Final Closing Date.
+    *   *Distribution Waterfall (Section 6.2):*
+        1.  Return of Capital (100% to LP).
+        2.  Preferred Return (100% to LP).
+        3.  Catch-Up (100% to GP until 12.5% of total distributed to LP + GP).
+        4.  Final Split (87.5% to LP, 12.5% to GP).
+    *   *Borrowing Limit:* Max 25% of aggregate Capital Commitments.
+    *   *Organizational Expenses Cap:* $2,500,000.
+    *   *Audit Firm:* Merriwick Sowerby LLP.
+    *   *Administrator:* Orrelby Fund Services (US) LLC.
+    *   *Governing Law:* Delaware.
+    *   *Key Dates:* Initial Closing Date, Final Closing Date (not specified as dates, but as terms).
+    *   *Investment Limits:* Max 20% in any single Portfolio Fund, max 10% in primary commitments.
+
+    *   `entity_names`: { `general_partner`, `manager`, `administrator`, `auditor` }
+    *   `investment_terms`: { `investment_period_duration`, `borrowing_limit`, `investment_limits` }
+    *   `fees`: { `management_fee_initial`, `management_fee_post_investment`, `organizational_expense_cap` }
+    *   `distribution_waterfall`: [ `return_of_capital`, `preferred_return`, `catch_up`, `final_split` ]
+    *   `legal_info`: { `governing_law`, `jurisdiction` }
+    *   `reporting`: { `quarterly_reports`, `annual_audits`, `k1_schedules` }
+
+    *   *Management Fee:* 0.25% quarterly (1% annual) until end of Investment Period; 0.1875% quarterly (0.75% annual) thereafter.
+    *   *Catch-up:* 12.5% of (Preferred Return + Catch-up).
+    *   *Final Split:* 87.5% LP / 12.5% GP.
+    *   *Borrowing:* 25% of Capital Commitments.
+    *   *Org Expenses:* $2.5M.
+
+    *   *Self-Correction during drafting:* Ensure the JSON is "only" a JSON object as requested.
+
+    *   *Refining the structure:*
+        *   `partnership_details`
+        *   `management_and_operations`
+        *   `financial_terms`
+        *   `legal_provisions`
+
+    *   *Drafting the JSON:*
+        ```json
+        {
+          "entities": {
+            "general_partner": "Quarrendon Vale ISF II GP, L.L.C.",
+            "manager": "Quarrendon Vale Capital Partners, LLC",
+            "administrator": "Orrelby Fund Services (US) LLC",
+            "auditor": "Merriwick Sowerby LLP"
+          },
+          "investment_terms": {
+            "investment_period_end_conditions": [
+              "4th anniversary of Final Closing Date",
+              "Notice of substantial investment of Capital Commitments",
+              "Termination under Section 8.3",
+              "Manager charges management fee to a Successor Fund"
+            ],
+            "borrowing_limit": "25% of aggregate Capital Commitments",
+            "investment_limit_single_portfolio_fund": "20% of aggregate Capital Commitments",
+            "investment_limit_primary_commitments": "10% of aggregate Capital Commitments"
+          },
+          "fees_and_expenses": {
+            "management_fee_initial_period": "0.25% per quarter (1.00% per annum) of Capital Commitment",
+            "management_fee_post_investment_period": "0.1875% per quarter (0.75% per annum) of pro-rata share of Net Invested Capital",
+            "management_fee_expiration": "12th anniversary of Final Closing Date",
+            "organizational_expense_cap": 2500000,
+            "currency_hedging_partner": "Ostrander Keel Bank, N.A."
+          },
+          "distribution_waterfall": {
+            "step_1_return_of_capital": "100% to Limited Partner",
+            "step_2_preferred_return": "100% to Limited Partner",
+            "step_3_catch_up": "100% to General Partner until 12.5% of (Preferred Return + Catch-up)",
+            "step_4_final_split": {
+              "limited_partner": "87.5%",
+              "general_partner": "12.5%"
+            }
+          },
+          "reporting_and_compliance": {
+            "quarterly_reports": "Within 60 days after first three fiscal quarters",
+            "annual_audited_statements": "Within 120 days after fiscal year-end",
+            "k1_schedules": "Within 180 days after fiscal year-end",
+            "governing_law": "Delaware",
+            "jurisdiction": "Court of Chancery of the State of Delaware"
+          }
+        }
+        ```
+
+    *   Check against the prompt: "JSON object only".
+    *   Check content: Included key figures (25%, 12.5%, 87.5%, 20%, 10%, $2.5M, 12 years).
+
+    *Wait, let me double check the Catch-up calculation.*
+    "12.5% of the sum of distributions to that Limited Partner under Section 6.2(b) and to the General Partner under this Section 6.2(c)"
+    This is the standard "Catch-up" formula.
+
+    *Check the Management Fee.*
+    "0.25% (1.00% per annum)" and "0.1875% (0.75% per annum)".
+
+    *Check the Borrowing.*
+    "25% of aggregate Capital Commitments".
+
+    *Check the Investment Limits.*
+    "20% of aggregate Capital Commitments in any single Portfolio Fund", "10% in primary commitments".
+
+    *Check the Organization Expenses.*
+    "$2,500,000".
+
+    *Check the Reporting.*
+    "60 days", "120 days", "180 days".
+
+    The JSON looks solid.

@@ -1,0 +1,42 @@
+*   Question: Identify the qualified custodian(s) holding client assets and the independent public accountant that performs the firm's surprise custody examination.
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+
+    *   "qualified custodian"
+    *   "custodian"
+    *   "independent public accountant"
+    *   "surprise custody examination"
+
+    *   *01_valuation_policy.md*:
+        *   Section 3.1: Mentions "the price provided by the qualified custodian".
+        *   Section 3.5: Mentions "Norrell Bay Trust & Custody, N.A. and Corvedale Clay Securities, LLC".
+    *   *04_business_continuity_plan.md*:
+        *   Section 5.2 (Critical Vendors): Lists "Norrell Bay Trust & Custody, N.A." and "Corvedale Clay Securities, LLC" as the "Qualified custodian; trading and cash movement" and "Custodian for securities-based lending and option accounts".
+    *   *05_fee_schedule.md*:
+        *   Section 2.4: Mentions "custodial accounts".
+    *   *06_policy_update_memo.md*:
+        *   No mention of custodians or auditors.
+
+    *   The question asks for:
+        1.  Qualified custodian(s) holding client assets.
+        2.  The independent public accountant that performs the firm's surprise custody examination.
+
+    *   *Finding 1 (Custodians):*
+        *   In `04_business_continuity_plan.md`, Section 5.2, the table lists:
+            *   "Norrell Bay Trust & Custody, N.A." (Qualified custodian; trading and cash movement)
+            *   "Corvedale Clay Securities, LLC" (Custodian for securities-based lending and option accounts)
+        *   In `01_valuation_policy.md`, Section 3.5, it mentions: "Norrell Bay Trust & Custody, N.A. and Corvedale Clay Securities, LLC".
+
+    *   *Finding 2 (Independent Public Accountant for surprise custody examination):*
+        *   I am searching the text for "independent public accountant", "audit", "examination", "custody examination", "surprise".
+        *   Scanning `01_valuation_policy.md`: No mention of an auditor or surprise examination.
+        *   Scanning `04_business_continuity_plan.md`: No mention of an auditor or surprise examination.
+        *   Scanning `05_fee_schedule.md`: No mention.
+        *   Scanning `06_policy_update_memo.md`: No mention.
+
+    *   The question asks for both the custodians and the independent public accountant.
+    *   The custodians are identified as Norrell Bay Trust & Custody, N.A. and Corvedale Clay Securities, LLC.
+    *   The independent public accountant for the surprise custody examination is *not* mentioned in any of the provided documents.
+
+    *   Since the second part of the question (the accountant) is not in the documents, the answer for the combined question is technically "NOT_IN_DOCUMENTS" because the full answer cannot be provided. However, usually, in these tasks, if part of the answer is missing, the whole answer is marked as NOT_IN_DOCUMENTS.
+
+    *   Let's double-check the text for "audit" or "

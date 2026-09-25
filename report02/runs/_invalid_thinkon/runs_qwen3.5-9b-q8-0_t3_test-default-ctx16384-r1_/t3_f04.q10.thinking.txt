@@ -1,0 +1,37 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "What has been the Firm's turnover of investment professionals over the past three years? Please list any senior departures."
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "turnover", "investment professionals", "departures", "senior", "employees", "past three years".
+
+3.  **Evaluate Document 1 (01_brochure.md):**
+    *   Section: Item 2. Material Changes > 2.1 Changes Since the Last Annual Amendment. Mentions appointment of Nadia Fenwick as Deputy Chief Compliance Officer, effective June 2, 2025. No mention of turnover or departures generally.
+    *   Section: Item 4. Advisory Business > 4.1 Ownership and Management. States: "As of December 31, 2025, the Firm had 68 employees, 27 of whom were investment professionals." Mentions Colette Varnum (CEO), Tobias Aldren (CIO), Dmitri Halloway (COO), Ines Morrow-Tate (CFO), Yuki Ashbury (CRO). No mention of turnover or departures over the past three years.
+    *   Section: Item 7. Types of Clients > 7.1 Clients. No employee info.
+    *   Section: Item 10. Other Financial Industry Activities and Affiliations > 10.3 Relationships with Investment Consultants. Mentions Chief Compliance Officer reviews payments. No turnover info.
+
+4.  **Evaluate Document 2 (02_compliance_manual.md):**
+    *   Section: SECTION 15. ANNUAL REVIEW > 15.2 Independent Assessment. Mentions sample reviews of personal trading, allocation, marketing and pay-to-play records. No turnover info.
+    *   Section: SECTION 16. TRAINING > 16.3 Role-Specific Training. Mentions training for traders, portfolio managers, etc. No turnover info.
+
+5.  **Evaluate Document 3 (03_valuation_policy.md):**
+    *   Section: SECTION 8. INDEPENDENT REVIEW > 8.1 Independent Valuation Firm. Discusses Selwick Harrow Valuation Advisors LLC reviewing Level 3 positions. No employee turnover info.
+
+6.  **Evaluate Document 4 (06_policy_update_memo.md):**
+    *   Preamble. Mentions amendments to policies, appointment of Nadia Fenwick as Deputy Chief Compliance Officer in the cc list (matches Brochure Item 2). No mention of general turnover or senior departures over the past three years.
+
+7.  **Synthesize Findings:**
+    *   None of the provided documents contain information regarding the Firm's turnover of investment professionals over the past three years or specific senior departures.
+    *   The Brochure mentions current employee counts

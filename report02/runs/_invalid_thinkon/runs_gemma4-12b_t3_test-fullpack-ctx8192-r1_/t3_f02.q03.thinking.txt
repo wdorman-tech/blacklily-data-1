@@ -1,0 +1,36 @@
+*   Question: "What minimum holding period applies to personal securities transactions by access persons?"
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+    *   Keys: "answer", "source_document", "section", "quote".
+
+    *   Document 1: `05_fee_schedule.md` (Fee Schedule)
+    *   Document 2: `06_policy_update_memo.md` (Policy Update Memo)
+
+    *   Document 1 (`05_fee_schedule.md`):
+        *   Section 1: Scope
+        *   Section 2: Management Fees
+        *   Section 3: Incentive Allocation
+        *   Section 4: Co-Investment Fund
+        *   Section 5: Redemptions, Termination and Refunds
+        *   Section 6: Minimum Investments
+        *   *Result:* No mention of "holding period" for "access persons".
+
+    *   Document 2 (`06_policy_update_memo.md`):
+        *   Section 1: Purpose, Approval and Effective Date
+        *   Section 2: Amendments
+            *   Section 2.1: Compliance Manual Section 4.5 (Minimum Holding Period)
+                *   "The minimum holding period in Section 4.5 of the Compliance Manual is extended from 30 calendar days to 60 calendar days. Access persons must hold any position in a reportable security acquired in a covered account for at least 60 calendar days from the date of acquisition, and may not close a short position within 60 calendar days of opening it. Positions acquired before September 1, 2026 remain subject to the 30-day period."
+
+    *   The question asks for the "minimum holding period".
+    *   The memo states: "The minimum holding period in Section 4.5 of the Compliance Manual is extended from 30 calendar days to 60 calendar days."
+    *   It further specifies: "Access persons must hold any position in a reportable security acquired in a covered account for at least 60 calendar days from the date of acquisition, and may not close a short position within 60 calendar days of opening it. Positions acquired before September 1, 2026 remain subject to the 30-day period."
+
+    *   Answer: 60 calendar days (for positions acquired on or after September 1, 2026; 30 calendar days for positions acquired before September 1, 2026).
+    *   Source: `06_policy_update_memo.md`
+    *   Section: "Section 2.1"
+    *   Quote: "The minimum holding period in Section 4.5 of the Compliance Manual is extended from 30 calendar days to 60 calendar days. Access persons must hold any position in a reportable security acquired in a covered account for at least 60 calendar days from the date of acquisition, and may not close a short position within 60 calendar days of opening it. Positions acquired before September 1, 2026 remain subject to the 30-day period."
+
+    *   The question is "What minimum holding period applies...".
+    *   The text says: "The minimum holding period... is extended from 30 calendar days to 60 calendar days."
+    *   It also specifies the transition date.
+
+    *   answer: "60 calendar days for positions acquired on or after

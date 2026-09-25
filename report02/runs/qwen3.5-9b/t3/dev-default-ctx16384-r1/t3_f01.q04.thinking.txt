@@ -1,0 +1,44 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (check dates).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Who approves employees' personal trading pre-clearance requests, and how long does a pre-clearance approval remain valid?"
+    *   Two parts to answer:
+        1.  Who approves?
+        2.  How long is it valid?
+
+3.  **Scan the Documents:**
+
+    *   **Document 1:** `01_brochure.md` (March 27, 2026)
+        *   Section: Item 11. Code of Ethics...
+        *   Content: Mentions pre-clearance required, but doesn't specify who approves or duration.
+
+    *   **Document 2:** `02_compliance_manual.md` (January 15, 2026)
+        *   Section: SECTION 4. PERSONAL TRADING AND PRE-CLEARANCE > 4.2 Pre-Clearance Requirement
+            *   Text: "Pre-clearance requests are approved or denied by the CCO or the Compliance Manager; requests submitted by the CCO are approved or denied by the Compliance Manager."
+            *   This answers "Who approves".
+        *   Section: SECTION 4. PERSONAL TRADING AND PRE-CLEARANCE > 4.3 Duration of Approval
+            *   Text: "A pre-clearance approval is valid only until the close of regular trading on the business day on which it is granted."
+            *   This answers "How long does a pre-clearance approval remain valid".
+
+    *   **Date Check:**
+        *   `01_brochure.md`: March 27, 2026.
+        *   `02_compliance_manual.md`: January 15, 2026.
+        *   Rule 3: "Later-dated documents supersede earlier ones."
+        *   However, the question asks about specific policy details (who approves, duration). The brochure (`01_brochure.md`) is dated later (March 27) than the compliance manual (`02_compliance_manual.md` - Jan 15).
+        *   Does the brochure contain the specific answer?
+            *   Brochure Section: Item 11. Code of Ethics...
+            *   Text: "Our employees may buy or sell for their own accounts the same securities that we buy or sell for clients. To address the conflicts this creates, the Code requires employees to obtain pre-clearance before trading most reportable securities, prohibits trading during blackout periods around trades in our model strategies, prohibits participation in initial public offerings, requires prior approval for investments in private placements, and requires employees to submit quarterly transaction reports and annual holdings reports, which our compliance staff review."
+            *   The brochure mentions "compliance staff review

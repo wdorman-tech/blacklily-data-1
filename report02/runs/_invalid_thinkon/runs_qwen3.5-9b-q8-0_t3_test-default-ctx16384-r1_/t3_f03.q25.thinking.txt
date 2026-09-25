@@ -1,0 +1,32 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: Describe the firm's cyber incident response arrangements, including who leads the response and which outside firms are engaged.
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "cyber incident response", "leads", "response", "outside firms", "engaged", "Northgale", "Vellacott Pryor", "ISO", "CCO".
+
+3.  **Locate Relevant Information:**
+    *   Document 1: `02_compliance_manual.md` (dated January 15, 2026).
+        *   Section 11.6 Incident Response: "Any Supervised Person who suspects a cybersecurity incident must report it immediately to the ISO. The ISO acts as Incident Response Lead and notifies the CCO within one hour of determining that an incident may involve client information or funds. Northgale Security Operations, Inc. will be engaged to perform containment, forensic investigation and eradication. The ISO and CCO will engage the outside breach counsel designated in the Business Continuity Plan..."
+    *   Document 2: `04_business_continuity_plan.md` (dated April 21, 2026).
+        *   Section 8.2 Cyber Incident Response: "A cyber incident is managed under the incident response procedures in Section 11.6 of the Compliance Manual, with the Director of Technology and Information Security as Incident Response Lead. If the incident impairs operations, the BCP Coordinator may declare a business disruption. Northgale Security Operations, Inc. performs containment and forensic investigation. Vellacott Pryor LLP serves as the Firm's outside breach counsel and advises on privilege, notification obligations and communications."
+
+4.  **Determine Superseding Document:**
+    *   `02_compliance_manual.md` is dated January 15, 2026.
+    *   `04_business_continuity_plan.md` is dated April 21, 2026.
+    *   Rule 3: Later-dated documents supersede earlier ones.
+    *   However, Section 8.2 of the BCP explicitly references Section 11.6 of the Compliance Manual ("A cyber incident is managed under the incident response procedures in Section 11.6 of the Compliance Manual...").
+    *   The question asks for "cyber incident response arrangements". Both documents contain relevant info. The BCP (April 2026) is later than the Compliance Manual (January 2026).
+    *   In Section 8.2 of the BCP, it specifies: "with the Director of Technology and Information Security as Incident Response Lead." (Matches ISO in Compliance Manual).
+    *   It specifies outside firms: "Northgale Security Operations, Inc. performs containment and forensic investigation." and "Vellacott Pryor LLP serves as

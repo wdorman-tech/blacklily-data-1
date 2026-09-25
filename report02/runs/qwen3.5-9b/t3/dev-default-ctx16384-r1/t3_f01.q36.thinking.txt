@@ -1,0 +1,39 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (check dates).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   "Describe the firm's political contribution policy, including any pre-clearance requirement and the look-back applied to new hires."
+    *   Key elements needed:
+        *   Political contribution policy description.
+        *   Pre-clearance requirement details.
+        *   Look-back period for new hires.
+
+3.  **Scan the Documents:**
+    *   `01_brochure.md`: Section 11.2 Personal Trading (Irrelevant).
+    *   `02_compliance_manual.md`:
+        *   Section 3.2 Outside Business Activities (Irrelevant).
+        *   Section 3.3 Acknowledgment (Irrelevant).
+        *   Section 5.2 Gifts (Irrelevant).
+        *   Section 6. POLITICAL CONTRIBUTIONS:
+            *   `6.1 Background`: Mentions Rule 206(4)-5, prohibition on receiving compensation for advisory services to government entity after contribution, Firm does not currently advise any government entity, applies controls to all Supervised Persons.
+            *   `6.2 Pre-Clearance of Contributions`: "All Supervised Persons must obtain pre-clearance from the CCO before making any political contribution, regardless of amount, to a state or local official, a candidate for state or local office, a state or local political party, or a political action committee." Also mentions spouse/domestic partner contributions and solicitation prohibitions.
+            *   `6.3 New Hire Look-Back`: "Before an offer of employment is extended to a candidate who will solicit clients or supervise those who do, the CCO reviews the political contributions made by the candidate during the two years before the hiring date. For all other candidates, the review covers the six months before the hiring date."
+            *   `6.4 Recordkeeping`: Mentions record maintenance requirements.
+
+4.  **Evaluate Dates:**
+    *   `01_brochure.md`: Dated March 27, 2026.
+    *   `02_compliance_manual.md`: Dated January 15, 2026.
+    *   The question asks about the firm's policy. Usually, the Compliance Manual is the governing document for internal policies like this. The Brochure might summarize, but the Manual has specific details on pre-clearance and look-back. Since the prompt says "Later-dated documents supersede earlier ones", I need to check if there are conflicting dates between sections within the same file or different files.
+    *   Here, `02_compliance_manual.md` is dated Jan 15, 2026. `01_brochure.md` is dated March 27, 2026. However, the specific policy details

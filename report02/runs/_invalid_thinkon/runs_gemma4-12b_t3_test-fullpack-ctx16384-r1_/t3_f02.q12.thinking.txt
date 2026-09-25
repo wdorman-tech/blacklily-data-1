@@ -1,0 +1,23 @@
+*   Question: Identify the Funds' prime brokers.
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+    *   Keys: "answer", "source_document", "section", "quote".
+
+    *   "01_valuation_policy.md": Mentions "primary pricing vendor" (Orrisdale Market Data LLC) and "secondary pricing vendor" (Pennick Pricing Services Inc.). No mention of prime brokers.
+    *   "04_business_continuity_plan.md": Section 5.1 (Critical Vendor List) mentions: "Brisworth Tallent Securities LLC, primary prime broker, and Quarrington Prime Services LLC, second prime broker."
+    *   "05_fee_schedule.md": Mentions management fees, etc. No mention of prime brokers.
+    *   "06_policy_update_memo.md": Mentions updates to various policies. No mention of prime brokers.
+
+    *   Source: `04_business_continuity_plan.md`
+    *   Section: `5.1`
+    *   Quote: "Brisworth Tallent Securities LLC, primary prime broker, and Quarrington Prime Services LLC, second prime broker."
+    *   Answer: Brisworth Tallent Securities LLC (primary) and Quarrington Prime Services LLC (second).
+
+    *   answer: "Brisworth Tallent Securities LLC (primary) and Quarrington Prime Services LLC (second)"
+    *   source_document: "04_business_continuity_plan.md"
+    *   section: "5.1"
+    *   quote: "Brisworth Tallent Securities LLC, primary prime broker, and Quarrington Prime Services LLC, second prime broker."
+
+    *   No markdown.
+    *   No preamble.
+    *   No commentary.
+    *   JSON format.

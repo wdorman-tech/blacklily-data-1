@@ -1,0 +1,41 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question using *only* the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Who conducts the firm's annual review of its compliance program, and by what date is the resulting report delivered?"
+    *   Key information needed:
+        1.  Who conducts the annual review?
+        2.  By what date is the report delivered?
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "annual review", "compliance program", "conducts", "report", "date", "delivered".
+
+4.  **Evaluate Document 1 (`02_compliance_manual.md`):**
+    *   Section `SECTION 2. CHIEF COMPLIANCE OFFICER > 2.2 Responsibilities`: Mentions CCO conducts the annual review described in Section 15.
+    *   Section `SECTION 15. ANNUAL REVIEW > 15.1 Requirement`: Mentions Rule 206(4)-7 requires review no less frequently than annually.
+    *   Section `SECTION 15. ANNUAL REVIEW > 15.2 Conduct and Reporting`: "The CCO conducts the annual review with the assistance of Hethersett Compliance Advisors, LLC... The CCO delivers a written report of its findings to the Management Committee no later than April 30 of each year."
+    *   This section seems to contain both pieces of information (Who: CCO [with assistance], Date: April 30).
+
+5.  **Evaluate Document 2 (`03_valuation_policy.md`):**
+    *   Section `SECTION 8. INDEPENDENT REVIEW > 8.2 Annual Policy Review`: Mentions Committee reviews this Policy annually, and CCO tests application of this Policy as part of annual review of compliance program. Doesn't specify the report delivery date for the general compliance program review.
+
+6.  **Evaluate Document 3 (`04_business_continuity_plan.md`):**
+    *   Section `SECTION 1. PURPOSE AND PLAN OWNERSHIP > 1.3 Approval and Review`: Mentions CCO reviews the Plan as part of annual review of compliance program. Doesn't specify who conducts the main compliance program review or the report date for that specific review.
+
+7.  **Synthesize Findings:**
+    *   Source: `02_compliance_manual.md`
+    *   Section: `SECTION 15. ANNUAL REVIEW > 15.2 Conduct and Reporting` (or just `SECTION 15. ANNUAL REVIEW > 15.2 Conduct and Reporting`)
+    *   Who: "The CCO conducts the annual review with the assistance of Hethersett Compliance Advisors, LLC."
+    *   Date: "no later than April 30 of each year" (delivered to Management Committee).
+    *   Quote: "The C

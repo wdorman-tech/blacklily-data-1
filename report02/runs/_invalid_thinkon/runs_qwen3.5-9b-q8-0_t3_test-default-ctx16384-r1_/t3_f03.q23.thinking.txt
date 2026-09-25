@@ -1,0 +1,45 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "How frequently does the Valuation Committee meet?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "Valuation Committee", "meet", "frequency", "quarterly", "monthly".
+
+4.  **Evaluate Document 1 (`03_valuation_policy.md`):**
+    *   Section: `SECTION 2. VALUATION COMMITTEE > 2.3 Meetings`
+    *   Text: "The Committee meets quarterly, within 15 business days after the end of each calendar quarter..."
+    *   Date: February 10, 2026.
+
+5.  **Evaluate Document 2 (`06_policy_update_memo.md`):**
+    *   Section: `SECTION 4. VALUATION COMMITTEE MEETING FREQUENCY`
+    *   Text: "The Valuation Committee will meet monthly, within 10 business days after the end of each calendar month, rather than quarterly."
+    *   Date: September 8, 2026.
+    *   Note: This document explicitly states it amends `Valuation Policy, Section 2.3 (Meetings)` and "This amendment supersedes the meeting frequency stated in Valuation Policy Section 2.3."
+
+6.  **Apply Rule 3 (Later-dated documents supersede earlier ones):**
+    *   Document 1 date: February 10, 2026.
+    *   Document 2 date: September 8, 2026.
+    *   Document 2 is later and explicitly amends/supersedes the meeting frequency in Document 1.
+    *   Therefore, the current effective frequency is "monthly".
+
+7.  **Formulate the Answer:**
+    *   Answer: The Valuation Committee meets monthly. (Need to be specific based on text).
+    *   Source Document: `06_policy_update_memo.md`
+    *   Section: `SECTION 4. VALUATION COMMITTEE MEETING FREQUENCY`
+    *   Quote: "The Valuation Committee will meet monthly, within 10 business days after the end of each calendar month" (or similar verbatim text). Let's pick the most direct part. "The Valuation Committee will meet monthly, within 10 business days after the end of each calendar month".
+
+8.  **Construct JSON:**
+    *   `answer`: "monthly" or "The Valuation Committee meets monthly". The instruction says "Keep answers short and specific: the number, name, frequency, threshold or rule that was asked for". So "monthly" is good, but quoting the context helps clarity. Let's use "monthly" as the core answer but ensure it reflects the document text accurately. Actually, looking at Rule 4

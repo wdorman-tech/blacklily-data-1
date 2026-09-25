@@ -1,0 +1,82 @@
+{
+  "pair_id": "t2_schw_1",
+  "labeler": "A",
+  "labels": [
+    {
+      "aid": "a01",
+      "status": "modified",
+      "material": true,
+      "description": "Adds a sentence that market-driven changes such as equity market declines can reduce client demand for margin lending, which is newly described as a significant source of net interest revenue.",
+      "rationale": "criterion 1: a new exposure (equity-market-driven decline in margin lending demand) and a new revenue dependency (margin lending as a significant source of net interest revenue) are disclosed."
+    },
+    {
+      "aid": "a02",
+      "status": "modified",
+      "material": true,
+      "description": "The Company now says it extensively utilized higher-cost funding sources to support the 2022 and 2023 client cash reallocation (previously it utilized higher-cost supplemental funding sources), and client cash is recast from something the Company relies heavily on to generate revenue into a significant funding source for revenue.",
+      "rationale": "criterion 3: the severity of the realized impact is escalated by adding 'extensively' and dropping 'supplemental' from the description of higher-cost funding use; the other edits ('For example,' and 'facilitate' to 'support') are stylistic."
+    },
+    {
+      "aid": "a03",
+      "status": "modified",
+      "material": true,
+      "description": "The rate-sensitive interest-earning assets expand from investment securities and mortgages to investment securities plus margin loans, mortgages, and PALs, and market conditions is dropped as a stated driver of higher deposit rates, leaving only the competitive environment.",
+      "rationale": "criterion 2: new products (margin loans and PALs) are referenced as rate-exposed assets, plus criterion 3 narrowing of the funding-cost driver; the current-only text after 'unrealized losses on our investment' (confidence risk and the IDA commitment paragraph) is not a change, because the prior excerpt is cut mid-sentence at a page break and the prior-year source filing contains that text too."
+    },
+    {
+      "aid": "a04",
+      "status": "modified",
+      "material": true,
+      "description": "Custody is added to the relationships that interconnect financial institutions, and further FDIC premium increases or special assessments are now tied to potential future bank failures or other similar events rather than only to the cost of resolving the 2023 bank failures (heading reworded to 'direct adverse effects').",
+      "rationale": "criterion 3: the scope of both the contagion channel (custody) and the FDIC assessment trigger (future bank failures) is widened; the heading rewording is otherwise of equivalent meaning."
+    },
+    {
+      "aid": "a05",
+      "status": "modified",
+      "material": false,
+      "description": "In the text present in both excerpts the only edits are 'such as the significant client reallocation ... that we experienced' becoming 'such as significant client reallocation ... as we experienced'; the current-only remainder (lending activities list, margin lending growth sentence, clearing house margin paragraph) lies past the point where the prior excerpt is cut mid-sentence at a page break.",
+      "rationale": "minor: stylistic rewording with identical meaning in the comparable text, and the apparent insertion is an excerpt artifact (src/t2_real.py treats the bold running page header as a category and drops the prior continuation); for adjudication, the source filing shows one real change past the cutoff (margin lending growth now attributed to market-driven factors and overall business growth instead of the Ameritrade acquisition) that this pair cannot show."
+    },
+    {
+      "aid": "a06",
+      "status": "modified",
+      "material": true,
+      "description": "Adds a new data exposure risk from failure to adequately destroy data during system or asset decommissioning, which could make client or Company information available to external parties in error.",
+      "rationale": "criterion 1: a new risk is disclosed; the other comparable edits (dropping 'non-technical means, for example,' and commas) are stylistic, and the current-only ransom sentence lies past the prior excerpt's page-break cutoff and is also in the prior-year source filing."
+    },
+    {
+      "aid": "a07",
+      "status": "modified",
+      "material": false,
+      "description": "The current excerpt stops mid-sentence at a page break ('changes to our') and the opening text present in both versions is identical, so the apparent deletion of the rest of the section, including the fraud paragraph and the 2024 outage references, is an excerpt artifact.",
+      "rationale": "minor: no change in the comparable text beyond the page number; for adjudication, the source filing shows real changes past the cutoff (fraud paragraph moved out to the new fraud factor a11, '2024' outages changed to 'recent years', custodians added to intermediaries) that this pair cannot show."
+    },
+    {
+      "aid": "a09",
+      "status": "added",
+      "description": "Covers reliance on external service providers for key technology, cloud infrastructure, processing, servicing, support and custody functions, and on financial intermediaries, where their failure to perform could cause losses and reputational harm to Schwab and financial harm to clients."
+    },
+    {
+      "aid": "a10",
+      "status": "removed",
+      "description": "Covered reliance on outsourced service providers for key technology, cloud, processing, servicing and support functions, and the risk that their failures, data misuse or service interruptions (including past outages and COVID-19 service losses) disrupt operations and cause losses."
+    },
+    {
+      "aid": "a11",
+      "status": "added",
+      "description": "Covers losses from fraud and financial crime, including account takeover through social engineering, phishing and AI-enabled impersonation, fraudulent money movement and account openings, deliberate client fraud, employee insider misconduct, and losses reimbursed under Schwab's guarantee against unauthorized account activity."
+    },
+    {
+      "aid": "a12",
+      "status": "removed",
+      "description": "Covered reliance on market makers, dealers, exchanges, clearing houses and other intermediaries to execute and settle client orders, and on payments from market makers and exchanges for trade execution and from securities lending counterparties as a significant source of revenue."
+    },
+    {
+      "aid": "a13",
+      "status": "modified",
+      "material": false,
+      "description": "The current excerpt stops mid-sentence at a page break ('our role as a counterparty in') and the text present in both versions is identical, so the apparent deletion of the margin, options and futures default paragraph is an excerpt artifact.",
+      "rationale": "minor: no change in the comparable text beyond the page number; for adjudication, the source filing shows one real change past the cutoff (growth in the margin, options and futures business attributed to market-driven factors and business growth including the trader client base instead of the Ameritrade acquisition) that this pair cannot show."
+    }
+  ]
+}

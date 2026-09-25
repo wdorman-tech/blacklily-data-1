@@ -1,0 +1,32 @@
+*   Question: "Who owns the business continuity plan, and where is the Firm's alternate site?"
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+    *   Keys: "answer", "source_document", "section", "quote".
+
+    *   "Who owns the business continuity plan?" -> Look for "Business Continuity Plan" and "owner".
+    *   "where is the Firm's alternate site?" -> Look for "alternate site".
+
+    *   Document: `04_business_continuity_plan.md`
+    *   Section 1.1: "The Chief Operating Officer, Dmitri Halloway, is the owner of this Plan..."
+    *   Section 2.1: "The Firm's alternate site is a dedicated recovery suite operated by Norcastle Recovery Services in Glastonbury, Connecticut, approximately eight miles from the Firm's Hartford office."
+
+    *   Answer: The plan is owned by the Chief Operating Officer, Dmitri Halloway, and the alternate site is a dedicated recovery suite operated by Norcastle Recovery Services in Glastonbury, Connecticut.
+    *   Source: `04_business_continuity_plan.md`
+    *   Section: "1.1" and "2.1" (Since the question asks for two pieces of information from two different sections, I should check if I can combine them or if I need to pick one. Usually, if they are in the same document, I can provide the most relevant section or a combined reference).
+    *   Quote: "The Chief Operating Officer, Dmitri Halloway, is the owner of this Plan" and "The Firm's alternate site is a dedicated recovery suite operated by Norcastle Recovery Services in Glastonbury, Connecticut, approximately eight miles from the Firm's Hartford office."
+
+    *   "answer": "The plan is owned by the Chief Operating Officer, Dmitri Halloway, and the Firm's alternate site is a dedicated recovery suite operated by Norcastle Recovery Services in Glastonbury, Connecticut."
+    *   "source_document": "04_business_continuity_plan.md"
+    *   "section": "1.1, 2.1"
+    *   "quote": "The Chief Operating Officer, Dmitri Halloway, is the owner of this Plan... The Firm's alternate site is a dedicated recovery suite operated by Norcastle Recovery Services in Glastonbury, Connecticut, approximately eight miles from the Firm's Hartford office."
+
+    *   "answer": "The plan is owned by the Chief Operating Officer, Dmitri Halloway, and the Firm's alternate site is a dedicated recovery suite operated by Norcastle Recovery Services in Glastonbury, Connecticut."
+    *   "source_document": "04_business_continuity_plan.md"
+    *   "section": "1.1, 2.1"
+    *   "quote": "The Chief Operating Officer, Dmitri Halloway, is the owner of this Plan... The Firm's alternate site is a dedicated recovery suite operated by Norcastle Recovery Services in Glastonbury, Connecticut, approximately eight miles from the Firm's Hartford office."
+
+    *Self-Correction on Section:* Since the question asks for two things, and they are in different sections of the same document, "1.1, 2.1" or "1.1 and 2.1" is appropriate.
+
+    *Refining Quote:* I will include both relevant parts of the quote.
+
+    *Final check of the question:* "Who owns the business continuity plan, and where is the Firm's alternate site?"
+    Answer: Dmitri H

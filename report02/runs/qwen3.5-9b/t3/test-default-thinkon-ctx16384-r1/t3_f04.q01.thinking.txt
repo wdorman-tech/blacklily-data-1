@@ -1,0 +1,33 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Identify the Firm's principal owners and the percentage of the Firm each owns."
+
+3.  **Scan the Documents:**
+    *   Document 1: `01_brochure.md` (Form ADV Part 2A: Firm Brochure, dated March 27, 2026).
+        *   Section: Item 4. Advisory Business > 4.1 Ownership and Management.
+        *   Text: "Wrenholt Pryce is a Delaware limited liability company formed in April 2009... Colette Varnum, Chief Executive Officer, owns 41% of the Firm's membership interests; Tobias Aldren, Chief Investment Officer, owns 34%; and Wrenholt Pryce Partners Pool LLC, a vehicle through which 14 employees hold economic interests in the Firm, owns the remaining 25%. Ms. Varnum and Mr. Aldren co-founded the Firm and are its control persons."
+    *   Document 2: `01_brochure.md` (Form ADV Part 2A: Firm Brochure, dated March 27, 2026).
+        *   Section: Item 7. Types of Clients > 7.1 Clients. (Irrelevant)
+    *   Document 3: `01_brochure.md` (Form ADV Part 2A: Firm Brochure, dated March 27, 2026).
+        *   Section: Item 10. Other Financial Industry Activities and Affiliations > 10.1 Affiliated General Partner. (Irrelevant)
+    *   Document 4: `01_brochure.md` (Form ADV Part 2A: Firm Brochure, dated March 27, 2026).
+        *   Section: Item 11. Code of Ethics... > 11.4 Principal Transactions. (Irrelevant)
+    *   Document 5: `01_brochure.md` (Form ADV Part 2A: Firm Brochure, dated March 27, 2026).
+        *   Section: Item 12. Brokerage Practices > 12.4 Directed Brokerage... (Irrelevant)
+    *   Document 6: `01_brochure.md` (Form ADV Part 2A: Firm Brochure, dated March 27, 2026).
+        *   Section: Item 15. Custody > 15.1 Separate Accounts. (Irrelevant)
+    *   Document 7: `01_brochure.md` (Form ADV Part 2A: Firm Brochure, dated March 27, 2026

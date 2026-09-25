@@ -1,0 +1,36 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (not applicable here as there's only one document).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Is the firm's valuation process subject to independent review? If so, by whom and how often?"
+
+3.  **Scan the Documents:**
+    *   Document: `03_valuation_policy.md` (dated February 10, 2026).
+    *   Search for keywords: "independent review", "review", "frequency", "who".
+    *   Section 8. INDEPENDENT REVIEW seems relevant.
+    *   Subsection 8.1 Annual Compliance Review: Mentions Chief Compliance Officer reviews annually. This is internal (Compliance Officer), not necessarily "independent" in the sense of an external firm, though it is a review.
+    *   Subsection 8.2 External Review: "Every two years, an independent valuation firm, currently Wraxall Dunmore Advisory, LLC, reviews this Policy and tests a sample of Level 3 valuations and price overrides."
+
+4.  **Evaluate the Findings:**
+    *   Is there independent review? Yes (Section 8.2).
+    *   By whom? An independent valuation firm, currently Wraxall Dunmore Advisory, LLC.
+    *   How often? Every two years.
+    *   Does Section 8.1 count? It says "Chief Compliance Officer reviews... annually". This is internal. The question asks about "independent review". Section 8.2 explicitly mentions "independent valuation firm". I should focus on the explicit independent review section to answer "by whom and how often" accurately regarding *independent* review.
+    *   Quote: "Every two years, an independent valuation firm, currently Wraxall Dunmore Advisory, LLC, reviews this Policy and tests a sample of Level 3 valuations and price overrides."
+
+5.  **Draft the JSON:**
+    *   `answer`: Yes, the firm's valuation process is subject to independent review by an independent valuation firm, currently Wraxall Dunmore Advisory, LLC, every two years. (Need to keep it specific based on the quote). Let's refine the answer to be direct. "Yes, by an independent valuation firm, currently Wraxall Dunmore Advisory, LLC, every two years."
+    *   `source_document`: `03_valuation_policy.md`
+    *   `section`: `SECTION 8. INDEPENDENT REVIEW > 8.2 External Review` (The prompt asks for section where answer appears. The header is "SECTION 8. INDEPENDENT REVIEW" and subsection "8.2 External Review". I will use the specific subsection label or the main section if ambiguous. The instruction says "section where the answer appears, as they are labelled in the documents." The document labels it

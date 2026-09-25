@@ -1,0 +1,28 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "What level of investment qualifies an investor for a reduced management fee rate in the Flagship Fund or the Offshore Fund?"
+    *   Key elements to find: Investment level (threshold), reduced management fee rate context, Flagship Fund/Offshore Fund.
+
+3.  **Scan Documents:**
+    *   `01_brochure.md`:
+        *   Item 5.1 Management Fees: Mentions "Class A interests of an investor whose aggregate capital in the Flagship Fund and the Offshore Fund, together with that of its affiliates, is $50 million or more as of the first day of a calendar quarter: 1.50% per annum on the investor's entire capital account (the "Large Investor Rate")."
+        *   Item 7.2 Minimum Investment: Mentions minimums ($1M/$250k), not reduced fee rates based on investment level (other than the Large Investor Rate).
+    *   `05_fee_schedule.md` (dated January 1, 2026):
+        *   Section 2.2 Large Investor Rate: "The Large Investor Rate applies to the entire Class A capital account of an investor whose aggregate capital in the Flagship Fund and the Offshore Fund, together with the capital of its affiliates, is $50 million or more as of the first day of a calendar quarter."
+    *   `06_policy_update_memo.md` (dated August 24, 2026):
+        *   Section 2.6 Fee Schedule Section 2.2 (Large Investor Rate): "The aggregate capital threshold for the Large Investor Rate is reduced from $50 million to $25 million. For fee periods beginning on or after October 1, 2026, the Large Investor Rate of 1.50% per annum applies to the entire Class A capital account of an investor whose aggregate capital in the Flagship Fund and the Offshore Fund, together with the capital of its affiliates, is $25 million or more as of the first day of a calendar quarter."
+        *   Note: This memo supersedes the earlier Fee Schedule regarding this specific threshold. The question asks for the current qualifying level. Since the memo is dated August 24, 2026 (later than Jan 1, 2026), it represents the current policy update. However, the effective date for the new rate is October 1, 2026. The question asks "What level of investment qualifies...", implying current or effective rules. The memo states the threshold is reduced *to* $25 million and applies to fee periods beginning on or after Oct 1, 2026.
+        *   Wait, I need to check if there's a conflict between the Brochure (

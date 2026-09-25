@@ -1,0 +1,36 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Describe the firm's alternate site arrangements if its principal office becomes unavailable."
+    *   Key elements needed: Principal office status, Alternate site(s), Conditions/Arrangements.
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "principal office", "alternate site", "unavailable", "Richmond", "Charlottesville", "Raleigh".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Identifies Richmond, Virginia as the principal office (Item 1. Cover Page > 1.3 Office Locations).
+    *   `04_business_continuity_plan.md`:
+        *   Section 1.2 Scope: Confirms three offices (Richmond, Charlottesville, Raleigh). Richmond is the principal office.
+        *   Section 4.1 Alternate Sites: "If the Richmond office is unavailable, the Charlottesville office serves as the primary alternate site for trading, operations and client service. If both the Richmond and Charlottesville offices are unavailable, the Raleigh office serves as the secondary alternate site."
+
+5.  **Synthesize the Answer:**
+    *   The question asks to describe the arrangements if the principal office (Richmond) becomes unavailable.
+    *   Document `04_business_continuity_plan.md`, Section 4.1 Alternate Sites contains the specific text: "If the Richmond office is unavailable, the Charlottesville office serves as the primary alternate site for trading, operations and client service."
+    *   It also mentions what happens if both are unavailable (Raleigh), but the core answer to "if its principal office becomes unavailable" is the primary alternate site arrangement. I should include the relevant text that directly addresses the scenario.
+    *   Text: "If the Richmond office is unavailable, the Charlottesville office serves as the primary alternate site for trading, operations and client service."
+    *   Should I include the secondary part? The question asks to describe the arrangements. Usually, providing the full context of Section 4.1 is safer if it flows logically, but the instruction says "Keep answers short and specific". However, accuracy is paramount. The text explicitly states what happens if Richmond is unavailable.
+    *   Let's check the date: `04_business_continuity_plan.md` is dated May 4, 2026. `01_brochure.md` is March 27, 2026. The BCP is later and more specific to continuity.
+    *   Quote selection: "If the Richmond office is unavailable, the Charlottesville office serves as the primary alternate site for trading, operations and client service." This directly answers the prompt. I could also include the secondary part if it's considered part of the "arrangements", but the primary answer is the immediate alternate.

@@ -1,0 +1,57 @@
+The user wants me to extract key investment terms from the provided fund offering document and return them as a JSON object. I need to follow strict rules about accuracy, citing text, and handling amendments vs original text.
+
+Let me go through each field systematically:
+
+1. **fund_name**: "Fenwright Colquist Capital Partners III, L.P." - This is stated in the title and Section 2.1
+2. **fund_domicile**: Delaware - Section 2.1 states "organized under the laws of the State of Delaware"
+3. **fund_structure**: Closed-end (no redemptions allowed per Section 3.5), not master-feeder (Section 2.2 says no master fund)
+4. **management_fee**: Need to check both original and amended text. Original: 1.75% during Investment Period on Capital Commitment, then 1.50% on Invested Capital after. Amended (Appendix A): Changed to 1.25% on Net Invested Capital after Investment Period.
+5. **performance_fee**: Carried Interest - Section 5.3(d) shows 80/20 split (20% to GP). Need to check if there's a specific rate mentioned.
+6. **hurdle_rate**: Preferred Return is 8% per annum per Section 1.1 definition
+7. **high_water_mark**: Section 5.4 says "not subject to a high-water mark, loss carryforward account or similar mechanism"
+8. **minimum_initial_investment**: Section 3.2 states $5,000,000 minimum Capital Commitment
+9. **lockup_period**: Section 3.5 says no withdrawal/redemption before dissolution - this is a hard lock
+10. **redemption_frequency**: Not applicable per Section 3.5 (no redemption rights)
+11. **redemption_notice_days**: Not applicable per Section 3.5
+12. **gate_provision**: Need to check if there's any gate provision mentioned - don't see one in the document
+13. **key_man_provision**: Section 6.3(a) names Graham Oduya and Celia Brandvold (amended to Tomas Wexcombe per Appendix A). Key Person Event triggers suspension of Investment Period per Section 6.3(c)
+14. **gp_commitment**: Section 3.3 states GP shall commit at least 2% of aggregate Capital Commitments
+15. **fund_term**: Section 2.3 - until 10th anniversary of Final Closing Date, with extensions possible (amended to 2 extensions max per Appendix A)
+16. **auditor**: Section 7.1 - Aldwin Treloar LLP
+17. **administrator**: Section 7.2 - Kinnaird Stroud Fund Services, LLC
+18. **prime_broker**: Section 7.3 says "The Partnership does not engage a prime broker"
+19. **legal_counsel**: Section 7.5 - Pellow Ashdown LLP (Fund Counsel)
+20. **mfn_election**: Section 12.2 describes MFN election for partners with $25M+ commitments
+
+Let me verify each against the text and amendments:
+
+**fund_name**: "Fenwright Colquist Capital Partners III, L.P." - Title and Section 2.1
+**fund_domicile**: Delaware - Section 2.1 "organized under the laws of the State of Delaware"
+**fund_structure**: Closed-end (Section 3.5 says no redemption rights), not master-feeder (Section 2.2)
+**management_fee**: Original: 1.75% during Investment Period on Capital Commitment, then 1.50% on Invested Capital after. Amended: 1.25% on Net Invested Capital after Investment Period. Need to report the amended value since Appendix A supersedes.
+**performance_fee**: 20% carried interest (80/20 split in Section 5.3(d))
+**hurdle_rate**: 8% preferred return per Section 1.1 definition of "Preferred Return"
+**high_water_mark**: NOT_APPLICABLE - Section 5.4 explicitly says not subject to high-water mark
+**minimum_initial_investment**: $5,000,000 per Section 3.2
+**lockup_period**: Hard lock (no redemption) per Section 3.5
+**redemption_frequency**: NOT_APPLICABLE - no redemption rights
+**redemption_notice_days**: NOT_APPLICABLE - no redemption rights
+**gate_provision**: NOT_FOUND - no gate provision mentioned
+**key_man_provision**: Graham Oduya and Tomas Wexcombe (amended from Celia Brandvold per Appendix A), triggers suspension of Investment Period per Section 6.3(c)
+**gp_commitment**: 2% per Section 3.3
+**fund_term**: Until 10th anniversary of Final Closing Date, with up to 2 extensions of 1 year each (amended from 3 extensions per Appendix A S-4(a))
+**auditor**: Aldwin Treloar LLP per Section 7.1
+**administrator**: Kinnaird Stroud Fund Services, LLC per Section 7.2
+**prime_broker**: NOT_APPLICABLE - Section 7.3 says no prime broker engaged
+**legal_counsel**: Pellow Ashdown LLP per Section 7.5
+**mfn_election**: Yes, for partners with $25M+ commitments per Section 12.2
+
+Let me double-check the management fee amendment:
+- Original Section 4.1(b)(ii): "one-quarter of one and one-half percent (1.50%) (that is, 0.375%) of such Limited Partner's share of Invested Capital"
+- Amended Section S-3(a): "one-quarter of one and one-quarter percent (1.25%) (that is, 0.3125%) of such Limited Partner's share of Net Invested Capital"
+
+So the amended fee is 1.25% on Net Invested Capital after Investment Period. During Investment Period, it remains 1.75% per Section 4.1(b)(i) which is not amended.
+
+For fund_term: Original was 10th anniversary with up to 3 extensions (Section 2.3). Amended to 2 extensions max (Appendix A S-4(a)). So I should report the amended version.
+
+Let me verify all citations are from the document text provided.

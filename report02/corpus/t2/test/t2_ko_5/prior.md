@@ -1,0 +1,17 @@
+# The Coca-Cola Company: Form 10-K for fiscal year ended 2024-12-31
+
+## Item 1A. Risk Factors (excerpt, prior year)
+
+**RISKS RELATED TO ENVIRONMENTAL AND SOCIAL FACTORS**
+
+### Climate change and legal or regulatory responses thereto may have a long-term adverse impact on our business and results of operations.
+
+There is increasing concern that a gradual increase in global average temperatures due to increased concentration of carbon dioxide and other greenhouse gases in the atmosphere is causing significant changes in weather patterns around the globe and an increase in the frequency and severity of natural disasters. Decreased agricultural productivity in certain regions of the world as a result of changing weather patterns may limit the availability or increase the cost of key agricultural commodities, such as
+
+25
+
+sugarcane, corn, sugar beets, citrus and other fruits, coffee and tea, which are important ingredients for our products, and could impact the food security of communities around the world. Climate change may also exacerbate extreme weather, resulting in water scarcity or flooding, and cause a further deterioration of water quality in affected regions, which could limit water availability for the Coca-Cola system’s bottling operations. Increased frequency or duration of extreme weather conditions could also impair production capabilities, disrupt our supply chain or impact demand for our products. Increasing concern over climate change also may result in additional legal or regulatory requirements designed to reduce or mitigate the effects of carbon dioxide and other greenhouse gas emissions on the environment, and/or may result in increased disclosure obligations. Increased energy or compliance costs and expenses due to increased legal or regulatory requirements may cause disruptions in, or an increase in the costs associated with, the manufacturing and distribution of our beverage products. The physical effects and transition costs of climate change and legal, regulatory or market initiatives to address climate change could have a long-term adverse impact on our business and results of operations. In addition, we and our bottling partners have taken, and continue to take, actions to reduce the Coca-Cola system’s carbon footprint, for example, by increasing our use of recycled packaging materials, expanding our renewable energy usage, and participating in environmental and sustainability programs and initiatives organized or sponsored by nongovernmental organizations and other groups to reduce greenhouse gas emissions industrywide. If we fail to achieve or improperly report on our progress toward achieving our emission reduction goals, or if we and our bottling partners discontinue our sustainability initiatives to reduce the Coca-Cola system’s carbon footprint, the resulting negative publicity could adversely affect consumer preference for our beverage products.
+
+### Adverse weather conditions could reduce the demand for our products.
+
+The sales of our products are influenced to some extent by weather conditions in the markets in which we operate. Unusually cold or rainy weather during the summer months may have a temporary effect on the demand for our products and contribute to lower sales, which could have an adverse effect on our results of operations for such periods.

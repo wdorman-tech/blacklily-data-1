@@ -1,0 +1,35 @@
+*   Question: "How frequently is Firm data backed up, and where are the backups stored?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "01_brochure.md": Mentions "Valuation Policy" and "Business Continuity Plan" but doesn't detail backup frequency/location.
+    *   "02_compliance_manual.md": Section 11 (Cybersecurity and Information Security) mentions "Grisby Lane Security" and "off-site" but doesn't specify frequency/location of backups.
+    *   "03_valuation_policy.md": Doesn't mention backup frequency/location.
+    *   "04_business_continuity_plan.md": Section 5 (Data Backup) specifically addresses "Backup Frequency, Location and Retention".
+    *   "05_fee_schedule.md": Doesn't mention backup.
+    *   "06_policy_update_memo.md": Mentions updates to the Business Continuity Plan, but doesn't change the backup frequency or location details.
+
+    *   Document: `04_business_continuity_plan.md`
+    *   Section: `5.2 Backup Frequency, Location and Retention`
+    *   Content: "Nightly immutable backups of all Firm-hosted systems, cloud email and cloud document storage are taken at 11:00 p.m. Eastern time and written to Ferrowby Cloud Backup data centers in Columbus, Ohio and Hillsboro, Oregon. Backups are encrypted using AES-256 and cannot be altered or deleted during their retention period."
+
+    *   Frequency: "Nightly... at 11:00 p.m. Eastern time"
+    *   Location: "Ferrowby Cloud Backup data centers in Columbus, Ohio and Hillsboro, Oregon"
+
+    *   Answer: "Nightly... at 11:00 p.m. Eastern time... to Ferrowby Cloud Backup data centers in Columbus, Ohio and Hillsboro, Oregon." (Need to be concise but clear).
+    *   Source: `04_business_continuity_plan.md`
+    *   Section: `5.2`
+    *   Quote: "Nightly immutable backups of all Firm-hosted systems, cloud email and cloud document storage are taken at 11:00 p.m. Eastern time and written to Ferrowby Cloud Backup data centers in Columbus, Ohio and Hillsboro, Oregon."
+
+    *   "Nightly... at 11:00 p.m. Eastern time" (Frequency)
+    *   "Ferrowby Cloud Backup data centers in Columbus, Ohio and Hillsboro, Oregon" (Location)
+
+    *   Answer: "Nightly... at 11:00 p.m. Eastern time... to Ferrowby Cloud Backup data centers in Columbus, Ohio and Hillsboro, Oregon."
+    *   Wait, the prompt says "short and specific".
+    *   "Nightly... at 11:00 p.m. Eastern time... to Ferrowby Cloud Backup data centers in Columbus, Ohio and Hillsboro, Oregon."
+
+    Let's check the quote again

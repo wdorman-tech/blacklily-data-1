@@ -1,0 +1,34 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Who is the Adviser's outsourced IT managed service provider?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "IT managed service provider", "outsourced", "vendor".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Mentions employees, partners, but not specific IT vendor names in the context of outsourcing (mentions Oren Pellisier as CFO, Harriet Lomasney as GC/CCO).
+    *   `02_compliance_manual.md` (dated January 15, 2026): Section 11.4 Vendor Oversight mentions "the Adviser's IT managed service provider, Oskerby Technology Group LLC".
+    *   `04_business_continuity_plan.md` (dated February 9, 2026): Section 5.2 IT Managed Service Provider mentions "Oskerby Technology Group LLC serves as the Adviser's IT managed service provider."
+    *   `06_policy_update_memo.md` (dated August 24, 2026): Section 2.5 Amendments states: "Effective September 1, 2026, Anselby Managed IT LLC replaces Oskerby Technology Group LLC as the Adviser's IT managed service provider... This amendment supersedes Section 5.2 of the Business Continuity Plan."
+
+5.  **Determine Current Status (Superseding Rule):**
+    *   Rule 3: "Later-dated documents supersede earlier ones. Where a policy update memorandum or amendment changes a provision, answer with the provision currently in effect, not the original."
+    *   `06_policy_update_memo.md` is dated August 24, 2026.
+    *   `02_compliance_manual.md` and `04_business_continuity_plan.md` are dated January/February 2026.
+    *   The Memo explicitly states it supersedes the previous provision regarding the IT managed service provider.
+    *   Current effective provider: Anselby Managed IT LLC (effective September 1, 2026).
+    *   However, the question asks "Who is the Adviser's outsourced IT managed service provider?" without specifying a date. Usually, in DDQs, the current state is required. The Memo says "Effective September 1, 2026... replaces Oskerby". Since the Memo is dated August 24, 2026 (future relative to the other docs but later than them), it indicates the *current* or *upcoming* effective provider according to the latest document.
+    *   Wait, I need to check if the transition has completed. The memo says "on completion of the transition that began in

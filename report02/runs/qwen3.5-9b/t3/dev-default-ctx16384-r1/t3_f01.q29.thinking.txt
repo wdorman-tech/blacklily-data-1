@@ -1,0 +1,34 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (all docs here seem to be dated Feb 10, 2026).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What criteria does the firm use to identify stale prices?"
+
+3.  **Scan the Documents:**
+    *   Document: `03_valuation_policy.md` (dated February 10, 2026).
+    *   Section: `SECTION 6. STALE PRICE MONITORING`.
+    *   Subsection: `6.1 Stale Price Thresholds`.
+    *   Content found in `6.1`: "The portfolio accounting system flags as stale a listed equity security or exchange-traded fund whose price has not changed for five consecutive business days, a fixed income security whose price has not changed for ten consecutive business days, and a private fund whose most recent reported net asset value is dated more than 120 days before the valuation date."
+
+4.  **Verify Constraints:**
+    *   Does the document answer the question? Yes.
+    *   Is it specific? Yes (timeframes for different asset classes).
+    *   Is there a later document? No, only one document provided (`03_valuation_policy.md`).
+    *   Format: JSON object with specific keys.
+
+5.  **Draft the Content:**
+    *   `answer`: The criteria are: listed equity/ETF price unchanged for five consecutive business days; fixed income price unchanged for ten consecutive business days; private fund NAV dated more than 120 days before valuation date. (Need to make sure it's concise but accurate based on the text).
+    *   `source_document`: `03_valuation_policy.md`
+    *   `section`: `SECTION 6. STALE PRICE MONITORING > 6.1 Stale Price Thresholds` (or just `6.1 Stale Price Thresholds`? The prompt says "section where the answer appears, as they are labelled in the documents". The header says `SECTION 6. STALE PRICE MONITORING > 6.1 Stale Price Thresholds`. I should probably use the specific subsection label for precision). Let's look at the document structure provided in the text: `<<< 03_valuation_policy.md | Valuation Policy and Procedures, dated February 10, 2026 | Section: SECTION 6. STALE PRICE MONITORING > 6.1 Stale Price Thresholds >>>`. I will use `SECTION 6. STALE PRICE MONITORING > 6.1 Stale Price Thresholds` or just `6.1 Stale Price Thresholds`. Usually, the specific section header is best. Let's use the full label provided in the metadata line: `SECTION 6. STALE PRICE MONITORING > 6.1 Stale Price Threshold

@@ -1,0 +1,38 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "How does the Firm value privately placed notes, which are Level 3 positions?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "privately placed notes", "value", "Level 3", "valuation".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Mentions MNPI, restricted lists. No valuation methodology for privately placed notes.
+    *   `02_compliance_manual.md`: Mentions sources of MNPI (private placements). No valuation methodology.
+    *   `03_valuation_policy.md`:
+        *   Section 3.5: "Privately placed notes are valued under Section 4.2."
+        *   Section 4.1: Defines Level 3 includes positions valued using significant unobservable inputs...
+        *   Section 4.2 Privately Placed Notes: "Privately placed notes are valued by a matrix method. The Firm determines a spread over the interpolated U.S. Treasury curve equal to the spread of comparable public securities of the same issuer or, where none exist, of comparable issuers with a similar internal rating, sector and maturity, plus an illiquidity premium, plus adjustments for structural features such as financial covenants, make-whole provisions, security and subordination. The note's scheduled cash flows are discounted at the resulting yield. The illiquidity premium is set by the Committee quarterly and currently ranges from 15 to 40 basis points depending on issue size and structure."
+        *   Section 8.1: Mentions independent review of Level 3 positions.
+
+5.  **Determine the Best Answer:**
+    *   The question asks "How does the Firm value privately placed notes".
+    *   Document `03_valuation_policy.md`, Section 4.2 "Privately Placed Notes" contains the specific methodology.
+    *   Date check: `03_valuation_policy.md` is dated February 10, 2026. This is the latest valuation policy document provided (others are March 27, 2026 for brochure, Jan 15, 2026 for compliance). The question is about valuation methodology, so `03_valuation_policy.md` is the relevant source.
+    *   Content matches: It explicitly describes the matrix method and the components of the valuation (spread over interpolated U.S. Treasury curve, illiquidity premium, adjustments for structural features, discounting cash flows).
+
+6.  **Draft the JSON:**
+    *   `answer`: Needs to be the specific answer derived from the text. Since the instruction says "Keep answers short and specific: the number, name, frequency, threshold or rule that was asked for", I should summarize the methodology

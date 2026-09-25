@@ -1,0 +1,372 @@
+{
+  "meeting_id": "t5_m06",
+  "title": "Latchford review: ABLE funding, special needs trust and limited guardianship before Miles turns 18",
+  "notes": "Miles's UTMA is first given as about $46,000 and corrected eleven minutes later to $37,612, which turns the January ABLE contribution from an over-limit $27,000 needing a spend-down into roughly $18,600 that fits; the planned $19,000 contribution (the 2026 limit itself is $20,000) first comes out as $90,000, a slip Owen queries and Celia corrects in the next turn, and the transcription tool renders the trust attorney as Threlkill until Priya spells the name. The call to the trust attorney moves from Priya to Owen thirteen minutes after it is assigned, the email to Priya's father's attorney moves from Friday to September 30, and the next meeting moves from December 1 to December 8, while the closing recap omits the letter of intent, the Social Security call and the Oyelaran date change. Priya floats the conservative model but the discussion ends in an explicit no change; that switch, a corporate co-trustee, a survivorship policy, a trust-owned condo and the stale-figure spend-down must not surface as actions, and the attorney's November guardianship filing (a third party's task) and the after-February habit of sweeping excess checking into the ABLE (ongoing guidance) are deliberately unkeyed and left to adjudication.",
+  "scalar_fields": {
+    "meeting_date": {
+      "expected": "2026-09-15",
+      "accept": [
+        "2026-09-15|\\b0?9/15/(20)?26\\b|sept?(ember)?\\.? 15(th)?,? 2026|\\b15(th)? sept?(ember)?\\.?,? 2026"
+      ],
+      "reject": {}
+    },
+    "client_names": {
+      "expected": "Owen Latchford; Priya Latchford",
+      "accept": [
+        "^(?!.*(^|[;,]|\\band\\b)\\s*(miles|celia|tranmere|deshawn|pellow)\\b).*\\bowen\\b",
+        "^(?!.*(^|[;,]|\\band\\b)\\s*(miles|celia|tranmere|deshawn|pellow)\\b).*\\bpriya\\b"
+      ],
+      "match": "all",
+      "reject": {
+        "CHILD_LISTED_AS_CLIENT": [
+          "(^|[;,]|\\band\\b)\\s*miles\\b"
+        ],
+        "STAFF_LISTED_AS_CLIENT": [
+          "(^|[;,]|\\band\\b)\\s*(celia|tranmere|deshawn|pellow)\\b"
+        ]
+      }
+    },
+    "primary_goal": {
+      "expected": "Make sure Miles is provided for after Owen and Priya are gone (somewhere to live, people, and money) without knocking him off his SSI and Medicaid benefits, through a third-party special needs trust, an ABLE account and guardianship in place before he turns 18",
+      "accept": [
+        "(miles|\\bson\\b|child).*(trust|\\bsnt\\b|\\bable\\b|benefit|\\bssi\\b|medicaid|care|secur|provid|support|future|eligib|guardian)",
+        "(trust|\\bsnt\\b|\\bable\\b|benefit|\\bssi\\b|medicaid|care|secur|provid|support|future|eligib|guardian).*(miles|\\bson\\b|child)",
+        "special needs (trust|plan)",
+        "(\\bssi\\b|medicaid).{0,60}(eligib|benefit)",
+        "(miles|\\bson\\b|\\bchild|disab).*(okay|\\bok\\b|gone|\\bpass|after (they|we|both|their|the parents|parents)|death|\\bdie|lifetime|lifelong|long.term|somewhere to live|\\bhome|housing|people|money|needs|well.being|financ|independen)",
+        "(okay|\\bok\\b|gone|\\bpass|after (they|we|both|their|the parents|parents)|death|\\bdie|lifetime|lifelong|long.term|somewhere to live|\\bhome|housing|people|money|needs|well.being|financ|independen).*(miles|\\bson\\b|\\bchild|disab)"
+      ],
+      "reject": {
+        "RETIREMENT_AS_GOAL": [
+          "^(?!.*(miles|\\bson\\b|child|special needs|disab|\\bssi\\b|medicaid|trust)).*retire"
+        ]
+      }
+    },
+    "retirement_target": {
+      "expected": "Owen retiring at age 63 (moved from 60 in last year's plan); Priya continues per diem work with no set end date",
+      "accept": [
+        "\\b63\\b|sixty.three",
+        "\\b2037\\b"
+      ],
+      "reject": {
+        "STALE_60": [
+          "^(?!.*(\\b63\\b|sixty.three|\\b2037\\b)).*(\\b60\\b|\\bsixty\\b(?!.(one|two|three|four|five|six|seven|eight|nine)))"
+        ],
+        "STALE_62": [
+          "^(?!.*(\\b63\\b|sixty.three|\\b2037\\b)).*(\\b62\\b|sixty.two)"
+        ]
+      }
+    },
+    "risk_tolerance": {
+      "expected": "Moderate (moderate model, 60/40)",
+      "accept": [
+        "^(?!\\W*((changed|moved|shifted|switched|now) (from moderate )?(to )?|from moderate to )?conservative\\b(?!\\W*(model|shift|move|option|allocation)?\\W*(was |were |is )?(considered|discussed|raised|floated|rejected|declined|not adopted)))(?!.*moderate\\W*(to|\\u2192|-)\\W*(the )?conservative(?!.{0,40}(consider|declin|reject|not adopt|floated|\\bstay|remain|no change|unchanged)))(?!\\W*moderate\\W+conservative\\W*$)(?!.*moderately conservative(?!.{0,40}(consider|declin|reject|not adopt|floated|\\bstay|remain|no change|unchanged))).*(moderate|60/40|sixty.forty)"
+      ],
+      "reject": {
+        "CHANGED_TO_CONSERVATIVE": [
+          "^\\W*((changed|moved|shifted|switched|now) (from moderate )?(to )?|from moderate to )?conservative\\b(?!\\W*(model|shift|move|option|allocation)?\\W*(was |were |is )?(considered|discussed|raised|floated|rejected|declined|not adopted))",
+          "moderate\\W*(to|\\u2192|-)\\W*(the )?conservative(?!.{0,40}(consider|declin|reject|not adopt|floated|\\bstay|remain|no change|unchanged))",
+          "^\\W*moderate\\W+conservative\\W*$",
+          "moderately conservative(?!.{0,40}(consider|declin|reject|not adopt|floated|\\bstay|remain|no change|unchanged))",
+          "^(?!.*(moderate|60/40|sixty.forty)).*conservative"
+        ]
+      }
+    },
+    "risk_tolerance_change": {
+      "expected": "no change",
+      "accept": [
+        "^(?!\\W*(from\\b(?!\\W*moderate\\W+to\\W+moderate\\b)|changed?\\b|moved?\\b|shift|switch|moderate\\W*(to|\\u2192|-)\\W*(the )?conservative(?!.{0,40}(consider|declin|reject|not adopt|floated|\\bstay|remain|no change|unchanged)))).*(no change|unchanged|not change|remain|stay|same|maintain|kept|keep|retain|reaffirm|confirm)",
+        "^\\W*none\\W*$",
+        "^\\W*from\\W+moderate\\W+to\\W+moderate\\b"
+      ],
+      "reject": {
+        "FALSE_CHANGE_TO_CONSERVATIVE": [
+          "^\\W*(from\\b(?!\\W*moderate\\W+to\\W+moderate\\b)|changed?\\b|moved?\\b|shift\\w*|switch\\w*).{0,60}conservative",
+          "^(?!.*(no change|unchanged|not change|remain|stay|same|maintain|kept|keep|retain|reaffirm|confirm)).*(to|toward|towards) (the )?(more )?conservative",
+          "^\\W*moderate\\W*(to|\\u2192|-)\\W*(the )?conservative(?!.{0,40}(consider|declin|reject|not adopt|floated|\\bstay|remain|no change|unchanged))"
+        ]
+      }
+    },
+    "next_meeting": {
+      "expected": "Tuesday, December 8, 2026 at 10:00 a.m.",
+      "accept": [
+        "dec(ember)?\\.? 8(th)?\\b|12/0?8\\b|2026-12-08|12-0?8-(20)?26|\\b8(th)? dec"
+      ],
+      "reject": {
+        "STALE_DEC_1": [
+          "^(?!.*(dec(ember)?\\.? 8(th)?\\b|12/0?8\\b|2026-12-08|12-0?8-(20)?26|\\b8(th)? dec)).*(dec(ember)?\\.? 1(st)?\\b|12/0?1\\b|2026-12-01|12-0?1-(20)?26|\\b1st)"
+        ]
+      }
+    }
+  },
+  "life_events": [
+    {
+      "eid": "e1",
+      "expected": "Miles turns 18 on February 11, 2027: SSI eligibility then turns on his own income and assets, and a limited guardianship must be in place",
+      "match": [
+        "(turn|reach|attain)\\w*.{0,20}(18|eighteen)|18th birthday|eighteenth|birthday|age of majority|adulthood|becomes an adult|\\b(18|eighteen)\\b(?![,.]\\d)|feb(ruary)?\\.? 11|\\b0?2/11\\b|2027-02-11|\\badult"
+      ],
+      "reject": {}
+    },
+    {
+      "eid": "e2",
+      "expected": "Miles started a part-time job at Harrowdale Garden Supply in August 2026, twelve hours a week, job coach now once a week",
+      "match": [
+        "\\bjob\\b|employ|hired|garden|harrowdale|paycheck|part.time work|start(ed|s)? (work|working)\\b|\\bwork(s|ing)? at\\b|nursery"
+      ],
+      "reject": {}
+    },
+    {
+      "eid": "e3",
+      "expected": "Priya's father has hip replacement surgery on Tuesday, September 22, 2026 and is redoing his will, which leaves a gift to each grandchild",
+      "match": [
+        "father|\\bdad\\b|grandfather|grandpa|\\bhip\\b"
+      ],
+      "reject": {}
+    }
+  ],
+  "account_actions": [
+    {
+      "aid": "a1",
+      "expected": "Open an ABLE account for Miles and contribute $19,000 from his UTMA before December 31, 2026 (under the $20,000 2026 limit, leaving room for other gifts), held mostly in the plan's cash option",
+      "match": [
+        "\\bable\\b(?! to).*(open|establish|19,000|\\b19k\\b|nineteen thousand|\\b2026\\b)|(open|establish|19,000|\\b19k\\b|nineteen thousand|\\b2026\\b).*\\bable\\b(?! to)"
+      ],
+      "amount_accept": [
+        "\\b19(,000|000| ?k\\b| thousand)|nineteen thousand"
+      ],
+      "amount_reject": {
+        "TRANSCRIPTION_90000": [
+          "^(?!.*(\\b19(,000|000| ?k\\b| thousand)|nineteen thousand)).*(90,000|\\b90 ?k\\b|ninety thousand|\\b90000)"
+        ],
+        "WHOLE_BALANCE_NOW": [
+          "^(?!.*(\\b19(,000|000| ?k\\b| thousand)|nineteen thousand)).*(37,6|\\b37\\.6 ?k|46,000|\\b46 ?k\\b|\\b46 thousand|forty.six thousand|\\b46000)"
+        ],
+        "LIMIT_AS_CONTRIBUTION": [
+          "^(?!.*(\\b19(,000|000| ?k\\b| thousand)|nineteen thousand)).*(\\b20,000|\\b20 ?k\\b|twenty thousand|\\b20000)"
+        ]
+      }
+    },
+    {
+      "aid": "a2",
+      "expected": "Contribute the remaining UTMA balance, approximately $18,600, to Miles's ABLE account in January 2027 under the 2027 limit",
+      "match": [
+        "\\bable\\b(?! to).*(january|\\b2027\\b|remain|rest of|second|18,6|18\\.6|eighteen thousand six)|(january|\\b2027\\b|remain|rest of|second|18,6|18\\.6|eighteen thousand six).*\\bable\\b(?! to)"
+      ],
+      "amount_accept": [
+        "18,6|\\b18\\.6 ?(k|thousand)|eighteen thousand six|eighteen.six|\\b18600",
+        "^(?!.*(27,000|\\b27 ?k\\b|\\b27 thousand|twenty.seven thousand|\\b27000))(?!(?:(?!\\b(?:action|account|amount):).)*(46,000|\\b46 ?k\\b|\\b46 thousand|forty.six thousand|\\b46000)).*(remain|\\brest\\b|whatever.{0,10}left|balance)"
+      ],
+      "amount_reject": {
+        "STALE_46K_REMAINDER": [
+          "^(?!.*(18,6|\\b18\\.6 ?(k|thousand)|eighteen thousand six|eighteen.six|\\b18600)).*(27,000|\\b27 ?k\\b|\\b27 thousand|twenty.seven thousand|\\b27000|46,000|\\b46 ?k\\b|\\b46 thousand|forty.six thousand|\\b46000)"
+        ]
+      }
+    },
+    {
+      "aid": "a3",
+      "expected": "Once the trust is signed, change the contingent beneficiary on Owen's 401(k), Priya's rollover IRA, Owen's $1.5 million term policy and Priya's $500,000 term policy from the children equally to Nora 50% and the special needs trust 50%",
+      "match": [
+        "beneficiar|designation|contingent"
+      ],
+      "amount_accept": [
+        "not_found|not found|\\bn/?a\\b|none|no (dollar )?amount|\\b50\\b|fifty|half|1\\.5|1,500,000|500,000|\\b500k|amount:\\W*(-\\W*)?($|action:|account:)|equal|split|shares?\\b|100 ?%|full|entire|\\ball\\b|2,000,000|\\b2 ?(m|mm|million)\\b"
+      ],
+      "amount_reject": {}
+    }
+  ],
+  "action_items": [
+    {
+      "iid": "i1",
+      "expected_task": "Prepare a comparison of ABLE plans (in-state plan versus two larger out-of-state plans: fees, investment menu, debit card, authorized representative online access) and the account application for the plan chosen [owner: Deshawn Pellow; due: end of next week = Friday, September 25, 2026]",
+      "match": [
+        "\\bable\\b(?! to).*(compar|research|evaluat|options|plans?\\b|providers?\\b|programs?\\b|application|paperwork|in.state|out.of.state|debit card|fees|enroll|forms?\\b|opening|account.open|select|choos|recommend|side.by.side|analy)|(compar|research|evaluat|options|application|paperwork|in.state|out.of.state|programs?\\b|enroll|forms?\\b|opening|select|choos|recommend|side.by.side|analy).*\\bable\\b(?! to)"
+      ],
+      "owner_accept": [
+        "deshawn|pellow|paraplanner"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "next week|next friday|\\b25(th)?\\b|twenty.fifth|\\b2[67](th)?\\b|sept?(ember)?\\.? 2[67]|week of (sept?(ember)?\\.? 2[01]|0?9/2[01])"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i2",
+      "expected_task": "Call Imogen Threlkeld's office to schedule the trust signing and the guardianship petition meeting [owner: Owen Latchford, reassigned from Priya; due: tomorrow = Wednesday, September 16, 2026]",
+      "match": [
+        "^(?!.*(father|\\bdad\\b|grandfather|oyelaran|beneficiar|letter of intent|questionnaire|social security|\\bssi\\b|\\bssa\\b)).*((call|contact|schedul|book|arrange|reach out|phone|set up|\\bset\\b|calendar)\\w*.{0,80}(threlk|imogen|attorney|lawyer|signing|execution|guardianship)|(threlk|imogen|attorney|lawyer).{0,80}(call|contact|schedul|book|arrange|calendar|signing|execution|meeting|appointment)|(signing|execution).{0,60}(calendar|schedul|book|arrange|appointment|date))"
+      ],
+      "owner_accept": [
+        "\\bowen\\b"
+      ],
+      "owner_reject": {
+        "STALE_OWNER": [
+          "^(?!.*\\bowen\\b).*priya"
+        ]
+      },
+      "due_accept": [
+        "tomorrow|\\b16(th)?\\b|sixteenth|this week|^(?!.*\\b30(th)?\\b).*wednesday"
+      ],
+      "due_reject": {},
+      "trap": "reassigned"
+    },
+    {
+      "iid": "i3",
+      "expected_task": "Send Priya's father's estate attorney, Femi Oyelaran, the trust's exact name and suggested gift language for his will [owner: Celia Tranmere; due: Wednesday the 30th = Wednesday, September 30, 2026, moved from Friday, September 18]",
+      "match": [
+        "father|\\bdad\\b|grandfather|grandpa|oyelaran|femi|bequest|(his|the) will\\b(?! be)"
+      ],
+      "owner_accept": [
+        "celia|tranmere|advis"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "\\b30(th)?\\b|thirtieth"
+      ],
+      "due_reject": {
+        "STALE_DUE": [
+          "^(?!.*(\\b30(th)?\\b|thirtieth)).*(friday|\\b18(th)?\\b|eighteenth|before (the )?surgery)"
+        ]
+      },
+      "trap": "due_changed"
+    },
+    {
+      "iid": "i4",
+      "expected_task": "Prepare beneficiary designation change forms for Owen's 401(k), Priya's rollover IRA and both term life policies (contingent: Nora 50%, special needs trust 50%) and walk Owen through the 401(k) change [owner: Deshawn Pellow; due: within a week of the trust signing]",
+      "match": [
+        "beneficiar|designation|contingent"
+      ],
+      "owner_accept": [
+        "deshawn|pellow|paraplanner"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "sign|execut|within (a|one) week|week (after|of)|once the trust|after the trust|finaliz|complet|in place|once the (snt|trust)|after the (snt|trust)"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i5",
+      "expected_task": "Call Social Security to book Miles's SSI application appointment for around his 18th birthday [owner: Priya Latchford; due: January 2027]",
+      "match": [
+        "\\bssi\\b|social security|\\bssa\\b|field office"
+      ],
+      "owner_accept": [
+        "priya"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "january|\\bjan\\b|\\b0?1/(20)?27\\b|2027-01"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i6",
+      "expected_task": "Write the first draft of the letter of intent for Miles (doctors, medications, routines, preferences) from the attorney's questionnaire, with Owen adding what only he knows [owner: Priya Latchford; due: before the December meeting = December 8, 2026]",
+      "match": [
+        "letter of intent|letter of instruction|\\bloi\\b|questionnaire|memorandum|care (notes|instructions|guide|document)|routines"
+      ],
+      "owner_accept": [
+        "priya"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "dec(ember)?\\.? 8(th)?\\b|12/0?8\\b|2026-12-08|12-0?8-(20)?26|\\b8(th)? dec",
+        "^(?!.*(dec(ember)?\\.? 1(st)?\\b|12/0?1\\b|2026-12-01|12-0?1-(20)?26)).*(\\bdec(ember)?\\b|next (meeting|review|appointment|session))"
+      ],
+      "due_reject": {
+        "STALE_DUE": [
+          "^(?!.*(dec(ember)?\\.? 8(th)?\\b|12/0?8\\b|2026-12-08|12-0?8-(20)?26|\\b8(th)? dec)).*(dec(ember)?\\.? 1(st)?\\b|12/0?1\\b|2026-12-01|12-0?1-(20)?26)"
+        ]
+      },
+      "trap": "none"
+    },
+    {
+      "iid": "i7",
+      "expected_task": "Rerun the retirement projections with Owen retiring at 63 instead of 60 and Priya's income flat, showing what the trust would receive at the second death under several market scenarios [owner: Celia Tranmere; due: next meeting = December 8, 2026]",
+      "match": [
+        "projection|re-?run|monte carlo|scenario|retirement (analysis|model|forecast|numbers)|\\b63\\b|sixty.three|second death"
+      ],
+      "owner_accept": [
+        "celia|tranmere|advis"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "dec(ember)?\\.? 8(th)?\\b|12/0?8\\b|2026-12-08|12-0?8-(20)?26|\\b8(th)? dec",
+        "^(?!.*(dec(ember)?\\.? 1(st)?\\b|12/0?1\\b|2026-12-01|12-0?1-(20)?26)).*(\\bdec(ember)?\\b|next (meeting|review|appointment|session))"
+      ],
+      "due_reject": {
+        "STALE_DUE": [
+          "^(?!.*(dec(ember)?\\.? 8(th)?\\b|12/0?8\\b|2026-12-08|12-0?8-(20)?26|\\b8(th)? dec)).*(dec(ember)?\\.? 1(st)?\\b|12/0?1\\b|2026-12-01|12-0?1-(20)?26)"
+        ]
+      },
+      "trap": "none"
+    }
+  ],
+  "non_actions": [
+    {
+      "nid": "n1",
+      "what": "Buying a condo near the family for Miles to live in, possibly owned by the trust: floated by Priya, explicitly not now",
+      "match": [
+        "condo|(buy|purchas)\\w*.{0,40}(house|home|property|unit|real estate)"
+      ],
+      "kind": "tentative"
+    },
+    {
+      "nid": "n2",
+      "what": "Survivorship (second-to-die) life insurance, $750,000 death benefit paying into the trust at about $6,800 a year: proposed by Celia, declined by both clients",
+      "match": [
+        "survivorship|second.to.die|universal life|permanent (life|policy|insurance)|750,000|\\b750k\\b|6,800|premium"
+      ],
+      "kind": "declined_proposal"
+    },
+    {
+      "nid": "n3",
+      "what": "Professional (corporate) co-trustee alongside Anjali: proposed by Celia, declined; Anjali serves alone with Nora as later successor",
+      "match": [
+        "^(?!.*(\\b(no|not|without|declin\\w*|reject\\w*)\\b.{0,20}(corporate|professional|institutional|co-?trustee|trust compan)|(corporate|professional|institutional|co-?trustee|trust compan).{0,25}\\b(declin\\w*|reject\\w*|not (needed|wanted|used)))).*((corporate|professional|institutional) (co-?)?trustee|trust compan|co-?trustee)"
+      ],
+      "kind": "declined_proposal"
+    },
+    {
+      "nid": "n4",
+      "what": "Spending down UTMA money above the 2027 ABLE limit before February: contemplated only under the stale $46,000 figure and withdrawn after the correction",
+      "match": [
+        "^(?!.*(\\b(no|not|without|avoids?|avoided|avoiding|nor|never)\\b.{0,25}spend|spend(ing)?.?down.{0,25}(not (needed|necessary|required)|unnecessary|avoided|no longer|dropped|withdrawn|cancel))).*(spend(ing)?.?down|spend(ing)? (down )?the (difference|excess))"
+      ],
+      "kind": "tentative"
+    },
+    {
+      "nid": "n5",
+      "what": "Switching the portfolio from the moderate to the conservative model: floated by Priya after August, talked through and dropped (risk tolerance stays moderate, no change)",
+      "match": [
+        "^(?!.*\\b(able|cash|not|no|never|declin\\w*|reject\\w*|stay\\w*|remain\\w*|keep|kept|unchanged)\\b).*conservative"
+      ],
+      "kind": "tentative"
+    }
+  ],
+  "corrected_figures": [
+    {
+      "what": "Miles's UTMA balance (drives the January ABLE contribution)",
+      "said_first": "$46,000",
+      "corrected_to": "37,612",
+      "field": "account_actions"
+    },
+    {
+      "what": "Planned 2026 ABLE contribution out of the UTMA (the 2026 limit itself is $20,000): first comes out as $90,000, Owen queries it and Celia corrects it in the next turn",
+      "said_first": "$90,000",
+      "corrected_to": "$19,000",
+      "field": "account_actions"
+    },
+    {
+      "what": "Owen's retirement age for the projections",
+      "said_first": "retiring at sixty",
+      "corrected_to": "run it at sixty-three",
+      "field": "scalar:retirement_target"
+    }
+  ]
+}

@@ -1,0 +1,4268 @@
+{
+ "snapshot_date": "2026-09-23",
+ "fetched_at": "2026-09-23T13:40:52-0400",
+ "source": "https://ollama.com/library?sort=popular",
+ "rule": "(REPORT-03-PLAN.md, Section 3, as operationalized here and registered verbatim):\n\n  current     the family's library entry was updated within 365 days of the snapshot, it is a\n              general-purpose instruction model (not code, OCR, translation, medical, math,\n              safety-classifier or embedding), and the same developer has no later generation\n              that offers a model in the same class. The last clause is No. 02's precedent:\n              qwen3.5 was chosen over the more-pulled qwen3.\n  dense       24B to 32B parameters, not mixture-of-experts.\n  moe         mixture-of-experts, active parameters under 25B, q4 file size at most\n              GPU + system memory minus 8 GB of headroom.\n  pick        the two most-pulled current families per class, from distinct developers; within\n              a family, the largest qualifying size. Tag: the plain q4_K_M instruct build, the\n              packaging No. 02 used. MTP (multi-token prediction) builds are excluded because\n              their draft heads change the decoding path.\n  stretch     the largest qualifying model in the field doubles as the stretch model; the field is\n              four models, not five.\n  replace     a field model that does not load usably on the reference machine is reported in the\n              fit table as the stretch result, and the next-ranked current family in its class,\n              from a developer the class does not already have, takes its scored slot. Decided on\n              load alone, before any scored run.",
+ "memory_budget_gb": {
+  "gpu": 12.0,
+  "system": 63.0,
+  "headroom": 8.0
+ },
+ "field": {
+  "dense": [
+   "gemma4:31b-it-q4_K_M",
+   "qwen3.8:27b-q4_K_M"
+  ],
+  "moe": [
+   "gemma4:26b-a4b-it-q4_K_M",
+   "qwen3.6:35b-a3b-q4_K_M"
+  ]
+ },
+ "candidates": [
+  {
+   "family": "qwen3",
+   "developer": "alibaba",
+   "pulls": 37800000.0,
+   "pulls_display": "37.8M",
+   "updated": "2025-10-10",
+   "class": "dense",
+   "size": "32b",
+   "total_b": 32.0,
+   "active_b": null,
+   "build": {
+    "tag": "qwen3:32b-q4_K_M",
+    "digest12": "030ee887880f",
+    "size_gb": 20.0,
+    "context": "40K context window"
+   },
+   "superseded_by": [
+    "qwen3-vl",
+    "qwen3.5",
+    "qwen3.6",
+    "qwen3.8"
+   ]
+  },
+  {
+   "family": "gemma4",
+   "developer": "google",
+   "pulls": 25600000.0,
+   "pulls_display": "25.6M",
+   "updated": "2026-09-22",
+   "class": "dense",
+   "size": "31b",
+   "total_b": 31.0,
+   "active_b": null,
+   "build": {
+    "tag": "gemma4:31b-it-q4_K_M",
+    "digest12": "6316f0629137",
+    "size_gb": 20.0,
+    "context": "256K context window"
+   },
+   "superseded_by": null
+  },
+  {
+   "family": "qwen3.5",
+   "developer": "alibaba",
+   "pulls": 20800000.0,
+   "pulls_display": "20.8M",
+   "updated": "2026-09-01",
+   "class": "dense",
+   "size": "27b",
+   "total_b": 27.0,
+   "active_b": null,
+   "build": {
+    "tag": "qwen3.5:27b-q4_K_M",
+    "digest12": "7653528ba5cb",
+    "size_gb": 17.0,
+    "context": "256K context window"
+   },
+   "superseded_by": [
+    "qwen3.6",
+    "qwen3.8"
+   ]
+  },
+  {
+   "family": "qwen3.6",
+   "developer": "alibaba",
+   "pulls": 6700000.0,
+   "pulls_display": "6.7M",
+   "updated": "2026-09-01",
+   "class": "dense",
+   "size": "27b",
+   "total_b": 27.0,
+   "active_b": null,
+   "build": {
+    "tag": "qwen3.6:27b-q4_K_M",
+    "digest12": "3a40c32f1450",
+    "size_gb": 17.0,
+    "context": "256K context window",
+    "default_tag": "qwen3.6:27b",
+    "default_digest12": "9d5803d493a9"
+   },
+   "superseded_by": [
+    "qwen3.8"
+   ]
+  },
+  {
+   "family": "qwen3-vl",
+   "developer": "alibaba",
+   "pulls": 6200000.0,
+   "pulls_display": "6.2M",
+   "updated": "2025-10-29",
+   "class": "dense",
+   "size": "32b",
+   "total_b": 32.0,
+   "active_b": null,
+   "build": {
+    "tag": "qwen3-vl:32b-instruct-q4_K_M",
+    "digest12": "c9a60b1a1a13",
+    "size_gb": 21.0,
+    "context": "256K context window",
+    "default_tag": "qwen3-vl:32b",
+    "default_digest12": "ff2e46876908"
+   },
+   "superseded_by": [
+    "qwen3.5",
+    "qwen3.6",
+    "qwen3.8"
+   ]
+  },
+  {
+   "family": "qwen3.8",
+   "developer": "alibaba",
+   "pulls": 2500000.0,
+   "pulls_display": "2.5M",
+   "updated": "2026-08-14",
+   "class": "dense",
+   "size": "27b",
+   "total_b": 27.0,
+   "active_b": null,
+   "build": {
+    "tag": "qwen3.8:27b-q4_K_M",
+    "digest12": "25b843619e94",
+    "size_gb": 18.0,
+    "context": "256K context window"
+   },
+   "superseded_by": null
+  },
+  {
+   "family": "granite4.1",
+   "developer": "ibm",
+   "pulls": 465300.0,
+   "pulls_display": "465.3K",
+   "updated": "2026-05-19",
+   "class": "dense",
+   "size": "30b",
+   "total_b": 30.0,
+   "active_b": null,
+   "build": {
+    "tag": "granite4.1:30b-q4_K_M",
+    "digest12": "3f3e5df8a021",
+    "size_gb": 17.0,
+    "context": "128K context window"
+   },
+   "superseded_by": [
+    "granite4.2"
+   ]
+  },
+  {
+   "family": "olmo-3",
+   "developer": "allenai",
+   "pulls": 460900.0,
+   "pulls_display": "460.9K",
+   "updated": "2025-12-16",
+   "class": "dense",
+   "size": "32b",
+   "total_b": 32.0,
+   "active_b": null,
+   "build": {
+    "tag": "olmo-3:32b-think-q4_K_M",
+    "digest12": "e9f1ab1d201f",
+    "size_gb": 19.0,
+    "context": "64K context window"
+   },
+   "superseded_by": [
+    "olmo-3.1"
+   ]
+  },
+  {
+   "family": "olmo-3.1",
+   "developer": "allenai",
+   "pulls": 292100.0,
+   "pulls_display": "292.1K",
+   "updated": "2025-12-16",
+   "class": "dense",
+   "size": "32b",
+   "total_b": 32.0,
+   "active_b": null,
+   "build": {
+    "tag": "olmo-3.1:32b-think-q4_K_M",
+    "digest12": "223d4ec84d91",
+    "size_gb": 19.0,
+    "context": "64K context window"
+   },
+   "superseded_by": null
+  },
+  {
+   "family": "muse-glimmer",
+   "developer": "muse-glimmer",
+   "pulls": 227600.0,
+   "pulls_display": "227.6K",
+   "updated": "2026-08-28",
+   "class": "dense",
+   "size": "30b",
+   "total_b": 30.0,
+   "active_b": null,
+   "build": {
+    "tag": "muse-glimmer:30b-q4_K_M",
+    "digest12": "de878ce33ad8",
+    "size_gb": 18.0,
+    "context": "128K context window"
+   },
+   "superseded_by": null
+  },
+  {
+   "family": "granite4.2",
+   "developer": "ibm",
+   "pulls": 80900.0,
+   "pulls_display": "80.9K",
+   "updated": "2026-08-27",
+   "class": "dense",
+   "size": "30b",
+   "total_b": 30.0,
+   "active_b": null,
+   "build": {
+    "tag": "granite4.2:30b-q4_K_M",
+    "digest12": "be22829aa92a",
+    "size_gb": 18.0,
+    "context": "128K context window"
+   },
+   "superseded_by": null
+  },
+  {
+   "family": "qwen3",
+   "developer": "alibaba",
+   "pulls": 37800000.0,
+   "pulls_display": "37.8M",
+   "updated": "2025-10-10",
+   "class": "moe",
+   "size": "30b",
+   "total_b": 30.0,
+   "active_b": 3.0,
+   "build": {
+    "tag": "qwen3:30b-a3b-q4_K_M",
+    "digest12": "0b28110b7a33",
+    "size_gb": 19.0,
+    "context": "40K context window",
+    "default_tag": "qwen3:30b",
+    "default_digest12": "ad815644918f"
+   },
+   "superseded_by": [
+    "qwen3-next",
+    "qwen3-vl",
+    "qwen3.5",
+    "qwen3.6"
+   ]
+  },
+  {
+   "family": "gemma4",
+   "developer": "google",
+   "pulls": 25600000.0,
+   "pulls_display": "25.6M",
+   "updated": "2026-09-22",
+   "class": "moe",
+   "size": "26b",
+   "total_b": 26.0,
+   "active_b": 4.0,
+   "build": {
+    "tag": "gemma4:26b-a4b-it-q4_K_M",
+    "digest12": "5571076f3d70",
+    "size_gb": 18.0,
+    "context": "256K context window",
+    "default_tag": "gemma4:26b",
+    "default_digest12": "08ae7ec1744b"
+   },
+   "superseded_by": null
+  },
+  {
+   "family": "qwen3.5",
+   "developer": "alibaba",
+   "pulls": 20800000.0,
+   "pulls_display": "20.8M",
+   "updated": "2026-09-01",
+   "class": "moe",
+   "size": "35b",
+   "total_b": 35.0,
+   "active_b": 3.0,
+   "build": {
+    "tag": "qwen3.5:35b-a3b-q4_K_M",
+    "digest12": "3460ffeede54",
+    "size_gb": 24.0,
+    "context": "256K context window"
+   },
+   "superseded_by": [
+    "qwen3.6"
+   ]
+  },
+  {
+   "family": "gpt-oss",
+   "developer": "openai",
+   "pulls": 13100000.0,
+   "pulls_display": "13.1M",
+   "updated": "2025-10-09",
+   "class": "moe",
+   "size": "120b",
+   "total_b": 117.0,
+   "active_b": 5.1,
+   "build": {
+    "tag": "gpt-oss:120b",
+    "digest12": "a951a23b46a1",
+    "size_gb": 65.0,
+    "context": "128K context window"
+   },
+   "superseded_by": null
+  },
+  {
+   "family": "qwen3.6",
+   "developer": "alibaba",
+   "pulls": 6700000.0,
+   "pulls_display": "6.7M",
+   "updated": "2026-09-01",
+   "class": "moe",
+   "size": "35b",
+   "total_b": 35.0,
+   "active_b": 3.0,
+   "build": {
+    "tag": "qwen3.6:35b-a3b-q4_K_M",
+    "digest12": "07d35212591f",
+    "size_gb": 24.0,
+    "context": "256K context window"
+   },
+   "superseded_by": null
+  },
+  {
+   "family": "qwen3-vl",
+   "developer": "alibaba",
+   "pulls": 6200000.0,
+   "pulls_display": "6.2M",
+   "updated": "2025-10-29",
+   "class": "moe",
+   "size": "30b",
+   "total_b": 30.0,
+   "active_b": 3.0,
+   "build": {
+    "tag": "qwen3-vl:30b-a3b-instruct-q4_K_M",
+    "digest12": "c871fc73fabc",
+    "size_gb": 20.0,
+    "context": "256K context window",
+    "default_tag": "qwen3-vl:30b",
+    "default_digest12": "eda0be100877"
+   },
+   "superseded_by": [
+    "qwen3-next",
+    "qwen3.5",
+    "qwen3.6"
+   ]
+  },
+  {
+   "family": "lfm2",
+   "developer": "liquid",
+   "pulls": 1100000.0,
+   "pulls_display": "1.1M",
+   "updated": "2026-02-24",
+   "class": "moe",
+   "size": "24b",
+   "total_b": 24.0,
+   "active_b": 2.0,
+   "build": {
+    "tag": "lfm2:24b-q4_K_M",
+    "digest12": "d6c816d74887",
+    "size_gb": 14.0,
+    "context": "32K context window"
+   },
+   "superseded_by": null
+  },
+  {
+   "family": "nemotron-3-nano",
+   "developer": "nvidia",
+   "pulls": 854100.0,
+   "pulls_display": "854.1K",
+   "updated": "2026-03-16",
+   "class": "moe",
+   "size": "30b",
+   "total_b": 30.0,
+   "active_b": 3.0,
+   "build": {
+    "tag": "nemotron-3-nano:30b-a3b-q4_K_M",
+    "digest12": "b725f1117407",
+    "size_gb": 24.0,
+    "context": "1M context window"
+   },
+   "superseded_by": [
+    "nemotron-3.5-lightning",
+    "nemotron-cascade-2"
+   ]
+  },
+  {
+   "family": "qwen3-next",
+   "developer": "alibaba",
+   "pulls": 591600.0,
+   "pulls_display": "591.6K",
+   "updated": "2025-12-05",
+   "class": "moe",
+   "size": "80b",
+   "total_b": 80.0,
+   "active_b": 3.0,
+   "build": {
+    "tag": "qwen3-next:80b-a3b-instruct-q4_K_M",
+    "digest12": "5bb9dcc938cc",
+    "size_gb": 50.0,
+    "context": "256K context window"
+   },
+   "superseded_by": [
+    "qwen3.5",
+    "qwen3.6"
+   ]
+  },
+  {
+   "family": "nemotron-3.5-lightning",
+   "developer": "nvidia",
+   "pulls": 181100.0,
+   "pulls_display": "181.1K",
+   "updated": "2026-08-31",
+   "class": "moe",
+   "size": "30b",
+   "total_b": 30.0,
+   "active_b": 3.0,
+   "build": {
+    "tag": "nemotron-3.5-lightning:30b-a3b-q4_K_M",
+    "digest12": "e7a64ff15fb1",
+    "size_gb": 25.0,
+    "context": "1M context window"
+   },
+   "superseded_by": null
+  },
+  {
+   "family": "lfm2.5",
+   "developer": "lfm2.5",
+   "pulls": 158500.0,
+   "pulls_display": "158.5K",
+   "updated": "2026-05-31",
+   "class": "moe",
+   "size": "8b",
+   "total_b": 8.0,
+   "active_b": 1.0,
+   "build": {
+    "tag": "lfm2.5:8b-a1b-q4_K_M",
+    "digest12": "9cf756159fc2",
+    "size_gb": 5.2,
+    "context": "125K context window"
+   },
+   "superseded_by": null
+  },
+  {
+   "family": "nemotron-cascade-2",
+   "developer": "nvidia",
+   "pulls": 148900.0,
+   "pulls_display": "148.9K",
+   "updated": "2026-03-20",
+   "class": "moe",
+   "size": "30b",
+   "total_b": 30.0,
+   "active_b": 3.0,
+   "build": {
+    "tag": "nemotron-cascade-2:30b-a3b-q4_K_M",
+    "digest12": "e0705e3fe8f7",
+    "size_gb": 24.0,
+    "context": "256K context window"
+   },
+   "superseded_by": [
+    "nemotron-3.5-lightning"
+   ]
+  }
+ ],
+ "screened_out": [
+  {
+   "name": "llama3.1",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "deepseek-r1",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "nomic-embed-text",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "llama3.2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "qwen2.5",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "gemma3",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "mistral",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "gemma2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "llama3",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "qwen2.5-coder",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "phi3",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "llava",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "mxbai-embed-large",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "qwen3-coder",
+   "reason": "specialized, not a general-purpose instruction model"
+  },
+  {
+   "name": "gemma",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "qwen",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "phi4",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "llama2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "glm-ocr",
+   "reason": "specialized, not a general-purpose instruction model"
+  },
+  {
+   "name": "bge-m3",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "codellama",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "qwen2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "tinyllama",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "mistral-nemo",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "minicpm-v",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "llama3.2-vision",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "qwen2.5vl",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "deepseek-coder",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "llama3.3",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "dolphin3",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "qwen3-embedding",
+   "reason": "specialized, not a general-purpose instruction model"
+  },
+  {
+   "name": "smollm2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "deepseek-v3",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "olmo2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "all-minilm",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "codegemma",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "mistral-small",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "snowflake-arctic-embed",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "deepseek-coder-v2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "orca-mini",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "granite3.1-moe",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "starcoder2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "mixtral",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "llama2-uncensored",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "falcon3",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "mistral-small3.2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "translategemma",
+   "reason": "specialized, not a general-purpose instruction model"
+  },
+  {
+   "name": "minimax-m2.7",
+   "reason": "no tag states a parameter count"
+  },
+  {
+   "name": "glm-5.1",
+   "reason": "no tag states a parameter count"
+  },
+  {
+   "name": "llava-llama3",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "qwq",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "gemma3n",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "embeddinggemma",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "smollm",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "dolphin-llama3",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "cogito",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "qwen3-coder-next",
+   "reason": "specialized, not a general-purpose instruction model"
+  },
+  {
+   "name": "moondream",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "dolphin-mixtral",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "sqlcoder",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "glm-4.7-flash",
+   "reason": "no tag states a parameter count"
+  },
+  {
+   "name": "llama4",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "dolphin-mistral",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "phi4-reasoning",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "hermes3",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "dolphin-phi",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "granite-code",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "phi",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "command-r",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "magistral",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "yi",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "phi4-mini",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "openchat",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "starcoder",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "codestral",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "mistral-large",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "wizard-vicuna-uncensored",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "zephyr",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "deepscaler",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "devstral-small-2",
+   "reason": "specialized, not a general-purpose instruction model"
+  },
+  {
+   "name": "vicuna",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "glm4",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "deepseek-llm",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "nous-hermes",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "deepseek-v2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "wizardlm2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "openhermes",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "wizardcoder",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "falcon",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "openthinker",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "neural-chat",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "qwen2-math",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "codeqwen",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "granite3.3",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "nous-hermes2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "llama2-chinese",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "aya",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "stablelm2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "yi-coder",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "stable-code",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "wizard-math",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "llama-guard3",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "llama3-chatqa",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "devstral",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "internlm2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "granite3.1-dense",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "phi3.5",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "granite3-dense",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "aya-expanse",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "dolphincoder",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "xwinlm",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "samantha-mistral",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "llama3-gradient",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "llama3-groq-tool-use",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "granite3.2-vision",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "yarn-llama2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "starling-lm",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "phind-codellama",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "solar",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "granite3-moe",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "stable-beluga",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "deepcoder",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "orca2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "shieldgemma",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "nomic-embed-text-v2-moe",
+   "reason": "specialized, not a general-purpose instruction model"
+  },
+  {
+   "name": "paraphrase-multilingual",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "reader-lm",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "wizardlm",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "llama-pro",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "yarn-mistral",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "nexusraven",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "meditron",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "bakllava",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "command-r-plus",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "mistral-small3.1",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "exaone-deep",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "mistral-openorca",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "tinydolphin",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "medllama2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "nemotron-mini",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "codegeex4",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "opencoder",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "wizardlm-uncensored",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "nemotron",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "reflection",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "codeup",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "nous-hermes2-mixtral",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "athene-v2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "megadolphin",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "everythinglm",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "solar-pro",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "exaone3.5",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "magicoder",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "mathstral",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "nuextract",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "falcon2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "notus",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "notux",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "deepseek-ocr",
+   "reason": "specialized, not a general-purpose instruction model"
+  },
+  {
+   "name": "stablelm-zephyr",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "bespoke-minicheck",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "duckdb-nsql",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "firefunction-v2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "mistrallite",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "wizard-vicuna",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "open-orca-platypus2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "minimax-m3",
+   "reason": "no tag states a parameter count"
+  },
+  {
+   "name": "codebooga",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "goliath",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "kimi-k2.6",
+   "reason": "no tag states a parameter count"
+  },
+  {
+   "name": "deepseek-v4-flash",
+   "reason": "no tag states a parameter count"
+  },
+  {
+   "name": "granite3.2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "snowflake-arctic-embed2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "r1-1776",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "deepseek-v4-pro",
+   "reason": "no tag states a parameter count"
+  },
+  {
+   "name": "sailor2",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "medgemma",
+   "reason": "specialized, not a general-purpose instruction model"
+  },
+  {
+   "name": "llava-phi3",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "tulu3",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "granite-embedding",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "dbrx",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "devstral-2",
+   "reason": "specialized, not a general-purpose instruction model"
+  },
+  {
+   "name": "glm-5.2",
+   "reason": "no tag states a parameter count"
+  },
+  {
+   "name": "granite3-guardian",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "command-r7b",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "phi4-mini-reasoning",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "deepseek-v2.5",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "bge-large",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "alfred",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "smallthinker",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "kimi-k2.7-code",
+   "reason": "specialized, not a general-purpose instruction model"
+  },
+  {
+   "name": "command-a",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "marco-o1",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "command-r7b-arabic",
+   "reason": "not updated within 365 days"
+  },
+  {
+   "name": "medgemma1.5",
+   "reason": "specialized, not a general-purpose instruction model"
+  },
+  {
+   "name": "laguna-s-2.1",
+   "reason": "no tag states a parameter count"
+  },
+  {
+   "name": "gpt-oss-safeguard",
+   "reason": "specialized, not a general-purpose instruction model"
+  },
+  {
+   "name": "glm-5.3-flash",
+   "reason": "no tag states a parameter count"
+  },
+  {
+   "name": "mistral-large-3",
+   "reason": "no tag states a parameter count"
+  },
+  {
+   "name": "laguna-xs-2.1",
+   "reason": "no tag states a parameter count"
+  },
+  {
+   "name": "nemotron-3-ultra",
+   "reason": "no tag states a parameter count"
+  },
+  {
+   "name": "kimi-k3",
+   "reason": "no tag states a parameter count"
+  },
+  {
+   "name": "glm-5.3",
+   "reason": "no tag states a parameter count"
+  },
+  {
+   "name": "north-mini-code-1.0",
+   "reason": "specialized, not a general-purpose instruction model"
+  },
+  {
+   "name": "minicpm-v4.6",
+   "reason": "no tag states a parameter count"
+  },
+  {
+   "name": "deepseek-v4.1-flash",
+   "reason": "no tag states a parameter count"
+  },
+  {
+   "name": "minicpm-v4.5",
+   "reason": "no tag states a parameter count"
+  },
+  {
+   "name": "laguna-xs.2",
+   "reason": "no tag states a parameter count"
+  },
+  {
+   "name": "granite4.1-guardian",
+   "reason": "specialized, not a general-purpose instruction model"
+  }
+ ],
+ "listing": [
+  {
+   "name": "llama3.1",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "8b",
+    "70b",
+    "405b"
+   ],
+   "pulls": 119800000.0,
+   "pulls_display": "119.8M",
+   "updated": "2024-11-30"
+  },
+  {
+   "name": "deepseek-r1",
+   "capabilities": [
+    "tools",
+    "thinking"
+   ],
+   "sizes": [
+    "1.5b",
+    "7b",
+    "8b",
+    "14b",
+    "32b",
+    "70b",
+    "671b"
+   ],
+   "pulls": 93100000.0,
+   "pulls_display": "93.1M",
+   "updated": "2025-07-02"
+  },
+  {
+   "name": "nomic-embed-text",
+   "capabilities": [
+    "embedding"
+   ],
+   "sizes": [],
+   "pulls": 86800000.0,
+   "pulls_display": "86.8M",
+   "updated": "2024-02-21"
+  },
+  {
+   "name": "llama3.2",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "1b",
+    "3b"
+   ],
+   "pulls": 84200000.0,
+   "pulls_display": "84.2M",
+   "updated": "2024-09-25"
+  },
+  {
+   "name": "qwen2.5",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "0.5b",
+    "1.5b",
+    "3b",
+    "7b",
+    "14b",
+    "32b",
+    "72b"
+   ],
+   "pulls": 40800000.0,
+   "pulls_display": "40.8M",
+   "updated": "2024-09-19"
+  },
+  {
+   "name": "gemma3",
+   "capabilities": [
+    "vision"
+   ],
+   "sizes": [
+    "270m",
+    "1b",
+    "4b",
+    "12b",
+    "27b"
+   ],
+   "pulls": 40700000.0,
+   "pulls_display": "40.7M",
+   "updated": "2025-08-15"
+  },
+  {
+   "name": "qwen3",
+   "capabilities": [
+    "tools",
+    "thinking"
+   ],
+   "sizes": [
+    "0.6b",
+    "1.7b",
+    "4b",
+    "8b",
+    "14b",
+    "30b",
+    "32b",
+    "235b"
+   ],
+   "pulls": 37800000.0,
+   "pulls_display": "37.8M",
+   "updated": "2025-10-10"
+  },
+  {
+   "name": "mistral",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 33700000.0,
+   "pulls_display": "33.7M",
+   "updated": "2025-07-13"
+  },
+  {
+   "name": "gemma2",
+   "capabilities": [],
+   "sizes": [
+    "2b",
+    "9b",
+    "27b"
+   ],
+   "pulls": 33200000.000000004,
+   "pulls_display": "33.2M",
+   "updated": "2024-08-01"
+  },
+  {
+   "name": "gemma4",
+   "capabilities": [
+    "vision",
+    "tools",
+    "thinking",
+    "audio",
+    "cloud"
+   ],
+   "sizes": [
+    "e2b",
+    "e4b",
+    "12b",
+    "26b",
+    "31b"
+   ],
+   "pulls": 25600000.0,
+   "pulls_display": "25.6M",
+   "updated": "2026-09-22"
+  },
+  {
+   "name": "llama3",
+   "capabilities": [],
+   "sizes": [
+    "8b",
+    "70b"
+   ],
+   "pulls": 25300000.0,
+   "pulls_display": "25.3M",
+   "updated": "2024-05-21"
+  },
+  {
+   "name": "qwen2.5-coder",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "0.5b",
+    "1.5b",
+    "3b",
+    "7b",
+    "14b",
+    "32b"
+   ],
+   "pulls": 21700000.0,
+   "pulls_display": "21.7M",
+   "updated": "2025-05-28"
+  },
+  {
+   "name": "qwen3.5",
+   "capabilities": [
+    "vision",
+    "tools",
+    "thinking",
+    "cloud"
+   ],
+   "sizes": [
+    "0.8b",
+    "2b",
+    "4b",
+    "9b",
+    "27b",
+    "35b",
+    "122b"
+   ],
+   "pulls": 20800000.0,
+   "pulls_display": "20.8M",
+   "updated": "2026-09-01"
+  },
+  {
+   "name": "phi3",
+   "capabilities": [],
+   "sizes": [
+    "3.8b",
+    "14b"
+   ],
+   "pulls": 18200000.0,
+   "pulls_display": "18.2M",
+   "updated": "2024-07-30"
+  },
+  {
+   "name": "llava",
+   "capabilities": [
+    "vision"
+   ],
+   "sizes": [
+    "7b",
+    "13b",
+    "34b"
+   ],
+   "pulls": 15000000.0,
+   "pulls_display": "15M",
+   "updated": "2024-02-01"
+  },
+  {
+   "name": "mxbai-embed-large",
+   "capabilities": [
+    "embedding"
+   ],
+   "sizes": [
+    "335m"
+   ],
+   "pulls": 15000000.0,
+   "pulls_display": "15M",
+   "updated": "2024-05-06"
+  },
+  {
+   "name": "gpt-oss",
+   "capabilities": [
+    "tools",
+    "thinking",
+    "cloud"
+   ],
+   "sizes": [
+    "20b",
+    "120b"
+   ],
+   "pulls": 13100000.0,
+   "pulls_display": "13.1M",
+   "updated": "2025-10-09"
+  },
+  {
+   "name": "qwen3-coder",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "30b",
+    "480b"
+   ],
+   "pulls": 9500000.0,
+   "pulls_display": "9.5M",
+   "updated": "2025-09-23"
+  },
+  {
+   "name": "gemma",
+   "capabilities": [],
+   "sizes": [
+    "2b",
+    "7b"
+   ],
+   "pulls": 8300000.000000001,
+   "pulls_display": "8.3M",
+   "updated": "2024-04-09"
+  },
+  {
+   "name": "qwen",
+   "capabilities": [],
+   "sizes": [
+    "0.5b",
+    "1.8b",
+    "4b",
+    "7b",
+    "14b",
+    "32b",
+    "72b",
+    "110b"
+   ],
+   "pulls": 7800000.0,
+   "pulls_display": "7.8M",
+   "updated": "2024-04-26"
+  },
+  {
+   "name": "phi4",
+   "capabilities": [],
+   "sizes": [
+    "14b"
+   ],
+   "pulls": 7700000.0,
+   "pulls_display": "7.7M",
+   "updated": "2025-01-08"
+  },
+  {
+   "name": "llama2",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "13b",
+    "70b"
+   ],
+   "pulls": 7500000.0,
+   "pulls_display": "7.5M",
+   "updated": "2023-12-27"
+  },
+  {
+   "name": "glm-ocr",
+   "capabilities": [
+    "vision",
+    "tools"
+   ],
+   "sizes": [],
+   "pulls": 7500000.0,
+   "pulls_display": "7.5M",
+   "updated": "2026-02-02"
+  },
+  {
+   "name": "bge-m3",
+   "capabilities": [
+    "embedding"
+   ],
+   "sizes": [
+    "567m"
+   ],
+   "pulls": 6900000.0,
+   "pulls_display": "6.9M",
+   "updated": "2024-08-07"
+  },
+  {
+   "name": "qwen3.6",
+   "capabilities": [
+    "vision",
+    "tools",
+    "thinking"
+   ],
+   "sizes": [
+    "27b",
+    "35b"
+   ],
+   "pulls": 6700000.0,
+   "pulls_display": "6.7M",
+   "updated": "2026-09-01"
+  },
+  {
+   "name": "codellama",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "13b",
+    "34b",
+    "70b"
+   ],
+   "pulls": 6400000.0,
+   "pulls_display": "6.4M",
+   "updated": "2024-07-18"
+  },
+  {
+   "name": "qwen3-vl",
+   "capabilities": [
+    "vision",
+    "tools",
+    "thinking"
+   ],
+   "sizes": [
+    "2b",
+    "4b",
+    "8b",
+    "30b",
+    "32b",
+    "235b"
+   ],
+   "pulls": 6200000.0,
+   "pulls_display": "6.2M",
+   "updated": "2025-10-29"
+  },
+  {
+   "name": "qwen2",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "0.5b",
+    "1.5b",
+    "7b",
+    "72b"
+   ],
+   "pulls": 6200000.0,
+   "pulls_display": "6.2M",
+   "updated": "2024-09-11"
+  },
+  {
+   "name": "tinyllama",
+   "capabilities": [],
+   "sizes": [
+    "1.1b"
+   ],
+   "pulls": 5800000.0,
+   "pulls_display": "5.8M",
+   "updated": "2024-01-01"
+  },
+  {
+   "name": "mistral-nemo",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "12b"
+   ],
+   "pulls": 5700000.0,
+   "pulls_display": "5.7M",
+   "updated": "2025-07-23"
+  },
+  {
+   "name": "minicpm-v",
+   "capabilities": [
+    "vision"
+   ],
+   "sizes": [
+    "8b"
+   ],
+   "pulls": 5500000.0,
+   "pulls_display": "5.5M",
+   "updated": "2024-11-18"
+  },
+  {
+   "name": "llama3.2-vision",
+   "capabilities": [
+    "vision"
+   ],
+   "sizes": [
+    "11b",
+    "90b"
+   ],
+   "pulls": 5300000.0,
+   "pulls_display": "5.3M",
+   "updated": "2025-05-22"
+  },
+  {
+   "name": "qwen2.5vl",
+   "capabilities": [
+    "vision"
+   ],
+   "sizes": [
+    "3b",
+    "7b",
+    "32b",
+    "72b"
+   ],
+   "pulls": 5100000.0,
+   "pulls_display": "5.1M",
+   "updated": "2025-05-22"
+  },
+  {
+   "name": "deepseek-coder",
+   "capabilities": [],
+   "sizes": [
+    "1.3b",
+    "6.7b",
+    "33b"
+   ],
+   "pulls": 4600000.0,
+   "pulls_display": "4.6M",
+   "updated": "2023-12-28"
+  },
+  {
+   "name": "llama3.3",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "70b"
+   ],
+   "pulls": 4200000.0,
+   "pulls_display": "4.2M",
+   "updated": "2024-12-06"
+  },
+  {
+   "name": "dolphin3",
+   "capabilities": [],
+   "sizes": [
+    "8b"
+   ],
+   "pulls": 4099999.9999999995,
+   "pulls_display": "4.1M",
+   "updated": "2025-01-05"
+  },
+  {
+   "name": "qwen3-embedding",
+   "capabilities": [
+    "embedding"
+   ],
+   "sizes": [
+    "0.6b",
+    "4b",
+    "8b"
+   ],
+   "pulls": 4099999.9999999995,
+   "pulls_display": "4.1M",
+   "updated": "2025-09-23"
+  },
+  {
+   "name": "smollm2",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "135m",
+    "360m",
+    "1.7b"
+   ],
+   "pulls": 4000000.0,
+   "pulls_display": "4M",
+   "updated": "2024-11-01"
+  },
+  {
+   "name": "deepseek-v3",
+   "capabilities": [],
+   "sizes": [
+    "671b"
+   ],
+   "pulls": 3800000.0,
+   "pulls_display": "3.8M",
+   "updated": "2025-01-13"
+  },
+  {
+   "name": "olmo2",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "13b"
+   ],
+   "pulls": 3800000.0,
+   "pulls_display": "3.8M",
+   "updated": "2025-01-11"
+  },
+  {
+   "name": "all-minilm",
+   "capabilities": [
+    "embedding"
+   ],
+   "sizes": [
+    "22m",
+    "33m"
+   ],
+   "pulls": 3600000.0,
+   "pulls_display": "3.6M",
+   "updated": "2024-05-06"
+  },
+  {
+   "name": "codegemma",
+   "capabilities": [],
+   "sizes": [
+    "2b",
+    "7b"
+   ],
+   "pulls": 3200000.0,
+   "pulls_display": "3.2M",
+   "updated": "2024-07-18"
+  },
+  {
+   "name": "mistral-small",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "22b",
+    "24b"
+   ],
+   "pulls": 3100000.0,
+   "pulls_display": "3.1M",
+   "updated": "2025-01-30"
+  },
+  {
+   "name": "snowflake-arctic-embed",
+   "capabilities": [
+    "embedding"
+   ],
+   "sizes": [
+    "22m",
+    "33m",
+    "110m",
+    "137m",
+    "335m"
+   ],
+   "pulls": 3100000.0,
+   "pulls_display": "3.1M",
+   "updated": "2024-04-16"
+  },
+  {
+   "name": "deepseek-coder-v2",
+   "capabilities": [],
+   "sizes": [
+    "16b",
+    "236b"
+   ],
+   "pulls": 3100000.0,
+   "pulls_display": "3.1M",
+   "updated": "2024-09-06"
+  },
+  {
+   "name": "orca-mini",
+   "capabilities": [],
+   "sizes": [
+    "3b",
+    "7b",
+    "13b",
+    "70b"
+   ],
+   "pulls": 3100000.0,
+   "pulls_display": "3.1M",
+   "updated": "2023-10-29"
+  },
+  {
+   "name": "granite3.1-moe",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "1b",
+    "3b"
+   ],
+   "pulls": 3000000.0,
+   "pulls_display": "3M",
+   "updated": "2025-01-17"
+  },
+  {
+   "name": "starcoder2",
+   "capabilities": [],
+   "sizes": [
+    "3b",
+    "7b",
+    "15b"
+   ],
+   "pulls": 3000000.0,
+   "pulls_display": "3M",
+   "updated": "2024-09-06"
+  },
+  {
+   "name": "nemotron-3-super",
+   "capabilities": [
+    "tools",
+    "thinking",
+    "cloud"
+   ],
+   "sizes": [
+    "120b"
+   ],
+   "pulls": 3000000.0,
+   "pulls_display": "3M",
+   "updated": "2026-03-11"
+  },
+  {
+   "name": "mixtral",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "8x7b",
+    "8x22b"
+   ],
+   "pulls": 2900000.0,
+   "pulls_display": "2.9M",
+   "updated": "2024-12-20"
+  },
+  {
+   "name": "llama2-uncensored",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "70b"
+   ],
+   "pulls": 2700000.0,
+   "pulls_display": "2.7M",
+   "updated": "2023-10-29"
+  },
+  {
+   "name": "falcon3",
+   "capabilities": [],
+   "sizes": [
+    "1b",
+    "3b",
+    "7b",
+    "10b"
+   ],
+   "pulls": 2600000.0,
+   "pulls_display": "2.6M",
+   "updated": "2024-12-17"
+  },
+  {
+   "name": "mistral-small3.2",
+   "capabilities": [
+    "vision",
+    "tools"
+   ],
+   "sizes": [
+    "24b"
+   ],
+   "pulls": 2500000.0,
+   "pulls_display": "2.5M",
+   "updated": "2025-06-20"
+  },
+  {
+   "name": "qwen3.8",
+   "capabilities": [
+    "vision",
+    "tools",
+    "thinking"
+   ],
+   "sizes": [
+    "27b"
+   ],
+   "pulls": 2500000.0,
+   "pulls_display": "2.5M",
+   "updated": "2026-08-14"
+  },
+  {
+   "name": "translategemma",
+   "capabilities": [
+    "vision"
+   ],
+   "sizes": [
+    "4b",
+    "12b",
+    "27b"
+   ],
+   "pulls": 2400000.0,
+   "pulls_display": "2.4M",
+   "updated": "2026-01-16"
+  },
+  {
+   "name": "minimax-m2.7",
+   "capabilities": [
+    "tools",
+    "thinking",
+    "cloud"
+   ],
+   "sizes": [],
+   "pulls": 2400000.0,
+   "pulls_display": "2.4M",
+   "updated": "2026-03-18"
+  },
+  {
+   "name": "glm-5.1",
+   "capabilities": [
+    "tools",
+    "thinking",
+    "cloud"
+   ],
+   "sizes": [],
+   "pulls": 2300000.0,
+   "pulls_display": "2.3M",
+   "updated": "2026-04-07"
+  },
+  {
+   "name": "llava-llama3",
+   "capabilities": [
+    "vision"
+   ],
+   "sizes": [
+    "8b"
+   ],
+   "pulls": 2300000.0,
+   "pulls_display": "2.3M",
+   "updated": "2024-05-07"
+  },
+  {
+   "name": "qwq",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "32b"
+   ],
+   "pulls": 2300000.0,
+   "pulls_display": "2.3M",
+   "updated": "2025-03-13"
+  },
+  {
+   "name": "gemma3n",
+   "capabilities": [],
+   "sizes": [
+    "e2b",
+    "e4b"
+   ],
+   "pulls": 2200000.0,
+   "pulls_display": "2.2M",
+   "updated": "2025-06-27"
+  },
+  {
+   "name": "embeddinggemma",
+   "capabilities": [
+    "embedding"
+   ],
+   "sizes": [
+    "300m"
+   ],
+   "pulls": 2200000.0,
+   "pulls_display": "2.2M",
+   "updated": "2025-09-09"
+  },
+  {
+   "name": "smollm",
+   "capabilities": [],
+   "sizes": [
+    "135m",
+    "360m",
+    "1.7b"
+   ],
+   "pulls": 2200000.0,
+   "pulls_display": "2.2M",
+   "updated": "2024-08-20"
+  },
+  {
+   "name": "dolphin-llama3",
+   "capabilities": [],
+   "sizes": [
+    "8b",
+    "70b"
+   ],
+   "pulls": 2100000.0,
+   "pulls_display": "2.1M",
+   "updated": "2024-05-10"
+  },
+  {
+   "name": "cogito",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "3b",
+    "8b",
+    "14b",
+    "32b",
+    "70b"
+   ],
+   "pulls": 2100000.0,
+   "pulls_display": "2.1M",
+   "updated": "2025-04-08"
+  },
+  {
+   "name": "qwen3-coder-next",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [],
+   "pulls": 2000000.0,
+   "pulls_display": "2M",
+   "updated": "2026-02-04"
+  },
+  {
+   "name": "moondream",
+   "capabilities": [
+    "vision"
+   ],
+   "sizes": [
+    "1.8b"
+   ],
+   "pulls": 1900000.0,
+   "pulls_display": "1.9M",
+   "updated": "2024-05-07"
+  },
+  {
+   "name": "dolphin-mixtral",
+   "capabilities": [],
+   "sizes": [
+    "8x7b",
+    "8x22b"
+   ],
+   "pulls": 1900000.0,
+   "pulls_display": "1.9M",
+   "updated": "2024-12-20"
+  },
+  {
+   "name": "sqlcoder",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "15b"
+   ],
+   "pulls": 1900000.0,
+   "pulls_display": "1.9M",
+   "updated": "2024-02-01"
+  },
+  {
+   "name": "glm-4.7-flash",
+   "capabilities": [
+    "tools",
+    "thinking"
+   ],
+   "sizes": [],
+   "pulls": 1900000.0,
+   "pulls_display": "1.9M",
+   "updated": "2026-06-05"
+  },
+  {
+   "name": "llama4",
+   "capabilities": [
+    "vision",
+    "tools"
+   ],
+   "sizes": [
+    "16x17b",
+    "128x17b"
+   ],
+   "pulls": 1800000.0,
+   "pulls_display": "1.8M",
+   "updated": "2025-06-16"
+  },
+  {
+   "name": "dolphin-mistral",
+   "capabilities": [],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 1700000.0,
+   "pulls_display": "1.7M",
+   "updated": "2024-03-31"
+  },
+  {
+   "name": "phi4-reasoning",
+   "capabilities": [],
+   "sizes": [
+    "14b"
+   ],
+   "pulls": 1700000.0,
+   "pulls_display": "1.7M",
+   "updated": "2025-05-01"
+  },
+  {
+   "name": "hermes3",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "3b",
+    "8b",
+    "70b",
+    "405b"
+   ],
+   "pulls": 1700000.0,
+   "pulls_display": "1.7M",
+   "updated": "2024-12-16"
+  },
+  {
+   "name": "dolphin-phi",
+   "capabilities": [],
+   "sizes": [
+    "2.7b"
+   ],
+   "pulls": 1600000.0,
+   "pulls_display": "1.6M",
+   "updated": "2023-12-24"
+  },
+  {
+   "name": "granite-code",
+   "capabilities": [],
+   "sizes": [
+    "3b",
+    "8b",
+    "20b",
+    "34b"
+   ],
+   "pulls": 1600000.0,
+   "pulls_display": "1.6M",
+   "updated": "2024-09-03"
+  },
+  {
+   "name": "phi",
+   "capabilities": [],
+   "sizes": [
+    "2.7b"
+   ],
+   "pulls": 1500000.0,
+   "pulls_display": "1.5M",
+   "updated": "2024-01-06"
+  },
+  {
+   "name": "command-r",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "35b"
+   ],
+   "pulls": 1500000.0,
+   "pulls_display": "1.5M",
+   "updated": "2024-08-30"
+  },
+  {
+   "name": "granite4",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "350m",
+    "1b",
+    "3b"
+   ],
+   "pulls": 1500000.0,
+   "pulls_display": "1.5M",
+   "updated": "2025-10-29"
+  },
+  {
+   "name": "magistral",
+   "capabilities": [
+    "tools",
+    "thinking"
+   ],
+   "sizes": [
+    "24b"
+   ],
+   "pulls": 1500000.0,
+   "pulls_display": "1.5M",
+   "updated": "2025-06-16"
+  },
+  {
+   "name": "yi",
+   "capabilities": [],
+   "sizes": [
+    "6b",
+    "9b",
+    "34b"
+   ],
+   "pulls": 1500000.0,
+   "pulls_display": "1.5M",
+   "updated": "2024-05-13"
+  },
+  {
+   "name": "phi4-mini",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "3.8b"
+   ],
+   "pulls": 1500000.0,
+   "pulls_display": "1.5M",
+   "updated": "2025-02-28"
+  },
+  {
+   "name": "ministral-3",
+   "capabilities": [
+    "vision",
+    "tools"
+   ],
+   "sizes": [
+    "3b",
+    "8b",
+    "14b"
+   ],
+   "pulls": 1500000.0,
+   "pulls_display": "1.5M",
+   "updated": "2025-12-13"
+  },
+  {
+   "name": "openchat",
+   "capabilities": [],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 1300000.0,
+   "pulls_display": "1.3M",
+   "updated": "2024-01-10"
+  },
+  {
+   "name": "starcoder",
+   "capabilities": [],
+   "sizes": [
+    "1b",
+    "3b",
+    "7b",
+    "15b"
+   ],
+   "pulls": 1300000.0,
+   "pulls_display": "1.3M",
+   "updated": "2023-10-24"
+  },
+  {
+   "name": "codestral",
+   "capabilities": [],
+   "sizes": [
+    "22b"
+   ],
+   "pulls": 1300000.0,
+   "pulls_display": "1.3M",
+   "updated": "2024-09-03"
+  },
+  {
+   "name": "mistral-large",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "123b"
+   ],
+   "pulls": 1300000.0,
+   "pulls_display": "1.3M",
+   "updated": "2024-11-22"
+  },
+  {
+   "name": "wizard-vicuna-uncensored",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "13b",
+    "30b"
+   ],
+   "pulls": 1300000.0,
+   "pulls_display": "1.3M",
+   "updated": "2023-10-28"
+  },
+  {
+   "name": "zephyr",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "141b"
+   ],
+   "pulls": 1300000.0,
+   "pulls_display": "1.3M",
+   "updated": "2024-04-16"
+  },
+  {
+   "name": "lfm2.5-thinking",
+   "capabilities": [
+    "tools",
+    "thinking"
+   ],
+   "sizes": [
+    "1.2b"
+   ],
+   "pulls": 1300000.0,
+   "pulls_display": "1.3M",
+   "updated": "2026-01-20"
+  },
+  {
+   "name": "deepscaler",
+   "capabilities": [],
+   "sizes": [
+    "1.5b"
+   ],
+   "pulls": 1300000.0,
+   "pulls_display": "1.3M",
+   "updated": "2025-02-12"
+  },
+  {
+   "name": "devstral-small-2",
+   "capabilities": [
+    "vision",
+    "tools"
+   ],
+   "sizes": [
+    "24b"
+   ],
+   "pulls": 1300000.0,
+   "pulls_display": "1.3M",
+   "updated": "2025-12-13"
+  },
+  {
+   "name": "vicuna",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "13b",
+    "33b"
+   ],
+   "pulls": 1200000.0,
+   "pulls_display": "1.2M",
+   "updated": "2023-10-28"
+  },
+  {
+   "name": "glm4",
+   "capabilities": [],
+   "sizes": [
+    "9b"
+   ],
+   "pulls": 1200000.0,
+   "pulls_display": "1.2M",
+   "updated": "2024-07-09"
+  },
+  {
+   "name": "deepseek-llm",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "67b"
+   ],
+   "pulls": 1200000.0,
+   "pulls_display": "1.2M",
+   "updated": "2023-12-11"
+  },
+  {
+   "name": "nous-hermes",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "13b"
+   ],
+   "pulls": 1200000.0,
+   "pulls_display": "1.2M",
+   "updated": "2023-10-29"
+  },
+  {
+   "name": "deepseek-v2",
+   "capabilities": [],
+   "sizes": [
+    "16b",
+    "236b"
+   ],
+   "pulls": 1200000.0,
+   "pulls_display": "1.2M",
+   "updated": "2024-06-22"
+  },
+  {
+   "name": "wizardlm2",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "8x22b"
+   ],
+   "pulls": 1200000.0,
+   "pulls_display": "1.2M",
+   "updated": "2024-04-16"
+  },
+  {
+   "name": "openhermes",
+   "capabilities": [],
+   "sizes": [],
+   "pulls": 1200000.0,
+   "pulls_display": "1.2M",
+   "updated": "2023-12-29"
+  },
+  {
+   "name": "wizardcoder",
+   "capabilities": [],
+   "sizes": [
+    "33b"
+   ],
+   "pulls": 1200000.0,
+   "pulls_display": "1.2M",
+   "updated": "2024-01-05"
+  },
+  {
+   "name": "falcon",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "40b",
+    "180b"
+   ],
+   "pulls": 1200000.0,
+   "pulls_display": "1.2M",
+   "updated": "2023-10-26"
+  },
+  {
+   "name": "openthinker",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "32b"
+   ],
+   "pulls": 1200000.0,
+   "pulls_display": "1.2M",
+   "updated": "2025-04-04"
+  },
+  {
+   "name": "neural-chat",
+   "capabilities": [],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 1100000.0,
+   "pulls_display": "1.1M",
+   "updated": "2023-12-20"
+  },
+  {
+   "name": "lfm2",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "24b"
+   ],
+   "pulls": 1100000.0,
+   "pulls_display": "1.1M",
+   "updated": "2026-02-24"
+  },
+  {
+   "name": "qwen2-math",
+   "capabilities": [],
+   "sizes": [
+    "1.5b",
+    "7b",
+    "72b"
+   ],
+   "pulls": 1100000.0,
+   "pulls_display": "1.1M",
+   "updated": "2024-08-30"
+  },
+  {
+   "name": "codeqwen",
+   "capabilities": [],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 1100000.0,
+   "pulls_display": "1.1M",
+   "updated": "2024-06-24"
+  },
+  {
+   "name": "granite3.3",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "2b",
+    "8b"
+   ],
+   "pulls": 1100000.0,
+   "pulls_display": "1.1M",
+   "updated": "2025-04-16"
+  },
+  {
+   "name": "nous-hermes2",
+   "capabilities": [],
+   "sizes": [
+    "10.7b",
+    "34b"
+   ],
+   "pulls": 1100000.0,
+   "pulls_display": "1.1M",
+   "updated": "2024-01-02"
+  },
+  {
+   "name": "llama2-chinese",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "13b"
+   ],
+   "pulls": 1100000.0,
+   "pulls_display": "1.1M",
+   "updated": "2023-10-28"
+  },
+  {
+   "name": "aya",
+   "capabilities": [],
+   "sizes": [
+    "8b",
+    "35b"
+   ],
+   "pulls": 1100000.0,
+   "pulls_display": "1.1M",
+   "updated": "2024-05-23"
+  },
+  {
+   "name": "stablelm2",
+   "capabilities": [],
+   "sizes": [
+    "1.6b",
+    "12b"
+   ],
+   "pulls": 1100000.0,
+   "pulls_display": "1.1M",
+   "updated": "2024-05-07"
+  },
+  {
+   "name": "yi-coder",
+   "capabilities": [],
+   "sizes": [
+    "1.5b",
+    "9b"
+   ],
+   "pulls": 1100000.0,
+   "pulls_display": "1.1M",
+   "updated": "2024-09-11"
+  },
+  {
+   "name": "stable-code",
+   "capabilities": [],
+   "sizes": [
+    "3b"
+   ],
+   "pulls": 1100000.0,
+   "pulls_display": "1.1M",
+   "updated": "2024-03-26"
+  },
+  {
+   "name": "wizard-math",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "13b",
+    "70b"
+   ],
+   "pulls": 1000000.0,
+   "pulls_display": "1M",
+   "updated": "2023-12-19"
+  },
+  {
+   "name": "llama-guard3",
+   "capabilities": [],
+   "sizes": [
+    "1b",
+    "8b"
+   ],
+   "pulls": 1000000.0,
+   "pulls_display": "1M",
+   "updated": "2024-10-11"
+  },
+  {
+   "name": "llama3-chatqa",
+   "capabilities": [],
+   "sizes": [
+    "8b",
+    "70b"
+   ],
+   "pulls": 1000000.0,
+   "pulls_display": "1M",
+   "updated": "2024-05-10"
+  },
+  {
+   "name": "devstral",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "24b"
+   ],
+   "pulls": 1000000.0,
+   "pulls_display": "1M",
+   "updated": "2025-07-04"
+  },
+  {
+   "name": "internlm2",
+   "capabilities": [],
+   "sizes": [
+    "1m",
+    "1.8b",
+    "7b",
+    "20b"
+   ],
+   "pulls": 1000000.0,
+   "pulls_display": "1M",
+   "updated": "2024-08-16"
+  },
+  {
+   "name": "granite3.1-dense",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "2b",
+    "8b"
+   ],
+   "pulls": 1000000.0,
+   "pulls_display": "1M",
+   "updated": "2025-01-17"
+  },
+  {
+   "name": "phi3.5",
+   "capabilities": [],
+   "sizes": [
+    "3.8b"
+   ],
+   "pulls": 1000000.0,
+   "pulls_display": "1M",
+   "updated": "2024-09-05"
+  },
+  {
+   "name": "granite3-dense",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "2b",
+    "8b"
+   ],
+   "pulls": 1000000.0,
+   "pulls_display": "1M",
+   "updated": "2024-11-19"
+  },
+  {
+   "name": "aya-expanse",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "8b",
+    "32b"
+   ],
+   "pulls": 1000000.0,
+   "pulls_display": "1M",
+   "updated": "2024-10-25"
+  },
+  {
+   "name": "dolphincoder",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "15b"
+   ],
+   "pulls": 1000000.0,
+   "pulls_display": "1M",
+   "updated": "2024-04-09"
+  },
+  {
+   "name": "xwinlm",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "13b"
+   ],
+   "pulls": 1000000.0,
+   "pulls_display": "1M",
+   "updated": "2023-11-04"
+  },
+  {
+   "name": "samantha-mistral",
+   "capabilities": [],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 1000000.0,
+   "pulls_display": "1M",
+   "updated": "2023-10-15"
+  },
+  {
+   "name": "llama3-gradient",
+   "capabilities": [],
+   "sizes": [
+    "8b",
+    "70b"
+   ],
+   "pulls": 1000000.0,
+   "pulls_display": "1M",
+   "updated": "2024-05-05"
+  },
+  {
+   "name": "llama3-groq-tool-use",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "8b",
+    "70b"
+   ],
+   "pulls": 1000000.0,
+   "pulls_display": "1M",
+   "updated": "2024-07-25"
+  },
+  {
+   "name": "granite3.2-vision",
+   "capabilities": [
+    "vision",
+    "tools"
+   ],
+   "sizes": [
+    "2b"
+   ],
+   "pulls": 1000000.0,
+   "pulls_display": "1M",
+   "updated": "2025-02-27"
+  },
+  {
+   "name": "yarn-llama2",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "13b"
+   ],
+   "pulls": 997900.0,
+   "pulls_display": "997.9K",
+   "updated": "2023-11-04"
+  },
+  {
+   "name": "starling-lm",
+   "capabilities": [],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 994800.0,
+   "pulls_display": "994.8K",
+   "updated": "2024-04-02"
+  },
+  {
+   "name": "phind-codellama",
+   "capabilities": [],
+   "sizes": [
+    "34b"
+   ],
+   "pulls": 988800.0,
+   "pulls_display": "988.8K",
+   "updated": "2023-12-28"
+  },
+  {
+   "name": "solar",
+   "capabilities": [],
+   "sizes": [
+    "10.7b"
+   ],
+   "pulls": 975800.0,
+   "pulls_display": "975.8K",
+   "updated": "2023-12-18"
+  },
+  {
+   "name": "granite3-moe",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "1b",
+    "3b"
+   ],
+   "pulls": 964300.0,
+   "pulls_display": "964.3K",
+   "updated": "2024-11-19"
+  },
+  {
+   "name": "stable-beluga",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "13b",
+    "70b"
+   ],
+   "pulls": 956600.0,
+   "pulls_display": "956.6K",
+   "updated": "2023-10-29"
+  },
+  {
+   "name": "deepcoder",
+   "capabilities": [],
+   "sizes": [
+    "1.5b",
+    "14b"
+   ],
+   "pulls": 955400.0,
+   "pulls_display": "955.4K",
+   "updated": "2025-04-08"
+  },
+  {
+   "name": "orca2",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "13b"
+   ],
+   "pulls": 946900.0,
+   "pulls_display": "946.9K",
+   "updated": "2023-11-22"
+  },
+  {
+   "name": "shieldgemma",
+   "capabilities": [],
+   "sizes": [
+    "2b",
+    "9b",
+    "27b"
+   ],
+   "pulls": 946800.0,
+   "pulls_display": "946.8K",
+   "updated": "2024-10-11"
+  },
+  {
+   "name": "nomic-embed-text-v2-moe",
+   "capabilities": [
+    "embedding"
+   ],
+   "sizes": [],
+   "pulls": 945600.0,
+   "pulls_display": "945.6K",
+   "updated": "2025-12-10"
+  },
+  {
+   "name": "paraphrase-multilingual",
+   "capabilities": [
+    "embedding"
+   ],
+   "sizes": [
+    "278m"
+   ],
+   "pulls": 942600.0,
+   "pulls_display": "942.6K",
+   "updated": "2024-08-07"
+  },
+  {
+   "name": "reader-lm",
+   "capabilities": [],
+   "sizes": [
+    "0.5b",
+    "1.5b"
+   ],
+   "pulls": 938700.0,
+   "pulls_display": "938.7K",
+   "updated": "2024-09-11"
+  },
+  {
+   "name": "wizardlm",
+   "capabilities": [],
+   "sizes": [],
+   "pulls": 929200.0,
+   "pulls_display": "929.2K",
+   "updated": "2023-10-30"
+  },
+  {
+   "name": "llama-pro",
+   "capabilities": [],
+   "sizes": [],
+   "pulls": 921200.0,
+   "pulls_display": "921.2K",
+   "updated": "2024-01-09"
+  },
+  {
+   "name": "yarn-mistral",
+   "capabilities": [],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 911600.0,
+   "pulls_display": "911.6K",
+   "updated": "2023-11-04"
+  },
+  {
+   "name": "nexusraven",
+   "capabilities": [],
+   "sizes": [
+    "13b"
+   ],
+   "pulls": 905800.0,
+   "pulls_display": "905.8K",
+   "updated": "2024-01-17"
+  },
+  {
+   "name": "meditron",
+   "capabilities": [],
+   "sizes": [
+    "7b",
+    "70b"
+   ],
+   "pulls": 893600.0,
+   "pulls_display": "893.6K",
+   "updated": "2023-12-05"
+  },
+  {
+   "name": "bakllava",
+   "capabilities": [
+    "vision"
+   ],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 892800.0,
+   "pulls_display": "892.8K",
+   "updated": "2023-12-13"
+  },
+  {
+   "name": "nemotron-3-nano",
+   "capabilities": [
+    "tools",
+    "thinking",
+    "cloud"
+   ],
+   "sizes": [
+    "4b",
+    "30b"
+   ],
+   "pulls": 854100.0,
+   "pulls_display": "854.1K",
+   "updated": "2026-03-16"
+  },
+  {
+   "name": "command-r-plus",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "104b"
+   ],
+   "pulls": 806400.0,
+   "pulls_display": "806.4K",
+   "updated": "2024-08-31"
+  },
+  {
+   "name": "mistral-small3.1",
+   "capabilities": [
+    "vision",
+    "tools"
+   ],
+   "sizes": [
+    "24b"
+   ],
+   "pulls": 791500.0,
+   "pulls_display": "791.5K",
+   "updated": "2025-04-07"
+  },
+  {
+   "name": "exaone-deep",
+   "capabilities": [],
+   "sizes": [
+    "2.4b",
+    "7.8b",
+    "32b"
+   ],
+   "pulls": 770700.0,
+   "pulls_display": "770.7K",
+   "updated": "2025-03-19"
+  },
+  {
+   "name": "mistral-openorca",
+   "capabilities": [],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 756900.0,
+   "pulls_display": "756.9K",
+   "updated": "2023-10-11"
+  },
+  {
+   "name": "tinydolphin",
+   "capabilities": [],
+   "sizes": [
+    "1.1b"
+   ],
+   "pulls": 731900.0,
+   "pulls_display": "731.9K",
+   "updated": "2024-01-30"
+  },
+  {
+   "name": "deepseek-v3.1",
+   "capabilities": [
+    "tools",
+    "thinking"
+   ],
+   "sizes": [
+    "671b"
+   ],
+   "pulls": 729300.0,
+   "pulls_display": "729.3K",
+   "updated": "2025-09-27"
+  },
+  {
+   "name": "medllama2",
+   "capabilities": [],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 724800.0,
+   "pulls_display": "724.8K",
+   "updated": "2023-10-29"
+  },
+  {
+   "name": "nemotron-mini",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "4b"
+   ],
+   "pulls": 717400.0,
+   "pulls_display": "717.4K",
+   "updated": "2024-09-18"
+  },
+  {
+   "name": "codegeex4",
+   "capabilities": [],
+   "sizes": [
+    "9b"
+   ],
+   "pulls": 696200.0,
+   "pulls_display": "696.2K",
+   "updated": "2024-07-09"
+  },
+  {
+   "name": "nemotron3",
+   "capabilities": [
+    "vision",
+    "tools",
+    "thinking"
+   ],
+   "sizes": [
+    "33b"
+   ],
+   "pulls": 665400.0,
+   "pulls_display": "665.4K",
+   "updated": "2026-04-27"
+  },
+  {
+   "name": "opencoder",
+   "capabilities": [],
+   "sizes": [
+    "1.5b",
+    "8b"
+   ],
+   "pulls": 652000.0,
+   "pulls_display": "652K",
+   "updated": "2024-11-18"
+  },
+  {
+   "name": "wizardlm-uncensored",
+   "capabilities": [],
+   "sizes": [
+    "13b"
+   ],
+   "pulls": 650900.0,
+   "pulls_display": "650.9K",
+   "updated": "2023-10-28"
+  },
+  {
+   "name": "nemotron",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "70b"
+   ],
+   "pulls": 629500.0,
+   "pulls_display": "629.5K",
+   "updated": "2024-10-16"
+  },
+  {
+   "name": "reflection",
+   "capabilities": [],
+   "sizes": [
+    "70b"
+   ],
+   "pulls": 621900.0,
+   "pulls_display": "621.9K",
+   "updated": "2024-09-09"
+  },
+  {
+   "name": "codeup",
+   "capabilities": [],
+   "sizes": [
+    "13b"
+   ],
+   "pulls": 600700.0,
+   "pulls_display": "600.7K",
+   "updated": "2023-10-29"
+  },
+  {
+   "name": "nous-hermes2-mixtral",
+   "capabilities": [],
+   "sizes": [
+    "8x7b"
+   ],
+   "pulls": 596100.0,
+   "pulls_display": "596.1K",
+   "updated": "2024-12-20"
+  },
+  {
+   "name": "athene-v2",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "72b"
+   ],
+   "pulls": 595000.0,
+   "pulls_display": "595K",
+   "updated": "2024-11-15"
+  },
+  {
+   "name": "qwen3-next",
+   "capabilities": [
+    "tools",
+    "thinking"
+   ],
+   "sizes": [
+    "80b"
+   ],
+   "pulls": 591600.0,
+   "pulls_display": "591.6K",
+   "updated": "2025-12-05"
+  },
+  {
+   "name": "megadolphin",
+   "capabilities": [],
+   "sizes": [
+    "120b"
+   ],
+   "pulls": 574300.0,
+   "pulls_display": "574.3K",
+   "updated": "2024-01-11"
+  },
+  {
+   "name": "everythinglm",
+   "capabilities": [],
+   "sizes": [
+    "13b"
+   ],
+   "pulls": 571400.0,
+   "pulls_display": "571.4K",
+   "updated": "2023-12-27"
+  },
+  {
+   "name": "solar-pro",
+   "capabilities": [],
+   "sizes": [
+    "22b"
+   ],
+   "pulls": 564200.0,
+   "pulls_display": "564.2K",
+   "updated": "2024-09-18"
+  },
+  {
+   "name": "exaone3.5",
+   "capabilities": [],
+   "sizes": [
+    "2.4b",
+    "7.8b",
+    "32b"
+   ],
+   "pulls": 563600.0,
+   "pulls_display": "563.6K",
+   "updated": "2024-12-10"
+  },
+  {
+   "name": "magicoder",
+   "capabilities": [],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 561000.0,
+   "pulls_display": "561K",
+   "updated": "2023-12-05"
+  },
+  {
+   "name": "mathstral",
+   "capabilities": [],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 554900.0,
+   "pulls_display": "554.9K",
+   "updated": "2024-07-16"
+  },
+  {
+   "name": "nuextract",
+   "capabilities": [],
+   "sizes": [
+    "3.8b"
+   ],
+   "pulls": 554300.0,
+   "pulls_display": "554.3K",
+   "updated": "2024-07-22"
+  },
+  {
+   "name": "falcon2",
+   "capabilities": [],
+   "sizes": [
+    "11b"
+   ],
+   "pulls": 545500.0,
+   "pulls_display": "545.5K",
+   "updated": "2024-05-14"
+  },
+  {
+   "name": "notus",
+   "capabilities": [],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 545100.0,
+   "pulls_display": "545.1K",
+   "updated": "2023-12-29"
+  },
+  {
+   "name": "notux",
+   "capabilities": [],
+   "sizes": [
+    "8x7b"
+   ],
+   "pulls": 543900.0,
+   "pulls_display": "543.9K",
+   "updated": "2023-12-29"
+  },
+  {
+   "name": "deepseek-ocr",
+   "capabilities": [
+    "vision"
+   ],
+   "sizes": [
+    "3b"
+   ],
+   "pulls": 538000.0,
+   "pulls_display": "538K",
+   "updated": "2025-11-19"
+  },
+  {
+   "name": "stablelm-zephyr",
+   "capabilities": [],
+   "sizes": [
+    "3b"
+   ],
+   "pulls": 538000.0,
+   "pulls_display": "538K",
+   "updated": "2023-12-27"
+  },
+  {
+   "name": "bespoke-minicheck",
+   "capabilities": [],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 534700.0,
+   "pulls_display": "534.7K",
+   "updated": "2024-09-18"
+  },
+  {
+   "name": "duckdb-nsql",
+   "capabilities": [],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 532600.0,
+   "pulls_display": "532.6K",
+   "updated": "2024-01-29"
+  },
+  {
+   "name": "firefunction-v2",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "70b"
+   ],
+   "pulls": 529000.0,
+   "pulls_display": "529K",
+   "updated": "2024-07-18"
+  },
+  {
+   "name": "mistrallite",
+   "capabilities": [],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 528600.0,
+   "pulls_display": "528.6K",
+   "updated": "2023-11-02"
+  },
+  {
+   "name": "ornith",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "9b",
+    "35b"
+   ],
+   "pulls": 523299.99999999994,
+   "pulls_display": "523.3K",
+   "updated": "2026-06-27"
+  },
+  {
+   "name": "wizard-vicuna",
+   "capabilities": [],
+   "sizes": [
+    "13b"
+   ],
+   "pulls": 522900.0,
+   "pulls_display": "522.9K",
+   "updated": "2023-10-28"
+  },
+  {
+   "name": "open-orca-platypus2",
+   "capabilities": [],
+   "sizes": [
+    "13b"
+   ],
+   "pulls": 514900.0,
+   "pulls_display": "514.9K",
+   "updated": "2023-10-29"
+  },
+  {
+   "name": "minimax-m3",
+   "capabilities": [
+    "vision",
+    "tools",
+    "thinking",
+    "cloud"
+   ],
+   "sizes": [],
+   "pulls": 514000.0,
+   "pulls_display": "514K",
+   "updated": "2026-06-01"
+  },
+  {
+   "name": "rnj-1",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "8b"
+   ],
+   "pulls": 510000.0,
+   "pulls_display": "510K",
+   "updated": "2025-12-09"
+  },
+  {
+   "name": "codebooga",
+   "capabilities": [],
+   "sizes": [
+    "34b"
+   ],
+   "pulls": 505000.0,
+   "pulls_display": "505K",
+   "updated": "2023-10-29"
+  },
+  {
+   "name": "goliath",
+   "capabilities": [],
+   "sizes": [],
+   "pulls": 484200.0,
+   "pulls_display": "484.2K",
+   "updated": "2023-11-17"
+  },
+  {
+   "name": "kimi-k2.6",
+   "capabilities": [
+    "vision",
+    "tools",
+    "thinking",
+    "cloud"
+   ],
+   "sizes": [],
+   "pulls": 479000.0,
+   "pulls_display": "479K",
+   "updated": "2026-04-20"
+  },
+  {
+   "name": "deepseek-v4-flash",
+   "capabilities": [
+    "tools",
+    "thinking",
+    "cloud"
+   ],
+   "sizes": [],
+   "pulls": 471000.0,
+   "pulls_display": "471K",
+   "updated": "2026-08-01"
+  },
+  {
+   "name": "granite4.1",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "3b",
+    "8b",
+    "30b"
+   ],
+   "pulls": 465300.0,
+   "pulls_display": "465.3K",
+   "updated": "2026-05-19"
+  },
+  {
+   "name": "olmo-3",
+   "capabilities": [
+    "tools",
+    "thinking"
+   ],
+   "sizes": [
+    "7b",
+    "32b"
+   ],
+   "pulls": 460900.0,
+   "pulls_display": "460.9K",
+   "updated": "2025-12-16"
+  },
+  {
+   "name": "granite3.2",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "2b",
+    "8b"
+   ],
+   "pulls": 459600.0,
+   "pulls_display": "459.6K",
+   "updated": "2025-02-26"
+  },
+  {
+   "name": "snowflake-arctic-embed2",
+   "capabilities": [
+    "embedding"
+   ],
+   "sizes": [
+    "568m"
+   ],
+   "pulls": 456300.0,
+   "pulls_display": "456.3K",
+   "updated": "2024-12-04"
+  },
+  {
+   "name": "r1-1776",
+   "capabilities": [],
+   "sizes": [
+    "70b",
+    "671b"
+   ],
+   "pulls": 424300.0,
+   "pulls_display": "424.3K",
+   "updated": "2025-02-21"
+  },
+  {
+   "name": "deepseek-v4-pro",
+   "capabilities": [
+    "tools",
+    "thinking",
+    "cloud"
+   ],
+   "sizes": [],
+   "pulls": 419700.0,
+   "pulls_display": "419.7K",
+   "updated": "2026-08-13"
+  },
+  {
+   "name": "sailor2",
+   "capabilities": [],
+   "sizes": [
+    "1b",
+    "8b",
+    "20b"
+   ],
+   "pulls": 418100.0,
+   "pulls_display": "418.1K",
+   "updated": "2024-12-04"
+  },
+  {
+   "name": "medgemma",
+   "capabilities": [
+    "vision"
+   ],
+   "sizes": [
+    "4b",
+    "27b"
+   ],
+   "pulls": 413500.0,
+   "pulls_display": "413.5K",
+   "updated": "2026-04-16"
+  },
+  {
+   "name": "llava-phi3",
+   "capabilities": [
+    "vision"
+   ],
+   "sizes": [
+    "3.8b"
+   ],
+   "pulls": 410800.0,
+   "pulls_display": "410.8K",
+   "updated": "2024-05-07"
+  },
+  {
+   "name": "mistral-medium-3.5",
+   "capabilities": [
+    "vision",
+    "tools",
+    "thinking"
+   ],
+   "sizes": [
+    "128b"
+   ],
+   "pulls": 409900.0,
+   "pulls_display": "409.9K",
+   "updated": "2026-05-05"
+  },
+  {
+   "name": "tulu3",
+   "capabilities": [],
+   "sizes": [
+    "8b",
+    "70b"
+   ],
+   "pulls": 400900.0,
+   "pulls_display": "400.9K",
+   "updated": "2024-12-21"
+  },
+  {
+   "name": "granite-embedding",
+   "capabilities": [
+    "embedding"
+   ],
+   "sizes": [
+    "30m",
+    "278m"
+   ],
+   "pulls": 373000.0,
+   "pulls_display": "373K",
+   "updated": "2024-12-18"
+  },
+  {
+   "name": "dbrx",
+   "capabilities": [],
+   "sizes": [
+    "132b"
+   ],
+   "pulls": 368900.0,
+   "pulls_display": "368.9K",
+   "updated": "2024-04-16"
+  },
+  {
+   "name": "devstral-2",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "123b"
+   ],
+   "pulls": 357300.0,
+   "pulls_display": "357.3K",
+   "updated": "2025-12-12"
+  },
+  {
+   "name": "glm-5.2",
+   "capabilities": [
+    "tools",
+    "thinking",
+    "cloud"
+   ],
+   "sizes": [],
+   "pulls": 347800.0,
+   "pulls_display": "347.8K",
+   "updated": "2026-06-16"
+  },
+  {
+   "name": "granite3-guardian",
+   "capabilities": [],
+   "sizes": [
+    "2b",
+    "8b"
+   ],
+   "pulls": 339800.0,
+   "pulls_display": "339.8K",
+   "updated": "2024-11-19"
+  },
+  {
+   "name": "ornith-1.5",
+   "capabilities": [
+    "vision"
+   ],
+   "sizes": [
+    "9b",
+    "35b",
+    "397b"
+   ],
+   "pulls": 338000.0,
+   "pulls_display": "338K",
+   "updated": "2026-08-19"
+  },
+  {
+   "name": "command-r7b",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 326100.0,
+   "pulls_display": "326.1K",
+   "updated": "2025-01-16"
+  },
+  {
+   "name": "phi4-mini-reasoning",
+   "capabilities": [],
+   "sizes": [
+    "3.8b"
+   ],
+   "pulls": 313100.0,
+   "pulls_display": "313.1K",
+   "updated": "2025-05-01"
+  },
+  {
+   "name": "olmo-3.1",
+   "capabilities": [
+    "tools",
+    "thinking"
+   ],
+   "sizes": [
+    "32b"
+   ],
+   "pulls": 292100.0,
+   "pulls_display": "292.1K",
+   "updated": "2025-12-16"
+  },
+  {
+   "name": "deepseek-v2.5",
+   "capabilities": [],
+   "sizes": [
+    "236b"
+   ],
+   "pulls": 291300.0,
+   "pulls_display": "291.3K",
+   "updated": "2024-09-11"
+  },
+  {
+   "name": "bge-large",
+   "capabilities": [
+    "embedding"
+   ],
+   "sizes": [
+    "335m"
+   ],
+   "pulls": 286800.0,
+   "pulls_display": "286.8K",
+   "updated": "2024-08-07"
+  },
+  {
+   "name": "alfred",
+   "capabilities": [],
+   "sizes": [
+    "40b"
+   ],
+   "pulls": 267100.0,
+   "pulls_display": "267.1K",
+   "updated": "2023-11-19"
+  },
+  {
+   "name": "smallthinker",
+   "capabilities": [],
+   "sizes": [
+    "3b"
+   ],
+   "pulls": 261200.0,
+   "pulls_display": "261.2K",
+   "updated": "2024-12-30"
+  },
+  {
+   "name": "kimi-k2.7-code",
+   "capabilities": [
+    "vision",
+    "tools",
+    "thinking",
+    "cloud"
+   ],
+   "sizes": [],
+   "pulls": 241800.0,
+   "pulls_display": "241.8K",
+   "updated": "2026-06-13"
+  },
+  {
+   "name": "command-a",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "111b"
+   ],
+   "pulls": 230100.0,
+   "pulls_display": "230.1K",
+   "updated": "2025-03-13"
+  },
+  {
+   "name": "muse-glimmer",
+   "capabilities": [
+    "vision",
+    "tools",
+    "thinking"
+   ],
+   "sizes": [
+    "30b"
+   ],
+   "pulls": 227600.0,
+   "pulls_display": "227.6K",
+   "updated": "2026-08-28"
+  },
+  {
+   "name": "cogito-2.1",
+   "capabilities": [],
+   "sizes": [
+    "671b"
+   ],
+   "pulls": 223800.0,
+   "pulls_display": "223.8K",
+   "updated": "2025-11-19"
+  },
+  {
+   "name": "marco-o1",
+   "capabilities": [],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 214400.0,
+   "pulls_display": "214.4K",
+   "updated": "2024-12-04"
+  },
+  {
+   "name": "command-r7b-arabic",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "7b"
+   ],
+   "pulls": 205600.0,
+   "pulls_display": "205.6K",
+   "updated": "2025-02-28"
+  },
+  {
+   "name": "medgemma1.5",
+   "capabilities": [
+    "vision"
+   ],
+   "sizes": [
+    "4b"
+   ],
+   "pulls": 195200.0,
+   "pulls_display": "195.2K",
+   "updated": "2026-04-16"
+  },
+  {
+   "name": "functiongemma",
+   "capabilities": [
+    "tools"
+   ],
+   "sizes": [
+    "270m"
+   ],
+   "pulls": 191300.0,
+   "pulls_display": "191.3K",
+   "updated": "2025-12-18"
+  },
+  {
+   "name": "nemotron-3.5-lightning",
+   "capabilities": [
+    "tools",
+    "thinking"
+   ],
+   "sizes": [
+    "30b"
+   ],
+   "pulls": 181100.0,
+   "pulls_display": "181.1K",
+   "updated": "2026-08-31"
+  },
+  {
+   "name": "laguna-s-2.1",
+   "capabilities": [
+    "tools",
+    "thinking"
+   ],
+   "sizes": [],
+   "pulls": 159000.0,
+   "pulls_display": "159K",
+   "updated": "2026-08-28"
+  },
+  {
+   "name": "lfm2.5",
+   "capabilities": [
+    "tools",
+    "thinking"
+   ],
+   "sizes": [
+    "8b"
+   ],
+   "pulls": 158500.0,
+   "pulls_display": "158.5K",
+   "updated": "2026-05-31"
+  },
+  {
+   "name": "gpt-oss-safeguard",
+   "capabilities": [
+    "tools",
+    "thinking"
+   ],
+   "sizes": [
+    "20b",
+    "120b"
+   ],
+   "pulls": 157700.0,
+   "pulls_display": "157.7K",
+   "updated": "2025-10-29"
+  },
+  {
+   "name": "glm-5.3-flash",
+   "capabilities": [
+    "vision",
+    "tools",
+    "thinking",
+    "cloud"
+   ],
+   "sizes": [],
+   "pulls": 149800.0,
+   "pulls_display": "149.8K",
+   "updated": "2026-08-26"
+  },
+  {
+   "name": "nemotron-cascade-2",
+   "capabilities": [
+    "tools",
+    "thinking"
+   ],
+   "sizes": [
+    "30b"
+   ],
+   "pulls": 148900.0,
+   "pulls_display": "148.9K",
+   "updated": "2026-03-20"
+  },
+  {
+   "name": "qwen3.8-flash-next",
+   "capabilities": [
+    "vision",
+    "tools",
+    "thinking"
+   ],
+   "sizes": [],
+   "pulls": 119300.0,
+   "pulls_display": "119.3K",
+   "updated": "2026-09-05"
+  },
+  {
+   "name": "mistral-large-3",
+   "capabilities": [
+    "vision",
+    "tools",
+    "cloud"
+   ],
+   "sizes": [],
+   "pulls": 117400.0,
+   "pulls_display": "117.4K",
+   "updated": "2025-12-02"
+  },
+  {
+   "name": "laguna-xs-2.1",
+   "capabilities": [
+    "tools",
+    "thinking"
+   ],
+   "sizes": [],
+   "pulls": 116600.0,
+   "pulls_display": "116.6K",
+   "updated": "2026-08-31"
+  },
+  {
+   "name": "nemotron-3-ultra",
+   "capabilities": [
+    "tools",
+    "thinking",
+    "cloud"
+   ],
+   "sizes": [],
+   "pulls": 103700.0,
+   "pulls_display": "103.7K",
+   "updated": "2026-06-04"
+  },
+  {
+   "name": "kimi-k3",
+   "capabilities": [
+    "vision",
+    "tools",
+    "thinking",
+    "cloud"
+   ],
+   "sizes": [],
+   "pulls": 87900.0,
+   "pulls_display": "87.9K",
+   "updated": "2026-07-27"
+  },
+  {
+   "name": "granite4.2",
+   "capabilities": [],
+   "sizes": [
+    "3b",
+    "8b",
+    "30b"
+   ],
+   "pulls": 80900.0,
+   "pulls_display": "80.9K",
+   "updated": "2026-08-27"
+  },
+  {
+   "name": "glm-5.3",
+   "capabilities": [
+    "tools",
+    "thinking",
+    "cloud"
+   ],
+   "sizes": [],
+   "pulls": 58100.0,
+   "pulls_display": "58.1K",
+   "updated": "2026-08-28"
+  },
+  {
+   "name": "north-mini-code-1.0",
+   "capabilities": [
+    "tools",
+    "thinking"
+   ],
+   "sizes": [],
+   "pulls": 57900.0,
+   "pulls_display": "57.9K",
+   "updated": "2026-06-18"
+  },
+  {
+   "name": "minicpm-v4.6",
+   "capabilities": [
+    "vision"
+   ],
+   "sizes": [
+    "1b"
+   ],
+   "pulls": 53500.0,
+   "pulls_display": "53.5K",
+   "updated": "2026-06-02"
+  },
+  {
+   "name": "deepseek-v4.1-flash",
+   "capabilities": [
+    "vision",
+    "tools",
+    "thinking",
+    "cloud"
+   ],
+   "sizes": [],
+   "pulls": 45700.0,
+   "pulls_display": "45.7K",
+   "updated": "2026-09-10"
+  },
+  {
+   "name": "minicpm-v4.5",
+   "capabilities": [
+    "vision"
+   ],
+   "sizes": [
+    "8b"
+   ],
+   "pulls": 42700.0,
+   "pulls_display": "42.7K",
+   "updated": "2026-06-02"
+  },
+  {
+   "name": "laguna-xs.2",
+   "capabilities": [
+    "tools",
+    "thinking"
+   ],
+   "sizes": [],
+   "pulls": 31000.0,
+   "pulls_display": "31K",
+   "updated": "2026-07-25"
+  },
+  {
+   "name": "granite4.1-guardian",
+   "capabilities": [
+    "tools",
+    "thinking"
+   ],
+   "sizes": [
+    "8b"
+   ],
+   "pulls": 26900.0,
+   "pulls_display": "26.9K",
+   "updated": "2026-06-10"
+  }
+ ],
+ "pulled": {
+  "gemma4:31b-it-q4_K_M": {
+   "digest": "6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7",
+   "size_bytes": 19868981791,
+   "details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "gemma4",
+    "families": [
+     "gemma4"
+    ],
+    "parameter_size": "31.3B",
+    "quantization_level": "Q4_K_M",
+    "context_length": 262144,
+    "embedding_length": 5376
+   }
+  },
+  "qwen3.8:27b-q4_K_M": {
+   "digest": "25b843619e944cd0ae6069f94ff4e5e26a16e109ccbc0a66a0f05979ed70098e",
+   "size_bytes": 17741872132,
+   "details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "qwen35",
+    "families": [
+     "qwen35"
+    ],
+    "parameter_size": "27.3B",
+    "quantization_level": "Q4_K_M",
+    "context_length": 262144,
+    "embedding_length": 5120
+   }
+  },
+  "gemma4:26b-a4b-it-q4_K_M": {
+   "digest": "5571076f3d70050487b26b341705799e0ab29b808164f90d20d4cf84f699d251",
+   "size_bytes": 17987581215,
+   "details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "gemma4",
+    "families": [
+     "gemma4"
+    ],
+    "parameter_size": "25.8B",
+    "quantization_level": "Q4_K_M",
+    "context_length": 262144,
+    "embedding_length": 2816
+   }
+  },
+  "qwen3.6:35b-a3b-q4_K_M": {
+   "digest": "07d35212591fc27746f0a317c975a6d68754fb38e9053d82e25f06057af28522",
+   "size_bytes": 23938333577,
+   "details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "qwen35moe",
+    "families": [
+     "qwen35moe"
+    ],
+    "parameter_size": "36.0B",
+    "quantization_level": "Q4_K_M",
+    "context_length": 262144,
+    "embedding_length": 2048
+   }
+  }
+ },
+ "did_not_load": {
+  "gpt-oss:120b": {
+   "class": "moe",
+   "reason": "did not load usably on the reference machine: 53.4 GB expert buffer against about 34 GB available system memory; commit hit its limit and the machine paged at about 340,000 pages per second (ops/fit_03.json)",
+   "replaced_by": "qwen3.6:35b-a3b-q4_K_M",
+   "at": "2026-09-23T15:31:14-0400"
+  }
+ }
+}

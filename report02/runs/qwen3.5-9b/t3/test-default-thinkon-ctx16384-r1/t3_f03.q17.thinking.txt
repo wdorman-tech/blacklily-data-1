@@ -1,0 +1,43 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "How does the firm allocate capacity-constrained private fund and co-investment opportunities among client families?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "allocate", "capacity-constrained", "private fund", "co-investment", "opportunities", "client families", "Family Relationships".
+
+4.  **Evaluate Document Content:**
+
+    *   `01_brochure.md`:
+        *   Item 4.2 Services: Mentions private markets target allocation, but not specific allocation methodology for constrained opportunities.
+        *   Item 8.1 Methods of Analysis: Mentions Investment Committee approves funds.
+        *   Item 8.2 Investment Strategies: Mentions private markets funds and co-investments.
+        *   Item 11.3 Participation or Interest in Client Transactions: Mentions employees investing after allocations satisfied.
+        *   Item 17.3 Private Fund Consents: Not relevant.
+
+    *   `02_compliance_manual.md`:
+        *   SECTION 9. TRADE AGGREGATION AND ALLOCATION > 9.4 Limited Private Investment Opportunities:
+            *   Text: "Private funds with limited capacity and co-investment opportunities are allocated as follows. The Head of Private Investments presents the opportunity to the Investment Committee, which first determines which Family Relationships are eligible... Where aggregate eligible demand exceeds available capacity, the Investment Committee allocates the opportunity among eligible Family Relationships pro rata in proportion to each Family Relationship's shortfall relative to the private markets target allocation in its Investment Policy Statement, subject to a minimum allocation of $250,000 per Family Relationship."
+            *   This section directly addresses "capacity-constrained" (limited capacity) private funds and co-investment opportunities.
+            *   It describes the allocation process (Investment Committee determines eligibility -> allocates pro rata based on shortfall relative to target allocation -> minimum $250,000).
+
+    *   `03_valuation_policy.md`:
+        *   SECTION 4. PRIVATE INVESTMENTS AND LEVEL 3 METHODOLOGY: Discusses classification, not allocation.
+
+5.  **Determine the Best Answer:**
+    *   The question asks "How does the firm allocate...".
+    *   Document `02_compliance_manual.md`, Section `9.4 Limited Private Investment Opportunities` contains the specific methodology.
+    *   Date check: `02_compliance_manual.md` is dated January 15, 2026. `01_brochure.md` is dated March 27, 2026. The brochure is later. However, the brochure does not contain the specific allocation methodology details found in the compliance manual. The rule says "Later-dated documents supersede earlier ones

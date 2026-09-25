@@ -1,0 +1,37 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraint 1: Answer only from documents. If not found, return `NOT_IN_DOCUMENTS`.
+    *   Constraint 2: Later-dated documents supersede earlier ones.
+    *   Constraint 3: Keep answers short and specific (number, name, frequency, threshold).
+    *   Constraint 4: Cite document file name and section.
+    *   Constraint 5: Quote supporting text verbatim.
+    *   Output Format: JSON object with keys `answer`, `source_document`, `section`, `quote`. No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Describe the reports investors receive and when each is delivered."
+    *   Key elements needed: Report types (capital account statements, performance figures, investor letters, audited financials, tax info) and delivery timing/frequency (monthly, quarterly, annually, specific days).
+
+3.  **Scan Documents for Relevant Information:**
+
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section: Item 13. Review of Accounts > 13.1 Periodic Reviews (Chief Investment Officer reviews daily, Head of Risk reviews daily, CFO reviews monthly). -> Not investor reports specifically.
+        *   Section: Item 13. Review of Accounts > 13.2 Reports to Investors:
+            *   "The Administrator delivers a monthly capital account statement (or, for the Offshore Fund, a monthly statement of shareholding and net asset value per share) to each investor in the Flagship Fund and the Offshore Fund within fifteen business days after each month-end."
+            *   "The Head of Investor Relations, Celia Brandvold, distributes an estimated monthly performance figure within five business days after each month-end"
+            *   "and a quarterly investor letter, including exposure and attribution data, within 45 days after each quarter-end."
+            *   "Investors in the Co-Investment Fund receive quarterly capital account statements from the Administrator."
+            *   "All investors receive annual audited financial statements as described in Item 15 and tax information as soon as practicable after year-end."
+
+    *   `02_compliance_manual.md` (January 15, 2026):
+        *   Section: SECTION 4. PERSONAL TRADING > 4.6 Holdings and Transaction Reports (Access persons submit reports). -> Not investor reports.
+        *   Section: SECTION 8. MARKETING AND INVESTOR COMMUNICATIONS > 8.1 Review and Approval (Ads approval). -> Not relevant.
+        *   Section: SECTION 8. MARKETING AND INVESTOR COMMUNICATIONS > 8.2 Performance Presentation (How performance is shown). -> Not delivery timing.
+        *   Section: SECTION 8. MARKETING AND INVESTOR COMMUNICATIONS > 8.3 Due Diligence Questionnaires... -> Not relevant.
+
+    *   `04_business_continuity_plan.md` (February 9, 2026):
+        *   Section: SECTION 8. COMMUNICATION TREE > 8.2 Investors... -> Communication during crisis, not routine reports.
+
+    *   `06_policy_update_memo.md` (August 24, 2026

@@ -1,0 +1,38 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "What is the recovery time objective for the Firm's order management and trading systems?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "recovery time objective", "order management", "trading systems", "RTO".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Mentions portfolio managers review accounts daily, order management system checks trades, Compliance reviews post-trade exception reports each business day. No specific RTO numbers here.
+    *   `04_business_continuity_plan.md` (dated December 1, 2025):
+        *   Section 3.1: Lists "Order management, trading platforms and market data" with a Recovery time objective of "4 hours".
+    *   `06_policy_update_memo.md` (dated August 14, 2026):
+        *   Section 4.1: Amends Section 3.1 of the Business Continuity Plan.
+        *   Text: "Effective September 1, 2026, the recovery time objective for order management, trading platforms and market data is two hours from the declaration of a business disruption."
+        *   Text: "The two-hour objective supersedes the four-hour objective stated in Section 3.1."
+    *   Rule 3 (Later-dated documents supersede earlier ones): The memo dated August 14, 2026 is later than the BCP dated December 1, 2025. The memo explicitly states it amends and supersedes the previous objective.
+
+5.  **Determine the Correct Answer:**
+    *   The current effective RTO is "two hours".
+    *   Source Document: `06_policy_update_memo.md` (since it supersedes the BCP).
+    *   Section: `SECTION 4. AMENDMENT TO THE BUSINESS CONTINUITY PLAN > 4.1 Recovery Time Objective for Trading Systems`.
+    *   Quote: "Effective September 1, 2026, the recovery time objective for order management, trading platforms and market data is two hours from the declaration of a business disruption." OR "The two-hour objective supersedes the four-hour objective stated in Section 3.1." The most direct answer to "What is the recovery time objective" is found in the sentence stating the new objective. I will use the sentence defining the objective.
+
+6.  **Draft the JSON:**
+    *   `answer`: "two hours" (or full phrase from text). Let's look at Rule 4: "Keep answers short and specific: the number, name, frequency, threshold or rule that was asked for". So "two hours" is good. However, to be unambiguous

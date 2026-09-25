@@ -1,0 +1,85 @@
+*   Role: Marketing review analyst at an SEC-registered investment adviser.
+    *   Task: Review draft marketing materials against a specific checklist (C1-C9) based on Rule 206(4)-1.
+    *   Output: JSON object with "flags" (category, quote, reason).
+    *   Constraints:
+        *   Only flag items under C1-C9.
+        *   Quote must be verbatim.
+        *   Do not flag if requirements are met (e.g., testimonials with disclosures, gross/net together, etc.).
+        *   One flag per distinct issue.
+        *   No preamble, no markdown, just the JSON.
+
+    *   C1: Testimonial/endorsement without disclosure of status, compensation, conflict.
+    *   C2: Gross performance without net performance of equal prominence.
+    *   C3: Performance of non-private fund portfolio without 1, 5, 10-year results.
+    *   C4: Performance results not fair/balanced (e.g., cherry-picked window).
+    *   C5: Hypothetical/model/backtested/projected performance without criteria, assumptions, risks, limitations.
+    *   C6: Material statement of fact untrue or unsubstantiable (absolute claims).
+    *   C7: Third-party rating/ranking without date, period, source, and compensation info.
+    *   C8: Performance of subset of portfolio without total portfolio performance.
+    *   C9: Benefits described without fair/balanced treatment of risks/limitations.
+
+    *   *Section: "Why This Matters"*
+        *   "A couple who retired on January 1, 2000 with $1,000,000 and followed the Three-Bucket Income Plan we use today could have withdrawn $35,000 a year, raised it each year for inflation, and still had $1.4 million at the end of 2025."
+        *   Analysis: This is a hypothetical/model/projected performance scenario.
+        *   Check C5: "Hypothetical, model, backtested or projected performance without the criteria, assumptions, risks and limitations needed to understand it."
+        *   Does it have the criteria/assumptions? It mentions the "Three-Bucket Income Plan" and specific numbers ($1M, $35k withdrawal, inflation adjustment). However, it doesn't explicitly state the underlying assumptions (e.g., what rate of return was assumed for the "three buckets", what inflation rate was used, etc.).
+        *   Wait, let's look closer. It's a "could have" scenario. It's a model. Does it have the "criteria, assumptions, risks and limitations needed to understand it"? It mentions the plan, but doesn't detail the specific investment assumptions (e.g., "assuming a 7% return on equities").
+        *   However, is it a "performance" result? It's a hypothetical scenario.
+        *   Let's check C9: "Benefits described without fair and balanced treatment of the material risks or limitations that go with them."
+        *   The text says: "Stocks can fall sharply, and refilling the cash bucket after a decline can mean selling at a loss or trimming your spending for a while." This addresses some risks of the "Three-Bucket" strategy.
+
+    *   *Section: "What We Will Cover"*
+        *   "1. Social Security timing... 2. Turning a portfolio into income... 3. Where annuities fit... 4. Taxes in retirement."
+        *   No specific performance numbers or testimonials here.
+
+    *   *Section: "Your Presenters"*
+        *   "Marcus Hollin, CFP... Renata Starke, CPA..."
+        *   No claims of being "best" or "top" (C6).
+
+    *   *Footer:*
+        *   "Registration does not imply a certain level of skill or training." (Standard disclaimer).
+        *   "Investing involves risk, including possible loss of principal." (Standard risk disclosure).
+
+    *   *Re-evaluating the "Why This Matters" section:*
+        "A couple who retired on January 1, 2000 with $1,000,000 and followed the Three-Bucket Income Plan we use today could have withdrawn $35,000 a year, raised it each year for inflation, and still had $1.4 million at the end of 2025."
+        This is a hypothetical/model. Does it have the "criteria, assumptions, risks and limitations needed to understand it"?
+        It doesn't state the specific investment assumptions (e.g., "assuming a X% annual return"). Without knowing the assumed rate of return, the "could have" is hard to evaluate.
+        However, the prompt says: "Flag what a careful reviewer would want to look at". A reviewer would see this as a hypothetical model. Does it have the *necessary* info? It's a bit ambiguous, but usually, for C5, if it's a "could have" scenario based on a specific plan, it needs to state the underlying assumptions (like the expected rate of return).
+
+    *   *Checking C6:* "A material statement of fact that is untrue or that the adviser could not substantiate (absolute claims such as never losing money, guaranteed results, being the top or best firm without support)."
+        The text says "could have withdrawn... and still had $1.4 million". This is a hypothetical, not a guarantee.
+
+    *   *Checking C9:* "Benefits described without fair and balanced treatment of the material risks or limitations that go with them."
+        The "Three-Bucket" plan is presented as a way to manage income. The text mentions: "Stocks can fall sharply, and refilling the cash bucket after a decline can mean selling at a loss or trimming your spending for a while." This is a risk disclosure for the strategy.
+
+    *   *Re-evaluating C5 again:*
+        "A couple who retired on January 1, 2000 with $1,000,000 and followed the Three-Bucket Income Plan we use today could have withdrawn $35,000 a year, raised it each year for inflation, and still had $1.4 million at the end of 2025."
+        This is a hypothetical scenario. It doesn't state the *assumptions* (like the rate of return or inflation rate) used to calculate the $1.4 million. Without those, the reader cannot understand the basis of the calculation.
+
+    *   *Wait, let's look at the prompt's specific instructions:*
+        "Flag what a careful reviewer would want to look at, and nothing else."
+        A reviewer would definitely flag the "could have" scenario because it's a hypothetical model without the specific investment assumptions (like the assumed rate of return) that would allow a reader to understand how the $1.4 million figure was reached.
+
+    *   *Is there anything else?*
+        C1: No testimonials.
+        C2: No gross/net performance.
+        C3: No non-private fund performance (it's a hypothetical, not a historical performance of a specific portfolio).
+        C4: No cherry-picked windows.
+        C7: No third-party ratings.
+        C8: No subset of portfolio performance.
+
+    *   *Refining the C5 flag:*
+        Quote: "A couple who retired on January 1, 2000 with $1,000,000 and followed the Three-Bucket Income Plan we use today could have withdrawn $35,000 a year, raised it each year for inflation, and still had $1.4 million at the end of 2025."
+        Reason: This hypothetical scenario lacks the specific investment assumptions (such as assumed rates of return or inflation) necessary to understand the basis of the calculation.
+
+    *   *Wait, let me double check the text again.*
+        "A couple who retired on January 1, 2000 with $1,000,000 and followed the Three-Bucket Income Plan we use today could have withdrawn $35,000 a year, raised it each year for inflation, and still had $1.4 million at the end of 2025."
+        Is it a "model"? Yes. Does it have "criteria, assumptions, risks and limitations"? It mentions the "Three-Bucket Income Plan" and "inflation", but it doesn't state the *values* for those assumptions (e.g., "assuming 7% return and 3% inflation").
+
+    *   *Let's check C9 again.*
+        "Benefits described without fair and balanced treatment of the material risks or limitations that go with them."
+        The "Three-Bucket" plan is a benefit (steady income). The text mentions the risk of selling at a loss or trimming spending. This seems balanced enough for a marketing piece, but C5 is a much more direct hit on the "could have" statement.
+
+    *   *Wait, is there anything else?*
+        "Hollin & Starke does not sell annuities and receives no commissions from insurers." - This is a disclosure of a lack of conflict/business relationship.
+        "Registration does not imply a

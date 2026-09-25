@@ -1,0 +1,81 @@
+The user wants me to compare two versions of a 3M Company Form 10-K document (Risk Factors section) and identify material changes between the prior version (fiscal year ended 2024-12-31) and the current version (fiscal year ended 2025-12-31).
+
+I need to output a JSON object with a "changes" key containing a list of change objects.
+Each change object must have:
+- "type": "added", "removed", or "modified"
+- "heading": The section heading exactly as it appears in the document (current version for added/modified, prior version for removed).
+- "description": One sentence describing the change with old/new values.
+- "quote": Verbatim text of the changed passage (current version for added/modified, prior version for removed).
+
+I need to follow strict rules:
+1. Compare section by section.
+2. Report only material changes.
+3. Do not report minor edits (dates rolled forward, renamed defined terms without substance change, punctuation, rewording with identical meaning).
+4. Quote verbatim text from the current version for added/modified sections.
+5. Return ONLY a JSON object. No markdown fences.
+
+Let's analyze the text section by section.
+
+**Section 1: Header**
+- Prior: `# 3M Company: Form 10-K for fiscal year ended 2024-12-31`
+- Current: `# 3M Company: Form 10-K for fiscal year ended 2025-12-31`
+- Change: Fiscal year changed. This is a routine date roll-forward usually, but the document title itself changes. Rule 5 says "a date rolled forward with nothing else changed" is not material. However, this is the document header for the fiscal year. Usually, comparing 10-Ks year over year, the fiscal year change in the title is expected and often considered a routine update unless there's something else. But looking at Rule 5: "Do not report minor edits: a date rolled forward with nothing else changed". The header changes from 2024 to 2025. Is this material? Usually, for annual review, the fiscal year change is expected. I will check if there are other substantive changes in that section. There isn't much text under the header before Item 1A.
+- Decision: Likely not material on its own as it's just the document title/year update. I will focus on the content sections.
+
+**Section 2: Risks Related to the Global Economy and External Conditions**
+- Heading: `## Item 1A. Risk Factors (excerpt, prior year)` vs `## Item 1A. Risk Factors (excerpt, current year)`. This is a header change indicating the excerpt status. Rule 5 says "renamed defined term with no change in substance" or similar minor edits. The text inside changes significantly though.
+- Subheading: `### * The Company’s results are impacted by the effects of, and changes in, worldwide economic, political, regulatory, international trade, geopolitical, and other external conditions.`
+  - Prior: `...geopolitical, and other external conditions.`
+  - Current: `...geopolitical, tariffs and retaliatory counter measures, and other external conditions.`
+  - Change: Added "tariffs and retaliatory counter measures" to the list of conditions. This is a substantive addition to the risk description.
+  - Quote (Current): `### * The Company’s results are impacted by the effects of, and changes in, worldwide economic, political, regulatory, international trade, geopolitical, tariffs and retaliatory counter measures, and other external conditions.`
+- Paragraph starting "During 2024...":
+  - Prior: `During 2024, the Company derived approximately 56 percent...`
+  - Current: `During 2025, the Company derived approximately 56 percent...`
+  - Change: Year changed from 2024 to 2025. Rule 5 says "a date rolled forward with nothing else changed" is not material. This is just a year update in the context of the fiscal year change. I will exclude this as a minor edit (date roll-forward).
+- Paragraph starting "The global economy has been impacted by geopolitical tensions...":
+  - Prior: `The U.S. and other governments have imposed export controls on certain products and financial and economic sanctions on certain industry sectors and parties in certain conflict zones.`
+  - Current: `The U.S. and other governments have imposed, and propose to impose additional, export controls and tariffs on certain products, and financial and economic sanctions on certain industry sectors and parties.`
+  - Change: Added "and propose to impose additional" regarding export controls/tariffs. Also added "tariffs" explicitly in the list of controls.
+  - Prior continuation: `These geopolitical tensions could result in, among other things, cyberattacks, supply chain disruptions, higher energy and other commodity costs, lower consumer demand, and changes to foreign exchange rates and financial markets, any of which may have a material adverse effect the Company's business and supply chain.`
+  - Current continuation: `These geopolitical tensions could result in, among other things, cyberattacks, supply chain disruptions (including limitations on access to rare earth minerals and other raw materials), higher energy and other commodity costs, lower consumer demand, and changes to foreign exchange rates and financial markets, and tariffs and trade restrictions may result in increased production costs and product pricing, further supply chain disruptions, limited access to end markets, lower profitability, and uncertainty related to planning long-term investments and strategies, and may have other competitive effects. Compliance with rapidly changing tariffs and trade restrictions may require significant time and resources, and in turn increase our cost of doing business, and could result in fines and penalties or reputational harm if we are found to not be in compliance. Any of the foregoing could have a material adverse effect on the Company’s business, financial condition, and results of operations.`
+  - This is a significant modification. The text expanded significantly regarding tariffs and trade restrictions impacts.
+  - Heading for this section: `### * Foreign currency exchange rates...` (Wait, looking at the structure).
+  - Let's identify the specific subheadings.
+  - Subheading 1: `### * The Company’s results are impacted by the effects of, and changes in, worldwide economic, political, regulatory, international trade, geopolitical, tariffs and retaliatory counter measures, and other external conditions.` (Modified)
+  - Subheading 2: `### * Foreign currency exchange rates and fluctuations in those rates may affect the Company’s ability to realize projected growth rates in its sales and earnings.` (Identical text? Let's check).
+    - Prior: `The Company’s financial statements are denominated in U.S. dollars...`
+    - Current: `The Company’s financial statements are denominated in U.S. dollars...`
+    - Text looks identical. No change reported.
+  - Subheading 3: `### * The Company faces liabilities related to certain fluorochemicals, which could have a material adverse effect on our results.` (Heading is same).
+  - Paragraph under PFAS heading:
+    - Prior: `As previously reported, governments in the United States and internationally have increasingly been regulating a broad group of perfluoroalkyl and polyfluoroalkyl substances produced by the Company, collectively known as “PFAS,” including some presently or historically produced by the Company.`
+    - Current: `As previously reported, governments in the United States and internationally have increasingly been regulating a broad group of perfluoroalkyl and polyfluoroalkyl substances, collectively known as “PFAS,” including some produced by the Company prior to the end of 2025.`
+    - Change: "produced by the Company" -> "produced by the Company prior to the end of 2025". This clarifies the timeline. Is it material? It changes the scope of regulation description. I'll flag this as modified if it implies a change in substance (i.e., they are no longer producing them).
+    - Paragraph: `The PFAS group of substances contains several categories...`
+      - Prior: `3M is just one of a number of companies that manufacture PFAS compounds.`
+      - Current: `3M is just one of a number of companies that manufactured PFAS compounds prior to the end of 2025.`
+      - Change: "manufacture" -> "manufactured... prior to the end of 2025". This reflects the exit. Material change in status.
+    - Paragraph: `3M announced in December 2022 it will take two actions with respect to PFAS (2022 PFAS Announcement): exiting all PFAS manufacturing by the end of 2025, and working to discontinue the use of PFAS across its product portfolio by the end of 2025.`
+      - Prior: `3M announced in December 2022 it will take two actions...`
+      - Current: `3M announced in December 2022 it would take two further actions with respect to PFAS (2022 PFAS Announcement): exiting all PFAS manufacturing by the end of 2025, and working to discontinue the use of PFAS across its product portfolio by the end of 2025.`
+      - Change: "will take" -> "would take two further actions". Also added "further".
+    - Paragraph: `3M is progressing toward the exit of all PFAS manufacturing by the end of 2025.`
+      - Prior: `3M is progressing toward the exit of all PFAS manufacturing by the end of 2025.`
+      - Current: `3M completed its exit of PFAS manufacturing at the end of 2025.`
+      - Change: "is progressing toward" -> "completed". This is a material change in status (progress vs completion).
+    - Paragraph: `The Company continues to discuss its PFAS manufacturing exit...`
+      - Prior: `3M is progressing toward the exit of all PFAS manufacturing by the end of 2025. The Company continues to discuss its PFAS manufacturing exit, and related issues involving the disposition of manufacturing assets, with customers, government authorities, and other stakeholders, and the Company remains focused on completing the exit in a timely and orderly fashion.`
+      - Current: `3M completed its exit of PFAS manufacturing at the end of 2025. 3M will continue to take actions to address PFAS manufactured prior to the exit. For example, the Company's water treatment assets at facilities that manufactured PFAS will continue to treat PFAS from historical manufacturing activities and remediate residual PFAS in waste streams from the Company's operations. 3M also will continue to work through the disposition of its assets and its interests in manufacturing facilities, which may include dismantling, cleaning and repurposing, and other dispositions of facilities or equipment. 3M remains in ongoing discussions with customers, government authorities, and other stakeholders and interested parties about customer agreements and the Company's interests in assets and facilities, which may be owned or leased from other parties that have interests and rights related to those facilities.`
+      - This is a massive modification. The status changed from "progressing" to "completed". New text added regarding water treatment assets and disposition details.
+    - Paragraph: `The Company recognized a $0.8 billion pre-tax charge...` (Identical).
+    - Paragraph: `In addition, the 2022 PFAS Announcement involves risks, including: the actual timing, costs, and financial impact of such exit;`
+      - Prior: `the actual timing, costs, and financial impact of such exit;`
+      - Current: `the actual costs and financial impact of such exit;`
+      - Change: Removed "timing". Minor? Maybe. But the context changed to completed.
+    - Paragraph: `As stated above, 3M is progressing toward the exit of all PFAS manufacturing by the end of 2025.`
+      - Prior: `As stated above, 3M is progressing toward the exit of all PFAS manufacturing by the end of 2025. 3M is also working to discontinue the use of PFAS across its product portfolio by the end of 2025 and has made progress in eliminating the use of PFAS across its product portfolio in a variety of applications.`
+      - Current: `As also noted, 3M has been working to discontinue the use of PFAS across its product portfolio and has made substantial progress in eliminating such use in the Company's products. With respect to PFAS-containing products not manufactured by 3M in the Company's supply chains, the Company continues to evaluate the availability and feasibility of adopting and incorporating third-party products into its product portfolio that do not contain PFAS.`
+      - Change: "progressing toward" -> "completed" (implied by context later). Text rephrased. "made progress" -> "made substantial progress". Added specific examples of third-party products.
+    - Paragraph: `Depending on the availability and feasibility of such third-party products not containing PFAS, the Company continues to evaluate circumstances in which the use of PFAS-containing products manufactured by third parties and used in certain applications in 3M’s product portfolios, such as lithium ion batteries, printed circuit boards and certain seals and gaskets, all widely used in commerce across a variety of industries, and in some cases required by regulatory or industry standards, may or are expected to, depending on applications, continue beyond 2025.`
+      - Prior: `...may or are expected to, depending on applications, continue beyond 2025. In other cases, sales of products manufactured before the end of 2025, regulatory approval, or customer re-certification or re-qualification of substitutes or replacements to eliminate the use of PFAS manufactured by third parties may not be completed, or, depending on circumstances, are not expected to be completed, by the end of 2025. With respect to PFAS-containing products manufactured by third parties, the Company intends to continue to evaluate beyond the end of 2025 the adoption of third-party products that do not contain PFAS to the extent such products are available and such adoption is feasible.`

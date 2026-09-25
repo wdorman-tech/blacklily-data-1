@@ -1,0 +1,253 @@
+{
+ "pair_id": "t2_ma_4",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "Mastercard Incorporated",
+ "ticker": "MA",
+ "split": "test",
+ "prior": {
+  "fiscal_year_end": "2024-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139125000011/ma-20241231.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2025-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm"
+ },
+ "words": 6389,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "modified",
+   "prior_heading": "Global economic, political, financial and societal events or conditions could result in a material and adverse impact on our overall business and results of operations.",
+   "current_heading": "Global economic, political, financial and societal events or conditions could result in a material and adverse impact on our overall business and results of operations.",
+   "similarity": 0.491,
+   "diff": [
+    "insert: [] -> [•Uncertain global trade policies and related government actions (including those related to tariffs), which could have an adverse impact on our business (including with respect to consumer and business spending) and relationships with stakeholders]",
+    "insert: [] -> [MASTERCARD 2025 FORM 10-K 37 PART I ITEM 1A. RISK FACTORS]",
+    "delete: [MASTERCARD 2024 FORM 10-K 35 PART I ITEM 1A. RISK FACTORS] -> []"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds a new bullet to the adverse economic trends list disclosing uncertain global trade policies and related government actions, including tariffs, as a risk to consumer and business spending and stakeholder relationships.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1 and 2: a new risk (trade policy and tariff uncertainty) is disclosed; the remaining changes are page-footer movement only."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: a new risk (trade policy and tariff uncertainty) is disclosed; the page footer changes are ignorable."
+    }
+   }
+  },
+  {
+   "aid": "a02",
+   "status": "modified",
+   "prior_heading": "Adverse currency fluctuations and foreign exchange controls could negatively impact our results of operations.",
+   "current_heading": "Adverse currency fluctuations and foreign exchange controls could negatively impact our results of operations.",
+   "similarity": 0.998,
+   "diff": [
+    "replace: [2024,] -> [2025,]",
+    "replace: [70%] -> [71%]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The share of revenue generated from activities outside the U.S. changes from approximately 70% during 2024 to approximately 71% during 2025.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 4: a share-of-revenue percentage changes (70% to 71%), which goes beyond the year roll-forward."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 4: a share-of-revenue figure changes (70% to 71%) beyond the routine year roll-forward."
+    }
+   }
+  },
+  {
+   "aid": "a03",
+   "status": "modified",
+   "prior_heading": "Negative brand perception may materially and adversely affect our overall business.",
+   "current_heading": "Negative brand perception may materially and adversely affect our overall business.",
+   "similarity": 0.937,
+   "diff": [
+    "insert: [] -> [Additionally, we or our customers could take (or be perceived to take) actions related to these industries, which could be viewed negatively and result in threats or other retaliatory actions.]",
+    "insert: [] -> [38 MASTERCARD 2025 FORM 10-K PART I ITEM 1A. RISK FACTORS]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds a sentence that Mastercard or its customers could take, or be perceived to take, actions related to high-risk merchant industries (adult content, firearms, alcohol, tobacco) that could be viewed negatively and result in threats or other retaliatory actions.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: a new exposure (threats or retaliation arising from Mastercard's or customers' own actions toward these industries) is disclosed."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: a new exposure (threats and retaliation over actions toward these industries) is disclosed."
+    }
+   }
+  },
+  {
+   "aid": "a04",
+   "status": "unchanged",
+   "prior_heading": "Lack of visibility of our brand in our products and services, or in the products and services of our partners who use our technology, may materially and adversely affect our business.",
+   "current_heading": "Lack of visibility of our brand in our products and services, or in the products and services of our partners who use our technology, may materially and adversely affect our business.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a05",
+   "status": "modified",
+   "prior_heading": "Environmental, social and governance matters and related stakeholder reaction may impact our reputation, increase legal exposure and/or have other business impacts, which could adversely affect our overall business and/or results of operations.",
+   "current_heading": "Environmental, social and governance matters and related stakeholder reaction may impact our reputation, increase legal exposure and/or have other business impacts, which could adversely affect our overall business and/or results of operations.",
+   "similarity": 0.208,
+   "diff": [
+    "delete: [equitably] -> []",
+    "replace: [that provides equal opportunities for all of our employees.] -> [where everyone has the opportunity to succeed.]",
+    "replace: [inaccurate,] -> [inaccurate or unlawful,]",
+    "delete: [36 MASTERCARD 2024 FORM 10-K PART I ITEM 1A. RISK FACTORS] -> []"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The ESG risk now says disclosures, statements and metrics could be viewed as \"inaccurate or unlawful\" (previously only \"inaccurate\"), and rewords the workplace initiative from \"equal opportunities for all of our employees\" to \"where everyone has the opportunity to succeed\" and drops \"equitably\" from digital economy participation.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 3: scope widened by adding the possibility that ESG disclosures are viewed as unlawful, a new legal exposure beyond inaccuracy; the other rewording and footer changes alone would be minor."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: scope widened by adding the possibility that the company's own ESG statements are viewed as unlawful, a new legal exposure (also criterion 1); the initiative rewording alone would be stylistic."
+    }
+   }
+  },
+  {
+   "aid": "a06",
+   "status": "modified",
+   "prior_heading": "We may not be able to attract and retain a highly qualified workforce, or maintain our corporate culture, which could harm our overall business and results of operations.",
+   "current_heading": "We may not be able to attract and retain a highly qualified workforce, or maintain our corporate culture, which could harm our overall business and results of operations.",
+   "similarity": 0.465,
+   "diff": [
+    "replace: [technology and other areas that are important to the growth of our business.] -> [emerging technologies.]",
+    "delete: [employee] -> []",
+    "delete: [anticipating or] -> []",
+    "insert: [] -> [and/or acting on]",
+    "insert: [] -> [broader trends such as]",
+    "delete: [also] -> []",
+    "replace: [support, and may have different career motivations (such as pursuing project-based work or other gig opportunities, as opposed to linear career paths).] -> [support.]",
+    "replace: [expectations, motivations] -> [expectations]",
+    "replace: [workforce, our ability to innovate] -> [workforce]",
+    "insert: [] -> [MASTERCARD 2025 FORM 10-K 39 PART I ITEM 1A. RISK FACTORS]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The talent risk narrows the competitive skill-set market from \"technology and other areas that are important to the growth of our business\" to \"emerging technologies\", drops the discussion of employees' different career motivations (project-based or gig work versus linear careers), and removes \"our ability to innovate\" from the listed impacts of failing to meet workforce expectations.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1 and 3: previously disclosed exposures (gig-style career motivations, impact on ability to innovate) are removed and the scope of the talent competition risk is narrowed."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: previously disclosed exposures (gig/project-based career motivations and harm to ability to innovate) are removed, and criterion 3: scope of the talent-competition risk is narrowed."
+    }
+   }
+  },
+  {
+   "aid": "a07",
+   "status": "modified",
+   "prior_heading": "Our efforts to enter into acquisitions, strategic investments or new businesses could be impacted or prevented by regulatory scrutiny and could otherwise result in issues that could disrupt our business and harm our results of operations or reputation.",
+   "current_heading": "Our efforts to enter into acquisitions, strategic investments or new businesses could be impacted or prevented by regulatory scrutiny and could otherwise result in issues that could disrupt our business and harm our results of operations or reputation.",
+   "similarity": 0.764,
+   "diff": [
+    "delete: [MASTERCARD 2024 FORM 10-K 37 PART I ITEM 1A. RISK FACTORS] -> []",
+    "replace: [operations and/or impact our ability to successfully finance that business.] -> [operations.]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The inherited litigation risk from acquisitions no longer says it may \"impact our ability to successfully finance that business\", keeping only the increase in post-acquisition costs of operations.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: a previously disclosed exposure (impairment of the ability to finance an acquired business) is removed."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: a previously disclosed consequence of inherited litigation (financing impairment) is removed, narrowing scope under criterion 3; the page footer deletion is ignorable."
+    }
+   }
+  },
+  {
+   "aid": "a08",
+   "status": "modified",
+   "prior_heading": "Our role as guarantor, as well as other contractual obligations and discretionary actions, expose us to risk of loss or illiquidity.",
+   "current_heading": "Our role as guarantor, as well as other contractual obligations and discretionary actions, expose us to risk of loss or illiquidity.",
+   "similarity": 0.422,
+   "diff": [
+    "replace: [years in the U.S.,] -> [years,]",
+    "replace: [as] -> [Brazil recently enacted regulation requiring PSOs in Brazil (including Mastercard and Visa) to extend their responsibility for the financial and settlement integrity of payments to merchants. As]",
+    "replace: [are] -> [continue to be]",
+    "insert: [] -> [more]",
+    "insert: [] -> [may enact similar approaches from time to time. Any such changes]",
+    "replace: [require us to extend our guarantee to additional obligations, which could have an] -> [increase complexity and may]",
+    "delete: [on] -> []",
+    "replace: [operations.] -> [operations and financial condition.]",
+    "insert: [] -> [40 MASTERCARD 2025 FORM 10-K PART I ITEM 1A. RISK FACTORS]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The guarantor risk now cites that Brazil recently enacted regulation requiring PSOs in Brazil (including Mastercard and Visa) to extend responsibility for the financial and settlement integrity of payments to merchants, says more jurisdictions may enact similar approaches with impact on cost of operations and financial condition, and drops the U.S. qualifier on recent bank failures.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2 and 3: a new specific regulation and jurisdiction (Brazil) is referenced, the hypothetical extension of guarantee obligations becomes realized, and severity widens to include financial condition."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 2: a new specific regulation and jurisdiction (Brazil PSO settlement-integrity rule) is referenced, and criterion 3: the guarantee-extension risk moves from hypothetical to realized."
+    }
+   }
+  },
+  {
+   "aid": "a09",
+   "status": "unchanged",
+   "prior_heading": "Provisions in our organizational documents and Delaware law could be considered anti-takeover provisions and have an impact on change-in-control.",
+   "current_heading": "Provisions in our organizational documents and Delaware law could be considered anti-takeover provisions and have an impact on change-in-control.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a10",
+   "status": "modified",
+   "prior_heading": "Mastercard Foundation’s substantial stock ownership, and restrictions on its sales, may impact corporate actions or acquisition proposals favorable to, or favored by, the other public stockholders.",
+   "current_heading": "Mastercard Foundation’s substantial stock ownership, and restrictions on its sales, may impact corporate actions or acquisition proposals favorable to, or favored by, the other public stockholders.",
+   "similarity": 0.962,
+   "diff": [
+    "delete: [As of December 31, 2024,] -> []",
+    "replace: [owned] -> [owns]",
+    "insert: [] -> [our]",
+    "replace: [approximately 9.4%] -> [greater than 5%]",
+    "delete: [38 MASTERCARD 2024 FORM 10-K PART I ITEM 1A. RISK FACTORS] -> []"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Mastercard Foundation's stated share of general voting power changes from approximately 9.4% as of December 31, 2024 to \"greater than 5%\" with no as-of date.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 4: a disclosed ownership percentage changes (approximately 9.4% to greater than 5%), reflecting continued share sales under the diversification plan."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 4: the disclosed ownership percentage changes from a point figure of approximately 9.4% to a threshold of greater than 5%."
+    }
+   }
+  }
+ ]
+}

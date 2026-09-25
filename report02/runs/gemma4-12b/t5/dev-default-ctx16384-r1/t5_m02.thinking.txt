@@ -1,0 +1,118 @@
+*   Role: Client Service Associate at a wealth management firm.
+    *   Task: Update CRM from a meeting transcript.
+    *   Rules:
+        1.  Record only what was said. No extra planning.
+        2.  Use final versions of figures/owners/dates.
+        3.  Action items = tasks agreed to do. No "maybe" or "not now" items.
+        4.  Owner = person's name.
+        5.  Due dates = as stated (add calendar date if needed).
+        6.  Use NOT_FOUND for missing fields.
+        7.  Correct machine-generated errors based on context.
+    *   Output: JSON only, no markdown, no preamble.
+
+    *   *Meeting Date:* September 15, 2026.
+    *   *Client Names:* Colleen Rasmund.
+    *   *Primary Goal:* "You're okay on one income. You have the cash you need, it's easy to get to, and you can stay in the house while the estate gets settled." (Essentially: Financial security/stability on a single income).
+    *   *Retirement Target:* Initially 65, but changed to 67 (March 2031).
+    *   *Risk Tolerance:* Currently "moderately aggressive" (Walter's preference), changing to "moderate".
+    *   *Risk Tolerance Change:* "moderately aggressive" to "moderate".
+    *   *Life Events:*
+        *   Husband (Walter) passed away (implied by "estate", "widow", "death certificate").
+        *   New grandchild expected in February (Siobhan's pregnancy).
+        *   Insurance payout: $262,400 (initially thought to be $300,000, then corrected to $262,400 after a loan was identified).
+    *   *Account Actions:*
+        *   Move $212,400 from Esker Valley checking to a new individual Treasury money market account (the $50,000 stays at the bank).
+        *   Roll Walter's IRA ($418,000+) into a new IRA in Colleen's name.
+        *   Set up a standing transfer of $1,800 from the new money market account to Esker Valley checking on the 15th of each month starting October 15.
+        *   Update beneficiaries on the new IRA and the new individual account to Siobhan Kearsley (50%) and Declan Thomas Rasmund (50%) per stirpes.
+        *   Update beneficiaries on the existing individual account (formerly joint) to Siobhan Kearsley (50%) and Declan Thomas Rasmund (50%) per stirpes.
+    *   *Action Items:*
+        *   Task: Send e-sign packet (rollover, new account, transfer authorization, beneficiary designations, Kessling authorization). Owner: Imogen Staveley. Due: 2026-09-16 (Tomorrow).
+        *   Task: Call Kessling pension center for withholding form and benefit confirmation letter. Owner: Imogen Staveley. Due: 2026-10-01.
+        *   Task: Provide list of recurring bills. Owner: Colleen Rasmund. Due: 2026-09-25.
+        *   Task: Update Marrowfield 403(b) and group life beneficiaries. Owner: Colleen Rasmund. Due: 2026-09-30.
+        *   Task: Send date-of-death valuations to Harriet. Owner: Renata Szalai. Due: 2026-09-18 (Before meeting on Thursday, Sept 17). *Wait, the transcript says "before your meeting Thursday". The meeting is Tuesday Sept 15. Thursday is Sept 17.*
+    *   *Next Meeting:* December 3, 2026, at 10:00 AM.
+
+    *   *meeting_date:* "2026-09-15"
+    *   *client_names:* ["Colleen Rasmund"]
+    *   *primary_goal:* "To be okay on one income, having enough cash that is easy to access to stay in the house while the estate is settled."
+    *   *retirement_target:* "67"
+    *   *risk_tolerance:* "moderate"
+    *   *risk_tolerance_change:* "moderately aggressive to moderate"
+    *   *life_events:* ["Death of husband (Walter)", "Expected grandchild in February", "Insurance payout of $262,400"]
+    *   *account_actions:*
+        *   {"action": "Move $212,400 to a new individual Treasury money market account", "account": "Esker Valley checking", "amount": "212,400"}
+        *   {"action": "Roll over IRA into a new IRA in Colleen's name", "account": "Walter's IRA", "amount": "418,000"}
+        *   {"action": "Set up standing monthly transfer of $1,800", "account": "New money market account to Esker Valley checking", "amount": "1,800"}
+        *   {"action": "Update beneficiaries to Siobhan Kearsley (50%) and Declan Thomas Rasmund (50%) per stirpes", "account": "New IRA", "amount": "NOT_FOUND"}
+        *   {"action": "Update beneficiaries to Siobhan Kearsley (50%) and Declan Thomas Rasmund (50%) per stirpes", "account": "New individual account", "amount": "NOT_FOUND"}
+        *   {"action": "Update beneficiaries to Siobhan Kearsley (50%) and Declan Thomas Rasmund (50%) per stirpes", "account": "Existing individual account", "amount": "NOT_FOUND"}
+    *   *action_items:*
+        *   {"task": "Send e-sign packet (rollover, new account, transfer authorization, beneficiary designations, Kessling authorization)", "owner": "Imogen Staveley", "due": "2026-09-16"}
+        *   {"task": "Call Kessling pension center for withholding form and benefit confirmation letter", "owner": "Imogen Staveley", "due": "2026-10-01"}
+        *   {"task": "Provide list of recurring bills", "owner": "Colleen Rasmund", "due": "2026-09-25"}
+        *   {"task": "Update Marrowfield 403(b) and group life beneficiaries", "owner": "Colleen Rasmund", "due": "2026-09-30"}
+        *   {"task": "Send date-of-death valuations to Harriet", "owner": "Renata Szalai", "due": "2026-09-17"}
+    *   *next_meeting:* "2026-12-03"
+
+    *   *Refining account_actions:* The prompt asks for "what will be done", "which account", "amount".
+        1. Action: "Move $212,400 to new individual Treasury money market account", Account: "Esker Valley checking", Amount: "212,400"
+        2. Action: "Roll over IRA into new IRA in Colleen's name", Account: "Walter's IRA", Amount: "418,000"
+        3. Action: "Set up standing monthly transfer of $1,800", Account: "New money market account to Esker Valley checking", Amount: "1,800"
+        4. Action: "Update beneficiaries to Siobhan Kearsley (50%) and Declan Thomas Rasmund (50%) per stirpes", Account: "New IRA", Amount: "NOT_FOUND"
+        5. Action: "Update beneficiaries to Siobhan Kearsley (50%) and Declan Thomas Rasmund (50%) per stirpes", Account: "New individual account", Amount: "NOT_FOUND"
+        6. Action: "Update beneficiaries to Siobhan Kearsley (50%) and Declan Thomas Rasmund (50%) per stirpes", Account: "Existing individual account", Amount: "NOT_FOUND"
+
+    *   *Refining action_items:*
+        1. Task: "Send e-sign packet", Owner: "Imogen Staveley", Due: "2026-09-16"
+        2. Task: "Call Kessling pension center for withholding form and benefit confirmation letter", Owner: "Imogen Staveley", Due: "2026-10-01"
+        3. Task: "Provide list of recurring bills", Owner: "Colleen Rasmund", Due: "2026-09-25"
+        4. Task: "Update Marrowfield 403(b) and group life beneficiaries", Owner: "Colleen Rasmund", Due: "2026-09-30"
+        5. Task: "Send date-of-death valuations to Harriet", Owner: "Renata Szalai", Due: "2026-09-17"
+
+    *   *Refining dates:*
+        - Meeting is Sept 15, 2026.
+        - "Tomorrow" is Sept 16, 2026.
+        - "Before October 1" is 2026-10-01.
+        - "By the end of the month" is 2026-09-30.
+        - "Friday the 25th" is 2026-09-25.
+        - "Thursday" (for the meeting with Harriet) is 2026-09-17.
+        - "December 3rd" is 2026-12-03.
+
+    *   *Refining account_actions:*
+        - The prompt says "what will be done", "which account", "amount".
+        - For the insurance money: "Move $212,400 to new individual account", Account: "Esker Valley checking", Amount: "212,400".
+        - For the IRA: "Roll over IRA into new IRA in Colleen's name", Account: "Walter's IRA", Amount: "418,000".
+        - For the transfer: "Set up standing monthly transfer", Account: "New money market account to Esker Valley checking", Amount: "1,800".
+        - For the beneficiaries: "Update beneficiaries to Siobhan Kearsley and Declan Thomas Rumsund (50/50 per stirpes)", Account: "New IRA", Amount: "NOT_FOUND".
+        - For the beneficiaries: "Update beneficiaries to Siobhan Kearsley and Declan Thomas Rumsund (50/50 per stirpes)", Account: "New individual account", Amount: "NOT_FOUND".
+        - For the beneficiaries: "Update beneficiaries to Siobhan Kearsley and Declan Thomas Rumsund (50/50 per stirpes)", Account: "Existing individual account", Amount: "NOT_FOUND".
+
+    *   *Refining risk_tolerance_change:* "from moderately aggressive to moderate".
+
+    *   *Refining life_events:*
+        - "Death of husband (Walter)"
+        - "Expected grandchild in February"
+        - "Insurance payout of $262,400"
+
+    *   *Refining primary_goal:* "To be okay on one income, with enough cash to stay in the house while the estate is settled."
+
+    *   *Refining retirement_target:* "67"
+
+    *   *Refining account_actions:*
+        - "Move $212,400 to new individual account", "Esker Valley checking", "212,400"
+        - "Roll over IRA into new IRA in Colleen's name", "Walter's IRA", "418,000"
+        - "Set up standing monthly transfer", "New money market account to Esker Valley checking", "1,800"
+        - "Update beneficiaries to Siobhan Kearsley and Declan Thomas Rumsund (50/50 per stirpes)", "New IRA", "NOT_FOUND"
+        - "Update beneficiaries to Siobhan Kearsley and Declan Thomas Rumsund (50/50 per stirpes)", "New individual account", "NOT_FOUND"
+        - "Update beneficiaries to Siobhan Kearsley and Declan Thomas Rumsund (50/50 per stirpes)", "Existing individual account", "NOT_FOUND"
+
+    *   *Refining action_items:*
+        - "Send e-sign packet", "Imogen Staveley", "2026-09-16"
+        - "Call Kessling pension center for withholding form and benefit confirmation letter", "Imogen Staveley", "2026-10-01"
+        - "Provide list of recurring bills", "Colleen Rasmund", "2026-09-25"
+        - "Update Marrowfield 403(b) and group life beneficiaries", "Colleen Rasmund", "2026-09-30"
+        - "Send date-of-death valuations to Harriet", "Renata Szalai", "2026-09-17"
+
+    *

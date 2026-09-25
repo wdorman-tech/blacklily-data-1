@@ -1,0 +1,38 @@
+{
+ "prompt_hash": "840cce9bd2e1fa008cb9b347ca782e3f6e423b7b6abb57a8984ba204acce6657",
+ "result": {
+  "flags": [
+   {
+    "n": 1,
+    "verdict": "legitimate",
+    "known_id": "",
+    "note": "Correctly identifies a C4 concern: the 58.6% figure is anchored to the October 12, 2022 market low, a favourable start point selected in hindsight out of a longer record. The standardized 1-/5-/10-year composite figures immediately following mitigate the presentation and satisfy C3, but they do not cure the cherry-picked headline window itself. Worth a reviewer's time; distinct from p1."
+   },
+   {
+    "n": 2,
+    "verdict": "legitimate",
+    "known_id": "",
+    "note": "The stated C4 rationale is incorrect and appears copied from flag 1 - 'twelve months ended June 30, 2026' is an ordinary trailing period, not a market-low start, and net (9.8%) is shown ahead of gross (10.6%) so C2 is satisfied. The quoted text nonetheless raises a genuine checklist issue under C3: the Balanced Income composite is a non-private-fund portfolio managed since 2009, yet only a 1-year result is given, with no 5- or 10-year figures (unlike Post 2, which supplies them). Legitimate text to review, but should be re-coded to C3."
+   },
+   {
+    "n": 3,
+    "verdict": "not_an_issue",
+    "known_id": "",
+    "note": "The quoted passage is the risk disclosure, not a benefit claim. It states small-cap volatility, illiquidity and the prospect of a value discipline trailing the market for years - this is the fair and balanced treatment C9 requires, in the same post and with specificity comparable to the benefits discussed. Flag inverts the code."
+   },
+   {
+    "n": 4,
+    "verdict": "not_an_issue",
+    "known_id": "",
+    "note": "'What can go wrong' is itself the C9 balance for the dividend growth strategy: dividend cuts including by long-record raisers, lagging in growth-led rallies, and rate sensitivity in utilities and staples. It already carries what the checklist requires."
+   },
+   {
+    "n": 5,
+    "verdict": "not_an_issue",
+    "known_id": "",
+    "note": "'The trade-off is real' is the C9 risk paragraph for the balanced income strategy - decline in a broad selloff, the 2022 stock/bond correlation, and income shrinking if rates fall or payouts are cut. This is the required balance, not an omission of it."
+   }
+  ]
+ },
+ "reused": true
+}

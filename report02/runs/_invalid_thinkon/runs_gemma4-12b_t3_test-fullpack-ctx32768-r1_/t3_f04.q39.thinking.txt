@@ -1,0 +1,35 @@
+*   Question: "What is the minimum account size for a separately managed account, and what minimum annual fee applies?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answers.
+    *   Constraint 5: Cite document file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "01_brochure.md":
+        *   Item 7.2: "The minimum account size for a separate account is $100 million."
+        *   Item 5.2: "Each separate account is subject to a minimum annual fee of $150,000."
+    *   "02_compliance_manual.md": (No mention of account size or fees).
+    *   "03_valuation_policy.md": (No mention of account size or fees).
+    *   "04_business_continuity_plan.md": (No mention of account size or fees).
+    *   "05_fee_schedule.md":
+        *   Section 5.1: "The minimum account size for a separate account is $100 million."
+        *   Section 5.2: "Each separate account is subject to a minimum annual fee of $150,000..."
+    *   "06_policy_update_memo.md":
+        *   Section 5.1: "The minimum annual fee of $150,000 is unchanged." (This confirms the fee from the brochure and fee schedule).
+        *   Note: Section 5.1 of the memo updates the *breakpoints* for the Core Fixed Income fee, but not the minimum account size or the minimum annual fee.
+
+    *   Minimum account size: $100 million.
+    *   Minimum annual fee: $150,000.
+
+    *   The question asks for both the minimum account size and the minimum annual fee.
+    *   "01_brochure.md" contains both.
+    *   "05_fee_schedule.md" contains both.
+    *   "06_policy_update_memo.md" confirms the minimum annual fee is unchanged.
+
+    *   Since "01_brochure.md" and "05_fee_schedule.md" both contain the information, and "06_policy_update_memo.md" confirms the fee, I should check if any later document changes the *specific* values asked for.
+    *   "06_policy_update_memo.md" Section 5.1 says: "The minimum annual fee of $150,000 is unchanged."
+    *   The question asks for "minimum account size" and "minimum annual fee".
+    *   "01_brochure.md" Item 7.2: "The minimum account size for a separate account is $100 million."
+    *   "01_brochure.md" Item 5.2: "Each separate account is subject to a minimum annual fee of $150,000."
+    *   "05_fee_schedule.md" Section 5.1: "The minimum account size for a separate account is $100 million."

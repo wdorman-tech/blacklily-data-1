@@ -1,0 +1,30 @@
+*   Question: "Does the firm maintain a diversity, equity and inclusion policy, and can it provide demographic data for its investment team?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer NOT_IN_DOCUMENTS.
+    *   Constraint 3: Short and specific answer.
+    *   Constraint 4: Cite file name and section.
+    *   Constraint 5: Quote verbatim.
+
+    *   `01_brochure.md`:
+        *   Item 4.2: Wealth Management Services (mentions services, investment policy statement, committee).
+        *   Item 4.3: Investment Strategies Offered (lists strategies).
+        *   Item 4.5: Tailoring and Client Restrictions.
+        *   Item 4.6: Assets Under Management and Personnel (mentions number of employees and wealth advisors).
+        *   Item 8.2: Investment Strategies.
+        *   Item 9.1: Legal and Disciplinary Events.
+        *   Item 17.2: Proxy Voting Service Provider.
+    *   `02_compliance_manual.md`:
+        *   Section 1.1: Purpose (mentions compliance rules).
+
+    *   The question asks about a "diversity, equity and inclusion policy" and "demographic data for its investment team".
+    *   Scanning `01_brochure.md`:
+        *   Item 4.6 mentions "The Firm has 41 employees, including 17 wealth advisors". It does *not* mention diversity, equity, inclusion, or demographic data.
+    *   Scanning `02_compliance_manual.md`:
+        *   Section 1.1 mentions the purpose of the manual and the firm's business. It does *not* mention diversity, equity, inclusion, or demographic data.
+
+    *   The information is not in the documents.
+
+    *   answer: "NOT_IN_DOCUMENTS"
+    *   source_document: ""
+    *   section: ""
+    *   quote: ""

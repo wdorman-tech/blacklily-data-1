@@ -1,0 +1,36 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "How frequently is firm data backed up, and where are the backup copies stored?"
+    *   Key information needed: Frequency of backups, Location of backup storage.
+
+3.  **Scan the Documents:**
+    *   `02_compliance_manual.md` (dated January 15, 2026):
+        *   Section 12.3: Disposal of records.
+        *   Section 13.3: Electronic Storage (mentions Norcastle Managed Services, LLC).
+        *   Section 14.3: Archiving (Marrowgate Archiving, Inc.).
+    *   `04_business_continuity_plan.md` (dated May 4, 2026):
+        *   Section 1.2: Scope (offices, custodians).
+        *   Section 4.3: Physical Records.
+        *   Section 6.1 Backup Frequency: "Norcastle performs incremental backups of the Firm's file server and document management system every four hours between 6:00 a.m. and 10:00 p.m. Eastern time on business days, and a full backup every night."
+        *   Section 6.2 Storage Location and Retention: "Backup copies are replicated to Norcastle's secondary data center in Columbus, Ohio, more than 300 miles from each Firm office. Nightly backups are held in immutable storage for 35 days, and a monthly full backup is retained for 12 months."
+
+4.  **Evaluate Findings against Constraints:**
+    *   The question asks for frequency and location.
+    *   Document `04_business_continuity_plan.md` (May 4, 2026) contains specific details on frequency (Section 6.1) and location (Section 6.2).
+    *   Date check: May 4, 2026 is later than January 15, 2026 (`02_compliance_manual.md`). However, the BCP seems to be a specific plan regarding data backup/recovery, while the Compliance Manual covers general policies. The question asks about "firm data backed up". Section 6.1 and 6.2 of the BCP directly address this.
+    *   Is there a conflict? The Compliance Manual mentions Norcastle for storage (Section 13.3). The BCP confirms Norcastle performs backups (Section 6.1) and specifies location (Columbus, Ohio) in Section 6.2.
+    *   Since the BCP is dated later (May 4, 2026 vs Jan 15, 2026), it supersedes regarding specific operational details if there were a

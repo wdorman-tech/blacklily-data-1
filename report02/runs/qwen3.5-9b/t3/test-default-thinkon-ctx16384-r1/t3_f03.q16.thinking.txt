@@ -1,0 +1,41 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Identify the firm's principal owners and their ownership percentages."
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "principal owners", "ownership", "percentages", "%", "owned by".
+
+4.  **Evaluate Document 1 (`01_brochure.md`):**
+    *   Section: Item 4. Advisory Business > 4.1 Firm History and Ownership.
+    *   Text: "The Firm is wholly owned by Quenby Holt Holdings, LLC, a Delaware limited liability company (the "Parent"), which also owns all of the outstanding stock of Quenby Holt Trust Company ("QHTC" or the "Trust Company"). The Parent's principal owners are Margaret A. Quenby, who holds 42% of its membership interests, and Daniel R. Holt, who holds 34%. The remaining 24% is held by QH Principals LLC, an entity owned by five senior employees of the Firm, none of whom holds an indirect interest in the Parent of more than 7%."
+    *   Analysis: This section explicitly states "The Parent's principal owners are Margaret A. Quenby... and Daniel R. Holt...". It gives percentages (42%, 34%). It also mentions QH Principals LLC holding the remaining 24%. The question asks for the firm's principal owners. The text says "The Parent's principal owners are...". Since the Firm is wholly owned by the Parent, these are effectively the principal owners of the Firm structure described.
+    *   Date: March 27, 2026.
+
+5.  **Evaluate Document 2 (`02_compliance_manual.md`):**
+    *   No mention of ownership percentages or principal owners in the provided snippets.
+
+6.  **Evaluate Document 3 (`03_valuation_policy.md`):**
+    *   Discusses Valuation Committee composition. No ownership info.
+
+7.  **Evaluate Document 4 (`04_business_continuity_plan.md`):**
+    *   Discusses BCP ownership (Renata S. Oyelaran). Not firm ownership.
+
+8.  **Determine the Best Answer:**
+    *   The information is found in `01_brochure.md`, Section: Item 4. Advisory Business > 4.1 Firm History and Ownership.
+    *   The text explicitly lists the principal owners of the Parent (which owns the Firm) and their percentages.
+    *   Quote: "The Parent's principal owners are Margaret A. Quenby, who holds 42% of its membership interests, and Daniel R. Holt, who holds 34%. The remaining 24% is held by QH Principals LLC..."
+    *   I need

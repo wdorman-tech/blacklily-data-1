@@ -1,0 +1,37 @@
+*   Question: "When were the Adviser's compliance policies most recently amended, and who approved the amendments?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in docs, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   `01_brochure.md`: Mentions "annual updating amendment" on March 28, 2025, and "March 27, 2026" as the version date.
+    *   `02_compliance_manual.md`: Version date: January 15, 2026.
+    *   `03_valuation_policy.md`: Version date: November 3, 2025.
+    *   `04_business_continuity_plan.md`: Version date: February 9, 2026.
+    *   `05_fee_schedule.md`: Version date: January 1, 2026.
+    *   `06_policy_update_memo.md`: Version date: August 24, 2026.
+
+    *   The question asks for the *most recent* amendment to the "compliance policies" and who *approved* them.
+    *   `06_policy_update_memo.md` is the latest document (August 24, 2026).
+    *   Section 1.1 of `06_policy_update_memo.md` states: "the Management Committee approved the amendments set out in Section 2 at its meeting on August 20, 2026."
+    *   The memo covers amendments to the Compliance Manual, Valuation Policy, Business Continuity Plan, and Fee Schedule.
+
+    *   Date: August 20, 2026 (the meeting date where they were approved).
+    *   Approver: Management Committee.
+
+    *   "the Management Committee approved the amendments set out in Section 2 at its meeting on August 20, 2026."
+
+    *   Source: `06_policy_update_memo.md`
+    *   Section: `SECTION 1. PURPOSE, APPROVAL AND EFFECTIVE DATE` (or specifically `1.1 Purpose and Approval`).
+
+    *   Question: "When were the Adviser's compliance policies most recently amended, and who approved the amendments?"
+    *   Answer: The amendments were approved by the Management Committee at its meeting on August 20, 2026.
+    *   Wait, the question asks "When were the... policies most recently amended". The memo says the amendments were *approved* on August 20, 2026. The memo itself is dated August 24, 2026.
+    *   The memo states: "the Management Committee approved the amendments set out in Section 2 at its meeting on August 20, 2026."
+
+    *   Answer: August 20, 2026, by the Management Committee.
+    *   Source: 06_policy_update_memo.md
+    *   Section: 1.1 Purpose and Approval
+    *   Quote: "the Management Committee approved the

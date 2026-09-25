@@ -1,0 +1,33 @@
+{
+  "piece_id": "t7_p20",
+  "form": "website \"Our Performance\" page copy",
+  "notes": "Municipal bond manager performance page whose composite tables are complete and properly paired, carrying a capital-safety claim the page's own 2022 figures contradict and a model track record with no methodology, assumptions or limitations.",
+  "planted": [
+    {
+      "iid": "p1",
+      "category": "C6",
+      "span": "With Marrowby Glen, your principal is safe: our high-grade municipal portfolios protect capital in every market environment.",
+      "explanation": "The claim is untrue on the page's own figures, which show a -6.5% net return in 2022, and it contradicts the risk section's statement that bond prices fall when rates rise."
+    },
+    {
+      "iid": "p2",
+      "category": "C5",
+      "span": "Applied to historical market data from 2006 through 2025, the Tactical Duration model would have returned 4.7% a year against 3.2% for the Index, beating it in 15 of 20 years.",
+      "explanation": "Model performance for a strategy with no live accounts is presented without the criteria and assumptions used to calculate it or any statement of the risks and limitations of relying on it."
+    }
+  ],
+  "decoys": [
+    {
+      "did": "d1",
+      "looks_like": "C3",
+      "span": "| | 1 year | 5 years | 10 years | Since inception (Oct. 1, 2004) |\n|---|---|---|---|---|\n| Composite, gross of fees | 4.1% | 1.1% | 2.2% | 3.5% |\n| Composite, net of fees | 3.7% | 0.7% | 1.8% | 3.1% |\n| Index | 3.8% | 1.0% | 2.0% | 3.3% |",
+      "why_ok": "The composite shows 1-, 5- and 10-year periods in the same format, ending June 30, 2026, which is more recent than the last calendar year-end."
+    },
+    {
+      "did": "d2",
+      "looks_like": "C2",
+      "span": "| Year | Composite gross | Composite net | Index |\n|---|---|---|---|\n| 2016 | 0.6% | 0.2% | 0.3% |\n| 2017 | 4.6% | 4.2% | 4.5% |\n| 2018 | 1.8% | 1.4% | 1.6% |\n| 2019 | 6.4% | 6.0% | 6.3% |\n| 2020 | 5.0% | 4.6% | 4.9% |\n| 2021 | 1.3% | 0.9% | 1.0% |\n| 2022 | -6.1% | -6.5% | -5.9% |\n| 2023 | 5.3% | 4.9% | 5.1% |\n| 2024 | 1.4% | 1.0% | 1.2% |\n| 2025 | 3.9% | 3.5% | 3.6% |",
+      "why_ok": "Each year's gross return appears next to the net return for the same year in an adjacent column of identical format."
+    }
+  ]
+}

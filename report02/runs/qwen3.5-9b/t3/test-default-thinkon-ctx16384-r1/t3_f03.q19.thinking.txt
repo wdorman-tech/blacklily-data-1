@@ -1,0 +1,37 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (not applicable here as there's only one document).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "How does the firm identify and escalate stale prices?"
+
+3.  **Scan the Documents:**
+    *   Document: `03_valuation_policy.md` (dated February 10, 2026).
+    *   Search for keywords: "stale", "price", "identify", "escalate".
+    *   Section 6. STALE PRICE MONITORING seems relevant.
+    *   Subsection 6.1 Daily Stale Price Report:
+        *   "Operations produces a daily stale price report that flags any security whose price has not changed for five consecutive business days." (Identification)
+        *   "A security whose price has not changed for ten consecutive business days is escalated to the Valuation Committee..." (Escalation)
+    *   Subsection 6.2 Private Fund Reporting Lag: Mentions flagging private funds with NAV dated more than 120 days, but this is specific to private funds, not general stale prices. The question asks about "stale prices" generally, which usually refers to the mechanism in Section 6.1.
+
+4.  **Synthesize the Answer:**
+    *   Identification: Operations produces a daily stale price report flagging securities whose price has not changed for five consecutive business days.
+    *   Escalation: A security whose price has not changed for ten consecutive business days is escalated to the Valuation Committee.
+    *   Need to combine these into a concise answer based on the text.
+
+5.  **Draft the JSON Content:**
+    *   `answer`: "Operations produces a daily stale price report that flags any security whose price has not changed for five consecutive business days. A security whose price has not changed for ten consecutive business days is escalated to the Valuation Committee."
+    *   `source_document`: "03_valuation_policy.md"
+    *   `section`: "SECTION 6. STALE PRICE MONITORING > 6.1 Daily Stale Price Report" (Need to check exact section labeling in the text provided). The text says `Section: SECTION 6. STALE PRICE MONITORING > 6.1 Daily Stale Price Report`. I should use the label as it appears or a concise version. The instruction says "Cite the document file name and the section where the answer appears, as they are labelled in the documents."
+    *   `quote`: "Operations produces a daily stale price report that flags any security whose price has not changed for five consecutive business days. Operations investigates each flagged security and documents whether the unchanged price reflects actual market conditions, such as an illiquid municipal issue, or a failure of the pricing feed. A security whose price has not changed for ten consecutive business days is escalated

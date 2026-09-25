@@ -1,0 +1,35 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "What are the minimum household relationship size and the minimum annual fee for new wealth management clients?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "minimum household relationship", "new clients", "minimum annual fee", "wealth management".
+
+4.  **Evaluate Document Content & Dates:**
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section Item 5.4 Minimums and Negotiability: "The minimum annual fee for a wealth management household is $10,000."
+        *   Section Item 7.2 Account Minimums: "The minimum household relationship for new clients is $1,000,000 of assets under management, and the minimum annual fee is $10,000."
+    *   `05_fee_schedule.md` (April 1, 2026):
+        *   Section 2.3 Minimum Relationship and Minimum Fee: "The minimum household relationship for new clients is $1,000,000 of Billable Assets, and the minimum annual fee is $10,000, billed as $2,500 per quarter."
+    *   `06_policy_update_memo.md` (August 17, 2026):
+        *   Section SECTION 5. FEE SCHEDULE: TOP BREAKPOINT: Amends Schedule of Advisory Fees and Form ADV Part 2A. Changes fee breakpoints (top tier). Does not mention changing minimums or relationship size. States "The rates and breakpoints of the first three tiers are unchanged."
+
+5.  **Determine the Most Current Information:**
+    *   The question asks for current info for *new* wealth management clients.
+    *   `01_brochure.md` (March 27, 2026) states: Min relationship $1,000,000, Min fee $10,000.
+    *   `05_fee_schedule.md` (April 1, 2026) states: Min relationship $1,000,000, Min fee $10,000.
+    *   `06_policy_update_memo.md` (August 17, 2026) updates fee breakpoints but explicitly says "The rates and breakpoints of the first three tiers are unchanged." It does not mention changing the minimums.
+    *   Since `05_fee_schedule.md` is dated April 1, 2026, and `01_brochure.md` is March 27, 2026, `05_fee_schedule.md` is slightly more recent regarding fee schedules

@@ -1,0 +1,24 @@
+*   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from a fund offering document into a specific JSON structure.
+    *   Constraints:
+        *   Accuracy is paramount. No invented terms.
+        *   Use `NOT_FOUND` if not stated.
+        *   Use `NOT_APPLICABLE` if stated as not applicable.
+        *   Amendments/Supplements supersede original text.
+        *   Report all variants (share class/tier) in one string.
+        *   Distinguish between commitment and current holding.
+        *   Citations must be section/appendix identifiers.
+        *   Quotes must be verbatim.
+        *   Output format: JSON only, no markdown, no preamble.
+
+    *   `fund_name`: Vessary Point Commodities Fund Ltd.
+    *   `fund_domicile`: Cayman Islands.
+    *   `fund_structure`: Open-ended (redeemable), standalone (not master-feeder).
+    *   `management_fee`:
+        *   Original: Class A (2.00%), Class B (1.50%).
+        *   Supplement 1: Class A (1.75%), Class B (1.25%) starting 1 Jan 2025.
+        *   Supplement 2: Class B (1.00%) starting 1 July 2025.
+        *   *Final values:* Class A: 1.75% per annum of Net Asset Value; Class B: 1.00% per annum of Net Asset Value.
+    *   `performance_fee`: Class A (20% of Net New Appreciation), Class B (15% of Net New Appreciation).
+    *   `hurdle_rate`: "No hurdle rate, preferred return or index-relative threshold applies." (Section 4.2).
+    *   `high_water_mark`: "The 'High Water Mark' of a Share is the greater of US$1,000 and the Net Asset Value per Share of its Series at the end of the most recent

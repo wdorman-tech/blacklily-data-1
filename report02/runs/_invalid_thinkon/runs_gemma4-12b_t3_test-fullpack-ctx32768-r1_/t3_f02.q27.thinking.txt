@@ -1,0 +1,46 @@
+*   Question: "Who is the owner of the business continuity plan?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not found, use "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   Document 01_brochure.md: Mentions "Business Continuity Plan" in Item 8.3 (Risk Management) and Item 15.3 (Valuation).
+    *   Document 02_compliance_manual.md: Section 1.1 mentions the Business Continuity Plan. Section 11.5 mentions the Business Continuity Plan.
+    *   Document 03_valuation_policy.md: Mentions the Business Continuity Plan in Section 1.1.
+    *   Document 04_business_continuity_plan.md: Section 2.1 "Plan Owner" specifically addresses this.
+    *   Document 05_fee_schedule.md: No mention of owner.
+    *   Document 06_policy_update_memo.md: Section 2.5 mentions the Business Continuity Plan but doesn't change the owner.
+
+    *   Document: 04_business_continuity_plan.md
+    *   Section: 2.1
+    *   Content: "The President and Chief Operating Officer, Mireille Dansby, is the owner of the Plan..."
+
+    *   Answer: Mireille Dansby
+    *   Source: 04_business_continuity_plan.md
+    *   Section: 2.1
+    *   Quote: "The President and Chief Operating Officer, Mireille Dansby, is the owner of the Plan."
+
+    *   "The President and Chief Operating Officer, Mireille Dansby, is the owner of the Plan." (Wait, the question asks "Who is the owner of the business continuity plan?").
+    *   The text says "The President and Chief Operating Officer, Mireille Dansby, is the owner of the Plan."
+    *   The "Plan" in this document is the "Business Continuity Plan".
+
+    *   Answer: Mireille Dansby
+    *   Source: 04_business_continuity_plan.md
+    *   Section: 2.1
+    *   Quote: "The President and Chief Operating Officer, Mireille Dansby, is the owner of the Plan."
+
+    *   Check for updates: Document 06_policy_update_memo.md. Section 2.5 mentions the Business Continuity Plan but does not change the owner.
+
+    *   Answer: Mireille Danszy (Wait, spelling check: Mireille Dansby).
+    *   Source: 04_business_continuity_plan.md
+    *   Section: 2.1
+    *   Quote: "The President and Chief Operating Officer, Mireille Dansby, is the owner of the Plan."
+
+    *   Wait, the question is "Who is the owner of the business continuity plan?".
+    *   The text says "The President and Chief Operating Officer, Mireille Dansby, is the owner of the Plan."
+    *   The "Plan" refers to the "Business Continuity Plan" as defined in Section 1.1.
+
+    *   Answer: Mireille Dansby
+    *   Source: 0

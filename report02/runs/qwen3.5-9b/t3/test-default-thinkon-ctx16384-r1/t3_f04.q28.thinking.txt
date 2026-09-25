@@ -1,0 +1,59 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   No guessing, no general knowledge, no "what firms like yours usually do".
+        *   Short and specific answers.
+        *   Cite document file name and section.
+        *   Quote verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "What were the results of the Firm's most recent valuation back-testing, for example the average difference between prior-day valuations and actual sale prices?"
+    *   Key information needed: Specific results of the *most recent* back-testing (e.g., average difference).
+
+3.  **Analyze the Documents:**
+    *   `03_valuation_policy.md`:
+        *   Section 7.1 Procedure: Describes the *procedure* for back-testing ("Each month, Portfolio Operations compares..."). Mentions thresholds for investigation (>2.0 points IG, >3.0 points other). Does not mention specific results of a recent test.
+        *   Section 7.2 Reporting: "Back-testing results are reported to the Committee quarterly." No specific data provided.
+    *   `06_policy_update_memo.md`:
+        *   Section 3.1 Stale Price Threshold: Discusses amendments to stale price thresholds. Does not discuss back-testing results.
+
+4.  **Evaluate Findings:**
+    *   The documents describe the *policy* and *procedure* for back-testing (frequency, thresholds, reporting cadence).
+    *   They do *not* contain specific data regarding the results of the most recent back-testing (e.g., average difference, specific numbers from a report).
+    *   Therefore, the specific detail asked for (results of the most recent test) is not in the documents.
+
+5.  **Formulate Answer:**
+    *   `answer`: NOT_IN_DOCUMENTS
+    *   `source_document`: "" (since the answer is NOT_IN_DOCUMENTS)
+    *   `section`: "" (since the answer is NOT_IN_DOCUMENTS)
+    *   `quote`: "" (since the answer is NOT_IN_DOCUMENTS)
+
+6.  **Verify Constraints:**
+    *   JSON object only.
+    *   No markdown fences.
+    *   Keys: "answer", "source_document", "section", "quote".
+    *   Values must be strings.
+    *   If `NOT_IN_DOCUMENTS`, the other fields should likely be empty strings based on the instruction "or "" if NOT_IN_DOCUMENTS".
+
+7.  **Final Check:**
+    *   Does any document mention specific back-testing results? No.
+    *   Does Section 7.2 say where to find them? It says they are reported quarterly, but doesn't provide the data itself in this text.
+    *   Conclusion: Information is missing.
+
+8.  **Construct JSON:**
+    ```json
+    {
+      "answer": "NOT_IN_DOCUMENTS",
+      "source_document": "",
+      "section": "",
+      "quote": ""
+    }
+    ```
+    Wait

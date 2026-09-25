@@ -1,0 +1,22 @@
+{
+  "management_fee": {
+    "calculation_method": "2.50% per annum of aggregate Capital Commitments of non-affiliated Limited Partners for Years 1-5; then reduced by 0.25% each year starting Year 6, with a floor of 1.50%.",
+    "payment_frequency": "Semi-annually in advance on the first Business Day of each January and July.",
+    "offsets": "100% of Fee Income from preceding period, placement fees, and Organizational Expenses exceeding $750,000.",
+    "exclusions": "No fee for GP Commitment or Affiliated Limited Partner Capital Commitments."
+  },
+  "distribution_waterfall": {
+    "step_1_return_of_capital": "100% to Limited Partners until they receive their full Capital Contributions (including fees and expenses).",
+    "step_2_80_20_split": "80% to Limited Partners and 20% to General Partner until the Step-Up Threshold is reached.",
+    "step_3_75_25_split": "75% to Limited Partners and 25% to General Partner after the Step-Up Threshold is reached.",
+    "step_up_threshold": "3.0x the aggregate Capital Commitments of non-affiliated Limited Partners."
+  },
+  "key_provisions": {
+    "preferred_return": "None",
+    "catch_up_provision": "None",
+    "clawback": "GP must refund excess Carried Interest if distributions exceeded the amount they would have received under the waterfall.",
+    "high_water_mark": "None",
+    "governing_law": "Delaware",
+    "organization_expenses_cap": "$750,000"
+  }
+}

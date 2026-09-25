@@ -1,0 +1,30 @@
+*   Question: "How frequently are advisory fees billed, and on what asset value are they calculated?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in docs, use NOT_IN_DOCUMENTS.
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section 5.2 Billing Method: "Fees are billed quarterly in advance, based on the market value of the assets in each account on the last business day of the preceding calendar quarter."
+    *   `05_fee_schedule.md` (April 1, 2026):
+        *   Section 5.1 Frequency and Basis: "Wealth management and Fixed Income Mandate fees are billed quarterly in advance, based on the Billing Value of each account on the last business day of the preceding calendar quarter."
+        *   Section 1.2 Definitions: "Billing Value" means the value of Billable Assets as reported by the custodian or, for assets the custodian does not price and for Level 3 assets such as private fund interests, as determined under the Firm's Valuation Policy, including accrued interest.
+    *   `06_policy_update_memo.md` (August 17, 2026):
+        *   This memo updates the *rates* and *breakpoints* in the fee schedule, but does it change the *frequency* or *basis* of calculation?
+        *   Section 5. FEE SCHEDULE: TOP BREAKPOINT: "The 0.35% rate now applies to household assets above $7,500,000... The rates and breakpoints of the first three tiers are unchanged." It doesn't mention changing the billing frequency or the definition of "Billing Value".
+
+    *   The question asks for "frequency" and "asset value".
+    *   `05_fee_schedule.md` is dated April 1, 2026.
+    *   `01_brochure.md` is dated March 27, 2026.
+    *   Since `05_fee_schedule.md` is later than `01_brochure.md`, its content regarding "Billing Value" and "quarterly in advance" is the current policy.
+    *   `06_policy_update_memo.md` (August 17, 2026) is the latest document. It updates the *rates* but doesn't mention the billing frequency or the definition of "Billing Value".
+
+    *   Frequency: "quarterly in advance"
+    *   Basis: "Billing Value of each account on the last business day of the preceding calendar quarter"
+    *   Definition of "Billing Value": "the value of Billable Assets as reported by the custodian or, for assets the custodian does not price and for Level 3 assets such as private fund interests, as determined under the Firm's Valuation Policy, including accrued interest."
+
+    *   The question asks "on what asset value are they calculated?".
+    *   `05_fee_schedule.md` Section 5.1 says "based on the Billing Value of each account on the last business day of the preceding calendar quarter."
+    

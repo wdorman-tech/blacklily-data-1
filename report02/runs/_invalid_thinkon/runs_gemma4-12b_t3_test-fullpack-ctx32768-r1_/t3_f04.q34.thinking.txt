@@ -1,0 +1,39 @@
+*   Question: "Who is the Firm's Chief Compliance Officer, and to whom does the CCO report?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "01_brochure.md":
+        *   Section 1.1: "please contact Priya Castellane, Chief Compliance Officer, at (860) 555-0148."
+    *   "02_compliance_manual.md":
+        *   Section 2.1: "The Management Committee has designated Priya Castellane as the Firm's CCO."
+        *   Section 2.2: "The CCO reports directly to the Chief Executive Officer, Colette Varnum..."
+    *   "03_valuation_policy.md":
+        *   Section 2.1: "The Chief Compliance Officer, Priya Castellane..."
+    *   "04_business_continuity_plan.md":
+        *   Section 1.2: "...the Chief Compliance Officer, Priya Castellane..."
+    *   "05_fee_schedule.md": (No mention of CCO name/reporting)
+    *   "06_policy_update_memo.md":
+        *   "From: Priya Castellane, Chief Compliance Officer"
+
+    *   The question asks for the name of the CCO and who they report to.
+    *   Name: Priya Castellane.
+    *   Reporting line: The Chief Executive Officer, Colette Varnum.
+
+    *   "01_brochure.md" mentions the name but not the reporting line.
+    *   "02_compliance_manual.md" contains both the name and the reporting line.
+    *   "06_policy_update_memo.md" is a later-dated document (August 14, 2026) compared to the Compliance Manual (January 15, 2026). However, the memo doesn't change the reporting line, it just confirms the CCO's identity.
+
+    *   "02_compliance_manual.md" Section 2.1: "The Management Committee has designated Priya Castellane as the Firm's CCO."
+    *   "02_compliance_manual.md" Section 2.2: "The CCO reports directly to the Chief Executive Officer, Colette Varnum..."
+
+    *   Answer: Priya Castellane; the CCO reports directly to the Chief Executive Officer, Colette Varnum.
+    *   Source: 02_compliance_manual.md
+    *   Section: 2.1 and 2.2 (or just 2.1 and 2.2 combined).
+    *   Quote: "The Management Committee has designated Priya Castellane as the Firm's CCO." and "The CCO reports directly to the Chief Executive Officer, Colette Varnum..."
+
+    *   "02_compliance_manual.md" Section 2.1: "The Management Committee has designated Priya Castellane as the Firm's CCO."
+    *   "02_compliance_manual.md" Section 2.2:

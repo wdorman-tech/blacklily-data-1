@@ -1,0 +1,456 @@
+{
+  "doc_id": "t1_d06",
+  "doc_title": "Fenwright Colquist Capital Partners III, L.P. Amended and Restated Agreement of Limited Partnership with First Amendment",
+  "doc_type": "LPA",
+  "difficulty": "adversarial",
+  "notes": "A buyout fund LPA whose body terms for the post-investment-period management fee, the Key Persons and the Term extensions are each replaced by a First Amendment appended at the end and dated about 14 months later; the amendment restates only the changed clauses by cross-reference, so the reader must splice them into the body. The redemption group and the prime broker are expressly excluded, while nearby notice periods (10 Business Days for drawdowns, 30 days for transfers) invite fabricated values. The high-water mark is expressly disclaimed in favour of a cumulative whole-fund waterfall.",
+  "traps": {
+    "management_fee": "The body sets 1.50% of Invested Capital after the Investment Period, but Appendix A Section S-3 replaces it with 1.25% of Net Invested Capital (net of permanent write-downs); the Investment Period rate of 1.75% of commitments is unchanged.",
+    "key_man_provision": "The body names Graham Oduya and Celia Brandvold, but Brandvold departed and Appendix A Section S-2 names Graham Oduya and Tomas Wexcombe as the current Key Persons.",
+    "fund_term": "The body allows three one-year extensions (first at GP discretion, second and third with Advisory Committee consent), but Appendix A Section S-4 allows only two, each requiring consent of a Majority in Interest of the Limited Partners.",
+    "lockup_period": "Section 3.5 states Limited Partners have no right to withdraw or redeem, so no lock-up exists; the answer is NOT_APPLICABLE (a statement that capital stays in, or is locked in, the Partnership for its whole life is tolerated), and any hard or soft lock of a stated period is a fabrication.",
+    "redemption_frequency": "Section 3.5 states there are no redemption dates or redemption procedure; the answer is NOT_APPLICABLE.",
+    "redemption_notice_days": "There is no redemption notice; the 10 Business Day drawdown notice and 30 day transfer notice are not redemption notice periods.",
+    "gate_provision": "With no redemption right there is no gate; the answer is NOT_APPLICABLE.",
+    "prime_broker": "Section 7.3 states the Partnership does not engage a prime broker; the custodian banks are not a prime broker.",
+    "high_water_mark": "Section 5.4 states the Carried Interest is not subject to a high-water mark or loss carryforward account; losses are absorbed by the cumulative whole-fund waterfall and clawback."
+  },
+  "fields": {
+    "fund_name": {
+      "expected": "Fenwright Colquist Capital Partners III, L.P.",
+      "citation": "Section 2.1",
+      "quote": "The name of the Partnership is \"Fenwright Colquist Capital Partners III, L.P.\"",
+      "accept": [
+        "fenwright colquist capital partners iii,? l\\.?\\s?p\\b",
+        "fenwright colquist capital partners iii,? (a )?(delaware )?limited partnership"
+      ],
+      "partial": [
+        "fenwright colquist capital partners iii\\b(?! \\(cayman\\))"
+      ],
+      "reject": {
+        "WRONG_ENTITY_parallel_fund": [
+          "^(?!.*partners iii,? l\\.?\\s?p).*partners iii \\(cayman\\)"
+        ],
+        "WRONG_ENTITY_general_partner": [
+          "^(?!.*capital partners iii,? l\\.?\\s?p).*gp iii"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "fund_domicile": {
+      "expected": "Delaware (Delaware limited partnership)",
+      "citation": "Section 2.1",
+      "quote": "The Partnership is a limited partnership organized under the laws of the State of Delaware.",
+      "accept": [
+        "delaware"
+      ],
+      "reject": {
+        "WRONG_ENTITY_parallel_fund_domicile": [
+          "^(?!.*delaware).*cayman"
+        ],
+        "HALLUCINATED_office_location": [
+          "^(?!.*delaware).*north carolina"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "fund_structure": {
+      "expected": "Closed-end (drawdown) limited partnership: capital is called against commitments and Limited Partners have no redemption rights; not master-feeder (a Cayman parallel fund invests alongside it)",
+      "citation": "Section 3.5",
+      "quote": "The Interests are not redeemable at the option of the holder at any time.",
+      "accept": [
+        "^(?:(?!.*master[- /]?feeder)|(?=.*\\b(not|no|non|neither|nor|isn't|rather than|without)\\b[^.;,]{0,25}master[- /]?feeder)|(?=.*master[- /]?feeder( structure)?\\s*([:?-]\\s*|is\\s+|was\\s+)?\\(?(no|none|not|n/a|false|isn't|wasn't)\\b)).*(closed[- ]?end|draw[- ]?down|capital calls?|called against commitments|non[- ]redeemable|not redeemable|no redemption|commitments? (are )?called)"
+      ],
+      "reject": {
+        "HALLUCINATED_open_end": [
+          "^(?!.*(closed|draw[- ]?down|not redeemable|non[- ]redeemable)).*(open[- ]end|evergreen)"
+        ],
+        "HALLUCINATED_master_feeder": [
+          "^(?!.*\\b(not|no|non|neither|nor|isn't|rather than|without)\\b[^.;,]{0,25}master[- /]?feeder)(?!.*master[- /]?feeder( structure)?\\s*([:?-]\\s*|is\\s+|was\\s+)?\\(?(no|none|not|n/a|false|isn't|wasn't)\\b).*master[- /]?feeder"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "management_fee": {
+      "expected": "1.75% per annum of Capital Commitments during the Investment Period; thereafter, as amended by the First Amendment, 1.25% per annum of Net Invested Capital (Invested Capital reduced by permanent write-downs and write-offs); payable quarterly in advance and reduced by 100% of Fee Income",
+      "citation": "Section 4.1 and Appendix A, Section S-3",
+      "quote": "one-quarter of one and one-quarter percent (1.25%) (that is, 0.3125%) of such Limited Partner's share of Net Invested Capital",
+      "accept": [
+        "^(?=.*(1\\.75\\s*(%|percent|per cent)|175\\s*(bps|basis points)|one and three[- ]quarters? (percent|per cent)))(?=.*commit(ment|ted))(?=.*(1\\.25\\s*(%|percent|per cent)|125\\s*(bps|basis points)|one and one[- ]quarter (percent|per cent)))(?=.*(net invested capital|write[- ]?downs?|write[- ]?offs?|written[- ]?(down|off)|net of (any |all )?(permanent )?(write|impair)|permanent(ly)? impair)).*"
+      ],
+      "partial": [
+        "^(?=.*(1\\.75\\s*(%|percent|per cent)|175\\s*(bps|basis points)|one and three[- ]quarters? (percent|per cent)))(?=.*(1\\.25\\s*(%|percent|per cent)|125\\s*(bps|basis points)|one and one[- ]quarter (percent|per cent))).*"
+      ],
+      "reject": {
+        "STALE_post_investment_period_rate": [
+          "^(?!.*(1\\.25\\s*(%|percent|per cent)|125\\s*(bps|basis points)|one and one[- ]quarter (percent|per cent))).*(1\\.50?\\s*(%|percent|per cent)|150\\s*(bps|basis points)|one and one[- ]half (percent|per cent))"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": true,
+      "trap_type": "supersession"
+    },
+    "performance_fee": {
+      "expected": "20% carried interest to the General Partner after return of all contributed capital and the 8% preferred return, with a 100% General Partner catch-up; whole-fund (cumulative) waterfall with a General Partner clawback",
+      "citation": "Section 5.3",
+      "quote": "twenty percent (20%) to the General Partner",
+      "accept": [
+        "((?<![\\d.])20(\\.0+)?\\s*(%|percent|per cent)|twenty (percent|per cent)|80\\s*/\\s*20)"
+      ],
+      "reject": {
+        "HALLUCINATED_other_rate": [
+          "^(?!.*((?<![\\d.])20(\\.0+)?\\s*(%|percent|per cent)|twenty (percent|per cent)|80\\s*/\\s*20)).*(?<![\\d.])(10|15|25|30)(\\.0+)?\\s*(%|percent|per cent)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "hurdle_rate": {
+      "expected": "8% per annum preferred return, compounded annually, on Capital Contributions, followed by a 100% (full) General Partner catch-up",
+      "citation": "Section 1.1 and Section 5.3",
+      "quote": "a return of eight percent (8%) per annum, compounded annually",
+      "accept": [
+        "^(?!.*\\b(no|without( a| any)?|excluding) (gp |general partner )?catch[- ]?up)(?=.*((?<![\\d.])8(\\.0+)?\\s*(%|percent|per cent)|eight (percent|per cent))).*catch[- ]?up",
+        "^(?!.*\\b(no|without( a| any)?|excluding) (gp |general partner )?catch[- ]?up)(?=.*((?<![\\d.])8(\\.0+)?\\s*(%|percent|per cent)|eight (percent|per cent))).*100\\s*(%|percent|per cent) (of (all )?(further |subsequent )?distributions )?to (the )?(gp|general partner)"
+      ],
+      "partial": [
+        "^(?!.*\\b(no|without( a| any)?|excluding) (gp |general partner )?catch[- ]?up).*((?<![\\d.])8(\\.0+)?\\s*(%|percent|per cent)|eight (percent|per cent))"
+      ],
+      "reject": {
+        "HALLUCINATED_no_catch_up": [
+          "\\b(no|without( a)?) (gp |general partner )?catch[- ]?up"
+        ],
+        "HALLUCINATED_other_rate": [
+          "^(?!.*((?<![\\d.])8(\\.0+)?\\s*(%|percent|per cent)|eight (percent|per cent))).*(?<![\\d.])(6|7|9|10)(\\.0+)?\\s*(%|percent|per cent)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "high_water_mark": {
+      "expected": "NOT_APPLICABLE: no high-water mark or loss carryforward account; carried interest is calculated cumulatively over the life of the Partnership (whole-fund waterfall) with a General Partner clawback",
+      "citation": "Section 5.4",
+      "quote": "is not subject to a high-water mark, loss carryforward account or similar mechanism",
+      "accept": [
+        "not[_ ]applicable",
+        "\\bn/?a\\b",
+        "not[_ ]found",
+        "\\bnone\\b",
+        "^\\s*no\\.?\\s*$",
+        "\\bno (high[- ]water|hwm|loss carry[- ]?forward)",
+        "\\bno (?!reset)([a-z-]+ ){0,3}(high[- ]water|hwm|loss carry)",
+        "not subject to (a |an |any )?(high[- ]water|hwm|loss carry)",
+        "(does not|doesn't|do not|don't) (impose|provide|contain|apply|use|have|include|maintain)",
+        "not (stated|mentioned|specified|provided|included|addressed)",
+        "exclud|disclaim",
+        "whole[- ]fund",
+        "cumulative(ly)?[^.;]{0,40}(waterfall|basis over the life|whole|over the life of the (fund|partnership))",
+        "european"
+      ],
+      "reject": {
+        "HALLUCINATED_hwm_applies": [
+          "^(?!.*(\\bno\\b|\\bnot\\b|without|n/a|\\bnone\\b|never|whole[- ]fund|cumulative)).*(high[- ]water|hwm|loss carry[- ]?forward)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    },
+    "minimum_initial_investment": {
+      "expected": "$5,000,000 minimum Capital Commitment (the General Partner may accept lesser amounts)",
+      "citation": "Section 3.2",
+      "quote": "The minimum Capital Commitment of a Limited Partner is $5,000,000",
+      "accept": [
+        "((?<![\\d,.])5,000,000|(?<![\\d.])5(\\.0+)?\\s*(million|mm|m)\\b|(?<!twenty[- ])(?<!twenty)five million)"
+      ],
+      "reject": {
+        "HALLUCINATED_other_threshold": [
+          "^(?!.*((?<![\\d,.])5,000,000|(?<![\\d.])5(\\.0+)?\\s*(million|mm|m)\\b|(?<!twenty[- ])(?<!twenty)five million)).*((25,000,000|(?<![\\d.])25(\\.0+)?\\s*(million|mm|m)\\b|twenty[- ]five million)|50,000,000|(?<![\\d.])50\\s*(million|mm|m)\\b|900,000,000|900\\s*million|712,500,000|712\\.5)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "lockup_period": {
+      "expected": "NOT_APPLICABLE: closed-end partnership; Limited Partners have no right to withdraw or redeem their Interests, so no lock-up applies",
+      "citation": "Section 3.5",
+      "quote": "The Interests are not redeemable at the option of the holder at any time.",
+      "accept": [
+        "not[_ ]applicable",
+        "\\bn/?a\\b",
+        "not[_ ]found",
+        "not (stated|specified|provided|addressed|mentioned|included|contained|present|disclosed)",
+        "\\bnone\\b",
+        "^\\s*(no|never)\\.?\\s*$",
+        "\\bno (voluntary |such |express )?(right|rights|redemption|redemptions|withdrawal|withdrawals|lock[- ]?up|gate|notice|liquidity)",
+        "\\bno such (provision|term|right|feature|mechanism)",
+        "not (redeemable|permitted|entitled|available|offered)",
+        "(may|can)(not| not) (withdraw|redeem|be redeemed)",
+        "(does not|doesn't|do not|don't) (permit|provide|offer|allow|have|impose|apply|maintain|contain|include|grant)",
+        "closed[- ]end",
+        "^(?!.*\\b(hard|soft)\\b.*lock).*(life|term|duration) of the (fund|partnership)",
+        "^(?!.*\\b(\\d+|one|two|three|five|six|seven|eight|ten|twelve|eighteen)[- ]?(months?|years?)\\b).*(?<!soft )(?<!soft-)\\block[^.;]{0,40}\\b(life|term|duration) of the (fund|partnership)"
+      ],
+      "reject": {
+        "HALLUCINATED_lockup": [
+          "^(?!.*(not[_ ]applicable|\\bn/?a\\b|not[_ ]found|\\bnone\\b|\\bno\\b|\\bnot\\b|cannot|closed[- ]end)).*(\\b(hard|soft)\\b.*lock|\\b(\\d+|one|two|three|five|twelve)[- ]?(month|year)s?\\b)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    },
+    "redemption_frequency": {
+      "expected": "NOT_APPLICABLE: Limited Partners have no right to withdraw or redeem at any time",
+      "citation": "Section 3.5",
+      "quote": "The Partnership does not maintain redemption dates or a redemption procedure",
+      "accept": [
+        "not[_ ]applicable",
+        "\\bn/?a\\b",
+        "not[_ ]found",
+        "not (stated|specified|provided|addressed|mentioned|included|contained|present|disclosed)",
+        "\\bnone\\b",
+        "^\\s*(no|never)\\.?\\s*$",
+        "\\bno (voluntary |such |express )?(right|rights|redemption|redemptions|withdrawal|withdrawals|lock[- ]?up|gate|notice|liquidity)",
+        "\\bno such (provision|term|right|feature|mechanism)",
+        "not (redeemable|permitted|entitled|available|offered)",
+        "(may|can)(not| not) (withdraw|redeem|be redeemed)",
+        "(does not|doesn't|do not|don't) (permit|provide|offer|allow|have|impose|apply|maintain|contain|include|grant)",
+        "closed[- ]end"
+      ],
+      "reject": {
+        "HALLUCINATED_frequency": [
+          "^(?!.*(not[_ ]applicable|\\bn/?a\\b|not[_ ]found|\\bnone\\b|\\bno\\b|\\bnot\\b|cannot|closed[- ]end)).*\\b(monthly|quarterly|semi[- ]?annual(ly)?|annual(ly)?|daily|weekly)\\b"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    },
+    "redemption_notice_days": {
+      "expected": "NOT_APPLICABLE: no redemption right, so no redemption notice period",
+      "citation": "Section 3.5",
+      "quote": "no right of redemption or withdrawal shall be implied from any provision of this Agreement",
+      "accept": [
+        "not[_ ]applicable",
+        "\\bn/?a\\b",
+        "not[_ ]found",
+        "not (stated|specified|provided|addressed|mentioned|included|contained|present|disclosed)",
+        "\\bnone\\b",
+        "^\\s*(no|never)\\.?\\s*$",
+        "\\bno (voluntary |such |express )?(right|rights|redemption|redemptions|withdrawal|withdrawals|lock[- ]?up|gate|notice|liquidity)",
+        "\\bno such (provision|term|right|feature|mechanism)",
+        "not (redeemable|permitted|entitled|available|offered)",
+        "(may|can)(not| not) (withdraw|redeem|be redeemed)",
+        "(does not|doesn't|do not|don't) (permit|provide|offer|allow|have|impose|apply|maintain|contain|include|grant)",
+        "closed[- ]end"
+      ],
+      "reject": {
+        "HALLUCINATED_drawdown_notice": [
+          "^(?!.*(not[_ ]applicable|\\bn/?a\\b|not[_ ]found|\\bnone\\b|\\bno\\b|\\bnot\\b|cannot|closed[- ]end)).*\\b(10|ten)\\b.*business day"
+        ],
+        "HALLUCINATED_transfer_or_other_notice": [
+          "^(?!.*(not[_ ]applicable|\\bn/?a\\b|not[_ ]found|\\bnone\\b|\\bno\\b|\\bnot\\b|cannot|closed[- ]end)).*\\b(\\d+|thirty|sixty|ninety|forty[- ]five)\\b\\s*(\\(\\d+\\)\\s*)?(calendar |business )?days?\\b"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    },
+    "gate_provision": {
+      "expected": "NOT_APPLICABLE: no redemption right, so no gate",
+      "citation": "Section 3.5",
+      "quote": "No Limited Partner shall have the right to withdraw from the Partnership, to withdraw or redeem all or any portion of its Interest or its Capital Account",
+      "accept": [
+        "not[_ ]applicable",
+        "\\bn/?a\\b",
+        "not[_ ]found",
+        "not (stated|specified|provided|addressed|mentioned|included|contained|present|disclosed)",
+        "\\bnone\\b",
+        "^\\s*(no|never)\\.?\\s*$",
+        "\\bno (voluntary |such |express )?(right|rights|redemption|redemptions|withdrawal|withdrawals|lock[- ]?up|gate|notice|liquidity)",
+        "\\bno such (provision|term|right|feature|mechanism)",
+        "not (redeemable|permitted|entitled|available|offered)",
+        "(may|can)(not| not) (withdraw|redeem|be redeemed)",
+        "(does not|doesn't|do not|don't) (permit|provide|offer|allow|have|impose|apply|maintain|contain|include|grant)",
+        "closed[- ]end"
+      ],
+      "reject": {
+        "HALLUCINATED_gate": [
+          "^(?!.*(not[_ ]applicable|\\bn/?a\\b|not[_ ]found|\\bnone\\b|\\bno\\b|\\bnot\\b|cannot|closed[- ]end)).*((?<![\\d.])\\d+(\\.\\d+)?\\s*(%|percent|per cent)|gate of|investor[- ]level|fund[- ]level)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    },
+    "key_man_provision": {
+      "expected": "Key Persons are Graham Oduya and Tomas Wexcombe (Wexcombe replaced Celia Brandvold under the First Amendment). If either Key Person dies, becomes permanently disabled, ceases to be a managing member of the General Partner or ceases to devote substantially all business time during the Investment Period, the Investment Period is automatically suspended; it resumes only if within 180 days a Majority in Interest reinstates it or consents to an Advisory Committee approved replacement, and otherwise terminates",
+      "citation": "Section 6.3 and Appendix A, Section S-2",
+      "quote": "are Graham Oduya and Tomas Wexcombe",
+      "accept": [
+        "^(?=.*oduya)(?=.*wexcombe).*(suspen|terminat|paus|halt|stop|freez|no new (portfolio )?investments|cease[sd]? (making )?(new )?investments)"
+      ],
+      "partial": [
+        "^(?=.*oduya)(?=.*wexcombe).*"
+      ],
+      "reject": {
+        "STALE_departed_key_person": [
+          "^(?!.*wexcombe).*brandvold"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": true,
+      "trap_type": "supersession"
+    },
+    "gp_commitment": {
+      "expected": "At least 2% of the aggregate Capital Commitments of all Partners and all Parallel Fund partners, made by the General Partner and its Affiliates and funded in cash pro rata (not through a management fee waiver)",
+      "citation": "Section 3.3",
+      "quote": "not less than two percent (2%) of the aggregate Capital Commitments of all Partners and all partners of the Parallel Funds",
+      "accept": [
+        "^(?=.*((?<![\\d.])2(\\.0+)?\\s*(%|percent|per cent)|two (percent|per cent))).*(commit|fund size|total capital|aggregate|fund)"
+      ],
+      "partial": [
+        "14,250,000|14\\.25\\s*(million|mm|m)\\b",
+        "((?<![\\d.])2(\\.0+)?\\s*(%|percent|per cent)|two (percent|per cent))"
+      ],
+      "reject": {
+        "HALLUCINATED_other_pct": [
+          "^(?!.*((?<![\\d.])2(\\.0+)?\\s*(%|percent|per cent)|two (percent|per cent))).*(?<![\\d.])(0\\.5|1|1\\.5|3|5)(\\.0+)?\\s*(%|percent|per cent)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "fund_term": {
+      "expected": "Ten years from the Final Closing Date (expiring December 16, 2034), extendable for up to two successive one-year periods, each only with the prior written consent of a Majority in Interest of the Limited Partners (as amended by the First Amendment)",
+      "citation": "Section 2.3 and Appendix A, Section S-4",
+      "quote": "the Term may be extended for up to two (2) successive periods of one (1) year each to permit the orderly Disposition of Portfolio Investments, each such extension only with the prior written consent of a Majority in Interest of the Limited Partners",
+      "accept": [
+        "^(?=.*(\\b(10|ten)(th)?\\b|2034))(?=.*\\b(two|2|twice)\\b).*((?<!super)majority[- ]in[- ]interest|(?<!super)majority( \\([^)]{0,30}\\))? of (the )?(limited partners?(?!'?s?'? advisory)|lps?\\b(?!'?s?'? advisory)|investors|interests|lp interests|commitments)|(lps?|limited partners?|investors?)'?s?'? majority|(?<!super)majority[- ](lp|limited partner|investor)s?\\b|(more than|over|in excess of|greater than|>)\\s*(50|fifty)\\s*(%|percent|per cent))"
+      ],
+      "partial": [
+        "^(?!.*(advisory committee|lpac|discretion))(?=.*(\\b(10|ten)(th)?\\b|2034))(?=.*\\b(two|2|twice)\\b).*(extension|extend|one[- ]year|1[- ]year)"
+      ],
+      "reject": {
+        "STALE_three_extensions": [
+          "^(?!.*\\b(two|2|twice)\\b[^.;]{0,40}(extension|one[- ]year|1[- ]year|additional|successive|consecutive)).*\\b(three|3)\\b[^.;]{0,40}(extension|one[- ]year|1[- ]year|additional|successive|consecutive)"
+        ],
+        "STALE_extension_consent": [
+          "^(?!.*majority)(?=.*\\b(two|2|twice)\\b).*(advisory committee|lpac|discretion)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": true,
+      "trap_type": "supersession"
+    },
+    "auditor": {
+      "expected": "Aldwin Treloar LLP",
+      "citation": "Section 7.1",
+      "quote": "audited as of the end of each fiscal year by Aldwin Treloar LLP",
+      "accept": [
+        "aldwin treloar"
+      ],
+      "reject": {
+        "WRONG_PROVIDER": [
+          "^(?!.*aldwin).*(kinnaird|pellow|varley)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "administrator": {
+      "expected": "Kinnaird Stroud Fund Services, LLC",
+      "citation": "Section 7.2",
+      "quote": "The General Partner has engaged Kinnaird Stroud Fund Services, LLC",
+      "accept": [
+        "kinnaird stroud"
+      ],
+      "reject": {
+        "WRONG_PROVIDER": [
+          "^(?!.*kinnaird).*(aldwin|pellow|varley|fenwright colquist management)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "prime_broker": {
+      "expected": "NOT_APPLICABLE: the Partnership does not engage a prime broker",
+      "citation": "Section 7.3",
+      "quote": "The Partnership does not engage a prime broker",
+      "accept": [
+        "not[_ ]applicable",
+        "\\bn/?a\\b",
+        "not[_ ]found",
+        "not (stated|specified|named|disclosed|mentioned|included|identified|provided|addressed)",
+        "\\bnone\\b",
+        "^\\s*(no|never)\\.?\\s*$",
+        "\\bno prime broker",
+        "\\bno such (provision|term|service provider|arrangement)",
+        "(does not|doesn't|do not|don't) (engage|use|have|retain|appoint|employ|maintain|contain|include)",
+        "(has not|have not|hasn't|haven't|is not|not) (been )?(engaged|appointed|retained|used|employed)"
+      ],
+      "reject": {
+        "HALLUCINATED_prime_broker": [
+          "^(?!.*(\\bno\\b|\\bnot\\b|\\bnone\\b|n/a)).*(kinnaird|aldwin|pellow|varley|bank|custodian)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    },
+    "legal_counsel": {
+      "expected": "Pellow Ashdown LLP (counsel to the Partnership, the General Partner and the Manager)",
+      "citation": "Section 7.5",
+      "quote": "Pellow Ashdown LLP (\"Fund Counsel\") acts as counsel to the Partnership, the General Partner and the Manager",
+      "accept": [
+        "^(?!(?!.*(committee|lpac)).*varley).*pellow ashdown"
+      ],
+      "partial": [
+        "pellow ashdown"
+      ],
+      "reject": {
+        "WRONG_ROLE_advisory_committee_counsel": [
+          "^(?!.*pellow).*varley"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "mfn_election": {
+      "expected": "Yes: each Limited Partner with a Capital Commitment of $25,000,000 or more (aggregated with Affiliates and investors under the same discretionary adviser) may elect, within 30 days of receiving the side letters delivered within 45 days after the Final Closing Date, the benefit of any side letter right granted to an investor with an equal or smaller commitment; excluded are status-based legal, tax and regulatory rights, Advisory Committee seats or observer rights, co-investment rights, consents to affiliate transfers and notice delivery, and rights granted to GP-affiliated Limited Partners",
+      "citation": "Section 12.2",
+      "quote": "is equal to or greater than $25,000,000",
+      "accept": [
+        "^(?!\\s*(no|none)\\b)(?!.*\\bno (mfn|most[- ]favou?red)\\b)(?!.*\\b(mfn|most[- ]favou?red nation)( election)? (is |was )?not (offered|available|provided)).*(25,000,000|(?<![\\d.])25(\\.0+)?\\s*(million|mm|m)\\b|twenty[- ]five million)"
+      ],
+      "partial": [
+        "^(?!.*(50,000,000|(?<![\\d.])50(\\.0+)?\\s*(million|mm|m)\\b|fifty million|(?<![\\d,.])5,000,000|(?<![\\d.])5(\\.0+)?\\s*(million|mm|m)\\b|(?<!twenty-)(?<!twenty )five million))(?!.*\\bno (mfn|most)).*(mfn|most[- ]favou?red|side letter).*(elect|offered|entitled|available|yes)"
+      ],
+      "reject": {
+        "HALLUCINATED_no_mfn": [
+          "^(?!.*(25,000,000|(?<![\\d.])25(\\.0+)?\\s*(million|mm|m)\\b|twenty[- ]five million)).*(no mfn|not offered|not[_ ]found|not[_ ]applicable|\\bnone\\b)"
+        ],
+        "WRONG_THRESHOLD_lpac_seat_or_minimum": [
+          "^(?!.*(25,000,000|(?<![\\d.])25(\\.0+)?\\s*(million|mm|m)\\b|twenty[- ]five million)).*(50,000,000|(?<![\\d.])50\\s*(million|mm|m)\\b|((?<![\\d,.])5,000,000|(?<![\\d.])5(\\.0+)?\\s*(million|mm|m)\\b|five million))"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    }
+  }
+}

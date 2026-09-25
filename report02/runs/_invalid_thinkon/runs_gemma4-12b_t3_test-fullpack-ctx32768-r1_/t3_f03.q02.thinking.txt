@@ -1,0 +1,31 @@
+*   Question: "When was the firm's most recent external penetration test completed, and what were its principal findings?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "penetration test"
+    *   "external penetration test"
+    *   "security"
+    *   "audit"
+
+    *   `01_brochure.md`: Mentions "Cybersecurity and Operational Risk" in Item 8.3, but no specific dates or findings for a penetration test.
+    *   `02_compliance_manual.md`: Section 11.4 "Vulnerability Management and Penetration Testing" states: "Ostler Vane Security Testing, LLC performs an external penetration test annually, and its findings are reported to the Management Committee with a remediation plan and target dates tracked by the ISO." No specific date or findings are listed here.
+    *   `03_valuation_policy.md`: No mention of penetration tests.
+    *   `04_business_continuity_plan.md`: Section 6.2 "Most Recent Tests" mentions: "The most recent full-scale test was conducted on November 14, 2025... One deficiency was identified: printers at the alternate site had not been mapped to the Firm's standard image. It was remediated by Pellow Stack IT, LLC by December 5, 2025. The most recent tabletop exercise was conducted on March 19, 2026 and addressed a ransomware scenario..."
+    *   `05_fee_schedule.md`: No mention of penetration tests.
+    *   `06_policy_update_memo.md`: Mentions updates to the BCP, but doesn't provide specific dates for penetration tests.
+
+    *   The question asks for the date of the *most recent external penetration test* and its *principal findings*.
+    *   `02_compliance_manual.md` Section 11.4 says it's performed "annually" but doesn't give a date or findings.
+    *   `04_business_continuity_plan.md` Section 6.2 describes "full-scale" and "tabletop" tests, but these are BCP tests, not specifically "external penetration tests" as defined in the Compliance Manual.
+    *   The question specifically asks for the "external penetration test" (which is a specific term in Section 11.4 of the Compliance Manual).
+
+    *   The document `02_compliance_manual.md` Section 11.4 mentions the *frequency* (annually) and the *entity* (Ostler Vane Security Testing, LLC), but it does not provide the date of the most recent one or the specific findings.
+    *   The document `04_business_continuity_plan.md` Section 6.2 mentions "full-scale" and "tabletop" tests, but these are for the Business Continuity Plan, not the "external penetration test" mentioned in the Compliance Manual.
+
+    *   Since the specific date and findings of the *external penetration test* are not in the documents, the answer is NOT_IN_DOCUMENTS.
+
+    

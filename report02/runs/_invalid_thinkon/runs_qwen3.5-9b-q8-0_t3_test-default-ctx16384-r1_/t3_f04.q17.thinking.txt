@@ -1,0 +1,46 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones (not applicable here as only one document type is shown).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "What percentage of the Firm's total revenue is attributable to its largest client and to its five largest clients?"
+
+2.  **Scan the Documents:**
+    *   Document: `01_brochure.md` (Form ADV Part 2A: Firm Brochure, dated March 27, 2026).
+    *   Sections available:
+        *   Item 4. Advisory Business > 4.3 Client Guidelines and Restrictions
+        *   Item 7. Types of Clients > 7.1 Clients (mentions number of clients: 20 total, 12 pension, 8 insurance)
+        *   Item 7. Types of Clients > 7.2 Account Minimums
+        *   Item 10. Other Financial Industry Activities and Affiliations > 10.3 Relationships with Investment Consultants
+        *   Item 12. Brokerage Practices > 12.4 Directed Brokerage and Diverse Broker-Dealer Programs
+        *   Item 14. Client Referrals and Other Compensation > 14.1 Compensation for Client Referrals
+        *   Item 15. Custody > 15.1 Separate Accounts
+        *   Item 18. Financial Information > 18.1 Financial Condition
+
+3.  **Evaluate the Question against Documents:**
+    *   The question asks for specific revenue percentages attributed to the largest client and the five largest clients.
+    *   I need to search for keywords like "revenue", "income", "fee", "percentage", "largest client", "top clients".
+    *   Scanning Item 7.1 Clients: Mentions number of accounts (24), number of clients (20), breakdown by type (12 pension, 8 insurance). No revenue figures.
+    *   Scanning Item 18.1 Financial Condition: Mentions fee prepayment limits ($1,200), balance sheet requirement waiver, bankruptcy history. No revenue breakdown or client concentration data.
+    *   Scanning other sections: None mention financial performance, revenue attribution, or client concentration metrics regarding fees/revenue.
+
+4.  **Determine the Answer:**
+    *   The information is not present in the provided documents.
+    *   According to Rule 2: "If the documents do not answer the question... the answer is exactly NOT_IN_DOCUMENTS."
+
+5.  **Format the Output:**
+    *   JSON object.
+    *   Keys: "answer", "source_document", "section", "quote".
+    *   Values: "NOT_IN_DOCUMENTS", "", "", "".
+
+6.  **Final Verification:**
+    *   Does any section mention revenue concentration? No.
+    *   Is the answer strictly based on documents? Yes

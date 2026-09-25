@@ -1,0 +1,133 @@
+{
+  "doc_id": "t4_msft",
+  "issuer": "Microsoft Corporation",
+  "period": "quarter ended June 30, 2026",
+  "facts": [
+    {
+      "fid": "f01",
+      "importance": "core",
+      "fact": "Revenue was $90.0 billion, up 18% year over year (GAAP).",
+      "figures": ["$90.0 billion", "18%"],
+      "basis": "GAAP",
+      "quote": "Revenue was $90.0 billion and increased 18% (up 17% in constant currency)",
+      "location": "first bullet under the headline; revenue row of the constant currency reconciliation and total revenue row of the income statement",
+      "equivalent_phrasings": ["$90,007 million", "$90 billion", "up 18 percent", "18% year-over-year growth", "up from $76.4 billion", "up from $76,441 million"],
+      "common_errors": ["reporting the constant currency growth of 17% as the headline growth rate", "using fiscal year revenue of $331.8 billion (which also grew 18%) as the quarter", "using Microsoft Cloud revenue of $59.3 billion as total revenue"]
+    },
+    {
+      "fid": "f02",
+      "importance": "core",
+      "fact": "GAAP diluted earnings per share was $4.81, up 32% year over year.",
+      "figures": ["$4.81", "32%"],
+      "basis": "GAAP",
+      "quote": "Diluted earnings per share was $4.81 and increased 32% on a GAAP basis, and was $4.74 and increased 23% on a non-GAAP basis",
+      "location": "fourth bullet under the headline; diluted earnings per share row of the OpenAI reconciliation table and the income statement",
+      "equivalent_phrasings": ["diluted EPS of $4.81", "GAAP EPS of $4.81", "EPS up 32%", "up 32 percent", "up from $3.65"],
+      "common_errors": ["reporting the non-GAAP $4.74 as GAAP EPS", "using basic EPS of $4.82", "using fiscal year diluted EPS of $17.95", "using the 31% GAAP net income growth as the EPS growth rate", "labeling $4.81 as adjusted or non-GAAP"]
+    },
+    {
+      "fid": "f03",
+      "importance": "core",
+      "fact": "Non-GAAP diluted earnings per share, which excludes the impact from investments in OpenAI, was $4.74, up 23% year over year.",
+      "figures": ["$4.74", "23%"],
+      "basis": "non-GAAP",
+      "quote": "Diluted earnings per share was $4.81 and increased 32% on a GAAP basis, and was $4.74 and increased 23% on a non-GAAP basis",
+      "location": "fourth bullet under the headline; As Adjusted (non-GAAP) column of the diluted earnings per share row in the OpenAI reconciliation table",
+      "equivalent_phrasings": ["adjusted EPS of $4.74", "non-GAAP EPS of $4.74", "EPS of $4.74 excluding OpenAI", "up 23% on a non-GAAP basis", "up from $3.86 on a non-GAAP basis"],
+      "common_errors": ["labeling $4.74 as GAAP EPS", "applying the GAAP growth of 32% to the non-GAAP figure", "stating that non-GAAP results exclude the Anthropic gain (they exclude only the impact from investments in OpenAI)", "stating that non-GAAP EPS exceeds GAAP EPS (it is lower this quarter because OpenAI was a net gain of $0.07)", "using fiscal year non-GAAP EPS of $17.28"]
+    },
+    {
+      "fid": "f04",
+      "importance": "core",
+      "fact": "Azure and other cloud services revenue increased 43% year over year (within the Intelligent Cloud segment).",
+      "figures": ["43%"],
+      "basis": "GAAP",
+      "quote": "Azure and other cloud services revenue increased 43%",
+      "location": "business highlight bullet under Intelligent Cloud; Azure and other cloud services revenue row of the selected product and service constant currency reconciliation",
+      "equivalent_phrasings": ["Azure grew 43%", "Azure up 43 percent", "Azure up 43% in constant currency", "Azure growth of 43%"],
+      "common_errors": ["using the Intelligent Cloud segment growth of 32% as Azure growth", "using Microsoft Cloud growth of 27% as Azure growth", "stating Azure revenue was $39.3 billion (that is the Intelligent Cloud segment; the release gives no quarterly Azure dollar figure)", "presenting the CEO's statement that Azure surpassed $100 billion as a quarterly figure (it refers to the fiscal year)"]
+    },
+    {
+      "fid": "f05",
+      "importance": "core",
+      "fact": "GAAP operating income was $40.6 billion, up 18% year over year, growing in line with revenue.",
+      "figures": ["$40.6 billion", "18%"],
+      "basis": "GAAP",
+      "quote": "Operating income was $40.6 billion and increased 18%",
+      "location": "second bullet under the headline; operating income row of the constant currency reconciliation, income statement and segment results total",
+      "equivalent_phrasings": ["$40,603 million", "$40.6 billion of operating income", "up 18 percent", "up from $34,323 million", "up from $34.3 billion", "operating income grew at the same 18% rate as revenue"],
+      "common_errors": ["using fiscal year operating income of $155.2 billion or its 21% growth", "claiming significant operating margin expansion (margin was roughly flat at about 45%; the release states no margin figure)", "labeling operating income as non-GAAP (the OpenAI adjustment is below operating income and no non-GAAP operating income is presented)", "using a segment operating income such as Intelligent Cloud's $15,955 million"]
+    },
+    {
+      "fid": "f06",
+      "importance": "core",
+      "fact": "Microsoft Cloud revenue was $59.3 billion, up 27% year over year, the release's headline growth story.",
+      "figures": ["$59.3 billion", "27%"],
+      "basis": "GAAP",
+      "quote": "Microsoft Cloud revenue was $59.3 billion and increased 27%, and commercial remaining performance obligation increased 84% to $678 billion.",
+      "location": "first sentence under Business Highlights; CFO quote; Microsoft Cloud revenue row of the selected product and service constant currency reconciliation",
+      "equivalent_phrasings": ["$59.3 billion of Microsoft Cloud revenue", "up 27 percent", "27% year-over-year growth", "Microsoft Cloud up 27%", "up 27% in constant currency"],
+      "common_errors": ["confusing Microsoft Cloud ($59.3 billion, up 27%) with the Intelligent Cloud segment ($39.3 billion, up 32%)", "describing Microsoft Cloud as a reporting segment", "attaching Azure's 43% growth or RPO's 84% growth to Microsoft Cloud revenue"]
+    },
+    {
+      "fid": "f07",
+      "importance": "supporting",
+      "fact": "Commercial remaining performance obligation increased 84% year over year to $678 billion.",
+      "figures": ["84%", "$678 billion"],
+      "basis": "operating metric",
+      "quote": "Microsoft Cloud revenue was $59.3 billion and increased 27%, and commercial remaining performance obligation increased 84% to $678 billion.",
+      "location": "first sentence under Business Highlights; commercial remaining performance obligation row of the selected product and service constant currency reconciliation",
+      "equivalent_phrasings": ["commercial RPO of $678 billion", "commercial backlog of $678 billion", "RPO up 84 percent", "RPO rose 84%"],
+      "common_errors": ["describing the $678 billion as revenue or as annual bookings", "calling it total RPO rather than commercial RPO", "attaching the 84% growth to Microsoft Cloud revenue"]
+    },
+    {
+      "fid": "f08",
+      "importance": "supporting",
+      "fact": "Additions to property and equipment were $35,802 million in the quarter, up from $17,079 million a year earlier.",
+      "figures": ["$35,802 million", "$17,079 million"],
+      "basis": "GAAP",
+      "quote": "Additions to property and equipment | (35,802) | (17,079) | (115,948) | (64,551)",
+      "location": "investing section of the cash flows statement, additions to property and equipment row (three months ended June 30 columns)",
+      "equivalent_phrasings": ["$35.8 billion of capex", "capital expenditures of $35.8 billion", "capex of $35,802 million", "up from $17.1 billion", "capital expenditures more than doubled to $35.8 billion"],
+      "common_errors": ["using the fiscal year $115,948 million as the quarter", "using net cash used in investing of $54,831 million as capex", "presenting capex as guidance or an outlook (the release gives none)", "confusing capex with GAAP net income of $35,766 million (both round to $35.8 billion)", "citing a capex figure including finance leases, which the release does not give", "using net property and equipment of $313,076 million from the balance sheet as the quarter's spend"]
+    },
+    {
+      "fid": "f09",
+      "importance": "supporting",
+      "fact": "Discrete items versus the April 29, 2026 guidance, including a $3.2 billion gain from the investment in Anthropic, produced a net benefit of $0.27 to diluted EPS (the release does not specify a basis; none of these items is an OpenAI adjustment, so they affect GAAP and non-GAAP EPS alike).",
+      "figures": ["$3.2 billion", "$0.27"],
+      "basis": "n/a",
+      "quote": "Several discrete items impacted our financial results in the quarter when compared to our forward-looking guidance provided on April 29, 2026, resulting in a benefit of $0.27 on diluted earnings per share. These include a $3.2 billion gain from our investment in Anthropic and lower-than-expected expenses related to the Voluntary Retirement Program which were partially offset by severance expense and impairment charges in XBOX.",
+      "location": "paragraph directly after the headline bullets",
+      "equivalent_phrasings": ["a $0.27 per share benefit", "27 cents of EPS benefit from discrete items", "$3.2 billion Anthropic gain", "gain on the Anthropic investment of $3.2 billion"],
+      "common_errors": ["attributing the $3.2 billion gain to OpenAI", "stating that non-GAAP results exclude the Anthropic gain", "attributing the whole $0.27 to the Anthropic gain (it nets the gain, lower Voluntary Retirement Program expense, severance and XBOX impairments)", "treating the $0.27 as the year-over-year EPS change or subtracting it to present a company-reported underlying EPS", "describing the $0.27 as a charge rather than a benefit"]
+    },
+    {
+      "fid": "f10",
+      "importance": "supporting",
+      "fact": "More Personal Computing revenue was $12.9 billion, down 4% year over year, the only segment to decline.",
+      "figures": ["$12.9 billion", "4%"],
+      "basis": "GAAP",
+      "quote": "Revenue in More Personal Computing was $12.9 billion and decreased 4% (down 5% in constant currency), with the following business highlights:",
+      "location": "More Personal Computing paragraph under Business Highlights; More Personal Computing row of the segment revenue constant currency reconciliation",
+      "equivalent_phrasings": ["$12,854 million", "down 4 percent", "(4)%", "declined 4%", "down from $13,451 million", "down from $13.5 billion"],
+      "common_errors": ["reporting the constant currency decline of 5% as the reported rate", "using the Windows OEM and Devices decline of 7% or the XBOX content and services decline of 10% as the segment rate", "reporting the segment as growing", "using fiscal year segment revenue of $54,052 million"]
+    }
+  ],
+  "no_guidance": true,
+  "traps": [
+    "No guidance: the release says forward-looking guidance will be given on the earnings call, so any revenue, margin or capex outlook is invented; the only guidance mentioned is the April 29, 2026 guidance used as a comparison point.",
+    "GAAP vs non-GAAP: non-GAAP excludes only the impact from investments in OpenAI; this quarter that was a net gain of $480 million ($0.07 per share), so non-GAAP EPS of $4.74 is below GAAP EPS of $4.81.",
+    "Growth rates by basis: GAAP net income rose 31% and GAAP EPS 32%, while non-GAAP net income rose 22% and non-GAAP EPS 23%; the prior year had OpenAI losses, which is why non-GAAP growth is lower.",
+    "Net income is $35.8 billion GAAP and $35.3 billion non-GAAP; the dollar amounts are close and easy to swap.",
+    "The $3.2 billion Anthropic gain is not an OpenAI item and is not excluded from non-GAAP; the $0.27 benefit is measured against April guidance, not the prior year.",
+    "Constant currency is a non-GAAP measure: revenue 18% reported vs 17% cc, Intelligent Cloud 32% vs 31%, More Personal Computing down 4% vs down 5%.",
+    "Three cloud numbers: Microsoft Cloud revenue $59.3 billion up 27% (spans segments), Intelligent Cloud segment $39.3 billion up 32%, Azure and other cloud services up 43% with no dollar figure given.",
+    "Quarter vs fiscal year: the release also reports fiscal 2026 results ($331.8 billion revenue, $155.2 billion operating income, $17.95 diluted EPS); revenue grew 18% in both periods, so the growth rate alone does not reveal the mix-up.",
+    "The CEO's Azure surpassing $100 billion refers to the fiscal year, and Microsoft 365 Copilot's over 30 million paid seats is a seat count, not revenue.",
+    "Microsoft 365 Commercial cloud grew 14% reported and 16% only when adjusted for a prior-year in-period revenue recognition benefit.",
+    "Capex appears only in the cash flows statement: additions to property and equipment were $35,802 million for the quarter and $115,948 million for the fiscal year; the quarterly figure is close to GAAP net income of $35,766 million, so both round to $35.8 billion.",
+    "Capital return is $10.2 billion per the release; summing cash flow statement repurchases and dividends paid gives $11,337 million, which is not the reported figure.",
+    "Units: tables are in millions except per share amounts; $90,007 million is $90.0 billion. Basic EPS is $4.82 and diluted EPS is $4.81."
+  ]
+}

@@ -1,0 +1,41 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Which third-party vendor currently performs the firm's offsite data backups?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "offsite data backups", "vendor", "backup", "third-party".
+
+4.  **Evaluate Document Content:**
+    *   `02_compliance_manual.md`: Section 11 (Cybersecurity) and 13 (Books and Records). No mention of offsite backup vendor specifically, though it mentions Arcwell for email archiving.
+    *   `04_business_continuity_plan.md` (dated April 21, 2026):
+        *   Section 5.1 Data Backup: "Ferncastle Data Vault, Inc. performs the Firm's offsite data backups."
+        *   Section 5.2 Critical Vendors: Lists "Ferncastle Data Vault, Inc. | Offsite data backup".
+    *   `06_policy_update_memo.md` (dated September 8, 2026):
+        *   Section 6. OFFSITE DATA BACKUP VENDOR: "**Amends:** Business Continuity Plan, Section 5.1 (Data Backup) and Section 5.2 (Critical Vendors). Effective August 31, 2026... Kelvedon Cloud Recovery, Inc. replaced Ferncastle Data Vault, Inc. as the Firm's offsite data backup provider."
+        *   It states: "Kelvedon Cloud Recovery, Inc. replaces Ferncastle Data Vault, Inc. in the critical vendor list."
+
+5.  **Determine Current Status:**
+    *   The Business Continuity Plan (BCP) is dated April 21, 2026.
+    *   The Policy Update Memo is dated September 8, 2026.
+    *   Rule 3: "Later-dated documents supersede earlier ones."
+    *   The Memo explicitly amends the BCP regarding the offsite data backup vendor effective August 31, 2026.
+    *   Therefore, the current vendor is Kelvedon Cloud Recovery, Inc., not Ferncastle Data Vault, Inc.
+
+6.  **Formulate the Answer:**
+    *   Vendor Name: Kelvedon Cloud Recovery, Inc.
+    *   Source Document: `06_policy_update_memo.md` (This is the latest document governing this change).
+    *   Section: `SECTION 6. OFFSITE DATA BACKUP VENDOR`
+    *   Quote: "Kelvedon Cloud Recovery, Inc. replaced Ferncastle Data Vault, Inc. as the Firm's offsite data backup provider." OR "Kelvedon Cloud Recovery, Inc. replaces Ferncastle Data Vault, Inc. in the critical vendor list." The first one is more direct

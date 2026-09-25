@@ -1,0 +1,34 @@
+*   Question: "Describe the composition of the Valuation Committee and its quorum requirement."
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+    *   Keys: "answer", "source_document", "section", "quote".
+
+    *   Document 1: `01_business_continuity_plan.md` (implied by the text provided, though the filename isn't explicitly shown in the prompt, the content is about BCP).
+    *   Document 2: `05_fee_schedule.md`.
+    *   Document 3: `06_policy_update_memo.md`.
+
+    *   Search for "Valuation Committee".
+    *   In `06_policy_update_memo.md`, Section 4 mentions "Valuation Committee" and "Section 2.3 (Meetings)" of the Valuation Policy.
+    *   Section 5 mentions "Valuation Committee" and "Section 5.3 (Overrides)".
+    *   The memo mentions that the Valuation Committee will meet monthly and that "two voting members of the Valuation Committee, one of whom must be the Chief Financial Officer" are required for price overrides.
+    *   However, the *composition* of the committee and its *quorum requirement* are not explicitly stated in the provided text. The memo only mentions the requirements for *overrides* (two voting members, one being the CFO).
+
+    *   The text mentions "two voting members of the Valuation Committee, one of whom must be the Chief Financial Officer" in the context of *overrides* (Section 5 of the memo).
+    *   It does *not* state the full composition of the committee or the quorum requirements for its regular meetings.
+
+    *   Since the specific composition and quorum requirements are not in the provided text, the answer is "NOT_IN_DOCUMENTS".
+
+    *   answer: "NOT_IN_DOCUMENTS"
+    *   source_document: ""
+    *   section: ""
+    *   quote: ""
+
+    *   Wait, let me double-check. Does "two voting members... one of whom must be the CFO" count as composition? It's a requirement for an override, not the committee's composition or quorum.
+    *   The question asks for "composition" and "quorum requirement".
+    *   The text says: "Any override of a price supplied by a pricing source must be approved in advance, in writing, by two voting members of the Valuation Committee, one of whom must be the Chief Financial Officer."
+    *   This describes the requirement for an *override*, not the committee's composition or quorum.
+    *   Therefore, the information is not in the documents.
+
+    *   answer: "NOT_IN_DOCUMENTS"
+    *   source_document: ""
+    *   section: ""
+    *   quote: ""

@@ -1,0 +1,42 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "How frequently are client accounts reviewed, and what drift threshold triggers rebalancing?"
+    *   Key Information Needed:
+        1.  Frequency of client account reviews.
+        2.  Drift threshold that triggers rebalancing.
+
+3.  **Scan the Documents:**
+
+    *   **Document 1:** `01_brochure.md` (Form ADV Part 2A: Firm Brochure, dated March 27, 2026)
+        *   Section `4.2 Wealth Management Services`: Mentions monitoring and rebalancing described in Item 13. No specific frequency or threshold here.
+        *   Section `4.5 Tailoring and Client Restrictions`: Discusses restrictions. No review frequency or threshold.
+        *   Section `8.2 Investment Strategies`: Discusses holding periods, margin, etc. No review frequency or threshold.
+        *   Section `12.1 Selection and Recommendation of Custodians`: Discusses custodians. No review frequency or threshold.
+        *   Section `13. Review of Accounts > 13.1 Periodic Reviews`:
+            *   Text: "Each household's wealth advisor meets with the household at least annually to review its objectives, financial circumstances and Investment Policy Statement." (This is meeting frequency, not necessarily account review frequency for rebalancing purposes, but let's keep reading).
+            *   Text: "Our portfolio management staff review every account at least quarterly for adherence to its model, its asset allocation targets and any client restrictions." -> **Found Review Frequency:** "at least quarterly".
+            *   Text: "An account is rebalanced when any asset class deviates from its target weight by more than five percentage points, or sooner when cash flows, tax considerations or client instructions require." -> **Found Drift Threshold:** "five percentage points".
+        *   Section `13.2 Client Reports`: Discusses reports frequency.
+
+    *   **Document 2:** `02_compliance_manual.md` (Compliance Policies and Procedures Manual, dated January 15, 2026)
+        *   Section `4.8 Review of Personal Trading`: Discusses personal trading review frequency (monthly). Not client accounts.
+        *   Section `9.4 Trade Rotation Across Custodians`: Discusses trade rotation.
+
+    *   **Date Comparison:**
+        *   `01_brochure.md`: March 27, 2026.
+        *   `02_compliance_manual.md`: January 15, 2026.
+        *   The brochure is later dated (March vs January). However, the question asks about client account reviews and rebalancing thresholds. These are

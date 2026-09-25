@@ -1,0 +1,335 @@
+{
+  "meeting_id": "t5_m08",
+  "title": "Physician couple annual review: backdoor Roth, disability insurance and 529s for three children",
+  "notes": "Three figures are superseded mid-meeting: the Wrenfield IRA balance (84,000 at 00:09:12, corrected to 48,210 at 00:14:16), the retirement age (60 at 00:03:41, revised by both clients to 58 at 00:21:38) and the IRA limit (Declan's $7,000, corrected by Renata to $7,500 at 00:08:02), and two transcription errors ('$50,000' for fifteen thousand, 'Pell Wood' for Pellwood) are fixed in the next turn. The roll-in question moves from Declan to Theo while Declan keeps a separate Marisa errand for the partner LTD documents, Priya's LTD upload moves from Friday to Wednesday October 21, five floated ideas (457(b), 529 superfunding, cash balance plan, lake house, 100% or 90/10 equity) must stay out of the action lists, and the closing recap omits the CPA note, the e-sign packet and Declan's partnership documents. Each keyed account action covers both spouses or all three children, so a system that splits the backdoor Roth per spouse or the 529 change per child (open Callum's, raise Rowan's and Ivy's) has listed parts of one keyed action, to be treated as duplicates rather than extra actions.",
+  "scalar_fields": {
+    "meeting_date": {
+      "expected": "October 13, 2026",
+      "accept": [
+        "oct(?:ober|\\.)? 13|10/13|2026-10-13|13(?:th)? (?:of )?oct"
+      ],
+      "reject": {}
+    },
+    "client_names": {
+      "expected": "Priya Halloran; Declan Halloran",
+      "accept": [
+        "\\bpriya\\b",
+        "\\bdeclan\\b"
+      ],
+      "match": "all",
+      "reject": {
+        "STAFF_AS_CLIENT": [
+          "theo|brandvold|renata|oakhurst"
+        ]
+      }
+    },
+    "primary_goal": {
+      "expected": "Retire early (financially independent, work-optional early) without college funding for the three children pushing retirement back",
+      "accept": [
+        "retir|work.optional|financial(?:ly)? independen|\\bfi\\b|\\bfire\\b"
+      ],
+      "reject": {}
+    },
+    "retirement_target": {
+      "expected": "Age 58 for both Priya and Declan (2043), revised in the meeting from 60",
+      "accept": [
+        "\\b58\\b|fifty.eight|2043"
+      ],
+      "reject": {
+        "STALE_60": [
+          "^(?!.*(?:\\b58\\b|fifty.eight|2043)).*(?:\\b60\\b|sixty|2045)"
+        ]
+      }
+    },
+    "risk_tolerance": {
+      "expected": "Growth (80% stocks / 20% bonds)",
+      "accept": [
+        "growth|80\\s*(?:/|-|%)\\s*20|80\\s*%?\\s*(?:stock|equit)|eighty.twenty"
+      ],
+      "reject": {
+        "DECLINED_AGGRESSIVE": [
+          "^(?!.*(?:80\\s*(?:/|-|%)\\s*20|80\\s*%?\\s*(?:stock|equit)|eighty.twenty)).*(?:aggressive|90\\s*(?:/|-|%)\\s*10|100\\s*%|all.(?:stock|equit))"
+        ]
+      }
+    },
+    "risk_tolerance_change": {
+      "expected": "no change",
+      "accept": [
+        "no change|unchanged|remain|stay|same|not? chang|maintain|kept|keep"
+      ],
+      "reject": {
+        "DECLINED_CHANGE": [
+          "^(?!.*(?:no change|unchanged|remain|stay|same|maintain|kept|keep)).*(?:aggressive|90\\s*/\\s*10|100\\s*%|from .* to )"
+        ]
+      }
+    },
+    "next_meeting": {
+      "expected": "Thursday, January 14, 2027 at 7:00 p.m. (video call)",
+      "accept": [
+        "jan(?:uary|\\.)? 14|1/14|2027-01-14|14(?:th)? (?:of )?jan"
+      ],
+      "reject": {
+        "STALE_JAN7": [
+          "^(?!.*(?:jan(?:uary|\\.)? 14|1/14|2027-01-14|14 jan|14th)).*(?:jan(?:uary|\\.)? 7\\b|\\b1/7\\b|2027-01-07|\\b7th)"
+        ]
+      }
+    }
+  },
+  "life_events": [
+    {
+      "eid": "e1",
+      "expected": "Declan made partner at Coldharbor Emergency Associates effective July 1, 2026 (income now K-1 with quarterly estimates, buy-in paid from draws over two years, moved into the partners' profit-sharing 401(k))",
+      "match": [
+        "coldharbor|made partner|became (?:a |full |an equity )*partner|(?:promot|elevat)\\w* to partner|partnership|\\bpartner\\b|buy.?in|k-?1\\b"
+      ],
+      "reject": {}
+    },
+    {
+      "eid": "e2",
+      "expected": "Saint Brennock Medical Center (Priya's employer) announced in September 2026 an affiliation, in effect a merger, with Aldmere Health, expected to close in the first quarter of 2027; her contract is honored through June 2028 and benefits are to be harmonized",
+      "match": [
+        "\\bmerg|affiliat|aldmere|\\bacqui|saint brennock|st\\.? brennock"
+      ],
+      "reject": {}
+    }
+  ],
+  "account_actions": [
+    {
+      "aid": "a1",
+      "expected": "Roll over Declan's traditional (rollover) IRA at Wrenfield Securities, full balance of about $48,210, into the Coldharbor Emergency Associates partners' 401(k), completed before December 31, 2026 to clear the pro-rata rule",
+      "match": [
+        "48[,.]?2|48\\s*k|forty.eight|wrenfield|(?:roll|mov|transfer)\\w*.{0,60}\\bira\\b.{0,80}(?:401|coldharbor)"
+      ],
+      "amount_accept": [
+        "48[,.]?2|48(?:\\.\\d)?\\s*k\\b|48,?000|48 thousand|forty.eight"
+      ],
+      "amount_reject": {
+        "STALE_84K": [
+          "^(?!.*(?:48|forty.eight)).*(?:84|eighty.four)"
+        ]
+      }
+    },
+    {
+      "aid": "a2",
+      "expected": "Backdoor Roth for 2026: $7,500 nondeductible traditional IRA contribution for each of Priya and Declan ($15,000 total), converted into their Roth IRAs; Priya's as soon as her account is open, Declan's in December once his IRA balance is zero",
+      "match": [
+        "^(?!.*(?:48[,.]?2|48\\s*k|wrenfield)).*(?:backdoor|non.?deductible|convert|conversion)",
+        "backdoor.*7,?500|7,?500.*(?:roth|backdoor)"
+      ],
+      "amount_accept": [
+        "7,?500|7\\.5\\s*k|seventy.five hundred|seven thousand five hundred|15,?000|15\\s*k|fifteen thousand"
+      ],
+      "amount_reject": {
+        "STALE_7000_LIMIT": [
+          "^(?!.*(?:7,?500|7\\.5|seventy.five|seven thousand five|15,?000|15\\s*k|fifteen thousand)).*(?:7,?000|seven thousand|14,?000)"
+        ]
+      }
+    },
+    {
+      "aid": "a3",
+      "expected": "Open a 529 for Callum and set automatic contributions of $1,000 a month for each of the three children (Rowan and Ivy increased from $500; $3,000 a month total), first draft November 1, 2026",
+      "match": [
+        "529|college|education savings"
+      ],
+      "amount_accept": [
+        "\\$?1,?000\\b|\\b1k\\b|one thousand|\\$?3,?000\\b|\\b3k\\b|three thousand|12,?000"
+      ],
+      "amount_reject": {
+        "STALE_500": [
+          "^(?!.*(?:\\b1,?000\\b|\\b1k\\b|one thousand|\\b3,?000\\b|\\b3k\\b|three thousand|12,?000)).*(?:\\b500\\b|five hundred)"
+        ],
+        "DECLINED_1500": [
+          "^(?!.*(?:\\b1,?000\\b|\\b1k\\b|one thousand|\\b3,?000\\b|\\b3k\\b|three thousand|12,?000)).*(?:1,?500|fifteen hundred|4,?500)"
+        ]
+      }
+    }
+  ],
+  "action_items": [
+    {
+      "iid": "i1",
+      "expected_task": "Obtain quotes for individual true own-occupation, specialty-specific disability insurance for Priya and Declan from Pellwood Assurance and Ashgrove Life (owner: Theo Brandvold; due: by the end of the month, October 31, 2026)",
+      "match": [
+        "^(?!.*(?:upload|portal|certificate|benefits? summary|summary of benefits|\\bspd\\b|to theo)).*(?:(?:get|obtain|request|pull|run|shop|source)\\w*.{0,30}quotes?|quotes? (?:for|on) (?:individual|own|both|the individual)|\\bquotes?\\b.{0,40}disab|disab.{0,40}\\bquotes?\\b|pellwood|pell wood|ashgrove|own.occ|specialty.specific|individual.{0,40}(?:disability|\\bdi\\b|ltd|policy|policies))"
+      ],
+      "owner_accept": [
+        "theo|brandvold|paraplanner"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "end of (?:the )?month|end of oct|month.?end|end.of.(?:the.)?month|oct(?:ober|\\.)? 3[01]|10/3[01]|2026-10-3[01]"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i2",
+      "expected_task": "Upload Priya's Saint Brennock group long-term disability certificate and benefits summary (showing the benefit cap and who pays the premium) to the client portal (owner: Priya Halloran; due: Wednesday, October 21, 2026, moved from Friday)",
+      "match": [
+        "^(?!.*(?:partnership|marisa|quennell|coldharbor|partner|\\bhis\\b|declan|practice admin))(?:(?=.*(?:upload|portal|certificate|benefits? summary|summary of benefits|\\bspd\\b|to theo|saint brennock|st\\.? brennock))|(?!.*(?:quot|pellwood|pell wood|ashgrove|own.occ|specialty|individual|carrier))).*(?:certificate|benefits? summary|summary of benefits|\\bspd\\b|upload|portal|saint brennock|st\\.? brennock|hospital|employer|group (?:ltd|long.term disability|disability)|(?:ltd|disability) (?:plan )?(?:policy|documents?|docs|paperwork|details))"
+      ],
+      "owner_accept": [
+        "priya"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "\\b21|twenty.first|wednesday"
+      ],
+      "due_reject": {
+        "STALE_DUE": [
+          "^(?!.*(?:\\b21|twenty.first|wednesday)).*(?:friday|\\b16|sixteenth)"
+        ]
+      },
+      "trap": "due_changed"
+    },
+    {
+      "iid": "i3",
+      "expected_task": "Call the Coldharbor partners' 401(k) recordkeeper to confirm the plan accepts incoming IRA roll-ins and obtain the roll-in form (owner: Theo Brandvold, reassigned from Declan; due: by Thursday, October 15, 2026)",
+      "match": [
+        "roll.?ins?\\b|recordkeeper|record.keeper|incoming (?:ira )?rollovers?|(?:accept|take|allow)\\w*.{0,40}rollover|rollovers?.{0,30}(?:accept|allow)"
+      ],
+      "owner_accept": [
+        "theo|brandvold|paraplanner"
+      ],
+      "owner_reject": {
+        "STALE_OWNER": [
+          "^(?!.*(?:theo|brandvold|paraplanner)).*(?:declan|client)"
+        ]
+      },
+      "due_accept": [
+        "thursday|\\bthurs?\\b|oct(?:ober|\\.)? 15|10/15|\\b15th|2026-10-15"
+      ],
+      "due_reject": {},
+      "trap": "reassigned"
+    },
+    {
+      "iid": "i4",
+      "expected_task": "Assemble and send one e-sign packet: new traditional IRAs for Priya and Declan, rollover paperwork for Declan's Wrenfield IRA, the new 529 for Callum and the updated monthly 529 contributions (owner: Theo Brandvold; due: early next week, week of October 19, 2026)",
+      "match": [
+        "packet|(?<![a-z])e-?sign|electronic signature|signature|docusign|signing package|package.{0,40}(?:ira|529)|(?:account.opening|opening|new.account) (?:paperwork|forms?|documents?)|paperwork.{0,40}(?:traditional ira|529)"
+      ],
+      "owner_accept": [
+        "theo|brandvold|paraplanner"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "early next week|next week|following week|week of (?:oct(?:ober|\\.)? )?19|oct(?:ober|\\.)? (?:19|20)|10/(?:19|20)|2026-10-(?:19|20)"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i5",
+      "expected_task": "Rerun the retirement projection at age 58 for both (2043), together with updated college funding projections using the new 529 amounts, and send the updated plan (owner: Renata Oakhurst; due: before Thanksgiving, November 26, 2026)",
+      "match": [
+        "re.?run|projection|updated plan|update (?:the )?(?:financial |retirement )?plan|re.?model|model (?:retirement|the plan)|financial plan|\\b58\\b|fifty.eight|revis\\w*.{0,20}(?:plan|projection)|(?:retirement|college).{0,20}(?:analysis|funding)"
+      ],
+      "owner_accept": [
+        "renata|oakhurst|advis[oe]r"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "thanksgiving|nov(?:ember|\\.)? 2[4-6]|11/2[4-6]|2026-11-2[4-6]"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i6",
+      "expected_task": "Send Margit, the couple's CPA, a note to expect two Forms 8606 and two 1099-Rs for the 2026 backdoor Roth conversions (owner: Renata Oakhurst; due: this week, by October 16, 2026)",
+      "match": [
+        "8606|\\bcpa\\b|margit|accountant|1099|tax preparer"
+      ],
+      "owner_accept": [
+        "renata|oakhurst|advis[oe]r"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "this week|end of (?:the )?week|week of (?:oct(?:ober|\\.)? )?12|oct(?:ober|\\.)? 1[4-7]|10/1[4-7]|2026-10-1[4-7]|friday"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i7",
+      "expected_task": "Get from Marisa Quennell, the practice administrator, the Coldharbor partner group LTD certificate and the disability section of the partnership agreement (buyout or overhead expense provisions) (owner: Declan Halloran; due: end of next week, October 23, 2026)",
+      "match": [
+        "partnership agreement|marisa|quennell|buy.?out|overhead|(?:partner\\w*|coldharbor|\\bhis\\b).{0,25}(?:group )?(?:ltd|long.term disability|disability)|disability (?:section|provision|language|clause)"
+      ],
+      "owner_accept": [
+        "declan"
+      ],
+      "owner_reject": {
+        "WRONG_OWNER": [
+          "^(?!.*declan).*(?:marisa|quennell|theo|brandvold)"
+        ]
+      },
+      "due_accept": [
+        "end of next week|next week|following week|oct(?:ober|\\.)? 23|10/23|2026-10-23"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    }
+  ],
+  "non_actions": [
+    {
+      "nid": "n1",
+      "what": "Renata recommended Priya defer $24,500 a year into the Saint Brennock non-governmental 457(b) (00:12:30); Priya declined because of general-creditor exposure, the distribution rules and the pending merger, and Renata recorded the decline (00:14:02)",
+      "match": [
+        "\\b457"
+      ],
+      "kind": "declined_proposal"
+    },
+    {
+      "nid": "n2",
+      "what": "Declan reported that the Coldharbor partners are discussing a cash balance plan, possibly for 2027 (00:05:23); nothing adopted, parked until the partners vote",
+      "match": [
+        "cash.balance|defined.benefit"
+      ],
+      "kind": "tentative"
+    },
+    {
+      "nid": "n3",
+      "what": "Renata offered superfunding the 529s with a five-year gift election, up to $95,000 per donor per child and $190,000 per child for the couple (00:23:09); declined in favor of monthly contributions (00:23:42)",
+      "match": [
+        "^(?!.*(?:\\bno\\b|\\bnot\\b|without|declin\\w*|instead of|rather than|in lieu of).{0,25}(?:superfund|super.fund|front.?load|lump.?sum|gift election))(?!.*(?:superfund|super.fund|front.?load|lump.?sum|gift election)\\w*.{0,15}(?:declin|reject|\\bnot\\b|\\bno\\b)).*(?:superfund|super.fund|\\bfive.year|\\b5.year|front.?load|lump.?sum|95,?000|190,?000|570,?000|gift election)"
+      ],
+      "kind": "declined_proposal"
+    },
+    {
+      "nid": "n4",
+      "what": "Declan floated saving for a lake house at Smith Mountain Lake (00:25:34); Priya ruled it out for at least five years and Renata parked it",
+      "match": [
+        "lake|second home|vacation (?:home|property)|cabin"
+      ],
+      "kind": "tentative"
+    },
+    {
+      "nid": "n5",
+      "what": "Declan floated moving to 100% stocks or the 90/10 aggressive allocation (00:26:25); Priya objected, Renata recommended against it and the allocation stayed at Growth 80/20 with no change (00:27:44)",
+      "match": [
+        "100\\s*%\\s*(?:stock|equit)|all.(?:stock|equit)|aggressive|90\\s*/\\s*10|reallocat|more equit"
+      ],
+      "kind": "tentative"
+    }
+  ],
+  "corrected_figures": [
+    {
+      "what": "Balance of Declan's traditional (rollover) IRA at Wrenfield Securities: stated at 00:09:12, corrected at 00:14:16 after he checked the app",
+      "said_first": "84,000",
+      "corrected_to": "48,210",
+      "field": "account_actions"
+    },
+    {
+      "what": "Retirement target age for both spouses: confirmed at 60 at 00:03:41, revised by Priya and confirmed by Declan to 58 at 00:21:38",
+      "said_first": "60",
+      "corrected_to": "58",
+      "field": "scalar:retirement_target"
+    },
+    {
+      "what": "2026 IRA contribution limit for each backdoor Roth contribution: Declan said $7,000 at 00:07:58, Renata corrected it to $7,500 at 00:08:02",
+      "said_first": "$7,000",
+      "corrected_to": "$7,500",
+      "field": "account_actions"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   No guessing, no general knowledge.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "In what year was Norrell Bay Trust & Custody, N.A. first appointed as the qualified custodian for the firm's client accounts?"
+    *   Key information needed: A specific year indicating when Norrell Bay Trust & Custody, N.A. was *first* appointed.
+
+3.  **Scan the Documents:**
+    *   `01_brochure.md`:
+        *   Item 5. Fees and Compensation: Mentions Norrell Bay Trust & Custody, N.A. as a custodian whose fees are not included in advisory fee. No mention of appointment date.
+        *   Item 12. Brokerage Practices > 12.1 Selection and Recommendation of Custodians: Recommends Norrell Bay. Discusses criteria (financial strength, etc.). No mention of appointment year.
+        *   Item 12. Brokerage Practices > 12.2 Custodial Services; No Soft Dollars: Mentions Norrell Bay makes available institutional services. No mention of appointment year.
+        *   Item 15. Custody > 15.1 Qualified Custodians: States "Client assets are held by Norrell Bay Trust & Custody, N.A., a national banking association, which serves as the qualified custodian for substantially all client accounts." No mention of when they were first appointed.
+        *   Item 15. Custody > 15.2 Circumstances in Which the Firm Has Custody: Lists reasons why firm has custody. No appointment date.
+        *   Item 15. Custody > 15.4 Account Statements: Discusses statement frequency. No appointment date.
+    *   `03_valuation_policy.md`:
+        *   Section 3. Pricing Hierarchy and Sources > 3.5 Custodian Price Comparison: Mentions comparing vendor prices with Norrell Bay. No mention of appointment year.
+    *   `04_business_continuity_plan.md`:
+        *   Section 5. Data Backup and Critical Vendors > 5.2 Critical Vendors: Lists Norrell Bay Trust & Custody, N.A. as a critical vendor (Qualified custodian; trading and cash movement). No mention of appointment year.
+
+4.  **Evaluate Findings:**
+    *   The documents confirm that Norrell Bay Trust & Custody, N.A. is the qualified custodian.
+    *   The documents do *not* contain information about when they were *first appointed*.
+    *   There are no dates associated with the appointment history in the provided text.
+    *   Therefore, the answer must be `NOT_IN_DOCUMENTS`.
+
+5.  **Format Output:**
+    *   Construct JSON object.
+    *   "answer": "NOT_IN_DOCUMENTS

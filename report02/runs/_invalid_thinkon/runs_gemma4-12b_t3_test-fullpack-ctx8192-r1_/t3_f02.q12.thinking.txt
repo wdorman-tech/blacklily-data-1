@@ -1,0 +1,26 @@
+*   Question: Identify the Funds' prime brokers.
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+    *   Keys: "answer", "source_document", "section", "quote".
+
+    *   `05_fee_schedule.md`: Mentions "prime brokers" in Section 2.2 (Wait, no, Section 8.2 of the BCP). Let's check the BCP section.
+    *   `06_policy_update_memo.md`: Mentions "IT managed service provider", "Compliance Manual", "Valuation Policy", "Business Continuity Plan", "Fee Schedule".
+
+    *   Looking at the BCP (Business Continuity Plan) section (which is part of the first document provided, though the filename isn't explicitly given in the prompt's text block, it's the first block of text).
+    *   Section 8.2: "The Head of Trading notifies the prime brokers and executing brokers of any change in trading locations or authorized contacts."
+    *   Does it name the specific prime brokers? No. It just mentions that the Head of Trading notifies them.
+
+    *   The text mentions "prime brokers" but does not name specific entities (e.g., Goldman Sachs, Morgan Stanley, etc.).
+
+    *   Answer: NOT_IN_DOCUMENTS
+    *   source_document: ""
+    *   section: ""
+    *   quote: ""
+
+    *   The question asks to "Identify the Funds' prime brokers."
+    *   The text says: "The Head of Trading notifies the prime brokers and executing brokers of any change in trading locations or authorized contacts."
+    *   Since the specific names of the prime brokers are not provided in the text, the answer is NOT_IN_DOCUMENTS.
+
+    *   "answer": "NOT_IN_DOCUMENTS"
+    *   "source_document": ""
+    *   "section": ""
+    *   "quote": ""

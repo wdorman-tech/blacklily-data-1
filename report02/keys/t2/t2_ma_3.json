@@ -1,0 +1,209 @@
+{
+ "pair_id": "t2_ma_3",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "Mastercard Incorporated",
+ "ticker": "MA",
+ "split": "test",
+ "prior": {
+  "fiscal_year_end": "2024-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139125000011/ma-20241231.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2025-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm"
+ },
+ "words": 6422,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "modified",
+   "prior_heading": "Information security incidents or account data compromise events could disrupt our business, damage our reputation, increase our costs and cause losses.",
+   "current_heading": "Information security incidents or account data compromise events could disrupt our business, damage our reputation, increase our costs and cause losses.",
+   "similarity": 0.135,
+   "diff": [
+    "replace: [technologies,] -> [technologies (including AI),]",
+    "delete: [MASTERCARD 2024 FORM 10-K 31 PART I ITEM 1A. RISK FACTORS] -> []",
+    "replace: [These threats also may be further enhanced in frequency or effectiveness through threat actors’] -> [The widespread]",
+    "replace: [AI.] -> [AI, and its increasing capabilities, is enhancing the frequency and effectiveness of threat actors.]",
+    "insert: [] -> [In addition, the current or future listing of Recorded Future as an “undesirable” or “unreliable” entity by certain jurisdictions could further increase our risks in this area.]",
+    "insert: [] -> [34 MASTERCARD 2025 FORM 10-K PART I ITEM 1A. RISK FACTORS]",
+    "replace: [cyber-attacks.] -> [cyber-attacks, which has been further exacerbated by the increased use of AI.]",
+    "replace: [Data Protection,] -> [Data,]",
+    "replace: [Security Compliance”] -> [Security”]",
+    "delete: [32 MASTERCARD 2024 FORM 10-K PART I ITEM 1A. RISK FACTORS] -> []"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds a new disclosure that the current or future listing of Recorded Future as an \"undesirable\" or \"unreliable\" entity by certain jurisdictions could further increase information security risk, and escalates AI from threats that \"may be further enhanced\" by threat actors' use of AI to widespread AI use that \"is enhancing\" threat frequency and effectiveness and has \"further exacerbated\" fraud and cyber-attacks.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1 and 2: a new exposure tied to a named business (Recorded Future) and adverse jurisdictional listings is disclosed; criterion 3: the AI threat moves from hypothetical to realized; the cross-reference rename to \"Privacy, Data, AI and Information Security\" and page-header changes are minor on their own."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1 and 2: a new exposure tied to the named Recorded Future business and jurisdictional designations is disclosed, and criterion 3 applies to the could-to-is shift on AI threats; the cross-reference rename is minor but does not offset these."
+    }
+   }
+  },
+  {
+   "aid": "a02",
+   "status": "modified",
+   "prior_heading": "Service disruptions that cause us to be unable to process transactions or service our customers could reduce our operational resilience and materially affect our overall business and results of operations.",
+   "current_heading": "Service disruptions that cause us to be unable to process transactions or service our customers could reduce our operational resilience and materially affect our overall business and results of operations.",
+   "similarity": 0.955,
+   "diff": [
+    "insert: [] -> [network degradation, updates and migrations to new technology and platforms,]",
+    "replace: [disaster,] -> [disasters,]",
+    "insert: [] -> [cybersecurity-related disruptions or failures,]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds network degradation, updates and migrations to new technology and platforms, and cybersecurity-related disruptions or failures at third-party service providers to the listed causes of service interruptions.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: new sources of operational disruption risk are disclosed; the \"disaster\" to \"disasters\" change is stylistic."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: new operational risk sources are disclosed, widening the scope of the disruption risk (criterion 3)."
+    }
+   }
+  },
+  {
+   "aid": "a03",
+   "status": "modified",
+   "prior_heading": "Losing a significant portion of business from one or more of our largest customers could lead to significant revenue decreases in the longer term, which could have a material adverse impact on our business and our results of operations.",
+   "current_heading": "Losing a significant portion of business from one or more of our largest customers could lead to significant revenue decreases in the longer term, which could have a material adverse impact on our business and our results of operations.",
+   "similarity": 0.971,
+   "diff": [
+    "insert: [] -> [MASTERCARD 2025 FORM 10-K 35 PART I ITEM 1A. RISK FACTORS]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The only change is an inserted page header (\"MASTERCARD 2025 FORM 10-K 35 PART I ITEM 1A. RISK FACTORS\"); the body text, including the five-largest-customers concentration statement, is identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: page-layout artifact with no change in wording or substance."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: no substantive change, only pagination text."
+    }
+   }
+  },
+  {
+   "aid": "a04",
+   "status": "unchanged",
+   "prior_heading": "Exclusive/near exclusive relationships certain customers have with our competitors may have a material adverse impact on our business.",
+   "current_heading": "Exclusive/near exclusive relationships certain customers have with our competitors may have a material adverse impact on our business.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a05",
+   "status": "modified",
+   "prior_heading": "Consolidation amongst our customers could materially and adversely affect our overall business and results of operations.",
+   "current_heading": "Consolidation amongst our customers could materially and adversely affect our overall business and results of operations.",
+   "similarity": 0.436,
+   "diff": [
+    "delete: [in the U.S.] -> []",
+    "delete: [MASTERCARD 2024 FORM 10-K 33 PART I ITEM 1A. RISK FACTORS] -> []"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The reference to bank failures \"similar to those that occurred in the U.S. in recent years\" drops \"in the U.S.\", generalizing the precedent for customer consolidation beyond the U.S.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2: a named jurisdiction (the U.S.) is dropped; criterion 3: the scope of the referenced bank-failure precedent is widened; the page-header removal is minor."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 2: a jurisdiction reference (the U.S.) is dropped, which also widens the geographic scope of the example (criterion 3)."
+    }
+   }
+  },
+  {
+   "aid": "a06",
+   "status": "modified",
+   "prior_heading": "Our business significantly depends on the continued success and competitiveness of our issuing and acquiring customers and, in many jurisdictions, their ability to effectively manage or help manage our brands.",
+   "current_heading": "Our business significantly depends on the continued success and competitiveness of our issuing and acquiring customers and, in many jurisdictions, their ability to effectively manage or help manage our brands.",
+   "similarity": 0.943,
+   "diff": [
+    "replace: [With the exception] -> [We switch a high percentage]",
+    "replace: [the U.S. and a select number of other jurisdictions, most in-country (as opposed to cross-border)] -> [domestic (or in-country)]",
+    "replace: [brands] -> [brands. However, there are several jurisdictions in which domestic transactions]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The description of domestic switching changes from \"with the exception of the U.S. and a select number of other jurisdictions, most in-country transactions\" being switched by customers or other processors to Mastercard itself switching \"a high percentage of domestic (or in-country) transactions\", with customers switching only in \"several jurisdictions\".",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 3: the scope of the dependency on customers to switch domestic transactions and manage the brand is materially narrowed; criterion 2: the specific U.S. reference is dropped."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: the scope of the dependency on customers to manage the brand in domestic switching is narrowed and recharacterized, and the U.S. reference is dropped (criterion 2)."
+    }
+   }
+  },
+  {
+   "aid": "a07",
+   "status": "modified",
+   "prior_heading": "Merchants’ continued focus on acceptance costs may lead to additional litigation and regulatory proceedings and/or increase our incentive program costs, which could materially and adversely affect our profitability.",
+   "current_heading": "Merchants’ continued focus on acceptance costs may lead to additional litigation and regulatory proceedings and/or increase our incentive program costs, which could materially and adversely affect our profitability.",
+   "similarity": 0.986,
+   "diff": [
+    "insert: [] -> [36 MASTERCARD 2025 FORM 10-K PART I ITEM 1A. RISK FACTORS]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The only change is an inserted page header (\"36 MASTERCARD 2025 FORM 10-K PART I ITEM 1A. RISK FACTORS\"); the merchant acceptance-cost and incentive text is identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: page-layout artifact with no change in wording or substance."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: no substantive change, only pagination text."
+    }
+   }
+  },
+  {
+   "aid": "a08",
+   "status": "modified",
+   "prior_heading": "Our work with governments exposes us to risks that could have a material impact on our business and results of operations.",
+   "current_heading": "Our work with governments exposes us to risks that could have a material impact on our business and results of operations.",
+   "similarity": 0.908,
+   "diff": [
+    "replace: [governments, both] -> [governments (both]",
+    "replace: [institutions] -> [institutions, system integrators and other third party partners]",
+    "replace: [customers,] -> [customers),]",
+    "delete: [34 MASTERCARD 2024 FORM 10-K PART I ITEM 1A. RISK FACTORS] -> []",
+    "replace: [governments, either] -> [governments (either]",
+    "insert: [] -> [system integrators or other third party partners)]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds system integrators and other third party partners as channels through which Mastercard works with governments, both in the introductory scope and in the reputational-risk bullet.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2: a new category of counterparty is referenced; criterion 3: the scope of government-work exposure is widened; the parenthetical punctuation, page-header removal and paragraph merge are minor."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 2: a new category of counterparty is referenced, widening the scope of government-related exposure (criterion 3); the parenthetical and paragraph-merge edits are stylistic."
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Return ONLY a JSON object with keys: "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "State the firm's total regulatory assets under management as of its most recent fiscal year end, with the split between discretionary and non-discretionary assets."
+    *   Key data points needed:
+        *   Total regulatory AUM.
+        *   Date (most recent fiscal year end).
+        *   Discretionary AUM.
+        *   Non-discretionary AUM.
+
+3.  **Scan the Documents:**
+    *   `01_brochure.md`:
+        *   Section: Item 4. Advisory Business > 4.3 Assets Under Management.
+        *   Text: "As of December 31, 2025, the Firm managed regulatory assets under management of $6,480,000,000, of which $5,910,000,000 was managed on a discretionary basis and $570,000,000 on a non-discretionary basis..."
+        *   Date: March 27, 2026 (Brochure date).
+        *   AUM Date: December 31, 2025.
+    *   `02_compliance_manual.md`: No mention of AUM figures.
+    *   `03_valuation_policy.md`: Mentions regulatory assets under management scope, but no figures.
+    *   `05_fee_schedule.md`: No mention of AUM figures.
+
+4.  **Evaluate Findings:**
+    *   The document `01_brochure.md` contains the specific numbers requested.
+    *   Total Regulatory AUM: $6,480,000,000.
+    *   Date: December 31, 2025 (Most recent fiscal year end mentioned).
+    *   Discretionary: $5,910,000,000.
+    *   Non-discretionary: $570,000,000.
+    *   Document Date: March 27, 2026 (Supersedes earlier if any, but only one brochure provided).
+    *   Section: Item 4. Advisory Business > 4.3 Assets Under Management.
+
+5.  **Draft the Answer:**
+    *   Construct the JSON object.
+    *   "answer": Needs to be the specific text or a summary? The instruction says "Keep answers short and specific: the number, name, frequency, threshold or rule that was asked for...". However, the key is "answer" which should contain the answer. Usually, in these tasks, the "answer" field contains the extracted information formatted as a sentence

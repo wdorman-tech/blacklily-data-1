@@ -1,0 +1,45 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   **Role:** Marketing review analyst at an SEC-registered investment adviser.
+    *   **Task:** Review draft marketing materials against a fixed checklist (Rule 206(4)-1 derived).
+    *   **Input:** A draft LinkedIn post series (4 posts + disclaimer).
+    *   **Output Format:** JSON object with key "flags", containing a list of objects. Each object has keys: "category" (C1-C9), "quote" (verbatim text), "reason" (one sentence).
+    *   **Constraints:**
+        *   Only flag items matching the checklist codes (C1-C9).
+        *   Quote must be verbatim.
+        *   Do not flag compliant items (e.g., testimonials with full disclosure, hypotheticals with assumptions, etc.).
+        *   One flag per distinct issue.
+        *   Return ONLY JSON, no markdown, no preamble.
+
+2.  **Analyze the Checklist (Rule 206(4)-1 derived):**
+    *   C1: Testimonial/endorsement without clear disclosure of client status, compensation, conflicts.
+    *   C2: Gross performance without net performance shown with equal prominence.
+    *   C3: Performance of portfolio other than private fund without 1-, 5-, 10-year periods (or life).
+    *   C4: Performance time periods/results chosen not fair/balanced (cherry-picking).
+    *   C5: Hypothetical/model/backtested/projected performance without criteria/assumptions/risks.
+    *   C6: Material statement of fact untrue or unsubstantiated (absolute claims, top/best without support).
+    *   C7: Third-party rating/ranking without date, period, source, compensation.
+    *   C8: Performance of selected positions/subset without total portfolio performance.
+    *   C9: Benefits described without fair/balanced treatment of material risks/limitations.
+
+3.  **Analyze the Draft Content:**
+
+    *   **Header/Synthetic Document Note:** "SYNTHETIC DOCUMENT: FOR BENCHMARK USE ONLY... This document is fictional... invented for the purpose of evaluating document-processing systems."
+        *   *Observation:* This indicates the text is fake/synthetic. However, the task is to review the draft *as if* it were real marketing material against the checklist rules. Usually, synthetic documents are used for testing, but if I am acting as the reviewer for this specific text provided, I must evaluate the content within the text against the rules. The prompt says "Review the draft marketing piece below". If the text explicitly states it is fictional/synthetic, does that exempt it?
+        *   *Constraint Check:* The prompt asks me to review the draft. Usually, in these tasks, even if there's a disclaimer at the top saying "Synthetic", the content within (like testimonials, performance claims) still needs to be checked against the rules as if they were being published. However, the disclaimer says "It is not an offer to sell securities and does not describe any real entity."
+        *   *Decision:* I need to check the specific claims made in the posts. If the text says "This document is fictional", technically C6 (untrue statement) might be moot if it's admitted fiction, but usually, these tasks expect me to flag issues within the narrative content assuming it's being used for marketing purposes despite the header note (which might be part of the test data). Wait, looking closely at the prompt: "Review the draft marketing piece below". The text includes a disclaimer that it is synthetic. If I am an analyst reviewing this *draft*, and the draft claims to be synthetic, does that trigger C6? No, because it admits it's not real. But the posts themselves (Post 1-4) contain specific claims.
+        *   *Re-evaluation:* The prompt asks me to review the draft against the checklist. The checklist applies to marketing materials used by an SEC-registered adviser. If this text is explicitly marked "SYNTHETIC DOCUMENT: FOR BENCHMARK USE ONLY", it might not be actual marketing material. However, the instruction says "Review the draft marketing piece below". I should treat the content as if it were subject to review.
+        *   *Crucial Detail:* The header says "This document is fictional... It is not an offer to sell securities and does not describe any real entity." If this is truly synthetic, C1-C9 might not apply in a real-world sense, but the task is to find issues *in the text*. However, if the text admits it's fake, are there violations?
+        *   *Standard Practice for these tasks:* Usually, I must flag issues present in the text regardless of the "synthetic" header, because the goal is to identify compliance risks in the content provided. However, if the content explicitly states "This document is fictional", does that negate C6 (untrue statement)? Yes, because it admits it's not real. But Post 1 has a testimonial. Post 2 has performance numbers. Post 4 has a rating.
+        *   *Wait, one more check:* The prompt says "You review against a fixed checklist derived from the text of Rule 206(4)-1". If the document is synthetic, it's not marketing material for an adviser. But I am acting as the analyst reviewing this draft. If the draft claims to be synthetic, does that mean I should ignore it? No, the instruction is "Review the draft marketing piece below". I will assume the content within the posts (Post 1-4) are the items to check.
+        *   *Actually, looking at the disclaimer:* "This document is fictional... It is not an offer to sell securities and does not describe any real entity." If this is a test document, the compliance team might want to know if the *content* violates rules even if it's a test. But typically, C1-C9 apply to actual marketing. If I flag C1 for a testimonial in a synthetic doc, is that correct?
+        *   *Better interpretation:* The prompt asks me to review the draft. The draft contains specific claims (testimonial, performance, rating). Even if there is a header saying "Synthetic", the content within the posts mimics real marketing. I should flag issues found in the text that would violate the rules if this were real marketing. However, the disclaimer says "It is not an offer to sell securities". If it's not an offer, maybe C1-C9 don't apply?
+        *   *Wait, looking at similar tasks:* Usually, the "Synthetic" header is part of the test data to see if I can identify issues within the text regardless of the disclaimer, OR the disclaimer makes the whole thing exempt. But the instruction says "Review the draft marketing piece". If I say "No flags", but there are clear violations in the text (like a testimonial without disclosure), that might be wrong.
+        *   *Let's look at the specific content:*
+            *   **Post 1:** Testimonial: "A client couple let me share their note... 'Dana took a shoebox...'". Does it disclose if they are a current client? Yes ("A client couple"). Compensation? Not mentioned. Conflict? Not mentioned. Rule C1 requires disclosure of whether compensated and conflicts. The text says "A client couple", but doesn't explicitly state "Current Client" (though implied) or compensation status. It's a testimonial. Is it clear and prominent disclosure of compensation/conflict? No. So C1 applies.
+            *   **Post 2:** Performance: "Three of the positions we added to client portfolios in early 2025 finished the year up 112%, 74% and 58%". This is performance of selected positions (C8). It does not show total portfolio performance. C8 applies.
+            *   **Post 3:** Benefit: "Tax-loss harvesting program adds at least 1.5% a year to every client's after-tax return...". Benefit described. Risks? It mentions wash-sale rule, taxable accounts only, etc. Is that fair and balanced treatment of material risks? It lists limitations (taxable only, defers tax rather than eliminates, wash sale). This seems fairly balanced for C9.
+            *   **Post 4:** Rating: "Brenlow Adviser Quarterly named Fenwright Ostler to its list...". Does it have date? Yes (February 2026). Period? Jan 1 - Dec 31, 2025. Who gave it? Brenlow Adviser Quarterly. Compensation? "We paid Brenlow a $2,400 licensing fee". This seems to meet C7 requirements (date, period, source, compensation).
+            *   **Header:** "SYNTHETIC DOCUMENT...". If I flag C1-C9 based on this text, am I ignoring the disclaimer? The instruction says "Review the draft marketing piece below". If the piece claims to be synthetic, it might not be subject to SEC rules. However, in the context of a compliance review task, usually, you flag the content issues assuming they are real or that the disclaimer doesn't exempt the specific claims from scrutiny (e.g., if this text is leaked or used). But strictly speaking, if it says "This document is fictional", C6 (untrue statement) is not applicable because it admits fiction. But C1 (testimonial) still exists in the text.
+            *   *Decision:* I will flag issues that exist in the text content

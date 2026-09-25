@@ -1,0 +1,4568 @@
+{
+ "task": "t2",
+ "model": "qwen3.8:27b-q4_K_M",
+ "items": {
+  "t2_hd_1": {
+   "units": [
+    {
+     "uid": "a01",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds service providers as a stakeholder group and as a third party whose actions may be attributed to the company, and extends the adverse publicity risk to incidents regardless of whether the company is involved.",
+     "extra": {}
+    },
+    {
+     "uid": "a02",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Drops the sentence that inflation or deflation beyond the company's ability to respond could prevent it from offsetting effects through price and hurt its price competitiveness, and adds reseller marketplace operators and AI tools as sources of competition.",
+     "extra": {}
+    },
+    {
+     "uid": "a03",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds that generative and agentic AI tools may dramatically change customer shopping and buying habits, and adds geopolitical tensions, military conflicts and civil unrest as drivers of customer trends.",
+     "extra": {}
+    },
+    {
+     "uid": "a04",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "",
+     "expected": "Covers the risk that investments to deliver the interconnected experience (supply chain, digital capabilities, store base, new store, branch and supply chain facility locations, and strategic acquisitions) could disrupt operations or fail to deliver the anticipated benefits.",
+     "extra": {}
+    },
+    {
+     "uid": "a05",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "material_change",
+     "error_kind": "missed",
+     "trap": "removed",
+     "hallucination": false,
+     "got": "",
+     "expected": "Covered the risk that investments to execute the interconnected retail strategy (supply chain and distribution network real estate projects, store base, new store and branch locations, and strategic acquisitions) could disrupt operations or fail to deliver the anticipated benefits.",
+     "extra": {}
+    },
+    {
+     "uid": "a06",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Softens the statements that proprietary products differentiate the company (now 'help differentiate') and that supplier controversies pose reputational risks (now 'could pose risks'), alongside adding 'strategic' to the alliances language.",
+     "extra": {}
+    },
+    {
+     "uid": "a07",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Drops the named reference to the SRS acquisition in the second quarter of fiscal 2024 and the enforcement environment as a source of regulatory delay, and adds the ability to integrate new associates as a failure point.",
+     "extra": {}
+    },
+    {
+     "uid": "a08",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Broadens the risk from information technology systems to the company's whole technology infrastructure used to operate its day-to-day business, adds that outages could prevent it from accepting or fulfilling orders or serving customers, and expands AI activity from testing to developing and deploying AI tools.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The heading and body text were updated to explicitly include 'service providers' as a stakeholder group and to clarify that adverse publicity can occur regardless of whether the company is involved in the incident.",
+     "expected": "A positive brand and reputation are critical to our business success, and, if our brand and reputation are damaged, it could negatively impact our relationships with our customers, associates and jobseekers, suppliers, service providers, vendors, shareholders, regulators, and the communities we serve, and, consequently, our business, results of operations and the price of our stock.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The text was updated to identify 'reseller marketplaces' as a source of competition and to note that 'AI tools' facilitate competitive entry and price transparency, replacing the prior reference to the internet generally.",
+     "expected": "Strong competition could adversely affect prices and demand for our products and services and could decrease our market share.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The risk factors were expanded to include 'geopolitical tensions or conflicts, military conflicts, or civil unrest' as drivers of trends, and to highlight that 'generative and agentic AI tools' may dramatically change customer shopping and buying habits.",
+     "expected": "We may not timely identify or effectively respond to customer needs, expectations or trends, which could adversely affect our relationship with our customers, the demand for our products and services, and our market share.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "The heading and body text were changed from 'interconnected retail strategy' to 'interconnected experience,' and the text was updated to emphasize 'digital capabilities' and 'digital assets' as key components of the strategy.",
+     "expected": "The execution of initiatives to deliver our interconnected experience could adversely impact our business operations or financial results, and these initiatives might not provide the anticipated benefits.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_05",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The heading and body text were updated to change the terminology from 'alliances and relationships' to 'strategic alliances and relationships' and to clarify that proprietary products 'help differentiate' the company rather than simply 'differentiate' it.",
+     "expected": "If we are unable to effectively manage and expand our strategic alliances and relationships with certain suppliers of both brand name and proprietary products, we may be unable to effectively execute our strategy to differentiate ourselves from our competitors.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_06",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The specific reference to the 'acquisition of SRS in the second quarter of fiscal 2024' was removed, and the text was updated to include 'our ability to integrate new associates' as a potential source of failure in strategic transactions.",
+     "expected": "Our strategic transactions involve risks, which could have an adverse impact on our business, financial condition and results of operations, and we may not realize the anticipated benefits of these transactions.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_07",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The heading and body text were updated to focus on 'technology infrastructure' rather than just 'information technology systems,' and the text was updated to include 'jobseeker data' and 'post-purchase support' in the list of data and capabilities relied upon.",
+     "expected": "A failure of one or more key elements of our technology infrastructure, including associated systems or processes, could adversely affect our business, financial results, and reputation.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 7,
+   "contested": 0,
+   "group": "hd",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 316.69,
+    "prompt_tokens": 8752,
+    "output_tokens": 1237,
+    "output_tokens_per_sec": 4.1,
+    "prompt_tokens_per_sec": 632.7,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11483
+   }
+  },
+  "t2_hd_2": {
+   "units": [
+    {
+     "uid": "a01",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The customer-facing technology risk now covers adopting AI tools and other technology innovations, adds inaccuracies and launches of new or emerging technologies as sources of disruption, and adds damage to brand and reputation as a consequence in both the headline and body.",
+     "extra": {}
+    },
+    {
+     "uid": "a02",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Political instability and geopolitical tensions are added to the list of supply chain disruption causes, while the specific COVID-19 pandemic references in the second paragraph are dropped and 'increased supply chain costs' is broadened to 'increased costs'.",
+     "extra": {}
+    },
+    {
+     "uid": "a03",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The safety risk now names negative publicity regarding the Company and incidents such as civil unrest, raids and protests at stores or facilities, and widens the impact to store traffic and associate recruiting, while heightened shrink moves from 'have seen' to 'saw'.",
+     "extra": {}
+    },
+    {
+     "uid": "a04",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The cybersecurity risk adds that AI may enable new threat actors and novel attacks, adds South America to the conflicts raising cyber-attack risk, concedes that risk management processes may not be fully implemented or effective, and extends the regulatory discussion to AI and emerging technologies and international privacy laws.",
+     "extra": {}
+    },
+    {
+     "uid": "a05",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Union representation is no longer attributed to associates at SRS and ongoing union organizing efforts become a hypothetical future risk ('are also subject to' becomes 'may be subject to future'), while public health concerns are replaced by safety and security in stores as a labor factor and supply chain investments are dropped from the talent-needs sentence.",
+     "extra": {}
+    },
+    {
+     "uid": "a06",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "A new sentence discloses that offering new payment options may subject the company to additional rules, regulations and compliance requirements and higher fraud losses, alongside a rename of the Pro House Account trade credit program to the Pro Trade Credit program.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The section heading was changed from referencing 'technology systems' and 'interconnected retail strategy' to 'technology infrastructure' and 'interconnected experience strategy', and the body text was updated to explicitly include 'AI tools and other technology innovations' as a factor in responding to customer preferences and to list 'inaccuracies' and 'launches of new or emerging technologies' ",
+     "expected": "Disruptions in our customer-facing technology infrastructure could impair our interconnected experience strategy and give rise to negative customer experiences, damage our brand and reputation and adversely impact our sales.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The list of potential disruption causes was updated to replace 'geopolitical or military conflicts' with 'political instability; geopolitical tensions or conflicts, or military conflicts or acts of war', and the text regarding online demand was changed from referencing the specific experience during the COVID-19 pandemic to a general statement that increased demand 'can impact, and in the past has",
+     "expected": "Disruptions in our supply chain and other factors affecting the availability and distribution of our merchandise could adversely impact our business, financial results, and reputation.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The description of negative incidents was expanded to explicitly include 'civil unrest, raids, protests, or similar activities', and the potential impacts were updated to include 'traffic in our stores' and 'associate recruiting' in addition to sales, morale, and retention.",
+     "expected": "Failure to maintain a safe and secure shopping and working environment may adversely impact sales, costs, the customer and associate experience, and our brand and reputation.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The section was updated to acknowledge that cybersecurity risk management processes 'may not be fully implemented, complied with or effective', to add 'South America' to the list of geopolitical conflict regions, to include a new paragraph stating that 'The availability of AI may enable new types of threat actors', and to expand the regulatory environment discussion to include 'AI and other emergi",
+     "expected": "If our efforts to maintain the privacy and security of customer, associate, jobseeker, business partner, and Company information are not successful, we could incur substantial costs and reputational damage and could become subject to litigation and enforcement actions.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_05",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The text was updated to specify the need for associates with 'specialized product and project knowledge', to replace 'public health concerns' with 'safety and security in our stores and other facilities' as a labor market factor, to remove the specific reference to 'SRS' associates regarding union representation, and to change the strategic focus from 'interconnected retail strategy' to 'interconn",
+     "expected": "Our success depends upon our ability to attract, develop and retain highly qualified associates to provide excellent customer service and to support our strategic initiatives while also controlling our labor costs.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_06",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "A new sentence was added stating that offering new payment options may subject the company to 'additional rules, regulations, and compliance requirements, and higher fraud losses', the reference to 'artificial intelligence' was shortened to 'AI', the program name was changed from 'Pro House Account trade credit program' to 'Pro Trade Credit program', and the phrase 'an increase in our losses' was ",
+     "expected": "We are subject to payment-related risks that could increase our operating costs, expose us to fraud or theft, subject us to potential liability, and potentially disrupt our business.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 6,
+   "contested": 0,
+   "group": "hd",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 384.78,
+    "prompt_tokens": 8333,
+    "output_tokens": 1523,
+    "output_tokens_per_sec": 4.1,
+    "prompt_tokens_per_sec": 636.1,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11496
+   }
+  },
+  "t2_hd_3": {
+   "units": [
+    {
+     "uid": "a01",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds a new paragraph disclosing that demand depends on seasonal events such as storms and that sustained periods without such events have in the past led to lower sales versus prior periods, rewrites the headline around that point (dropping 'climate change' from it), and widens 'geopolitical or military conflicts' to include geopolitical tensions.",
+     "extra": {}
+    },
+    {
+     "uid": "a02",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "material_change",
+     "error_kind": "missed",
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Widens the list of supply access disruptors from 'geopolitical or military conflicts' to 'geopolitical tensions or conflicts, or military conflicts' and extends supplier controversies from 'business practices' to 'business practices or operations', with 'satisfy' reworded to 'meet'.",
+     "extra": {}
+    },
+    {
+     "uid": "a03",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Drops the disclosure that certain suppliers have faced PFAS litigation or enforcement actions to which the Company could be similarly exposed, adds a new liability risk from delivery operations and reliance on third-party carriers (property damage, personal injury, vehicular accidents), removes the statement that the Company has a responsible sourcing audit process, and drops the note that responsible sourcing is an increasing focus of government regulators.",
+     "extra": {}
+    },
+    {
+     "uid": "a06",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Replaces the inflation and rate-cut-reversal discussion with a new statement that the high interest rate environment throughout fiscal 2025 and a significant rise in home prices have impacted housing affordability and contributed to historically low housing turnover that has reduced demand, adds tariff and trade policy, quarantines, geopolitical tensions and potential societal shifts in investment in large home improvement projects as factors, and changes trade credit use by specialty trade and MRO customers from 'primarily' to 'increasingly'.",
+     "extra": {}
+    },
+    {
+     "uid": "a07",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "material_change",
+     "error_kind": "missed",
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Drops the sentence that changes in the U.S. administration and Congress have led and are expected to lead to new laws and policies of undeterminable impact, adds tariffs to the regulated areas ('international trade' to 'international trade and tariffs'), and softens stakeholder focus from 'are increasingly focusing' to 'remain focused' and cost impact from 'are likely to continue' to 'may continue'.",
+     "extra": {}
+    },
+    {
+     "uid": "a08",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds a reference to the recent U.S. Supreme Court decision striking down tariffs imposed under the International Emergency Economic Powers Act and the resulting uncertainty about new tariffs under different authority, broadens trade tensions from 'the U.S. and China' to 'the U.S. and numerous other countries' with tariffs since the beginning of fiscal 2025, drops 'significant' before tariffs, and removes the reference to tariffs proposed or enacted on imports from Mexico, Canada and China.",
+     "extra": {}
+    },
+    {
+     "uid": "a09",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Removes the attribution of trade policy changes to 'the change in the administration in the U.S.', adds geopolitical tensions and military conflicts or acts of war as price drivers, recasts the Europe and Middle East conflicts' inflationary effect as past ('in recent years ... exacerbated'), and replaces 'may not be able to offset the increases' with a new mitigation statement (vendor negotiations and other strategic initiatives) and a stated consequence that the Company may need to increase prices.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The section heading was changed to explicitly mention seasonal events and business interruptions, and a new paragraph was added stating that sustained periods without seasonal events like storms have led to lower sales compared to prior periods.",
+     "expected": "Natural disasters, unseasonable, unexpected or extreme weather conditions, as well as other catastrophic or uncharacteristic events, could impact our operations and financial results, seasonal events such as storms may impact sales compared to prior periods, and the potential impacts of catastrophic or uncharacteristic events may lead to changes in demand or availability of products or cause business interruptions.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "A new sentence was added identifying delivery operations and reliance on third-party carriers as a source of potential liability for property damage, personal injury, or vehicular accidents, and the reference to PFAS litigation was removed.",
+     "expected": "Failure to achieve and maintain a high level of product and service quality and safety and ensure compliance with responsible sourcing laws and standards could damage our reputation with customers, expose us to litigation or enforcement actions, and negatively impact our sales and results of operations.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The discussion of economic impacts was updated to cite the high interest rate environment of fiscal 2025 and significant increases in home prices as drivers of historically low housing turnover, replacing the prior discussion of inflation and central bank rate cuts.",
+     "expected": "Adverse conditions in or uncertainty regarding the housing and home improvement markets, economic conditions, political and social climate, public health issues, and other factors beyond our control could adversely affect demand for our products and services, our costs of doing business, and our financial performance.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The section was updated to reference a recent U.S. Supreme Court decision that struck down tariffs imposed under the International Emergency Economic Powers Act, noting the resulting uncertainty regarding the U.S. tariff regime.",
+     "expected": "If we cannot successfully manage the challenges presented by operating in international markets, we may not be successful in our international operations and our sales and profitability may be negatively impacted.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_05",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The concluding sentence was modified to state that if the company cannot mitigate product cost inflation through vendor negotiations and strategic initiatives, it may need to increase prices to a point that could negatively impact consumer demand.",
+     "expected": "The inflation or deflation of commodity and other prices could affect our prices, demand for our products, our sales and our profit margins.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 5,
+   "contested": 0,
+   "group": "hd",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 226.55,
+    "prompt_tokens": 8833,
+    "output_tokens": 869,
+    "output_tokens_per_sec": 4.1,
+    "prompt_tokens_per_sec": 636.4,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11496
+   }
+  },
+  "t2_hd_4": {
+   "units": [
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The description of insurance coverage for catastrophic risks was changed from 'insurance coverage' to 'third-party insurance coverage', and the trigger for adverse impact was changed from 'The occurrence of significant claims' to 'The incurrence of losses from significant claims'.",
+     "expected": "We may incur property, casualty or other losses not covered by our insurance.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The final sentence was modified to change the impact from 'impact the reputation of the Company' to 'impact the brand and reputation of the Company'.",
+     "expected": "We are involved from time to time in a number of legal, regulatory and governmental enforcement proceedings. While we cannot predict the outcomes of those proceedings and other contingencies with certainty, certain of them could adversely affect our operations and reputation and/or increase our costs.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 2,
+   "contested": 0,
+   "group": "hd",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 117.49,
+    "prompt_tokens": 1812,
+    "output_tokens": 518,
+    "output_tokens_per_sec": 4.5,
+    "prompt_tokens_per_sec": 573.9,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11496
+   }
+  },
+  "t2_jnj_1": {
+   "units": [
+    {
+     "uid": "a02",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The number of manufacturing facilities operated by the Company's subsidiaries falls from 64 to 63.",
+     "extra": {}
+    },
+    {
+     "uid": "a04",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The risk that could harm the business is recast from \"the industry's failure to mitigate the threat of counterfeit medicines\" to \"the threat of counterfeit medicines\" itself.",
+     "extra": {}
+    },
+    {
+     "uid": "a09",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The list of outcomes of product concerns now names \"field actions\" as a category, with product recalls given as one example, where the prior year listed only product recalls.",
+     "extra": {}
+    },
+    {
+     "uid": "a11",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The tax law sentence drops the reference to changes \"led by the Organization for Economic Cooperation and Development\" and to the enactment by certain EU and non-EU countries, and anticipated enactment by additional countries, of a global minimum tax, replacing it with a general mention of changes \"in the U.S. and around the world, including global minimum taxes\".",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The number of manufacturing facilities operated by the Company's subsidiaries decreased from 64 to 63.",
+     "expected": "Interruptions and delays in manufacturing operations could adversely affect the Company’s business, sales and reputation.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The second paragraph was modified to remove the reference to the industry's failure to mitigate the threat, changing the subject from 'The industry’s failure to mitigate the threat of counterfeit medicines' to 'The threat of counterfeit medicines'.",
+     "expected": "Counterfeit versions of our products could harm our patients and have a negative impact on our revenues, earnings, reputation and business.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The list of potential consequences was expanded to include 'field actions, such as product recalls' instead of just 'product recalls'.",
+     "expected": "Product reliability, safety and effectiveness concerns can have significant negative impacts on sales and results of operations, lead to litigation and cause reputational damage.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The description of tax law changes was simplified, removing specific references to the Organization for Economic Cooperation and Development and the enactment status of global minimum taxes by EU and non-EU countries, replacing them with a general reference to 'global minimum taxes'.",
+     "expected": "Changes in tax laws or exposures to additional tax liabilities could negatively impact the Company’s operating results.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 4,
+   "contested": 0,
+   "group": "jnj",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 143.91,
+    "prompt_tokens": 7806,
+    "output_tokens": 548,
+    "output_tokens_per_sec": 4.2,
+    "prompt_tokens_per_sec": 635.6,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11483
+   }
+  },
+  "t2_jnj_2": {
+   "units": [
+    {
+     "uid": "a03",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Russia is dropped as the named jurisdiction for patent exploitation and sales restrictions, the named tariff targets China, Mexico and Canada are dropped while tariffs move from recently announced to has imposed and/or announced, data localization laws and data transfer restrictions are added as protective policies, and rising is removed from conflict in the Middle East.",
+     "extra": {}
+    },
+    {
+     "uid": "a05",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "",
+     "expected": "The Orthopaedics separation announced in October 2025, targeted for completion 18 to 24 months after announcement, may be delayed or not completed on the contemplated terms because it depends on works council consultations, final Board approval and regulatory approvals.",
+     "extra": {}
+    },
+    {
+     "uid": "a06",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "",
+     "expected": "The planned Orthopaedics separation will involve significant costs, and the Company may not achieve its expected strategic and financial benefits because they rest on assumptions that may prove incorrect.",
+     "extra": {}
+    },
+    {
+     "uid": "a07",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "",
+     "expected": "The Company cannot predict the separation's effect on its common stock price, which may fall below its pre-separation value and be more volatile around the time of the separation.",
+     "extra": {}
+    },
+    {
+     "uid": "a10",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Increasing use of and reliance on third parties is added as a driver of cybersecurity risk, and the AI risk driver is widened from AI alone to AI and other emerging technology.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The subsection heading was changed from 'Anti-bribery and other regulations' to 'Anti-corruption and other regulations'.",
+     "expected": "The Company faces a variety of financial, economic, legal, social and political risks associated with conducting business internationally.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The text was modified to remove specific references to 'rising conflict' in the Middle East and specific jurisdictions (China, Mexico, Canada) for tariffs, and to add 'data localization laws and restrictions on data transfers' as a potential trade policy risk.",
+     "expected": "Due to the international nature of the Company's business, geopolitical or economic changes or events, including global tensions and war, could adversely affect our business, results of operations or financial condition.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "A new risk factor was added regarding the planned separation of the Orthopaedics business, noting the intention announced in October 2025 and a target completion timeline of 18 to 24 months.",
+     "expected": "The planned separation of the Company's Orthopaedics business may not be completed on the terms or timeline currently contemplated, if at all, and may not achieve the expected results",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "added",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "A new risk factor was added stating that the Company will incur significant expenses to complete the separation and may not achieve the full strategic and financial benefits expected.",
+     "expected": "The costs to complete the planned separation will be significant. In addition, the Company may be unable to achieve some of the strategic and financial benefits that it expects to achieve from the planned separation of the Company's Orthopaedics business",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "added",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_05",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "A new risk factor was added indicating that the price of the Company's common stock may fluctuate significantly and be more volatile around the time of the planned separation.",
+     "expected": "Following the planned separation, the price of shares of the Company's common stock may fluctuate significantly",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "added",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_06",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The text was modified to add 'increasing use and reliance on third parties' as a factor contributing to the potential for adverse impact, and to broaden the reference to AI risks to include 'other emerging technology'.",
+     "expected": "An information security incident, including a cybersecurity breach, could have a negative impact on the Company’s business or reputation.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 6,
+   "contested": 0,
+   "group": "jnj",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 253.61,
+    "prompt_tokens": 7854,
+    "output_tokens": 1000,
+    "output_tokens_per_sec": 4.1,
+    "prompt_tokens_per_sec": 639.3,
+    "load_seconds": 0.01,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11483
+   }
+  },
+  "t2_ko_1": {
+   "units": [
+    {
+     "uid": "a01",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The named conflicts (Russia and Ukraine, the Middle East) behind the operational disruption are dropped in favor of generic 'international conflicts', tariffs that increase suppliers' sourcing costs are added as an exposure, and 'intensified inflation throughout 2024' becomes 'high rates of inflation throughout 2025'.",
+     "extra": {}
+    },
+    {
+     "uid": "a04",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The customer-loss risk is broadened from 'key retail or foodservice customers' to 'key customers' in both the headline and the body.",
+     "extra": {}
+    },
+    {
+     "uid": "a07",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "",
+     "expected": "Covers the risk that failing to attract, retain and inspire outstanding talent, plan management succession, maintain an innovative culture or implement suitable work models could disrupt operations and harm the business.",
+     "extra": {}
+    },
+    {
+     "uid": "a08",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "material_change",
+     "error_kind": "missed",
+     "trap": "removed",
+     "hallucination": false,
+     "got": "",
+     "expected": "Covered the risk that failing to attract or retain specialized or top talent with diverse perspectives, experiences and backgrounds reflecting the consumers and markets served could disrupt operations and harm the business.",
+     "extra": {}
+    },
+    {
+     "uid": "a09",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Tariffs that increase suppliers' sourcing costs are added to the list of factors driving input price volatility, alongside a 2025 to 2026 roll-forward and minor rewording ('derived' to 'derived and manufactured', 'that we use' to 'used').",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The description of inflation in certain markets was updated from 'intensified inflation throughout 2024, which may continue in 2025' to 'high rates of inflation throughout 2025, which may continue in 2026'.",
+     "expected": "Unfavorable general economic and geopolitical conditions could negatively impact our financial results.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The specific international conflicts cited as causing operational disruption were removed, changing the text from 'including the conflict between Russia and Ukraine and conflicts in the Middle East' to a general reference to 'international conflicts'.",
+     "expected": "Unfavorable general economic and geopolitical conditions could negatively impact our financial results.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": true
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "A new clause specifying that tariffs may increase suppliers' sourcing costs was added to the list of trade restrictions.",
+     "expected": "Unfavorable general economic and geopolitical conditions could negatively impact our financial results.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": true
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The phrase 'depends on' was changed to 'depends on, among other factors,' to indicate that the listed factors are not exhaustive.",
+     "expected": "If we are not successful in our innovation activities, our financial results may be negatively affected.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_05",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The section heading was changed from 'Changes in the retail landscape or the loss of key retail or foodservice customers could adversely affect our financial results.' to 'Changes in the retail landscape or the loss of key customers could adversely affect our financial results.', and the body text was updated to remove specific references to 'retail or foodservice' customers, replacing them with t",
+     "expected": "Changes in the retail landscape or the loss of key customers could adversely affect our financial results.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_06",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "The section heading was changed from 'If we are unable to attract or retain specialized talent or top talent with diverse perspectives, experiences and backgrounds that reflect the broad range of consumers and markets we serve around the world, our business could be negatively affected.' to 'If we are unable to attract, retain and inspire outstanding talent, our business could be negatively affect",
+     "expected": "If we are unable to attract, retain and inspire outstanding talent, our business could be negatively affected.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_07",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The sentence regarding agricultural commodities was modified to add 'and manufactured' after 'derived', and the sentence regarding supply disruption was modified to remove 'our' before 'costs'.",
+     "expected": "Disruption of our supply chain, including increased commodity, raw material, packaging, energy, transportation and other input costs, may adversely affect our financial condition or results of operations.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_08",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "A new clause specifying that tariffs may increase suppliers' sourcing costs was added to the list of factors causing price volatility in raw materials and supplies.",
+     "expected": "Disruption of our supply chain, including increased commodity, raw material, packaging, energy, transportation and other input costs, may adversely affect our financial condition or results of operations.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": true
+     }
+    },
+    {
+     "uid": "reported_09",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The statement regarding inflationary pressures was updated from 'We expect the inflationary pressures on certain input and other costs to continue to impact our business in 2025.' to 'We expect the inflationary pressures on certain input and other costs to continue to impact our business in 2026.'",
+     "expected": "Disruption of our supply chain, including increased commodity, raw material, packaging, energy, transportation and other input costs, may adversely affect our financial condition or results of operations.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 9,
+   "contested": 0,
+   "group": "ko",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 327.8,
+    "prompt_tokens": 8717,
+    "output_tokens": 1279,
+    "output_tokens_per_sec": 4.1,
+    "prompt_tokens_per_sec": 611.5,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11483
+   }
+  },
+  "t2_ko_2": {
+   "units": [
+    {
+     "uid": "a01",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds recent U.S. federal and state government activities and proposals focused on drivers of childhood chronic diseases, and adds changes in funding for or restrictions on inclusion of the company's products in benefit programs such as SNAP as a demand risk.",
+     "extra": {}
+    },
+    {
+     "uid": "a02",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds affordability and consumer spending patterns, perceived undesirability of processed foods, and the reshaping of brand discovery and engagement by data analytics, automation and artificial intelligence on digital platforms as drivers of shifting consumer preferences.",
+     "extra": {}
+    },
+    {
+     "uid": "a03",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Extends the admission of unmet safety standards and past recalls to contract manufacturers, drops the specific reference to value-added dairy and plant-based beverage expansion, broadens recall causes to misbranding, spoilage and undeclared allergens, and adds lost sales from production decreases during remediation and changes in consumer demand as consequences.",
+     "extra": {}
+    },
+    {
+     "uid": "a07",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The U.S. alcohol subsidiary's activity is described as producing, distributing and selling alcohol products in the United States, where prior text said producing and selling in certain regions of the United States.",
+     "extra": {}
+    },
+    {
+     "uid": "a08",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds that one bottler accounted for 10% of net operating revenues for 2025 (reflected in the EMEA and Asia Pacific segments), where no customer concentration figure was given before, and adds the risk that bottlers' actions on quality, safety, marketing, labor, compliance or sustainability could harm the company's brands even if it is not responsible.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The section adds references to recent U.S. federal and state government activities regarding childhood chronic diseases and introduces a new risk factor concerning changes in funding for or restrictions on the inclusion of products in benefit programs like SNAP.",
+     "expected": "Obesity and other health-related concerns may reduce demand for some of our products.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The section expands the list of evolving consumer preferences to include concerns about processed foods, affordability, and spending patterns, and adds a statement about the impact of data analytics, automation, and artificial intelligence on consumer engagement.",
+     "expected": "If we do not address evolving consumer product and shopping preferences, our business could suffer.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The section broadens the scope of potential non-compliance and recalls to explicitly include contract manufacturers and lists specific quality issues such as misbranding, spoilage, and undeclared allergens, while removing the specific reference to value-added dairy and plant-based beverages.",
+     "expected": "Product safety and quality concerns could negatively affect our business.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The description of the U.S. alcohol subsidiary's operations is expanded to state that it produces, distributes, and sells alcohol products in the United States, rather than just in certain regions.",
+     "expected": "If we are unable to successfully manage new product launches, our business and financial results could be adversely affected.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_05",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The section adds a specific disclosure that one bottler accounted for 10% of net operating revenues in the EMEA and Asia Pacific segments for the year ended December 31, 2025, and includes a new sentence stating that bottling partners' actions regarding quality, safety, and other matters could adversely affect brand reputation even if the Company is not directly responsible.",
+     "expected": "We rely on our bottling partners for a significant portion of our business. If we are unable to maintain good relationships with our bottling partners, our business could suffer.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 5,
+   "contested": 0,
+   "group": "ko",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 323.87,
+    "prompt_tokens": 7597,
+    "output_tokens": 1294,
+    "output_tokens_per_sec": 4.1,
+    "prompt_tokens_per_sec": 646.0,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11483
+   }
+  },
+  "t2_ko_3": {
+   "units": [
+    {
+     "uid": "a01",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The Pillar Two discussion adds the June 2025 G7 statement on a side-by-side system that would exclude U.S.-parented groups from certain Pillar Two provisions and the January 2026 OECD administrative guidance largely exempting U.S.-headquartered companies, and says further guidance is expected to write that framework into member-country law.",
+     "extra": {}
+    },
+    {
+     "uid": "a04",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The trigger for labeling, warning and marketing restrictions is broadened from requirements under \"current or future environmental or health laws or regulations\" to requirements under \"current or future laws or regulations\" of any kind.",
+     "extra": {}
+    },
+    {
+     "uid": "a05",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "\"Ingredients or processing\" is added to the list of subject areas from which the Company's litigation claims and legal proceedings arise, and the headline changes from \"Litigation\" to \"Litigation claims.\"",
+     "extra": {}
+    },
+    {
+     "uid": "a08",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The list of laws and regulations the Company is subject to changes \"product safety\" to \"product safety and quality,\" adding product quality regulation as an area of exposure; the rest of the text is unchanged apart from a page-number split.",
+     "extra": {}
+    },
+    {
+     "uid": "a09",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Net operating revenues from operations outside the United States change from $28.7 billion in 2024 to $28.8 billion in 2025, and tariffs are added to the global events that may cause currencies to fluctuate against the U.S. dollar.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The description of Pillar Two implementation was updated to reflect that additional jurisdictions adopted legislation effective in 2025, and new details were added regarding a G7 statement in June 2025 and OECD guidance in January 2026 introducing a 'side-by-side' framework that largely exempts U.S.-headquartered companies from Pillar Two provisions.",
+     "expected": "Increases in income tax rates, changes in income tax laws or regulations, or unfavorable resolutions of tax matters could have a material adverse impact on our financial results.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The phrase describing consumer sentiment was changed from 'increased concerns' to 'ongoing concerns' regarding solid waste streams and environmental responsibility.",
+     "expected": "Changes in laws and regulations relating to beverage containers and packaging could increase our costs and reduce demand for our products.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": "contested",
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The reference to the legal basis for potential product restrictions was broadened from 'environmental or health laws or regulations' to simply 'laws or regulations'.",
+     "expected": "Significant additional labeling or warning requirements or limitations on the marketing or sale of our products may inhibit sales of affected products.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The list of potential sources of litigation claims was expanded to include 'ingredients or processing' in addition to the previously listed categories.",
+     "expected": "Litigation claims or legal proceedings could expose us to significant liabilities and damage our reputation.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_05",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The list of applicable laws and regulations was updated to include 'product safety and quality' instead of just 'product safety'.",
+     "expected": "Changes in, or failure to comply with, the laws and regulations applicable to our products or our business operations could increase our costs or reduce our net operating revenues.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_06",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The reported net operating revenues from operations outside the United States increased from $28.7 billion in 2024 to $28.8 billion in 2025, and 'tariffs' were added to the list of global events that may cause currency fluctuations.",
+     "expected": "Fluctuations in foreign currency exchange rates could have a material adverse effect on our financial results.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 6,
+   "contested": 1,
+   "group": "ko",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 305.62,
+    "prompt_tokens": 8518,
+    "output_tokens": 1198,
+    "output_tokens_per_sec": 4.1,
+    "prompt_tokens_per_sec": 646.0,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11487
+   }
+  },
+  "t2_ko_4": {
+   "units": [
+    {
+     "uid": "a05",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The company now says previously reported sustainability data may be adjusted to correct identified errors in data reporting and because of better quality in its own data, not only third-party data, and adds that the disclosure frameworks apply \"across jurisdictions\".",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The description of obligations regarding cross-border data transfers was expanded to include 'restrictions' in addition to 'obligations'.",
+     "expected": "If we fail to comply with privacy and data protection laws, we could be subject to adverse publicity, business disruption, data loss, government enforcement actions and/or private litigation, any of which could negatively affect our business and operating results.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The scope of voluntary disclosure frameworks was clarified to be 'across jurisdictions', and the list of reasons for data adjustments was expanded to include 'correction of identified errors in data reporting' and changed 'third-party data' to 'our or third-party data'.",
+     "expected": "Our business is subject to evolving sustainability regulatory requirements and expectations, which exposes us to increased costs and legal and reputational risks.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The list of challenges facing water resources was restructured to explicitly include 'increasing agricultural demand' and 'other consumer and industrial products' as distinct drivers of demand.",
+     "expected": "Water scarcity and poor quality could negatively impact the Coca-Cola system’s costs and capacity.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The description of the company's investment in agriculture was changed from 'sustainable agriculture' to 'more sustainable agriculture'.",
+     "expected": "Increased demand for food products, decreased agricultural productivity and increased regulation of ingredient sourcing due diligence may negatively affect our business.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 4,
+   "contested": 0,
+   "group": "ko",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 154.38,
+    "prompt_tokens": 8585,
+    "output_tokens": 580,
+    "output_tokens_per_sec": 4.1,
+    "prompt_tokens_per_sec": 643.2,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11483
+   }
+  },
+  "t2_ko_5": {
+   "units": [
+    {
+     "uid": "a01",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The climate change risk factor now describes concern over climate change as \"ongoing\" rather than \"increasing\" in both places it appears, including as the driver of additional legal and regulatory requirements; the deleted \"25\" is a page-number artifact, and the rest of the text is identical.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The phrase \"increasing concern\" was changed to \"ongoing concern\" in two instances within the section.",
+     "expected": "Climate change and legal or regulatory responses thereto may have a long-term adverse impact on our business and results of operations.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 1,
+   "contested": 0,
+   "group": "ko",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 43.34,
+    "prompt_tokens": 1808,
+    "output_tokens": 183,
+    "output_tokens_per_sec": 4.6,
+    "prompt_tokens_per_sec": 581.0,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11483
+   }
+  },
+  "t2_ma_1": {
+   "units": [
+    {
+     "uid": "a04",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The example of a company action that could prompt jurisdictions to favor local payment networks changes from \"our decision to suspend business operations in Russia\" to the generic \"any decisions we may make relating to entering or exiting a particular market\", dropping the named Russia exposure.",
+     "extra": {}
+    },
+    {
+     "uid": "a05",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds cybersecurity and cyber-risk laws to the covered regulatory scope, a new disclosure that a single breach could require parallel notifications to data protection authorities, cyber authorities and law enforcement under differing thresholds and deadlines, criminal as well as civil penalties, restrictions on access to data abroad, and agentic commerce as an AI application, while dropping the EU and GDPR reference and recasting Recorded Future from an acquisition to a threat intelligence services business.",
+     "extra": {}
+    },
+    {
+     "uid": "a06",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The issuer and acquirer practices example adds legislation alongside regulation, changes \"impact\" to \"do or could impact\", and newly names caps on issuer interest rates as an example of such rules.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The specific reference to the decision to suspend business operations in Russia was removed and replaced with a generalized reference to decisions relating to entering or exiting a particular market.",
+     "expected": "Preferential or protective government actions related to domestic payment services could adversely affect our ability to maintain or increase our revenues.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The description of the regulatory environment was updated to include cybersecurity and cyber-risk, added a new risk regarding parallel breach notifications to various authorities, expanded the scope of penalties to include criminal sanctions, and updated the description of AI governance frameworks and data practices to include accuracy and agentic commerce.",
+     "expected": "Regulation and enforcement of privacy, data, AI, information security and the digital economy could increase our costs and lead to legal claims and fines, as well as negatively impact our growth and reputation.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The section on Issuer and Acquirer Practices was modified to include a new example of regulations impacting issuers and acquirers, specifically citing caps on issuer interest rates.",
+     "expected": "Regulations that directly or indirectly apply to Mastercard as a result of our participation in the global payments industry may materially and adversely affect our overall business and results of operations.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 3,
+   "contested": 0,
+   "group": "ma",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 308.0,
+    "prompt_tokens": 8470,
+    "output_tokens": 1208,
+    "output_tokens_per_sec": 4.1,
+    "prompt_tokens_per_sec": 642.9,
+    "load_seconds": 0.01,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11483
+   }
+  },
+  "t2_ma_2": {
+   "units": [
+    {
+     "uid": "a01",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds litigation settlements, specifically the Rules Relief Class settlement described in Note 19, as a source of future limitations on Mastercard's rules and business practices; the legal proceedings note cross-reference also moves from Note 21 to Note 19.",
+     "extra": {}
+    },
+    {
+     "uid": "a03",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds a new disintermediation risk that payments industry participants may withhold rights to data Mastercard uses to power its solutions in order to support their own future solutions, potentially impairing the effectiveness of Mastercard's solutions.",
+     "extra": {}
+    },
+    {
+     "uid": "a05",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Broadens the example technology from \"cryptocurrency and blockchain\" to \"digital assets and blockchain\" and adds that third parties Mastercard relies on for new technologies may fail to keep pace with changes \"including with regard to AI\", while trimming \"safety and security technologies\" to \"security technologies\".",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The text now explicitly cites the 'Rules Relief Class settlement' as an example of future limitations resulting from litigation settlements, whereas the prior version only referenced general litigation settlements.",
+     "expected": "Liabilities or business limitations resulting from litigation could materially and adversely affect our results of operations.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "A new risk was added stating that participants may withhold rights to data used to power Mastercard's solutions to support their own future solutions, potentially impacting the effectiveness of Mastercard's solutions.",
+     "expected": "Disintermediation from stakeholders both within and outside of the payments value chain could harm our business.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The list of technological changes was updated to replace 'cryptocurrency' with 'digital assets', and a specific reference to AI was added to the risk regarding third parties' inability to keep pace with technological changes.",
+     "expected": "Rapid and significant technological developments and changes could negatively impact our overall business and results of operations or limit our future growth.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 3,
+   "contested": 0,
+   "group": "ma",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 123.16,
+    "prompt_tokens": 6452,
+    "output_tokens": 480,
+    "output_tokens_per_sec": 4.3,
+    "prompt_tokens_per_sec": 640.9,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11483
+   }
+  },
+  "t2_ma_3": {
+   "units": [
+    {
+     "uid": "a01",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds a new disclosure that the current or future listing of Recorded Future as an \"undesirable\" or \"unreliable\" entity by certain jurisdictions could further increase information security risk, and escalates AI from threats that \"may be further enhanced\" by threat actors' use of AI to widespread AI use that \"is enhancing\" threat frequency and effectiveness and has \"further exacerbated\" fraud and cyber-attacks.",
+     "extra": {}
+    },
+    {
+     "uid": "a02",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds network degradation, updates and migrations to new technology and platforms, and cybersecurity-related disruptions or failures at third-party service providers to the listed causes of service interruptions.",
+     "extra": {}
+    },
+    {
+     "uid": "a05",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "material_change",
+     "error_kind": "missed",
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The reference to bank failures \"similar to those that occurred in the U.S. in recent years\" drops \"in the U.S.\", generalizing the precedent for customer consolidation beyond the U.S.",
+     "extra": {}
+    },
+    {
+     "uid": "a06",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The description of domestic switching changes from \"with the exception of the U.S. and a select number of other jurisdictions, most in-country transactions\" being switched by customers or other processors to Mastercard itself switching \"a high percentage of domestic (or in-country) transactions\", with customers switching only in \"several jurisdictions\".",
+     "extra": {}
+    },
+    {
+     "uid": "a08",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds system integrators and other third party partners as channels through which Mastercard works with governments, both in the introductory scope and in the reputational-risk bullet.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The description of threat actors' use of AI was changed from a potential enhancement to a statement that widespread AI use is actively enhancing frequency and effectiveness, and a new risk regarding the potential listing of Recorded Future as an 'undesirable' or 'unreliable' entity by certain jurisdictions was added.",
+     "expected": "Information security incidents or account data compromise events could disrupt our business, damage our reputation, increase our costs and cause losses.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "New causes for interruptions, specifically 'network degradation, updates and migrations to new technology and platforms', were added to the list of potential disruptions, and 'cybersecurity-related disruptions or failures' was added as a reason for third-party service provider failures.",
+     "expected": "Service disruptions that cause us to be unable to process transactions or service our customers could reduce our operational resilience and materially affect our overall business and results of operations.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The statement regarding domestic transaction switching was changed from stating that most in-country transactions are switched by customers (with the U.S. as an exception) to stating that Mastercard switches a high percentage of domestic transactions, with several jurisdictions being the exception.",
+     "expected": "Our business significantly depends on the continued success and competitiveness of our issuing and acquiring customers and, in many jurisdictions, their ability to effectively manage or help manage our brands.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The scope of government work was expanded to include 'system integrators and other third party partners' in addition to financial institutions, and this expansion was repeated in the bullet point regarding reputational risks.",
+     "expected": "Our work with governments exposes us to risks that could have a material impact on our business and results of operations.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 4,
+   "contested": 0,
+   "group": "ma",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 181.55,
+    "prompt_tokens": 8377,
+    "output_tokens": 694,
+    "output_tokens_per_sec": 4.1,
+    "prompt_tokens_per_sec": 641.7,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11487
+   }
+  },
+  "t2_ma_4": {
+   "units": [
+    {
+     "uid": "a01",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds a new bullet to the adverse economic trends list disclosing uncertain global trade policies and related government actions, including tariffs, as a risk to consumer and business spending and stakeholder relationships.",
+     "extra": {}
+    },
+    {
+     "uid": "a02",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The share of revenue generated from activities outside the U.S. changes from approximately 70% during 2024 to approximately 71% during 2025.",
+     "extra": {}
+    },
+    {
+     "uid": "a03",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds a sentence that Mastercard or its customers could take, or be perceived to take, actions related to high-risk merchant industries (adult content, firearms, alcohol, tobacco) that could be viewed negatively and result in threats or other retaliatory actions.",
+     "extra": {}
+    },
+    {
+     "uid": "a05",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The ESG risk now says disclosures, statements and metrics could be viewed as \"inaccurate or unlawful\" (previously only \"inaccurate\"), and rewords the workplace initiative from \"equal opportunities for all of our employees\" to \"where everyone has the opportunity to succeed\" and drops \"equitably\" from digital economy participation.",
+     "extra": {}
+    },
+    {
+     "uid": "a06",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The talent risk narrows the competitive skill-set market from \"technology and other areas that are important to the growth of our business\" to \"emerging technologies\", drops the discussion of employees' different career motivations (project-based or gig work versus linear careers), and removes \"our ability to innovate\" from the listed impacts of failing to meet workforce expectations.",
+     "extra": {}
+    },
+    {
+     "uid": "a07",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The inherited litigation risk from acquisitions no longer says it may \"impact our ability to successfully finance that business\", keeping only the increase in post-acquisition costs of operations.",
+     "extra": {}
+    },
+    {
+     "uid": "a08",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The guarantor risk now cites that Brazil recently enacted regulation requiring PSOs in Brazil (including Mastercard and Visa) to extend responsibility for the financial and settlement integrity of payments to merchants, says more jurisdictions may enact similar approaches with impact on cost of operations and financial condition, and drops the U.S. qualifier on recent bank failures.",
+     "extra": {}
+    },
+    {
+     "uid": "a10",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Mastercard Foundation's stated share of general voting power changes from approximately 9.4% as of December 31, 2024 to \"greater than 5%\" with no as-of date.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "A new bullet point was added to the list of adverse economic trends, specifically citing uncertain global trade policies and related government actions (including tariffs) as a potential adverse impact on business and stakeholder relationships.",
+     "expected": "Global economic, political, financial and societal events or conditions could result in a material and adverse impact on our overall business and results of operations.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The percentage of revenue generated from activities outside the U.S. was updated from approximately 70% in 2024 to approximately 71% in 2025.",
+     "expected": "Adverse currency fluctuations and foreign exchange controls could negatively impact our results of operations.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "A new sentence was added to the first bullet point stating that the company or its customers could take actions related to high-risk industries that are viewed negatively and result in threats or other retaliatory actions.",
+     "expected": "Negative brand perception may materially and adversely affect our overall business.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The description of the company's ESG initiatives was changed from helping everyone participate equitably in the digital economy and creating a workplace providing equal opportunities to helping everyone participate in the digital economy and creating a workplace where everyone has the opportunity to succeed; additionally, the condition for negative stakeholder perception was expanded to include di",
+     "expected": "Environmental, social and governance matters and related stakeholder reaction may impact our reputation, increase legal exposure and/or have other business impacts, which could adversely affect our overall business and/or results of operations.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_05",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The description of the competitive market for specialized skill-sets was narrowed from 'technology and other areas that are important to the growth of our business' to 'emerging technologies', and the consequence of failing to attract talent was changed from 'not anticipating or identifying' to 'not identifying and/or acting on' emerging opportunities.",
+     "expected": "We may not be able to attract and retain a highly qualified workforce, or maintain our corporate culture, which could harm our overall business and results of operations.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_06",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The sentence regarding inherited litigation risk was modified to remove the clause stating that such risk may impact the ability to successfully finance the business.",
+     "expected": "Our efforts to enter into acquisitions, strategic investments or new businesses could be impacted or prevented by regulatory scrutiny and could otherwise result in issues that could disrupt our business and harm our results of operations or reputation.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_07",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The reference to bank failures was generalized from 'those seen in recent years in the U.S.' to 'those seen in recent years', and a new paragraph was added stating that Brazil recently enacted regulation requiring Payment Service Organizations (PSOs) to extend responsibility for the financial and settlement integrity of payments to merchants, with a note that other jurisdictions may enact similar ",
+     "expected": "Our role as guarantor, as well as other contractual obligations and discretionary actions, expose us to risk of loss or illiquidity.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_08",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The specific ownership percentage of Mastercard Foundation was changed from 'approximately 9.4%' as of December 31, 2024, to a general statement that it owns 'greater than 5%' of general voting power.",
+     "expected": "Mastercard Foundation’s substantial stock ownership, and restrictions on its sales, may impact corporate actions or acquisition proposals favorable to, or favored by, the other public stockholders.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 8,
+   "contested": 0,
+   "group": "ma",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 326.56,
+    "prompt_tokens": 8537,
+    "output_tokens": 1282,
+    "output_tokens_per_sec": 4.1,
+    "prompt_tokens_per_sec": 647.5,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11487
+   }
+  },
+  "t2_s02": {
+   "units": [
+    {
+     "uid": "a03",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "Subsequent Closing window extended from twelve (12) months to eighteen (18) months after the Initial Closing Date.",
+     "extra": {}
+    },
+    {
+     "uid": "a06",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "Recycling cap on the aggregate cost of all Investments, including Investments made with Recycled Amounts, raised from 125% to 150% of aggregate Commitments.",
+     "extra": {}
+    },
+    {
+     "uid": "a08",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "Single-Obligor concentration limit raised from 10% to 15% of aggregate Commitments.",
+     "extra": {}
+    },
+    {
+     "uid": "a10",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "material_change",
+     "error_kind": "missed",
+     "trap": "removed",
+     "hallucination": false,
+     "got": "",
+     "expected": "Restriction on pre-dissolution distributions in kind (only freely tradable listed securities, with a Limited Partner right to require a sale and receive cash proceeds) deleted in its entirety.",
+     "extra": {}
+    },
+    {
+     "uid": "a12",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "Carve-out added to the overhead exclusion so that allocable compensation of Investment Manager personnel performing loan administration, valuation or fund accounting services becomes a Partnership Expense instead of being paid out of the Management Fee.",
+     "extra": {}
+    },
+    {
+     "uid": "a15",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "",
+     "expected": "New excuse right lets Governmental Plan Investors opt out of any Investment that would violate a state divestment statute or regulation, with the excused amount called from the other Partners up to 115% of their original share.",
+     "extra": {}
+    },
+    {
+     "uid": "a17",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "Limited Partner vote required to remove the General Partner for Cause raised from 66 2/3% to 75% of Commitments.",
+     "extra": {}
+    },
+    {
+     "uid": "a18",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "Quarterly schedule of Management Fees, Partnership Expenses, fee offsets and Carried Interest changed from optional (may) to mandatory (shall).",
+     "extra": {}
+    },
+    {
+     "uid": "a20",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "",
+     "expected": "New annual ESG reporting obligation (responsible investment policy, declined Obligors, Scope 1 and Scope 2 emissions, board independence) due within 120 days after each fiscal year starting with fiscal year 2026, plus notice to the Advisory Committee within 15 Business Days of any Obligor fatality or governmental enforcement action.",
+     "extra": {}
+    },
+    {
+     "uid": "a23",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "Second one-year term extension no longer requires Advisory Committee consent; both extensions are now in the General Partner's discretion.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The period for admitting additional Limited Partners or accepting increased Commitments was extended from twelve (12) months to eighteen (18) months after the Initial Closing Date.",
+     "expected": "3.1 Commitments and Subsequent Closings",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The maximum aggregate cost of all Investments, including those made with Recycled Amounts, was increased from one hundred twenty-five percent (125%) to one hundred fifty percent (150%) of aggregate Commitments.",
+     "expected": "3.4 Reinvestment of Proceeds",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The cross-reference for amounts withheld was updated from Section 4.2 to Section 9.2 to reflect the relocation of the tax withholding provision.",
+     "expected": "4.1 Distributions",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The limit on investments in any single Obligor and its Affiliates was increased from ten percent (10%) to fifteen percent (15%) of aggregate Commitments.",
+     "expected": "5.1 Investment Limitations",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_05",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The exclusion of ordinary overhead from Partnership Expenses was narrowed to exclude the allocable compensation of Investment Manager personnel performing loan administration, valuation, or fund accounting services for the Partnership.",
+     "expected": "5.4 Partnership Expenses",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_06",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "A new section was added granting Governmental Plan Investors the right to be excused from funding and participating in specific Investments if participation would violate a divestment statute or regulation, with a cap on the funding obligation of other Partners at 115% of their original share.",
+     "expected": "6.3 Excuse Rights of Governmental Plan Investors",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "added",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_07",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The threshold of Limited Partner Commitments required to remove the General Partner for Cause was increased from sixty-six and two-thirds percent (66 2/3%) to seventy-five percent (75%).",
+     "expected": "7.2 Removal of the General Partner",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_08",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The General Partner's obligation to furnish a quarterly schedule of Management Fees, Partnership Expenses, fee offsets, and Carried Interest was changed from discretionary (\"may\") to mandatory (\"shall\").",
+     "expected": "8.1 Reports to Partners",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_09",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The defined term for confidential information was changed from \"Confidential Information\" to \"Fund Information\".",
+     "expected": "8.2 Confidentiality",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_10",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "A new section was added requiring the General Partner to deliver an annual ESG report covering responsible investment policies, declined Obligors, greenhouse gas emissions, and board independence, and to notify the Advisory Committee of fatalities or enforcement actions related to EHS or labor practices.",
+     "expected": "8.3 Environmental, Social and Governance Reporting",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "added",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_11",
+     "score": 0.0,
+     "verdict": "INVENTED_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "moved",
+     "hallucination": true,
+     "got": "The tax withholding provision was moved from Section 4.2 to Section 9.2, with no change to the substantive terms.",
+     "expected": "9.2 Tax Withholding",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "added",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_12",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The requirement for Advisory Committee consent to the second one-year extension of the Partnership's term was removed, allowing the General Partner to extend the term for up to two consecutive one-year periods in its sole discretion.",
+     "expected": "10.1 Term and Dissolution",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_13",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The date of the referenced privacy notice was updated from February 3, 2025 to January 5, 2026.",
+     "expected": "10.3 Anti-Money Laundering and Privacy",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 13,
+   "contested": 0,
+   "group": "t2_s02",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 527.23,
+    "prompt_tokens": 9384,
+    "output_tokens": 2053,
+    "output_tokens_per_sec": 4.0,
+    "prompt_tokens_per_sec": 636.6,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11483
+   }
+  },
+  "t2_s03": {
+   "units": [
+    {
+     "uid": "a06",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "The dollar ceiling on the pre-clearance exemption for same-day trades in common stock of issuers with a market capitalization of at least $10 billion was lowered from $25,000 to $10,000.",
+     "extra": {}
+    },
+    {
+     "uid": "a07",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "A carve-out was added to the exchange-traded fund exemption: ETFs seeking a leveraged or inverse multiple of the daily return of an index are no longer exempt and now require pre-clearance.",
+     "extra": {}
+    },
+    {
+     "uid": "a08",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "The Code of Ethics quarterly transaction report deadline was shortened from thirty (30) to fifteen (15) calendar days after the end of each calendar quarter.",
+     "extra": {}
+    },
+    {
+     "uid": "a13",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "removed",
+     "hallucination": false,
+     "got": "",
+     "expected": "The exception from Gift Log recording for logo promotional items under $50, shared perishable food and modest seminar or due diligence meals was deleted, so every gift and entertainment event must now be logged under Section 3.2.",
+     "extra": {}
+    },
+    {
+     "uid": "a14",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "Reimbursement of client losses caused by trade error corrections changed from discretionary (the Firm may reimburse) to mandatory (the Firm shall reimburse).",
+     "extra": {}
+    },
+    {
+     "uid": "a18",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "The definition of complaint was expanded from written statements only to written or oral statements, bringing oral complaints within the one-business-day reporting and complaint log requirements.",
+     "extra": {}
+    },
+    {
+     "uid": "a19",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "",
+     "expected": "New off-channel communications policy limiting written business communications to Approved Channels (Firm email, client portal, archived messaging on Firm-issued devices, approved social media accounts), prohibiting personal email, personal texts, WhatsApp, Signal and personal social media, and requiring any off-channel business message received to be preserved and reported to the CCO within one business day, with quarterly certification.",
+     "extra": {}
+    },
+    {
+     "uid": "a22",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "",
+     "expected": "New incident response program under amended Regulation S-P requiring notice to affected individuals as soon as practicable and no later than 30 days after the Firm becomes aware of unauthorized access, and service provider notice to the Firm within 72 hours of a breach.",
+     "extra": {}
+    },
+    {
+     "uid": "a23",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "The approval authority for outside business activities moved from the Compliance Committee to the CCO.",
+     "extra": {}
+    },
+    {
+     "uid": "a25",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "",
+     "expected": "New procedure requiring wealth advisors to request a trusted contact person from each natural person client at account opening and each annual review, and requiring escalation of suspected diminished capacity or financial exploitation to the CCO within one business day.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The language regarding the CCO's delegation of duties was reworded to explicitly state that responsibility remains with the CCO, rather than stating the CCO retains responsibility.",
+     "expected": "1.2 Designation and Duties of the Chief Compliance Officer",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The transaction value threshold for the pre-clearance exemption for large-cap stocks was lowered from $25,000 to $10,000.",
+     "expected": "2.3 Pre-Clearance of Personal Transactions",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The exemption for exchange-traded funds was narrowed to exclude leveraged or inverse ETFs.",
+     "expected": "2.4 Transactions Exempt from Pre-Clearance",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The deadline for submitting quarterly transaction reports was shortened from thirty (30) calendar days to fifteen (15) calendar days after the end of the quarter.",
+     "expected": "2.5 Holdings and Transaction Reports",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_05",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "removed",
+     "hallucination": false,
+     "got": "The section providing exceptions for recording nominal promotional items, perishable food, and modest meals on the Gift Log was removed.",
+     "expected": "3.3 Exception for Nominal Promotional Items",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "removed",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_06",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The Firm's obligation to reimburse clients for losses resulting from trade errors was changed from discretionary ('may') to mandatory ('shall').",
+     "expected": "4.3 Trade Error Correction",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_07",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The definition of a complaint was expanded to include oral statements, not just written ones.",
+     "expected": "5.4 Client Complaints",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_08",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "A new section was added prohibiting business communications through unapproved channels (such as personal email or text) and requiring the preservation and reporting of such communications.",
+     "expected": "5.5 Off-Channel Messaging Prohibition",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "added",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_09",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The cross-reference for confidentiality obligations was updated from Section 1.4 to Section 6.2.",
+     "expected": "6.1 Privacy and Safeguarding of Customer Information",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_10",
+     "score": 0.0,
+     "verdict": "INVENTED_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "moved",
+     "hallucination": true,
+     "got": "The confidentiality of client information provisions previously located in Section 1.4 were moved to this new section under Privacy and Information Security.",
+     "expected": "6.2 Confidentiality of Client Information",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "added",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_11",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "A new section was added detailing the Firm's incident response program, including notification timelines for affected individuals (30 days) and service providers (72 hours).",
+     "expected": "6.3 Security Incident Response Program",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "added",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_12",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The approval authority for outside business activities was changed from the Compliance Committee to the CCO.",
+     "expected": "7.1 Outside Business Activities",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_13",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The title of the business continuity coordinator was changed to 'business continuity lead' and the defined term was updated from 'BCP Coordinator' to 'Continuity Lead'.",
+     "expected": "7.2 Business Continuity Planning",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_14",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "A new section was added requiring the collection of trusted contact persons and establishing procedures for handling diminished capacity and financial exploitation.",
+     "expected": "7.3 Diminished Capacity and Trusted Contact Persons",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "added",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 14,
+   "contested": 0,
+   "group": "t2_s03",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 515.7,
+    "prompt_tokens": 8805,
+    "output_tokens": 2032,
+    "output_tokens_per_sec": 4.1,
+    "prompt_tokens_per_sec": 635.8,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11487
+   }
+  },
+  "t2_s04": {
+   "units": [
+    {
+     "uid": "a04",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The insider trading prohibition, which extended only to the issuer's own debt, swaps and other derivatives, now also covers the securities of any other issuer (such as a competitor, supplier or acquirer) whose price the information could reasonably be expected to affect.",
+     "extra": {}
+    },
+    {
+     "uid": "a05",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Authority to remove an issuer from the Restricted List moves from any member of the Compliance Department to the CCO alone, who must make the removal determination.",
+     "extra": {}
+    },
+    {
+     "uid": "a08",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "",
+     "expected": "New expert network policy: expert network firms must be CCO-approved, each consultation must be pre-cleared one business day ahead, current insiders, recent (under six months) departees and government employees may not be consulted, calls open with a compliance script and are chaperoned on a sample basis.",
+     "extra": {}
+    },
+    {
+     "uid": "a10",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "The pre-clearance approval window is shortened from the close of regular trading on the business day following approval to the close of regular trading on the day of approval.",
+     "extra": {}
+    },
+    {
+     "uid": "a11",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "The minimum holding period for Reportable Securities acquired in a Covered Account is lengthened from 30 to 60 calendar days.",
+     "extra": {}
+    },
+    {
+     "uid": "a13",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "material_change",
+     "error_kind": "missed",
+     "trap": "removed",
+     "hallucination": false,
+     "got": "",
+     "expected": "The exemption from pre-clearance and the minimum holding period for common stock of issuers with a market capitalization above $10 billion, up to $25,000 per issuer in any rolling 30 calendar days, is deleted.",
+     "extra": {}
+    },
+    {
+     "uid": "a17",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "A carve-out is added to the exclusion for losses caused by an executing broker or counterparty: the exclusion no longer applies where the broker or counterparty acted on inaccurate or incomplete instructions from the Adviser, so the Adviser now reimburses those losses.",
+     "extra": {}
+    },
+    {
+     "uid": "a19",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "",
+     "expected": "New short sale policy requiring Regulation SHO locates recorded in the order management system and barring Fund purchases in firm commitment offerings after short sales in the Rule 105 restricted period absent written CCO confirmation of an exception.",
+     "extra": {}
+    },
+    {
+     "uid": "a22",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Approval of valuation overrides moves from the Chief Financial Officer alone to the Valuation Committee, acting by a majority of its voting members that must include the CCO, and no override may be applied until the Committee approves it in writing.",
+     "extra": {}
+    },
+    {
+     "uid": "a23",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "Pre-clearance of state and local political contributions by Covered Associates changes from optional ('may seek pre-clearance') to mandatory ('must obtain pre-clearance').",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The cross-reference for outside business activity disclosure was changed from Section 6.3 to Section 3.5.",
+     "expected": "1.3 Acknowledgments and Certifications",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The scope of the insider trading prohibition was expanded to include securities of other issuers (competitors, suppliers, acquirers) whose price the information could affect.",
+     "expected": "2.1 Prohibition on Insider Trading",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The authority to remove an issuer from the Restricted List was restricted from any member of the Compliance Department to only the CCO.",
+     "expected": "2.2 Restricted List Procedure",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The wording regarding the end of restrictions was changed from 'notifies them in writing' to 'gives them written notice'.",
+     "expected": "2.4 Information Barriers and Wall-Crossing",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_05",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "A new section was added establishing rules for expert network consultations, including pre-clearance, prohibited consultants, and compliance monitoring.",
+     "expected": "2.5 Expert Network Consultations",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "added",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_06",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The validity period for pre-clearance approval was shortened from the close of regular trading on the business day following the grant to the close of regular trading on the day of the grant.",
+     "expected": "3.2 Pre-Clearance of Personal Trades",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_07",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The minimum holding period for Reportable Securities was increased from 30 calendar days to 60 calendar days.",
+     "expected": "3.3 Minimum Holding Period",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_08",
+     "score": 0.0,
+     "verdict": "INVENTED_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "moved",
+     "hallucination": true,
+     "got": "The Outside Business Activities policy was moved from Section 6.3 to Section 3.5 within the Code of Ethics section.",
+     "expected": "3.5 Outside Business Activities",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "added",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_09",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The exception for losses caused by executing brokers was narrowed to exclude brokers acting on inaccurate or incomplete instructions from the Adviser.",
+     "expected": "4.3 Trade Error Correction",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_10",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "A typo in the word 'commission' was corrected.",
+     "expected": "4.4 Cross Trades Between Client Accounts",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_11",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "A new section was added requiring compliance with Regulation SHO, locate requirements, and restrictions on purchasing securities from underwriters during the Regulation M restricted period.",
+     "expected": "4.5 Short Sales and Regulation M",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "added",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_12",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The approval authority for valuation overrides was changed from the Chief Financial Officer to the Valuation Committee by majority vote.",
+     "expected": "5.3 Valuation Overrides",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_13",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The requirement for pre-clearance of political contributions was changed from optional ('may seek') to mandatory ('must obtain').",
+     "expected": "6.1 Political Contributions",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_14",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The defined term for the third-party archiving service was changed from 'Archiving Vendor' to 'Archive Provider'.",
+     "expected": "6.2 Books and Records",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_15",
+     "score": 0.0,
+     "verdict": "INVENTED_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "moved",
+     "hallucination": true,
+     "got": "The Outside Business Activities section was removed from Section 6 as it was moved to Section 3.5.",
+     "expected": "3.5 Outside Business Activities",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "removed",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 15,
+   "contested": 0,
+   "group": "t2_s04",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 535.26,
+    "prompt_tokens": 8987,
+    "output_tokens": 2105,
+    "output_tokens_per_sec": 4.0,
+    "prompt_tokens_per_sec": 643.3,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11483
+   }
+  },
+  "t2_schw_1": {
+   "units": [
+    {
+     "uid": "a01",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds a sentence that market-driven changes such as equity market declines can reduce client demand for margin lending, which is newly described as a significant source of net interest revenue.",
+     "extra": {}
+    },
+    {
+     "uid": "a02",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The Company now says it extensively utilized higher-cost funding sources to support the 2022 and 2023 client cash reallocation (previously it utilized higher-cost supplemental funding sources), and client cash is recast from something the Company relies heavily on to generate revenue into a significant funding source for revenue.",
+     "extra": {}
+    },
+    {
+     "uid": "a03",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The rate-sensitive interest-earning assets expand from investment securities and mortgages to investment securities plus margin loans, mortgages, and PALs, and market conditions is dropped as a stated driver of higher deposit rates, leaving only the competitive environment.",
+     "extra": {}
+    },
+    {
+     "uid": "a04",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Custody is added to the relationships that interconnect financial institutions, and further FDIC premium increases or special assessments are now tied to potential future bank failures or other similar events rather than only to the cost of resolving the 2023 bank failures (heading reworded to 'direct adverse effects').",
+     "extra": {}
+    },
+    {
+     "uid": "a06",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds a new data exposure risk from failure to adequately destroy data during system or asset decommissioning, which could make client or Company information available to external parties in error.",
+     "extra": {}
+    },
+    {
+     "uid": "a09",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "",
+     "expected": "Covers reliance on external service providers for key technology, cloud infrastructure, processing, servicing, support and custody functions, and on financial intermediaries, where their failure to perform could cause losses and reputational harm to Schwab and financial harm to clients.",
+     "extra": {}
+    },
+    {
+     "uid": "a10",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "removed",
+     "hallucination": false,
+     "got": "",
+     "expected": "Covered reliance on outsourced service providers for key technology, cloud, processing, servicing and support functions, and the risk that their failures, data misuse or service interruptions (including past outages and COVID-19 service losses) disrupt operations and cause losses.",
+     "extra": {}
+    },
+    {
+     "uid": "a11",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "",
+     "expected": "Covers losses from fraud and financial crime, including account takeover through social engineering, phishing and AI-enabled impersonation, fraudulent money movement and account openings, deliberate client fraud, employee insider misconduct, and losses reimbursed under Schwab's guarantee against unauthorized account activity.",
+     "extra": {}
+    },
+    {
+     "uid": "a12",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "removed",
+     "hallucination": false,
+     "got": "",
+     "expected": "Covered reliance on market makers, dealers, exchanges, clearing houses and other intermediaries to execute and settle client orders, and on payments from market makers and exchanges for trade execution and from securities lending counterparties as a significant source of revenue.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "Added a sentence noting that market-driven changes, such as equity market declines, can reduce client demand for margin lending, which is a significant source of net interest revenue.",
+     "expected": "Developments in the business, economic, and geopolitical environment could negatively impact our business.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "Changed the description of the company's response to client cash reallocation from utilizing \"higher-cost supplemental funding sources\" to \"extensively utilized higher-cost funding sources.\"",
+     "expected": "A significant change in client cash allocations could negatively impact our income.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "Updated the list of interest-earning assets to include margin loans and PALs, and added new paragraphs detailing how rising interest rates can reduce bank deposit account fee revenue and how the 2023 IDA agreement limits the company's ability to respond to rate changes.",
+     "expected": "Significant interest rate changes could affect our profitability.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "Modified the heading to state that problems could have \"direct adverse effects\" rather than \"an adverse effect,\" and updated the text to specify that \"potential future bank failures or other similar events\" may prompt the FDIC to increase premiums or issue special assessments.",
+     "expected": "Problems encountered by other financial institutions and responsive measures to manage such problems could have direct adverse effects on financial markets generally and our financial position or results of operations, as well as indirect adverse effects on us.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_05",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "Expanded the list of factors affecting liquidity to include specific lending activities (margin, mortgage-related, and personal lending) and added a new paragraph stating that the company's margin lending activity has significantly increased in recent years.",
+     "expected": "A significant decrease in our liquidity could negatively affect our business as well as reduce client confidence in us.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": "contested",
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_06",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "Added a new risk regarding data exposure resulting from the failure to adequately destroy data during system or asset decommissioning, and added a statement that the company may be required to pay ransom to threat actors to restore operations or prevent data dissemination.",
+     "expected": "Security breaches of our systems, or those of our clients or third parties, may subject us to significant liability and damage our reputation.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_07",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "removed",
+     "hallucination": false,
+     "got": "Removed the standalone section regarding reliance on outsourced service providers, which was merged into a new combined section with financial intermediaries.",
+     "expected": "We rely on outsourced service providers to perform key functions.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "removed",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_08",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "removed",
+     "hallucination": false,
+     "got": "Removed the standalone section regarding reliance on financial intermediaries, which was merged into a new combined section with outsourced service providers.",
+     "expected": "We rely on financial intermediaries to execute and settle client orders and transactions with financial intermediaries are a significant source of revenue.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "removed",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_09",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "Added a new combined section that consolidates the risks associated with outsourced service providers and financial intermediaries, adding \"custody\" to the list of key functions performed by external providers.",
+     "expected": "We rely on outsourced service providers and financial intermediaries to perform key functions, and failure of these entities to perform as expected could result in financial or reputational harm to us or financial harm to our clients.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "added",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_10",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "Added a new section detailing risks from external fraud (including AI-enhanced techniques and social engineering) and internal fraud (including employee misconduct and insider trading), replacing the brief fraud paragraph previously found in the operational risks section.",
+     "expected": "We may suffer financial loss from fraud and financial crime.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "added",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 10,
+   "contested": 3,
+   "group": "schw",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 622.07,
+    "prompt_tokens": 8536,
+    "output_tokens": 2466,
+    "output_tokens_per_sec": 4.1,
+    "prompt_tokens_per_sec": 643.8,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11487
+   }
+  },
+  "t2_schw_2": {
+   "units": [
+    {
+     "uid": "a01",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The sentence on regulatory scrutiny now says Schwab becomes subject to increasing scrutiny as it grows \"and expand[s] client offerings\" rather than only as it grows.",
+     "extra": {}
+    },
+    {
+     "uid": "a02",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The factor drops the specific references to the SEC's equity market structure proposals, the federal banking agencies' proposed regulatory capital and long-term debt rules, and the FDIC's proposed brokered deposits amendment, and adds digital assets to the areas of regulatory change plus a statement that the Company anticipates giving clients increased access to trade digital assets including select cryptocurrencies under still-pending laws that could block the launch or limit its profitability.",
+     "extra": {}
+    },
+    {
+     "uid": "a03",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Against the unchanged Category II thresholds of $700 billion in assets and $75 billion in cross-jurisdictional activity, CSC's year-end total assets rise from approximately $480 billion (December 31, 2024) to approximately $491 billion (December 31, 2025) and cross-jurisdictional activity from approximately $27 billion to approximately $31 billion.",
+     "extra": {}
+    },
+    {
+     "uid": "a05",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The strategic transactions factor now names the acquisition of Forge in two places, as a transaction that could materially affect financial position and as one whose anticipated benefits may not be realized in a timely manner or at all.",
+     "extra": {}
+    },
+    {
+     "uid": "a06",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "",
+     "expected": "New risk factor on the planned 2026 launch of direct client access to digital assets including spot cryptocurrency trading, covering custody, trading, settlement and liquidity risk, fraud and illicit activity, uncertain client demand, an evolving regulatory landscape, and the irreversibility of transactions and loss or theft of private keys.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The statement regarding increasing regulatory scrutiny was expanded to include the expansion of client offerings.",
+     "expected": "Extensive regulatory supervision of our businesses may subject us to significant penalties or limitations on business activities.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The list of regulatory areas was updated to include digital assets, and new text was added stating the Company anticipates providing increased access to trade in digital assets including select cryptocurrencies, noting that pending laws could negatively impact the launch or profitability of these services.",
+     "expected": "Legislation or changes in rules and regulations could negatively affect our business and financial results.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The reported total assets increased from approximately $480 billion to approximately $491 billion, and cross-jurisdictional activity increased from approximately $27 billion to approximately $31 billion as of the updated reporting date.",
+     "expected": "Failure to meet capital adequacy and liquidity guidelines could affect our financial condition.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "New paragraphs were added detailing specific litigation risks, including claims from clients of third-party advisors, intellectual property infringement claims, and the potential for significant expenses, settlements, or injunctions, particularly during market downturns.",
+     "expected": "We are subject to litigation and regulatory investigations and proceedings and may not be successful in defending against claims or proceedings.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": "contested",
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_05",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The text was modified to specifically reference the Company's acquisition of Forge as an example of a strategic transaction that could have a material impact and may not realize anticipated benefits in a timely manner.",
+     "expected": "Potential strategic transactions could have a negative impact on our financial position.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_06",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "A new risk factor section was added describing the anticipated launch of expanded client access to trading in digital assets, including spot trading in select cryptocurrencies, and the associated risks related to custody, settlement, liquidity, fraud, and regulatory uncertainty.",
+     "expected": "We intend to offer clients direct access to select digital assets, which exposes us to new and uncertain financial, operational, legal, and regulatory risks that could adversely affect our business and financial results.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "added",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_07",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The list of factors affecting stock price volatility was expanded to include general stock market activity and other risk factors, and new text was added regarding the potential for the Company not completing its full share repurchase authorization and the dilutive effect of issuing additional shares.",
+     "expected": "Our stock price has fluctuated historically, and may continue to fluctuate.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": "contested",
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 7,
+   "contested": 2,
+   "group": "schw",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 363.55,
+    "prompt_tokens": 5489,
+    "output_tokens": 1517,
+    "output_tokens_per_sec": 4.3,
+    "prompt_tokens_per_sec": 643.3,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11483
+   }
+  },
+  "t2_t_1": {
+   "units": [
+    {
+     "uid": "a02",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds a new sentence that recent spending by hyperscalers and others to support AI is beginning to pressure supply chains for semiconductors and other network components, and widens the offset discussion from cost pressures to \"cost and supply pressures\".",
+     "extra": {}
+    },
+    {
+     "uid": "a03",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Deletes the sentence stating that credit rating agencies have been applying tighter credit standards when evaluating debt levels and future growth prospects.",
+     "extra": {}
+    },
+    {
+     "uid": "a05",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Drops the disclosure of AT&T's voluntary commitment to temporary C-Band precautionary measures near certain airports through January 1, 2028 in response to FAA radio altimeter concerns, and adds state rate regulation of broadband to the issues driving proposed legislation.",
+     "extra": {}
+    },
+    {
+     "uid": "a07",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Deletes the disclosure that the FCC's spectrum auction authority lapsed in 2023 and that the national spectrum strategy left spectrum availability uncertain, replaces the COVID-19 pandemic with \"recent world events and trends\", and adds the fixed wireless access product to the network expansion.",
+     "extra": {}
+    },
+    {
+     "uid": "a10",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds safety as a reputational factor and widens the litigation exposure from ordinary-course suits over employee misconduct to suits arising in or outside the ordinary course over misconduct by employees, contractors or other third parties.",
+     "extra": {}
+    },
+    {
+     "uid": "a12",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds customer use of mobile devices for AI-enabled applications as a driver of demand for higher-quality services.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The heading was changed from 'increasing interest rates' to 'a higher interest rate environment'.",
+     "expected": "Adverse changes in the U.S. securities markets, a higher interest rate environment, rising inflation and medical costs could materially increase our benefit plan costs and future funding requirements.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "A new sentence was added identifying recent spending by hyperscalers to support AI as a factor pressuring supply chains for semiconductors and network components, and the text was updated to reference 'cost and supply pressures' and purchasing from 'us or our competitors'.",
+     "expected": "Inflationary pressures on costs, such as inputs for devices we sell and network components, labor and distribution costs, may impact our network construction, our financial condition or results of operations.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The sentence discussing the impact of credit rating agency evaluations and tighter credit standards was removed.",
+     "expected": "Adverse changes in global financial markets could limit our ability and our larger customers’ and suppliers’ ability to access capital or increase the cost of capital needed to fund business operations.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The specific reference to the FAA's questioning of C-Band spectrum and the company's voluntary commitment to precautionary measures near airports through January 1, 2028, was removed, and 'state rate regulation of broadband' was added to the list of issues driving new legislation.",
+     "expected": "Changes to federal, state and foreign government regulations and decisions in regulatory proceedings, as well as private litigation, could further increase our operating costs and/or alter customer perceptions of our operations, which could materially adversely affect us.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_05",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The phrase 'climate change’s impacts' was changed to 'its impacts' to refer to climate change.",
+     "expected": "Extreme weather events and other potential effects of climate change may impose risk of damage to our infrastructure, our ability to provide services, and may cause changes in federal, state and foreign government regulation, all of which may result in potential adverse impact to our financial results.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_06",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The reference to the 'COVID-19 pandemic' was replaced with 'Recent world events and trends', the mention of 'work and learn from home trends' was removed, 'broadband subscriber losses' was changed to 'broadband connectivity losses', the expansion of the all-fiber network was linked to the fixed wireless access product, the specific details regarding the 2023 lapse of FCC auction authority and the ",
+     "expected": "Continuing growth in and the converging nature of wireless and broadband services will require us to deploy significant amounts of capital and require ongoing access to spectrum in order to provide attractive services to customers.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_07",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The list of factors affecting reputation was updated to include 'safety', and the scope of legal proceedings was expanded to include acts by 'contractors or other third parties' and proceedings arising 'in or outside the ordinary course of our business'.",
+     "expected": "Incidents or public assertions leading to damage to our reputation or questions about our business conduct, and any resulting lawsuits, claims or other legal proceedings, could have a material adverse effect on our business.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_08",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The description of customer usage was updated to include 'using AI-enabled applications' in addition to viewing video.",
+     "expected": "Customer adoption of new software-based technologies may require higher-quality services from us, and meeting these demands could create supply chain issues and could increase capital costs.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 8,
+   "contested": 0,
+   "group": "t",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 461.32,
+    "prompt_tokens": 8062,
+    "output_tokens": 1857,
+    "output_tokens_per_sec": 4.1,
+    "prompt_tokens_per_sec": 652.1,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11149
+   }
+  },
+  "t2_t_2": {
+   "units": [
+    {
+     "uid": "a01",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds a new sentence disclosing that in certain circumstances AT&T could be liable for the actions of its suppliers and other third parties it does business with.",
+     "extra": {}
+    },
+    {
+     "uid": "a04",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Scope widens from business transformation initiatives to also cover acquisitions, joint ventures (particularly those aimed at enhancing fiber serviceable locations), dispositions and other strategic transactions, and adds new disclosure that AI-related laws are uncertain and vary by jurisdiction and that AI may not meaningfully enhance products or operations.",
+     "extra": {}
+    },
+    {
+     "uid": "a05",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds injunctions as a possible outcome of litigation or government charges, alongside paying amounts or changing operations.",
+     "extra": {}
+    },
+    {
+     "uid": "a06",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The consequences of cyberattacks change from hypothetical to realized, from \"can cause\" equipment failures and data loss that \"could result\" in expenses and liability to \"have caused, and may in the future cause\" them and \"have and in the future could result\" in those harms, alongside a stylistic switch from \"the Company\" to \"we\".",
+     "extra": {}
+    },
+    {
+     "uid": "a08",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The debt disclosure changes from \"we have incurred debt\" to \"we intend to and have incurred debt\" to fund significant acquisitions and spectrum purchases, and \"managing our debt level going forward\" becomes \"managing our debt level\".",
+     "extra": {}
+    },
+    {
+     "uid": "a09",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Drops the named examples of tax legislation, the U.S. Tax Cuts and Jobs Act of 2017 and the Inflation Reduction Act of 2022, from the discussion of uncertain application of tax laws (a page number is also added).",
+     "extra": {}
+    },
+    {
+     "uid": "a10",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "removed",
+     "hallucination": false,
+     "got": "",
+     "expected": "Covered the risk that the IRS could, on audit and despite a favorable Private Letter Ruling, treat the WarnerMedia distribution and related transactions as taxable, exposing AT&T to significant tax liability with any indemnification from Warner Bros. Discovery subject to that company's credit risk.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "Added a statement that the company could be liable for the actions of its suppliers and other third parties.",
+     "expected": "We depend on various suppliers to provide equipment to operate our business and satisfy customer demand, and interruption or delay in supply can adversely impact our operating results.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "Expanded the scope of the risk to include acquisitions, joint ventures, and dispositions, and added new language regarding the risks and challenges of such initiatives and investments, as well as new language regarding the uncertainty of AI-related laws and regulations.",
+     "expected": "We may not realize or sustain the expected benefits from acquisitions, joint ventures or our business transformation initiatives, including dispositions, which could have a material adverse effect on our business, operations, financial condition, results of operations and competitive position.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "Added that the company may be subject to injunctions in addition to paying amounts or changing operations.",
+     "expected": "Unfavorable litigation or governmental investigation results could require us to pay significant amounts or lead to onerous operating procedures.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "Changed the language regarding the impact of cyberattacks from a potential future event to a statement that they have already caused failures and losses, and may cause them in the future.",
+     "expected": "Cyberattacks impacting our networks, systems or data or those of our suppliers or vendors may have a material adverse effect on our operations or results of operations.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_05",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "Changed the statement about incurring debt from a past action to an ongoing intention and past action.",
+     "expected": "Increases in our debt levels to fund spectrum purchases, or other strategic decisions could adversely affect our ability to finance future debt at attractive rates and reduce our ability to respond to competition and adverse economic trends.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_06",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "Removed specific references to the U.S. Tax Cuts and Jobs Act of 2017 and the Inflation Reduction Act of 2022.",
+     "expected": "Our business may be impacted by changes in tax laws and regulations, judicial interpretations of the same or administrative actions by federal, state, local and foreign taxing authorities.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_07",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "removed",
+     "hallucination": false,
+     "got": "Removed the entire section regarding the potential tax liability associated with the WarnerMedia distribution.",
+     "expected": "If the distribution of WarnerMedia, together with certain related transactions, were to fail to qualify for non-recognition treatment for U.S. federal income tax purposes under audit, then we could be subject to significant tax liability.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "removed",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 7,
+   "contested": 0,
+   "group": "t",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 351.69,
+    "prompt_tokens": 6397,
+    "output_tokens": 1463,
+    "output_tokens_per_sec": 4.3,
+    "prompt_tokens_per_sec": 650.6,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11209
+   }
+  }
+ }
+}

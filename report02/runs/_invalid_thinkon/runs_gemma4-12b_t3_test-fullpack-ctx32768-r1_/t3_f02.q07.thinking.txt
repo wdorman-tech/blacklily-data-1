@@ -1,0 +1,38 @@
+*   Question: "Who is the Adviser's Chief Compliance Officer, and to whom does the CCO report?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "01_brochure.md":
+        *   Section 1.1: "please contact Harriet Lomasney, General Counsel and Chief Compliance Officer"
+        *   Section 4.1: "Harriet Lomasney (General Counsel and Chief Compliance Officer)"
+    *   "02_compliance_manual.md":
+        *   Section 2.1: "The Management Committee has designated Harriet Lomasney, General Counsel, as Chief Compliance Officer ('CCO')."
+        *   Section 2.2: "The CCO reports to Callum R. Everdeen, Managing Partner and Chief Investment Officer..."
+    *   "03_valuation_policy.md":
+        *   Section 2.1: "The General Counsel and Chief Compliance Officer attends every meeting as a non-voting member."
+    *   "04_business_continuity_plan.md":
+        *   Section 9.2: "The Chief Compliance Officer determines whether notification is required..."
+    *   "06_policy_update_memo.md":
+        *   Section 1.2: "The Management Committee approved the amendments... [including] the Compliance Manual...".
+        *   Section 3.3: "Questions about this memorandum should be directed to the Chief Compliance Officer or to the Deputy Chief Compliance Officer, Desmond Achterberg."
+
+    *   The question asks for the name of the CCO and who they report to.
+    *   "02_compliance_manual.md" Section 2.1 identifies Harriet Lomasney as the CCO.
+    *   "02_compliance_manual.md" Section 2.2 states the CCO reports to Callum R. Everdeen, Managing Partner and Chief Investment Officer.
+
+    *   Answer: Harriet Lomasney; she reports to Callum R. Everdeen, Managing Partner and Chief Investment Officer.
+    *   Source: 02_compliance_manual.md
+    *   Section: 2.1 and 2.2 (or just 2.1 and 2.2 combined or the specific sections).
+    *   Quote: "The Management Committee has designated Harriet Lomasney, General Counsel, as Chief Compliance Officer ('CCO')." and "The CCO reports to Callum R. Everdeen, Managing Partner and Chief Investment Officer..."
+
+    *   The question asks for two pieces of information: Name and Reporting Line.
+    *   Section 2.1: "The Management Committee has designated Harriet Lomasney, General Counsel, as Chief Compliance Officer ('CCO')."
+    *   Section 2.2: "The CCO reports to Callum R. Everdeen, Managing Partner and Chief Investment Officer..."
+
+    *   "answer": "Harriet Lomasney; the CCO reports to Callum R. Everdeen, Managing Partner and Chief Investment Officer."
+    *   "source_document": "02_compliance_manual.md"
+    *   "section": "2.1 and 2.2"

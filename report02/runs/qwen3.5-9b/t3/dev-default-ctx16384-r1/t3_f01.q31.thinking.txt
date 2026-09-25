@@ -1,0 +1,51 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (not relevant here as dates are consistent or close).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Who is the firm's Chief Compliance Officer, and to whom does the CCO report?"
+    *   Required Information: Name of CCO, Reporting line (to whom).
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "Chief Compliance Officer", "CCO", "report", "reports to".
+
+4.  **Evaluate Document Content:**
+    *   `02_compliance_manual.md`:
+        *   Section 1.3 Definitions: Defines "CCO" but doesn't name the person.
+        *   Section 2.1 Designation and Reporting Line: "The Management Committee has designated Theodora K. Marsh as the Firm's Chief Compliance Officer. The CCO reports to the Managing Partner..."
+        *   Section 2.2 Responsibilities: Discusses responsibilities, not reporting line specifics beyond what's in 2.1.
+        *   Section 2.3 Compliance Manager and Delegation: Mentions Nadia Farrokh acts for CCO when absent.
+        *   Section 2.4 Compliance Calendar...
+        *   Section 2.5 Regulatory Examinations...
+        *   Section 15.2 Timing and Report: Discusses annual review timing.
+    *   `03_valuation_policy.md`:
+        *   Section 8.1 Annual Compliance Review: Mentions CCO reviews adequacy annually.
+
+5.  **Extract Information:**
+    *   Name: Theodora K. Marsh (from `02_compliance_manual.md`, Section 2.1).
+    *   Reports to: The Managing Partner (from `02_compliance_manual.md`, Section 2.1).
+    *   Document Date: January 15, 2026.
+    *   Quote: "The Management Committee has designated Theodora K. Marsh as the Firm's Chief Compliance Officer. The CCO reports to the Managing Partner and has direct and unrestricted access to the Management Committee."
+
+6.  **Format Output:**
+    *   Must be valid JSON.
+    *   Keys: `answer`, `source_document`, `section`, `quote`.
+    *   Values must be strings.
+    *   No markdown code blocks (```json ... ```).
+    *   No extra text.
+
+7.  **Draft JSON:**
+    *   `answer`: "Theodora K. Marsh, and she reports to the Managing Partner." (Need to ensure it's specific and unambiguous based on the quote). Let's refine the answer to be concise but complete based on the quote.
+    *   `source_document`: "02_compliance_manual.md"
+    *   `section`:

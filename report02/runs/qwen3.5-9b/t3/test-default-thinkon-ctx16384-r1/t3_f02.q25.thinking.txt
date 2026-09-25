@@ -1,0 +1,35 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Does an independent third party review the Adviser's Level 3 valuations? If so, identify the firm and how often it reviews them."
+    *   Key information needed: Yes/No, Firm Name, Frequency.
+
+3.  **Scan the Documents:**
+    *   Document 1: `03_valuation_policy.md` (dated November 3, 2025).
+        *   Section 8.1 Independent Valuation Firm: "Kilbride Sayer Valuation Advisors LLC performs a quarterly review of each Level 3 investment and provides a written range of reasonable values."
+    *   Document 2: `06_policy_update_memo.md` (dated August 24, 2026).
+        *   Section 2.4 Valuation Policy Section 2.3 (Meetings): Discusses meeting frequency (monthly vs quarterly) for the Valuation Committee. This affects when the Committee reviews values, not necessarily the independent third party review frequency explicitly stated in the policy update regarding the *independent firm*.
+        *   The policy update says: "This amendment supersedes Section 2.3 of the Valuation Policy."
+        *   Does the update change the independent review frequency? It mentions the Committee meeting frequency changed from quarterly to monthly. It does not explicitly mention changing the independent valuation firm's review frequency in the text provided for `06_policy_update_memo.md`.
+        *   However, I need to check if the later document changes the answer regarding the *independent third party*.
+        *   In `03_valuation_policy.md` Section 8.1: "Kilbride Sayer Valuation Advisors LLC performs a quarterly review..."
+        *   In `06_policy_update_memo.md`: It updates meeting frequency for the Committee (monthly). It does not mention changing the independent firm's review schedule in the provided text snippet.
+        *   Rule 3: "Later-dated documents supersede earlier ones."
+        *   The question asks about an independent third party review.
+        *   Document `06_policy_update_memo.md` is dated August 24, 2026. Document `03_valuation_policy.md` is dated November 3, 2025.
+        *   The update memo amends Section 2.3 (Meetings) of the Valuation Policy. It does not appear to amend Section 8.1 (Independent Valuation Firm).
+        *   Therefore, the information regarding the independent firm remains in `03_valuation_policy.md` Section 8.1.
+        *   Wait, I need to check if the update memo implies a change or if I should use the original text because the update didn

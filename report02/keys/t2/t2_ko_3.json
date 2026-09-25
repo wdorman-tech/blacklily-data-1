@@ -1,0 +1,248 @@
+{
+ "pair_id": "t2_ko_3",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "The Coca-Cola Company",
+ "ticker": "KO",
+ "split": "test",
+ "prior": {
+  "fiscal_year_end": "2024-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/21344/000002134425000011/ko-20241231.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2025-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm"
+ },
+ "words": 6429,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "modified",
+   "prior_heading": "Increases in income tax rates, changes in income tax laws or regulations, or unfavorable resolutions of tax matters could have a material adverse impact on our financial results.",
+   "current_heading": "Increases in income tax rates, changes in income tax laws or regulations, or unfavorable resolutions of tax matters could have a material adverse impact on our financial results.",
+   "similarity": 0.926,
+   "diff": [
+    "replace: [OECD] -> [OECD,]",
+    "replace: [rules] -> [rules,]",
+    "delete: [while many others have indicated their intent to adopt,] -> []",
+    "replace: [have adopted,] -> [adopted]",
+    "insert: [] -> [that became]",
+    "replace: [2025.] -> [2025, while additional jurisdictions may enact similar legislation in the future. In June 2025, the Group of Seven (“G7”) released a statement announcing an understanding of a potential side-by-side system approach to the Pillar Two framework that would exclude U.S.-parented groups from certain Pill]",
+    "replace: [guidance.] -> [guidance intended to adopt this side-by-side framework into law in each of the member countries.]",
+    "insert: [] -> [19]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The Pillar Two discussion adds the June 2025 G7 statement on a side-by-side system that would exclude U.S.-parented groups from certain Pillar Two provisions and the January 2026 OECD administrative guidance largely exempting U.S.-headquartered companies, and says further guidance is expected to write that framework into member-country law.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2: new specific developments (the G7 June 2025 statement and the January 2026 OECD guidance) are referenced, and criterion 1: they disclose a mitigating fact that largely exempts the Company from Pillar Two."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 2: new specific developments (G7 statement, January 2026 OECD guidance) are referenced, and criterion 1: they disclose a new mitigating fact that narrows the company's Pillar Two exposure."
+    }
+   }
+  },
+  {
+   "aid": "a02",
+   "status": "modified",
+   "prior_heading": "Increased or new indirect taxes could negatively affect our business.",
+   "current_heading": "Increased or new indirect taxes could negatively affect our business.",
+   "similarity": 0.999,
+   "diff": [
+    "delete: [19] -> []"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The only change is the removal of a stray page number (19) that had split the body text; the wording of the risk factor is identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: a pagination artifact with no change in wording or substance, equivalent to a formatting or punctuation change."
+    },
+    "B": {
+     "material": false,
+     "rationale": "Minor: the only difference is a pagination artifact, with no change in substance."
+    }
+   }
+  },
+  {
+   "aid": "a03",
+   "status": "modified",
+   "prior_heading": "Changes in laws and regulations relating to beverage containers and packaging could increase our costs and reduce demand for our products.",
+   "current_heading": "Changes in laws and regulations relating to beverage containers and packaging could increase our costs and reduce demand for our products.",
+   "similarity": 0.994,
+   "diff": [
+    "replace: [increased] -> [ongoing]"
+   ],
+   "material": "contested",
+   "rationale": "",
+   "description": "Consumers' \"increased\" concerns about solid waste and environmental responsibility become \"ongoing\" concerns; the packaging laws, proposals, and the statement that these could lead to more legislation are unchanged.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: stylistic rewording of a modifier on the consumer-attitude driver; no risk, regulation or jurisdiction is added or dropped, and the likelihood language for the regulatory risk itself (\"could result in the adoption\") is unchanged."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: the characterization of the underlying risk driver is softened from a rising trend to a continuing one, which is not an identical meaning."
+    }
+   }
+  },
+  {
+   "aid": "a04",
+   "status": "modified",
+   "prior_heading": "Significant additional labeling or warning requirements or limitations on the marketing or sale of our products may inhibit sales of affected products.",
+   "current_heading": "Significant additional labeling or warning requirements or limitations on the marketing or sale of our products may inhibit sales of affected products.",
+   "similarity": 0.993,
+   "diff": [
+    "delete: [environmental or health] -> []",
+    "insert: [] -> [20]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The trigger for labeling, warning and marketing restrictions is broadened from requirements under \"current or future environmental or health laws or regulations\" to requirements under \"current or future laws or regulations\" of any kind.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 3: scope widened, since the risk is no longer confined to environmental or health laws (the other change is a page-number insertion)."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: the scope of the laws that could trigger labeling, warning or reformulation requirements is widened."
+    }
+   }
+  },
+  {
+   "aid": "a05",
+   "status": "modified",
+   "prior_heading": "Litigation or legal proceedings could expose us to significant liabilities and damage our reputation.",
+   "current_heading": "Litigation claims or legal proceedings could expose us to significant liabilities and damage our reputation.",
+   "similarity": 0.984,
+   "diff": [
+    "insert: [] -> [claims]",
+    "insert: [] -> [ingredients or processing,]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "\"Ingredients or processing\" is added to the list of subject areas from which the Company's litigation claims and legal proceedings arise, and the headline changes from \"Litigation\" to \"Litigation claims.\"",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: a new litigation exposure (claims over ingredients or processing) is disclosed; the headline wording change alone would be minor."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: a new litigation exposure category (ingredients or processing) is disclosed."
+    }
+   }
+  },
+  {
+   "aid": "a06",
+   "status": "modified",
+   "prior_heading": "We conduct business in markets with high-risk legal compliance environments, which exposes us to increased legal and reputational risk.",
+   "current_heading": "We conduct business in markets with high-risk legal compliance environments, which exposes us to increased legal and reputational risk.",
+   "similarity": 0.998,
+   "diff": [
+    "delete: [20] -> []"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The only change is the removal of a trailing page number (20) after the body; the wording of the risk factor is identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: a pagination artifact with no change in wording or substance, equivalent to a formatting or punctuation change."
+    },
+    "B": {
+     "material": false,
+     "rationale": "Minor: the only difference is a pagination artifact, with no change in substance."
+    }
+   }
+  },
+  {
+   "aid": "a07",
+   "status": "unchanged",
+   "prior_heading": "Failure to adequately protect, or disputes relating to, trademarks, formulas and other intellectual property rights could harm our business.",
+   "current_heading": "Failure to adequately protect, or disputes relating to, trademarks, formulas and other intellectual property rights could harm our business.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a08",
+   "status": "modified",
+   "prior_heading": "Changes in, or failure to comply with, the laws and regulations applicable to our products or our business operations could increase our costs or reduce our net operating revenues.",
+   "current_heading": "Changes in, or failure to comply with, the laws and regulations applicable to our products or our business operations could increase our costs or reduce our net operating revenues.",
+   "similarity": 0.998,
+   "diff": [
+    "replace: [safety,] -> [safety and quality,]",
+    "insert: [] -> [21]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The list of laws and regulations the Company is subject to changes \"product safety\" to \"product safety and quality,\" adding product quality regulation as an area of exposure; the rest of the text is unchanged apart from a page-number split.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 3: scope widened by adding a new category of applicable regulation (product quality)."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1 and criterion 3: a new regulatory exposure (product quality) is disclosed, widening the scope of the laws covered."
+    }
+   }
+  },
+  {
+   "aid": "a09",
+   "status": "modified",
+   "prior_heading": "Fluctuations in foreign currency exchange rates could have a material adverse effect on our financial results.",
+   "current_heading": "Fluctuations in foreign currency exchange rates could have a material adverse effect on our financial results.",
+   "similarity": 0.995,
+   "diff": [
+    "replace: [2024,] -> [2025,]",
+    "replace: [$28.7] -> [$28.8]",
+    "insert: [] -> [tariffs,]",
+    "delete: [21] -> []"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Net operating revenues from operations outside the United States change from $28.7 billion in 2024 to $28.8 billion in 2025, and tariffs are added to the global events that may cause currencies to fluctuate against the U.S. dollar.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 4: the dollar amount of non-U.S. revenue changes beyond a date roll-forward, and criterion 1: tariffs are newly named as a driver of currency exposure."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 4: the dollar amount of non-U.S. revenue changes beyond a date roll-forward, and criterion 1: tariffs are named as a new driver of currency risk."
+    }
+   }
+  },
+  {
+   "aid": "a10",
+   "status": "unchanged",
+   "prior_heading": "If interest rates increase, our net income could be negatively affected.",
+   "current_heading": "If interest rates increase, our net income could be negatively affected.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a11",
+   "status": "unchanged",
+   "prior_heading": "If we are unable to achieve our overall long-term growth objectives, the value of an investment in our Company could be negatively affected.",
+   "current_heading": "If we are unable to achieve our overall long-term growth objectives, the value of an investment in our Company could be negatively affected.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (check dates).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "How does the firm control trading in securities of public companies at which a member of a client family is an officer, director or 10% holder?"
+    *   Key elements to find: Control mechanisms for trading in securities of affiliated issuers (officer, director, 10% holder).
+
+3.  **Scan the Documents:**
+
+    *   **Document 1:** `01_brochure.md` | Form ADV Part 2A: Firm Brochure, dated March 27, 2026.
+        *   Section 11.2 Personal Trading: Mentions pre-clearance, blackout periods, holding period, IPO prohibition, private placement approval, quarterly/annual reports. Doesn't specifically mention the "Client-Affiliated Issuer List" definition or specific control for officer/director/10% holder trading in detail other than general personal trading rules.
+        *   Section 11.3 Participation or Interest in Client Transactions: Mentions Family Relationships, cross trades prohibited, intra-family transfers permitted with CCO approval.
+        *   Section 17.2 Conflicts of Interest: Mentions "Client-Affiliated Issuer List". States: "Where the Firm has a conflict of interest in a vote... the issuer appears on the Firm's Client-Affiliated Issuer List...". Doesn't explicitly define who is on the list or the trading control rules for that list in this section, just voting.
+
+    *   **Document 2:** `02_compliance_manual.md` | Compliance Policies and Procedures Manual, dated January 15, 2026.
+        *   Section 4.4 Prohibited and Restricted Transactions: Mentions "acquire any security in a limited offering... without the prior written approval of the CCO". Mentions "trade ahead of... client order". Doesn't explicitly define the list or the specific control for officer/director/10% holder trading *in general* (client vs personal).
+        *   Section 4.7 Review of Personal Trading: Reviews holdings/transactions, compares with client trading, Restricted List, Client-Affiliated Issuer List. Mentions CCO reviews exceptions.
+        *   Section 7.1 Policy: Defines MNPI. Says Supervised Persons must treat info from families as presumptively MNPI.
+        *   **Section 7.3 Client-Affiliated Issuers:** This looks promising.
+            *   Text: "The CCO maintains a Client-Affiliated Issuer List of public companies of which a member of a client family is an officer, director or beneficial owner of 10% or more of any class of equity securities." (Matches the question's criteria).
+            *   Text: "No transaction

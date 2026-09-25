@@ -1,0 +1,34 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: Under the standard Long Duration Credit schedule, what annual management fee would a $350 million separate account pay?
+
+2.  **Analyze the Documents:**
+    *   `01_brochure.md` (dated March 27, 2026): Contains Item 5 Fees and Compensation > 5.2 Separate Account Fee Schedules. Includes Long Duration Credit fee schedule tiers. Also mentions minimum annual fee of $150,000.
+    *   `05_fee_schedule.md` (dated January 1, 2026): Contains Fee Schedule. Section 2.2 Long Duration Credit lists fee tiers. Section 5.2 Minimum Annual Fee states $150,000 minimum.
+    *   Comparison of Dates: `05_fee_schedule.md` is dated January 1, 2026. `01_brochure.md` is dated March 27, 2026. Rule 3 says "Later-dated documents supersede earlier ones." Therefore, `01_brochure.md` (March 27, 2026) is the most current document regarding fee schedules if it contains updated information. However, I need to check if there are conflicting details or if they align.
+    *   Fee Schedule Details (`05_fee_schedule.md`, Section 2.2):
+        *   First $100 million: 0.30%
+        *   Next $200 million: 0.25%
+        *   Over $300 million: 0.20%
+    *   Fee Schedule Details (`01_brochure.md`, Section Item 5.2):
+        *   First $100 million: 0.30%
+        *   Next $200 million: 0.25%
+        *   Over $300 million: 0.20%
+    *   Minimum Fee (`01_brochure.md` & `05_fee_schedule.md`): Each separate account is subject to a minimum annual fee of $150,000.
+
+3.  **Calculate the Fee:**
+    *   Account Size: $350 million.
+    *   Tier 1 ($0 - $100M): $100M * 0.30% = $300,000.
+    *   Tier 2 ($100M - $300M): $200M * 0.25% = $500,000.
+    *   Tier 3 ($300M - $350M): $50M * 0.20% = $100,000.

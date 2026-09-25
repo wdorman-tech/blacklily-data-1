@@ -1,0 +1,40 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, return `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Who conducts the firm's annual review of its compliance program, and by what date is the resulting report delivered?"
+    *   Key information needed:
+        1.  Who conducts the annual review?
+        2.  By what date is the report delivered?
+
+3.  **Scan the Documents:**
+
+    *   `02_compliance_manual.md` (dated January 15, 2026):
+        *   Section 2.2 Responsibilities: CCO is responsible for... conducting the annual review described in Section 15...
+        *   Section 15. ANNUAL REVIEW > 15.1 Requirement: Rule 206(4)-7 requires the Firm to review, no less frequently than annually...
+        *   Section 15. ANNUAL REVIEW > 15.2 Conduct and Reporting: "The CCO conducts the annual review with the assistance of Hethersett Compliance Advisors, LLC. The review covers the prior calendar year... The CCO delivers a written report of its findings to the Management Committee no later than April 30 of each year."
+        *   Section 16. TRAINING AND ATTESTATIONS: Mentions annual compliance training, not the compliance program review specifically in this context (though related).
+
+    *   `03_valuation_policy.md` (dated February 10, 2026):
+        *   Section 8. INDEPENDENT REVIEW > 8.2 Annual Policy Review: "The Committee reviews this Policy at least annually... The Chief Compliance Officer also tests the application of this Policy to advisory fee calculations as part of the annual review of the compliance program." (This refers to testing a specific policy, not necessarily the overall compliance program review described in Section 15).
+
+    *   `04_business_continuity_plan.md` (dated April 21, 2026):
+        *   Section 1. PURPOSE AND PLAN OWNERSHIP > 1.3 Approval and Review: "The Management Committee approves the Plan at least annually... The Chief Compliance Officer reviews the Plan as part of the annual review of the compliance program." (Again, specific to the BCP).
+
+4.  **Synthesize Findings:**
+    *   The question asks about the firm's *annual review of its compliance program*.
+    *   Document `02_compliance_manual.md`, Section 15.2 Conduct and Reporting explicitly states: "The CCO conducts the annual review... The CCO delivers a written report of its findings to the Management Committee no later than April 30 of each year."
+    *   This document is dated January 15, 2026.
+    *   Document `04_business

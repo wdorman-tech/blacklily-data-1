@@ -1,0 +1,36 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Under the Core Fixed Income separate account fee schedule, up to what account size does the highest (0.20%) rate apply before the first breakpoint?"
+    *   Key elements: Core Fixed Income, fee schedule, highest rate (0.20%), account size limit for that rate (first breakpoint).
+
+3.  **Scan Documents:**
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section 5.2 Separate Account Fee Schedules: Lists Core Fixed Income tiers. First $100 million @ 0.20%.
+    *   `05_fee_schedule.md` (January 1, 2026):
+        *   Section 2.1 Core Fixed Income: Lists Core Fixed Income tiers. First $100 million @ 0.20%.
+    *   `06_policy_update_memo.md` (August 14, 2026):
+        *   Section 5. AMENDMENT TO THE FEE SCHEDULE > 5.1 Core Fixed Income Breakpoint:
+        *   States: "This Section 5.1 amends Section 2.1 (Core Fixed Income) of the Fee Schedule and the corresponding Core Fixed Income table in Item 5.2 of the Firm's Form ADV Part 2A brochure dated March 27, 2026."
+        *   States: "For billing periods beginning on or after July 1, 2026, the first breakpoint in the Core Fixed Income schedule moves from $100 million to $75 million..."
+        *   Provides new table: First $75 million | 0.20%.
+        *   States: "This schedule supersedes the schedule stated in Section 2.1 of the Fee Schedule and in Item 5.2 of the brochure."
+
+4.  **Determine Current Effective Policy:**
+    *   The question asks about the current fee schedule ("Under the Core Fixed Income separate account fee schedule...").
+    *   Rule 3: Later-dated documents supersede earlier ones.
+    *   `06_policy_update_memo.md` (August 14, 2026) supersedes `05_fee_schedule.md` (January 1, 2026) and `01_brochure.md` (March 27, 2026).
+    *   The memo explicitly states the schedule applies to billing periods beginning on or after July 1, 2026. Since the memo is dated August 14, 2026, this is the current effective policy for new accounts and existing clients with standard schedules.
+    *   The memo changes

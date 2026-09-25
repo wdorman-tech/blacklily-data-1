@@ -1,0 +1,34 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraint 1: Answer only from documents. If not found, return `NOT_IN_DOCUMENTS`.
+    *   Constraint 2: No guessing, no general knowledge, no "what firms like yours usually do".
+    *   Constraint 3: Keep answers short and specific.
+    *   Constraint 4: Cite document file name and section.
+    *   Constraint 5: Quote supporting text verbatim.
+    *   Output Format: JSON object with keys `answer`, `source_document`, `section`, `quote`. No markdown fences, no preamble.
+    *   Question: "Describe the firm's ownership structure, identifying each owner of 25% or more and the percentage each holds."
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "ownership", "owner", "member", "interests", "percentage", "%", "Tennick", "Arlow", "Employee Holdings".
+    *   Document 1: `01_brochure.md` (Form ADV Part 2A).
+        *   Section: Item 4. Advisory Business > 4.1 Firm History and Ownership.
+        *   Text: "Tennick Arlow Wealth Partners, LLC is a Virginia limited liability company formed in March 2009 by Margaret L. Tennick and Daniel R. Arlow... Ms. Tennick owns 46% of the Firm's membership interests and Mr. Arlow owns 34%. The remaining 20% is held by Tennick Arlow Employee Holdings, LLC..."
+    *   Document 2: `01_brochure.md` (Form ADV Part 2A).
+        *   Section: Item 4. Advisory Business > 4.6 Assets Under Management and Personnel. (Irrelevant to ownership structure percentages).
+    *   Document 3: `01_brochure.md` (Form ADV Part 2A).
+        *   Section: Item 10. Other Financial Industry Activities and Affiliations > 10.2 Kilnwick Tax Services, LLC. (Irrelevant to firm ownership structure).
+    *   Document 4: `01_brochure.md` (Form ADV Part 2A).
+        *   Section: Item 10. Other Financial Industry Activities and Affiliations > 10.3 Trustee and Other Fiduciary Appointments. (Irrelevant).
+    *   Document 5: `02_compliance_manual.md`. (Irrelevant).
+    *   Document 6: `03_valuation_policy.md`. (Irrelevant).
+    *   Document 7: `04_business_continuity_plan.md`. (Irrelevant).
+
+3.  **Evaluate Findings against Constraints:**
+    *   The question asks for owners of 25% or more and their percentages.
+    *   Found in `01_brochure.md`, Section `Item 4. Advisory Business > 4.1 Firm History and Ownership`.
+    *   Text: "Ms. Tennick owns 46% of the Firm's membership interests and Mr. Arlow owns 34%. The remaining 20% is held by Tennick Arlow Employee Holdings, LLC..."
+    *   Owners identified:
+        1.  Margaret L. Tennick (Ms

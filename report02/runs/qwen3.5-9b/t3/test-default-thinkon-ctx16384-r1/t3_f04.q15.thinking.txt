@@ -1,0 +1,37 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (not relevant here as dates are consistent or not conflicting).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What are the Firm's restrictions on political contributions by employees?"
+
+3.  **Scan the Documents for Keywords:**
+    *   Keywords: "political contributions", "employees", "restrictions", "limits", "pre-clearance".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Discusses personal trading, covered securities, Commingled Fund. No mention of political contributions restrictions for employees.
+    *   `02_compliance_manual.md`:
+        *   Section 5.2 Gifts Received: Discusses gifts from business contacts ($250 limit). Not political contributions.
+        *   Section 5.4 Gifts and Entertainment Given: Discusses gifts to trustees, officials, etc. ($200 limit for non-governmental). Not political contributions.
+        *   Section 6.1 Scope: Discusses Rule 206(4)-5 ("pay-to-play rule"), covered associates, treating every employee as a covered associate. Mentions prohibition on receiving compensation after contribution to government entity official.
+        *   Section 6.2 Pre-Clearance and Limits: "Every employee must obtain the CCO's written pre-clearance before making any political contribution...". Sets limits ($350 per election for officials/candidates they can vote for, $150 for others). Mentions spouse/household member contributions treated as employee's.
+        *   Section 6.3 Pre-Employment Review: Discusses disclosure of past contributions.
+        *   Section 6.4 Solicitation...: Prohibits soliciting/coordination.
+        *   Section 6.5 Records: Maintains lists.
+
+5.  **Synthesize the Answer:**
+    *   The question asks for restrictions on political contributions by employees.
+    *   Section 6.2 of `02_compliance_manual.md` contains the specific rules/pre-clearance requirements and limits.
+    *   Section 6.1 also mentions the "pay-to-play rule" restriction regarding receiving compensation after contribution, but Section 6.2 is more direct about the employee's ability to contribute (pre-clearance, limits).
+    *   I should combine the relevant text from Section 6.2 primarily, as it details the pre-clearance and monetary limits which are core restrictions. Section 6.1 adds context about the "pay-to-play" rule applicability. However, the prompt asks for "restrictions". Section 6.2 explicitly states: "Every employee must obtain the CCO's written pre-clearance before making any political contribution... The CCO will approve a contribution... only if it does not exceed $350 per election... or $150 per

@@ -1,0 +1,34 @@
+*   Question: "How often is the business continuity plan tested, and when was the most recent test conducted?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in docs, use "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated docs supersede earlier ones (not applicable here as there's only one relevant document for this specific question).
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   `02_compliance_manual.md`: Mentions "external penetration test... annually", "Vulnerability scans... quarterly", "phishing exercises... quarterly". Not about the BCP test.
+    *   `04_business_continuity_plan.md`:
+        *   Section 7.1 Testing Frequency and Most Recent Test: "The Plan is tested at least annually. The most recent full test of the Plan was conducted on October 22, 2025."
+
+    *   Answer: The Plan is tested at least annually, and the most recent full test was conducted on October 22, 2025.
+    *   Source: 04_business_continuity_plan.md
+    *   Section: SECTION 7. TESTING AND TRAINING > 7.1 Testing Frequency and Most Recent Test
+    *   Quote: "The Plan is tested at least annually. The most recent full test of the Plan was conducted on October 22, 2025."
+
+    *   "answer": "The Plan is tested at least annually, and the most recent full test was conducted on October 22, 2025."
+    *   "source_document": "04_business_continuity_plan.md"
+    *   "section": "SECTION 7. TESTING AND TRAINING > 7.1 Testing Frequency and Most Recent Test"
+    *   "quote": "The Plan is tested at least annually. The most recent full test of the Plan was conducted on October 22, 2025."
+
+    *   Answer: "The Plan is tested at least annually. The most recent full test of the Plan was conducted on October 22, 2025." (Keep it close to the quote but clear).
+    *   Source: 04_business_continuity_plan.md
+    *   Section: SECTION 7. TESTING AND TRAINING > 7.1 Testing Frequency and Most Recent Test
+    *   Quote: "The Plan is tested at least annually. The most recent full test of the Plan was conducted on October 22, 2025."
+
+    *   "answer": "The Plan is tested at least annually, and the most recent full test was conducted on October 22, 2025."
+    *   "source_document": "04_business_continuity_plan.md"
+    *   "section": "SECTION 7. TESTING AND TRAINING > 7.1 Testing Frequency and Most Recent Test"
+    *   "quote": "The Plan is tested at least annually. The most recent full test of the Plan was conducted on October 22, 2025."
+
+    Wait, the prompt says "How often is the business continuity plan tested, and when was the most recent test conducted?".
+    The quote "The Plan is tested at least annually. The most recent full test of the Plan was conducted

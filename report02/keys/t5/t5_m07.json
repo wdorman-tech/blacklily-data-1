@@ -1,0 +1,658 @@
+{
+  "meeting_id": "t5_m07",
+  "title": "Stadtler annual review: RMD, QCD, Roth conversion and DAF",
+  "notes": "The parish pledge is given twice as $12,000 (once to the associate) before Everett reads the parish email showing $15,000, which also moves the taxable RMD remainder from $35,388 to $32,388, and the first statement of the conversion amount is mis-transcribed as $17,000, so $70,000 has to be recovered from the $215,000 income figure, the $15,000 tax estimate and later turns. The parish-information task moves from Lorraine to Everett, the projection moves from the 23rd to the 30th, and a QLAC, a 529 for the granddaughter, a 40/60 allocation and a QCD into the DAF are all raised and not adopted. The closing recap omits Lorraine's call to the CPA and the conversion and distribution forms, and the risk discussion ends in an explicit no change.",
+  "scalar_fields": {
+    "meeting_date": {
+      "expected": "October 15, 2026",
+      "accept": [
+        "oct(ober)?\\.? 15(th)?,? 2026",
+        "10/15/(20)?26",
+        "10-15-(20)?26",
+        "15/10/(20)?26",
+        "2026-10-15",
+        "15 oct(ober)?\\.? 2026"
+      ],
+      "reject": {},
+      "evidence": [
+        {
+          "at": "header",
+          "quote": "| Date | Thursday, October 15, 2026 |"
+        }
+      ]
+    },
+    "client_names": {
+      "expected": "Everett Stadtler; Lorraine Stadtler",
+      "accept": [
+        "everett",
+        "lorraine"
+      ],
+      "match": "all",
+      "reject": {
+        "NOT_A_CLIENT": [
+          "joelle|pardoe|tobias|wendrick|nathan|claire|maisie|\\bhal\\b|dettweiler"
+        ]
+      },
+      "evidence": [
+        {
+          "at": "header",
+          "quote": "Everett Stadtler (Client); Lorraine Stadtler (Client)"
+        }
+      ]
+    },
+    "primary_goal": {
+      "expected": "Reduce the lifetime tax bill on the IRA money for themselves and the kids (shrink the IRAs while in the lower brackets) and do their charitable giving tax-efficiently, out of the IRA rather than the checking account",
+      "accept": [
+        "tax.*(\\bira|rmd|roth|conver|inherit|heir|kids|children|charit|giv)",
+        "(\\bira|rmd|roth|conver|inherit|heir|kids|children|charit|giv).*tax",
+        "shrink.*\\bira"
+      ],
+      "reject": {},
+      "evidence": [
+        {
+          "at": "00:04:09",
+          "quote": "bring down the lifetime tax bill on the IRA money, for you and for the kids, and do the giving the most tax-efficient way along the way"
+        },
+        {
+          "at": "00:03:58",
+          "quote": "Shrink the IRAs while we're in the lower brackets."
+        }
+      ]
+    },
+    "retirement_target": {
+      "expected": "NOT_FOUND (both already retired: Everett \"ten years ago this January\", i.e. January 2016 or 2017; Lorraine in 2019)",
+      "accept": [
+        "not[_ ]found",
+        "\\bretired\\b",
+        "\\bretirees?\\b",
+        "in retirement",
+        "^n/?a\\b",
+        "^none\\b"
+      ],
+      "reject": {
+        "RMD_AGE_AS_TARGET": [
+          "^(?!.*(retired|not[_ ]found|\\bn/?a\\b)).*\\b(73|2028)\\b"
+        ]
+      },
+      "evidence": [
+        {
+          "at": "00:10:41",
+          "quote": "Retired ten years ago this January."
+        },
+        {
+          "at": "00:17:03",
+          "quote": "before I retired in 2019"
+        }
+      ]
+    },
+    "risk_tolerance": {
+      "expected": "Moderate (60/40)",
+      "accept": [
+        "\\bmoderate\\b",
+        "60 ?/ ?40",
+        "sixty[- ]forty",
+        "60 ?% (stock|equit)"
+      ],
+      "reject": {
+        "FLOATED_CONSERVATIVE": [
+          "^(?!.*\\bmoderate\\b).*conservative",
+          "^(?!.*\\bmoderate\\b).*(40 ?/ ?60|forty[- ]sixty)"
+        ]
+      },
+      "evidence": [
+        {
+          "at": "00:23:49",
+          "quote": "Right now you're set up as moderate. For you that's the 60/40 target"
+        },
+        {
+          "at": "00:25:44",
+          "quote": "you both confirmed moderate, 60/40, no change from April"
+        }
+      ]
+    },
+    "risk_tolerance_change": {
+      "expected": "no change",
+      "accept": [
+        "no change",
+        "unchanged",
+        "not changed",
+        "^none\\b",
+        "(remain|stay|kept|keep|confirm)\\w*\\b.{0,20}moderate"
+      ],
+      "reject": {
+        "FLOATED_CHANGE": [
+          "^(?!.*(no change|unchanged|not chang|remain|stay|kept|keep|declin|decided against)).*\\bto (more |moderately )?conservative",
+          "^(?!.*(no change|unchanged|not chang|remain|stay|kept|keep|declin|decided against)).*(40 ?/ ?60|forty[- ]sixty)"
+        ]
+      },
+      "evidence": [
+        {
+          "at": "00:24:19",
+          "quote": "Going more conservative? Forty-sixty, something like that?"
+        },
+        {
+          "at": "00:25:39",
+          "quote": "All right. All right. I just wanted to ask. Leave it."
+        },
+        {
+          "at": "00:25:44",
+          "quote": "you both confirmed moderate, 60/40, no change from April"
+        }
+      ]
+    },
+    "next_meeting": {
+      "expected": "Wednesday, December 9, 2026, 10:00 a.m., by video",
+      "accept": [
+        "dec(ember)?\\.? 9(th)?\\b",
+        "12/0?9\\b",
+        "2026-12-09",
+        "\\b9(th)? dec"
+      ],
+      "reject": {},
+      "evidence": [
+        {
+          "at": "00:28:04",
+          "quote": "Then how about Wednesday, December 9th, 10 a.m., by video"
+        }
+      ]
+    }
+  },
+  "life_events": [
+    {
+      "eid": "e1",
+      "expected": "Granddaughter Maisie Jane born August 27, 2026 (son Nathan and Jess's daughter)",
+      "match": [
+        "grand(daughter|child|baby)|maisie|\\bbirth\\b|\\bborn\\b|new baby"
+      ],
+      "reject": {},
+      "evidence": [
+        {
+          "at": "00:01:03",
+          "quote": "August 27th. Maisie. Maisie Jane."
+        }
+      ]
+    },
+    {
+      "eid": "e2",
+      "expected": "Everett scheduled for right knee replacement surgery on Tuesday, November 17, 2026 (one or two nights in hospital, six weeks of physical therapy, no driving for a month)",
+      "match": [
+        "knee|surgery|joint replacement"
+      ],
+      "reject": {},
+      "evidence": [
+        {
+          "at": "00:04:27",
+          "quote": "They've got me down for the replacement on November 17th. The right one."
+        },
+        {
+          "at": "00:04:56",
+          "quote": "And no driving for a month."
+        }
+      ]
+    }
+  ],
+  "account_actions": [
+    {
+      "aid": "a1",
+      "expected": "QCD of $15,000 from Everett's rollover IRA payable directly to Saint Fintan Parish (Hearth and Steeple capital campaign pledge); counts toward his 2026 RMD",
+      "match": [
+        "^(?!.*(remain\\w*|rest of|balance of)\\W+(\\w+\\W+){0,6}(rmd|required|distribution)).*(qcd|qualified charitable|charitable distribution|fintan|fenton|parish|church|capital campaign|hearth and steeple)"
+      ],
+      "amount_accept": [
+        "\\b15,?000\\b",
+        "\\b15\\s*(k|thousand)\\b",
+        "fifteen thousand"
+      ],
+      "amount_reject": {
+        "STALE_PLEDGE_12000": [
+          "^(?!.*(\\b15,?000\\b|\\b15\\s*(k|thousand)\\b|fifteen)).*(\\b12,?000\\b|\\b12\\s*(k|thousand)\\b|twelve thousand)"
+        ]
+      },
+      "evidence": [
+        {
+          "at": "00:06:32",
+          "quote": "We pledged $12,000, and they asked that it be in by the end of the year if you can."
+        },
+        {
+          "at": "00:19:20",
+          "quote": "Thank you for your revised pledge of $15,000 to the Hearth and Steeple campaign at Saint Fintan Parish."
+        },
+        {
+          "at": "00:19:32",
+          "quote": "So fifteen to the parish as the QCD, not twelve."
+        }
+      ]
+    },
+    {
+      "aid": "a2",
+      "expected": "Regular distribution of the remaining $32,388 of Everett's 2026 RMD from his rollover IRA, processed the first week of December, with 50% federal withholding (about $16,200)",
+      "match": [
+        "(remain\\w*|balance|rest of)\\b.*(rmd|required minimum|distribution)",
+        "(rmd|required minimum)\\b.*(remain\\w*|balance|withh|december)",
+        "32,?[34]\\d\\d|35,?[34]\\d\\d"
+      ],
+      "amount_accept": [
+        "32,?388",
+        "32,?[34]\\d\\d",
+        "32\\.4 ?k",
+        "\\b32 ?k\\b",
+        "\\b32(\\.\\d+)?\\s*thousand",
+        "thirty[- ]two thousand"
+      ],
+      "amount_reject": {
+        "STALE_REMAINDER_35388": [
+          "^(?!.*(32,?[34]\\d\\d|32\\.4)).*(35,?[34]\\d\\d|35\\.4 ?k)"
+        ],
+        "FULL_RMD_47388": [
+          "^(?!.*(32,?[34]\\d\\d|32\\.4)).*47,?[34]\\d\\d"
+        ]
+      },
+      "evidence": [
+        {
+          "at": "00:07:13",
+          "quote": "that leaves, uh, $35,388 to take as a regular taxable distribution before December 31st"
+        },
+        {
+          "at": "00:19:32",
+          "quote": "so the regular distribution in December drops to $32,388"
+        },
+        {
+          "at": "00:26:53",
+          "quote": "the rest, the $32,388, comes out the first week of December with fifty percent federal withholding"
+        }
+      ]
+    },
+    {
+      "aid": "a3",
+      "expected": "Roth conversion of $70,000 from Lorraine's traditional IRA to her existing Roth IRA, processed the first week of December with zero federal and state withholding",
+      "match": [
+        "^(?!(action: )?\\W*(\\w+\\W+){0,3}(remain\\w*|rest of|balance of)\\b).*conver",
+        "\\broth\\b.*(lorraine|traditional)|(lorraine|traditional).*\\broth\\b"
+      ],
+      "amount_accept": [
+        "\\b70,?000\\b",
+        "\\b70\\s*(k|thousand)\\b",
+        "seventy thousand"
+      ],
+      "amount_reject": {
+        "STALE_ASR_17000": [
+          "^(?!.*(\\b70,?000\\b|\\b70\\s*(k|thousand)\\b|seventy)).*(\\b17,?000\\b|\\b17\\s*(k|thousand)\\b|seventeen)"
+        ]
+      },
+      "evidence": [
+        {
+          "at": "00:15:17",
+          "quote": "So what I'd do is convert $17,000 out of Lorraine's traditional IRA into her Roth this year."
+        },
+        {
+          "at": "00:21:46",
+          "quote": "So the seventy comes out of my IRA, all of it goes into the Roth"
+        },
+        {
+          "at": "00:21:59",
+          "quote": "$70,000, seven-zero, goes over whole"
+        },
+        {
+          "at": "00:26:53",
+          "quote": "We're converting $70,000 from Lorraine's traditional IRA to her Roth, no withholding on the conversion."
+        }
+      ]
+    },
+    {
+      "aid": "a4",
+      "expected": "Contribute about $40,000 of Kettleby Controls stock (about 540 whole shares) from the joint brokerage account to a new donor-advised fund, the Stadtler Family Fund, at Carrow Valley Community Foundation",
+      "match": [
+        "donor[- ]advised|\\bdaf\\b|community foundation|carrow|kettleby|family fund"
+      ],
+      "amount_accept": [
+        "40,?000",
+        "\\b40\\s*(k|thousand)\\b",
+        "forty thousand",
+        "\\b540 shares"
+      ],
+      "amount_reject": {
+        "FULL_POSITION_61000": [
+          "^(?!.*(40,?000|\\b40\\s*(k|thousand)\\b|forty|540)).*(61,?\\d{3}|\\b61\\s*(k|thousand)\\b|825 shares)"
+        ]
+      },
+      "evidence": [
+        {
+          "at": "00:12:07",
+          "quote": "So about $40,000 of Kettleby, in whole shares. At yesterday's price that's about 540 shares."
+        },
+        {
+          "at": "00:26:53",
+          "quote": "About $40,000 of Kettleby shares goes from the joint account into a new donor-advised fund at Carrow Valley."
+        }
+      ]
+    }
+  ],
+  "action_items": [
+    {
+      "iid": "i1",
+      "expected_task": "Get Saint Fintan Parish's legal name, EIN and lockbox/mailing address from the parish office (and ask about the acknowledgment letter), then email them to Joelle",
+      "match": [
+        "\\bein\\b|tax id|taxpayer id|legal name|remittance|lockbox|mailing address|parish office|acknowledg",
+        "(parish|payment|payee|church)('s)? (info|information|details|contact|instructions)|\\bdeb\\b|(send|email|forward|provide|give)\\w*\\W+(\\w+\\W+){0,4}(to\\W+)?joelle"
+      ],
+      "owner_accept": [
+        "everett"
+      ],
+      "owner_reject": {
+        "STALE_OWNER": [
+          "^(?!.*everett).*lorraine"
+        ]
+      },
+      "due_accept": [
+        "monday",
+        "oct(ober)?\\.? 19",
+        "10/19",
+        "2026-10-19",
+        "\\b19(th)?\\s+(of\\s+)?oct"
+      ],
+      "due_reject": {},
+      "trap": "reassigned",
+      "expected_owner": "Everett Stadtler (reassigned from Lorraine Stadtler)",
+      "expected_due": "Monday (October 19, 2026)",
+      "evidence": [
+        {
+          "at": "00:08:47",
+          "quote": "I'll call the parish office Monday. Deb'll have all of that."
+        },
+        {
+          "at": "00:08:52",
+          "quote": "Great. Lorraine, you get us the legal name, the EIN and the remittance address, and send them to Joelle."
+        },
+        {
+          "at": "00:20:08",
+          "quote": "Lorraine, you don't need to call."
+        },
+        {
+          "at": "00:20:34",
+          "quote": "Okay, so that one moves to Everett."
+        },
+        {
+          "at": "00:20:46",
+          "quote": "Monday. I'll email it Monday morning."
+        }
+      ]
+    },
+    {
+      "iid": "i2",
+      "expected_task": "Build the QCD request ($15,000 from Everett's IRA payable to Saint Fintan Parish) and send it to Everett through the e-signature portal",
+      "match": [
+        "^(?!.*(conver|daf|donor|(get|obtain|collect|gather)\\w*\\W+(\\w+\\W+){0,4}(parish|\\bein\\b|tax id))).*(qcd|qualified charitable|charitable distribution|e-?signature)"
+      ],
+      "owner_accept": [
+        "joelle|pardoe|associate"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "wednesday",
+        "oct(ober)?\\.? 21",
+        "10/21",
+        "2026-10-21",
+        "\\b21(st)?\\s+(of\\s+)?oct"
+      ],
+      "due_reject": {},
+      "trap": "none",
+      "expected_owner": "Joelle Pardoe",
+      "expected_due": "Wednesday (October 21, 2026)",
+      "evidence": [
+        {
+          "at": "00:20:49",
+          "quote": "I'll build the QCD request and send it to you through the e-signature portal. I can have it out to you Wednesday."
+        }
+      ]
+    },
+    {
+      "iid": "i3",
+      "expected_task": "Run the full Roth conversion projection (with the $15,000 QCD and the DAF deduction) and send it to Everett, Lorraine and Hal Dettweiler",
+      "match": [
+        "^(?!.*\\bforms?\\b).*(projection|(run|model|analy\\w*|numbers).*conver|conver\\w*.*(analy|model|numbers))"
+      ],
+      "owner_accept": [
+        "tobias|wendrick|advis"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "oct(ober)?\\.? 30",
+        "10/30",
+        "2026-10-30",
+        "\\b30(th)?\\s+(of\\s+)?oct",
+        "\\b30th\\b",
+        "friday,? the 30"
+      ],
+      "due_reject": {
+        "STALE_DUE": [
+          "^(?!.*\\b30).*(\\b23(rd)?\\b|next friday)"
+        ]
+      },
+      "trap": "due_changed",
+      "expected_owner": "Tobias Wendrick",
+      "expected_due": "Friday, October 30, 2026 (moved from Friday, October 23)",
+      "evidence": [
+        {
+          "at": "00:21:01",
+          "quote": "I'll have that to you by next Friday, the 23rd."
+        },
+        {
+          "at": "00:21:20",
+          "quote": "Okay, make it the 30th. Friday the 30th."
+        }
+      ]
+    },
+    {
+      "iid": "i4",
+      "expected_task": "Send out the Carrow Valley Community Foundation DAF application (Stadtler Family Fund, Nathan and Claire as successor advisors) and the stock transfer letter for about $40,000 of Kettleby shares to both clients",
+      "match": [
+        "^(?!((everett|lorraine|clients?|both|and|&|the)\\W+){0,4}(to\\W+)?(review\\W+(and\\W+)?)?(e-?)?sign)(?!.*projection).*(donor[- ]advised|\\bdaf\\b|community foundation|carrow|kettleby|stock transfer|transfer letter|family fund)"
+      ],
+      "owner_accept": [
+        "joelle|pardoe|associate"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "tuesday",
+        "oct(ober)?\\.? 20",
+        "10/20",
+        "2026-10-20",
+        "\\b20(th)?\\s+(of\\s+)?oct"
+      ],
+      "due_reject": {},
+      "trap": "none",
+      "expected_owner": "Joelle Pardoe",
+      "expected_due": "Tuesday (October 20, 2026)",
+      "evidence": [
+        {
+          "at": "00:27:34",
+          "quote": "I'll get that out to both of you by Tuesday with the stock transfer letter"
+        }
+      ]
+    },
+    {
+      "iid": "i5",
+      "expected_task": "Call Hal Dettweiler (CPA) to book a year-end tax meeting in the first half of November, before Everett's surgery, and ask how to handle the state tax on the conversion",
+      "match": [
+        "^(?!\\W*(re-?)?(run|update|prepare|model|finali[sz]e|complete|send|deliver|circulate)\\w*\\b.{0,40}projection).*\\b(call|phone|ask|tell|contact|reach out|schedul|book|meet|appointment|calendar|set up)\\w*\\b.*(\\bhal\\b|dettweiler|\\bcpa\\b|accountant)",
+        "^(?!\\W*(re-?)?(run|update|prepare|model|finali[sz]e|complete|send|deliver|circulate)\\w*\\b.{0,40}projection).*(\\bhal\\b|dettweiler|\\bcpa\\b|accountant).*\\b(call|schedul|book|meet|appointment|calendar|state (income )?tax|estimat)"
+      ],
+      "owner_accept": [
+        "lorraine"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "tomorrow",
+        "oct(ober)?\\.? 16",
+        "10/16",
+        "2026-10-16",
+        "\\b16(th)?\\s+(of\\s+)?oct"
+      ],
+      "due_reject": {},
+      "trap": "none",
+      "expected_owner": "Lorraine Stadtler",
+      "expected_due": "Tomorrow (Friday, October 16, 2026)",
+      "evidence": [
+        {
+          "at": "00:21:29",
+          "quote": "And I'll call Hal tomorrow and get us on his calendar for the first half of November"
+        },
+        {
+          "at": "00:21:29",
+          "quote": "And I'll ask him about the state part."
+        }
+      ]
+    },
+    {
+      "iid": "i6",
+      "expected_task": "Prepare the Roth conversion form (Lorraine, zero withholding) and the December RMD distribution form (Everett, 50% federal withholding) once Hal signs off, dated to process the first week of December, and have both signed",
+      "match": [
+        "^(?!.*projection).*(conver\\w*.*(form|paperwork|signature|sign)|(form|paperwork)\\w*.*conver)",
+        "(rmd|required minimum|december) (distribution )?(form|paperwork)"
+      ],
+      "owner_accept": [
+        "joelle|pardoe|associate"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "nov(ember)?\\.? 1[4-7]",
+        "11/1[4-7]",
+        "2026-11-1[4-7]",
+        "\\b1[4-7](th)?\\s+(of\\s+)?nov",
+        "surgery",
+        "\\b17(th)?\\b"
+      ],
+      "due_reject": {},
+      "trap": "none",
+      "expected_owner": "Joelle Pardoe",
+      "expected_due": "Signed before the 17th (before Everett's November 17, 2026 surgery)",
+      "evidence": [
+        {
+          "at": "00:22:10",
+          "quote": "I'll get both out to you as soon as Hal signs off and Tobias gives me the final numbers, dated to process the first week of December, and I want both of them signed before the 17th."
+        }
+      ]
+    }
+  ],
+  "non_actions": [
+    {
+      "nid": "n1",
+      "what": "QLAC (qualified longevity annuity contract) of about $200,000 from Everett's IRA to reduce RMDs; proposed by Tobias, declined by both clients",
+      "match": [
+        "^(?!.*(declin|\\bnote|document|record|\\bfiled?\\b)).*(qlac|longevity annuit|\\bannuit)"
+      ],
+      "kind": "declined_proposal",
+      "evidence": [
+        {
+          "at": "00:22:31",
+          "quote": "There's something called a QLAC"
+        },
+        {
+          "at": "00:23:49",
+          "quote": "I'll note that we looked at a QLAC and you declined it"
+        }
+      ]
+    },
+    {
+      "nid": "n2",
+      "what": "Opening a 529 plan for granddaughter Maisie; floated by Lorraine, explicitly not this year and not put on the list",
+      "match": [
+        "\\b529\\b|college sav|education sav"
+      ],
+      "kind": "tentative",
+      "evidence": [
+        {
+          "at": "00:26:03",
+          "quote": "A 529, is that what it's called?"
+        },
+        {
+          "at": "00:26:41",
+          "quote": "Then I won't put it on the list."
+        }
+      ]
+    },
+    {
+      "nid": "n3",
+      "what": "Moving the allocation to a more conservative 40/60; floated by Everett and dropped (risk tolerance stays moderate)",
+      "match": [
+        "^(?!.*(\\bdaf\\b|donor|kettleby|carrow|foundation)).*(40 ?/ ?60|forty[- ]sixty|more conservative|conservative allocation|de-?risk|reduce (the )?(equit|stock)\\w*\\W+(\\w+\\W+){0,2}(allocation|exposure|weight))"
+      ],
+      "kind": "tentative",
+      "evidence": [
+        {
+          "at": "00:24:19",
+          "quote": "Going more conservative? Forty-sixty, something like that?"
+        }
+      ]
+    },
+    {
+      "nid": "n4",
+      "what": "Putting IRA money into the donor-advised fund through a QCD; floated by Lorraine, ruled out because a QCD cannot go to a DAF",
+      "match": [
+        "^(?!.*(can.?t|cannot|not (allowed|permitted|eligible)|ineligible|instead|kettleby)).*(qcd|\\bira\\b)\\w*\\W+(\\w+\\W+){0,3}(to|into)\\W+(the\\W+|a\\W+)?(daf|donor)",
+        "^(?!.*(can.?t|cannot|not (allowed|permitted|eligible)|ineligible|instead|kettleby)).*(fund|contribut)\\w*\\W+(\\w+\\W+){0,3}(daf|donor[- ]advised fund)\\W+(\\w+\\W+){0,2}(with|from|via)\\W+(\\w+\\W+){0,2}(ira|qcd)"
+      ],
+      "kind": "tentative",
+      "evidence": [
+        {
+          "at": "00:09:04",
+          "quote": "Could we put the IRA money into that donor-advised fund and then give from there?"
+        },
+        {
+          "at": "00:09:26",
+          "quote": "A QCD has to go straight to the charity. It can't go into a donor-advised fund"
+        }
+      ]
+    }
+  ],
+  "corrected_figures": [
+    {
+      "what": "Saint Fintan Parish capital campaign pledge, paid as the QCD from Everett's IRA",
+      "said_first": "$12,000",
+      "corrected_to": "$15,000",
+      "field": "account_actions",
+      "evidence": [
+        {
+          "at": "00:06:32",
+          "quote": "We pledged $12,000, and they asked that it be in by the end of the year if you can."
+        },
+        {
+          "at": "00:19:20",
+          "quote": "Thank you for your revised pledge of $15,000 to the Hearth and Steeple campaign at Saint Fintan Parish."
+        }
+      ]
+    },
+    {
+      "what": "Taxable remainder of Everett's 2026 RMD after the QCD (follows from the pledge correction)",
+      "said_first": "$35,388",
+      "corrected_to": "$32,388",
+      "field": "account_actions",
+      "evidence": [
+        {
+          "at": "00:07:13",
+          "quote": "that leaves, uh, $35,388 to take as a regular taxable distribution before December 31st"
+        },
+        {
+          "at": "00:19:32",
+          "quote": "so the regular distribution in December drops to $32,388"
+        }
+      ]
+    },
+    {
+      "what": "Roth conversion amount (automatic transcription error; the $215,000 income figure, the $15,000 tax estimate and later turns establish seventy thousand)",
+      "said_first": "$17,000",
+      "corrected_to": "$70,000",
+      "field": "account_actions",
+      "evidence": [
+        {
+          "at": "00:15:17",
+          "quote": "So what I'd do is convert $17,000 out of Lorraine's traditional IRA into her Roth this year."
+        },
+        {
+          "at": "00:21:59",
+          "quote": "$70,000, seven-zero, goes over whole"
+        }
+      ]
+    }
+  ]
+}

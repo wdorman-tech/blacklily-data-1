@@ -1,0 +1,38 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "After how many consecutive business days without a price change is a security flagged as stale?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "stale", "price change", "consecutive business days", "flagged".
+
+4.  **Evaluate Document Content:**
+    *   `02_compliance_manual.md`: Discusses Personal Trading and Pre-Clearance (Holding Period). Not relevant to stale prices.
+    *   `03_valuation_policy.md` (dated February 10, 2026):
+        *   Section 3.6: New Issues. Not relevant.
+        *   Section 5.1: Tolerance Checks. Not relevant.
+        *   Section 5.2: Price Challenges. Not relevant.
+        *   Section 6.1 Stale Price Threshold: "A security whose price from its assigned source has not changed for five consecutive business days is flagged as stale." (Original policy).
+    *   `06_policy_update_memo.md` (dated August 14, 2026):
+        *   Section 2.1: Amends Compliance Manual Holding Period. Not relevant.
+        *   Section 3.1 Stale Price Threshold: "This Section 3.1 amends Section 6.1 (Stale Price Threshold) of the Valuation Policy and Procedures. Effective September 1, 2026, a security whose price from its assigned source has not changed for three consecutive business days is flagged as stale."
+
+5.  **Determine Current Status:**
+    *   The question asks for the current rule ("is a security flagged").
+    *   There are two documents regarding this: `03_valuation_policy.md` (Feb 10, 2026) and `06_policy_update_memo.md` (Aug 14, 2026).
+    *   Rule 3 states: "Later-dated documents supersede earlier ones."
+    *   The memo dated August 14, 2026 amends the Valuation Policy. It states effective September 1, 2026, the threshold is three consecutive business days.
+    *   Since the memo is later dated and explicitly amends the policy regarding stale price thresholds, the current rule is the one in the memo (assuming the question implies current/firm policy as of now). The memo says "Effective September 1, 2026". Even if today is before Sept 1, the document provided *is* the amendment document. However, usually, in these tasks, we follow the latest document provided that supersedes the earlier one. The prompt says "Later-dated documents supersede earlier ones."
+    *   The memo explicitly

@@ -1,0 +1,51 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser (Wrenholt Pryce).
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "When was the Firm's most recent SEC examination, and were any deficiencies cited?"
+
+3.  **Scan the Documents for Keywords:**
+    *   Keywords: "SEC examination", "examination", "deficiencies", "inspection", "investigation".
+
+4.  **Review Document Content:**
+    *   `01_brochure.md`:
+        *   Item 1. Cover Page: Mentions registration with SEC, link to adviserinfo.sec.gov. No mention of recent examination dates or deficiencies.
+        *   Item 2. Material Changes: Mentions changes since last annual amendment (March 28, 2025). No mention of SEC exam.
+        *   Item 9. Disciplinary Information: States no criminal/civil actions, administrative proceedings before SEC, etc. This is about disciplinary history, not routine examinations.
+    *   `02_compliance_manual.md`:
+        *   Section 3. Code of Ethics: Standards of conduct. No exam info.
+        *   Section 11. Cybersecurity: Vendor oversight. No exam info.
+        *   Section 15. Annual Review: CCO conducts annual review, independent assessment by Hessendale Compliance Advisors. No SEC examination info.
+    *   `06_policy_update_memo.md`:
+        *   Preamble: Amendments to policies. No mention of SEC examination history.
+
+5.  **Evaluate Findings:**
+    *   None of the provided documents contain information regarding the date of the Firm's most recent SEC examination or whether deficiencies were cited.
+    *   The brochure mentions registration and disciplinary history (Item 9), but not routine examinations.
+    *   The compliance manual discusses internal reviews and independent assessments, not SEC exams.
+
+6.  **Formulate Answer:**
+    *   Since the information is not present in the documents, the answer must be `NOT_IN_DOCUMENTS`.
+    *   Source document: "" (empty string as per instructions for NOT_IN_DOCUMENTS).
+    *   Section: "" (empty string).
+    *   Quote: "" (empty string).
+
+7.  **Construct JSON:**
+    *   Ensure valid JSON syntax.
+    *   Ensure no markdown code blocks (```json ... ```).
+    *   Ensure keys match exactly: "answer", "source_document", "section", "quote".
+
+8.  **Final Check:**
+    *   Did I miss anything? Sometimes Form ADV Part 2A Item 5 or similar might contain this, but the provided text for `01_brochure.md` only shows Item 1, Item 2, and Item 9. It does not show Item 5 (Description of Business/Examination History

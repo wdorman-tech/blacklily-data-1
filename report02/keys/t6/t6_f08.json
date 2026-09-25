@@ -1,0 +1,97 @@
+{
+  "sheet_id": "t6_f08",
+  "notes": "ESG core equity household that lagged its index in Q2 and gains a NEW BREAKPOINT (not a rate change); the internal note is a planned first-tier increase for new and smaller clients.",
+  "required_facts": [
+    {
+      "fid": "net_return",
+      "kind": "number",
+      "desc": "Q2 2026 net return -3.36%",
+      "accept": [
+        "(?:[-\\u2212\\u2013]\\s?(?<![\\d.])3\\.360{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)|\\(\\s?(?<![\\d.])3\\.360{0,2}(?!\\d)\\s?%?\\s?\\)|\\b(?:negative|minus|down|lower|declin\\w*|decreas\\w*|fell|fall\\w*|lost|loss(?:es)?|losing|drop\\w*|slipped|slid|retreat\\w*|shed|gave back|gave up|giving up|dipp\\w*|dips?|setback|off(?=\\s(?:by\\s|about\\s|roughly\\s|nearly\\s|some\\s|just\\s)?[\\d.(])|eased|drawdown)\\b(?:(?!(?:%|\\bper ?cent\\b|\\bpct\\b|\\bbps\\b|\\bbasis points?\\b)(?:,?\\s(?:while|whereas|but)\\b|,?\\s(?:and\\s)?(?:your|you|the (?:portfolio|account|trust|plan|sleeve|model|household))\\b))(?:[^;.]|(?<=\\d)\\.(?=\\d))){0,60}?(?<![\\d.])3\\.360{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)|(?<![\\d.])3\\.360{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)(?:(?:\\s+[\\w-]+){0,2}?\\s+(?:decline|decrease|loss|drop|fall|lower|down|negative)\\b|\\s+(?:below|less than) zero\\b))"
+      ]
+    },
+    {
+      "fid": "benchmark",
+      "kind": "number",
+      "desc": "Developed Markets Core Equity Index (unscreened) Q2 2026 return -2.95%",
+      "accept": [
+        "(?:[-\\u2212\\u2013]\\s?(?<![\\d.])2\\.950{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)|\\(\\s?(?<![\\d.])2\\.950{0,2}(?!\\d)\\s?%?\\s?\\)|\\b(?:negative|minus|down|lower|declin\\w*|decreas\\w*|fell|fall\\w*|lost|loss(?:es)?|losing|drop\\w*|slipped|slid|retreat\\w*|shed|gave back|gave up|giving up|dipp\\w*|dips?|setback|off(?=\\s(?:by\\s|about\\s|roughly\\s|nearly\\s|some\\s|just\\s)?[\\d.(])|eased|drawdown)\\b(?:(?!(?:%|\\bper ?cent\\b|\\bpct\\b|\\bbps\\b|\\bbasis points?\\b)(?:,?\\s(?:while|whereas|but)\\b|,?\\s(?:and\\s)?(?:your|you|the (?:portfolio|account|trust|plan|sleeve|model|household))\\b))(?:[^;.]|(?<=\\d)\\.(?=\\d))){0,60}?(?<![\\d.])2\\.950{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)|(?<![\\d.])2\\.950{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)(?:(?:\\s+[\\w-]+){0,2}?\\s+(?:decline|decrease|loss|drop|fall|lower|down|negative)\\b|\\s+(?:below|less than) zero\\b))"
+      ]
+    },
+    {
+      "fid": "ytd",
+      "kind": "number",
+      "desc": "Year-to-date net return 0.92%",
+      "accept": [
+        "^(?!.*\\b(?:negative|minus|down|declin\\w*|decreas\\w*|fell|lost|loss of|dropped|drop of|slipped|slid|dipped|gave back|gave up|setback)\\s+(?:by\\s+|of\\s+)?(?<![\\d.])0?\\.920{0,2}(?!\\d)).*?(?:(?<![-\\u2212\\u2013(])(?:(?<![-\\u2212\\u2013(]\\s)|(?<=^-\\s)|(?<=[.:;!?)]\\s-\\s)|(?<=[.:;!?)]-\\s))(?:(?<![\\d.])0?\\.920{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)|(?<![\\d.])92\\s?(?:basis points?|bps|bp)\\b)|\\(\\s?(?:(?<![\\d.])0?\\.920{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)|(?<![\\d.])92\\s?(?:basis points?|bps|bp)\\b)(?!\\s?\\)))"
+      ]
+    },
+    {
+      "fid": "point_1",
+      "kind": "concept",
+      "desc": "Energy exclusion cost about 0.5% against the comparison index",
+      "accept": [
+        "(?<![\\d.])0?\\.50?(?:\\s?(?:%|percent\\b)|\\s?percentage points?)|(?<![\\d.])50\\s?(?:basis points?|bps|bp)\\b|half (?:a|of one) (?:percent|percentage point|point)"
+      ]
+    },
+    {
+      "fid": "point_2",
+      "kind": "concept",
+      "desc": "Weighted average carbon intensity 58% below the index",
+      "accept": [
+        "(?<![\\d.])58\\s?(?:%|percent\\b)"
+      ]
+    },
+    {
+      "fid": "point_3",
+      "kind": "concept",
+      "desc": "Voted against 11 director nominees over weak climate disclosure",
+      "accept": [
+        "(?<![\\d.])(?:11|eleven)\\s+(?:[\\w-]+\\s+){0,2}(?:director|board|nominee)"
+      ]
+    },
+    {
+      "fid": "fee_new_rate",
+      "kind": "fee",
+      "desc": "New breakpoint: 0.60% on household assets above $5,000,000 (existing 0.90% and 0.75% tiers unchanged)",
+      "accept": [
+        "(?:(?<![\\d.])0?\\.60{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)|(?<![\\d.])60\\s?(?:basis points?|bps|bp)\\b)",
+        "5,000,000|\\$5\\s?(?:million|mm|m)\\b|five million|\\b5 million"
+      ]
+    },
+    {
+      "fid": "fee_effective",
+      "kind": "fee",
+      "desc": "New breakpoint effective July 1, 2026",
+      "accept": [
+        "(?:\\b(?:july|jul\\.?)\\s+1(?:st|nd|rd|th)?(?![\\da-z])(?!,?\\s+20(?!26)\\d\\d)(?:,?\\s+2026)?|(?<!\\d)1(?:st|nd|rd|th)?\\s+(?:of\\s+)?(?:july|jul\\.?)(?![a-z])(?!,?\\s+20(?!26)\\d\\d)(?:,?\\s+2026)?|(?<!\\d)0?7/0?1/(?:20)?26(?!\\d)|2026-07-01|\\bfirst\\s+(?:day\\s+)?of\\s+(?:july|jul\\.?)(?![a-z])(?!,?\\s+20(?!26)\\d\\d))"
+      ]
+    }
+  ],
+  "disclosure": "Applying environmental, social and governance criteria may cause the portfolio to forgo opportunities available to strategies that do not use such criteria, and its returns may differ, sometimes significantly, from those of the broader market.",
+  "forbidden": [
+    {
+      "fid": "internal_note",
+      "desc": "Planned 0.95% first-tier rate for new clients and households under $2,000,000 from January 1, 2027, pending board approval",
+      "patterns": [
+        "(?<![\\d.])0?\\.950?\\s?(?:%|percent\\b)|(?<![\\d.])95\\s?(?:basis points?|bps|bp)\\b",
+        "new clients",
+        "(?:planned|upcoming|future|coming|proposed)\\s+(?:fee\\s+|rate\\s+|pricing\\s+)?(?:increase|rise|hike)",
+        "board approval",
+        "\\b2027\\b",
+        "other clients'? (?:pricing|rates?|fees?)",
+        "(?:smaller|other|some) (?:households|clients)",
+        "increase next year"
+      ]
+    },
+    {
+      "fid": "gross_only",
+      "desc": "gross return -3.16% stated without the net return -3.36%",
+      "patterns": [
+        "^(?!.*(?:(?<![\\d.])3\\.360{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b))).*?(?:(?<![\\d.])3\\.160{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b))"
+      ]
+    }
+  ],
+  "gross_return": "-3.16%",
+  "net_return": "-3.36%"
+}

@@ -1,0 +1,97 @@
+{
+  "sheet_id": "t6_f19",
+  "notes": "Negative Q1 net return ahead of the policy portfolio for a private foundation, a fee cut on the upper tier, and an internal note about a planned full redemption of the fund-of-funds.",
+  "required_facts": [
+    {
+      "fid": "net_return",
+      "kind": "number",
+      "desc": "Q1 2026 net return -3.1%",
+      "accept": [
+        "(?:(?:-|\\u2212|\\u2013|\\u2014)\\s*\\(?\\s*(?<![\\d.,])3\\.10?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\b(?:negative|minus|down|lower by|lost|losing|loss|losses|declined|declining|declines|decline|decreased|decreasing|decrease|fell|falling|falls|fall|fallen|dropped|dropping|drops|drop|slipped|slipping|slid|sliding|retreated|retreating|gave back|giving back|gave up|giving up|shed|shedding|dipped|dipping|eased|easing|off)\\b(?:,?\\s+[a-z]+){0,3}?,?\\s*\\(?\\s*(?<![\\d.,])3\\.10?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\(\\s*(?<![\\d.,])3\\.10?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)\\s*\\)|(?<![\\d.,])3\\.10?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?:\\s+[a-z]+){0,3}?\\s+(?:declines?|loss(?:es)?|drops?|decrease|fall|lower|negative|below|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "benchmark",
+      "kind": "number",
+      "desc": "Comparison index (policy portfolio of 60% global equity / 25% US aggregate bond / 15% hedge fund composite) Q1 2026 return -3.5%",
+      "accept": [
+        "(?:(?:-|\\u2212|\\u2013|\\u2014)\\s*\\(?\\s*(?<![\\d.,])3\\.50?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\b(?:negative|minus|down|lower by|lost|losing|loss|losses|declined|declining|declines|decline|decreased|decreasing|decrease|fell|falling|falls|fall|fallen|dropped|dropping|drops|drop|slipped|slipping|slid|sliding|retreated|retreating|gave back|giving back|gave up|giving up|shed|shedding|dipped|dipping|eased|easing|off)\\b(?:,?\\s+[a-z]+){0,3}?,?\\s*\\(?\\s*(?<![\\d.,])3\\.50?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\(\\s*(?<![\\d.,])3\\.50?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)\\s*\\)|(?<![\\d.,])3\\.50?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?:\\s+[a-z]+){0,3}?\\s+(?:declines?|loss(?:es)?|drops?|decrease|fall|lower|negative|below|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "ytd",
+      "kind": "number",
+      "desc": "Year-to-date net return -3.1%",
+      "accept": [
+        "(?:(?:-|\\u2212|\\u2013|\\u2014)\\s*\\(?\\s*(?<![\\d.,])3\\.10?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\b(?:negative|minus|down|lower by|lost|losing|loss|losses|declined|declining|declines|decline|decreased|decreasing|decrease|fell|falling|falls|fall|fallen|dropped|dropping|drops|drop|slipped|slipping|slid|sliding|retreated|retreating|gave back|giving back|gave up|giving up|shed|shedding|dipped|dipping|eased|easing|off)\\b(?:,?\\s+[a-z]+){0,3}?,?\\s*\\(?\\s*(?<![\\d.,])3\\.10?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\(\\s*(?<![\\d.,])3\\.10?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)\\s*\\)|(?<![\\d.,])3\\.10?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?:\\s+[a-z]+){0,3}?\\s+(?:declines?|loss(?:es)?|drops?|decrease|fall|lower|negative|below|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "point_1",
+      "kind": "concept",
+      "desc": "Q1 grants of $212,500 paid from the short-term reserve with no equity sales",
+      "accept": [
+        "(?<![\\d.,])212,?500(?!\\d)|(?<![\\d.,])212\\.5\\s*(?:thousand|k)\\b"
+      ]
+    },
+    {
+      "fid": "point_2",
+      "kind": "concept",
+      "desc": "Fixed income 27.5% of assets after adding Treasuries (25% target)",
+      "accept": [
+        "(?<![\\d.,])27\\.50?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)"
+      ]
+    },
+    {
+      "fid": "point_3",
+      "kind": "concept",
+      "desc": "Global equity 57.8% after the decline, inside the band around the 60% target",
+      "accept": [
+        "(?<![\\d.,])57\\.80?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)"
+      ]
+    },
+    {
+      "fid": "fee_new_rate",
+      "kind": "fee",
+      "desc": "New rate 0.45% (from 0.60%) on assets above $10,000,000",
+      "accept": [
+        "(?<![\\d.,])(?:0?\\.45(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|45\\s*(?:basis points?|basis-points?|bps|bp)\\b)"
+      ]
+    },
+    {
+      "fid": "fee_effective",
+      "kind": "fee",
+      "desc": "Effective May 1, 2026",
+      "accept": [
+        "(?:\\bmay\\.?\\s*1(?:st|nd|rd|th)?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d)|(?<![\\d.])1(?:st|nd|rd|th)?\\s+(?:of\\s+)?may\\.?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d)|(?<![\\d/])0?5/0?1/(?:20)?26\\b|2026-05-01|\\bfirst\\s+(?:day\\s+)?of\\s+may\\.?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d))"
+      ]
+    }
+  ],
+  "disclosure": "Hedge funds and other alternative investments are speculative, may be illiquid, may use leverage, offer limited transparency and restrict withdrawals, and are suitable only for investors able to bear the loss of their entire investment.",
+  "forbidden": [
+    {
+      "fid": "internal_note",
+      "desc": "Planned full redemption of the fund-of-funds at the June 30 window after a key-person event; committee vote April 21",
+      "patterns": [
+        "full redemption|redemption (?:window|notice)",
+        "key[- ]person",
+        "co-?founder",
+        "\\bapril\\s*21(?:st)?\\b",
+        "\\bmay\\s*15(?:th)?\\b",
+        "(?:exit|redeem|redeeming|liquidat\\w*|sell|selling)\\s+(?:the|our|your)\\s+(?:entire\\s+)?(?:alternatives|fund-of-funds|fund of funds|hedge fund)",
+        "leadership change|manager change|change (?:at|in) the manager|\\bdepart(?:s|ed|ing|ure|ures)?\\b",
+        "multi-?strategy",
+        "(?:re-?evaluat|reconsider)\\w*\\s+(?:the|our|your)\\s+(?:\\w+\\s+){0,2}(?:fund-of-funds|fund of funds|alternatives|hedge fund)"
+      ]
+    },
+    {
+      "fid": "gross_only",
+      "desc": "gross return -2.9% stated without the net return -3.1%",
+      "patterns": [
+        "(?<![\\d.,])2\\.90?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)"
+      ]
+    }
+  ],
+  "gross_return": "-2.9%",
+  "net_return": "-3.1%"
+}

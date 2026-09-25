@@ -1,0 +1,43 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraint 1: Answer only from documents provided.
+    *   Constraint 2: If documents don't answer, return exactly "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones (not relevant here as there's only one document mentioning insurance).
+    *   Constraint 4: Keep answers short and specific.
+    *   Constraint 5: Cite document file name and section.
+    *   Constraint 6: Quote supporting text verbatim.
+    *   Output Format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "What is the coverage limit of the firm's cyber liability insurance policy?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "cyber liability insurance", "coverage limit", "policy", "amount", "limit".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Mentions risk of loss, cyber attacks, custodian risk. No mention of insurance limits.
+    *   `02_compliance_manual.md`:
+        *   Section 11.1: Program and Responsibility (ISO, Management Committee). No insurance details.
+        *   Section 11.3: Monitoring and Managed Services (Pellow Stack IT, Northgale Security Operations). No insurance limits.
+        *   Section 11.4: Vulnerability Management... (Northgale, Ostler Vane). No insurance limits.
+        *   Section 11.5: Vendor Oversight (SOC 2, incident notification). No insurance limits.
+        *   Section 11.6: Incident Response (ISO, CCO, Northgale, breach counsel, CFO notifies insurer). No specific limit amount mentioned.
+        *   **Section 11.7 Cyber Liability Insurance**: "The Firm maintains a cyber liability insurance policy covering incident response costs, business interruption, funds transfer fraud and third-party liability. The Chief Financial Officer reviews the adequacy of coverage annually at renewal with the ISO and the CCO."
+            *   Does this mention a limit? No. It mentions what it covers and who reviews it, but not the dollar amount or limit.
+    *   `04_business_continuity_plan.md`:
+        *   Section 8.2 Cyber Incident Response: Mentions Northgale, Vellacott Pryor LLP, CFO notifies insurer. No mention of coverage limits.
+
+5.  **Determine Answer:**
+    *   The documents confirm the existence of a cyber liability insurance policy and who reviews it, but they do not state the specific coverage limit (e.g., $1 million, $5 million).
+    *   According to Rule 2: "If the documents do not answer the question... the answer is exactly NOT_IN_DOCUMENTS."
+
+6.  **Construct JSON:**
+    *   "answer": "NOT_IN_DOCUMENTS"
+    *   "source_document": "" (Since the answer is NOT_IN_DOCUMENTS, per instructions for that case)
+    *   "section": "" (Same as above)
+    *   "quote": "" (Same as above)
+
+    *Wait, let me double check Rule 2:* "If the documents do

@@ -1,0 +1,37 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What compliance training must new hires and existing employees complete?"
+    *   Key elements to find: Training requirements for new hires, training requirements for existing employees (frequency/topic).
+
+3.  **Scan the Documents:**
+    *   Document 1: `02_compliance_manual.md` (dated January 15, 2026).
+        *   Section 1.1 Purpose and Scope: General info about the Manual.
+        *   Section 1.2 Supervised Persons: Mentions reading Manual annually/upon hire, but not specific training content/frequency details beyond "read the Manual".
+        *   Section 2.1 Designation: CCO info.
+        *   Section 2.4 Compliance Calendar: Lists filings/reviews.
+        *   Section 15.1 Scope: Annual review by CCO.
+        *   Section 16.1 Training: "Each new employee must complete compliance training covering this Manual and the Code of Ethics within 30 days after his or her start date. All employees must attend annual compliance training, conducted by the CCO in the fourth quarter of each year, and additional targeted training is provided on topics such as MNPI, expert networks, marketing and cybersecurity. Attendance is recorded by the Compliance department."
+        *   Section 16.2 Certifications: Annual certification.
+    *   Document 2: `06_policy_update_memo.md` (dated August 24, 2026).
+        *   Section 3.2 Attestation: Mentions attestation by September 30, 2026 regarding the memorandum.
+
+4.  **Evaluate Findings against Constraints:**
+    *   The question asks about compliance training for new hires and existing employees.
+    *   Document `02_compliance_manual.md`, Section 16.1 Training contains specific details:
+        *   New hires: "compliance training covering this Manual and the Code of Ethics within 30 days after his or her start date."
+        *   Existing employees: "annual compliance training, conducted by the CCO in the fourth quarter of each year".
+    *   Document `06_policy_update_memo.md` is dated August 24, 2026 (later than Jan 15, 2026). However, it only discusses attestation regarding the memorandum itself, not general training requirements for new/old employees. It does not supersede the training section of the Compliance Manual unless it explicitly changes it. The prompt says "Later-dated documents supersede earlier ones. Where a policy update memorandum or amendment changes a provision, answer with the provision currently in effect". Since the memo doesn't change the training provision, the Compliance Manual

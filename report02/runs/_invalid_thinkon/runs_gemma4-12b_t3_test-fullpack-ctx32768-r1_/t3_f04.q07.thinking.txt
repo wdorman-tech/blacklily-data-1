@@ -1,0 +1,36 @@
+*   Question: "Once a personal trade has been pre-cleared, how long does the approval remain valid?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not found, use "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "pre-clearance", "pre-cleared", "approval", "valid", "trading".
+
+    *   *01_brochure.md*: Mentions "pre-clearance" in Item 11.2, but doesn't specify the duration of validity.
+    *   *02_compliance_manual.md*: Section 4 is "PERSONAL TRADING AND PRE-CLEARANCE".
+        *   Section 4.2 "Pre-Clearance": "A pre-clearance approval is valid through the close of regular trading on the business day following the day on which the approval is granted; an order not executed within that period, including an unfilled limit order, must be pre-cleared again."
+    *   *03_valuation_policy.md*: Not relevant.
+    *   *04_business_continuity_plan.md*: Not relevant.
+    *   *05_fee_schedule.md*: Not relevant.
+    *   *06_policy_update_memo.md*: Mentions updates to Compliance Manual (Section 2.1, 2.2), Valuation Policy (Section 3.1, 3.2), and Business Continuity Plan (Section 4.1). It does *not* mention Section 4.2 of the Compliance Manual (Pre-Clearance).
+
+    *   The question is about the validity period of a pre-cleared trade.
+    *   Document: `02_compliance_manual.md`
+    *   Section: `4.2`
+    *   Quote: "A pre-clearance approval is valid through the close of regular trading on the business day following the day on which the approval is granted; an order not executed within that period, including an unfilled limit order, must be pre-cleared again."
+
+    *   Answer: "through the close of regular trading on the business day following the day on which the approval is granted"
+    *   Source: `02_compliance_manual.md`
+    *   Section: `4.2`
+    *   Quote: "A pre-clearance approval is valid through the close of regular trading on the business day following the day on which the approval is granted; an order not executed within that period, including an unfilled limit order, must be pre-cleared again."
+
+    *   Check if any later document overrides this.
+    *   `06_policy_update_memo.md` updates:
+        *   Section 2.1 (Manual 4.4) - Holding Period.
+        *   Section 2.2 (Manual 5.2) - Gifts Received.
+        *   Section 3.1 (Valuation 6.1) - Stale Price.
+        *   Section 3.2 (Valuation 5.3) - Price Override.
+        *   Section 4.1 (BCP 3.1) - Recovery Time.
+        *   Section 5.1 (Fee Schedule 

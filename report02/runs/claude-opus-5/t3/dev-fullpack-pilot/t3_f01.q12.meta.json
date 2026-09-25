@@ -1,0 +1,43 @@
+{
+ "item_id": "t3_f01.q12",
+ "task": "t3",
+ "split": "dev",
+ "group": "t3_f01:unanswerable",
+ "prompt_hash": "9e1fab90f5454211f47830339d942be9be943dbbb179296de00ed0771aa18220",
+ "system_hash": "71fe27a89ceec4bc2e81954adb9852d62532aa8027e124eba8bc519af11c0785",
+ "user_hash": "693667611cb55bb1b667bf7372c8948a61cae0f531079f8b677f5572713e2ec4",
+ "json_mode": true,
+ "num_predict": 768,
+ "meta": {
+  "firm": "t3_f01",
+  "qid": "q12",
+  "answerable": false,
+  "trap": "near_miss",
+  "retrieved_docs": [
+   "01_brochure.md",
+   "02_compliance_manual.md",
+   "03_valuation_policy.md",
+   "04_business_continuity_plan.md",
+   "05_fee_schedule.md",
+   "06_policy_update_memo.md"
+  ],
+  "gold_doc_retrieved": true,
+  "doc_words": 15663
+ },
+ "stats": {
+  "wall_seconds": 3.82,
+  "attempts": 1,
+  "init_model": "claude-opus-5",
+  "init_tools": [],
+  "tool_use_blocks": 0,
+  "assistant_models": [
+   "claude-opus-5"
+  ],
+  "input_tokens": 34595,
+  "output_tokens": 104,
+  "thinking_tokens": 61,
+  "stop_reason": "end_turn",
+  "blind": true
+ },
+ "subject": "frontier"
+}

@@ -1,0 +1,125 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Client service associate at a wealth management firm.
+    *   Task: Update the CRM from the meeting transcript.
+    *   Constraint 1: Record ONLY what was said in the meeting. No planning items not discussed.
+    *   Constraint 2: Use final versions of figures/owners/dates if corrected.
+    *   Constraint 3: Action items = tasks agreed upon. Ideas deferred/proposals declined are NOT action items.
+    *   Constraint 4: Owner of action item = person's name.
+    *   Constraint 5: Due dates as stated + calendar date where ambiguous.
+    *   Constraint 6: Use `NOT_FOUND` for fields not established.
+    *   Constraint 7: Correct machine-generated errors based on later clarification.
+    *   Output Format: JSON object only, no markdown, no preamble.
+    *   Keys: `meeting_date`, `client_names`, `primary_goal`, `retirement_target`, `risk_tolerance`, `risk_tolerance_change`, `life_events`, `account_actions`, `action_items`, `next_meeting`.
+
+2.  **Analyze the Transcript:**
+    *   **Meeting Date:** Tuesday, September 15, 2026 (from header).
+    *   **Participants:** Lena Castellaw (Advisor), Glenn Ostrander (Client), Patrice Ostrander (Client), Kiran Bastable (Paraplanner).
+    *   **Client Names:** Glenn Ostrander, Patrice Ostrander.
+    *   **Primary Goal:** Retire on a date confident in, with income lasting as long as the survivor lives. (Specifically targeting June 30th, 2027).
+    *   **Retirement Target:** June 30th, 2027 (Glenn's last day), Pension starting July 1st, 2027. Patrice same time.
+    *   **Risk Tolerance:** Combined score 54 (Moderate range). Current model: Moderate Growth (70/30). Recommendation: Move to Moderate (60/40). Client agreed ("Fine. Moderate. Do it.").
+    *   **Risk Tolerance Change:** From Moderate Growth to Moderate.
+    *   **Life Events:**
+        *   Patrice's mom moving into assisted living in November (earliest 2nd).
+        *   Patrice's grandma Nora born August 9th, 2026 (7 lbs 4 oz).
+        *   Glenn's work project (Harwick Road substation) starting fall '27.
+    *   **Account Actions:**
+        *   Move 40,000 from credit union to joint account money market.
+        *   Roll Patrice's Ferncastle 401(k) into her IRA here (balance corrected to 118,400).
+        *   Rebalance portfolio (Moderate Growth -> Moderate).
+    *   **Action Items:**
+        *   Glenn: Get pension PDF estimate statement by Wednesday the 23rd (Sept 23, 2026).
+        *   Patrice: Send Social Security statement to Kiran by Monday (Sept 21, 2026 - wait, meeting is Sept 15. "Monday" implies next Monday? Transcript says "By Monday, so he has it before he starts." Meeting is Tuesday Sept 15. Next Monday is Sept 21. Wait, later Glenn says "I'll grab it tonight or tomorrow." Patrice says "Monday's fine." Let's check dates. Meeting: Sept 15. Next Monday: Sept 21.
+        *   Kiran: Get Social Security comparison and new projection by Friday the 25th (Oct 25? No, Sept 25). Wait, transcript says "End of next week, the 25th." Meeting is Sept 15. Next week ends Sept 25.
+        *   Kiran: Send DocuSign for Ferncastle rollover and risk profile update tomorrow (Sept 16).
+        *   Lena: Send updated projection to Deb Shimansky by Friday the 2nd of October (Oct 2, 2026).
+        *   Patrice: Get HR letter/email from Tanya in benefits regarding pension/medical details before November.
+    *   **Next Meeting:** Tuesday, November 10th, 2026 at 2:00 PM.
+
+3.  **Drafting the JSON Content:**
+
+    *   `meeting_date`: "September 15, 2026" (Header says Tuesday, September 15, 2026).
+    *   `client_names`: ["Glenn Ostrander", "Patrice Ostrander"]
+    *   `primary_goal`: "Retire on a date confident in with income lasting as long as the survivor lives" (or similar phrasing from transcript). Let's use: "Retire on a date confident in, with income that lasts as long as whichever one of you lives longer."
+    *   `retirement_target`: "June 30th, 2027"
+    *   `risk_tolerance`: "Moderate (score 54)" or just "Moderate". Transcript says "Your combined score came back at 54... 54 is squarely in our moderate range." Then they agree to move from Moderate Growth to Moderate. So current agreed state is Moderate.
+    *   `risk_tolerance_change`: "From Moderate Growth to Moderate"
+    *   `life_events`: ["Patrice's mom moving into assisted living in November", "Granddaughter Nora born August 9th, 2026"] (Need figures? Transcript says "Nora... came August 9th, seven pounds four ounces". Mom moving "first week... earliest the 2nd").
+    *   `account_actions`:
+        *   Action: Move 40,000 from credit union to joint account money market. Account: Joint Account (implied). Amount: 40,000.
+        *   Action: Roll Patrice's Ferncastle 401(k) into her IRA. Account: Patrice's IRA. Amount: 118,400.
+        *   Action: Rebalance portfolio from Moderate Growth to Moderate (60/40). Account: Joint account and Patrice's IRA. Amount: NOT_FOUND (or implied rebalance amount). The transcript says "taking about ten percent off the stock side." But specific action is the move. Let's list the cash move and rollover clearly.
+    *   `action_items`:
+        *   Task: Get pension PDF estimate statement. Owner: Glenn Ostrander. Due: Wednesday the 23rd (Sept 23, 2026).
+        *   Task: Send Social Security statement to Kiran. Owner: Patrice Ostrander. Due: Monday (Sept 21, 2026).
+        *   Task: Get HR letter/email regarding pension/medical details. Owner: Glenn Ostrander. Due: Before November (specifically before the Nov 10 meeting). Transcript says "Before we meet in November is fine for that one." Let's use "November 10, 2026" or "Before November". The transcript says "It's not urgent... I just want it in the file before we're counting on it." Then later "And the HR letter, yes, before November." I'll set due to Nov 10.
+        *   Task: Send DocuSign for Ferncastle rollover and risk profile update. Owner: Kiran Bastable. Due: Tomorrow (Sept 16, 2026).
+        *   Task: Get Social Security comparison and new projection. Owner: Kiran Bastable. Due: Friday the 25th (Sept 25, 2026).
+        *   Task: Send updated projection to Deb Shimansky. Owner: Lena Castellaw. Due: Friday the 2nd of October (Oct 2, 2026).
+    *   `next_meeting`: "Tuesday, November 10th, 2026 at 2:00 PM"
+
+4.  **Refining Details & Constraints:**
+    *   *Constraint 1:* No planning items not discussed. The rebalance is discussed and agreed ("Fine. Moderate. Do it."). So it's an action item or account action? It says "Kiran places the trades." That's an account action.
+    *   *Constraint 2:* Figures corrected. Ferncastle balance changed from 140k to 118,400. Use 118,400.
+    *   *Constraint 3:* Ideas deferred (529) are not action items. Roth conversions "Park it" is not an action item.
+    *   *Constraint 4:* Owners by name.
+    *   *Constraint 5:* Due dates with calendar date. Meeting Sept 15, 2026.
+        *   Monday = Sept 21, 2026.
+        *   Wednesday the 23rd = Sept 23, 2026.
+        *   Friday the 25th = Sept 25, 2026.
+        *   Tomorrow (for Kiran) = Sept 16, 2026.
+        *   Friday the 2nd of October = Oct 2, 2026.
+    *   *Constraint 7:* Machine generated errors. "Tollard Electric Company" is in header. "Ferncastle Dental". Names seem consistent.
+    *   `risk_tolerance`: The transcript says "Your combined score came back at 54... 54 is squarely in our moderate range." Then they agree to move from Moderate Growth to Moderate. So the *current* state being recorded after meeting is Moderate.
+    *   `life_events`: Need figures. Nora born Aug 9th, 7 lbs 4 oz. Mom moving Nov (earliest 2nd).
+    *   `account_actions`:
+        *   Move 40,000 from credit union to joint account money market.
+        *   Roll Ferncastle 401(k) into Patrice's IRA. Amount 118,400.
+        *   Rebalance portfolio (Moderate Growth -> Moderate).
+    *   `action_items`: Need to be specific tasks agreed upon.
+        *   Glenn: Pension PDF by Wed Sept 23.
+        *   Patrice: SS Statement by Monday Sept 21.
+        *   Kiran: DocuSign tomorrow (Sept 16).
+        *   Kiran: SS comparison/projection by Fri Sept 25.
+        *   Lena: Send projection to Deb by Fri Oct 2.
+        *   Glenn: Get HR letter before Nov 10.
+
+    *   Wait, check `account_actions` vs `action_items`.
+        *   Account actions are tasks done *to* accounts (trades, transfers).
+        *   Action items are tasks for people (research, get info).
+        *   Rebalance is an account action ("Kiran places the trades").
+        *   Transfer 40k is an account action.
+        *   Rollover is an account action.
+
+    *   Check `risk_tolerance_change`: "From Moderate Growth to Moderate".
+    *   Check `primary_goal`: "Retire on a date confident in, with income that lasts as long as whichever one of you lives longer."
+
+5.  **Final Review against Constraints:**
+    *   JSON only.
+    *   No markdown fences.
+    *   Keys match exactly.
+    *   Dates calculated correctly based on Sept 15, 2026 start.
+    *   Values corrected (Ferncastle balance).
+
+    *   One nuance: `risk_tolerance`. The transcript says "Your combined score came back at 54... Moderate is the 60/40 model." They agree to move from Moderate Growth to Moderate. So the final state is Moderate.
+    *   `life_events`: List format. Include figures.
+        *   "Patrice's mom moving into assisted living in November (earliest Nov 2nd)"
+        *   "Granddaughter Nora born August 9th, 2026 (7 lbs 4 oz)"
+    *   `account_actions`:
+        *   {"action": "Move 40,000 from credit union to joint account money market", "account": "Joint Account", "amount": "40,000"}
+        *   {"action": "Roll Patrice's Ferncastle 401(k) into her IRA", "account": "Patrice's IRA", "amount": "118,400"}
+        *   {"action": "Rebalance portfolio from Moderate Growth to Moderate (60/40)", "account": "Joint Account and Patrice's IRA", "amount": "NOT_FOUND"} (Or omit amount? Instruction says use NOT_FOUND for any field the meeting did not establish. Amount for rebalance isn't a specific transfer amount, it's a percentage shift. I'll put NOT_FOUND or leave blank? Schema implies string. I'll use NOT_FOUND).
+    *   `action_items`:
+        *   Glenn: Pension PDF by Wed Sept 23.
+        *   Patrice: SS Statement by Monday Sept 21.
+        *   Kiran: DocuSign tomorrow (Sept 16).
+        *   Kiran: SS comparison/projection by Fri Sept 25.
+        *   Lena: Send projection to Deb by Fri Oct 2.
+        *   Glenn: Get HR letter before Nov 10.
+
+    *   Wait, `next_meeting`: "Tuesday, November 10th, 2026 at 2:00 PM".
+    *   `meeting_date`: "September 15, 2026".
+
+    *

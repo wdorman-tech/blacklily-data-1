@@ -1,0 +1,39 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: Describe the Firm's best execution oversight: which committee reviews execution quality, who chairs it, how often it meets and what data it reviews.
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "best execution", "oversight", "committee", "chairs", "meets", "frequency", "data", "reviews".
+
+3.  **Evaluate Document 1 (`01_brochure.md`):**
+    *   Section: Item 12. Brokerage Practices > 12.1 Selection of Broker-Dealers.
+    *   Text: "The Best Execution Committee, chaired by the Chief Operating Officer, meets quarterly to review execution quality..."
+    *   This looks promising. It mentions the committee name, chair, frequency, and purpose (review execution quality).
+
+4.  **Evaluate Document 2 (`02_compliance_manual.md`):**
+    *   Section: SECTION 10. BEST EXECUTION REVIEW > 10.2 Best Execution Committee.
+    *   Text: "The Best Execution Committee is chaired by the Chief Operating Officer, Dmitri Halloway."
+    *   Section: SECTION 10. BEST EXECUTION REVIEW > 10.3 Meetings and Review Data.
+    *   Text: "The Committee meets quarterly. At each meeting it reviews transaction cost analysis prepared by Orrinmoor Analytics... the number of competitive quotations obtained... the share of volume executed with each dealer... settlement failures; and use of minority-owned, women-owned and veteran-owned broker-dealers against client goals."
+    *   This document provides more specific details on *who* chairs (Dmitri Halloway) and *what data* it reviews compared to Document 1.
+    *   Date Check:
+        *   `01_brochure.md`: March 27, 2026.
+        *   `02_compliance_manual.md`: January 15, 2026.
+    *   Rule 3: "Later-dated documents supersede earlier ones."
+    *   The Brochure (March 27, 2026) is later than the Compliance Manual (January 15, 2026).
+    *   However, I need to check if there are conflicting details.
+        *   Brochure: "The Best Execution Committee, chaired by the Chief Operating Officer, meets quarterly..." (Doesn't name Dmitri Halloway explicitly in this snippet, just title).
+        *   Compliance Manual: "chaired by the Chief Operating Officer, Dmitri Halloway."
+    *   Usually, specific names in a manual might be updated in a brochure, or vice versa. The rule says later-dated documents supersede earlier ones regarding provisions.
+    *   Let's look at the content again

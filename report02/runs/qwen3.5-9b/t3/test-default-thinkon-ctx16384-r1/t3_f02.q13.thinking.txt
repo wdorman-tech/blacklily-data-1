@@ -1,0 +1,39 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What is the Flagship Fund's single-position limit for long positions, and how are purchases of the co-investment issuer's securities allocated between the Flagship Fund and the Co-Investment Fund?"
+    *   Two parts to answer:
+        1.  Flagship Fund's single-position limit for long positions.
+        2.  Allocation method for purchases of the co-investment issuer's securities between the Flagship Fund and the Co-Investment Fund.
+
+3.  **Scan Documents for Part 1 (Single-Position Limit):**
+    *   Document: `01_brochure.md`
+    *   Section: Item 8. Methods of Analysis, Investment Strategies and Risk of Loss > 8.2 Investment Strategy and Portfolio Guidelines
+    *   Text: "No single long position may exceed 8% of the Flagship Fund's net asset value, measured at market value."
+    *   Date: March 27, 2026.
+
+4.  **Scan Documents for Part 2 (Allocation Method):**
+    *   Document: `02_compliance_manual.md`
+    *   Section: SECTION 9. TRADE ALLOCATION AND AGGREGATION > 9.4 Co-Investment Issuer Allocations
+    *   Text: "Purchases of securities of the Co-Investment Issuer are allocated first to the Flagship Fund until the Flagship Fund's position reaches the single long position limit in its portfolio guidelines, and the balance of the order is allocated to the Co-Investment Fund."
+    *   Date: January 15, 2026.
+
+5.  **Check for Superseding Documents:**
+    *   `01_brochure.md` (March 27, 2026) vs `02_compliance_manual.md` (January 15, 2026).
+    *   The brochure is later dated than the compliance manual. However, they address different topics (Investment Strategy vs Trade Allocation). There is no explicit conflict or amendment mentioned that overrides one with the other regarding these specific facts. The question asks for information found in the documents. Both documents are provided as "firm documents".
+    *   Rule 3 says: "Later-dated documents supersede earlier ones. Where a policy update memorandum or amendment changes a provision, answer with the provision currently in effect, not the original."
+    *   Here, we have two different documents covering different aspects. The brochure (March 2026) states the limit. The compliance manual (Jan 2026) states the allocation logic. Neither explicitly amends the other. I should combine the information found in the respective documents to answer the full question.
+    *   However, the output format requires

@@ -1,0 +1,44 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Does an independent third party review the Adviser's Level 3 valuations? If so, identify the firm and how often it reviews them."
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "independent", "third party", "review", "Level 3", "valuation", "firm", "frequency", "how often".
+
+4.  **Evaluate Document Content:**
+    *   `03_valuation_policy.md` (dated November 3, 2025):
+        *   Section 2.4 Responsibilities: Mentions "reviews the work of the independent valuation firm".
+        *   Section 8.1 Independent Valuation Firm: "Kilbride Sayer Valuation Advisors LLC performs a quarterly review of each Level 3 investment and provides a written range of reasonable values."
+    *   `06_policy_update_memo.md` (dated August 24, 2026):
+        *   Section 2.4 Valuation Policy Section 2.3 (Meetings): Discusses meeting frequency changes (monthly vs quarterly) for the Committee. Does not mention the independent valuation firm's review frequency change.
+
+5.  **Determine Superseding Status:**
+    *   `03_valuation_policy.md` is dated November 3, 2025.
+    *   `06_policy_update_memo.md` is dated August 24, 2026.
+    *   The memo amends the Valuation Policy (specifically Section 2.3 Meetings). It does not explicitly amend Section 8.1 regarding the independent valuation firm's review frequency.
+    *   Therefore, the information in `03_valuation_policy.md` Section 8.1 remains valid unless contradicted by the memo. The memo only changes meeting frequency for the Committee (monthly), not the independent firm's review frequency.
+    *   So, the answer comes from `03_valuation_policy.md`.
+
+6.  **Extract Specific Information:**
+    *   Does an independent third party review? Yes.
+    *   Firm name: Kilbride Sayer Valuation Advisors LLC.
+    *   Frequency: Quarterly.
+    *   Source Document: `03_valuation_policy.md`.
+    *   Section: `SECTION 8. INDEPENDENT REVIEW AND OVERSIGHT > 8.1 Independent Valuation Firm`.
+    *   Quote: "Kilbride Sayer Valuation Advisors LLC performs a quarterly review of each Level 3 investment and provides a written range of reasonable values."
+
+7.  **Draft the JSON:**
+    *   `answer`: Yes, Kilbride Sayer Valuation Advisors LLC reviews them quarterly. (Need to be concise but specific based on rules). Rule

@@ -1,0 +1,39 @@
+*   Question: "Who conducts the firm's annual review of its compliance program, and by what date is the resulting report delivered?"
+    *   Constraint: Return only a JSON object.
+
+    *   Document 1: `05_fee_schedule.md` (Schedule of Fees)
+    *   Document 2: `06_policy_update_memo.md` (Memorandum: Amendments to Policies and Procedures)
+    *   Snippet from a previous document (not explicitly named but part of the context): "6.3 Reporting of Results" (This seems to be part of a Business Continuity Plan or similar manual).
+
+    *   *Search for "annual review" or "compliance program" or "report".*
+    *   In the first snippet (Section 6.3 Reporting of Results): "The BCP Coordinator prepares a written report of each full-scale and tabletop exercise, including deficiencies and remediation, which is delivered to the Management Committee and the Chief Compliance Officer." (This is about BCP exercises, not the annual review of the compliance program).
+    *   In `06_policy_update_memo.md`:
+        *   Section 1 mentions "mid-year compliance review" and "annual review" isn't explicitly mentioned as a process for the *compliance program* specifically, but rather the memo records amendments.
+        *   Section 2: Personal Trading De Minimis Exemption.
+        *   Section 3: Quarterly Transaction Report Deadline.
+        *   Section 4: Valuation Committee Meeting Frequency.
+        *   Section 5: Approval of Price Overrides.
+        *   Section 6: Offsite Data Backup Vendor.
+        *   Section 7: Fee Schedule Breakpoint.
+    *   Looking for "annual review" specifically.
+    *   Wait, let me re-read the first snippet again. "6.3 Reporting of Results... The BCP Coordinator prepares a written report of each full-scale and tabletop exercise...". This is about BCP.
+    *   Let me check the prompt's provided text again.
+    *   The question asks: "Who conducts the firm's annual review of its compliance program, and by what date is the resulting report delivered?"
+    *   I don't see any mention of an "annual review of its compliance program" in the provided text.
+
+    *   "6.3 Reporting of Results" mentions a report of "full-scale and tabletop exercise" (BCP).
+    *   "06_policy_update_memo.md" mentions a "mid-year compliance review" in Section 1, but doesn't say who conducts the *annual* review of the *compliance program* or a specific date for a report.
+
+    *   The text provided does not contain information about who conducts the "annual review of its compliance program" or the date the report is delivered.
+
+    *   "answer": "NOT_IN_DOCUMENTS"
+    *   "source_document": ""
+    *   "section": ""
+    *   "quote": ""
+
+    *   Wait, let me double-check the text one more time.
+    *   "6.3 Reporting of Results" - BCP Coordinator, report of exercise, to Management Committee and Chief Compliance Officer.
+    *   "06_policy_update_memo.md" - mentions "mid-year compliance review" but no "annual review of its compliance program".
+    *   "05_fee_schedule.md" - no.
+
+    *   The question is very

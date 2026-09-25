@@ -1,0 +1,186 @@
+{
+ "pair_id": "t2_ma_1",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "Mastercard Incorporated",
+ "ticker": "MA",
+ "split": "test",
+ "prior": {
+  "fiscal_year_end": "2024-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139125000011/ma-20241231.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2025-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm"
+ },
+ "words": 6429,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "modified",
+   "prior_heading": "Global regulatory and legislative activity related to the payments industry may have a material adverse impact on our overall business and results of operations.",
+   "current_heading": "Global regulatory and legislative activity related to the payments industry may have a material adverse impact on our overall business and results of operations.",
+   "similarity": 0.999,
+   "diff": [
+    "replace: [2024] -> [2025]",
+    "replace: [25] -> [27]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The only change is the embedded page footer, which moves from \"MASTERCARD 2024 FORM 10-K 25\" to \"MASTERCARD 2025 FORM 10-K 27\"; the risk factor text is identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: a fiscal-year and page-number roll-forward in a page footer with no change to the disclosure."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: a filing-year roll-forward and page number in a page footer, with no change in substance."
+    }
+   }
+  },
+  {
+   "aid": "a02",
+   "status": "modified",
+   "prior_heading": "Increased activity with respect to interchange rates could have an adverse impact on our business.",
+   "current_heading": "Increased activity with respect to interchange rates could have an adverse impact on our business.",
+   "similarity": 1.0,
+   "diff": [
+    "replace: [21] -> [19]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The cross-reference to the legal and regulatory proceedings note changes from Note 21 to Note 19; the risk factor text is otherwise identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: a cross-reference update only."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: a cross-reference update only."
+    }
+   }
+  },
+  {
+   "aid": "a03",
+   "status": "unchanged",
+   "prior_heading": "Limitations on our ability to restrict merchant surcharging could materially and adversely impact our results of operations.",
+   "current_heading": "Limitations on our ability to restrict merchant surcharging could materially and adversely impact our results of operations.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a04",
+   "status": "modified",
+   "prior_heading": "Preferential or protective government actions related to domestic payment services could adversely affect our ability to maintain or increase our revenues.",
+   "current_heading": "Preferential or protective government actions related to domestic payment services could adversely affect our ability to maintain or increase our revenues.",
+   "similarity": 0.958,
+   "diff": [
+    "delete: [26 MASTERCARD 2024 FORM 10-K PART I ITEM 1A. RISK FACTORS] -> []",
+    "replace: [our decision] -> [any decisions we may make relating]",
+    "replace: [suspend business operations in Russia,] -> [entering or exiting a 28 MASTERCARD 2025 FORM 10-K PART I ITEM 1A. RISK FACTORS particular market,]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The example of a company action that could prompt jurisdictions to favor local payment networks changes from \"our decision to suspend business operations in Russia\" to the generic \"any decisions we may make relating to entering or exiting a particular market\", dropping the named Russia exposure.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2: a specific jurisdiction and event (the Russia suspension) is dropped, and criterion 3: a realized decision is recast as hypothetical future decisions with wider scope."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 2: a specific named jurisdiction and event (the Russia suspension) is dropped, and criterion 3: a realized action is recast as a hypothetical, broader scope."
+    }
+   }
+  },
+  {
+   "aid": "a05",
+   "status": "modified",
+   "prior_heading": "Regulation and enforcement of privacy, data, AI, information security and the digital economy could increase our costs and lead to legal claims and fines, as well as negatively impact our growth and reputation.",
+   "current_heading": "Regulation and enforcement of privacy, data, AI, information security and the digital economy could increase our costs and lead to legal claims and fines, as well as negatively impact our growth and reputation.",
+   "similarity": 0.426,
+   "diff": [
+    "replace: [fragmented and] -> [fragmented, overlapping and/or]",
+    "insert: [] -> [(including with respect to cybersecurity and cyber-risk)]",
+    "replace: [While policymakers around the globe often look to the EU and the GDPR when adopting new] -> [New]",
+    "delete: [privacy and data protection laws, divergences have occurred and continue to occur. As a result, new or updated privacy and data protection and information security] -> []",
+    "insert: [] -> [and access to]",
+    "insert: [] -> [With respect to information security, any single breach could require parallel notifications to data protection authorities, cyber authorities and/or law-enforcement, often requiring different thresholds, reporting deadlines and formats.]",
+    "replace: [penalties,] -> [penalties (both civil and criminal),]",
+    "insert: [] -> [or its application (such as in agentic commerce)]",
+    "replace: [frameworks aimed at complying] -> [frameworks, designed to ensure our responsible use of AI and help us to comply]",
+    "replace: [regulations] -> [regulations,]",
+    "replace: [our acquisition] -> [as a provider]",
+    "delete: [Recorded Future, a] -> []",
+    "..."
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds cybersecurity and cyber-risk laws to the covered regulatory scope, a new disclosure that a single breach could require parallel notifications to data protection authorities, cyber authorities and law enforcement under differing thresholds and deadlines, criminal as well as civil penalties, restrictions on access to data abroad, and agentic commerce as an AI application, while dropping the EU and GDPR reference and recasting Recorded Future from an acquisition to a threat intelligence services business.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: new exposures are disclosed (multi-authority breach notification obligations, criminal penalties), criterion 2: agentic commerce is newly referenced and the GDPR reference is dropped, and criterion 3: penalty scope is widened to include criminal penalties."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: new exposures (multi-authority breach notification, cybersecurity regulation) are disclosed, criterion 2: agentic commerce is newly referenced and the EU GDPR reference is dropped, and criterion 3: severity escalates with the addition of criminal penalties."
+    }
+   }
+  },
+  {
+   "aid": "a06",
+   "status": "modified",
+   "prior_heading": "Regulations that directly or indirectly apply to Mastercard as a result of our participation in the global payments industry may materially and adversely affect our overall business and results of operations.",
+   "current_heading": "Regulations that directly or indirectly apply to Mastercard as a result of our participation in the global payments industry may materially and adversely affect our overall business and results of operations.",
+   "similarity": 0.987,
+   "diff": [
+    "insert: [] -> [or legislation]",
+    "insert: [] -> [do or could]",
+    "insert: [] -> [(such as caps on issuer interest rates)]",
+    "replace: [For example,] -> [Additionally,]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The issuer and acquirer practices example adds legislation alongside regulation, changes \"impact\" to \"do or could impact\", and newly names caps on issuer interest rates as an example of such rules.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2: a new specific regulatory development (caps on issuer interest rates) is referenced, and criterion 3: the scope widens to legislation and the framing moves toward realized impact."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 2: a new specific regulatory development (caps on issuer interest rates) is referenced, and criterion 3: scope widens to include legislation and prospective impacts."
+    }
+   }
+  },
+  {
+   "aid": "a07",
+   "status": "modified",
+   "prior_heading": "We could be subject to adverse changes in tax laws, regulations and interpretations or challenges to our tax positions.",
+   "current_heading": "We could be subject to adverse changes in tax laws, regulations and interpretations or challenges to our tax positions.",
+   "similarity": 0.777,
+   "diff": [
+    "insert: [] -> [30 MASTERCARD 2025 FORM 10-K PART I ITEM 1A. RISK FACTORS]",
+    "delete: [28 MASTERCARD 2024 FORM 10-K PART I ITEM 1A. RISK FACTORS] -> []"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The only change is the position and text of the embedded page footer (\"28 MASTERCARD 2024 FORM 10-K\" removed after the section, \"30 MASTERCARD 2025 FORM 10-K\" inserted before its last paragraph); the risk factor text is identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: a fiscal-year and page-number footer artifact with no change to the disclosure."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: a page-break relocation with a filing-year and page-number roll-forward, with no change in substance."
+    }
+   }
+  }
+ ]
+}

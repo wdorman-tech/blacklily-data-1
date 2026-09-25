@@ -1,0 +1,43 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, return `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Who conducts the annual review of the compliance program, and does an outside firm participate?"
+    *   Key information needed:
+        *   Who conducts the annual review?
+        *   Does an outside firm participate?
+
+3.  **Scan the Documents:**
+
+    *   **Document 1:** `02_compliance_manual.md` (dated January 15, 2026)
+        *   Section 1.2: Defines "Supervised persons". Mentions CCO designates them.
+        *   Section 15.1 Scope and Timing: "The CCO conducts an annual review of the adequacy of the Firm's policies and procedures... Each review covers the preceding calendar year..."
+        *   Section 15.2 Independent Assessment: "Every second year, Hessendale Compliance Advisors, an outside compliance consulting firm, performs an independent assessment of the compliance program as part of the annual review..."
+        *   Section 15.3 Contents of the Annual Report.
+        *   Section 15.4 Interim Reviews.
+
+    *   **Document 2:** `03_valuation_policy.md` (dated February 10, 2026)
+        *   Section 8.2: Independent auditor audits valuations.
+        *   Section 8.4: Committee and CCO review Policy annually.
+
+    *   **Document 3:** `04_business_continuity_plan.md` (dated December 1, 2025)
+        *   Section 1.4: Plan owner reviews Plan annually. CCO reviews Plan as part of annual compliance review.
+
+4.  **Synthesize the Answer:**
+    *   From `02_compliance_manual.md`, Section 15.1: "The CCO conducts an annual review..."
+    *   From `02_compliance_manual.md`, Section 15.2: "...Hessendale Compliance Advisors, an outside compliance consulting firm, performs an independent assessment of the compliance program as part of the annual review..."
+    *   The question asks who conducts the annual review AND if an outside firm participates.
+    *   Document `02_compliance_manual.md` contains both pieces of information in Section 15 (specifically 15.1 and 15.2).
+    *   Since I need to cite a single source document and section for the JSON output, I should look for where the combined answer resides or pick the most relevant section. The prompt asks for "the file name of the document that answers it". Usually, if multiple sections in one doc answer parts, citing the doc is fine. However, the instruction says "Cite the document file name and the section where the answer appears". If the answer

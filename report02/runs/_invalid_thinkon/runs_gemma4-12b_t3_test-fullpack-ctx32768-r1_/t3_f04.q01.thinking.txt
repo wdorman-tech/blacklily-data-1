@@ -1,0 +1,33 @@
+*   Question: Identify the Firm's principal owners and the percentage of the Firm each owns.
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer NOT_IN_DOCUMENTS.
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite document file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "01_brochure.md" (Form ADV Part 2A)
+    *   "02_compliance_manual.md"
+    *   "03_valuation_policy.md"
+    *   "04_business_continuity_plan.md"
+    *   "05_fee_schedule.md"
+    *   "06_policy_update_memo.md"
+
+    *   Item 4.1 Ownership and Management in "01_brochure.md" states: "Colette Varnum, Chief Executive Officer, owns 41% of the Firm's membership interests; Tobias Aldren, Chief Investment Officer, owns 34%; and Wrenholt Pryce Partners Pool LLC, a vehicle through which 14 employees hold economic interests in the Firm, owns the remaining 25%."
+
+    *   "06_policy_update_memo.md" mentions "Firm's membership interests" or "ownership" in the context of the brochure, but doesn't change the ownership percentages.
+
+    *   Answer: Colette Varnum (41%), Tobias Aldren (34%), and Wrenholt Pryce Partners Pool LLC (25%).
+    *   Source: 01_brochure.md
+    *   Section: Item 4.1 Ownership and Management
+    *   Quote: "Colette Varnum, Chief Executive Officer, owns 41% of the Firm's membership interests; Tobias Aldren, Chief Investment Officer, owns 34%; and Wrenholt Pryce Partners Pool LLC, a vehicle through which 14 employees hold economic interests in the Firm, owns the remaining 25%."
+
+    *   "Colette Varnum, Chief Executive Officer, owns 41% of the Firm's membership interests; Tobias Aldren, Chief Investment Officer, owns 34%; and Wrenholt Pryce Partners Pool LLC, a vehicle through which 14 employees hold economic interests in the Firm, owns the remaining 25%."
+
+    *   "answer": "Colette Varnum (41%), Tobias Aldren (34%), and Wrenholt Pryce Partners Pool LLC (25%)"
+    *   "source_document": "01_brochure.md"
+    *   "section": "Item 4.1 Ownership and Management"
+    *   "quote": "Colette Varnum, Chief Executive Officer, owns 41% of the Firm's membership interests; Tobias Aldren, Chief Investment Officer, owns 34%; and Wrenholt Pryce Partners Pool LLC, a vehicle through which 14 employees hold economic interests in the Firm, owns the remaining 25%."
+
+    *   Wait, the prompt says "Identify the Firm's principal owners and the percentage of the Firm each owns."
+    *   The text says: "Colette Varnum, Chief Executive Officer, owns 41% of the Firm's membership interests; Tobias Aldren, Chief Investment Officer, owns 3

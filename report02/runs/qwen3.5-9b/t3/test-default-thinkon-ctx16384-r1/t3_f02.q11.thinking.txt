@@ -1,0 +1,39 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "How many investment professionals have left the firm in each of the last three years, and for what reasons?"
+    *   Key information needed: Number of departures per year (last 3 years), reasons for departure.
+
+3.  **Scan the Documents:**
+    *   `01_brochure.md` (March 27, 2026):
+        *   Item 2.1 Summary of Material Changes: Mentions regulatory assets under management, risks of Sallowmere Co-Investment Fund I, engagement of Tessingham Execution Analytics LLC, renewal of placement agreement with Wexcombe Partners Ltd. No mention of staff turnover.
+        *   Item 4.1 Firm Overview: States "As of December 31, 2025, the Adviser had 22 employees, of whom 10 are investment professionals". Mentions names (Callum R. Everdeen, Mireille Dansby, Oren Pellisier, Harriet Lomasney). No mention of past departures or reasons.
+        *   Item 8.3 Risk Management: Mentions Head of Risk Ingrid Vallancey. No turnover info.
+        *   Item 13.1 Periodic Reviews: Mentions review frequencies. No turnover info.
+    *   `03_valuation_policy.md` (November 3, 2025): Discusses valuation procedures. No HR/turnover info.
+    *   `04_business_continuity_plan.md` (February 9, 2026): Discusses communication tree during incidents. No turnover info.
+    *   `05_fee_schedule.md` (January 1, 2026): Discusses termination of agreements. No HR/turnover info.
+    *   `06_policy_update_memo.md` (August 24, 2026): Discusses amendments to Form ADV Part 2A and Compliance Manual. Mentions filing an amendment before October 1, 2026. No specific data on staff turnover.
+
+4.  **Evaluate Findings:**
+    *   None of the provided documents contain information about investment professionals leaving the firm in the last three years or the reasons for their departure.
+    *   The only employee count is a snapshot as of December 31, 2025 (22 employees, 10 investment professionals).
+    *   There is no historical data on departures.
+
+5.  **Formulate Answer:**
+    *   Since the information is not in the documents, the answer must be `NOT_IN_DOCUMENTS`.
+    *   Source document: "" (empty string as per instructions for NOT_IN_DOCUMENTS).
+    *   Section:

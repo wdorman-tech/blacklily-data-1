@@ -1,0 +1,43 @@
+*   Question: "How are separate account fees billed? State the frequency, timing and valuation basis."
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+    *   Keys: "answer", "source_document", "section", "quote".
+
+    *   Document 1: `01_valuation_policy.md` (Valuation Policy and Procedures)
+    *   Document 2: `04_business_continuity_plan.md` (Business Continuity Plan)
+    *   Document 3: `05_fee_schedule.md` (Fee Schedule)
+    *   Document 4: `06_policy_update_memo.md` (Compliance Memorandum)
+
+    *   The question is about "separate account fees" and "how they are billed".
+    *   Looking at `05_fee_schedule.md`:
+        *   Section 4 is "BILLING".
+        *   Section 4.1: "Frequency and Basis".
+        *   Text: "Separate account fees are billed quarterly in arrears based on the average of the three month-end market values of the account during the quarter, including accrued interest. Market values are determined under the Firm's Valuation Policy and Procedures and reconciled to custodian records."
+
+    *   Frequency: Quarterly.
+    *   Timing: In arrears.
+    *   Valuation Basis: Average of the three month-end market values of the account during the quarter, including accrued interest. (Note: Market values are determined under the Valuation Policy and reconciled to custodian records).
+
+    *   "answer": "Separate account fees are billed quarterly in arrears based on the average of the three month-end market values of the account during the quarter, including accrued interest."
+    *   "source_document": "05_fee_schedule.md"
+    *   "section": "Section 4.1"
+    *   "quote": "Separate account fees are billed quarterly in arrears based on the average of the three month-end market values of the account during the quarter, including accrued interest."
+
+    *   "answer": "Separate account fees are billed quarterly in arrears based on the average of the three month-end market values of the account during the quarter, including accrued interest."
+    *   "source_document": "05_fee_schedule.md"
+    *   "section": "Section 4.1"
+    *   "quote": "Separate account fees are billed quarterly in arrears based on the average of the three month-end market values of the account during the quarter, including accrued interest."
+
+    *   Wait, the question asks for "frequency, timing and valuation basis".
+    *   Frequency: Quarterly.
+    *   Timing: In arrears.
+    *   Valuation basis: Average of the three month-end market values of the account during the quarter, including accrued interest.
+    *   The quote "Separate account fees are billed quarterly in arrears based on the average of the three month-end market values of the account during the quarter, including accrued interest." covers all three parts.
+
+    *   JSON format? Yes.
+    *   No markdown? Yes.
+    *   No preamble? Yes.
+    *   Correct keys? Yes.
+
+    *   "answer": "Separate account fees are billed quarterly in arrears based on the average of the three month-end market values of the account during the quarter, including accrued interest."
+    *   "source_document": "05_fee_schedule.md"
+    *

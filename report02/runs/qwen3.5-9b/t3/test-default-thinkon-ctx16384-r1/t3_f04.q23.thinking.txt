@@ -1,0 +1,40 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Under the standard Long Duration Credit schedule, what annual management fee would a $350 million separate account pay?"
+    *   Key elements to find:
+        *   Strategy: Long Duration Credit.
+        *   Account size: $350 million.
+        *   Fee calculation method (tiered structure implied by "schedule").
+        *   Resulting annual fee amount or rate structure applied to that specific balance.
+
+3.  **Scan the Documents:**
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section: Item 5. Fees and Compensation > 5.2 Separate Account Fee Schedules.
+        *   Contains table for **Long Duration Credit**.
+        *   Tiers: First $100 million @ 0.30%, Next $200 million @ 0.25%, Over $300 million @ 0.20%.
+        *   Section: Item 6. Performance-Based Fees... (Irrelevant).
+    *   `05_fee_schedule.md` (January 1, 2026):
+        *   Section: SECTION 2. SEPARATE ACCOUNT FEE SCHEDULES > 2.2 Long Duration Credit.
+        *   Contains table for **Long Duration Credit**.
+        *   Tiers: First $100 million @ 0.30%, Next $200 million @ 0.25%, Over $300 million @ 0.20%.
+    *   Comparison of Dates:
+        *   `05_fee_schedule.md`: January 1, 2026.
+        *   `01_brochure.md`: March 27, 2026.
+        *   Rule 3: Later-dated documents supersede earlier ones.
+        *   However, both documents show the *same* fee schedule for Long Duration Credit (First $100m @ 0.30%, Next $200m @ 0.25%, Over $300m @ 0.20%).
+        *   Since the question asks about the "standard Long Duration Credit schedule", I need to calculate the fee based on the tiers provided in the most current document (Brochure, March 27, 2026) or acknowledge if they are identical. Usually, the Brochure is the public-facing document reflecting the latest info. The Fee Schedule is dated Jan 1, 2026. The Brochure is dated March 27, 2026.
+        *   Rule 3 says "Later-dated documents supersede earlier ones." So I

@@ -1,0 +1,31 @@
+*   Question: "How frequently does the Valuation Committee meet?"
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+    *   Keys: "answer", "source_document", "section", "quote".
+
+    *   Document 1: `05_fee_schedule.md` - Contains information about fees, investment limits, etc.
+    *   Document 2: `06_policy_update_memo.md` - Contains amendments to various policies (Compliance Manual, Valuation Policy, BCP, Fee Schedule).
+
+    *   Search for "Valuation Committee" or "Valuation Policy".
+    *   In `06_policy_update_memo.md`, Section 2.4 is titled "Valuation Policy Section 2.3 (Meetings)".
+    *   Text: "The Valuation Committee will meet monthly, within ten business days after the end of each calendar month, rather than quarterly, so that the Committee reviews Level 3 values, overrides and stale price reports within each monthly net asset value cycle."
+
+    *   Answer: Monthly (specifically, within ten business days after the end of each calendar month).
+    *   Source: `06_policy_update_memo.md`
+    *   Section: "Section 2.4" (or "Section 2.4 Valuation Policy Section 2.3 (Meetings)")
+    *   Quote: "The Valuation Committee will meet monthly, within ten business days after the end of each calendar month, rather than quarterly, so that the Committee reviews Level 3 values, overrides and stale price reports within each monthly net asset value cycle."
+
+    *   "answer": "monthly, within ten business days after the end of each calendar month"
+    *   "source_document": "06_policy_update_memo.md"
+    *   "section": "Section 2.4"
+    *   "quote": "The Valuation Committee will meet monthly, within ten business days after the end of each calendar month, rather than quarterly, so that the Committee reviews Level 3 values, overrides and stale price reports within each monthly net asset value cycle."
+
+    *   Ensure no markdown.
+    *   Ensure exactly four keys.
+
+    *   Wait, the section title is "2.4 Valuation Policy Section 2.3 (Meetings)". I'll use "Section 2.4".
+
+    *   Refining the answer: "monthly, within ten business days after the end of each calendar month"
+
+    *   Double check the source: `06_policy_update_memo.md`.
+
+    *   Double check the quote: "The Valuation Committee will meet monthly, within ten business days after the end of each calendar month, rather than quarterly, so that the Committee reviews Level 3 values, overrides and stale price reports within each monthly net asset value cycle."

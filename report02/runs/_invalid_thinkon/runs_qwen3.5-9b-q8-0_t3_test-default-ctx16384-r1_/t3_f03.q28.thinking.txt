@@ -1,0 +1,31 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "How does the firm control trading in securities of public companies at which a member of a client family is an officer, director or 10% holder?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "public companies", "officer", "director", "10%", "holder", "trading", "control", "client family".
+    *   Document 1: `01_brochure.md` (Form ADV Part 2A, dated March 27, 2026).
+        *   Section 11.2 Personal Trading: Mentions pre-clearance, blackout periods, holding periods, IPO prohibitions, private placements approval, quarterly/annual reports. Doesn't specifically mention the "officer, director or 10% holder" list context for public companies trading control in detail, though it mentions Client-Affiliated Issuer List in Section 17.2.
+        *   Section 11.3 Participation or Interest: Mentions Family Relationships, private funds, co-investments.
+        *   Section 17.2 Conflicts of Interest (Voting): Mentions "Client-Affiliated Issuer List" and voting via Stannard Proxy Services. Doesn't explicitly detail trading control for this specific list in this section.
+    *   Document 2: `02_compliance_manual.md` (Compliance Policies and Procedures Manual, dated January 15, 2026).
+        *   Section 4.4 Prohibited and Restricted Transactions: Mentions "Restricted List", MNPI, private fund approvals.
+        *   Section 7.1 Policy: Mentions MNPI, treating info from families as presumptively MNPI.
+        *   Section 7.3 Client-Affiliated Issuers: This looks very relevant.
+            *   Text: "The CCO maintains a Client-Affiliated Issuer List of public companies of which a member of a client family is an officer, director or beneficial owner of 10% or more of any class of equity securities." (Matches the question's criteria).
+            *   Text: "No transaction in a security of an issuer on the Client-Affiliated Issuer List may be effected for any client account or Reportable Account without the prior approval of the CCO."
+            *   Text: "For a transaction in the affiliated family member's own accounts, the CCO will also require written confirmation from the family member, or the issuer's general counsel, that the transaction is permitted under the issuer's trading window or is made under a Rule 10b5-1 plan, and that any required Rule 144 or Section 16 filings will be made."
+        *   Section 9.5 Cross Trades: Mentions Family Relationships transfers.
+
+3.  **Evaluate Findings

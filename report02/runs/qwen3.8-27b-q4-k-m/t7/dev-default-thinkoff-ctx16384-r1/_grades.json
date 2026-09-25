@@ -1,0 +1,67 @@
+{
+ "task": "t7",
+ "model": "qwen3.8:27b-q4_K_M",
+ "items": {
+  "t7_p01": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C2",
+     "hallucination": false,
+     "got": "",
+     "expected": "Dividend Growth Equity: 14.62% over one year, 12.07% over five years and 11.84% over ten years, annualized, for periods ended December 31, 2025, gross of fees.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C3",
+     "hallucination": false,
+     "got": "",
+     "expected": "Since its April 1, 2009 inception through December 31, 2025, the Intermediate Tax-Exempt Composite returned 3.28% annualized gross of fees and 2.76% annualized net of fees.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p3",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C7",
+     "hallucination": false,
+     "got": "Named to the Penwarden Adviser Review list of Top 50 Independent Advisers in the Mid-Atlantic",
+     "expected": "Named to the Penwarden Adviser Review list of Top 50 Independent Advisers in the Mid-Atlantic, Ardwell & Tamsett has served Virginia families for more than two decades.",
+     "extra": {
+      "category_match": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 1,
+   "group": "t7_p01",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 25.23,
+    "prompt_tokens": 2043,
+    "output_tokens": 92,
+    "output_tokens_per_sec": 4.2,
+    "prompt_tokens_per_sec": 593.6,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11522
+   }
+  }
+ }
+}

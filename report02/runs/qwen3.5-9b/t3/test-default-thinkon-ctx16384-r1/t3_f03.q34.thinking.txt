@@ -1,0 +1,42 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (check dates).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "How long does the firm retain its required books and records?"
+
+3.  **Scan the Documents for Keywords:**
+    *   Keywords: "retain", "books", "records", "years", "time".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md` (March 27, 2026):
+        *   Item 15.3 Surprise Examination: Discusses accountant examinations.
+        *   Item 15.4 Account Statements: Discusses statement frequency.
+        *   No mention of retention period for books and records here.
+    *   `02_compliance_manual.md` (January 15, 2026):
+        *   Section 1.1 Purpose: General purpose.
+        *   Section 12.5 Disposal: Discusses shredding/destruction of client info records.
+        *   Section 13. BOOKS AND RECORDS > 13.1 Retention Period: "The Firm retains all books and records required by Rule 204-2 for seven years from the end of the fiscal year during which the last entry was made on the record, the first two years in an appropriate office of the Firm."
+        *   Section 13.2 Electronic Storage: Discusses storage methods.
+        *   Section 13.3 Trust Company Records: Discusses QHTC records.
+        *   Section 15.1 Requirement: Annual review.
+
+5.  **Determine the Best Answer:**
+    *   The question asks about "required books and records".
+    *   Document `02_compliance_manual.md`, Section 13.1 Retention Period explicitly states: "The Firm retains all books and records required by Rule 204-2 for seven years from the end of the fiscal year during which the last entry was made on the record, the first two years in an appropriate office of the Firm."
+    *   Date check: `02_compliance_manual.md` is dated January 15, 2026. `01_brochure.md` is dated March 27, 2026. The brochure is later, but it doesn't contain the retention policy. The compliance manual contains the specific answer. Since there are no conflicting documents regarding this specific topic (the brochure doesn't contradict it), the compliance manual's text stands as the source of truth for this question.
+    *   Constraint Check: "Later-dated documents supersede earlier ones." The brochure is later, but it doesn't address retention periods. The compliance manual addresses it. So I use the compliance manual.
+
+6.  **Draft the JSON:**
+    *

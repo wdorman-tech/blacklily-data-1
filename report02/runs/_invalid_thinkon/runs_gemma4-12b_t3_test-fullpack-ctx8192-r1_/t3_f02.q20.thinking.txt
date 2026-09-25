@@ -1,0 +1,31 @@
+*   Question: "Describe the frequency of data backups and where backup copies are stored."
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+    *   Keys: "answer", "source_document", "section", "quote".
+
+    *   Document 1: `05_fee_schedule.md` (Fee Schedule)
+    *   Document 2: `06_policy_update_memo.md` (Policy Update Memo)
+    *   The text provided before the first document (which seems to be part of a Business Continuity Plan or similar, though the filename isn't explicitly given in the prompt, it's the first block of text). Let's look at the content.
+
+    *   The first block of text contains:
+        *   "Backup copies are immutable and cannot be altered or deleted by any Adviser or vendor account during the retention period."
+        *   "Section 6.3 Restore Verification: The IT managed service provider restores a sample of files, mailboxes and the portfolio accounting database from backup each quarter..."
+        *   "Section 2.5 Business Continuity Plan Section 5.2 (IT Managed Service Provider): ... The backup platform, backup schedule and storage locations described in Section 6 of the Business Continuity Plan are unchanged."
+
+    *   The question asks for "frequency of data backups" and "where backup copies are stored".
+    *   Looking at the first block of text (which is part of a Business Continuity Plan, though the filename isn't explicitly provided in the prompt, I need to check if it's mentioned elsewhere).
+    *   Wait, the prompt shows:
+        ```
+        [Text about backups and Restore Verification]
+        05_fee_schedule.md
+        ...
+        06_policy_update_memo.md
+        ```
+    *   The first block of text doesn't have a filename associated with it in the prompt, but it contains "Section 6.3 Restore Verification".
+    *   Let's look at the content of the first block:
+        "Backup copies are immutable and cannot be altered or deleted by any Adviser or vendor account during the retention period."
+        "Section 6.3 Restore Verification: The IT managed service provider restores a sample of files, mailboxes and the portfolio accounting database from backup each quarter..."
+    *   Does it say how *often* they are backed up? It says they are restored "each quarter". It doesn't explicitly state the *backup* frequency (e.g., daily, hourly).
+    *   Does it say *where* they are stored? It mentions "backup platform, backup schedule and storage locations described in Section 6 of the Business Continuity Plan are unchanged" in the memo, but the memo doesn't list the locations.
+    *   Wait, let's look at the first block again. It doesn't specify the frequency of the *backup* process itself, only the *restore verification* frequency.
+    *   Let's check the memo (06_policy_update_memo.md). Section 2.5 mentions "The backup platform, backup schedule and storage locations described in Section 6 of the Business Continuity Plan are unchanged." This implies the information is in Section 6 of the BCP.
+    *   The first block of text provided *is* part of the BCP (it mentions "Section 6.3 Restore Verification"). However, the text provided for Section 6 only includes 6.3. It doesn't include 6.1 or 6.

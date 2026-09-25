@@ -1,0 +1,141 @@
+*   Role: Client service associate at a wealth management firm.
+    *   Task: Update CRM from a meeting transcript.
+    *   Rules:
+        1.  Record only what was said. No extra planning.
+        2.  Use final versions of figures/owners/dates.
+        3.  Action items = tasks agreed to do. No "maybe" or "not now" items.
+        4.  Owner = person's name.
+        5.  Due dates = as stated (add calendar date if needed).
+        6.  Use NOT_FOUND for missing fields.
+        7.  Correct machine-generated errors based on later context.
+    *   Output: JSON only, no markdown, no preamble.
+
+    *   *Meeting Date:* September 16, 2026.
+    *   *Clients:* Dermot Quillane, Renata Quillane.
+    *   *Primary Goal:* "Preserve what you got from the sale and turn it into income that lasts the rest of both your lives." (Specifically: "Don't lose it... It has to last. It has to pay for everything from here on.")
+    *   *Retirement Target:* Dermot is 61 now, consulting for 12 months starting Oct 2026. Full retirement at end of consulting agreement, October 2027, at age 62.
+    *   *Risk Tolerance:*
+        *   Current: "moderately aggressive" (70/30).
+        *   Change: "moderately aggressive" to "moderate" (50/50).
+    *   *Life Events:*
+        *   Sale of business to Corrister Industrial Holdings, Inc. (Price: $14.5M).
+        *   Net to seller: $10,496,300.
+        *   Consulting agreement: 12 months, $20k/month starting Oct 2026.
+        *   Mortgage: ~$310,000 at 2.875%.
+        *   Donation: Declined ($400k).
+        *   Investment in friend's shop: Declined/Not now ($200k).
+    *   *Account Actions:*
+        *   New trust account at Wickstead for sale proceeds (Quillane Family Trust).
+        *   Move $2.6M into T-bill ladder.
+        *   Move $7.9M into moderate model (phased in 3 parts: funding, Jan, March).
+        *   Move IRAs (Dermot: $1.14M, Renata: $420k) to moderate model.
+    *   *Action Items:*
+        *   Ifeoma: Send DocuSign for new trust account by tomorrow morning (Sept 17, 2026).
+        *   Renata: Forward signed agreement, schedules, and funds flow to Lowell, Ifeoma, and Lorna tonight.
+        *   Dermot: Send wire letter to Emory by October 23, 2026.
+        *   Lowell: Draft revised IPS by September 29, 2026.
+        *   Ifeoma: Prepare health insurance comparison (COBRA vs. Marketplace) for next meeting.
+    *   *Next Meeting:* Wednesday, October 14, 2026, at 10:00 AM.
+
+    *   *meeting_date:* "2026-09-16"
+    *   *client_names:* ["Dermot Quillane", "Renata Quillane"]
+    *   *primary_goal:* "Preserve what you got from the sale and turn it into income that lasts the rest of both your lives."
+    *   *retirement_target:* "October 2027 (at age 62)"
+    *   *risk_tolerance:* "moderate"
+    *   *risk_tolerance_change:* "moderately aggressive to moderate"
+    *   *life_events:* ["Sale of business to Corrister Industrial Holdings, Inc. for $14.5 million", "Net proceeds of $10,496,300 from sale", "12-month consulting agreement starting October 2026 at $20,000 per month", "Mortgage of approximately $310,000 at 2.875%"]
+    *   *account_actions:*
+        *   {"action": "Open new trust account at Wickstead for sale proceeds", "account": "Quillane Family Trust", "amount": "10,496,300"}
+        *   {"action": "Move $2.6 million into T-bill ladder", "account": "Quillane Family Trust", "amount": "2,600,000"}
+        *   {"action": "Move $7.9 million into moderate model (phased in three parts)", "account": "Quillane Family Trust", "amount": "7,900,000"}
+        *   {"action": "Move IRAs to moderate model", "account": "Dermot Quillane IRA", "amount": "1,140,000"}
+        *   {"action": "Move IRAs to moderate model", "account": "Renata Quillane IRA", "amount": "420,000"}
+    *   *action_items:*
+        *   {"task": "Send DocuSign for new trust account", "owner": "Ifeoma Maduka", "due": "2026-09-17"}
+        *   {"task": "Forward signed agreement, schedules, and funds flow to Lowell, Ifeoma, and Lorna", "owner": "Renata Quillane", "due": "2026-09-16"}
+        *   {"task": "Send wire letter to Emory and complete callback", "owner": "Dermot Quillane", "due": "2026-10-23"}
+        *   {"task": "Draft revised IPS", "owner": "Lowell Pennacott", "due": "2026-09-29"}
+        *   {"task": "Prepare health insurance comparison (COBRA vs. Marketplace)", "owner": "Ifeoma Maduka", "due": "2026-10-14"}
+    *   *next_meeting:* "2026-10-14"
+
+    *   *Rule 1 (No extra items):* I excluded the $200k investment and the $400k donation because they were "not now" or "no".
+    *   *Rule 2 (Final versions):* Used $10,496,300 instead of $11.1M.
+    *   *Rule 3 (Action items):* Only included things they agreed to do.
+    *   *Rule 4 (Owner):* Used names.
+    *   *Rule 5 (Dates):* Added calendar dates where needed.
+    *   *Rule 6 (NOT_FOUND):* Not applicable as most fields were found.
+    *   *Rule 7 (Clarification):* Used "Corrister" and "October 30th" (though the 30th is the wire date, not the meeting date).
+
+    *   *Refining account_actions:*
+        *   The prompt asks for "what will be done", "which account", "amount".
+        *   Action 1: "Open new trust account", "Quillane Family Trust", "10,496,300"
+        *   Action 2: "Move to T-bill ladder", "Quillane Family Trust", "2,600,000"
+        *   Action 3: "Move to moderate model (phased)", "Quillane Family Trust", "7,900,000"
+        *   Action 4: "Move to moderate model", "Dermot Quillane IRA", "1,140,000"
+        *   Action 5: "Move to moderate model", "Renata Quillane IRA", "420,000"
+
+    *   *Refining action_items:*
+        *   Ifeoma: "Send DocuSign for trust account", "Ifeoma Maduka", "2026-09-17" (Tomorrow from the 16th).
+        *   Renata: "Forward agreement, schedules, and funds flow", "Renata Quillane", "2026-09-16" (Tonight).
+        *   Dermot: "Send wire letter to Emory", "Dermot Quillane", "2026-10-23".
+        *   Lowell: "Draft revised IPS", "Lowell Pennacott", "2026-09-29".
+        *   Ifeoma: "Prepare health insurance comparison", "Ifeoma Maduka", "2026-10-14".
+
+    *   *Refining primary_goal:* "Preserve what you got from the sale and turn it into income that lasts the rest of both your lives."
+
+    *   *Refining retirement_target:* "October 2027 (at age 62)"
+
+    *   *Refining risk_tolerance:* "moderate"
+    *   *Refining risk_tolerance_change:* "moderately aggressive to moderate"
+
+    *   *Refining life_events:*
+        *   "Sale of business to Corrister Industrial Holdings, Inc. for $14.5 million"
+        *   "Net proceeds of $10,496,300"
+        *   "12-month consulting agreement starting October 2026 at $20,000 per month"
+        *   "Mortgage of approximately $310,000 at 2.875%"
+
+    *   *Wait, check the date for the DocuSign:* "I'll have it in your inbox first thing tomorrow morning. Before nine." Meeting is Sept 16. So 2026-09-17.
+    *   *Check the date for the IPS:* "I'll have the IPS to you on Tuesday the 29th." Meeting is Sept 16. So 2026-09-29.
+    *   *Check the date for the wire letter:* "I'd want it in his hands at least a week before closing. So, by the twenty-third." Closing is Oct 30. So 2026-10-23.
+
+    *   *Refining account_actions:*
+        *   The prompt asks for "amount".
+        *   10,496,300
+        *   2,600,000
+        *   7,900,000
+        *   1,140,000
+        *   420,000
+
+    *   *Refining life_events:*
+        *   "Sale of business to Corrister Industrial Holdings, Inc. ($14.5 million)"
+        *   "Net proceeds of $10,496,300"
+        *   "12-month consulting agreement ($20,000/month)"
+        *   "Mortgage of $310,000 at 2.875%"
+
+    *   *Refining risk_tolerance_change:* "moderately aggressive to moderate"
+
+    *   *Refining next_meeting:* "2026-10-14"
+
+    *   *Double check:* "Record only what was said... nothing more."
+    *   *Double check:* "If a figure... is corrected... record the final version only." (10,496,300 is the final).
+    *   *Double check:* "Action item is a task someone agreed to do." (Ifeoma's DocuSign, Renata's forwarding, Dermot's wire letter, Lowell's IPS, Ifeoma's health comparison).
+
+    *   *Wait, check the "amount" for the trust account.* The total is 10,496,300. The 2.6m and 7.9m are the components of that.
+    *   *Wait, check the "account" names.*
+        *   "Quillane Family Trust"
+        *   "Dermot Quillane IRA"
+        *   "Renata Quill1e IRA" (Wait, transcript says "Renata's is about 420,000").
+
+    *   *Refining the JSON structure.*
+
+    *   *One detail:* "I'll have the IPS to you on Tuesday the 29th". The meeting is Wednesday the 16th. The 29th is indeed a Tuesday.
+    *   *One detail:* "I'll have it in your inbox first thing tomorrow morning." (Sept 17).
+
+    *   *Refining the "primary_goal":* "Preserve what you got from the sale and turn it into income that lasts the rest of both your lives."
+
+    *   *Refining "risk_tolerance_change":* "moderately aggressive to moderate"
+
+    *   *Refining "life_events":*
+        *   "Sale of business to Corrister Industrial Holdings, Inc. ($14.5 million)"
+        *   "Net proceeds of $10,496,300"
+        *   "12-month consulting agreement ($20,000/month)"

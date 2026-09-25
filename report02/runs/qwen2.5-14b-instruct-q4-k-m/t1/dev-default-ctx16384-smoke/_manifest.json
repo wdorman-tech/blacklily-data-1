@@ -1,0 +1,70 @@
+{
+ "task": "t1",
+ "model": "qwen2.5:14b-instruct-q4_K_M",
+ "split": "dev",
+ "run": "smoke",
+ "variant": "default",
+ "think": "auto",
+ "items": 1,
+ "started": "2026-09-21T23:08:58-0400",
+ "prompt_hashes": [
+  "938e847c1d96c2af1a0fe0163eacc7a1d87c45d98d315e6e8ac5fbf4fc4d0b8f",
+  "..."
+ ],
+ "system_hashes": [
+  "3c0741e24dce410773f7ceff6b943c4e376f60816b52542829880f056d8bf1c6"
+ ],
+ "subject": {
+  "via": "ollama /api/chat",
+  "model": "qwen2.5:14b-instruct-q4_K_M",
+  "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+  "size_bytes": 8988124069,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "qwen2",
+   "families": [
+    "qwen2"
+   ],
+   "parameter_size": "14.8B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 32768,
+   "embedding_length": 5120
+  }
+ },
+ "server": {
+  "flash_attention": "true",
+  "kv_cache_type": "q8_0",
+  "version": "0.34.2",
+  "num_parallel": 1
+ },
+ "options": {
+  "num_ctx": 16384,
+  "temperature": 0.0,
+  "top_p": 0.9,
+  "repeat_penalty": 1.0
+ },
+ "gpu_before": {
+  "vram_used_mib": 2129,
+  "vram_total_mib": 12227,
+  "gpu_util_pct": 7
+ },
+ "loaded": {
+  "size_bytes": 10388735261,
+  "size_vram_bytes": 10388735261,
+  "fully_on_gpu": true,
+  "context_length": 16384
+ },
+ "gpu_after_load": {
+  "vram_used_mib": 11630,
+  "vram_total_mib": 12227,
+  "gpu_util_pct": 33
+ },
+ "loaded_end": {
+  "size_bytes": 10388735261,
+  "size_vram_bytes": 10388735261,
+  "fully_on_gpu": true,
+  "context_length": 16384
+ },
+ "finished": "2026-09-21T23:09:53-0400"
+}

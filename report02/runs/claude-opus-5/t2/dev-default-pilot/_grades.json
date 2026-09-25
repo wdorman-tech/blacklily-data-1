@@ -1,0 +1,748 @@
+{
+ "task": "t2",
+ "model": "claude-opus-5",
+ "items": {
+  "t2_cat_1": {
+   "units": [],
+   "parse_problems": [],
+   "n_reported": 0,
+   "contested": 0,
+   "group": "cat",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 8.97,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 14048,
+    "output_tokens": 612,
+    "thinking_tokens": 603,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t2_cat_2": {
+   "units": [
+    {
+     "uid": "a09",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The statement that these factors \"could significantly increase our payment obligations\" under the pension plans now reads \"could increase our payment obligations\", and the liability-driven investment strategy sentence moves from the middle to the end of the paragraph.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The stated severity of the pension funding risk is softened: the prior version said these factors \"could significantly increase\" payment obligations under the plans, and the current version says they \"could increase\" them.",
+     "expected": "Sustained increases in funding obligations under our pension plans may impair our liquidity or financial condition.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 1,
+   "contested": 0,
+   "group": "cat",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 10.79,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 14149,
+    "output_tokens": 812,
+    "thinking_tokens": 651,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t2_cat_3": {
+   "units": [],
+   "parse_problems": [],
+   "n_reported": 0,
+   "contested": 0,
+   "group": "cat",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 8.59,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 4901,
+    "output_tokens": 857,
+    "thinking_tokens": 848,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t2_mmm_1": {
+   "units": [
+    {
+     "uid": "a01",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Tariffs and retaliatory counter measures are elevated into the headline, and the body adds proposed additional export controls and tariffs, limited access to rare earth minerals and other raw materials, tariff-driven cost, pricing, market access and planning impacts, and the cost and fines exposure of complying with rapidly changing trade restrictions, while dropping the limitation of sanctions to parties in certain conflict zones.",
+     "extra": {}
+    },
+    {
+     "uid": "a03",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The PFAS manufacturing exit moves from in progress (\"is progressing toward the exit of all PFAS manufacturing by the end of 2025\") to completed (\"completed its exit of PFAS manufacturing at the end of 2025\"), with new disclosure of ongoing water treatment, remediation and facility disposition obligations, third-party PFAS product use that will continue beyond 2025 with transitions not completed, the dropped 2018 State of Minnesota settlement example ($897 million pre-tax charge), and asset retirement obligations broadened to charges on ongoing asset use, retirement or disposition.",
+     "extra": {}
+    },
+    {
+     "uid": "a04",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The paragraph on artificial intelligence development, use and regulatory risk is removed and replaced by a new paragraph on risks as a direct and indirect supplier to the U.S. and other governments, covering procurement compliance, audit and contract termination rights, funding uncertainty, False Claims Act liability and suspension or debarment, with customers added to the parties whose conduct creates compliance risk.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The heading now names tariffs and retaliatory counter measures; the section now says governments have imposed and propose to impose additional export controls and tariffs, drops the limit of sanctions to parties 'in certain conflict zones', and adds new risks: limited access to rare earth minerals and other raw materials, tariff-driven increases in production costs and pricing, limited access to e",
+     "expected": "* The Company’s results are impacted by the effects of, and changes in, worldwide economic, political, regulatory, international trade, geopolitical, tariffs and retaliatory counter measures, and other external conditions.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The PFAS manufacturing exit changed from 'progressing toward' an exit by the end of 2025 to 'completed' at the end of 2025, and the section also: adds continuing water treatment, remediation and disposition or dismantling of facilities (including facilities owned or leased from other parties); drops the risks tied to exit timing and feasibility; changes third-party PFAS use beyond 2025 from 'may o",
+     "expected": "* The Company faces liabilities related to certain fluorochemicals, which could have a material adverse effect on our results.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The heading now adds customers to the parties whose conduct is covered; the paragraph on artificial intelligence risks (development, use and evolving regulation) was removed; and a new paragraph adds risks as a direct and indirect supplier to the U.S. and other governments, including procurement compliance, government rights to audit, investigate and terminate contracts, uncertainty over governmen",
+     "expected": "* The Company is subject to risks related to international, federal, state, and local treaties, laws, and regulations, as well as compliance risks related to legal or regulatory requirements, contract requirements, policies and practices, or other matters that require or encourage the Company or its customers, suppliers, vendors, or channel partners to conduct business in a certain way. The outcome of legal and regulatory proceedings related to compliance with these treaties, laws, regulations, and requirements could have a material adverse effect on the Company's reputation, ability to execute its strategy and its results of operations.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 3,
+   "contested": 0,
+   "group": "mmm",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 40.96,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 14815,
+    "output_tokens": 5145,
+    "thinking_tokens": 3407,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t2_mmm_2": {
+   "units": [
+    {
+     "uid": "a01",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adds a new passage on tariffs and other trade restrictions raising imported raw material and component costs, disrupting supply chains, limiting access to end markets, lowering profitability and clouding long-term planning, and narrows the PFAS customer-preference reference to products without third-party manufactured PFAS.",
+     "extra": {}
+    },
+    {
+     "uid": "a03",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Military conflicts are dropped as a named example of events that could interrupt or terminate supplier relationships and are replaced by a pointer to the disruptive events in the first risk factor (which now covers tariffs and trade restrictions), alongside minor wording changes (\"shortage\" to \"shortages\", \"interrupted or terminated\").",
+     "extra": {}
+    },
+    {
+     "uid": "a05",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "",
+     "expected": "New risk factor on the Company's use of artificial intelligence, covering inaccurate or biased outputs, third-party AI vendor dependence, leakage of confidential or third-party data into AI systems, evolving AI regulation, competitive pressure, and resulting legal, regulatory and reputational harm.",
+     "extra": {}
+    },
+    {
+     "uid": "a07",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The description of the structural reorganization (shrinking the corporate center, simplifying the supply chain, streamlining the geographic footprint, removing management layers, realigning go-to-market models and cutting manufacturing roles to match production volumes) is deleted and replaced with a general statement that workforce restructuring is expected to deliver benefits but also affects business groups, functions and geographies.",
+     "extra": {}
+    },
+    {
+     "uid": "a09",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The S&P Global Ratings outlook on 3M's BBB+ credit rating changes from negative to stable, while the Moody's A3 stable and Fitch A- stable ratings are unchanged and \"Fitch\" is renamed \"Fitch Ratings\".",
+     "extra": {}
+    },
+    {
+     "uid": "a13",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "The risk that consents or approvals required for the Solventum separation will not be obtained, or will be obtained subject to material modifications to the underlying arrangements, is deleted.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The PFAS customer-preference reference was narrowed from products that do not contain \"PFAS\" to products that do not contain \"third-party manufactured PFAS\", and a new risk was added that tariffs and trade restrictions could raise costs, disrupt supply chains, limit market access and lower profitability.",
+     "expected": "* The Company’s results are affected by competitive conditions and customer preferences.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "Military conflicts are no longer named as a cause of supplier interruptions; that example was replaced with a reference to the disruptive events in the first risk factor, which now include tariffs and trade restrictions.",
+     "expected": "* The Company’s future results are subject to vulnerability with respect to materials and fluctuations in the costs and availability of purchased components, compounds, raw materials, energy, and labor due to shortages, increased demand and wages, strikes or other labor disruptions, logistics, supply chain interruptions, manufacturing site disruptions, regulatory developments, natural disasters, and other disruptive factors.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "A new risk factor was added on the Company's use of AI, covering inaccurate or biased outputs, third-party AI vendor risks, data leakage, evolving AI regulation and competitive pressures.",
+     "expected": "*The Company’s use of artificial intelligence technologies exposes the Company to risks which could have a material adverse effect on the Company’s business, reputation and results of operations.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "added",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The description of the specific structural reorganization was removed; it had covered reducing the corporate center, simplifying the supply chain, streamlining the geographic footprint, reducing management layers and cutting manufacturing roles, and the section now says only that workforce restructuring is expected to deliver benefits.",
+     "expected": "* The Company’s future results may be affected by its operational execution, including through organizational restructurings and scenarios where the Company generates fewer productivity improvements than planned.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_05",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The S&P Global Ratings outlook on 3M's BBB+ rating changed from negative to stable.",
+     "expected": "* Change in the Company’s credit ratings or increases in benchmark interest rates could increase cost of funding.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_06",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The risk that required consents or approvals would not be obtained, or would be obtained subject to material modifications to the underlying arrangement, was removed.",
+     "expected": "* The Company is subject to risks related to the separation of Solventum, the Company's former Health Care business, into an independent public company.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 6,
+   "contested": 0,
+   "group": "mmm",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 37.78,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 14656,
+    "output_tokens": 4809,
+    "thinking_tokens": 3307,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t2_s01": {
+   "units": [
+    {
+     "uid": "a07",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "",
+     "expected": "New section authorizes subscription-line borrowing secured by Unfunded Commitments, capped at the lesser of 25% of aggregate Commitments and aggregate Unfunded Commitments with each borrowing repaid within 364 days, requires LP lender confirmations, runs the preferred return from the borrowing date and requires IRR reporting with and without the facility.",
+     "extra": {}
+    },
+    {
+     "uid": "a08",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "General Partner catch-up in clause (c) changed from 100% to the General Partner to 80% to the General Partner and 20% to the Limited Partner, still until the General Partner has received 20%; the 8% preferred return and final 80/20 split are unchanged.",
+     "extra": {}
+    },
+    {
+     "uid": "a10",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "Post-Commitment Period Management Fee rate reduced from 1.50% to 1.25% of Net Invested Capital; the 2.00% of Commitments rate during the Commitment Period is unchanged.",
+     "extra": {}
+    },
+    {
+     "uid": "a11",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "removed",
+     "hallucination": false,
+     "got": "",
+     "expected": "Tax Distributions section deleted, eliminating the General Partner's authority to make annual tax distributions at the Assumed Tax Rate (New York, New York individual rate) as advances against Section 3.1 distributions.",
+     "extra": {}
+    },
+    {
+     "uid": "a13",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "",
+     "expected": "Added sentence makes the Partnership bear its allocable share of the regulatory compliance costs of the Manager and the General Partner (Form PF and Form ADV filings, regulatory examinations), which were not a Partnership Expense before; the $2,000,000 organizational expense cap is unchanged.",
+     "extra": {}
+    },
+    {
+     "uid": "a16",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "Approval of Affiliated Transactions moved from prior approval by the Advisory Committee to advance approval by the General Partner as fair and reasonable, with only written notice to the Advisory Committee.",
+     "extra": {}
+    },
+    {
+     "uid": "a18",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "Suspension of the Commitment Period on a Key Person Event changed from discretionary (\"may suspend\") to mandatory (\"shall suspend\"); the two-of-three trigger and 180 day cure are unchanged.",
+     "extra": {}
+    },
+    {
+     "uid": "a20",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "",
+     "expected": "New section permits sales of Investments to a Manager-affiliated Continuation Vehicle only with prior Advisory Committee approval, a competitive process supported by a fairness opinion, and a cash-or-roll election for each Limited Partner on at least 20 Business Days' notice, with fee disclosure and expenses borne by the vehicle.",
+     "extra": {}
+    },
+    {
+     "uid": "a21",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "Carve-out added to the exclusion for proceedings a Covered Person initiates against the Partnership or another Covered Person, so proceedings a Covered Person brings to enforce its rights under Section 6.1 (exculpation and indemnification) are now indemnified.",
+     "extra": {}
+    },
+    {
+     "uid": "a24",
+     "score": 1.0,
+     "verdict": "DETECTED",
+     "kind": "material_change",
+     "error_kind": null,
+     "trap": "subtle",
+     "hallucination": false,
+     "got": "",
+     "expected": "Deadline for delivering annual audited financial statements extended from 90 days to 120 days after fiscal year end; the 60 day quarterly reporting deadline is unchanged.",
+     "extra": {}
+    },
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "New section lets the Partnership borrow under subscription credit facilities secured by Unfunded Commitments, capped at the lesser of 25% of aggregate Commitments and aggregate Unfunded Commitments, with each borrowing repaid within 364 days; it also requires Limited Partners to confirm their funding obligations to lenders, measures the preferred return from the borrowing date, and adds net IRR re",
+     "expected": "2.4 Subscription Credit Facility",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "added",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_02",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The General Partner catch-up in clause (c) changed from 100% to the General Partner to an 80% General Partner / 20% Limited Partner split.",
+     "expected": "3.1 Distribution Waterfall",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_03",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "removed",
+     "hallucination": false,
+     "got": "The provision permitting tax distributions to Partners at the Assumed Tax Rate, made within 90 days after each fiscal year and treated as advances against future distributions, was deleted.",
+     "expected": "3.3 Tax Distributions",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "removed",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_04",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The post-Commitment Period Management Fee rate on Net Invested Capital was reduced from 1.50% to 1.25%.",
+     "expected": "4.1 Management Fee",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_05",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "Partnership Expenses were expanded to include the Partnership's allocable share of the Manager's and General Partner's regulatory compliance costs, including Form PF and Form ADV filings and responses to regulatory examinations.",
+     "expected": "4.3 Organizational and Partnership Expenses",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_06",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "Affiliated Transactions no longer require advance approval by the Advisory Committee; instead the General Partner may approve them as fair and reasonable, with only written notice to the Advisory Committee.",
+     "expected": "5.3 Conflicts and Co-Investment",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_07",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "Suspension of the Commitment Period upon a Key Person Event changed from discretionary (\"may suspend\") to mandatory (\"shall suspend\").",
+     "expected": "5.5 Key Person Event",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_08",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "added",
+     "hallucination": false,
+     "got": "New section permits sales of Investments to Manager-affiliated Continuation Vehicles, subject to advance Advisory Committee approval, a competitive price-setting process run by an independent intermediary with a fairness opinion, a Limited Partner election to take cash or roll over on at least 20 Business Days' notice, disclosure of fees and carried interest, and the Continuation Vehicle bearing a",
+     "expected": "5.7 Continuation Vehicle Transactions",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "added",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_09",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The exclusion of indemnification for proceedings a Covered Person initiates against the Partnership or another Covered Person now carves out proceedings to enforce its rights under Section 6.1.",
+     "expected": "6.1 Exculpation and Indemnification",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    },
+    {
+     "uid": "reported_10",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The deadline for delivering annual audited financial statements was extended from 90 days to 120 days after fiscal year-end.",
+     "expected": "8.1 Reports to Partners",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": true,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 10,
+   "contested": 0,
+   "group": "t2_s01",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 35.94,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 15287,
+    "output_tokens": 3720,
+    "thinking_tokens": 1461,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  }
+ }
+}

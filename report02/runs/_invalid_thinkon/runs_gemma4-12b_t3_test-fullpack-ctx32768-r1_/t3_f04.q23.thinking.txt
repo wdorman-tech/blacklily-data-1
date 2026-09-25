@@ -1,0 +1,38 @@
+*   Question: "Under the standard Long Duration Credit schedule, what annual management fee would a $350 million separate account pay?"
+    *   Target: Long Duration Credit strategy, $350 million account size.
+    *   Constraint: Use only provided documents. If not found, use NOT_IN_DOCUMENTS.
+
+    *   `01_brochure.md`: Item 5.2 (Separate Account Fee Schedules) lists "Long Duration Credit" fees.
+    *   `05_fee_schedule.md`: Section 2.2 (Long Duration Credit) lists the same fees.
+    *   `06_policy_update_memo.md`: Section 5.1 mentions "Core Fixed Income" changes, but doesn't mention "Long Duration Credit" changes.
+
+    *   `01_brochure.md`, Item 5.2:
+        *   Long Duration Credit:
+            *   First $100 million: 0.30%
+            *   Next $200 million: 0.25%
+            *   Over $300 million: 0.20%
+    *   `05_fee_schedule.md`, Section 2.2:
+        *   Long Duration Credit:
+            *   First $100 million: 0.30%
+            *   Next $200 million: 0.25%
+            *   Over $300 million: 0.20%
+
+    *   Account size: $350 million.
+    *   The "Long Duration Credit" schedule:
+        *   First $100 million @ 0.30%
+        *   Next $200 million (from $100m to $300m) @ 0.25%
+        *   Over $300 million (from $300m onwards) @ 0.20%
+    *   Calculation:
+        *   $100m * 0.30% = $300,000
+        *   $200m * 0.25% = $500,000
+        *   $50m (the amount over $300m) * 0.20% = $100,000
+        *   Total = $900,000.
+    *   Wait, the question asks for the "annual management fee" (the rate or the amount?). Usually, in these types of questions, if the table provides rates, the answer is the rate applicable to that specific portion or the total calculation.
+    *   Let's look at the wording: "what annual management fee would a $350 million separate account pay?"
+    *   The table in `01_brochure.md` and `05_fee_schedule.md` lists "Annual fee rate".
+    *   For a $350 million account, the portion over $300 million is at 0.20%.
+    *   However, the question asks what the account *pays*. This usually implies the total fee or the specific rate for that tier.
+    *   Let's re-read the table:
+        *   First $100 million: 0.30%
+        *   Next $200 million: 0.25%
+        *   Over $300 million:

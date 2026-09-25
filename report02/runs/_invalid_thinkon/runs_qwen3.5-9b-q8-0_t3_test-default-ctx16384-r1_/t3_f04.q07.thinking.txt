@@ -1,0 +1,41 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Once a personal trade has been pre-cleared, how long does the approval remain valid?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "pre-clearance", "valid", "approval", "time", "days", "period".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Discusses personal trading rules (pre-clearance, reporting, holding periods), but doesn't specify the validity period of pre-clearance approval.
+    *   `02_compliance_manual.md` (dated January 15, 2026):
+        *   Section 4.2 Pre-Clearance: "A pre-clearance approval is valid through the close of regular trading on the business day following the day on which the approval is granted..."
+        *   Section 4.3 Prohibited and Restricted Transactions: Discusses prohibited items, not validity period.
+        *   Section 4.4 Holding Period: Discusses holding periods for securities, not pre-clearance validity.
+        *   Section 4.5 Reporting: Discusses reporting timelines.
+        *   Section 4.6 Review: Discusses review timelines.
+        *   Section 7.3 Wall-Crossing: Discusses private-side info.
+        *   Section 9.4 Departures from Pre-Allocation: Discusses trade allocation.
+
+5.  **Locate Specific Answer:**
+    *   Document: `02_compliance_manual.md`
+    *   Section: `SECTION 4. PERSONAL TRADING AND PRE-CLEARANCE > 4.2 Pre-Clearance`
+    *   Text: "A pre-clearance approval is valid through the close of regular trading on the business day following the day on which the approval is granted"
+
+6.  **Verify Constraints:**
+    *   Is there a later document? The brochure is dated March 27, 2026. The compliance manual is dated January 15, 2026.
+    *   Rule 3: "Later-dated documents supersede earlier ones."
+    *   However, the question asks about pre-clearance validity. The Brochure (Item 11) mentions pre-clearance but does not specify the validity period ("Employees must obtain pre-clearance from Compliance before trading covered securities..."). It does not contradict the manual regarding the specific duration of validity. The Compliance Manual is the detailed policy document for procedures. Usually, the Compliance Manual contains the operational details like validity periods. The Brochure summarizes high-level rules.
+    *   Does the Brochure supersede the Manual? Rule 3 says "Later-dated documents supersede earlier ones." If the Brochure explicitly contradicts or updates a specific provision in the Manual regarding this topic, I

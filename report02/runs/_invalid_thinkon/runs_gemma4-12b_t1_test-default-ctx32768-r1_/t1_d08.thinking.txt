@@ -1,0 +1,161 @@
+*   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from a fund offering document into a specific JSON structure.
+    *   Constraints:
+        *   Accuracy is paramount. No invented terms.
+        *   Use `NOT_FOUND` if not stated.
+        *   Use `NOT_APPLICABLE` if stated as not applicable.
+        *   Amendments/Supplements supersede original text (Section 13 is a supplement).
+        *   Report all variants for different share classes/tiers.
+        *   Distinguish between commitment and current holding.
+        *   Citations must be section/appendix identifiers.
+        *   Quotes must be verbatim.
+        *   Output format: JSON only, no markdown, no preamble.
+
+    *   `fund_name`: Tarrenfield Oakes Real Estate Partners III, L.P. (Section 1.1, Appendix A)
+    *   `fund_domicile`: Delaware (Section 1.1)
+    *   `fund_structure`: Closed-end (Section 1.1), not master-feeder (Section 1.1).
+    *   `management_fee`:
+        *   Investment Period: 1.50% per annum of Capital Commitments (Section 1.8, 4.1(a)).
+        *   Post-Investment Period: 1.50% per annum of Invested Equity (Section 1.8, 4.1(b)).
+        *   Large Commitment Limited Partners: 1.25% per annum on the same bases (Section 1.8, 4.1).
+    *   `performance_fee`:
+        *   Catch-up: 50% to LP, 50% to GP until GP has received 20% of profits (Section 1.9, 5.2(c)).
+        *   Carried Interest: 80% to LP, 20% to GP (Section 1.9, 5.2(d)).
+        *   Note: "The Carried Interest rate of 20% applies to every Limited Partner other than the Sponsor and its employees, whose Interests bear no Carried Interest." (Section 5.2).
+    *   `hurdle_rate`: 9% per annum internal rate of return, compounded annually (Section 1.9, 5.2(b), 5.3). It is a "hard hurdle" (Section 1.9, 5.3).
+    *   `high_water_mark`: "no high-water mark or loss carryforward applies" (Section 5.4).
+    *   `minimum_initial_investment`: $5,000,000 (Section 1.4).
+    *   `lockup_period`: "no lock-up" (Section 6.3).
+    *   `redemption_frequency`: "no redemption" (Section 1.10, 6.3).
+    *   `redemption_notice_days`: "no redemption" (Section 1.10, 6.3).
+    *   `gate_provision`: "no... gate" (Section 6.3).
+    *   `key_man_provision`:
+        *   Key Persons: Garrett Vashon and Ines Kalloway.
+        *   Trigger: If either ceases to devote substantially all of his or her business time to the Fund, the Prior Funds and the Investment Manager.
+        *   Consequence: Investment Period is automatically suspended. (Section 7.1).
+    *   `gp_commitment`: "the greater of $7,500,000 or 2.0% of the aggregate Capital Commitments of the Limited Partners" (Section 1.5).
+    *   `fund_term`: "eighth anniversary of the Initial Closing Date, subject to two one-year extensions" (Section 1.7). "In no event will the term extend beyond the tenth anniversary of the Initial Closing Date." (Section 7.4).
+    *   `auditor`: Lindenhall Crewe LLP (Section 13.4 overrides Section 9.2 and Appendix A).
+    *   `administrator`: Ostrander Pell Fund Services, LLC (Section 9.1, Appendix A).
+    *   `prime_broker`: NOT_FOUND.
+    *   `legal_counsel`: Haverill Quint LLP (Section 9.3, Appendix A).
+    *   `mfn_election`: "Each Limited Partner whose Capital Commitment, aggregated with those of its affiliates, is $25,000,000 or more may elect to receive the benefit of any right granted in a side letter to another Limited Partner whose Capital Commitment is equal to or less than its own." (Section 7.5).
+
+    *   `fund_name`: "Tarrenfield Oakes Real Estate Partners III, L.P." (Section 1.1)
+    *   `fund_domicile`: "Delaware" (Section 1.1)
+    *   `fund_structure`: "closed-end" (Section 1.1) and "not organized as part of a master-feeder structure" (Section 1.1).
+    *   `management_fee`:
+        *   Standard: "During the Investment Period, 1.50% per annum of Capital Commitments; thereafter, 1.50% per annum of Invested Equity." (Section 1.8)
+        *   Large Commitment: "For Large Commitment Limited Partners, the rate is 1.25% per annum on the same bases." (Section 1.8)
+        *   Note: Section 4.1 provides the detailed breakdown.
+    *   `performance_fee`: "80% to it and 20% to the General Partner" (Section 1.9) and "50% to it and 50% to the General Partner (the 'Catch-Up') until the General Partner has received 20% of the profits distributed" (Section 1.9).
+    *   `hurdle_rate`: "9% per annum internal rate of return, compounded annually, on those Capital Contributions (the 'Preferred Return'), which operates as a hard hurdle" (Section 1.9).
+    *   `high_water_mark`: "no high-water mark or loss carryforward applies" (Section 5.4).
+    *   `minimum_initial_investment`: "$5,000,000" (Section 1.4).
+    *   `lockup_period`: "no lock-up" (Section 6.3).
+    *   `redemption_frequency`: "no redemption" (Section 1.10).
+    *   `redemption_notice_days`: "no redemption" (Section 1.10).
+    *   `gate_provision`: "no... gate" (Section 6.3).
+    *   `key_man_provision`: "The 'Key Persons' are Garrett Vashon and Ines Kalloway. A 'Key Person Event' occurs if, during the Investment Period, either Key Person ceases to devote substantially all of his or her business time to the Fund, the Prior Funds and the Investment Manager. Upon a Key Person Event, the Investment Period is automatically suspended" (Section 7.1).
+    *   `gp_commitment`: "the greater of $7,500,000 or 2.0% of the aggregate Capital Commitments of the Limited Partners" (Section 1.5).
+    *   `fund_term`: "eighth anniversary of the Initial Closing Date, subject to two one-year extensions... In no event will the term extend beyond the tenth anniversary of the Initial Closing Date." (Section 1.7, Section 7.4).
+    *   `auditor`: "Lindenhall Crewe LLP" (Section 13.4).
+    *   `administrator`: "Ostrander Pell Fund Services, LLC" (Section 9.1).
+    *   `prime_broker`: NOT_FOUND.
+    *   `legal_counsel`: "Haverill Quint LLP" (Section 9.3).
+    *   `mfn_election`: "Each Limited Partner whose Capital Commitment, aggregated with those of its affiliates, is $25,000,000 or more may elect to receive the benefit of any right granted in a side letter to another Limited Partner whose Capital Commitment is equal to or less than its own." (Section 7.5).
+
+    *   *Management Fee:* Need to include both the standard and the Large Commitment rates.
+    *   *Performance Fee:* Need to include the Catch-up and the 80/20 split.
+    *   *Hurdle:* Must mention it's a "hard hurdle".
+    *   *Auditor:* Must use the amended one from Section 13.4.
+    *   *Lockup/Redemption:* Since the text says "no redemption" and "no lock-up", I should use "NOT_APPLICABLE" or the specific text if it says it doesn't exist. Rule 3 says: "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE, and you say so in the quote."
+    *   *Wait, Rule 3 check:* "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE, and you say so in the quote."
+    *   *Lock-up:* Section 6.3 says "no lock-up". So value = NOT_APPLICABLE.
+    *   *Redemption Frequency:* Section 1.10 says "No redemption". So value = NOT_APPLICABLE.
+    *   *Redemption Notice:* Section 1.10 says "No redemption". So value = NOT_APPLICABLE.
+    *   *Gate:* Section 6.3 says "no... gate". So value = NOT_APPLICABLE.
+
+    *   *Refining Management Fee:*
+        *   Value: "1.50% per annum of Capital Commitments (Investment Period); 1.50% per annum of Invested Equity (post-Investment Period); 1.25% per annum for Large Commitment Limited Partners"
+        *   Quote: "During the Investment Period, 1.50% per annum of Capital Commitments; thereafter, 1.50% per annum of Invested Equity. For Large Commitment Limited Partners, the rate is 1.25% per annum on the same bases." (Section 1.8)
+
+    *   *Refining Performance Fee:*
+        *   Value: "Catch-up: 50% to it and 50% to the General Partner (the 'Catch-Up') until the General Partner has received 20% of the profits distributed; 80% to it and 20% to the General Partner."
+        *   Quote: "third, 50% to it and 50% to the General Partner (the 'Catch-Up') until the General Partner has received 20% of the profits distributed; and thereafter, 80% to it and 20% to the General Partner." (Section 1.9)
+
+    *   *Refining Hurdle:*
+        *   Value: "9% per annum internal rate of return, compounded annually (hard hurdle)"
+        *   Quote: "second, 100% to it until it has received a 9% per annum internal rate of return, compounded annually, on those Capital Contributions (the 'Preferred Return'), which operates as a hard hurdle" (Section 1.9)
+
+    *   *Refining High Water Mark:*
+        *   Value: "no high-water mark or loss carryforward applies"
+        *   Quote: "no high-water mark or loss carryforward applies to the Interests." (Section 5.4)
+
+    *   *Refining Lock-up:*
+        *   Value: NOT_APPLICABLE
+        *   Quote: "Accordingly, no lock-up, redemption right, notice period or gate applies to the Interests." (Section 6.3)
+
+    *   *Refining Redemption Frequency:*
+        *   Value: NOT_APPLICABLE
+        *   Quote: "Accordingly, no lock-up, redemption right, notice period or gate applies to the Interests." (Section 6.3)
+
+    *   *Refining Redemption Notice:*
+        *   Value: NOT_APPLICABLE
+        *   Quote: "Accordingly, no lock-up, redemption right, notice period or gate applies to the Interests." (Section 6.3)
+
+    *   *Refining Gate:*
+        *   Value: NOT_APPLICABLE
+        *   Quote: "Accordingly, no lock-up, redemption right, notice period or gate applies to the Interests." (Section 6.3)
+
+    *   *Refining Auditor:*
+        *   Value: "Lindenhall Crewe LLP"
+        *   Quote: "Effective June 1, 2026, the General Partner, after consultation with the Advisory Committee, engaged Lindenhall Crewe LLP as the independent auditor of the Fund, replacing Wexcombe Adair LLP." (Section 13.4)
+
+    *   *Refining GP Commitment:*
+        *   Value: "greater of $7,500,000 or 2.0% of the aggregate Capital Commitments of the Limited Partners"
+        *   Quote: "The General Partner, the Investment Manager and their principals and affiliates will commit, in the aggregate, the greater of $7,500,000 or 2.0% of the aggregate Capital Commitments of the Limited Partners (the 'Sponsor Commitment'), funded in cash pro rata with the Limited Partners and not through any fee waiver." (Section 1.5)
+
+    *   *Refining Fund Term:*
+        *   Value: "eighth anniversary of the Initial Closing Date, subject to two one-year extensions; not to exceed the tenth anniversary of the Initial Closing Date."
+        *   Quote: "The term of the Fund ends on the eighth anniversary of the Initial Closing Date, subject to two one-year extensions: the first at the discretion of the General Partner and the second with the consent of the Advisory Committee. ... In no event will the term extend beyond the tenth anniversary of the Initial Closing Date." (Section 1.7, Section 7.4)
+
+    *   *Refining MFN:*
+        *   Value: "Eligible for Limited Partners with Capital Commitment of $25,000,000 or more"
+        *   Quote: "Each Limited Partner whose Capital Commitment, aggregated with those of its affiliates, is $25,000,000 or more may elect to receive the benefit of any right granted in a side letter to another Limited Partner whose Capital Commitment is equal to or less than its own." (Section 7.5)
+
+    *   *Refining Management Fee:*
+        *   Value: "1.50% per annum of Capital Commitments (Investment Period); 1.50% per annum of Invested Equity (post-Investment Period); 1.25% per annum for Large Commitment Limited Partners"
+        *   Quote: "During the Investment Period, 1.50% per annum of Capital Commitments; thereafter, 1.50% per annum of Invested Equity. For Large Commitment Limited Partners, the rate is 1.25% per annum on the same bases." (Section 1.8)
+
+    *   *Refining Performance Fee:*
+        *   Value: "Catch-up: 50% to it and 50% to the General Partner (the 'Catch-Up') until the General Partner has received 20% of the profits distributed; 80% to it and 20% to the General Partner."
+        *   Quote: "third, 50% to it and 50% to the General Partner (the 'Catch-Up') until the General Partner has received 20% of the profits distributed; and thereafter, 80% to it and 20% to the General Partner." (Section 1.9)
+
+    *   *Refining Hurdle:*
+        *   Value: "9% per annum internal rate of return, compounded annually (hard hurdle)"
+        *   Quote: "second, 100% to it until it has received a 9% per annum internal rate of return, compounded annually, on those Capital Contributions (the 'Preferred Return'), which operates as a hard hurdle" (Section 1.9)
+
+    *   *Refining Lock-up:*
+        *   Value: NOT_APPLICABLE
+        *   Quote: "Accordingly, no lock-up, redemption right, notice period or gate applies to the Interests." (Section 6.3)
+
+    *   *Refining Redemption Frequency:*
+        *   Value: NOT_APPLICABLE
+        *   Quote: "Accordingly, no lock-up, redemption right, notice period or gate applies to the Interests." (Section 6.3)
+
+    *   *Refining Redemption Notice:*
+        *   Value: NOT_APPLICABLE
+        *   Quote: "Accordingly, no lock-up, redemption right, notice period or gate applies to the Interests." (Section 6.3)
+
+    *   *Refining Gate:*
+        *   Value: NOT_APPLICABLE
+        *   Quote: "Accordingly, no lock-up, redemption right, notice period or gate applies to the Interests." (Section 6.3)
+
+    *   *Refining Key Man:*
+        *   Value: "Key Persons: Garrett Vashon and Ines Kalloway; triggers suspension of Investment Period"
+        *   Quote: "The 'Key Persons' are Garrett Vashon and Ines Kalloway. A 'Key Person Event' occurs if, during the Investment Period, either Key Person ceases to devote substantially all of his or her business time to the Fund, the Prior Funds and the Investment Manager. Upon a Key Person Event, the Investment Period is automatically suspended" (Section 7.1)
+
+    *   *Refining GP Commitment:*
+        *   Value: "greater of $7,500,000 or 2.0% of the aggregate Capital Commitments of the Limited Partners"
+        *   Quote: "The General Partner, the Investment Manager and their principals

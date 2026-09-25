@@ -1,0 +1,59 @@
+The objective is to extract specific information from the provided legal text and format it into a JSON object.
+
+    *   *Entity Names:*
+        *   Fund: Brackenholt Senior Lending Fund, LP
+        *   General Partner: BRACKENHOLT CREDIT GP, LLC
+        *   Adviser: BRACKENHOLT CAPITAL ADVISORS, LLC
+        *   Investor (in Side Letter): The Trustees of Hallowby College
+    *   *Key Dates:*
+        *   Side Letter Date: June 1, 2026
+        *   Memorandum Date: May 15, 2026
+    *   *Financial Terms (Side Letter):*
+        *   Management Fee (Standard): 1.25% (from Memorandum)
+        *   Management Fee (Hallowby): 0.95% (if capital > $40M)
+        *   Investment Amount: $60,000,000
+    *   *Key Personnel:*
+        *   Dalia Ferrante (Managing Member/Partner)
+        *   Nicholas Oyelaran
+    *   *Service Providers (Appendix A):*
+        *   Administrator: Rendlesham Fund Services, LLC
+        *   Auditor: Tessier Mulvane LLP
+        *   Tax Preparer: Kellaway Brisco LLP
+        *   Custodian: Garrowby Trust Company, N.A.
+        *   Credit Facility Agent/Lender: Sallowfield Bank, N.A.
+        *   Valuation Firm: Ambleton Valuation Group, LLC
+        *   Counsel (Fund/GP/Adviser): Pellow Ainsworth LLP
+        *   Cayman Counsel: Rushmere Quaye
+    *   *Reporting:*
+        *   Monthly Capital Account statements
+        *   Quarterly portfolio letters (within 45 days)
+        *   Annual audited financials (within 120 days)
+        *   Schedules K-1 (as soon as practicable)
+
+    *   `fund_name`: "Brackenholt Senior Lending Fund, LP"
+    *   `general_partner`: "BRACKENHOLT CREDIT GP, LLC"
+    *   `advisor`: "BRACKENHOLT CAPITAL ADVISORS, LLC"
+    *   `investor_side_letter`: "The Trustees of Hallowby College"
+    *   `investment_amount`: 60000000
+    *   `management_fee_standard`: "1.25%"
+    *   `management_fee_hallowby`: "0.95% (if capital > $40M)"
+    *   `key_persons`: ["Dalia Ferrante", "Nicholas Oyelaran"]
+    *   `service_providers`: {
+        "administrator": "Rendlesham Fund Services, LLC",
+        "auditor": "Tessier Mulvane LLP",
+        "tax_preparer": "Kellaway Brisco LLP",
+        "custodian": "Garrowby Trust Company, N.A.",
+        "credit_facility_agent_lender": "Sallowfield Bank, N.A.",
+        "valuation_firm": "Ambleton Valuation Group, LLC",
+        "legal_counsel": "Pellow Ainsworth LLP",
+        "cayman_counsel": "Rushmere Quaye"
+    }
+    *   `reporting_schedule`: {
+        "capital_account_statements": "monthly",
+        "portfolio_letters": "quarterly (within 45 days)",
+        "audited_financials": "annual (within 120 days)",
+        "k1_schedules": "as soon as practicable"
+    }
+
+    *   Ensure the JSON is valid.
+    *   Ensure all requested fields are present.

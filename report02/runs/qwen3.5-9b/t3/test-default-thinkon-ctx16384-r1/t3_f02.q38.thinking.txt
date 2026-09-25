@@ -1,0 +1,40 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (though here dates are 2026 vs 2026, need to check consistency).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   "Summarize the Flagship Fund's redemption terms, including frequency, notice period, early redemption charges and gates."
+    *   Key elements needed: Frequency, Notice Period, Early Redemption Charges, Gates (limits).
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "redemption", "Flagship Fund", "frequency", "notice", "early redemption fee", "gate", "limit".
+
+4.  **Evaluate Document Content:**
+
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section: Item 5. Fees and Compensation > 5.4 Redemptions, Early Redemption Fee and Refunds.
+        *   Text: "Limited partners of the Flagship Fund and shareholders of the Offshore Fund may redeem as of the last business day of any calendar quarter on at least 65 days' prior written notice." -> Frequency/Notice.
+        *   Text: "Redemptions effective within 12 months after an investor's initial subscription are subject to an early redemption fee of 3% of the amount redeemed..." -> Early Redemption Charge.
+        *   Text: "Each of the Flagship Fund and the Offshore Fund may limit aggregate redemptions as of any quarter-end to 20% of its net asset value." -> Gate/Limit.
+        *   Text: "A full redemption is subject to a holdback of 10% of the proceeds pending completion of the Fund's annual audit..." (Not strictly a gate, but part of terms).
+
+    *   `05_fee_schedule.md` (January 1, 2026):
+        *   Section: SECTION 5. REDEMPTIONS, TERMINATION AND REFUNDS > 5.1 Redemption Terms.
+        *   Text: "Interests in the Flagship Fund and shares of the Offshore Fund may be redeemed as of the last business day of any calendar quarter on at least 65 days' prior written notice." -> Matches Brochure.
+        *   Text: "Each Fund may limit aggregate redemptions as of any quarter-end to 20% of its net asset value." -> Matches Brochure.
+        *   Section: SECTION 5. REDEMPTIONS, TERMINATION AND REFUNDS > 5.2 Early Redemption Fee.
+        *   Text: "A redemption effective within 12 months after an investor's initial subscription is subject to an early redemption fee of 3% of the amount redeemed." -> Matches Brochure.
+
+    *   Date Comparison:
+        *   `01_brochure.md`: March 2

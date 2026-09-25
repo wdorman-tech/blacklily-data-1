@@ -1,0 +1,165 @@
+{
+  "workflow": "Private fund offering document -> 20 key investment terms with section citations",
+  "audience": "RIA and family office investment diligence",
+  "model": "qwen2.5:14b-instruct-q4_K_M",
+  "runtime": "Ollama 0.34.2, flash attention on, q8_0 KV cache",
+  "hardware": "Single consumer GPU workstation, 12 GB VRAM",
+  "num_ctx": 16384,
+  "corpus": {
+    "documents": 3,
+    "total_words": 11559,
+    "fields_per_doc": 20,
+    "graded_fields": 60,
+    "docs": {
+      "doc1_meridian_ridge": {
+        "title": "Meridian Ridge Global Opportunities Fund, L.P. \u2014 PPM",
+        "difficulty": "baseline",
+        "words": 4522,
+        "traps": 0
+      },
+      "doc2_calder_wyeth": {
+        "title": "Calder & Wyeth Private Credit Fund III, L.P. \u2014 PPM",
+        "difficulty": "structural",
+        "words": 3957,
+        "traps": 0
+      },
+      "doc3_ashgrove": {
+        "title": "Ashgrove Special Situations Fund, L.P. \u2014 OM + Supplement No. 1",
+        "difficulty": "adversarial",
+        "words": 3080,
+        "traps": 10
+      }
+    }
+  },
+  "headline": {
+    "local_accuracy_pct": 98.3,
+    "claude_accuracy_pct": 100.0,
+    "gap_pct": 1.7,
+    "local_hallucination_pct": 0.0,
+    "claude_hallucination_pct": 0.0,
+    "runs": 3,
+    "stable": true
+  },
+  "metrics": [
+    {
+      "key": "field_accuracy_pct",
+      "label": "Field accuracy",
+      "local": 98.3,
+      "claude": 100.0,
+      "lower_is_better": false
+    },
+    {
+      "key": "hallucination_rate_pct",
+      "label": "Hallucination rate",
+      "local": 0.0,
+      "claude": 0.0,
+      "lower_is_better": true
+    },
+    {
+      "key": "absence_correct_pct",
+      "label": "Absent terms flagged correctly",
+      "local": 100.0,
+      "claude": 100.0,
+      "lower_is_better": false
+    },
+    {
+      "key": "supersession_correct_pct",
+      "label": "Amended terms read correctly",
+      "local": 100.0,
+      "claude": 100.0,
+      "lower_is_better": false
+    },
+    {
+      "key": "citation_validity_pct",
+      "label": "Citations that resolve",
+      "local": 98.9,
+      "claude": 100.0,
+      "lower_is_better": false
+    },
+    {
+      "key": "quote_grounding_pct",
+      "label": "Quotes verbatim from source",
+      "local": 100.0,
+      "claude": 100.0,
+      "lower_is_better": false
+    }
+  ],
+  "per_doc": [
+    {
+      "doc_id": "doc1_meridian_ridge",
+      "title": "Meridian Ridge Global Opportunities Fund, L.P. \u2014 PPM",
+      "difficulty": "baseline",
+      "words": 4522,
+      "local": 95.0,
+      "claude": 100.0
+    },
+    {
+      "doc_id": "doc2_calder_wyeth",
+      "title": "Calder & Wyeth Private Credit Fund III, L.P. \u2014 PPM",
+      "difficulty": "structural",
+      "words": 3957,
+      "local": 100.0,
+      "claude": 100.0
+    },
+    {
+      "doc_id": "doc3_ashgrove",
+      "title": "Ashgrove Special Situations Fund, L.P. \u2014 OM + Supplement No. 1",
+      "difficulty": "adversarial",
+      "words": 3080,
+      "local": 100.0,
+      "claude": 100.0
+    }
+  ],
+  "ablations": [
+    {
+      "tag": "oob_baseline",
+      "label": "Out of the box",
+      "detail": "Default context window and an unengineered prompt: what you get on install",
+      "accuracy": 0.0,
+      "hallucination": 0.0,
+      "supersession": 0.0,
+      "delta": -98.3
+    },
+    {
+      "tag": "abl_naive_prompt",
+      "label": "Naive prompt",
+      "detail": "First-attempt prompt with no grounding rules",
+      "accuracy": 96.7,
+      "hallucination": 1.7,
+      "supersession": 100.0,
+      "delta": -1.6
+    },
+    {
+      "tag": "abl_no_json",
+      "label": "No JSON mode",
+      "detail": "Constrained JSON decoding turned off",
+      "accuracy": 98.3,
+      "hallucination": 0.0,
+      "supersession": 100.0,
+      "delta": 0.0
+    },
+    {
+      "tag": "abl_ctx4096",
+      "label": "4K context window",
+      "detail": "Ollama default context instead of 16K",
+      "accuracy": 0.8,
+      "hallucination": 0.0,
+      "supersession": 0.0,
+      "delta": -97.5
+    },
+    {
+      "tag": "abl_7b",
+      "label": "7B instead of 14B",
+      "detail": "Same prompt and settings, smaller model",
+      "accuracy": 95.0,
+      "hallucination": 0.0,
+      "supersession": 75.0,
+      "delta": -3.3
+    }
+  ],
+  "performance": {
+    "median_seconds_per_doc": 41.1,
+    "median_tokens_per_sec": 47.9,
+    "median_prompt_tokens": 6376
+  }
+}

@@ -1,0 +1,40 @@
+*   Question: "How frequently does the Valuation Committee meet?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   `01_brochure.md`: Mentions "The Investment Committee meets monthly" (Section 4.1), but not the Valuation Committee.
+    *   `02_compliance_manual.md`: Does not mention the Valuation Committee's meeting frequency.
+    *   `03_valuation_policy.md`: Section 2.3 says "The Committee meets quarterly, within 15 business days after the end of each calendar quarter...".
+    *   `04_business_continuity_plan.md`: Does not mention the Valuation Committee.
+    *   `05_fee_schedule.md`: Does not mention the Valuation Committee.
+    *   `06_policy_update_memo.md`: Section 4 (VALUATION COMMITTEE MEETING FREQUENCY) says: "The Valuation Committee will meet monthly, within 10 business days after the end of each calendar month, rather than quarterly."
+
+    *   `03_valuation_policy.md` says "quarterly".
+    *   `06_policy_update_memo.md` is dated September 8, 2026. It explicitly states: "The Valuation Committee will meet monthly, within 10 business days after the end of each calendar month, rather than quarterly."
+    *   Rule 3: "Later-dated documents supersede earlier ones."
+    *   The memo (06) is dated September 8, 2026. The Valuation Policy (03) was adopted February 10, 2026.
+    *   The memo explicitly states it supersedes the previous provision.
+
+    *   Answer: monthly, within 10 business days after the end of each calendar month.
+    *   Source: 06_policy_update_memo.md
+    *   Section: SECTION 4. VALUATION COMMITTEE MEETING FREQUENCY
+    *   Quote: "The Valuation Committee will meet monthly, within 10 business days after the end of each calendar month, rather than quarterly."
+
+    *   Answer: "monthly, within 10 business days after the end of each calendar month"
+    *   Source: "06_policy_update_memo.md"
+    *   Section: "SECTION 4. VALUATION COMMITTEE MEETING FREQUENCY"
+    *   Quote: "The Valuation Committee will meet monthly, within 10 business days after the end of each calendar month, rather than quarterly."
+
+    *   Wait, the question is "How frequently does the Valuation Committee meet?".
+    *   The memo says: "The Valuation Committee will meet monthly, within 10 business days after the end of each calendar month, rather than quarterly."
+    *   The specific frequency is "monthly, within 10 business days after the end of each calendar month".
+
+    *   Check if any other document mentions it. No.
+    *   Check if the memo is the latest. Yes.
+
+    *   Answer: "monthly, within 10 business days after the end of each calendar month"
+    *   Source

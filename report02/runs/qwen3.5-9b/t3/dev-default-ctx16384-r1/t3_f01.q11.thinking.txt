@@ -1,0 +1,44 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (check dates).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   "What limits apply to gifts that employees may accept, and above what cost does business entertainment require pre-approval?"
+    *   Two parts:
+        1.  Limits on gifts employees may accept.
+        2.  Cost threshold for business entertainment requiring pre-approval.
+
+3.  **Scan the Documents:**
+
+    *   **Document 1:** `01_brochure.md` (March 27, 2026). Section: Item 11. Code of Ethics...
+        *   Content: Discusses personal trading, blackout periods, IPOs, private placements, transaction reports. No specific gift limits or entertainment cost thresholds here.
+
+    *   **Document 2:** `02_compliance_manual.md` (January 15, 2026). Section: SECTION 3. CODE OF ETHICS > 3.2 Outside Business Activities.
+        *   Content: Outside business activities, trustee approval, board service approval. No gift limits or entertainment thresholds here.
+
+    *   **Document 2:** `02_compliance_manual.md` (January 15, 2026). Section: SECTION 5. GIFTS AND ENTERTAINMENT > 5.1 General Principle.
+        *   Content: Prohibits gifts influencing judgment, cash/cash equivalents/gift cards. No specific dollar limit mentioned here.
+
+    *   **Document 2:** `02_compliance_manual.md` (January 15, 2026). Section: SECTION 5. GIFTS AND ENTERTAINMENT > 5.2 Gifts.
+        *   Content: "No Supervised Person may accept gifts with an aggregate value exceeding $250 per calendar year from any single person or entity..."
+        *   This answers part 1 (gift limits).
+
+    *   **Document 2:** `02_compliance_manual.md` (January 15, 2026). Section: SECTION 5. GIFTS AND ENTERTAINMENT > 5.3 Business Entertainment.
+        *   Content: "Business entertainment with an estimated cost exceeding $400 per person per event requires the prior approval of the CCO."
+        *   This answers part 2 (entertainment pre-approval threshold).
+
+    *   **Document 2:** `02_compliance_manual.md` (January 15, 2026). Section: SECTION 5. GIFTS AND ENTERTAINMENT > 5.4 Union and Government Officials.
+        *   Content: Recording gifts to union officials, government official approval. No specific dollar limits here.
+
+    *   **Document 2:** `02_compliance_manual.md` (January

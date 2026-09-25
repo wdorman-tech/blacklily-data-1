@@ -1,0 +1,51 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (not applicable here as there's only one document).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Who owns the business continuity plan, and who serves as the alternate?"
+
+3.  **Scan the Documents:**
+    *   Document: `04_business_continuity_plan.md`
+    *   Date: April 21, 2026
+    *   Section to check: Look for "Plan Owner" or similar keywords.
+    *   Found Section: `SECTION 1. PURPOSE AND PLAN OWNERSHIP > 1.2 Plan Owner`
+    *   Content of Section 1.2: "The Plan is owned by Renata S. Oyelaran, Director of Operations, who serves as BCP Coordinator. Ingrid P. Solheim, Director of Technology and Information Security, serves as alternate BCP Coordinator."
+
+4.  **Extract the Answer:**
+    *   Owner: Renata S. Oyelaran
+    *   Alternate: Ingrid P. Solheim
+    *   Source Document: `04_business_continuity_plan.md`
+    *   Section: `SECTION 1. PURPOSE AND PLAN OWNERSHIP > 1.2 Plan Owner` (or just `1.2 Plan Owner`)
+    *   Quote: "The Plan is owned by Renata S. Oyelaran, Director of Operations, who serves as BCP Coordinator. Ingrid P. Solheim, Director of Technology and Information Security, serves as alternate BCP Coordinator."
+
+5.  **Format the Output:**
+    *   Must be valid JSON.
+    *   Keys: `answer`, `source_document`, `section`, `quote`.
+    *   Values must be strings.
+    *   No markdown code blocks (```json ... ```).
+    *   No extra text.
+
+6.  **Refine the Content:**
+    *   `answer`: "The Plan is owned by Renata S. Oyelaran, Director of Operations, who serves as BCP Coordinator. Ingrid P. Solheim, Director of Technology and Information Security, serves as alternate BCP Coordinator." (This captures both parts of the question).
+    *   `source_document`: "04_business_continuity_plan.md"
+    *   `section`: "SECTION 1. PURPOSE AND PLAN OWNERSHIP > 1.2 Plan Owner" (Using the header structure provided in the text).
+    *   `quote`: Same as answer to ensure verbatim accuracy based on the instruction "Quote the supporting text verbatim."
+
+7.  **Final Check against Constraints:**
+    *   JSON only? Yes.
+    *   No markdown fences? Yes.
+    *   Verbatim quote? Yes.
+    *   Correct file name? Yes.
+    *   Correct section label

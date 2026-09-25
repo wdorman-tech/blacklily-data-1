@@ -1,0 +1,38 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What are the minimum initial and subsequent investment amounts for the Flagship Fund?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "Flagship Fund", "minimum initial investment", "subsequent", "additional".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section: Item 7. Types of Clients > 7.2 Minimum Investment.
+        *   Text: "The minimum initial investment in each of the Flagship Fund and the Offshore Fund is $1,000,000, and the minimum additional investment is $250,000."
+    *   `05_fee_schedule.md` (January 1, 2026):
+        *   Section: SECTION 6. MINIMUM INVESTMENTS > 6.1 Minimums.
+        *   Text: "The minimum initial investment in each of the Flagship Fund and the Offshore Fund is $1,000,000, and the minimum additional investment is $250,000."
+    *   `06_policy_update_memo.md` (August 24, 2026):
+        *   Section: SECTION 2. AMENDMENTS > 2.6 Fee Schedule Section 2.2 (Large Investor Rate).
+        *   Text: Discusses Large Investor Rate threshold changes ($50m to $25m) and fee periods starting Oct 1, 2026. Does not mention minimum investment amounts.
+
+5.  **Determine the Correct Answer:**
+    *   Both `01_brochure.md` (March 27, 2026) and `05_fee_schedule.md` (January 1, 2026) contain the same information regarding minimum investments.
+    *   Rule 3: Later-dated documents supersede earlier ones. However, neither document contradicts the other on this specific point; they state the same values. The brochure is dated March 27, 2026, which is later than the Fee Schedule (January 1, 2026).
+    *   Usually, the Brochure is the primary disclosure document for clients. The Fee Schedule supports it.
+    *   Since the information is identical, I can cite either. However, the Brochure is more recent (March 27 vs Jan 1). Let's use the Brochure as it is the most current public-facing document provided in the list that contains this info. Actually, looking at the dates:
+        *   `05_fee_schedule.md`: January 1, 20

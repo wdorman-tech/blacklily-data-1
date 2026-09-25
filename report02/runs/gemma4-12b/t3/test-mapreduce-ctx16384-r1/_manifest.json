@@ -1,0 +1,550 @@
+{
+ "task": "t3",
+ "model": "gemma4:12b",
+ "split": "test",
+ "run": "r1",
+ "variant": "mapreduce",
+ "think": "off",
+ "server": {
+  "flash_attention": "true",
+  "kv_cache_type": "q8_0",
+  "version": "0.34.2",
+  "num_parallel": 1
+ },
+ "subject": {
+  "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+  "size_bytes": 7556508396,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "gemma4",
+   "families": [
+    "gemma4"
+   ],
+   "parameter_size": "11.9B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 3840
+  }
+ },
+ "started": "2026-09-23T04:50:49-0400",
+ "calls": [
+  {
+   "firm": "t3_f02",
+   "step": "map",
+   "part": [
+    "01_brochure.md"
+   ],
+   "stats": {
+    "wall_seconds": 71.03,
+    "prompt_tokens": 8441,
+    "output_tokens": 4033,
+    "output_tokens_per_sec": 59.7,
+    "prompt_tokens_per_sec": 2597.3,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f02",
+   "step": "map",
+   "part": [
+    "02_compliance_manual.md"
+   ],
+   "stats": {
+    "wall_seconds": 63.38,
+    "prompt_tokens": 7669,
+    "output_tokens": 3603,
+    "output_tokens_per_sec": 59.8,
+    "prompt_tokens_per_sec": 2638.2,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f02",
+   "step": "map",
+   "part": [
+    "03_valuation_policy.md",
+    "04_business_continuity_plan.md",
+    "05_fee_schedule.md",
+    "06_policy_update_memo.md"
+   ],
+   "stats": {
+    "wall_seconds": 76.69,
+    "prompt_tokens": 9522,
+    "output_tokens": 4338,
+    "output_tokens_per_sec": 59.6,
+    "prompt_tokens_per_sec": 2620.4,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f02",
+   "step": "reduce",
+   "batch": [
+    "q01",
+    "q02",
+    "q03",
+    "q04",
+    "q05",
+    "q06",
+    "q07",
+    "q08",
+    "q09",
+    "q10"
+   ],
+   "stats": {
+    "wall_seconds": 21.97,
+    "prompt_tokens": 2763,
+    "output_tokens": 1281,
+    "output_tokens_per_sec": 61.8,
+    "prompt_tokens_per_sec": 2551.7,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f02",
+   "step": "reduce",
+   "batch": [
+    "q11",
+    "q12",
+    "q13",
+    "q14",
+    "q15",
+    "q16",
+    "q17",
+    "q18",
+    "q19",
+    "q20"
+   ],
+   "stats": {
+    "wall_seconds": 21.07,
+    "prompt_tokens": 2645,
+    "output_tokens": 1229,
+    "output_tokens_per_sec": 61.9,
+    "prompt_tokens_per_sec": 2503.8,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f02",
+   "step": "reduce",
+   "batch": [
+    "q21",
+    "q22",
+    "q23",
+    "q24",
+    "q25",
+    "q26",
+    "q27",
+    "q28",
+    "q29",
+    "q30"
+   ],
+   "stats": {
+    "wall_seconds": 23.99,
+    "prompt_tokens": 2605,
+    "output_tokens": 1415,
+    "output_tokens_per_sec": 62.1,
+    "prompt_tokens_per_sec": 2559.6,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f02",
+   "step": "reduce",
+   "batch": [
+    "q31",
+    "q32",
+    "q33",
+    "q34",
+    "q35",
+    "q36",
+    "q37",
+    "q38",
+    "q39",
+    "q40"
+   ],
+   "stats": {
+    "wall_seconds": 27.08,
+    "prompt_tokens": 3258,
+    "output_tokens": 1577,
+    "output_tokens_per_sec": 61.5,
+    "prompt_tokens_per_sec": 2637.6,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f03",
+   "step": "map",
+   "part": [
+    "01_brochure.md"
+   ],
+   "stats": {
+    "wall_seconds": 59.52,
+    "prompt_tokens": 8496,
+    "output_tokens": 3386,
+    "output_tokens_per_sec": 60.4,
+    "prompt_tokens_per_sec": 2648.5,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f03",
+   "step": "map",
+   "part": [
+    "02_compliance_manual.md"
+   ],
+   "stats": {
+    "wall_seconds": 57.6,
+    "prompt_tokens": 7919,
+    "output_tokens": 3295,
+    "output_tokens_per_sec": 60.6,
+    "prompt_tokens_per_sec": 2677.7,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f03",
+   "step": "map",
+   "part": [
+    "03_valuation_policy.md",
+    "04_business_continuity_plan.md",
+    "05_fee_schedule.md",
+    "06_policy_update_memo.md"
+   ],
+   "stats": {
+    "wall_seconds": 75.59,
+    "prompt_tokens": 9993,
+    "output_tokens": 4295,
+    "output_tokens_per_sec": 60.0,
+    "prompt_tokens_per_sec": 2647.3,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9750
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f03",
+   "step": "reduce",
+   "batch": [
+    "q01",
+    "q02",
+    "q03",
+    "q04",
+    "q05",
+    "q06",
+    "q07",
+    "q08",
+    "q09",
+    "q10"
+   ],
+   "stats": {
+    "wall_seconds": 25.37,
+    "prompt_tokens": 2891,
+    "output_tokens": 1482,
+    "output_tokens_per_sec": 61.7,
+    "prompt_tokens_per_sec": 2567.8,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f03",
+   "step": "reduce",
+   "batch": [
+    "q11",
+    "q12",
+    "q13",
+    "q14",
+    "q15",
+    "q16",
+    "q17",
+    "q18",
+    "q19",
+    "q20"
+   ],
+   "stats": {
+    "wall_seconds": 22.68,
+    "prompt_tokens": 2553,
+    "output_tokens": 1315,
+    "output_tokens_per_sec": 61.1,
+    "prompt_tokens_per_sec": 2597.0,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f03",
+   "step": "reduce",
+   "batch": [
+    "q21",
+    "q22",
+    "q23",
+    "q24",
+    "q25",
+    "q26",
+    "q27",
+    "q28",
+    "q29",
+    "q30"
+   ],
+   "stats": {
+    "wall_seconds": 21.95,
+    "prompt_tokens": 2567,
+    "output_tokens": 1284,
+    "output_tokens_per_sec": 61.9,
+    "prompt_tokens_per_sec": 2507.6,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f03",
+   "step": "reduce",
+   "batch": [
+    "q31",
+    "q32",
+    "q33",
+    "q34",
+    "q35",
+    "q36",
+    "q37",
+    "q38",
+    "q39",
+    "q40"
+   ],
+   "stats": {
+    "wall_seconds": 22.14,
+    "prompt_tokens": 2665,
+    "output_tokens": 1294,
+    "output_tokens_per_sec": 61.9,
+    "prompt_tokens_per_sec": 2490.1,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f04",
+   "step": "map",
+   "part": [
+    "01_brochure.md"
+   ],
+   "stats": {
+    "wall_seconds": 62.14,
+    "prompt_tokens": 8337,
+    "output_tokens": 3556,
+    "output_tokens_per_sec": 60.6,
+    "prompt_tokens_per_sec": 2627.0,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f04",
+   "step": "map",
+   "part": [
+    "02_compliance_manual.md"
+   ],
+   "stats": {
+    "wall_seconds": 64.26,
+    "prompt_tokens": 7487,
+    "output_tokens": 3710,
+    "output_tokens_per_sec": 60.6,
+    "prompt_tokens_per_sec": 2693.3,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f04",
+   "step": "map",
+   "part": [
+    "03_valuation_policy.md",
+    "04_business_continuity_plan.md",
+    "05_fee_schedule.md",
+    "06_policy_update_memo.md"
+   ],
+   "stats": {
+    "wall_seconds": 63.83,
+    "prompt_tokens": 9612,
+    "output_tokens": 3614,
+    "output_tokens_per_sec": 60.3,
+    "prompt_tokens_per_sec": 2666.0,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f04",
+   "step": "reduce",
+   "batch": [
+    "q01",
+    "q02",
+    "q03",
+    "q04",
+    "q05",
+    "q06",
+    "q07",
+    "q08",
+    "q09",
+    "q10"
+   ],
+   "stats": {
+    "wall_seconds": 19.43,
+    "prompt_tokens": 2371,
+    "output_tokens": 1128,
+    "output_tokens_per_sec": 61.7,
+    "prompt_tokens_per_sec": 2526.3,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f04",
+   "step": "reduce",
+   "batch": [
+    "q11",
+    "q12",
+    "q13",
+    "q14",
+    "q15",
+    "q16",
+    "q17",
+    "q18",
+    "q19",
+    "q20"
+   ],
+   "stats": {
+    "wall_seconds": 28.8,
+    "prompt_tokens": 2867,
+    "output_tokens": 1695,
+    "output_tokens_per_sec": 61.6,
+    "prompt_tokens_per_sec": 2537.2,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f04",
+   "step": "reduce",
+   "batch": [
+    "q21",
+    "q22",
+    "q23",
+    "q24",
+    "q25",
+    "q26",
+    "q27",
+    "q28",
+    "q29",
+    "q30"
+   ],
+   "stats": {
+    "wall_seconds": 20.96,
+    "prompt_tokens": 2576,
+    "output_tokens": 1216,
+    "output_tokens_per_sec": 61.6,
+    "prompt_tokens_per_sec": 2462.3,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  },
+  {
+   "firm": "t3_f04",
+   "step": "reduce",
+   "batch": [
+    "q31",
+    "q32",
+    "q33",
+    "q34",
+    "q35",
+    "q36",
+    "q37",
+    "q38",
+    "q39",
+    "q40"
+   ],
+   "stats": {
+    "wall_seconds": 20.87,
+    "prompt_tokens": 2621,
+    "output_tokens": 1215,
+    "output_tokens_per_sec": 61.9,
+    "prompt_tokens_per_sec": 2527.6,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9746
+   },
+   "problems": []
+  }
+ ],
+ "finished": "2026-09-23T05:05:20-0400"
+}

@@ -1,0 +1,111 @@
+*   Role: Senior analyst at a registered investment adviser.
+    *   Task: Compare two versions of a document (prior vs. current) and list material changes.
+    *   Output Format: JSON object with a "changes" key containing a list of objects (type, heading, description, quote).
+    *   Rules:
+        1.  Section = heading + text below until next heading.
+        2.  Report only if text differs.
+        3.  Types: "added", "removed", "modified".
+        4.  Materiality: New/removed risk, exposure, right, obligation, provision; specific events, products, etc.; changes in likelihood/severity; changes to numbers, rates, thresholds, periods, deadlines (excluding routine date rolls).
+        5.  No minor edits (punctuation, rewordings with same meaning, etc.).
+        6.  Identical text = no change.
+        7.  Heading: Current for added/modified, Prior for removed.
+        8.  Description: One sentence, old vs. new values.
+        9.  Quote: Verbatim.
+        10. No preamble, no markdown, just JSON.
+
+    *   *Heading:* "Unexpected events may increase our cost of doing business or disrupt our operations."
+        *   Prior: "The occurrence of one or more unexpected events... [long paragraph] ...Existing insurance coverage may not provide protection for all of the costs that may arise from such events."
+        *   Current: "The occurrence of one or more unexpected events... [same paragraph] ...Existing insurance coverage may not provide protection for all of the costs that may arise from such events."
+        *   Comparison: Identical. No change.
+
+    *   *Heading:* "Disruptions or volatility in global financial markets could limit our sources of liquidity, or the liquidity of our customers, dealers and suppliers."
+        *   Prior: "Continuing to meet our cash requirements... [long paragraph] ...In addition, demand for our products generally depends on customers’ ability to pay for our products... [second paragraph] ...If capital and credit market volatility occurs, customers’ liquidity may decline which, in turn, would reduce their ability to purchase our products."
+        *   Current: "Continuing to meet our cash requirements... [long paragraph] ...In addition, demand for our products generally depends on customers’ ability to pay for our products... [second paragraph] ...If capital and credit market volatility occurs, customers’ liquidity may decline which, in turn, would reduce their ability to purchase our products."
+        *   Comparison: Identical. No change.
+
+    *   *Heading:* "Failure to maintain our credit ratings could increase our cost of borrowing and could adversely affect our cost of funds, liquidity, competitive position and access to capital markets."
+        *   Prior: "Each of Caterpillar’s and Cat Financial’s costs of borrowing... [long paragraph]"
+        *   Current: "Each of Caterpillar’s and Cat Financial’s costs of borrowing... [long paragraph]"
+        *   Comparison: Identical. No change.
+
+    *   *Heading:* "Our Financial Products segment is subject to risks associated with the financial services industry."
+        *   Prior: "Cat Financial is significant to our operations... [paragraph 1] ...Market disruption and volatility may also lead to numerous risks in connection with these events, including but not limited to: [bullet points]"
+        *   Current: "Cat Financial is significant to our operations... [paragraph 1] ...Market disruption and volatility may also lead to numerous risks in connection with these events, including but not limited to: [bullet points]"
+        *   Comparison: Identical. No change.
+
+    *   *Heading:* "Changes in interest rates or market liquidity conditions could adversely affect Cat Financial's and our earnings and/or cash flow."
+        *   Prior: "Changes in interest results... [paragraph 1] ...With respect to Insurance Services' investment activities, changes in equity and bond markets could result in a decline in value of its investment portfolio, resulting in an unfavorable impact to earnings."
+        *   Current: "Changes in interest results... [paragraph 1] ...With respect to Insurance Services' investment activities, changes in equity and bond markets could result in a decline in value of its investment portfolio, resulting in an unfavorable impact to earnings."
+        *   Comparison: Identical. No change.
+
+    *   *Heading:* "An increase in delinquencies, repossessions or net losses of Cat Financial customers could adversely affect its results."
+        *   Prior: "Inherent in the operation of Cat Financial... [paragraph]"
+        *   Current: "Inherent in the operation of Cat Financial... [paragraph]"
+        *   Comparison: Identical. No change.
+
+    *   *Heading:* "Currency exchange rate fluctuations affect our results of operations."
+        *   Prior: "We conduct operations in many countries... [paragraph 1] ...We also face risks arising from the imposition of exchange controls and currency devaluations... [paragraph 2]"
+        *   Current: "We conduct operations in many countries... [paragraph 1] ...We also face risks arising from the imposition of exchange controls and currency devaluations... [paragraph 2]"
+        *   Comparison: Identical. No change.
+
+    *   *Heading:* "Restrictive covenants in our debt agreements could limit our financial and operating flexibility."
+        *   Prior: "We maintain a number of credit facilities... [paragraph 1] ...A breach of one or more of the covenants could result in adverse consequences... [paragraph 2]"
+        *   Current: "We maintain a number of credit facilities... [paragraph 1] ...A breach of one or more of the covenants could result in adverse consequences... [paragraph 2]"
+        *   Comparison: Identical. No change.
+
+    *   *Heading:* "Sustained increases in funding obligations under our pension plans may impair our liquidity or financial condition."
+        *   Prior: "We maintain certain defined benefit pension plans for our employees, which impose on us certain funding obligations. We use many assumptions in determining our future payment obligations under the plans. We employ a liability-driven investment strategy, where the interest rate sensitivity of the pension investments and pension obligations are aligned to reduce funded status volatility. Significant adverse changes in credit or capital markets could result in actual rates of return on pension investments being materially lower than projected and result in increased contribution requirements. These factors could significantly increase our payment obligations under the plans and, as a result, adversely affect our business and overall financial condition. We may be required to make material contributions to our pension plans in the future and may fund contributions through the use of cash on hand, the proceeds of borrowings, shares of our common stock or a combination of the foregoing, as permitted by applicable law."
+        *   Current: "We maintain certain defined benefit pension plans for our employees, which impose on just us certain funding obligations. We use many assumptions in determining our future payment obligations under the plans. Significant adverse changes in credit or capital markets could result in actual rates of return on pension investments being materially lower than projected and result in increased contribution requirements. These factors could increase our payment obligations under the plans and, as a result, adversely affect our business and overall financial condition. We may be required to make material contributions to our pension plans in the future and may fund contributions through the use of cash on hand, the proceeds of borrowings, shares of our common stock or a combination of the foregoing, as permitted by applicable law. We employ a liability-driven investment strategy, where the interest rate sensitivity of the pension investments and pension obligations are aligned to reduce funded status volatility."
+        *   *Analysis:*
+            *   Prior: "We employ a liability-driven investment strategy... [sentence 3]"
+            *   Current: "We employ a liability-driven investment strategy... [sentence 6]"
+            *   The sentence "We employ a liability-driven investment strategy, where the interest rate sensitivity of the pension investments and pension obligations are aligned to reduce funded status volatility" is present in both, but its position changed.
+            *   Wait, let's look closer at the text.
+            *   Prior: "...under the plans. We employ a liability-driven investment strategy, where the interest rate sensitivity of the pension investments and pension obligations are aligned to reduce funded status volatility. Significant adverse changes in credit or capital markets could result in actual rates of return on pension investments being materially lower than projected and result in increased contribution requirements. These factors could significantly increase our payment obligations under the plans and, as a result, adversely affect our business and overall financial condition. We may be required to make material contributions to our pension plans in the future and may fund contributions through the use of cash on hand, the proceeds of borrowings, shares of our common stock or a combination of the foregoing, as permitted by applicable law."
+            *   Current: "...under the plans. Significant adverse changes in credit or capital markets could result in actual rates of return on pension investments being materially lower than projected and result in increased contribution requirements. These factors could increase our payment obligations under the plans and, as a result, adversely affect our business and overall financial condition. We may be required to make material contributions to our pension plans in the future and may fund contributions through the use of cash on hand, the proceeds of borrowings, shares of our common stock or a combination of the foregoing, as permitted by applicable law. We employ a liability-driven investment strategy, where the interest rate sensitivity of the pension investments and pension obligations are aligned to reduce funded status volatility."
+            *   *Difference:*
+                1.  The sentence "We employ a liability-driven investment strategy..." moved from the middle to the end.
+                2.  The phrase "significantly increase" in the prior version ("These factors could significantly increase our payment obligations") became "increase" in the current version ("These factors could increase our payment obligations").
+            *   *Materiality Check:* "significantly" vs "increase" is a change in the stated severity/likelihood of the risk.
+            *   *Rule 5:* "Do not report... rewording with identical meaning." Is "significantly increase" vs "increase" a change in substance? "Significantly" is an intensifier. Removing it softens the risk.
+            *   *Rule 4:* "a change in the stated likelihood or severity of something ('could' becoming 'has', a risk escalated or softened)". Removing "significantly" softens the risk.
+            *   *Conclusion:* This is a material change in the severity of the risk.
+
+    *   *Heading:* "Our global operations are subject to a wide range of trade and anti-corruption laws and regulations."
+        *   Prior: "Due to the international scope of our operations... [paragraph 1] ...In addition, the U.S. Foreign Corrupt Practices Act... [paragraph 2]"
+        *   Current: "Due to the international scope of our operations... [paragraph 1] ...In addition, the U.S. Foreign Corrupt Practices Act... [paragraph 2]"
+        *   Comparison: Identical. No change.
+
+    *   *Heading:* "International trade policies may impact demand for our products and our competitive position."
+        *   Prior: "Government policies on international trade... [paragraph]"
+        *   Current: "Government policies on international treatment... [paragraph]"
+        *   Comparison: Identical. No change.
+
+    *   *Heading:* "We may incur additional tax expense or become subject to additional tax exposure."
+        *   Prior: "We are subject to income taxes... [paragraph]"
+        *   Current: "We are subject to income taxes... [paragraph]"
+        *   Comparison: Identical. No change.
+
+    *   *Heading:* "Costs associated with lawsuits or investigations or adverse rulings in enforcement or other legal proceedings may have an adverse effect on our results of operations."
+        *   Prior: "We are subject to a variety of legal proceedings... [paragraph 1] ...The global and diverse nature of our operations... [paragraph 2]"
+        *   Current: "We are subject to a variety of legal proceedings... [paragraph 1] ...The global and diverse nature of our operations... [paragraph 2]"
+        *   Comparison: Identical. No change.
+
+    *   *Heading:* "Sustained increases in funding obligations under our pension plans may impair our liquidity or financial condition."
+    *   *Prior:* "These factors could significantly increase our payment obligations under the plans and, as a result, adversely affect our business and overall financial condition."
+    *   *Current:* "These factors could increase our payment obligations under the plans and, as a result, adversely affect our business and overall financial condition."
+    *   *Analysis:* The word "significantly" was removed.
+    *   *Rule 4:* "a change in the stated likelihood or severity of something... a risk escalated or softened". Removing "significantly" softens the risk.
+    *   *Rule 5:* "Do not report... rewording with identical meaning." "Significantly" vs "not significantly" is a change in meaning.
+    *   *Conclusion:* This is a material change.
+
+    *   *Wait, let me re-read the whole section to ensure no other changes.*
+    *   Prior: "We employ a liability-driven investment strategy, where the interest rate sensitivity of the pension investments and pension obligations are aligned to reduce funded status volatility." (Position: 3rd sentence)
+    *   Current: "We employ a liability-driven investment strategy, where the interest rate sensitivity of the pension investments and pension obligations are aligned to reduce funded status volatility." (Position: Last sentence)
+    *   *Rule 6:* "A section that appears in both versions with identical text is unchanged, even if it moved to a different position or is renumbered. Do not report it."
+    *   Since the sentence itself is identical, the movement doesn't trigger a report *unless* the content of the sentence changed.
+    *   However, the removal of "significantly" *is* a change in the content of the sentence "These factors could significantly increase our payment obligations...".
+
+    *   *Refining the "Sustained increases..." change:*
+        *   Heading: "Sustained increases in funding obligations under our pension plans may impair our liquidity or financial condition."
+        *   Description: The risk

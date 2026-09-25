@@ -1,0 +1,38 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "At what level of household assets does the firm's lowest wealth management fee rate of 0.35% begin to apply?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "0.35%", "lowest wealth management fee rate", "household assets", "begin to apply", "tier".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section: Item 5. Fees and Compensation > 5.1 Wealth Management Fee Schedule.
+        *   Table shows "Over $10,000,000 | 0.35%".
+    *   `05_fee_schedule.md` (April 1, 2026):
+        *   Section: SECTION 2. WEALTH MANAGEMENT FEE > 2.1 Standard Tiered Schedule.
+        *   Table shows "Over $10,000,000 | 0.35%".
+    *   `06_policy_update_memo.md` (August 17, 2026):
+        *   Section: SECTION 5. FEE SCHEDULE: TOP BREAKPOINT.
+        *   Text: "**Amends:** Schedule of Advisory Fees, Section 2.1 (Standard Tiered Schedule), and Form ADV Part 2A, Item 5.1 (Wealth Management Fee Schedule). The 0.35% rate now applies to household assets above $7,500,000, rather than above $10,000,000... This change supersedes the corresponding tiers in Section 2.1 of the Schedule of Advisory Fees and in Item 5.1 of the brochure. The rates and breakpoints of the first three tiers are unchanged. The change is effective for the billing period that began July 1, 2026."
+
+5.  **Determine Current Effective Policy:**
+    *   Rule 3: Later-dated documents supersede earlier ones.
+    *   `06_policy_update_memo.md` (August 17, 2026) is later than `01_brochure.md` (March 27, 2026) and `05_fee_schedule.md` (April 1, 2026).
+    *   The memo explicitly states: "The 0.35% rate now applies to household assets above $7,500,000... This change supersedes the corresponding tiers..."
+    *   Therefore, the current level is $7,500,000.
+
+6.  **Draft the Answer:**

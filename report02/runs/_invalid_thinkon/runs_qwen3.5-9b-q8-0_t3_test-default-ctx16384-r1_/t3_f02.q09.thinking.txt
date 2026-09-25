@@ -1,0 +1,35 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Who are the voting members of the Valuation Committee, and what constitutes a quorum?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "Valuation Committee", "voting members", "quorum".
+
+4.  **Evaluate Document Dates and Hierarchy:**
+    *   `01_brochure.md`: Dated March 27, 2026. Section: Item 15. Custody > 15.3 Valuation. Mentions Valuation Committee chaired by CFO, voting members do not include CIO or investment team.
+    *   `03_valuation_policy.md`: Dated November 3, 2025. Section: SECTION 2. VALUATION COMMITTEE. Contains specific details on composition (Section 2.1) and quorum/voting (Section 2.2).
+    *   `06_policy_update_memo.md`: Dated August 24, 2026. Section: SECTION 2. AMENDMENTS > 2.4 Valuation Policy Section 2.3 (Meetings). This memo amends the Valuation Policy dated November 3, 2025. It specifically mentions "This amendment supersedes Section 2.3 of the Valuation Policy."
+
+    *   *Date Comparison:*
+        *   `03_valuation_policy.md`: Nov 3, 2025.
+        *   `06_policy_update_memo.md`: Aug 24, 2026.
+        *   `01_brochure.md`: March 27, 2026.
+
+    *   *Superseding Logic:* The memo dated August 24, 2026 (`06_policy_update_memo.md`) is the most recent document regarding policy amendments. It explicitly states it supersedes Section 2.3 of the Valuation Policy (dated Nov 3, 2025).
+    *   However, the question asks about "voting members" and "quorum".
+    *   `06_policy_update_memo.md` says: "The provisions for ad hoc meetings in Section 2.3, and the quorum and voting requirements in Section 2.2, are unchanged."
+    *   Therefore, the information regarding voting members (Section 2.1) and quorum (Section 2.2) remains from the original Valuation Policy (`03_valuation_policy.md`), as the memo explicitly states those sections are unchanged. The memo only changes Section 2.3 (Meetings frequency).
+    *   Wait, I need to check if `01_brochure.md` supersedes anything. It's a brochure dated March

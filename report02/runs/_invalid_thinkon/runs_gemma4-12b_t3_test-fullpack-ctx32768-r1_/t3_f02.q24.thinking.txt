@@ -1,0 +1,30 @@
+*   Question: Who is the Adviser's outsourced IT managed service provider?
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not found, use "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   `01_brochure.md`: Mentions "Tessingham Execution Analytics LLC" (Item 12.1) and "Carvell Brink Fund Services Ltd." (Item 15.2). No mention of "IT managed service provider".
+    *   `02_compliance_manual.md`: Section 11.4 mentions "Oskerby Technology Group LLC" as the "IT managed service provider".
+    *   `03_valuation_policy.md`: No mention of "IT managed service provider".
+    *   `04_business_continuity_plan.md`: Section 5.2 mentions "Oskerby Technology Group LLC" as the "IT managed service provider".
+    *   `05_fee_schedule.md`: No mention of "IT managed service provider".
+    *   `06_policy_update_memo.md`: Section 2.5 (Business Continuity Plan Section 5.2) states: "Effective September 1, 2026, Anselby Managed IT LLC replaces Oskerby Technology Group LLC as the Adviser's IT managed service provider... The reference to Oskerby Technology Group LLC in Section 11.4 of the Compliance Manual, and references to the IT managed service provider elsewhere in the Business Continuity Plan, are to be read as references to Anselby Managed IT LLC."
+
+    *   The `06_policy_update_memo.md` is dated August 24, 2026.
+    *   The `02_compliance_manual.md` is dated January 15, 2026.
+    *   The `04_business_continuity_plan.md` is dated February 9, 2026.
+    *   The memo (06) explicitly states that it supersedes the previous documents.
+    *   The memo says: "Effective September 1, 2026, Anselby Managed IT LLC replaces Oskerby Technology Group LLC as the Adviser's IT managed service provider... The reference to Oskerby Technology Group LLC in Section 11.4 of the Compliance Manual, and references to the IT managed service provider elsewhere in the Business Continuity Plan, are to be read as references to Anselby Managed IT LLC."
+
+    *   Answer: Anselby Managed IT LLC
+    *   Source: 06_policy_update_memo.md
+    *   Section: Section 2.5
+    *   Quote: "Effective September 1, 2026, Anselby Managed IT LLC replaces Oskerby Technology Group LLC as the Adviser's IT managed service provider"
+
+    *   The question asks "Who is the Adviser's outsourced IT managed service provider?".
+    *   The memo states: "Effective September 1, 2026, Anselby Managed IT LLC replaces Oskerby Technology Group LLC as the Adviser's IT managed service provider".
+    *   Since the memo is the latest document and supersedes the others, the answer is Anselby Managed IT LLC.
+

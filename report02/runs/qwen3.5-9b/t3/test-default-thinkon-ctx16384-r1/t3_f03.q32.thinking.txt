@@ -1,0 +1,39 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Who must approve an override of a price supplied by a pricing source?"
+
+3.  **Scan the Documents:**
+    *   Document 1: `03_valuation_policy.md` (dated February 10, 2026).
+        *   Section 5.3 Overrides: "Any override of a price supplied by a pricing source must be approved in advance by the Chief Investment Officer..."
+    *   Document 2: `06_policy_update_memo.md` (dated September 8, 2026).
+        *   Section 5. APPROVAL OF PRICE OVERRIDES: "**Amends:** Valuation Policy, Section 5.3 (Overrides). Any override of a price supplied by a pricing source must be approved in advance, in writing, by two voting members of the Valuation Committee, one of whom must be the Chief Financial Officer. The Chief Investment Officer may no longer approve overrides..."
+        *   Date comparison: `06_policy_update_memo.md` (Sept 8, 2026) is later than `03_valuation_policy.md` (Feb 10, 2026).
+        *   Superseding rule: The memo explicitly states it "Amends" the Valuation Policy and "supersedes the approval requirement in Valuation Policy Section 5.3."
+
+4.  **Determine the Current Rule:**
+    *   Since the memo is later dated and explicitly amends/supersedes the earlier policy regarding overrides, the current rule is found in `06_policy_update_memo.md`.
+    *   The specific text: "Any override of a price supplied by a pricing source must be approved in advance, in writing, by two voting members of the Valuation Committee, one of whom must be the Chief Financial Officer."
+
+5.  **Draft the JSON:**
+    *   `answer`: "two voting members of the Valuation Committee, one of whom must be the Chief Financial Officer" (Need to ensure it captures the "in writing" part if relevant to "who", but the core "who" is the committee members. The prompt asks "Who". I should quote the text that answers "who".)
+    *   `source_document`: "06_policy_update_memo.md"
+    *   `section`: "SECTION 5. APPROVAL OF PRICE OVERRIDES"
+    *   `quote`: "Any override of a price supplied by a pricing source must be approved in advance, in writing, by two voting members of the Valuation Committee, one of whom must be the Chief Financial Officer."
+
+6.  **Refine the Answer:**
+    *   The question asks "Who".
+    *   The text says "by two voting members of the

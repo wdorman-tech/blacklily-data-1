@@ -1,0 +1,35 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Documents:**
+    *   **Document 1:** `03_valuation_policy.md` (Valuation Policy, dated February 10, 2026).
+        *   Section 2.3 Meetings: "The Committee meets quarterly, within 15 business days after the end of each calendar quarter..."
+    *   **Document 2:** `06_policy_update_memo.md` (Memorandum: Amendments to Policies and Procedures, dated September 8, 2026).
+        *   Section 4. VALUATION COMMITTEE MEETING FREQUENCY: "The Valuation Committee will meet monthly, within 10 business days after the end of each calendar month, rather than quarterly."
+        *   Note: This memo amends `03_valuation_policy.md` Section 2.3.
+        *   Date comparison: Feb 10, 2026 vs Sept 8, 2026. The memo is later.
+        *   Superseding clause: "This amendment supersedes the meeting frequency stated in Valuation Policy Section 2.3."
+
+3.  **Determine the Correct Answer:**
+    *   Question: How frequently does the Valuation Committee meet?
+    *   Current effective policy: The September 8, 2026 memo updates the February 10, 2026 policy.
+    *   Frequency: Monthly.
+    *   Source Document: `06_policy_update_memo.md` (since it supersedes the earlier one regarding this specific topic).
+    *   Section: `SECTION 4. VALUATION COMMITTEE MEETING FREQUENCY`.
+    *   Quote: "The Valuation Committee will meet monthly, within 10 business days after the end of each calendar month, rather than quarterly." (Or similar verbatim text from that section).
+
+4.  **Draft the JSON:**
+    *   `answer`: "monthly" (or the full phrase for specificity? Rule 4 says: "the number, name, frequency, threshold or rule that was asked for". The question asks "How frequently". "Monthly" is the core answer. However, to be unambiguous and cite the text, I should probably extract the specific frequency statement. Let's look at Rule 4 again: "Keep answers short and specific: the number, name, frequency...". So "monthly" is good. But often in these tasks, quoting the relevant part of the text helps context. The instruction says "Quote the supporting text verbatim." for the `quote` field. The `answer` field should contain the direct answer.)
+    *   Let's refine the `answer`. The question asks "How frequently". The document says "The Valuation Committee will meet monthly...

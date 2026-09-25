@@ -1,0 +1,45 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "What are the termination provisions of the advisory agreement, and how are prepaid fees handled on termination?"
+    *   Key information needed: Termination notice period, refund policy for prepaid fees, any specific conditions (e.g., early termination).
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "termination", "refund", "prepaid", "fee", "notice".
+
+4.  **Evaluate Document Dates and Hierarchy:**
+    *   `01_brochure.md`: Dated March 27, 2026. Sections: Item 5. Fees and Compensation > 5.6 Termination and Refunds.
+    *   `05_fee_schedule.md`: Dated January 1, 2026. Section: SECTION 5. BILLING, TERMINATION AND REFUNDS > 5.3 Termination and Refunds.
+    *   Rule 3: Later-dated documents supersede earlier ones. March 27, 2026 is later than January 1, 2026. Therefore, `01_brochure.md` is the controlling document for this information.
+
+5.  **Extract Information from Controlling Document (`01_brochure.md`):**
+    *   Section: Item 5. Fees and Compensation > 5.6 Termination and Refunds.
+    *   Text: "Either the client or the Firm may terminate the Agreement on 30 days' written notice. Upon termination, the advisory fee is prorated to the effective date of termination, and any unearned fee paid in advance is refunded within 30 days after that date. A client who terminates within five business days of signing the Agreement receives a full refund of any fee paid. No termination fee is charged."
+
+6.  **Draft the Answer:**
+    *   Termination: Either party may terminate on 30 days' written notice.
+    *   Prepaid fees: Prorated to effective date, unearned fee refunded within 30 days after termination date. Full refund if terminated within 5 business days of signing. No termination fee charged.
+
+7.  **Format as JSON:**
+    *   "answer": Combine the extracted info into a concise statement.
+    *   "source_document": "01_brochure.md"
+    *   "section": "Item 5. Fees and Compensation > 5.6 Termination and Refunds"
+    *   "quote": The verbatim text from section 5.6.
+
+8.  **Verify Constraints:**
+    *   JSON only? Yes.
+    *   No markdown fences? Yes.
+    *   Keys correct? Yes ("answer", "source_document", "section", "quote").
+    *

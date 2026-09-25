@@ -1,0 +1,29 @@
+*   Question: "State the firm's total regulatory assets under management as of its most recent fiscal year end, with the split between discretionary and non-discretionary assets."
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "01_brochure.md" (Form ADV Part 2A)
+    *   "02_compliance_manual.md"
+    *   "03_valuation_policy.md"
+    *   "04_business_continuity_plan.md"
+    *   "05_fee_schedule.md"
+    *   "06_policy_update_memo.md"
+
+    *   Looking for "regulatory assets under management" or "AUM".
+    *   In "01_brochure.md", Section 4.3 "Assets Under Management":
+        "As of December 31, 2025, the Firm managed regulatory assets under management of $6,480,000,000, of which $5,910,000,000 was managed on a discretionary basis and $570,000,000 on a non-discretionary basis, for 62 client families comprising approximately 710 accounts."
+
+    *   The question asks for "total regulatory assets under management as of its most recent fiscal year end, with the split between discretionary and non-discretionary assets."
+    *   The text in 4.3 says "As of December 31, 2025, the Firm managed regulatory assets under management of $6,480,000,000, of which $5,910,000,000 was managed on a discretionary basis and $570,000,000 on a non-discretionary basis".
+    *   The date "December 31, 2025" is the most recent fiscal year end mentioned in the brochure (dated March 27, 2026).
+
+    *   answer: "$6,480,000,000 total regulatory assets under management, of which $5,910,000,000 was managed on a discretionary basis and $570,000,000 on a non-discretionary basis." (Wait, the prompt says "short and specific". I should just provide the numbers/facts).
+    *   Actually, the prompt says "the number, name, frequency, threshold or rule that was asked for, with enough words to be unambiguous."
+    *   The question asks for the total and the split.
+    *   Source: 01_brochure.md
+    *   Section: 4.3
+    *   Quote: "As of December 31, 2025, the Firm managed regulatory assets under management of $6,480,000,000, of which $5,910,000,000 was managed on a discretionary basis and $570,0

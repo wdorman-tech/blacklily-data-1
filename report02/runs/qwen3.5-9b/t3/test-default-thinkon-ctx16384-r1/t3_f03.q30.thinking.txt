@@ -1,0 +1,43 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Which independent firm reviews Level 3 valuations, and how often is each position independently valued?"
+    *   Key information needed: Name of independent firm, Frequency of independent valuation for each position.
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "independent", "firm", "Level 3", "valuation", "frequency", "often".
+
+4.  **Evaluate Document Content:**
+
+    *   `03_valuation_policy.md` (dated February 10, 2026):
+        *   Section 8.1 Independent Valuation Firm: "Tessier Arkwright Valuation Group performs an independent valuation of each direct Level 3 position with a carrying value above $10,000,000 at least annually, and of every other direct Level 3 position at least once every three years."
+        *   This document provides the firm name ("Tessier Arkwright Valuation Group") and frequencies (at least annually for >$10M, at least once every three years for others).
+
+    *   `06_policy_update_memo.md` (dated September 8, 2026):
+        *   Section 4. VALUATION COMMITTEE MEETING FREQUENCY: Discusses meeting frequency changes (quarterly to monthly) and amends Valuation Policy Section 2.3.
+        *   Does not mention the independent firm name or change the valuation frequency for independent reviews specifically, only committee meetings.
+
+5.  **Determine Superseding Status:**
+    *   `03_valuation_policy.md` is dated February 10, 2026.
+    *   `06_policy_update_memo.md` is dated September 8, 2026.
+    *   The memo amends Section 2.3 (Meetings) of the Valuation Policy. It does not explicitly amend Section 8.1 (Independent Review).
+    *   Therefore, the information in `03_valuation_policy.md` regarding the independent firm and valuation frequency remains in effect unless contradicted by a later document. The memo only changes meeting frequency for Level 3 approval, not the independent review frequency or firm name.
+    *   So, I must use the text from `03_valuation_policy.md`.
+
+6.  **Draft the Answer:**
+    *   Firm: Tessier Arkwright Valuation Group.
+    *   Frequency: at least annually for positions > $10,000,000; at least once every three years for others.
+    *   Source Document: `03_valuation_policy.md`.
+    *   Section: SECTION 8. INDEPENDENT REVIEW (specifically subsection 8.1 Independent Valuation Firm).

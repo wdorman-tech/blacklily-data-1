@@ -1,0 +1,37 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Part 1: What is the Flagship Fund's single-position limit for long positions?
+    *   Part 2: How are purchases of the co-investment issuer's securities allocated between the Flagship Fund and the Co-Investment Fund?
+
+3.  **Scan Documents for Part 1 (Single-position limit for long positions):**
+    *   Document: `01_brochure.md`
+    *   Section: Item 8. Methods of Analysis, Investment Strategies and Risk of Loss > 8.2 Investment Strategy and Portfolio Guidelines
+    *   Text: "No single long position may exceed 8% of the Flagship Fund's net asset value, measured at market value."
+    *   Date: March 27, 2026.
+
+4.  **Scan Documents for Part 2 (Allocation of co-investment issuer securities):**
+    *   Document: `02_compliance_manual.md`
+    *   Section: SECTION 9. TRADE ALLOCATION AND AGGREGATION > 9.4 Co-Investment Issuer Allocations
+    *   Text: "Purchases of securities of the Co-Investment Issuer are allocated first to the Flagship Fund until the Flagship Fund's position reaches the single long position limit in its portfolio guidelines, and the balance of the order is allocated to the Co-Investment Fund."
+    *   Date: January 15, 2026.
+
+5.  **Synthesize the Answer:**
+    *   The question asks for two pieces of information. I need to combine them into a coherent answer string within the JSON "answer" field.
+    *   Part 1 Limit: 8% of net asset value (from `01_brochure.md`).
+    *   Part 2 Allocation: First to Flagship Fund until single long position limit is reached, balance to Co-Investment Fund (from `02_compliance_manual.md`).
+    *   Since the question asks for both, I need to check if there's a conflict or if they come from different documents. They do. The instructions say "Answer only from the documents provided." and "Cite the document file name...". Usually, if information comes from multiple documents, I should cite the relevant ones or combine them. However, the JSON structure allows only *one* `source_document` and *one* `section`.
+    *   Wait, looking at the instruction: "The object has exactly four string keys... 'source_document' - the file name of the document that answers it...". If the answer requires information from two different documents, this creates a conflict with the schema constraint (only one source_document allowed).
+    *   Let's re-read the constraint: "Cite the document file name and the section where the answer appears, as they are labelled in the documents

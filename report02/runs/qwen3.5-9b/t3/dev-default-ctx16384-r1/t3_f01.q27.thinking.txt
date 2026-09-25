@@ -1,0 +1,39 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "How many employees are based in each of the firm's three offices?"
+    *   Key information needed: Number of employees per office (Richmond, Charlottesville, Raleigh).
+
+3.  **Scan the Documents:**
+    *   `01_brochure.md`:
+        *   Section: Item 1. Cover Page > 1.3 Office Locations. Lists three offices (Richmond, Charlottesville, Raleigh) with addresses and phone numbers. No employee counts per office.
+        *   Section: Item 2. Material Changes. Mentions new office opening, account minimum changes, custodian changes. No employee counts.
+        *   Section: Item 4. Advisory Business > 4.6 Assets Under Management and Personnel. States: "The Firm has 41 employees, including 17 wealth advisors, across its three offices." This gives the *total* number (41) but does not break it down by office.
+    *   `04_business_continuity_plan.md`:
+        *   Section: SECTION 1. PURPOSE, SCOPE AND ASSUMPTIONS > 1.2 Scope. Mentions three offices. No employee counts.
+        *   Section: SECTION 4. ALTERNATE SITES AND REMOTE WORK > 4.1 Alternate Sites. Discusses alternate sites if offices are unavailable. No employee counts per office.
+        *   Section: SECTION 4. ALTERNATE SITES AND REMOTE WORK > 4.2 Remote Work. Mentions "Every Supervised Person is issued a Firm-managed laptop". No specific counts per office.
+        *   Section: SECTION 4. ALTERNATE SITES AND REMOTE WORK > 4.3 Physical Records. No employee counts.
+        *   Section: SECTION 6. DATA BACKUP AND RECOVERY > 6.2 Storage Location and Retention. No employee counts.
+
+4.  **Evaluate Findings:**
+    *   The documents state the total number of employees (41) across all three offices combined (`01_brochure.md`, Section: Item 4. Advisory Business > 4.6 Assets Under Management and Personnel).
+    *   The documents do *not* specify how many employees are in Richmond, Charlottesville, or Raleigh individually.
+    *   Therefore, the specific detail asked for (number of employees based in *each* office) is not available in the provided text.
+
+5.  **Formulate Answer:**
+    *   Since the specific breakdown is missing, the answer must be `NOT_IN_DOCUMENTS`.
+    *   Source document: `01_brochure.md` (where the total employee count is mentioned, confirming the context but not the specific data). However, since the answer is NOT_IN

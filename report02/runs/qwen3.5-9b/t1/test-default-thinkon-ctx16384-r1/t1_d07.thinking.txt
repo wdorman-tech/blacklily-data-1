@@ -1,0 +1,28 @@
+The user wants me to extract key investment terms from the provided fund offering document and return them as a JSON object. I need to follow strict rules about accuracy, citing text, and handling missing/not applicable terms.
+
+Let me go through each field systematically:
+
+1. **fund_name**: "Brackenholt Senior Lending Fund, LP" - This appears in multiple places including the title and Section 1.1
+2. **fund_domicile**: "Delaware" - From "A Delaware Limited Partnership" at the top
+3. **fund_structure**: Open-end (evergreen), not redeemable on demand, no drawdowns - From Section 2.1
+4. **management_fee**: 1.25% per annum of net asset value - From Section 4.1 and Section 1.1. Also note the side letter has 0.95% for specific investor but that's a side letter, not the fund standard. I should report the standard fee from the main document.
+5. **performance_fee**: Income Incentive Fee 12.5% of Pre-Incentive Fee Net Investment Income over hurdle, plus Capital Gains Incentive Fee 12.5% of cumulative net realized capital gains - From Sections 4.2-4.4
+6. **hurdle_rate**: 1.25% per quarter (5.0% annualized) for Income Incentive Fee - From Section 4.3
+7. **high_water_mark**: "There is no high-water mark" for Income Incentive Fee, and Loss Carryforward is perpetual for Capital Gains - From Section 4.3 and 4.4
+8. **minimum_initial_investment**: $1,000,000 - From Section 5.2
+9. **lockup_period**: No hard lock-up, but Early Repurchase Deduction within one year (soft lock) - From Section 6.4
+10. **redemption_frequency**: Quarterly repurchase offers - From Section 6.1
+11. **redemption_notice_days**: 60 days prior to applicable Repurchase Date - From Section 6.2
+12. **gate_provision**: Limited to 5.0% of net asset value per quarter - From Section 6.3
+
+
+13. **key_man_provision**: No key person provision in Partnership Agreement, but side letter has notification rights for specific persons - From Section 3.2 and Appendix B
+14. **gp_commitment**: Neither GP nor Adviser has made capital commitment - From Section 3.3
+15. **fund_term**: Evergreen, no fixed term - From Section 1.1 and 12.2
+16. **auditor**: Tessier Mulvane LLP - From Section 8.2
+17. **administrator**: Rendlesham Fund Services, LLC - From Section 8.1
+18. **prime_broker**: No prime broker - From Section 8.5
+19. **legal_counsel**: Pellow Ainsworth LLP (fund counsel), Rushmere Quaye (Cayman counsel) - From Section 8.4
+20. **mfn_election**: Yes, for investors with subscriptions >= $25,000,000 - From Section 7.2
+
+I need to verify each field against the document text and ensure I'm citing the correct sections. For fields where terms don't exist or aren't applicable, I'll use NOT_FOUND or NOT_APPLICABLE as appropriate.

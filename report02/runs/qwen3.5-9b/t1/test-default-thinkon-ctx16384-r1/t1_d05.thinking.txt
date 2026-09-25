@@ -1,0 +1,154 @@
+The user wants me to extract key investment terms from the provided private fund offering document into a structured JSON format. I need to follow strict rules about accuracy, citing text verbatim, and handling missing or not applicable terms correctly.
+
+Let's go through each field one by one:
+
+1.  **fund_name**: Look for the full legal name of the fund entity.
+    *   Section 1.1: "Skelmorlie Ridge Multi-Strategy Fund, L.P. (the "Fund")"
+    *   Header: "# Skelmorlie Ridge Multi-Strategy Fund, L.P."
+    *   Value: "Skelmorlie Ridge Multi-Strategy Fund, L.P."
+
+2.  **fund_domicile**: Jurisdiction of organization.
+    *   Section 1.1: "...organized under the Delaware Revised Uniform Limited Partnership Act (the "Delaware Act")..."
+    *   Section 2.2 Table: "Skelmorlie Ridge Multi-Strategy Fund, L.P., a Delaware limited partnership"
+    *   Value: "Delaware"
+
+3.  **fund_structure**: Open-end/closed-end and master-feeder status.
+    *   Section 1.2: "The Fund is an open-end fund... The Fund is a stand-alone fund. It is not a feeder fund and does not invest through a master fund."
+    *   Section 2.2 Table: "Open-end, stand-alone fund; no master fund."
+    *   Value: "Open-end, stand-alone fund"
+
+4.  **management_fee**: Annual rate and basis for each class.
+    *   Section 2.3 Table:
+        *   Class A: "2.00%"
+        *   Class B: "1.50%"
+        *   Founders Class: "1.00%"
+    *   Basis: "on Capital Account NAV" (Section 2.3 Table and Section 4.1).
+    *   Value: "Class A Interests: 2.00% on Capital Account NAV; Class B Interests: 1.50% on Capital Account NAV; Founders Class Interests: 1.00% on Capital Account NAV"
+
+5.  **performance_fee**: Incentive allocation rate for each class.
+    *   Section 2.3 Table:
+        *   Class A: "20%"
+        *   Class B: "17.5%"
+        *   Founders Class: "15%"
+    *   Basis: "of Net Profits" (Section 2.3 Table).
+    *   Value: "Class A Interests: 20% of Net Profits; Class B Interests: 17.5% of Net Profits; Founders Class Interests: 15% of Net Profits"
+
+6.  **hurdle_rate**: Preferred return or hurdle.
+    *   Section 2.2 Table: "Hurdle | None (Section 4.4)"
+    *   Section 4.4: "The Incentive Allocation is not subject to any hurdle rate or preferred return..."
+    *   Value: "None"
+
+7.  **high_water_mark**: Whether it applies and reset details.
+    *   Section 2.2 Table: "Incentive Allocation... subject to the Loss Carryforward (Sections 4.2 and 4.3)"
+    *   Section 4.3: "The Incentive Allocation is subject to a loss carryforward that functions as a high water mark (the "Loss Carryforward"). ... The Loss Carryforward is maintained separately for each Capital Account, is cumulative, and does not reset or expire with the passage of time or at the end of any fiscal year."
+    *   Value: "Yes; cumulative; does not reset or expire"
+
+8.  **minimum_initial_investment**: Minimum initial subscription per class.
+    *   Section 2.2 Table: "$5,000,000 for Class A Interests and Class B Interests; $10,000,000 for Founders Class Interests"
+    *   Section 2.3 Table: "Minimum initial investment | $5,000,000 | $5,000,000 | $10,000,000"
+    *   Value: "Class A Interests: $5,000,000; Class B Interests: $5,000,000; Founders Class Interests: $10,000,000"
+
+9.  **lockup_period**: Lock-up details per class (hard/soft).
+    *   Section 2.3 Table:
+        *   Class A: "12 months, soft"
+        *   Class B: "24 months, hard"
+        *   Founders Class: "36 months, hard"
+    *   Value: "Class A Interests: 12 months, soft; Class B Interests: 24 months, hard; Founders Class Interests: 36 months, hard"
+
+10. **redemption_frequency**: How often interests may be redeemed.
+    *   Section 1.2: "...permits Limited Partners to redeem quarterly..."
+    *   Section 2.2 Table: "Redemptions | Quarterly..."
+    *   Section 2.3 Table: "Redemption Dates after lock-up | Quarterly"
+    *   Value: "Quarterly"
+
+11. **redemption_notice_days**: Advance written notice required.
+    *   Section 2.3 Table:
+        *   Class A: "60 days"
+        *   Class B: "60 days"
+        *   Founders Class: "90 days"
+    *   Value: "Class A Interests: 60 days; Class B Interests: 60 days; Founders Class Interests: 90 days"
+
+12. **gate_provision**: Redemption gate details.
+    *   Section 2.2 Table: "Gate | Investor-level only; the Fund does not impose a Fund-level gate. As of any Redemption Date, a Limited Partner may redeem no more than 12.5% of the Gate Base of its Capital Account for a Class."
+    *   Value: "Investor-level only; 12.5% of the Gate Base"
+
+13. **key_man_provision**: Key person clause details.
+    *   Section 7.1: "A "Key Person Event" occurs if Orla Penhallow dies or becomes permanently incapacitated, ceases to serve as Chief Investment Officer of the Investment Manager, or ceases to devote substantially all of her business time to the Investment Manager and its affiliated funds for more than 120 consecutive days."
+    *   Value: "Orla Penhallow; triggers redemption rights without lock-up/charge/notice"
+
+14. **gp_commitment**: Required GP commitment.
+    *   Section 8.2: "None of the General Partner, the Investment Manager or any principal has agreed or is required to make or maintain any investment in the Fund..."
+    *   Value: "NOT_FOUND" (Wait, looking at Section 8.2 again: "As of June 1, 2026, the General Partner and principals... held Founders Class Interests with an aggregate NAV of approximately $42 million... None of the General Partner... has agreed or is required to make or maintain any investment in the Fund". This means there is no *required* commitment. The text says they hold interests currently, but that's not a commitment. So "NOT_FOUND" for a required commitment.)
+    *   Wait, let me check if there is a specific commitment clause. Section 8.2 explicitly says "None of the General Partner... has agreed or is required to make or maintain any investment in the Fund". So the value should reflect that no commitment exists. The instruction says "If the document does not state a term, the value is exactly NOT_FOUND." However, here it states there is *no* commitment. Does that count as NOT_FOUND or NOT_APPLICABLE? Usually, if a fund doesn't require GP commitment, it's often listed as "None" or similar. But strictly following the rules: "If the document does not state a term...". The document states there is no required investment. So I should probably report what is stated. However, the field asks for "Required GP / sponsor / manager commitment." If none exists, is it NOT_FOUND (not mentioned) or NOT_APPLICABLE (doesn't apply)? Section 8.2 says they *hold* interests but are not *required* to. So a required commitment does not exist. I will use "NOT_FOUND" if the document doesn't state a specific commitment amount, but here it explicitly states there is no requirement. Let's look at the instruction: "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE". Since the document states they are not required to make an investment, the term "Required GP Commitment" effectively does not apply in the sense of a mandatory commitment. I will use "NOT_APPLICABLE" with the quote from Section 8.2.
+    *   Actually, re-reading rule 3: "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE". The document states "None of the General Partner... has agreed or is required to make or maintain any investment in the Fund". This means the commitment term does not exist. So NOT_APPLICABLE seems appropriate.
+    *   Wait, looking at Section 8.2 again: "None of the General Partner... has agreed or is required to make or maintain any investment in the Fund". This explicitly negates the existence of a commitment. So NOT_APPLICABLE is correct.
+
+15. **fund_term**: Term of the fund.
+    *   Section 1.2: "The Fund has no fixed term. It will continue until dissolved under the Partnership Agreement..."
+    *   Section 2.2 Table: "Term | No fixed term; continues until dissolved under the Partnership Agreement"
+    *   Value: "No fixed term; continues until dissolved under the Partnership Agreement"
+
+16. **auditor**: Independent registered public accounting firm CURRENTLY appointed.
+    *   Section 2.2 Table: "Independent Auditor | Marrable Oakshott LLP"
+    *   Section 9.3: "Marrable Oakshott LLP, an independent registered public accounting firm, has been appointed as the Fund's independent auditor."
+    *   Value: "Marrable Oakshott LLP"
+
+17. **administrator**: Fund administrator.
+    *   Section 2.2 Table: "Administrator | Wendlebury Fund Services, LLC"
+    *   Section 9.1: "Wendlebury Fund Services, LLC serves as the Fund's administrator..."
+    *   Value: "Wendlebury Fund Services, LLC"
+
+18. **prime_broker**: Prime broker(s).
+    *   Section 2.2 Table: "Prime Brokers | Orrinshaw Securities LLC; Kestermoor Prime Services LLC"
+    *   Section 9.2: "Orrinshaw Securities LLC and Kestermoor Prime Services LLC serve as the Fund's prime brokers..."
+    *   Value: "Orrinshaw Securities LLC; Kestermoor Prime Services LLC"
+
+19. **legal_counsel**: Law firm(s) acting as counsel to the fund.
+    *   Section 2.2 Table: "Fund Counsel | Hollinrake Vaux LLP"
+    *   Section 9.4: "Hollinrake Vaux LLP acts as counsel to the Fund..."
+    *   Value: "Hollinrake Vaux LLP"
+
+20. **mfn_election**: Whether MFN election is offered.
+    *   Section 10.1: "The Fund does not offer a "most favored nation" election: no Limited Partner is entitled to elect the benefit of terms granted to another Limited Partner..."
+    *   Value: "No; The Fund does not offer a "most favored nation" election"
+
+Let's double check citations and quotes.
+- fund_name: Section 1.1 quote "Skelmorlie Ridge Multi-Strategy Fund, L.P."
+- fund_domicile: Section 1.1 quote "Delaware Revised Uniform Limited Partnership Act" implies Delaware. Section 2.2 Table says "a Delaware limited partnership". I'll use the table or section 1.1. Let's use Section 1.1 for the specific act name which confirms domicile, or Section 2.2 for the summary. The rule says "Every citation must be a section or appendix identifier that appears in the document." Section 1.1 is good. Quote: "organized under the Delaware Revised Uniform Limited Partnership Act".
+- fund_structure: Section 1.2 quote "The Fund is an open-end fund... The Fund is a stand-alone fund. It is not a feeder fund and does not invest through a master fund."
+- management_fee: Section 2.3 Table. Quote from table row "Management Fee (annual rate, on Capital Account NAV)". I need to combine the values.
+- performance_fee: Section 2.3 Table. Quote from table row "Incentive Allocation (of Net Profits, subject to Loss Carryforward)".
+- hurdle_rate: Section 4.4 quote "The Incentive Allocation is not subject to any hurdle rate or preferred return".
+- high_water_mark: Section 4.3 quote "The Incentive Allocation is subject to a loss carryforward that functions as a high water mark (the "Loss Carryforward"). ... The Loss Carryforward is maintained separately for each Capital Account, is cumulative, and does not reset or expire with the passage of time or at the end of any fiscal year."
+- minimum_initial_investment: Section 2.3 Table. Quote from table row "Minimum initial investment".
+- lockup_period: Section 2.3 Table. Quote from table row "Lock-Up Period (from each Subscription Date)".
+- redemption_frequency: Section 1.2 quote "permits Limited Partners to redeem quarterly" or Section 2.2 Table "Redemptions | Quarterly". I'll use Section 1.2 for the text description.
+- redemption_notice_days: Section 2.3 Table. Quote from table row "Redemption Notice (prior written notice to the Administrator)".
+- gate_provision: Section 2.2 Table. Quote "Gate | Investor-level only; the Fund does not impose a Fund-level gate. As of any Redemption Date, a Limited Partner may redeem no more than 12.5% of the Gate Base of its Capital Account for a Class."
+- key_man_provision: Section 7.1 quote "A "Key Person Event" occurs if Orla Penhallow dies or becomes permanently incapacitated...".
+- gp_commitment: Section 8.2 quote "None of the General Partner, the Investment Manager or any principal has agreed or is required to make or maintain any investment in the Fund". Since it states they are not required, NOT_APPLICABLE is appropriate per Rule 3.
+- fund_term: Section 1.2 quote "The Fund has no fixed term."
+- auditor: Section 9.3 quote "Marrable Oakshott LLP, an independent registered public accounting firm, has been appointed as the Fund's independent auditor."
+- administrator: Section 9.1 quote "Wendlebury Fund Services, LLC serves as the Fund's administrator..."
+- prime_broker: Section 9.2 quote "Orrinshaw Securities LLC and Kestermoor Prime Services LLC serve as the Fund's prime brokers..."
+- legal_counsel: Section 9.4 quote "Hollinrake Vaux LLP acts as counsel to the Fund..."
+- mfn_election: Section 10.1 quote "The Fund does not offer a "most favored nation" election".
+
+Wait, I need to check if there are any amendments or supplements that override text. The document header says "Dated July 1, 2026" and mentions "Amended and Restated Agreement... dated as of April 1, 2025 (as amended)". There is no separate supplement document provided in the text, just the main memorandum which incorporates amendments. I must read the entire document. The text provided seems to be the full current version ("Confidential Private Placement Memorandum"). There are no "Supplement No. X" sections visible in the text provided. So I use the text as is.
+
+One detail on `gp_commitment`: Rule 3 says "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE". Section 8.2 states "None of the General Partner... has agreed or is required to make or maintain any investment in the Fund". This means the commitment term does not exist/apply. So `NOT_APPLICABLE` is correct.
+
+One detail on `fund_domicile`: The document says "organized under the Delaware Revised Uniform Limited Partnership Act". It also says "a Delaware limited partnership" in Section 2.2. I will use "Delaware" as the value and cite Section 1.1 or 2.2. Section 1.1 is more specific about organization.
+
+One detail on `management_fee` and `performance_fee`: The instruction says "Give every class or tier." I need to combine them into one string for the value field.
+Example: "Class A Interests: 2.00% on Capital Account NAV; Class B Interests: 1.50% on Capital Account NAV; Founders Class Interests: 1.00% on Capital Account NAV"
+
+One detail on `high_water_mark`: The instruction asks for "Whether a high water mark or loss carryforward applies, and whether it is perpetual or resets."
+Section 4.3 says "The Loss Carryforward is maintained separately for each Capital Account, is cumulative, and does not reset or expire with the passage of time or at the end of any fiscal year."
+So value: "Yes; cumulative; does not reset or expire".
+
+One detail on `key_man_provision`: The instruction asks "who is named and what it triggers."
+Section 7.1 names Orla Penhallow and describes the event (death, incapacity, etc.) and the trigger (redemption rights).
+Value: "Orla Penhallow; triggers redemption rights without lock-up/charge/notice". I should use a quote that supports this. Section 7.1 says "Each Limited Partner may then redeem all or part of its Interests as of the first Redemption Date following the Key Person Event, without regard to any lock-up period, early redemption charge, notice period or the Investor-Level Gate".
+
+One detail on

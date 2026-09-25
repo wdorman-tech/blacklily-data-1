@@ -1,0 +1,46 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "How are private fund interests valued for purposes of calculating the advisory fee, and are unfunded commitments included in the fee base?"
+    *   Two parts to answer:
+        1.  Valuation method for private fund interests.
+        2.  Inclusion/exclusion of unfunded commitments in the fee base.
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "private fund", "valued", "advisory fee", "unfunded", "commitments", "fee base".
+
+4.  **Evaluate Document Content:**
+
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section 5.2: Mentions advisory fee billed quarterly based on aggregate market value. Mentions private investments affect the fee and Firm has incentive to value them favorably. Refers to Valuation Policy.
+        *   Section 5.3: Minimum fee, negotiability.
+        *   Section 5.5: Other fees (custodial, brokerage, etc.).
+
+    *   `03_valuation_policy.md` (February 10, 2026):
+        *   Section 1.1: Purpose of policy regarding valuation for consolidated reporting and advisory fees. Mentions interest in higher valuations.
+        *   Section 4.1: Private investments classification (Level 3 if no observable input).
+        *   Section 4.2 Interests in Private Funds: "Interests in private funds are valued at the most recent net asset value reported by the general partner or fund administrator, adjusted for capital calls and distributions occurring after the reporting date." Also mentions adjustments require Committee approval.
+        *   Section 6.2: Stale price monitoring (120 days).
+
+    *   `05_fee_schedule.md` (January 1, 2026):
+        *   Section 2.4 Fee Base: "The fee base includes all assets under management in the Family Relationship... Interests in private funds... are included at their values determined under the Firm's Valuation Policy. Unfunded capital commitments are excluded from the fee base."
+
+5.  **Synthesize Answers:**
+
+    *   *Part 1 (Valuation):* From `03_valuation_policy.md`, Section 4.2: "Interests in private funds are valued at the most recent net asset value reported by the general partner or fund administrator, adjusted for capital calls and distributions occurring after the reporting date."
+    *   *Part 2 (Unfunded Commitments):* From `05_fee_schedule.md`, Section 2.4: "Unfunded capital commitments are excluded from the fee base."
+
+6.  **Check Dates

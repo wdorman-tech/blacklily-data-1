@@ -1,0 +1,31 @@
+The user wants to know the annual management fee for a $350 million separate account under the "standard Long Duration Credit schedule".
+
+    *   "Fee Schedule" (implied by the text provided before the memo).
+    *   "06_policy_update_memo.md" (which mentions the Fee Schedule).
+
+    *   The text before the memo says: "minimum annual fee of $150,000, billed in equal quarterly amounts and prorated for any partial year."
+    *   Section 5.1 of the memo discusses "Core Fixed Income Breakpoint" and mentions it amends "Section 2.1 (Core Fixed Income) of the Fee Schedule".
+    *   The memo states: "For billing periods beginning on or after July 1, 2026, the first breakpoint in the Core Fixed Income schedule moves from $100 million to $75 million, and the schedule is as follows: [Table]".
+    *   The question asks for the "standard Long Duration Credit schedule".
+    *   The memo mentions "Core Fixed Income" and "Long Duration Credit Fund, L.P." in the header.
+    *   Wait, the question asks for "Long Duration Credit schedule".
+    *   Looking at the text provided:
+        *   The first snippet is part of the Fee Schedule (implied). It mentions a minimum fee of $150,000.
+        *   The memo (Section 5.1) amends "Section 2.1 (Core Fixed Income) of the Fee Schedule".
+        *   The question asks for "Long Duration Credit schedule".
+        *   The header of the memo mentions "Wrenholt Pryce Long Duration Credit Fund, L.P."
+        *   However, the text provided for the Fee Schedule (the part before the memo) doesn't explicitly name the "Long Duration Credit" schedule, it just shows the minimum fee.
+        *   The memo's Section 5.1 describes the "Core Fixed Income" schedule.
+        *   Is "Core Fixed Income" the same as "Long Duration Credit"? The header mentions "Wrenholt Pryce Long Duration Credit Fund, L.P." but the section 5.1 title is "Core Fixed Income Breakpoint".
+        *   Let's look at the prompt's text again.
+        *   The first block of text is: "minimum annual fee of $150,000, billed in equal quarterly amounts and prorated for any partial year."
+        *   The memo's Section 5.1 says: "This Section 5.1 amends Section 2.1 (Core Fixed Income) of the Fee Schedule... the first breakpoint in the Core Fixed Income schedule moves from $100 million to $75 million, and the schedule is as follows: [Table]".
+        *   The table is:
+            *   First $75 million: 0.20%
+            *   Next $175 million: 0.15%
+            *   Next $250 million: 0.12%
+            *   Over $500 million: 0.10%
+        *   Calculation for $350 million:
+            *   First $75m @ 0.20% = $150,000
+            *   Next $175m (up to $250m) @ 0.15% = $262,500
+            *   Next

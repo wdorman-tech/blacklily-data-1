@@ -1,0 +1,46 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Who audits the Commingled Fund, and within what period after fiscal year end are audited financial statements delivered to investors?"
+    *   Key Information Needed:
+        1.  Name of the auditor.
+        2.  Timeframe for delivering audited financial statements after fiscal year end.
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "auditor", "audit", "financial statements", "delivered", "period", "fiscal year", "Commingled Fund".
+
+4.  **Evaluate Document Content:**
+
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section: Item 4. Advisory Business > 4.4 The Commingled Fund.
+            *   Text: "...Marrick Tolland LLP serves as its independent auditor."
+        *   Section: Item 15. Custody > 15.2 Commingled Fund.
+            *   Text: "The Firm complies with the custody rule by having the Fund audited annually by Marrick Tolland LLP... and by distributing audited financial statements prepared in accordance with U.S. generally accepted accounting principles to all investors within 120 days after the end of the Fund's fiscal year, which ends December 31."
+
+    *   `02_compliance_manual.md` (January 15, 2026):
+        *   Section: SECTION 12. PRIVACY > 12.2 Privacy Notice. (Irrelevant to audit info).
+
+    *   `03_valuation_policy.md` (February 10, 2026):
+        *   Section: SECTION 8. INDEPENDENT REVIEW > 8.2 Annual Audit.
+            *   Text: "The Commingled Fund's independent auditor, Marrick Tolland LLP, audits the Fund's valuations as part of its annual audit." (Confirms auditor name).
+
+    *   `05_fee_schedule.md` (January 1, 2026):
+        *   Section: SECTION 3. COMMINGLED FUND > 3.1 Management Fee / 3.2 Fund Expenses. (Irrelevant to audit info).
+
+5.  **Determine the Best Source:**
+    *   The question asks for both the auditor name and the delivery period.
+    *   `01_brochure.md` Section: Item 15. Custody > 15.2 Commingled Fund contains both pieces of information in one paragraph ("Marrick Tolland LLP" and "within 120 days").
+    *   Date check: `01_brochure.md` is dated March

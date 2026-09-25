@@ -1,0 +1,64 @@
+The user wants me to extract key investment terms from the provided private fund offering document and return them as a JSON object. I need to follow strict rules about accuracy, citing text, and handling missing/not applicable terms.
+
+Let me go through each field systematically:
+
+1. **fund_name**: "Varrick Onslade Long/Short Equity Fund, L.P." - This appears in the title and throughout the document. Citation: Title/Header or Section 1.1. Quote from Section 1.1: "Varrick Onslade Long/Short Equity Fund, L.P. (the "Partnership")"
+
+2. **fund_domicile**: Delaware - Section 1.1 says "organized on October 14, 2025 under the Delaware Revised Uniform Limited Partnership Act". Citation: Section 1.1. Quote: "under the Delaware Revised Uniform Limited Partnership Act (the "Delaware Act")"
+
+3. **fund_structure**: Open-end - Section 1.2 says "The Partnership is an open-end, stand-alone fund: it does not invest through a master fund, no feeder fund invests in it". Citation: Section 1.2. Quote: "The Partnership is an open-end, stand-alone fund"
+
+4. **management_fee**: 
+   - Class A: 1.75% annually (0.4375% per quarter)
+   - Class B: 1.25% annually (0.3125% per quarter)
+   - Section 4.1 states this clearly. Citation: Section 4.1. Quote: "The Management Fee is charged at an annual rate of 1.75% (0.4375% per quarter) for Class A Interests and 1.25% (0.3125% per quarter) for Class B Interests."
+   - Note: There's a side letter that reduces Class A fee to 1.00% for the Tollmead County Investors, but this is specific to that investor. The main document terms are what I should report. However, Section 9.2 says the side letter applies only to that Limited Partner. So the standard terms remain as stated in Section 4.1.
+
+5. **performance_fee**: 
+   - Class A: 20% of Net Profits exceeding Loss Carryforward Amount
+   - Class B: 17.5% of such Net Profits
+   - Section 4.2 states this. Citation: Section 4.2. Quote: "equal to 20% of the Net Profits allocated to that capital account for Class A Interests and 17.5% of such Net Profits for Class B Interests"
+
+6. **hurdle_rate**: NOT_FOUND - Section 4.2 says "The Incentive Allocation is not subject to any hurdle rate or preferred return". Citation: Section 4.2. Quote: "The Incentive Allocation is not subject to any hurdle rate or preferred return"
+
+7. **high_water_mark**: Yes, perpetual - Section 4.3 describes Loss Carryforward as high-water mark that "is not reset at the end of any Performance Period or after any period of time". Citation: Section 4.3. Quote: "The Loss Carryforward Amount operates as a high-water mark for each capital account and is not reset at the end of any Performance Period or after any period of time"
+
+8. **minimum_initial_investment**: 
+   - Class A: $1,000,000
+   - Class B: $5,000,000
+   - Section 5.2 states this. Citation: Section 5.2. Quote: "The minimum initial Capital Contribution is $1,000,000 for Class A Interests and $5,000,000 for Class B Interests."
+
+9. **lockup_period**: 
+   - Class A: soft lock-up of 12 months with 3% Early Redemption Charge
+   - Class B: hard lock-up of 24 months
+   - Section 6.3 states this. Citation: Section 6.3. Quote: "Class A Interests are subject to a soft lock-up of 12 months and Class B Interests are subject to a hard lock-up of 24 months"
+
+10. **redemption_frequency**: Quarterly - Section 6.1 says "as of the last Business Day of each calendar quarter". Citation: Section 6.1. Quote: "a Limited Partner may redeem all or part of its capital account as of the last Business Day of each calendar quarter"
+
+11. **redemption_notice_days**: 
+    - Standard: 60 days (Section 6.2)
+    - Side letter for Tollmead County: 30 days (Appendix B, Paragraph 2)
+    - For general terms, I should report the standard 60 days. Citation: Section 6.2. Quote: "at least 60 days before the applicable Redemption Date"
+
+12. **gate_provision**: 
+    - Level: Fund-level (Section 6.5 says "The gate applies to the Partnership as a whole and not separately to any class or Limited Partner")
+    - Threshold: 20% of net asset value
+    - Citation: Section 6.5. Quote: "exceed 20% of the net asset value of the Partnership"
+
+13. **key_man_provision**: NOT_FOUND - Section 10.2 says "The Partnership Agreement does not contain a key person provision". Citation: Section 10.2. Quote: "The Partnership Agreement does not contain a key person provision."
+
+14. **gp_commitment**: NOT_FOUND - Section 3.3 says "The General Partner is not required to make, and has not agreed to make, any capital contribution to the Partnership". Citation: Section 3.3. Quote: "The General Partner is not required to make, and has not agreed to make, any capital contribution to the Partnership"
+
+15. **fund_term**: Perpetual - Section 1.3 says "The Partnership has no fixed term. It will continue until dissolved upon..." Citation: Section 1.3. Quote: "The Partnership has no fixed term."
+
+16. **auditor**: Castellane Rook LLP - Section 8.3 and Appendix A. Citation: Section 8.3. Quote: "Castellane Rook LLP, an independent registered public accounting firm, has been appointed as the Partnership's independent auditor"
+
+17. **administrator**: Tessford Loame Fund Services, LLC - Section 8.1 and Appendix A. Citation: Section 8.1. Quote: "Tessford Loame Fund Services, LLC (the "Administrator") serves as administrator of the Partnership."
+
+18. **prime_broker**: Pembury Hask Securities LLC and Norcaster Prime Services, LLC - Section 8.2 and Appendix A. Citation: Section 8.2. Quote: "Pembury Hask Securities LLC and Norcaster Prime Services, LLC (each, a "Prime Broker") provide prime brokerage"
+
+19. **legal_counsel**: Lindqvist Ambrose LLP - Section 8.4 and Appendix A. Citation: Section 8.4. Quote: "Lindqvist Ambrose LLP acts as counsel to the Partnership"
+
+20. **mfn_election**: Yes, with conditions - Section 9.3 describes MFN election for investors with $25M+ contributions. Citation: Section 9.3. Quote: "Each Limited Partner whose aggregate Capital Contributions (net of redemptions) are at least $25,000,000 (an "MFN Investor") may elect to receive the benefit of any term of a side letter"
+
+Let me verify each field against the document one more time to ensure accuracy.

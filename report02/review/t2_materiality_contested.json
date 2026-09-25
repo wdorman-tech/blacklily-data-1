@@ -1,0 +1,141 @@
+{
+ "stats": {
+  "dev": {
+   "modified_sections": 20,
+   "agreement": 20,
+   "agreement_pct": 100.0,
+   "kappa": 1.0,
+   "both_material": 9,
+   "both_minor": 11
+  },
+  "test": {
+   "modified_sections": 123,
+   "agreement": 117,
+   "agreement_pct": 95.1,
+   "kappa": 0.889,
+   "both_material": 80,
+   "both_minor": 37
+  }
+ },
+ "contested": [
+  {
+   "pair_id": "t2_ko_3",
+   "split": "test",
+   "aid": "a03",
+   "heading": "Changes in laws and regulations relating to beverage containers and packaging could increase our costs and reduce demand for our products.",
+   "diff": [
+    "replace: [increased] -> [ongoing]"
+   ],
+   "A": {
+    "material": false,
+    "rationale": "minor: stylistic rewording of a modifier on the consumer-attitude driver; no risk, regulation or jurisdiction is added or dropped, and the likelihood language for the regulatory risk itself (\"could result in the adoption\") is unchanged."
+   },
+   "B": {
+    "material": true,
+    "rationale": "criterion 3: the characterization of the underlying risk driver is softened from a rising trend to a continuing one, which is not an identical meaning."
+   },
+   "description_A": "Consumers' \"increased\" concerns about solid waste and environmental responsibility become \"ongoing\" concerns; the packaging laws, proposals, and the statement that these could lead to more legislation are unchanged.",
+   "description_B": "The driver of possible new packaging legislation changes from consumers' \"increased\" concerns about solid waste and environmental responsibility to consumers' \"ongoing\" concerns."
+  },
+  {
+   "pair_id": "t2_schw_1",
+   "split": "test",
+   "aid": "a05",
+   "heading": "A significant decrease in our liquidity could negatively affect our business as well as reduce client confidence in us.",
+   "diff": [
+    "delete: [the] -> []",
+    "replace: [that] -> [as]",
+    "insert: [] -> [activities (including margin, mortgage-related, and personal lending), increased capital requirements, changes in regulatory guidance or interpretations, other regulatory changes, or a loss of market or client confidence in us resulting in unanticipated withdrawals of client funds. The Company’s mar]",
+    "replace: [13] -> [12]"
+   ],
+   "A": {
+    "material": false,
+    "rationale": "minor: stylistic rewording with identical meaning in the comparable text, and the apparent insertion is an excerpt artifact (src/t2_real.py treats the bold running page header as a category and drops the prior continuation); for adjudication, the source filing shows one real change past the cutoff (margin lending growth now attributed to market-driven factors and overall business growth instead of the Ameritrade acquisition) that this pair cannot show."
+   },
+   "B": {
+    "material": true,
+    "rationale": "criterion 2: the Ameritrade acquisition is dropped as the named driver of margin lending growth (and in the full filings the named FHLB advance, repurchase and brokered CD supplemental funding sources and the FHLB tangible capital condition are removed); within the overlapping excerpt text the only edit is stylistic, while the lending, margin-growth and clearing house text appears only in the current excerpt."
+   },
+   "description_A": "In the text present in both excerpts the only edits are 'such as the significant client reallocation ... that we experienced' becoming 'such as significant client reallocation ... as we experienced'; the current-only remainder (lending activities list, margin lending growth sentence, clearing house margin paragraph) lies past the point where the prior excerpt is cut mid-sentence at a page break.",
+   "description_B": "The current version states that margin lending activity has significantly increased in recent years due to market-driven factors and overall business growth, text the prior excerpt cuts off at a page break but which the full prior filing attributed to the Ameritrade acquisition and market-driven factors."
+  },
+  {
+   "pair_id": "t2_schw_1",
+   "split": "test",
+   "aid": "a07",
+   "heading": "Technology and operational failures or errors and other operational risks could subject us to losses, litigation, regulatory actions, and reputational damage.",
+   "diff": [
+    "delete: [systems, linkages with third-party systems and power failures and can have a significant impact on our business and operations. Our systems are vulnerable to disruptions from human error, execution errors, errors in models such as those used for asset management, capital planning and management, ris] -> []",
+    "replace: [15] -> [13]"
+   ],
+   "A": {
+    "material": false,
+    "rationale": "minor: no change in the comparable text beyond the page number; for adjudication, the source filing shows real changes past the cutoff (fraud paragraph moved out to the new fraud factor a11, '2024' outages changed to 'recent years', custodians added to intermediaries) that this pair cannot show."
+   },
+   "B": {
+    "material": true,
+    "rationale": "criterion 1: previously disclosed risks are absent from the current text; most of that gap is a page-break extraction loss, but in the full filings the fraud paragraph is genuinely removed (moved to the new fraud risk factor) and custodians are added to the intermediaries relied on, so the section is material on either reading."
+   },
+   "description_A": "The current excerpt stops mid-sentence at a page break ('changes to our') and the opening text present in both versions is identical, so the apparent deletion of the rest of the section, including the fraud paragraph and the 2024 outage references, is an excerpt artifact.",
+   "description_B": "The current excerpt keeps only the opening two sentences, so the prior's discussion of system vulnerabilities, the 2024 cloud and third-party outages, extraordinary trading volumes, dependence on intermediaries, COVID-19 staffing and fraud prevention is absent."
+  },
+  {
+   "pair_id": "t2_schw_1",
+   "split": "test",
+   "aid": "a13",
+   "heading": "We may suffer significant losses from our credit exposures.",
+   "diff": [
+    "delete: [financial contracts and investing activities, and indirectly from the investing activities of certain of the proprietary funds that the Company sponsors. When clients purchase securities on margin, borrow on lines of credit collateralized by securities, or trade options or futures, we are subject to] -> []",
+    "replace: [16] -> [15]"
+   ],
+   "A": {
+    "material": false,
+    "rationale": "minor: no change in the comparable text beyond the page number; for adjudication, the source filing shows one real change past the cutoff (growth in the margin, options and futures business attributed to market-driven factors and business growth including the trader client base instead of the Ameritrade acquisition) that this pair cannot show."
+   },
+   "B": {
+    "material": true,
+    "rationale": "criteria 1 and 2: on the excerpts a disclosed risk is absent from the current text, and in the full filings the Ameritrade acquisition is replaced as the named driver of margin, options and futures growth by market-driven factors, overall business growth and trader client base growth; the overlapping text is identical."
+   },
+   "description_A": "The current excerpt stops mid-sentence at a page break ('our role as a counterparty in') and the text present in both versions is identical, so the apparent deletion of the margin, options and futures default paragraph is an excerpt artifact.",
+   "description_B": "The current excerpt ends mid-sentence in the list of credit exposures, so the prior's paragraph on margin, options and futures default risk and its growth from the Ameritrade acquisition is absent."
+  },
+  {
+   "pair_id": "t2_schw_2",
+   "split": "test",
+   "aid": "a04",
+   "heading": "We are subject to litigation and regulatory investigations and proceedings and may not be successful in defending against claims or proceedings.",
+   "diff": [
+    "replace: [- 18 -] -> [Litigation and arbitration claims include those brought by our clients and the clients of third-party advisors whose assets are custodied with us. Claims from clients of third-party advisors may allege losses due to investment decisions made by the third-party advisors or the advisors’ misconduct. L]"
+   ],
+   "A": {
+    "material": false,
+    "rationale": "minor: the difference is an extraction artifact (in the 2024 filing the second and third paragraphs follow the bold page header on page 18, which the section parser treats as a category and drops), and the full risk factor text is word-for-word identical (297 words) in both filings."
+   },
+   "B": {
+    "material": true,
+    "rationale": "criterion 1: new litigation exposures (advisor-client claims, IP infringement, injunction risk) are disclosed relative to the prior text as provided."
+   },
+   "description_A": "No substantive change: the prior excerpt shows only the first paragraph, while the current excerpt also shows the paragraphs on claims by clients of third-party advisors, intellectual property infringement claims, and settlement and judgment exposure.",
+   "description_B": "The current text adds claims by clients of third-party advisors custodied with Schwab, third-party intellectual property and patent infringement claims with possible damages or injunctions against using technology or offering products, settlement and judgment exposure that could be material to a period's results, and the observation that claim volume rises in market downturns, none of which appears in the prior excerpt."
+  },
+  {
+   "pair_id": "t2_schw_2",
+   "split": "test",
+   "aid": "a08",
+   "heading": "Our stock price has fluctuated historically, and may continue to fluctuate.",
+   "diff": [
+    "replace: [- 19 -] -> [•General stock market activity and industry developments; and •Other Risk Factors described in this section. Return of capital to stockholders may depend on our capital position, financial results, market conditions, legal restrictions, and other considerations, and the Company may not complete its ]"
+   ],
+   "A": {
+    "material": false,
+    "rationale": "minor: the difference is an extraction artifact (in the 2024 filing the list continues after the bold page header on page 19, which the section parser drops), and the full risk factor text is word-for-word identical (159 words) in both filings."
+   },
+   "B": {
+    "material": true,
+    "rationale": "criterion 1: new exposures (possible non-completion of the repurchase authorization and dilution from equity issuance) are disclosed relative to the prior text as provided."
+   },
+   "description_A": "No substantive change: the current excerpt shows the final two list items and the paragraph on return of capital, possible incomplete share repurchase authorization and dilution, which the prior excerpt omits.",
+   "description_B": "The current text adds stock price factors for general market activity and other risk factors, a statement that the company may not complete its full share repurchase authorization, and a warning that issuing common or preferred stock or convertible securities for incentive plans or acquisitions could be substantially dilutive, none of which appears in the prior excerpt."
+  }
+ ]
+}

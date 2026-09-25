@@ -1,0 +1,38 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, return exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Describe the Adviser's cyber incident response process, including who leads it and the deadline for notifying individuals whose sensitive information was accessed without authorization."
+    *   Key components needed:
+        1.  Cyber incident response process description.
+        2.  Who leads the team.
+        3.  Deadline for notifying affected individuals.
+
+3.  **Scan Documents for Information:**
+
+    *   *Document 1:* `02_compliance_manual.md` (dated January 15, 2026)
+        *   Section 11.1: Kofi Brannigan is Info Sec Officer.
+        *   Section 11.3: Annual risk assessment, annual pen testing, quarterly phishing.
+        *   Section 11.4: Vendor oversight (Oskerby).
+        *   Section 11.5 Incident Response and Insurance: "Cybersecurity incidents are handled under the incident response procedures in Section 9 of the Business Continuity Plan." Mentions insurance review.
+        *   Section 12.3 Notification of Unauthorized Access: "If the Adviser determines that sensitive customer information has been, or is reasonably likely to have been, accessed or used without authorization, it will notify each affected individual as soon as practicable, but not later than 30 days after becoming aware that the unauthorized access or use has occurred or is reasonably likely to have occurred, unless an exception applies."
+
+    *   *Document 2:* `04_business_continuity_plan.md` (dated February 9, 2026)
+        *   Section 1.2 Scope: Covers personnel, systems, critical vendors. Adopted under Compliance Manual Section 1.3. Incident response provisions incorporated by reference in Compliance Manual Section 11.5.
+        *   Section 5.2 IT Managed Service Provider: Oskerby details.
+        *   Section 9.2 Cyber Incident Response: "The Incident Response Team is led by the Director of Technology, acting as Information Security Officer... On detection of a suspected incident, the Incident Response Team classifies its severity, contains the incident by isolating affected systems and disabling compromised credentials, preserves evidence, and eradicates the threat before systems are restored from clean backups. The Chief Compliance Officer determines whether notification is required to investors, affected individuals, regulators or law enforcement, and any notification to affected individuals is made within the deadlines set out in Section 12.3 of the Compliance Manual."
+
+4.  **Synthesize the Answer:**
+    *   *Process:* From `04_business_continuity_plan.md` Section 9.2: "On detection of a suspected incident, the Incident Response Team classifies its severity, contains the incident by isolating affected systems and disabling compromised

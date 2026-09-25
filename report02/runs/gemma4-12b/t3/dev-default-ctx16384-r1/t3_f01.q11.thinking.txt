@@ -1,0 +1,25 @@
+*   Question: "What limits apply to gifts that employees may accept, and above what cost does business entertainment require pre-approval?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in docs, use NOT_IN_DOCUMENTS.
+    *   Constraint 3: Later-dated docs supersede earlier ones (01_brochure.md is 2026, 02_compliance_manual.md is 2026. They are both 2026, but 02_compliance_manual.md is more specific to the policy).
+    *   Constraint 4: Short and specific.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "What limits apply to gifts that employees may accept?"
+        *   Looking at `02_compliance_manual.md`, Section 5.2: "No Supervised Person may accept gifts with an aggregate value exceeding $250 per calendar year from any single person or entity that does business with, or seeks to do business with, the Firm, including clients, custodians, fund sponsors and vendors."
+        *   Also, Section 5.1: "Supervised Persons may not give or accept any gift or entertainment that could reasonably be expected to influence, or appear to influence, the recipient's judgment, and may never give or accept cash or cash equivalents, including gift cards."
+    *   "above what cost does business entertainment require pre-approval?"
+        *   Looking at `02_compliance_manual.md`, Section 5.3: "Business entertainment with an estimated cost exceeding $400 per person per event requires the prior approval of the CCO."
+
+    *   Question part 1 (Gifts): "No Supervised Person may accept gifts with an aggregate value exceeding $250 per calendar year from any single person or entity that does business with, or seeks to do business with, the Firm, including clients, custodians, fund sponsors and vendors." (Section 5.2)
+    *   Question part 2 (Entertainment): "Business entertainment with an estimated cost exceeding $400 per person per event requires the prior approval of the CCO." (Section 5.3)
+
+    *   Answer: "No Supervised Person may accept gifts with an aggregate value exceeding $250 per calendar year from any single person or entity that does business with, or seeks to do business with, the Firm, including clients, custodians, fund sponsors and vendors. Business entertainment with an estimated cost exceeding $400 per person per event requires the prior approval of the CCO."
+    *   Source: 02_compliance_manual.md
+    *   Section: SECTION 5. GIFTS AND ENTERTAINMENT
+    *   Quote: "No Supervised Person may accept gifts with an aggregate value exceeding $250 per calendar year from any single person or entity that does business with, or seeks to do business with, the Firm, including clients, custodians, fund sponsors and vendors. ... Business entertainment with an estimated cost exceeding $400 per person per event requires the prior approval of the CCO."
+
+    *Wait, the prompt asks for "the section where the answer appears". Since the answer spans 5.2 and 5.3, I should check if I can combine them or if I need to be specific.*
+
+    *   Question: "What limits apply to gifts that employees may accept, and above what cost does business entertainment require pre-approval?"

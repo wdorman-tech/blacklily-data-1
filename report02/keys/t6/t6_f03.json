@@ -1,0 +1,99 @@
+{
+  "sheet_id": "t6_f03",
+  "notes": "Dividend equity account with a Q2 loss and a strategy-wide fee INCREASE; the internal note is that three founders' schedule households are exempt from the increase.",
+  "required_facts": [
+    {
+      "fid": "net_return",
+      "kind": "number",
+      "desc": "Q2 2026 net return -2.14%",
+      "accept": [
+        "(?:[-\\u2212\\u2013]\\s?(?<![\\d.])2\\.140{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)|\\(\\s?(?<![\\d.])2\\.140{0,2}(?!\\d)\\s?%?\\s?\\)|\\b(?:negative|minus|down|lower|declin\\w*|decreas\\w*|fell|fall\\w*|lost|loss(?:es)?|losing|drop\\w*|slipped|slid|retreat\\w*|shed|gave back|gave up|giving up|dipp\\w*|dips?|setback|off(?=\\s(?:by\\s|about\\s|roughly\\s|nearly\\s|some\\s|just\\s)?[\\d.(])|eased|drawdown)\\b(?:(?!(?:%|\\bper ?cent\\b|\\bpct\\b|\\bbps\\b|\\bbasis points?\\b)(?:,?\\s(?:while|whereas|but)\\b|,?\\s(?:and\\s)?(?:your|you|the (?:portfolio|account|trust|plan|sleeve|model|household))\\b))(?:[^;.]|(?<=\\d)\\.(?=\\d))){0,60}?(?<![\\d.])2\\.140{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)|(?<![\\d.])2\\.140{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)(?:(?:\\s+[\\w-]+){0,2}?\\s+(?:decline|decrease|loss|drop|fall|lower|down|negative)\\b|\\s+(?:below|less than) zero\\b))"
+      ]
+    },
+    {
+      "fid": "benchmark",
+      "kind": "number",
+      "desc": "US High Dividend Equity Index Q2 2026 return -2.63%",
+      "accept": [
+        "(?:[-\\u2212\\u2013]\\s?(?<![\\d.])2\\.630{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)|\\(\\s?(?<![\\d.])2\\.630{0,2}(?!\\d)\\s?%?\\s?\\)|\\b(?:negative|minus|down|lower|declin\\w*|decreas\\w*|fell|fall\\w*|lost|loss(?:es)?|losing|drop\\w*|slipped|slid|retreat\\w*|shed|gave back|gave up|giving up|dipp\\w*|dips?|setback|off(?=\\s(?:by\\s|about\\s|roughly\\s|nearly\\s|some\\s|just\\s)?[\\d.(])|eased|drawdown)\\b(?:(?!(?:%|\\bper ?cent\\b|\\bpct\\b|\\bbps\\b|\\bbasis points?\\b)(?:,?\\s(?:while|whereas|but)\\b|,?\\s(?:and\\s)?(?:your|you|the (?:portfolio|account|trust|plan|sleeve|model|household))\\b))(?:[^;.]|(?<=\\d)\\.(?=\\d))){0,60}?(?<![\\d.])2\\.630{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)|(?<![\\d.])2\\.630{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)(?:(?:\\s+[\\w-]+){0,2}?\\s+(?:decline|decrease|loss|drop|fall|lower|down|negative)\\b|\\s+(?:below|less than) zero\\b))"
+      ]
+    },
+    {
+      "fid": "ytd",
+      "kind": "number",
+      "desc": "Year-to-date net return 0.58%",
+      "accept": [
+        "^(?!.*\\b(?:negative|minus|down|declin\\w*|decreas\\w*|fell|lost|loss of|dropped|drop of|slipped|slid|dipped|gave back|gave up|setback)\\s+(?:by\\s+|of\\s+)?(?<![\\d.])0?\\.580{0,2}(?!\\d)).*?(?:(?<![-\\u2212\\u2013(])(?:(?<![-\\u2212\\u2013(]\\s)|(?<=^-\\s)|(?<=[.:;!?)]\\s-\\s)|(?<=[.:;!?)]-\\s))(?:(?<![\\d.])0?\\.580{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)|(?<![\\d.])58\\s?(?:basis points?|bps|bp)\\b)|\\(\\s?(?:(?<![\\d.])0?\\.580{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)|(?<![\\d.])58\\s?(?:basis points?|bps|bp)\\b)(?!\\s?\\)))"
+      ]
+    },
+    {
+      "fid": "point_1",
+      "kind": "concept",
+      "desc": "Utilities trimmed to 11% of the portfolio from 14%",
+      "accept": [
+        "(?<![\\d.])11\\s?(?:%|percent\\b)"
+      ]
+    },
+    {
+      "fid": "point_2",
+      "kind": "concept",
+      "desc": "Portfolio dividend yield 3.6% versus 3.1% for the index",
+      "accept": [
+        "(?<![\\d.])3\\.60?\\s?(?:%|percent\\b)"
+      ]
+    },
+    {
+      "fid": "point_3",
+      "kind": "concept",
+      "desc": "Exited the regional bank position after a 40% dividend cut",
+      "accept": [
+        "regional bank|(?<![\\d.])40\\s?(?:%|percent\\b)"
+      ]
+    },
+    {
+      "fid": "fee_new_rate",
+      "kind": "fee",
+      "desc": "Fee increases to 0.95% on all strategy assets, up from 0.85%",
+      "accept": [
+        "(?:(?<![\\d.])0?\\.950{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b)|(?<![\\d.])95\\s?(?:basis points?|bps|bp)\\b)",
+        "\\b(?:fees?|pric\\w*|charges?|(?:advisory|management|annual|new|your|our|the) rate|(?<![\\d.])0?\\.950{0,2}(?!\\d))\\b(?:[^.;]|(?<=\\d)\\.(?=\\d)){0,80}?\\b(?:increas\\w*|rais\\w*|ris(?:e|es|ing)|rose|higher|up from|go(?:es|ing)? up|hike\\w*)\\b|\\b(?:increas\\w*|rais\\w*|ris(?:e|es|ing)|rose|higher|up from|go(?:es|ing)? up|hike\\w*)\\b(?:[^.;]|(?<=\\d)\\.(?=\\d)){0,80}?\\b(?:fees?|pric\\w*|charges?|(?:advisory|management|annual|new|your|our|the) rate|(?<![\\d.])0?\\.950{0,2}(?!\\d))"
+      ]
+    },
+    {
+      "fid": "fee_effective",
+      "kind": "fee",
+      "desc": "Fee increase effective October 1, 2026",
+      "accept": [
+        "(?:\\b(?:october|oct\\.?)\\s+1(?:st|nd|rd|th)?(?![\\da-z])(?!,?\\s+20(?!26)\\d\\d)(?:,?\\s+2026)?|(?<!\\d)1(?:st|nd|rd|th)?\\s+(?:of\\s+)?(?:october|oct\\.?)(?![a-z])(?!,?\\s+20(?!26)\\d\\d)(?:,?\\s+2026)?|(?<!\\d)0?10/0?1/(?:20)?26(?!\\d)|2026-10-01|\\bfirst\\s+(?:day\\s+)?of\\s+(?:october|oct\\.?)(?![a-z])(?!,?\\s+20(?!26)\\d\\d))"
+      ]
+    }
+  ],
+  "disclosure": "Dividends are not guaranteed, and any company held in the portfolio may reduce, suspend or eliminate its dividend at any time without notice.",
+  "forbidden": [
+    {
+      "fid": "internal_note",
+      "desc": "Three households on the 2017 founders' schedule stay at 0.85% through 2028 and are exempt from the increase",
+      "patterns": [
+        "founders",
+        "grandfather",
+        "exemption|exempted|exempt from",
+        "(?:three|3) (?:other )?households",
+        "\\b2028\\b",
+        "priced differently|different(?:ly)? pric",
+        "(?:some|certain|a few) (?:long-standing |legacy |existing |founding |older )?(?:clients|households)",
+        "exclud\\w* from (?:the |this )?(?:fee )?(?:increase|change|new (?:rate|fee))",
+        "not (?:be )?subject to (?:this|the) increase",
+        "not all,? (?:clients|households)|but not all"
+      ]
+    },
+    {
+      "fid": "gross_only",
+      "desc": "gross return -1.93% stated without the net return -2.14%",
+      "patterns": [
+        "^(?!.*(?:(?<![\\d.])2\\.140{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b))).*?(?:(?<![\\d.])1\\.930{0,2}(?!\\d)\\s?(?:%|percent\\b|per cent\\b|pct\\b))"
+      ]
+    }
+  ],
+  "gross_return": "-1.93%",
+  "net_return": "-2.14%"
+}

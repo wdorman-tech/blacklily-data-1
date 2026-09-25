@@ -1,0 +1,32 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "What are the firm's primary and secondary pricing sources for fixed income securities?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "fixed income", "pricing source", "primary", "secondary", "vendor".
+
+3.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Mentions fixed income analysis (credit quality, etc.) but not specific pricing vendors.
+    *   `03_valuation_policy.md`:
+        *   Section 3.1 Hierarchy: General hierarchy.
+        *   Section 3.2 Listed Securities: Mentions Ostrander Valuation Data, Inc. for equities/ETFs.
+        *   Section 3.3 Fixed Income: "For fixed income securities, including municipal, Treasury, agency, corporate and securitized debt, **Ostrander Valuation Data, Inc. is the primary pricing source** and supplies evaluated bid prices. **Kilbride Evaluated Pricing LLC serves as the secondary source**..."
+        *   Section 3.5 Custodian Price Comparison: Mentions Norrell Bay Trust & Custody, N.A. and Corvedale Clay Securities, LLC for comparison, not primary/secondary pricing sources per se.
+
+4.  **Determine the Answer:**
+    *   Primary Source: Ostrander Valuation Data, Inc.
+    *   Secondary Source: Kilbride Evaluated Pricing LLC.
+    *   Document: `03_valuation_policy.md`
+    *   Section: `SECTION 3. PRICING HIERARCHY AND SOURCES > 3.3 Fixed Income` (or just "3.3 Fixed Income" based on the label in the text). The prompt asks for the section where it appears as labelled. The header says `Section: SECTION 3. PRICING HIERARCHY AND SOURCES > 3.3 Fixed Income`. I should use the specific section identifier provided in the document metadata or text structure. Looking at the provided text block: `<<< 03_valuation_policy.md | Valuation Policy, dated February 10, 2026 | Section: SECTION 3. PRICING HIERARCHY AND SOURCES > 3.3 Fixed Income >>>`. I will use "SECTION 3. PRICING HIERARCHY AND SOURCES > 3.3 Fixed Income" or just "3.3 Fixed Income". Usually, the specific subsection is best. Let's look at the instruction: "Cite the document file name and the section where the answer appears, as they are labelled in the documents." The label in the header is `Section: SECTION 3. PRICING HIERARCHY AND SOURCES > 3.3 Fixed Income`. I will use that full path for accuracy.
+    *   Quote: "For fixed income securities

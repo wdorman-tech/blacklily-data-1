@@ -1,0 +1,336 @@
+{
+ "task": "t5",
+ "model": "gemma4:31b-it-q4_K_M",
+ "items": {
+  "t5_m01": {
+   "units": [
+    {
+     "uid": "meeting_date",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "tuesday, september 15, 2026",
+     "expected": "Tuesday, September 15, 2026",
+     "extra": {}
+    },
+    {
+     "uid": "client_names",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "glenn ostrander ; patrice ostrander",
+     "expected": "Glenn Ostrander; Patrice Ostrander",
+     "extra": {}
+    },
+    {
+     "uid": "primary_goal",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "retire on a date they're confident in, with income that lasts as long as whichever one of them lives longer",
+     "expected": "Retire together on a date they are confident in (now June 30, 2027) with lifetime income that lasts for whichever spouse lives longer",
+     "extra": {}
+    },
+    {
+     "uid": "retirement_target",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "june 30, 2027",
+     "expected": "Glenn's last day June 30, 2027 (age 63), Tollard pension starting July 1, 2027; Patrice stops working at the same time",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "moderate",
+     "expected": "Moderate (60/40)",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance_change",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "from moderate growth to moderate",
+     "expected": "from Moderate Growth (70/30) to Moderate (60/40)",
+     "extra": {}
+    },
+    {
+     "uid": "next_meeting",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "november 10, 2026",
+     "expected": "Tuesday, November 10, 2026, 2:00 PM, in the office",
+     "extra": {}
+    },
+    {
+     "uid": "e1",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "life_event",
+     "error_kind": "missed",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "Glenn retiring from Tollard Electric Company, last day June 30, 2027 (age 63); Patrice stopping her bookkeeping at the vet clinic at the same time",
+     "extra": {}
+    },
+    {
+     "uid": "e2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "patrice's mother moving into assisted living in november",
+     "expected": "Patrice's mother (87, two falls this summer) moving into assisted living in early November 2026, the 2nd at the earliest; her own assets and the house sale cover the cost and Patrice's brother holds power of attorney",
+     "extra": {}
+    },
+    {
+     "uid": "e3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "patrice's granddaughter nora born august 9th",
+     "expected": "First grandchild, Nora, born August 9, 2026 to daughter Kelsey and Marcus",
+     "extra": {}
+    },
+    {
+     "uid": "a1",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "account_action",
+     "error_kind": "missed",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "Elect the 100% joint and survivor annuity (election form arrives in the packet around early January) | Glenn's Tollard Electric Company pension | $3,655 per month starting July 1, 2027",
+     "extra": {}
+    },
+    {
+     "uid": "a2",
+     "score": 0.5,
+     "verdict": "PARTIAL",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: rebalance from moderate growth to moderate (60/40) account: joint account and patrice's ira amount: not_found",
+     "expected": "Rebalance from the 70/30 moderate growth model to the 60/40 moderate model, stock funds to bond funds, trades placed once the updated risk profile is signed | Joint account and Patrice's IRA (about $474,000 managed) | about $47,400",
+     "extra": {}
+    },
+    {
+     "uid": "a3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: transfer to money market account: joint account amount: 40,000",
+     "expected": "Transfer to start the retirement cash reserve | Credit union savings to the money market in the joint account | $40,000 (leaves $45,000 at the credit union)",
+     "extra": {}
+    },
+    {
+     "uid": "a4",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: direct rollover into ira account: ferncastle 401(k) amount: 118,400",
+     "expected": "Direct rollover, trustee to trustee | Patrice's former-employer Ferncastle Dental 401(k) into her IRA at the firm | $118,400 (June 30 statement)",
+     "extra": {}
+    },
+    {
+     "uid": "i1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "reassigned",
+     "hallucination": false,
+     "got": "task: upload social security statement to portal owner: patrice ostrander due: september 21, 2026",
+     "expected": "Download Patrice's current Social Security statement (my Social Security, ID.me code goes to her phone) and upload it to the portal",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "due_changed",
+     "hallucination": false,
+     "got": "task: upload pension estimate pdf to portal owner: glenn ostrander due: september 23, 2026",
+     "expected": "Download the full Tollard pension estimate statement PDF (early retirement reduction factors and 417(e) lump-sum rates) and put it in the portal",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: run social security comparison and updated projection owner: kiran bastable due: september 25, 2026",
+     "expected": "Run the Social Security claiming comparison (Glenn at 67 vs 70; Patrice at 62, 65 and 67, own vs spousal) on top of the pension, plus an updated retirement projection with a June 30, 2027 retirement date",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i4",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: prepare rollover request, letter of instruction, updated risk profile, and information release for deb szymanski in docusign owner: kiran bastable due: september 16, 2026",
+     "expected": "Send one DocuSign with the Ferncastle 401(k) rollover request, letter of instruction, updated risk profile and the CPA information release for Deb Szymanski",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i5",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: confirm in writing: retiree medical premium, spouse coverage until medicare, notice period, application date, election packet timing, and dental coverage owner: glenn ostrander due: before november 10, 2026",
+     "expected": "Get written confirmation from Tollard HR (Tanya in benefits) of the retiree medical premium (about $1,150 a month for both), Patrice's coverage until her own Medicare, dental, the notice period, the retirement application date and when the election packet is mailed",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i6",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: send updated projection to deb szymanski and ask her to model withholding owner: lena castellaw due: october 2, 2026",
+     "expected": "Send CPA Deb Szymanski the updated projection with the pension numbers and 2027 income picture and ask her to model the pension (W-4P) withholding, once the information release is signed",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i7",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "action_item",
+     "error_kind": "missed",
+     "trap": "none",
+     "hallucination": false,
+     "got": "",
+     "expected": "Place the trades moving the joint account and Patrice's IRA from the 70/30 moderate growth model to the 60/40 moderate model (about $47,400 from stock funds to bond funds)",
+     "extra": {}
+    },
+    {
+     "uid": "n1",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Opening a 529 plan for granddaughter Nora: raised by Patrice, parked by Lena until both are retired and a year of real spending is known",
+     "extra": {}
+    },
+    {
+     "uid": "n2",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Roth conversions: raised by Glenn, deferred by Lena (not now and probably not in 2027 because of income and IRMAA; maybe look again next fall)",
+     "extra": {}
+    },
+    {
+     "uid": "n3",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "declined_proposal",
+     "hallucination": false,
+     "got": "",
+     "expected": "Lena's suggestion to take the $716,400 pension lump sum and roll it into an IRA managed by the firm; Glenn and Patrice declined in favor of the annuity",
+     "extra": {}
+    }
+   ],
+   "parse_problems": [],
+   "unmatched": {
+    "life_events": [],
+    "account_actions": [],
+    "action_items": []
+   },
+   "n_reported_items": 11,
+   "group": "t5_m01",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 289.52,
+    "prompt_tokens": 11159,
+    "output_tokens": 659,
+    "output_tokens_per_sec": 2.5,
+    "prompt_tokens_per_sec": 474.6,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11471
+   }
+  }
+ }
+}

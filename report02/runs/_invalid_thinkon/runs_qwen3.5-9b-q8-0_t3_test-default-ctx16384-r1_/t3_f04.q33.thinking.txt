@@ -1,0 +1,37 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "How are separate account fees billed? State the frequency, timing and valuation basis."
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "billed", "frequency", "timing", "valuation basis", "separate account fees".
+
+3.  **Evaluate Document 1 (`01_brochure.md`):**
+    *   Section: Item 5. Fees and Compensation > 5.4 Billing.
+    *   Text: "Separate account fees are billed quarterly in arrears based on the average of the three month-end market values of the account during the quarter, including accrued interest. Market values are determined by the Firm under its Valuation Policy and reconciled monthly to the records of the client's custodian. The Firm delivers invoices within 15 business days after quarter end, and payment is due within 30 days after the invoice date."
+    *   Relevance: This section explicitly mentions billing frequency ("quarterly"), timing ("in arrears", "within 15 business days after quarter end"), and valuation basis ("average of the three month-end market values").
+
+4.  **Evaluate Document 2 (`05_fee_schedule.md`):**
+    *   Section: SECTION 4. BILLING > 4.1 Frequency and Basis.
+    *   Text: "Separate account fees are billed quarterly in arrears based on the average of the three month-end market values of the account during the quarter, including accrued interest. Market values are determined under the Firm's Valuation Policy and Procedures and reconciled to custodian records."
+    *   Date: January 1, 2026.
+    *   Brochure Date: March 27, 2026.
+    *   Rule Check: "Later-dated documents supersede earlier ones."
+    *   Comparison: The Brochure (`01_brochure.md`) is dated March 27, 2026. The Fee Schedule (`05_fee_schedule.md`) is dated January 1, 2026. Therefore, the Brochure is the later document and supersedes the Fee Schedule regarding billing information if there are conflicts or simply as the most current public disclosure. However, both documents contain nearly identical text regarding billing frequency/timing/valuation basis. The Brochure is more recent (March vs January).
+    *   Decision: Use the Brochure (`01_brochure.md`) as it is later dated (March 27, 2026 > January 1, 2026).
+
+5.  **Draft the Answer:**
+    *   Frequency: Quarterly.
+    *   Timing: In arrears.
+    *   Valuation Basis: Average of the three month-end market values of the account during the quarter, including accrued interest.
+    *   Source

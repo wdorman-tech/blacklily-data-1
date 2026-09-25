@@ -1,0 +1,39 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Who performs the independent review of the Firm's Level 3 valuations, how often, and which positions are covered?"
+    *   Key information needed:
+        *   Who (Entity name).
+        *   How often (Frequency).
+        *   Which positions (Scope/Coverage).
+
+3.  **Scan the Documents:**
+    *   `02_compliance_manual.md`: Discusses annual review, independent assessment by Hessendale Compliance Advisors (every second year), but this is about compliance program, not specifically Level 3 valuations.
+    *   `03_valuation_policy.md`: This seems most relevant.
+        *   Section 2.4 Responsibilities: Committee approves pricing sources, reviews Level 3 positions... reports quarterly.
+        *   Section 4.1 Classification: Defines Level 1, 2, 3.
+        *   Section 4.4 Documentation and Approval: Level 3 valuations approved by Committee at monthly meeting.
+        *   Section 8.1 Independent Valuation Firm: "Selwick Harrow Valuation Advisors LLC performs an independent review of Level 3 positions each quarter. The review covers every Level 3 position held by the Commingled Fund and every Level 3 position in a separate account with a market value above $10 million."
+        *   Section 8.2 Annual Audit: Marrick Tolland LLP audits valuations as part of annual audit.
+        *   Section 8.3 Pricing Vendor Due Diligence: Committee conducts due diligence on pricing service at least annually.
+        *   Section 8.4 Policy Review: Committee and CCO review Policy at least annually.
+
+4.  **Evaluate Findings against Constraints:**
+    *   The question asks about the independent review of Level 3 valuations.
+    *   Document `03_valuation_policy.md`, Section 8.1 Independent Valuation Firm explicitly states: "Selwick Harrow Valuation Advisors LLC performs an independent review of Level 3 positions each quarter. The review covers every Level 3 position held by the Commingled Fund and every Level 3 position in a separate account with a market value above $10 million."
+    *   This answers all three parts: Who (Selwick Harrow Valuation Advisors LLC), How often (each quarter), Which positions (every Level 3 position held by the Commingled Fund and every Level 3 position in a separate account with a market value above $10 million).
+    *   Date check: `03_valuation_policy.md` is dated February 10, 2026. This is the latest document provided regarding valuation policy.
+    *   Constraint Check: Answer only from documents? Yes. Short and specific? Yes. Cite

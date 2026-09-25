@@ -1,0 +1,45 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Why is the firm subject to an annual surprise custody examination, and which independent accountant performs it?"
+    *   Key information needed:
+        1.  Reason/Why (trigger for the exam).
+        2.  Name of the independent accountant.
+        3.  Frequency (annual) - implied by question, but need to confirm if documents specify "annual".
+
+3.  **Scan Documents:**
+
+    *   `01_brochure.md` | Section: Item 15. Custody > 15.2 Standing Letters of Authorization
+        *   Content: Discusses standing letters of authorization, transfers to third parties, custody conditions, surprise examination exclusion for these assets. No mention of the specific reason for firm-wide exam or accountant name here.
+
+    *   `01_brochure.md` | Section: Item 15. Custody > 15.3 Trustee Appointments and Surprise Examination
+        *   Content: "Because Ms. Tennick and two other supervised persons serve as trustees of certain client trusts, the Firm is deemed to have custody of those trusts' assets. As required by Rule 206(4)-2 under the Advisers Act, those assets are subject to an annual surprise examination by an independent public accountant, Pemberline & Rusk LLP, at a time chosen by the accountant without prior notice to the Firm."
+        *   Analysis:
+            *   Reason/Why: "Because Ms. Tennick and two other supervised persons serve as trustees of certain client trusts, the Firm is deemed to have custody of those trusts' assets." (Implies this triggers the requirement).
+            *   Accountant: "Pemberline & Rusk LLP".
+            *   Frequency: "annual surprise examination".
+        *   Date: March 27, 2026.
+
+    *   `02_compliance_manual.md` | Section: SECTION 2. CHIEF COMPLIANCE OFFICER > 2.4 Compliance Calendar and Testing
+        *   Content: Mentions "custody examinations" in the calendar. No specific reason or accountant name.
+
+    *   `02_compliance_manual.md` | Section: SECTION 2. CHIEF COMPLIANCE OFFICER > 2.5 Regulatory Examinations and Inquiries
+        *   Content: Discusses handling SEC/regulator calls/exams. Not relevant to internal custody exams.
+
+    *   `02_compliance_manual.md` | Section: SECTION 15. ANNUAL REVIEW OF THE COMPLIANCE PROGRAM > 15.1 Scope
+        *   Content: CCO reviews adequacy annually. Not about custody exam specifics.
+
+    *   `02_compliance_manual.md`

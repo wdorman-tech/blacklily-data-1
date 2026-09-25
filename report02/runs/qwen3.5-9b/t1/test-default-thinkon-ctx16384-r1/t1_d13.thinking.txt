@@ -1,0 +1,155 @@
+The user wants me to extract key investment terms from the provided fund offering document and return them as a JSON object.
+I need to follow strict rules:
+1.  **Accuracy**: Only use text that appears in the document. No guessing or inferring market standards.
+2.  **NOT_FOUND / NOT_APPLICABLE**: If a term isn't stated, use these exact strings.
+3.  **Amendments**: The "Amended and Restated Agreement" (Section 2) supersedes the Summary (Section 1). I need to check for conflicts and report the current effective terms.
+4.  **Citations**: Must be section or appendix identifiers from the document.
+5.  **Quotes**: Verbatim text supporting the value.
+6.  **Fields**: A specific list of fields is provided.
+
+Let's go through each field:
+
+1.  **fund_name**:
+    *   Search for "name" or legal entity name.
+    *   Section 2.1: "The Partnership was formed on November 3, 2025 as a limited partnership under the Delaware Revised Uniform Limited Partnership Act (the "Act") under the name 'Quarrendon Vale Infrastructure Secondaries Fund II, L.P.'"
+    *   Summary Table: "Partnership | Quarrendon Vale Infrastructure Secondaries Fund II, L.P."
+    *   Value: "Quarrendon Vale Infrastructure Secondaries Fund II, L.P."
+    *   Citation: "Section 2.1" (or Summary table). I'll use the specific section in the Agreement as it's more formal, or the Summary if clearer. The prompt asks for citation where found. Section 2.1 is explicit about the name.
+    *   Quote: "under the name 'Quarrendon Vale Infrastructure Secondaries Fund II, L.P.'"
+
+2.  **fund_domicile**:
+    *   Search for jurisdiction of organization.
+    *   Summary Table: "a Delaware limited partnership".
+    *   Section 2.1: "...under the Delaware Revised Uniform Limited Partnership Act... Its principal office is in Minneapolis, Minnesota, and its registered office in Delaware..."
+    *   Section 15.5: "This Agreement is governed by the laws of the State of Delaware."
+    *   Usually, domicile refers to where it is formed/registered. Summary says "Delaware limited partnership". Section 2.1 says "under the Delaware Revised Uniform Limited Partnership Act".
+    *   Value: "Delaware"
+    *   Citation: "Section 2.1" or "Summary Table". I will use "Section 2.1" as it defines the formation act.
+    *   Quote: "as a limited partnership under the Delaware Revised Uniform Limited Partnership Act"
+
+3.  **fund_structure**:
+    *   Search for structure (open/closed, master-feeder).
+    *   Summary Table: "A closed-end, drawdown vehicle; not a feeder fund and does not invest through a master fund."
+    *   Section 2.2: "The Partnership is a closed-end fund... The Partnership is not part of a master-feeder structure."
+    *   Value: "Closed-end (drawdown), not a feeder fund, not a master-feeder"
+    *   Citation: "Section 2.2"
+    *   Quote: "The Partnership is a closed-end fund... The Partnership is not part of a master-feeder structure."
+
+4.  **management_fee**:
+    *   Search for fee rates and basis.
+    *   Summary Table: "During the Investment Period, 1.00% per annum of Capital Commitments; thereafter, 0.75% per annum of Net Invested Capital... No Management Fee for any period after the twelfth anniversary..."
+    *   Section 7.1: "...equal to (a) for each calendar quarter from the Initial Closing Date through the last day of the Investment Period, 0.25% (1.00% per annum) of that Limited Partner's Capital Commitment; and (b) for each calendar quarter thereafter, 0.1875% (0.75% per annum) of that Limited Partner's pro rata share of Net Invested Capital... No Management Fee shall be charged for any period after the twelfth anniversary of the Final Closing Date... or on the GP Commitment."
+    *   The Agreement (Section 7.1) is more detailed and supersedes the Summary.
+    *   Value: "Investment Period: 1.00% per annum of Capital Commitments; thereafter until 12th anniversary: 0.75% per annum of Net Invested Capital; after 12th anniversary: None"
+    *   Citation: "Section 7.1"
+    *   Quote: "equal to (a) for each calendar quarter from the Initial Closing Date through the last day of the Investment Period, 0.25% (1.00% per annum) of that Limited Partner's Capital Commitment; and (b) for each calendar quarter thereafter, 0.1875% (0.75% per annum) of that Limited Partner's pro rata share of Net Invested Capital... No Management Fee shall be charged for any period after the twelfth anniversary of the Final Closing Date"
+
+5.  **performance_fee**:
+    *   Search for carried interest / incentive allocation.
+    *   Summary Table: "Carried Interest | 12.5%, after the Preferred Return and a full catch-up."
+    *   Section 6.2(c): "...until it has received under this Section 6.2(c) 12.5% of the sum of distributions to that Limited Partner under Section 6.2(b)..."
+    *   Section 6.4: "No high water mark, loss carryforward or similar mechanism applies to the Carried Interest; Section 6.3 is the exclusive adjustment for Carried Interest distributed in excess of entitlement."
+    *   Value: "12.5% after Preferred Return and full catch-up"
+    *   Citation: "Section 6.2(c)" (or Summary). I'll use Section 6.2(c) as it defines the mechanism.
+    *   Quote: "Carried Interest means distributions to the General Partner under Sections 6.2(c) and 6.2(d)(ii)." ... "100% to the General Partner until it has received under this Section 6.2(c) 12.5% of the sum of distributions..."
+
+6.  **hurdle_rate**:
+    *   Search for preferred return / hurdle.
+    *   Summary Table: "Preferred Return | 8% per annum, compounded annually, on outstanding Capital Contributions."
+    *   Section 1.1 Defined Terms: "'Preferred Return' means, for each Limited Partner, a return of 8% per annum, compounded annually..."
+    *   Section 6.2(b): "...until it has received its Preferred Return;"
+    *   Value: "8% per annum, compounded annually"
+    *   Citation: "Section 1.1" (or Summary). I'll use Section 1.1 for the definition.
+    *   Quote: "'Preferred Return' means, for each Limited Partner, a return of 8% per annum, compounded annually..."
+
+7.  **high_water_mark**:
+    *   Search for high water mark / loss carryforward.
+    *   Section 6.4: "No high water mark, loss carryforward or similar mechanism applies to the Carried Interest; Section 6.3 is the exclusive adjustment for Carried Interest distributed in excess of entitlement."
+    *   Value: "NOT_APPLICABLE" (The text explicitly says no high water mark applies).
+    *   Citation: "Section 6.4"
+    *   Quote: "No high water mark, loss carryforward or similar mechanism applies to the Carried Interest"
+
+8.  **minimum_initial_investment**:
+    *   Search for minimum commitment.
+    *   Summary Table: "Minimum Commitment | $10,000,000, subject to the General Partner's discretion to accept lesser amounts of not less than $5,000,000."
+    *   Section 3.1: "The minimum Capital Commitment of a Limited Partner is $10,000,000; provided that the General Partner may in its sole discretion accept Capital Commitments of lesser amounts, but not less than $5,000,000..."
+    *   Value: "$10,000,000 (discretionary minimum $5,000,000)"
+    *   Citation: "Section 3.1"
+    *   Quote: "The minimum Capital Commitment of a Limited Partner is $10,000,000; provided that the General Partner may in its sole discretion accept Capital Commitments of lesser amounts, but not less than $5,000,000"
+
+9.  **lockup_period**:
+    *   Search for lock-up / redemption restrictions.
+    *   Summary Table: "Withdrawals and Redemptions | None. Limited Partners may not withdraw or redeem any part of their Interests. There is no lock-up period..."
+    *   Section 10.1: "No Limited Partner shall have the right to withdraw from the Partnership, or to withdraw or redeem all or any part of its Interest... before the dissolution and winding up of the Partnership."
+    *   Value: "None" (or NOT_APPLICABLE? The field asks for lockup period. If there is no lock-up, usually "None" or "NOT_APPLICABLE". The rule says if term does not exist, use NOT_FOUND. But here it explicitly states "There is no lock-up period". So the value is that there isn't one. I should probably say "None" or quote the text saying there is none. Let's look at the instruction: "If the document does not state a term, the value is exactly NOT_FOUND." Here it states there is no lock-up. So the term exists as "None". However, usually for lockup, if it doesn't exist, we say NOT_APPLICABLE or None. The rule says "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE". Section 10.1 says "No Limited Partner shall have the right to withdraw... before the dissolution". It doesn't explicitly say "There is no lock-up period" in Section 10.1, but Summary Table says "There is no lock-up period". Section 2.2 says "Interests are not redeemable at the option of any Partner."
+    *   Let's check the rule: "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE". The Summary Table explicitly says "There is no lock-up period". Section 10.1 implies it by saying redemption only at dissolution.
+    *   Value: "NOT_APPLICABLE" (since there is no lockup).
+    *   Citation: "Section 10.1" or "Summary Table". I'll use Section 10.1 as the Agreement controls. Quote: "No Limited Partner shall have the right to withdraw from the Partnership, or to withdraw or redeem all or any part of its Interest... before the dissolution and winding up of the Partnership."
+    *   Wait, the Summary says "There is no lock-up period". Section 10.1 says "The Partnership has no redemption dates, lock-up period, redemption notice requirement or gate". This is in the Summary Table under Withdrawals and Redemptions row? No, that's in the Summary Table. Let me check the text of Section 10.1 again.
+    *   Section 10.1: "No Limited Partner shall have the right to withdraw from the Partnership... The Partnership has no redemption dates, lock-up period, redemption notice requirement or gate..." Wait, looking at the provided text for Section 10.1 in the document: "The Partnership has no redemption dates, lock-up period, redemption notice requirement or gate, and none shall be implied from any provision of this Agreement governing Transfers."
+    *   Okay, so it explicitly says "lock-up period" does not exist.
+    *   Value: "NOT_APPLICABLE"
+    *   Citation: "Section 10.1"
+    *   Quote: "The Partnership has no redemption dates, lock-up period, redemption notice requirement or gate"
+
+10. **redemption_frequency**:
+    *   Search for how often interests may be redeemed.
+    *   Section 10.1: "...before the dissolution and winding up of the Partnership." (Implies never).
+    *   Summary Table: "Withdrawals and Redemptions | None."
+    *   Value: "None" (or NOT_APPLICABLE). Since it's a closed-end fund with no redemptions, frequency is effectively none.
+    *   Citation: "Section 10.1"
+    *   Quote: "No Limited Partner shall have the right to withdraw from the Partnership... before the dissolution and winding up of the Partnership."
+
+11. **redemption_notice_days**:
+    *   Search for notice required.
+    *   Section 10.1: "...The Partnership has no redemption dates, lock-up period, redemption notice requirement or gate..."
+    *   Value: "None" (or NOT_APPLICABLE).
+    *   Citation: "Section 10.1"
+    *   Quote: "The Partnership has no redemption dates, lock-up period, redemption notice requirement or gate"
+
+12. **gate_provision**:
+    *   Search for gates.
+    *   Section 10.1: "...and none shall be implied from any provision of this Agreement governing Transfers."
+    *   Summary Table: "There is no... gate."
+    *   Value: "None" (or NOT_APPLICABLE).
+    *   Citation: "Section 10.1"
+    *   Quote: "The Partnership has no redemption dates, lock-up period, redemption notice requirement or gate"
+
+13. **key_man_provision**:
+    *   Search for key person clause.
+    *   Summary Table: "Key Persons | Helena Strathdee, Marcus Vellacott and Priya Lathcombe. If during the Investment Period fewer than two Key Persons devote substantially all of their business time... the Investment Period is automatically suspended."
+    *   Section 8.3: "If at any time during the Investment Period fewer than two (2) of the Key Persons devote substantially all of their business time to the affairs of the Partnership... (a 'Key Person Event')... the Investment Period shall be automatically suspended..."
+    *   Value: "Helena Strathdee, Marcus Vellacott and Priya Lathcombe. Suspension if fewer than two Key Persons devote substantially all of their business time during Investment Period."
+    *   Citation: "Section 8.3"
+    *   Quote: "If at any time during the Investment Period fewer than two (2) of the Key Persons devote substantially all of their business time to the affairs of the Partnership... the Investment Period shall be automatically suspended"
+
+14. **gp_commitment**:
+    *   Search for GP commitment.
+    *   Summary Table: "GP Commitment | The General Partner and its Affiliates will commit, in the aggregate, 1.0% of total Capital Commitments to the Partnership and the Parallel Funds, funded in cash."
+    *   Section 3.2: "The General Partner shall make... Capital Commitments... that are, in the aggregate, not less than two percent (2%) of the aggregate Capital Commitments of all partners..."
+    *   Conflict! Summary says 1.0%. Agreement Section 3.2 says "not less than two percent (2%)".
+    *   Rule 4: "Amendments, supplements and amended-and-restated sections SUPERSEDE the original body text." The document is titled "AMENDED AND RESTATED AGREEMENT...". The Summary is qualified by the Agreement. Section 15.1 says "In the event of any conflict or inconsistency between this Agreement and the Summary... this Agreement shall control."
+    *   So I must use the Agreement value (2%).
+    *   Value: "not less than two percent (2%) of the aggregate Capital Commitments of all partners"
+    *   Citation: "Section 3.2"
+    *   Quote: "The General Partner shall make... Capital Commitments... that are, in the aggregate, not less than two percent (2%) of the aggregate Capital Commitments of all partners..."
+
+15. **fund_term**:
+    *   Search for term.
+    *   Summary Table: "Term | Twelve years from the Final Closing Date, subject to up to three consecutive one-year extensions..."
+    *   Section 2.3: "The term of the Partnership shall continue until the twelfth (12th) anniversary of the Final Closing Date... The General Partner may extend the term for up to two (2) successive periods of one (1) year each... and the Partnership shall not continue, other than to wind up... after the fourteenth (14th) anniversary..."
+    *   Conflict! Summary says "up to three consecutive one-year extensions". Agreement Section 2.3 says "up to two (2) successive periods of one (1) year each".
+    *   Rule 4: Agreement supersedes Summary.
+    *   Value: "Twelve years from the Final Closing Date, subject to up to two successive one-year extensions"
+    *   Citation: "Section 2.3"
+    *   Quote: "The term of the Partnership shall continue until the twelfth (12th) anniversary of the Final Closing Date... The General Partner may extend the term for up to two (2) successive periods of one (1) year each... and the Partnership shall not continue, other than to wind up under Section 12.2, after the fourteenth (14th) anniversary of the Final Closing Date."
+
+16. **auditor**:
+    *   Search for auditor.
+    *   Summary Table: "Auditor | Merriwick Sowerby LLP."
+    *   Section 13.2: "The General Partner has appointed Merriwick Sowerby LLP as the independent auditors of the Partnership, commencing with the fiscal year ending December 31, 2026..."
+    *   Value: "Merriwick Sowerby LLP"
+    *   Citation: "Section 13.2"
+    *   Quote: "The General Partner has appointed Merriwick Sowerby LLP as the independent auditors of the Partnership"
+
+17. **

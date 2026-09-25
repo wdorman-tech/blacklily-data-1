@@ -1,0 +1,135 @@
+{
+  "doc_id": "doc2_calder_wyeth",
+  "doc_title": "Calder & Wyeth Private Credit Fund III, L.P. — PPM",
+  "difficulty": "structural",
+  "notes": "Closed-end drawdown credit fund. Five fields that exist in every hedge fund are genuinely NOT_APPLICABLE here. Tests whether the model reports structural absence instead of importing market-standard hedge fund terms. Also tests waterfall reading: the hurdle is a 7% preferred return with an 80/20 catch-up, which is easy to mis-state as the carry rate.",
+  "fields": {
+    "fund_name": {
+      "expected": "Calder & Wyeth Private Credit Fund III, L.P.",
+      "citation": "Article I, Section 1.1",
+      "accept": ["calder\\s*(&|and)\\s*wyeth\\s+private\\s+credit\\s+fund\\s*(iii|3)"],
+      "reject": {"predecessor_confusion": ["fund\\s*(ii|i)\\b(?!.*iii)"]}
+    },
+    "fund_domicile": {
+      "expected": "Delaware",
+      "citation": "Article I, Section 1.1",
+      "accept": ["delaware"],
+      "reject": {}
+    },
+    "fund_structure": {
+      "expected": "Closed-end, drawdown private credit fund; finite life; no master-feeder",
+      "citation": "Article I, Section 1.1",
+      "accept": ["closed.?end|drawdown|finite\\s+life"],
+      "reject": {"calls_it_open_end": ["open.?end|master.?feeder"]}
+    },
+    "management_fee": {
+      "expected": "1.50% per annum of aggregate capital commitment during the Investment Period; 1.50% of invested capital in unrealized investments at cost thereafter. Tiered: 1.35% at $50m+, 1.25% at $100m+; additional 10bp off for Fund II investors. 100% fee offset of transaction fees.",
+      "citation": "Article V, Sections 5.1-5.3",
+      "accept": ["1\\.50|1\\.5\\s*%"],
+      "reject": {}
+    },
+    "performance_fee": {
+      "expected": "20% carried interest, whole-of-fund (European) basis",
+      "citation": "Article VI, Sections 6.1-6.2",
+      "accept": ["\\b20\\s*%|twenty\\s+percent"],
+      "reject": {"catchup_confusion": ["^(?!.*20).*\\b80\\s*%"]}
+    },
+    "hurdle_rate": {
+      "expected": "7% per annum preferred return, compounded annually, with an 80/20 GP catch-up",
+      "citation": "Article VI, Section 6.1",
+      "accept": ["\\b7(\\.0+)?\\s*%|seven\\s+percent"],
+      "reject": {"claims_none": ["^\\s*(no\\b|none|not_applicable|not_found)"]}
+    },
+    "high_water_mark": {
+      "expected": "NOT_APPLICABLE — expressly no high water mark; carry is charged on realized distributions through the waterfall, not on periodic appreciation",
+      "citation": "Article VI, Section 6.2",
+      "accept": ["NOT_APPLICABLE|^\\s*(no\\b|none)|not\\s+applicable|no\\s+high\\s+water"],
+      "reject": {"fabricated_hwm": ["^\\s*yes\\b|perpetual"]},
+      "absence_test": true
+    },
+    "minimum_initial_investment": {
+      "expected": "$10,000,000 capital commitment (GP may accept less; expects to accept $1,000,000+ from affiliated family vehicles)",
+      "citation": "Article II, Section 2.2",
+      "accept": ["10[,.]?000[,.]?000|\\$10\\s*(million|mm|m\\b)"],
+      "reject": {"used_waiver_floor": ["^(?!.*10[,.]?000[,.]?000).*1[,.]?000[,.]?000"]}
+    },
+    "lockup_period": {
+      "expected": "NOT_APPLICABLE — closed-end fund with no redemption mechanism, so no lock-up in the open-end sense; capital is committed for the life of the fund",
+      "citation": "Article IV, Section 4.4",
+      "accept": ["NOT_APPLICABLE|not\\s+applicable|^\\s*(no\\b|none)|no\\s+lock|life\\s+of\\s+the\\s+fund|no\\s+redemption"],
+      "reject": {"fabricated_lockup": ["\\b\\d+\\s*(month|year)s?\\s*lock"]},
+      "absence_test": true
+    },
+    "redemption_frequency": {
+      "expected": "NOT_APPLICABLE — no redemption or withdrawal rights of any kind",
+      "citation": "Article IV, Section 4.4",
+      "accept": ["NOT_APPLICABLE|not\\s+applicable|^\\s*(no\\b|none)|no\\s+redemption"],
+      "reject": {"fabricated_freq": ["quarter|month|annual|semi"]},
+      "absence_test": true
+    },
+    "redemption_notice_days": {
+      "expected": "NOT_APPLICABLE — no redemptions permitted, therefore no notice period",
+      "citation": "Article IV, Section 4.4",
+      "accept": ["NOT_APPLICABLE|not\\s+applicable|^\\s*(no\\b|none)|no\\s+redemption"],
+      "reject": {"fabricated_notice": ["\\b\\d+\\s*(calendar\\s+)?days?\\b"]},
+      "absence_test": true
+    },
+    "gate_provision": {
+      "expected": "NOT_APPLICABLE — no gate, because no redemptions are permitted",
+      "citation": "Article IV, Section 4.4",
+      "accept": ["NOT_APPLICABLE|not\\s+applicable|^\\s*(no\\b|none)|no\\s+gate"],
+      "reject": {"fabricated_gate": ["\\b\\d+(\\.\\d+)?\\s*%"]},
+      "absence_test": true
+    },
+    "key_man_provision": {
+      "expected": "Yes — Key Person Event if BOTH Adeyemi-Clarke and Kirkpatrick, OR any 3 of the 4 investment committee members, cease to devote substantially all business time. Automatically suspends the Investment Period; reinstated only by majority-in-interest vote within 180 days. No redemption right arises.",
+      "citation": "Article VII, Section 7.2",
+      "accept": ["adeyemi|kirkpatrick"],
+      "reject": {"claims_none": ["^\\s*(no\\b|none|not_applicable|not_found)"]}
+    },
+    "gp_commitment": {
+      "expected": "2.0% of aggregate commitments, subject to a $20,000,000 minimum and $30,000,000 maximum; at least 50% funded in cash rather than fee waiver",
+      "citation": "Article VII, Section 7.3",
+      "accept": ["2(\\.0)?\\s*%|20[,.]?000[,.]?000|\\$20\\s*(million|mm|m\\b)"],
+      "reject": {"claims_none": ["^\\s*(no\\b|none|not_applicable|not_found)"]}
+    },
+    "fund_term": {
+      "expected": "8 years from the final closing date, extendable by two consecutive one-year periods (first by Advisory Committee consent, second by majority in interest) for a maximum of 10 years, plus up to 12 months to wind up",
+      "citation": "Article IV, Section 4.2",
+      "accept": ["(8|eight).*(10|ten)|(10|ten).*(8|eight)"],
+      "partial": ["\\b(8|eight)\\s*(-|\\s)?year"],
+      "reject": {"investment_period_confusion": ["^(?!.*(8|eight|10|ten)).*(5|five)\\s*(-|\\s)?year"], "claims_perpetual": ["perpetual|indefinite"]}
+    },
+    "auditor": {
+      "expected": "Halloran Meade & Co. LLP",
+      "citation": "Article IX, Section 9.2",
+      "accept": ["halloran"],
+      "reject": {"valuation_agent_confusion": ["^(?!.*halloran).*sterling\\s+anscombe"]}
+    },
+    "administrator": {
+      "expected": "Pemberton Vaux Fund Administration LLC",
+      "citation": "Article IX, Section 9.1",
+      "accept": ["pemberton"],
+      "reject": {}
+    },
+    "prime_broker": {
+      "expected": "NOT_APPLICABLE — the Fund has expressly not appointed a prime broker; no short selling, securities lending or margin trading",
+      "citation": "Article IX, Section 9.5",
+      "accept": ["NOT_APPLICABLE|not\\s+applicable|NOT_FOUND|^\\s*(no\\b|none)|not\\s+appoint|no\\s+prime"],
+      "reject": {"custodian_confusion": ["renwick"], "placement_confusion": ["dunmore"]},
+      "absence_test": true
+    },
+    "legal_counsel": {
+      "expected": "Ashford Petrakis & Lowe LLP",
+      "citation": "Article IX, Section 9.4",
+      "accept": ["ashford"],
+      "reject": {}
+    },
+    "mfn_election": {
+      "expected": "Yes — MFN election within 30 days of a side letter schedule delivered 60 days after final closing, tiered by commitment size ($100m+ may elect any term); economic terms, Advisory Committee seats and co-investment priority are excluded at all tiers",
+      "citation": "Article X, Section 10.3",
+      "accept": ["^\\s*yes\\b|provides|offer|tiered|election"],
+      "reject": {"claims_no": ["does\\s+not\\s+offer|^\\s*(no\\b|none|not_applicable)"]}
+    }
+  }
+}

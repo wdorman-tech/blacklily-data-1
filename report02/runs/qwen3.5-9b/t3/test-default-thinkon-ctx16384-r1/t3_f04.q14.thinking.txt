@@ -1,0 +1,36 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "After how many consecutive business days without a price change is a security flagged as stale?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "stale", "price change", "consecutive business days", "flagged".
+
+4.  **Evaluate Document Content:**
+    *   `02_compliance_manual.md`: Section 4.4 discusses holding periods, not stale prices.
+    *   `03_valuation_policy.md`:
+        *   Section 6.1 Stale Price Threshold: "A security whose price from its assigned source has not changed for five consecutive business days is flagged as stale." (Dated February 10, 2026).
+    *   `06_policy_update_memo.md`:
+        *   Section 3.1 Stale Price Threshold: "This Section 3.1 amends Section 6.1 (Stale Price Threshold) of the Valuation Policy and Procedures. Effective September 1, 2026, a security whose price from its assigned source has not changed for three consecutive business days is flagged as stale. The three-day threshold supersedes the five-day threshold stated in Section 6.1." (Dated August 14, 2026).
+
+5.  **Apply Superseding Rule:**
+    *   Rule: Later-dated documents supersede earlier ones.
+    *   Document A (`03_valuation_policy.md`): Dated February 10, 2026. States "five consecutive business days".
+    *   Document B (`06_policy_update_memo.md`): Dated August 14, 2026. States "three consecutive business days" and explicitly says it supersedes the five-day threshold. Effective date is September 1, 2026.
+    *   Current Date Context: The documents are dated up to August 14, 2026 (memo) and February 10, 2026 (policy). The memo amends the policy effective September 1, 2026. Usually, in these tasks, unless a specific "current date" is given for the query, we assume the latest document represents the current state of affairs, especially when it explicitly states it supersedes previous text. The prompt asks what the rule is *now* (implied by answering a DDQ). The memo dated August 14, 2026 amends the policy effective September 1, 2026. Since the memo is the latest document provided and explicitly changes the threshold, I must use the amended value.
+    *   Value: "three consecutive business days".
+
+6.  **Draft the JSON:**
+    *   `answer`: "

@@ -1,0 +1,94 @@
+*   Role: Senior analyst at a registered investment adviser.
+    *   Task: Compare two versions of a document (10-K risk factors) and list material changes.
+    *   Output: JSON object with "changes" list.
+    *   Rules:
+        1.  Section-by-section comparison.
+        2.  Report only actual differences.
+        3.  Types: "added", "removed", "modified".
+        4.  Materiality: New/removed risk, exposure, right, obligation, provision; specific events, proceedings, regulations, products, parties, programs; changes in likelihood/severity; changes to numbers, rates, thresholds, periods, deadlines (excluding routine date rolls).
+        5.  No minor edits (punctuation, rewordings with same meaning, etc.).
+        6.  Identical text = no change.
+        7.  Format: Heading, one-sentence description (old/new values), verbatim quote.
+        8.  No preamble/commentary.
+
+    *   **Section 1: "Risks Related to the Global Economy and External Conditions"**
+        *   *Heading:* "The Company’s results are impacted by the effects of, and changes in, worldwide economic, political, regulatory, international trade, geopolitical, and other external conditions."
+        *   *Prior:* "...geopolitical, and other external conditions."
+        *   *Current:* "...geopolitical, tariffs and retaliatory counter measures, and other external conditions."
+        *   *Analysis:* The current version adds "tariffs and retaliatory counter measures" to the list of factors. This is a specific addition of a risk factor.
+        *   *Material?* Yes, it adds specific items to the list of factors.
+        *   *Wait, let's check the paragraph below.*
+        *   *Paragraph 1:* "During 2024" vs "During 2025". (Routine date roll - ignore).
+        *   *Paragraph 2:*
+            *   Prior: "...supply chain disruptions, higher energy and other commodity costs, lower consumer demand, and changes to foreign exchange rates and financial markets, any of which may have a material adverse effect the Company's business and supply chain."
+            *   Current: "...supply chain disruptions (including limitations on access to rare earth minerals and other raw materials), higher energy and other commodity costs, lower consumer demand, and changes to foreign exchange rates and financial markets, and tariffs and trade restrictions may result in increased production costs and product pricing, further supply chain disruptions, limited access to end markets, lower profitability, and uncertainty related to planning long-term investments and strategies, and may have other competitive effects. Compliance with rapidly changing tariffs and trade restrictions may require significant time and resources, and in turn increase our cost of doing business, and could result in fines and penalties or reputational harm if we are found to not be in compliance. Any of the foregoing could have a material adverse effect on the Company’s business, financial condition, and results of operations."
+        *   *Analysis:* Significant expansion of the risks related to tariffs and trade restrictions. It adds specific items (rare earth minerals, production costs, etc.) and a new paragraph about compliance costs/penalties.
+        *   *Material?* Yes.
+
+    *   **Section 2: "Risks Related to Legal and Regulatory Proceedings"**
+        *   *Heading:* "The Company faces liabilities related to certain fluorochemicals, which could have a material adverse effect on our results."
+        *   *Paragraph 1:*
+            *   Prior: "...including some presently or historically produced by the Company."
+            *   Current: "...including some produced by the Company prior to the end of 2025."
+            *   *Analysis:* Change in the timeframe of production.
+        *   *Paragraph 2:*
+            *   Prior: "...3M is just one of a number of companies that manufacture PFAS compounds."
+            *   Current: "...3M is just one of a number of companies that manufactured PFAS compounds prior to the end of 2025."
+            *   *Analysis:* Change in tense and timeframe.
+        *   *Paragraph 3:*
+            *   Prior: "3M announced in December 2022 it will take two actions... exiting all PFAS manufacturing by the end of 2025, and working to discontinue the use of PFAS across its product portfolio by the end of 2025. 3M is progressing toward the exit of all PFAS manufacturing by the end of 2025. The Company continues to discuss its PFAS manufacturing exit, and related issues involving the disposition of manufacturing assets, with customers, government authorities, and other stakeholders, and the Company remains focused on completing the exit in a timely and orderly fashion."
+            *   Current: "3M announced in December 2022 it would take two further actions... exiting all PFAS manufacturing by the end of 2025, and working to discontinue the use of PFAS across its product portfolio by the end of 2025. 3M completed its exit of PFAS manufacturing at the end of 2025. 3M will continue to take actions to address PFAS manufactured prior to the exit. For example, the Company's water treatment assets at facilities that manufactured PFAS will continue to treat PFAS from historical manufacturing activities and remediate residual PFAS in waste streams from the Company's operations. 3M also will continue to work through the disposition of its assets and its interests in manufacturing facilities, which may include dismantling, cleaning and repurposing, and other dispositions of facilities or equipment. 3M remains in ongoing discussions with customers, government authorities, and other stakeholders and interested parties about customer agreements and the Company's interests in assets and facilities, which may be owned or leased from other parties that have interests and rights related to those facilities."
+            *   *Analysis:* Significant change in status. "Progressing toward" became "completed". Added specific details about water treatment assets and the nature of the disposition of assets.
+        *   *Paragraph 4:*
+            *   Prior: "3M is also working to discontinue the use of PFAS across its product results... [long list of risks] ...the possibility that the planned exit will involve greater costs than anticipated, may not be feasible, may not be feasible on the timeframe initially predicted, or may otherwise have negative impacts on the Company’s relationships with its customers and other parties."
+            *   Current: "As also noted, 3M has been working to discontinue the use of PFAS across its product portfolio and has made substantial progress in eliminating such use in the Company's products. ... [different list of risks] ...the possibility that the exit will involve greater costs than anticipated, or may otherwise have negative impacts on the Company’s relationships with its customers and other parties."
+            *   *Analysis:* The text is significantly modified regarding the status of the transition and the specific risks associated with the exit.
+        *   *Paragraph 5:*
+            *   Prior: "The Company has been voluntarily cooperating with various local, state, federal (primarily the U.S. Environmental Protection Agency (EPA)), and international agencies in their reviews of the environmental and health effects of certain PFAS produced by the Company."
+            *   Current: "The Company has been voluntarily cooperating with various local, state, federal (primarily the U.S. Environmental Protection Agency (EPA)), and international agencies in their reviews of the environmental and health effects of certain PFAS produced by the Company prior to the end of 2025."
+            *   *Analysis:* Addition of "prior to the end of 2025".
+        *   *Paragraph 6:*
+            *   Prior: "...as discussed in Note 19, 'Commitments and Contingencies,' ... in June 2023, the Company entered into a class-action settlement... The court approved that settlement in March 2024. 3M will pay $10.5 billion to $12.5 billion... as described further in Note 19."
+            *   Current: "...as discussed in Note 17, 'Commitments and Contingencies,' ... in June 2023, the Company entered into a class-action settlement... The court approved that settlement in March 2024. 3M will pay $10.5 billion to $12.5 billion... as described further in Note 17."
+            *   *Analysis:* Note number changed from 19 to 17. (Rule 5: "an updated cross-reference or section number" is not material. However, the content of the note is different. But the rule says "unless it's a routine date roll-forward" or "an updated cross-reference". Since the note number changed but the content of the note is about the same topic, is it material? Rule 5 says "an updated cross-reference or section number" is not material. I will skip this unless the content changes. The content of the paragraph remains the same except for the number.)
+        *   *Paragraph 7:*
+            *   Prior: "The Company may also record asset retirement obligations, some of which may be material, depending in part on how the Company manages related assets in connection with these activities."
+            *   Current: "The Company may also record charges relating to ongoing asset use, retirement or disposition, some of which may be material, depending in part on how the Company manages related assets in connection with these activities."
+            *   *Analysis:* "asset retirement obligations" changed to "charges relating to ongoing asset use, retirement or disposition". This is a change in the nature of the potential financial impact.
+
+    *   **Section 3: "The Company is subject to risks related to international, federal, state, and local treaties, laws, and regulations..."**
+        *   *Paragraph 1:*
+            *   Prior: "...or other matters that require or encourage the Company or its suppliers, vendors, or channel partners to conduct business in a certain way."
+            *   Current: "...or other matters that require or encourage the Company or its customers, suppliers, vendors, or channel partners to conduct business in a certain way."
+            *   *Analysis:* Added "customers" to the list of parties.
+        *   *Paragraph 2:*
+            *   Prior: (No paragraph 2 in this section in the original, it's one long block).
+            *   Current: Added a whole new paragraph about being a supplier to the U.S. government.
+            *   *Current Text:* "The Company is also subject to certain risks as a direct and indirect supplier to the U.S. government and other governments, such as those associated with compliance with procurement regulations, as well as the government’s rights to audit and conduct investigations and to terminate contracts. There is also uncertainty as to the extent and timing of funding that may be available for U.S. federal government and other government procurement activities. Failure by the Company or one of its customers, suppliers, vendors, or channel partners to comply with provisions of government contracts or related laws, regulations, executive orders, or other government actions could result in the Company being unable to fulfill its contract commitments under a government contract or inability to realize the full value of such contract. Significant administrative, civil or criminal liabilities, including under the U.S. False Claims Act or similar enforcement legislation, and suspension or debarment from business with the U.S. or other governments, and reputational harm, could also result from the risks noted above."
+            *   *Analysis:* This is a new risk related to government contracting.
+        *   *Paragraph 3:*
+            *   Prior: "The Company has in the past, and in the future could be, required to investigate..."
+            *   Current: "The Company has in the past been, and in the future could be, required to investigate..."
+            *   *Analysis:* "has in the past, and in the future could be" vs "has in the past been, and in the future could be". This is a minor wording change.
+        *   *Paragraph 4:*
+            *   Prior: "...or make such estimates for matters previously not susceptible of reasonable estimates..."
+            *   Current: "...or make such estimates possible for matters previously not susceptible of reasonable estimates..."
+            *   *Analysis:* "for" vs "possible for". Minor.
+        *   *Paragraph 4 (End):*
+            *   Prior: "...see the discussion in Note 19, 'Commitments and Contingencies,'..."
+            *   Current: "...see the discussion in Note 17, 'Commitments and Contingencies,'..."
+            *   *Analysis:* Cross-reference change (not material).
+
+    *   **Change 1: "The Company’s results are impacted by the effects of, and changes in, worldwide economic, political, regulatory, international trade, geopolitical, and other external conditions."**
+        *   *Description:* The list of factors influencing the Company's results was expanded to include "tariffs and retaliatory counter measures."
+        *   *Quote:* "The Company’s results are impacted by the effects of, and changes in, worldwide economic, political, regulatory, international trade, geopolitical, tariffs and retaliary counter measures, and other external conditions."
+
+    *   **Change 2: "The Company’s results are impacted by the effects of, and changes in, worldwide economic, political, regulatory, international trade, geopolitical, and other external conditions."** (Wait, this is the same section. I should group the content under the heading).
+        *   *Actually, the prompt says "Report each changed section once."*
+        *   *Wait, the rule says "A section is a heading and the text beneath it, up to the next heading."*
+        *   *Section 1 Heading:* "The Company’s results are impacted by the effects of, and changes in, worldwide economic, political, regulatory, international trade, geopolitical, and other external conditions."
+        *   *Content within this section:*
+            1.  The header itself changed.
+            2.  The paragraph about "The global economy has been impacted..." changed significantly.
+        *   *Decision:* Since they are in the same section, I report the section once.
+        *   *Description:* The

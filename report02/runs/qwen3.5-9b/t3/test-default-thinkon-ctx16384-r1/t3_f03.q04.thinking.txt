@@ -1,0 +1,33 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "At what level of Family Relationship assets does the first advisory fee breakpoint (the step from the 0.80% rate to the 0.60% rate) currently occur?"
+    *   Key elements: First advisory fee breakpoint, step from 0.80% to 0.60%, current level.
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "breakpoint", "0.80%", "0.60%", "Family Relationship assets", "fee schedule".
+
+4.  **Evaluate Document Content & Dates:**
+    *   `01_brochure.md` (March 27, 2026): Item 5.1 Fees and Compensation > 5.1 Advisory Fee. Table shows First $25,000,000 at 0.80%, Next $25,000,000 (above $25M to $50M) at 0.60%.
+    *   `05_fee_schedule.md` (January 1, 2026): Section 2.1 Tiered Rates. Table shows First $25,000,000 at 0.80%, Above $25M to $50M at 0.60%.
+    *   `06_policy_update_memo.md` (September 8, 2026): Section 7. FEE SCHEDULE BREAKPOINT.
+        *   States: "**Amends:** Schedule of Fees... and the corresponding table in Item 5.1 of the Firm's Form ADV Part 2A brochure dated March 27, 2026."
+        *   States: "The first breakpoint is lowered from $25,000,000 to $20,000,000."
+        *   States: "The 0.80% rate now applies to the first $20,000,000 of Family Relationship assets, and the 0.60% rate applies to Family Relationship assets above $20,000,000 up to $50,000,000."
+        *   States: "The change was approved... communicated... effective for fees billed for the quarter beginning July 1, 2026."
+        *   Date of memo: September 8, 2026.
+        *   Date of brochure: March 27, 2026.
+        *   Date of fee schedule: January 1, 2026.
+    *   Rule 3: Later-dated documents supersede earlier ones. The memo (Sept 8,

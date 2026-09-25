@@ -1,0 +1,116 @@
+*   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from a fund offering document into a specific JSON structure.
+    *   Constraints:
+        *   Accuracy is paramount. No invented terms.
+        *   Use `NOT_FOUND` if not stated.
+        *   Use `NOT_APPLICABLE` if stated as not applicable.
+        *   Amendments/Supplements supersede original text.
+        *   Report all variants (share class, etc.) in one string.
+        *   Distinguish between commitment and current holding.
+        *   Citations must be section/appendix identifiers.
+        *   Quotes must be verbatim.
+        *   Output format: JSON only, no markdown, no preamble.
+
+    *   `fund_name`: "Fenwright Colquist Capital Partners III, L.P." (Found in title and Section 2.1).
+    *   `fund_domicile`: "Delaware" (Section 2.1: "The Partnership is a limited partnership organized under the laws of the State of Delaware.").
+    *   `fund_structure`: "closed-end (drawdown, no redemptions)" (Section 3.5: "The Interests are not redeemable at the option of the holder at any time. The Partnership does not maintain redemption dates or a redemption procedure..."). It's not a master-feeder (Section 2.2: "The Partnership shall not invest through a master fund or other intermediate pooled vehicle").
+    *   `management_fee`:
+        *   Original: 4.1(b)(i) 1.75% of Capital Commitment (during Investment Period); 4.1(b)(ii) 1.50% of Invested Capital (after Investment Period).
+        *   Amendment (Section S-3): 4.1(b)(ii) changed to 1.25% of Net Invested Capital.
+        *   Note: GP-Affiliated Limited Partners are exempt (4.1(a)).
+        *   Value: "during Investment Period: one-quarter of one and three-quarters percent (1.75%) (that is, 0.4375%) of such Limited Partner's Capital Commitment; after Investment Period: one-quarter of one and one-quarter percent (1.25%) (that is, 0.3125%) of such Limited Partner's share of Net Invested Capital. (Note: GP-Affiliated Limited Partners are exempt)."
+    *   `performance_fee`: "20% to the General Partner" (Section 5.3(d)). Also called "Carried Interest" (Section 5.4).
+    *   `hurdle_rate`: "eight percent (8%) per annum, compounded annually" (Section 1.1 "Preferred Return").
+    *   `high_water_mark`: "not subject to a high-water mark, loss carryforward account or similar mechanism" (Section 5.4).
+    *   `minimum_initial_investment`: "$5,000,000" (Section 3.2).
+    *   `lockup_period`: "The Interests are not redeemable at the option of the holder at any time." (Section 3.5).
+    *   `redemption_frequency`: "NOT_APPLICABLE" (Section 3.5: "The Partnership does not maintain redemption dates or a redemption procedure").
+    *   `redemption_notice_days`: "NOT_APPLICABLE" (Section 3.5: "no right of redemption or withdrawal shall be implied from any provision of this Agreement").
+    *   `gate_provision`: "NOT_FOUND" (No specific gate threshold mentioned, just that redemptions aren't allowed).
+    *   `key_man_provision`: "Key Persons are Graham Oduya and Tomas Wexcombe; Key Person Event triggers suspension of Investment Period." (Section 6.3).
+    *   `gp_commitment`: "not less than two percent (2%) of the aggregate Capital Commitments of all Partners and all partners of the Parallel Funds" (Section 3.3).
+    *   `fund_term`: "until the tenth (10th) anniversary of the Final Closing Date, unless the Partnership is dissolved earlier... [amended to] expire on December 16, 2034" (Section 2.3 and Section S-4).
+    *   `auditor`: "Aldwin Treloar LLP" (Section 7.1).
+    *   `administrator`: "Kinnaird Stroud Fund Services, LLC" (Section 7.2).
+    *   `prime_broker`: "The Partnership does not engage a prime broker" (Section 7.3).
+    *   `legal_counsel`: "Pellow Ashdown LLP" (Section 7.5).
+    *   `mfn_election`: "eligible for investors with Capital Commitments of at least $25,000,000" (Section 12.2).
+
+    *   *fund_name*: "Fenwright Colquist Capital Partners III, L.P." (Section 2.1)
+    *   *fund_domicile*: "Delaware" (Section 2.1)
+    *   *fund_structure*: "closed-end (drawdown, no redemptions)" (Section 3.5)
+    *   *management_fee*: "during Investment Period: one-quarter of one and three-quarters percent (1.75%) (that is, 0.4375%) of such Limited Partner's Capital Commitment; after Investment Period: one-quarter of one and one-quarter percent (1.25%) (that is, 0.3125%) of such Limited Partner's share of Net Invested Capital. (GP-Affiliated Limited Partners are exempt)"
+        *   *Refining management_fee*: The prompt asks for "Annual management fee rate AND the basis it is charged on. Give every class or tier."
+        *   Quote 1: "for each fiscal quarter commencing during the Investment Period, one-quarter of one and three-quarters percent (1.75%) (that is, 0.4375%) of such Limited Partner's Capital Commitment" (Section 4.1(b)(i))
+        *   Quote 2: "for each fiscal quarter thereafter, one-quarter of one and one-quarter percent (1.25%) (that is, 0.3125%) of such Limited Partner's share of Net Invested Capital as of the first day of such fiscal quarter." (Section S-3(a))
+        *   Note: "borne by the Limited Partners other than GP-Affiliated Limited Partners" (Section 4.1(a)).
+    *   *performance_fee*: "twenty percent (20%) to the General Partner" (Section 5.3(d)).
+    *   *hurdle_rate*: "eight percent (8%) per annum, compounded annually" (Section 1.1).
+    *   *high_water_mark*: "not subject to a high-water mark, loss carryforward account or similar mechanism" (Section 5.4).
+    *   *minimum_initial_investment*: "$5,000,000" (Section 3.2).
+    *   *lockup_period*: "The Interests are not redeemable at the option of the holder at any time." (Section 3.5).
+    *   *redemption_frequency*: "NOT_APPLICABLE" (Section 3.5: "The Partnership does not maintain redemption dates or a redemption procedure").
+    *   *redemption_notice_days*: "NOT_APPLICABLE" (Section 3.5: "no right of redemption or withdrawal shall be implied from any provision of this Agreement").
+    *   *gate_provision*: "NOT_FOUND" (No specific gate mentioned).
+    *   *key_man_provision*: "Key Persons are Graham Oduya and Tomas Wexcombe; Key Person Event triggers suspension of Investment Period" (Section 6.3).
+    *   *gp_commitment*: "not less than two percent (2%) of the aggregate Capital Commitments of all Partners and all partners of the Parallel Funds" (Section 3.3).
+    *   *fund_term*: "until the tenth (10th) anniversary of the Final Closing Date... [amended to] expire on December 16, 2034" (Section 2.3, Section S-4).
+    *   *auditor*: "Aldwin Treloar LLP" (Section 7.1).
+    *   *administrator*: "Kinnaird Stroud Fund Services, LLC" (Section 7.2).
+    *   *prime_broker*: "The Partnership does not engage a prime broker" (Section 7.3).
+    *   *legal_counsel*: "Pellow Ashdown LLP" (Section 7.5).
+    *   *mfn_election*: "Capital Commitment (aggregated with those of its Affiliates and of other investors advised by the same discretionary investment adviser) is equal to or greater than $25,000,000" (Section 12.2(a)).
+
+    *   *management_fee*: Need to combine the two parts.
+        *   Value: "during Investment Period: one-quarter of one and three-quarters percent (1.75%) (that is, 0.4375%) of such Limited Partner's Capital Commitment; after Investment Period: one-quarter of one and one-quarter percent (1.25%) (that is, 0.3125%) of such Limited Partner's share of Net Invested Capital. (GP-Affiliated Limited Partners are exempt)"
+        *   Citation: "Section 4.1(b)(i), Section S-3(a)"
+        *   Quote: "for each fiscal quarter commencing during the Investment Period, one-quarter of one and three-quarters percent (1.75%) (that is, 0.4375%) of such Limited Partner's Capital Commitment; ... for each fiscal quarter thereafter, one-quarter of one and one-quarter percent (1.25%) (that is, 0.3125%) of such Limited Partner's share of Net Invested Capital as of the first day of such fiscal quarter."
+    *   *fund_term*:
+        *   Value: "until the tenth (10th) anniversary of the Final Closing Date, unless the Partnership is dissolved earlier under Article X; ... [amended to] expire on December 16, 2034"
+        *   Citation: "Section 2.3, Section S-4"
+        *   Quote: "The term of the Partnership (the \"Term\") commenced on the filing of the Certificate and shall continue until the tenth (10th) anniversary of the Final Closing Date, unless the Partnership is dissolved earlier under Article X; ... Based on the Final Closing Date recited above, the Term will expire on December 16, 2034, unless extended under Section 2.3, as amended, or unless the Partnership is dissolved earlier under Article X of the Agreement."
+    *   *mfn_election*:
+        *   Value: "Capital Commitment (aggregated with those of its Affiliates and of other investors advised by the same discretionary investment adviser) is equal to or greater than $25,000,000"
+        *   Citation: "Section 12.2(a)"
+        *   Quote: "the General Partner shall deliver to each Limited Partner whose Capital Commitment (aggregated with those of its Affiliates and of other investors advised by the same discretionary investment adviser) is equal to or greater than $25,000,000 (an \"MFN Eligible Partner\") a copy or summary of each Side Letter entered into with any other Limited Partner or any partner of a Parallel Fund."
+
+    *   *management_fee*:
+        *   Value: "during Investment Period: one-quarter of one and three-quarters percent (1.75%) (that is, 0.4375%) of such Limited Partner's Capital Commitment; after Investment Period: one-quarter of one and one-quarter percent (1.25%) (that is, 0.3125%) of such Limited Partner's share of Net Invested Capital. (GP-Affiliated Limited Partners are exempt)"
+        *   Citation: "Section 4.1(b)(i), Section S-3(a)"
+        *   Quote: "for each fiscal quarter commencing during the Investment Period, one-quarter of one and three-quarters percent (1.75%) (that is, 0.4375%) of such Limited Partner's Capital Commitment; ... for each fiscal quarter thereafter, one-quarter of one and one-quarter percent (1.25%) (that is, 0.3125%) of such Limited Partner's share of Net Invested Capital as of the first day of such fiscal quarter."
+    *   *fund_term*:
+        *   Value: "until the tenth (10th) anniversary of the Final Closing Date, unless the Partnership is dissolved earlier under Article X; ... expire on December 16, 2034"
+        *   Citation: "Section 2.3, Section S-4"
+        *   Quote: "The term of the Partnership (the \"Term\") commenced on the filing of the Certificate and shall continue until the tenth (10th) anniversary of the Final Closing Date, unless the Partnership is dissolved earlier under Article X; ... Based on the Final Closing Date recited above, the Term will expire on December 16, 2034, unless extended under Section 2.3, as amended, or unless the Partnership is dissolved earlier under Article X of the Agreement."
+    *   *mfn_election*:
+        *   Value: "Capital Commitment (aggregated with those of its affiliated and of other investors advised by the same discretionary investment adviser) is equal to or greater than $25,000,000"
+        *   Citation: "Section 12.2(a)"
+        *   Quote: "the General Partner shall deliver to each Limited Partner whose Capital Commitment (aggregated with those of its Affiliates and of other investors advised by the same discretionary investment adviser) is equal to or greater than $25,000,000 (an \"MFN Eligible Partner\") a copy or summary of each Side Letter entered into with any other Limited Partner or any partner of a Parallel Fund."
+
+    *   *management_fee*: "one-quarter of one and three-quarters percent (1.75%) (that is, 0.4375%) of such Limited Partner's Capital Commitment; ... one-quarter of one and one-quarter percent (1.25%) (that is, 0.3125%) of such Limited Partner's share of Net Invested Capital"
+    *   *fund_term*: "until the tenth (10th) anniversary of the Final Closing Date... expire on December 16, 2034"
+    *   *mfn_election*: "Capital Commitment (aggregated with those of its Affiliates and of other investors advised by the same discretionary investment adviser) is equal to or greater than $25,000,000"
+
+    *   *fund_name*: "Fenwright Colquist Capital Partners III, L.P."
+    *   *fund_domicile*: "Delaware"
+    *   *fund_structure*: "closed-end (drawdown, no redemptions)"
+    *   *management_fee*: "during Investment Period: one-quarter of one and three-quarters percent (1.75%) (that is, 0.4375%) of such Limited Partner's Capital Commitment; after Investment Period: one-quarter of one and one-quarter percent (1.25%) (that is, 0.3125%) of such Limited Partner's share of Net Invested Capital. (GP-Affiliated Limited Partners are exempt)"
+    *   *performance_fee*: "twenty percent (20%) to the General Partner"
+    *   *hurdle_rate*: "eight percent (8%) per annum, compounded annually"
+    *   *high_water_mark*: "not subject to a high-water mark, loss carryforward account or similar mechanism"
+    *   *minimum_initial_investment*: "$5,000,000"
+    *   *lockup_period*: "The Interests are not redeemable at the option of the holder at any time."
+    *   *redemption_frequency*: "NOT_APPLICABLE"
+    *   *redemption_notice_days*: "NOT_APPLICABLE"
+    *   *gate_provision*: "NOT_FOUND"
+    *   *key_man_provision*: "Key Persons are Graham Oduya and Tomas Wexcombe; Key Person Event triggers suspension of Investment Period"
+    *   *gp_commitment*: "not less than two percent (2%) of the aggregate Capital Commitments of all Partners and all partners of the Parallel Funds"
+    *   *fund_term*: "until the tenth (10th) anniversary of the Final Closing Date, unless the Partnership is dissolved earlier under Article X; ... expire on December 16, 2034"
+    *   *auditor*: "Aldwin Treloar LLP"
+    *   *administrator*: "Kinnaird Stroud Fund Services, LLC"
+    *   *prime_broker*: "The Partnership does not engage a prime broker"
+    *   *legal_counsel*: "Pellow Ashdown LLP"
+    *   *mfn_election*: "Capital Commitment (aggregated with those of its Affiliates and of other investors advised by the same discretionary investment adviser) is equal to or greater than $25,000,000"
+
+    *   *management_fee*:
+        *   Value: "during Investment Period: one-quarter of one and three-quarters percent (1.75%) (that is, 0.4375%) of such Limited Partner's Capital Commitment; after Investment Period: one-quarter of one and one-quarter percent (1.25%) (that is, 0.3125%) of such Limited Partner's share of Net Invested

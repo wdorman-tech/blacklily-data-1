@@ -1,0 +1,33 @@
+*   Question: Where is the Adviser's alternate recovery site, who operates it, and how quickly can it be occupied?
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+
+    *   "alternate site"
+    *   "recovery site"
+    *   "location"
+    *   "occupy"
+
+    *   *05_fee_schedule.md*: Mentions "Flagship Fund", "Offshore Fund", "Co-Investment Fund". No mention of physical locations or recovery sites.
+    *   *06_policy_update_memo.md*: Mentions "Business Continuity Plan" and "IT managed service provider". It mentions "Anselby Managed IT LLC" as the provider, but doesn't specify the physical location of the alternate site or how quickly it can be occupied.
+    *   *Business Continuity Plan (implied content in the prompt text)*:
+        *   Section 7.1: "The Plan is tested through a full exercise at least annually, including relocation of the designated personnel to the alternate site for a full trading day..."
+        *   Section 7.2: "The most recent full exercise was conducted on November 14, 2025. Six employees operated from the Norwalk alternate site for the full trading day..."
+        *   Section 9.1: "In Phase 3 (full remote), the office is closed and all employees work remotely or from the alternate site."
+
+    *   Where is the site? "Norwalk" (from Section 7.2).
+    *   Who operates it? The text doesn't explicitly say who *operates* the site (e.g., a security firm), but it mentions the "IT managed service provider" (Anselby Managed IT LLC) manages the infrastructure. However, the question asks "who operates it". The text says "six employees operated from the Norwalk alternate site".
+    *   How quickly can it be occupied? Section 7.1 mentions "relocation... for a full trading day". Section 9.1 mentions "Phase 3 (full remote)... all employees work... from the alternate site." It doesn't give a specific "time to occupy" (like "within 2 hours").
+
+    *   The text says "Norwalk alternate site".
+    *   The text doesn't explicitly state who *operates* the site (it only mentions the IT provider).
+    *   The text doesn't specify a "how quickly" time for occupancy, only that it is used for a "full trading day" in tests and in Phase 3 of a pandemic response.
+
+    *   "The most recent full exercise was conducted on November 14, 2025. Six employees operated from the Norwalk alternate site for the full trading day..."
+    *   "In Phase 3 (full remote), the office is closed and all employees work remotely or from the alternate site."
+
+    *   Location: Norwalk.
+    *   Operator: Not explicitly stated (only the IT provider is mentioned).
+    *   Speed of occupancy: Not explicitly stated (only "full trading day" or "Phase 3" are mentioned).
+
+    Since the question asks for three specific pieces of information (Location, Operator, Speed) and the text only provides the location (Norwalk) and some context about usage, but not a specific "operator" or "speed of occupancy" metric, I should check if "Norwalk" is the only part that can be answered.
+
+    Wait, looking at the prompt text again:

@@ -1,0 +1,160 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from the provided fund offering document into a structured JSON object.
+    *   Constraints:
+        *   Accurate above all else. No invented terms, no guessing, no inferring market standards.
+        *   If not found: `NOT_FOUND`.
+        *   If not applicable: `NOT_APPLICABLE` (with quote support).
+        *   Amendments/Supplements supersede original text.
+        *   Report every variant if differs by class/tier/period.
+        *   Citations must be section/appendix identifiers from the document.
+        *   Quotes must be verbatim.
+        *   Output: ONLY a JSON object. No markdown, no preamble, no commentary.
+    *   Fields to extract: `fund_name`, `fund_domicile`, `fund_structure`, `management_fee`, `performance_fee`, `hurdle_rate`, `high_water_mark`, `minimum_initial_investment`, `lockup_period`, `redemption_frequency`, `redemption_notice_days`, `gate_provision`, `key_man_provision`, `gp_commitment`, `fund_term`, `auditor`, `administrator`, `prime_broker`, `legal_counsel`, `mfn_election`.
+
+2.  **Scan the Document for Each Field:**
+
+    *   **fund_name**:
+        *   Header: "# BRACKENHOLT SENIOR LENDING FUND, LP"
+        *   Section 1.1: "Fund: Brackenholt Senior Lending Fund, LP..."
+        *   Quote: "Brackenholt Senior Lending Fund, LP" (Header or Section 1.1). Let's use the header or Section 1.1 text.
+        *   Citation: Header or Section 1.1. Let's use "Section 1.1".
+        *   Quote: "Fund: Brackenholt Senior Lending Fund, LP, a Delaware limited partnership (the "Fund")."
+
+    *   **fund_domicile**:
+        *   Header: "**A Delaware Limited Partnership**"
+        *   Section 2.1: "...formed as a limited partnership under the Delaware Revised Uniform Limited Partnership Act..."
+        *   Quote: "Brackenholt Senior Lending Fund, LP was formed as a limited partnership under the Delaware Revised Uniform Limited Partnership Act..."
+        *   Citation: "Section 2.1" or Header. Let's use "Section 2.1".
+
+    *   **fund_structure**:
+        *   Section 1.1: "Evergreen, with no fixed term; monthly subscriptions; quarterly repurchase offers."
+        *   Section 2.1: "The Fund is structured as an open-end, evergreen vehicle... It is not redeemable on demand... It is not a feeder fund..."
+        *   Quote: "The Fund is structured as an open-end, evergreen vehicle: it has no fixed term, it does not call capital from Limited Partners in drawdowns, and it admits Limited Partners and accepts additional subscriptions monthly at net asset value. It is not redeemable on demand."
+        *   Citation: "Section 2.1"
+
+    *   **management_fee**:
+        *   Section 1.1: "Management Fee: 1.25% per annum of net asset value (Section 4.1)."
+        *   Section 4.1: "...annual rate of 1.25% of the Fund's net asset value... Interests held by the Adviser and its personnel bear none."
+        *   Side Letter (Appendix B, Para 1): "Management Fee charged to the Investor's Capital Account shall be calculated at an annual rate of 0.95% of the net asset value of that Capital Account..."
+        *   Constraint: Report every class or tier. The side letter applies to a specific investor ("The Trustees of Hallowby College"). The main text applies generally. I need to report both if they represent different tiers/classes. The prompt says "Give every class or tier." The side letter is for a specific investor, not necessarily a share class, but it creates a fee variant. However, the instruction says "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE". Here, the 0.95% applies to *that* investor. The main text says 1.25%.
+        *   Let's check the wording: "The General Partner may reduce the Management Fee for a particular Limited Partner by side letter (Section 7.1); any such reduction applies only to that Limited Partner and does not change the rate set forth in this Section 4.1."
+        *   So the standard is 1.25%. The side letter creates an exception for one investor. I should report the standard fee and note the side letter if it implies a tiered structure or just list the variants found. The prompt asks for "management_fee: Annual management fee rate AND the basis it is charged on. Give every class or tier."
+        *   Since the side letter is specific to one investor, I will report the standard fee and mention the side letter variant if possible within the string, or just list the standard. Usually, extraction tasks want the governing terms. However, "Give every class or tier" implies listing variations.
+        *   Standard: 1.25% of net asset value (Section 4.1).
+        *   Side Letter: 0.95% of net asset value (Appendix B, Section 1).
+        *   I will combine them to be accurate about the document's content regarding fees. "1.25% per annum of net asset value; 0.95% per annum of net asset value for certain investors under side letter".
+        *   Actually, looking at strict extraction rules: "Every value must be supported by text that actually appears in the document."
+        *   Quote 1 (Standard): "The Fund pays the Adviser a management fee (the "Management Fee") at an annual rate of 1.25% of the Fund's net asset value..." (Section 4.1)
+        *   Quote 2 (Side Letter): "Beginning June 1, 2026, the Management Fee charged to the Investor's Capital Account shall be calculated at an annual rate of 0.95% of the net asset value of that Capital Account..." (Appendix B, Section 1)
+        *   I will list both rates as variants found in the document.
+
+    *   **performance_fee**:
+        *   Section 1.1: "Incentive Fee: 12.5% of Pre-Incentive Fee Net Investment Income over a 1.25% quarterly Hurdle Rate with a full catch-up, plus 12.5% of cumulative net realized capital gains..."
+        *   Section 4.2: "...in two parts... an Income Incentive Fee equal to 12.5% of Pre-Incentive Fee Net Investment Income in excess of the Hurdle Rate... and a Capital Gains Incentive Fee equal to 12.5% of cumulative net realized capital gains..."
+        *   Quote: "The Fund pays the Adviser an incentive fee (the "Incentive Fee") in two parts... an Income Incentive Fee equal to 12.5% of Pre-Incentive Fee Net Investment Income in excess of the Hurdle Rate... and a Capital Gains Incentive Fee equal to 12.5% of cumulative net realized capital gains..." (Section 4.2)
+
+    *   **hurdle_rate**:
+        *   Section 1.1: "...over a 1.25% quarterly Hurdle Rate..."
+        *   Section 4.3: "...compared to a hurdle rate of 1.25% per quarter (5.0% annualized)..."
+        *   Quote: "Pre-Incentive Fee Net Investment Income for each quarter... is compared to a hurdle rate of 1.25% per quarter (5.0% annualized)..." (Section 4.3)
+
+    *   **high_water_mark**:
+        *   Section 4.3: "There is no high-water mark, look-back or loss carryforward with respect to the Income Incentive Fee..."
+        *   Section 4.4: "...The Loss Carryforward applies only to the Capital Gains Incentive Fee." (This implies a loss carryforward exists for capital gains).
+        *   The prompt asks: "Whether a high water mark or loss carryforward applies, and whether it is perpetual or resets."
+        *   For Income Incentive Fee: No high-water mark.
+        *   For Capital Gains Incentive Fee: Loss Carryforward applies.
+        *   Quote (No HW): "There is no high-water mark, look-back or loss carryforward with respect to the Income Incentive Fee..." (Section 4.3)
+        *   Quote (Loss Carryforward): "The Loss Carryforward is perpetual and is not reset at year end or upon the admission or repurchase of Limited Partners." (Section 4.4)
+        *   Value: "No high-water mark for Income Incentive Fee; Perpetual Loss Carryforward applies to Capital Gains Incentive Fee".
+
+    *   **minimum_initial_investment**:
+        *   Section 1.1: "Minimum Investment: $1,000,000 initial..."
+        *   Section 5.2: "The minimum initial subscription is $1,000,000..."
+        *   Quote: "The minimum initial subscription is $1,000,000..." (Section 5.2)
+
+    *   **lockup_period**:
+        *   Section 6.4: "There is no hard lock-up."
+        *   Section 6.4: "...subject to a deduction of 2.0%... within one year after the Subscription Date..." (Early Repurchase Deduction).
+        *   Quote: "There is no hard lock-up. Interests repurchased as of a Repurchase Date that falls within one year after the Subscription Date on which they were issued are subject to a deduction of 2.0% of the net asset value of the Interests repurchased..." (Section 6.4)
+        *   Value: "No hard lock-up; Early Repurchase Deduction applies within one year".
+
+    *   **redemption_frequency**:
+        *   Section 1.1: "...quarterly repurchase offers."
+        *   Section 6.1: "...offer to repurchase Interests quarterly..."
+        *   Quote: "The General Partner currently intends, but is not obligated, to cause the Fund to offer to repurchase Interests quarterly..." (Section 6.1)
+
+    *   **redemption_notice_days**:
+        *   Section 6.2: "...received not later than 60 days prior to the applicable Repurchase Date..."
+        *   Quote: "A Limited Partner wishing to tender all or part of its Interests must deliver an irrevocable written repurchase request... so that it is received not later than 60 days prior to the applicable Repurchase Date..." (Section 6.2)
+
+    *   **gate_provision**:
+        *   Section 6.3: "The aggregate amount of Interests that the Fund will repurchase as of any Repurchase Date is limited to 5.0% of the Fund's net asset value..."
+        *   Quote: "The aggregate amount of Interests that the Fund will repurchase as of any Repurchase Date is limited to 5.0% of the Fund's net asset value as of the last Valuation Date of the immediately preceding calendar quarter..." (Section 6.3)
+
+    *   **key_man_provision**:
+        *   Section 3.2: "The Partnership Agreement does not contain a key person provision."
+        *   Quote: "The Partnership Agreement does not contain a key person provision." (Section 3.2)
+        *   Side Letter (Appendix B, Para 3): Creates notification rights and specific repurchase timing for Specified Persons, but explicitly states "This paragraph does not create a key person provision under the Partnership Agreement".
+        *   Value: "NOT_APPLICABLE" (The document explicitly says it does not contain one). The side letter creates a notification right but denies it is a key person provision. I should report NOT_APPLICABLE based on Section 3.2, or clarify. The prompt asks for "Key person clause: who is named and what it triggers." If the doc says it doesn't exist, value is NOT_APPLICABLE.
+        *   Wait, Side Letter Para 3 names Dalia Ferrante and Nicholas Oyelaran and triggers a repurchase request after notice. But Section 3.2 says "The Partnership Agreement does not contain a key person provision." The side letter says "This paragraph does not create a key person provision under the Partnership Agreement".
+        *   Strictly speaking, there is no Key Person Provision in the Fund agreement. The side letter creates a specific right for one investor regarding personnel events, but explicitly denies it being a "key person provision". I will mark as NOT_APPLICABLE to be safe and accurate to the fund structure, citing Section 3.2.
+        *   Actually, looking at the instruction: "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE". Section 3.2 says it does not contain one.
+        *   Value: "NOT_APPLICABLE"
+
+    *   **gp_commitment**:
+        *   Section 3.3: "Neither the General Partner nor the Adviser has made, or is required to make or maintain, any capital commitment to the Fund."
+        *   Quote: "Neither the General Partner nor the Adviser has made, or is required to make or maintain, any capital commitment to the Fund." (Section 3.3)
+
+    *   **fund_term**:
+        *   Section 1.1: "Evergreen, with no fixed term..."
+        *   Section 2.1: "...no fixed term..."
+        *   Section 12.2: "The Fund has no fixed term and will continue until dissolved."
+        *   Quote: "The Fund has no fixed term and will continue until dissolved." (Section 12.2)
+
+    *   **auditor**:
+        *   Section 8.2: "Tessier Mulvane LLP serves as the independent auditor of the Fund."
+        *   Appendix A: "Independent Auditor: Tessier Mulvane LLP..."
+        *   Quote: "Tessier Mulvane LLP serves as the independent auditor of the Fund." (Section 8.2)
+
+    *   **administrator**:
+        *   Section 1.1: "Service Providers: See Section 8."
+        *   Section 8.1: "Rendlesham Fund Services, LLC serves as administrator of the Fund..."
+        *   Appendix A: "Administrator: Rendlesham Fund Services, LLC..."
+        *   Quote: "Rendlesham Fund Services, LLC serves as administrator of the Fund (the "Administrator")." (Section 8.1)
+
+    *   **prime_broker**:
+        *   Section 8.5: "The Fund does not engage a prime broker."
+        *   Quote: "The Fund does not engage a prime broker." (Section 8.5)
+
+    *   **legal_counsel**:
+        *   Section 8.4: "Pellow Ainsworth LLP acts as legal counsel to the Fund..."
+        *   Appendix A: "Counsel to the Fund, the General Partner and the Adviser: Pellow Ainsworth LLP..."
+        *   Quote: "Pellow Ainsworth LLP acts as legal counsel to the Fund, the General Partner and the Adviser..." (Section 8.4)
+
+    *   **mfn_election**:
+        *   Section 7.2: "Each Limited Partner whose aggregate subscriptions... equal or exceed $25,000,000 (an "MFN Investor") may elect the benefit of any side letter term..."
+        *   Quote: "Each Limited Partner whose aggregate subscriptions to the Fund, net of amounts repurchased, equal or exceed $25,000,000 (an "MFN Investor") may elect the benefit of any side letter term granted after the Initial Closing Date to another Limited Partner whose net subscriptions are equal to or less than its own." (Section 7.2)
+
+3.  **Refine Values and Citations:**
+    *   Ensure JSON validity (escape quotes if necessary, though none expected in values).
+    *   Ensure `value` strings are concise but accurate summaries of the text found.
+    *   Ensure `citation` matches the document headers exactly (e.g., "Section 4.1", "Appendix B").
+    *   Ensure `quote` is verbatim.
+
+    *   *Self-Correction on Management Fee*: The side letter applies to a specific investor ("The Trustees of Hallowby College"). Is this a "class or tier"? It's a side letter term. I will include both rates in the value string to be comprehensive as per "Give every class or tier".
+    *   *Self-Correction on Key Man*: Section 3.2 says "The Partnership Agreement does not contain a key person provision." Side Letter Para 3 creates notification rights but explicitly states "This paragraph does not create a key person provision under the Partnership Agreement". So for the Fund itself, it is NOT_APPLICABLE.
+    *   *Self-Correction on High Water Mark*: Section 4.3 says "There is no high-water mark... with respect to the Income Incentive Fee". Section 4.4 discusses Loss Carryforward for Capital Gains. I need to capture both aspects in one value string.
+
+4.  **Drafting JSON:**
+    *   Check for markdown fences. None allowed.
+    *   Check for preamble. None allowed.
+    *   Check keys. All required fields must be present.
+
+    *   `fund_name`: "Brackenholt Senior Lending Fund, LP" (Section 1.1)
+    *   `fund_domicile`: "Delaware" (Header/Section 2.1) -> Quote: "formed as a limited partnership under the Delaware Revised Uniform Limited Partnership Act" (Section 2.1). Value: "Delaware".
+    *   `fund_structure`: "Open-end, evergreen vehicle; not redeemable on demand; not a feeder fund" (Section 2.1)
+    *   `management_fee`:

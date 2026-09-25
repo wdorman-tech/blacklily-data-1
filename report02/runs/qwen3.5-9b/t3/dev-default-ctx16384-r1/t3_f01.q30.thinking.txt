@@ -1,0 +1,39 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Which vendor captures and archives the firm's electronic communications?"
+
+3.  **Scan the Documents:**
+    *   Document 1: `02_compliance_manual.md` (dated January 15, 2026).
+        *   Section 14.3 Archiving: "All business communications on approved channels are captured and retained by Marrowgate Archiving, Inc., the Firm's archiving vendor..."
+    *   Document 2: `04_business_continuity_plan.md` (dated May 4, 2026).
+        *   Section 5.2 Critical Vendor List: Lists "Marrowgate Archiving, Inc." as the vendor for "Archiving of electronic communications".
+    *   Document 3: `06_policy_update_memo.md` (dated August 17, 2026).
+        *   Section 6. ELECTRONIC COMMUNICATIONS ARCHIVING VENDOR: "**Amends:** Compliance Manual, Section 14.3 (Archiving), and Business Continuity Plan, Section 5.2 (Critical Vendor List). Effective August 3, 2026, Sennacott Retention Systems, LLC replaced Marrowgate Archiving, Inc. as the Firm's electronic communications archiving vendor."
+
+4.  **Determine the Current Status:**
+    *   The question asks for the current vendor.
+    *   Document `06_policy_update_memo.md` is dated August 17, 2026 (latest).
+    *   It states that effective August 3, 2026, "Sennacott Retention Systems, LLC replaced Marrowgate Archiving, Inc. as the Firm's electronic communications archiving vendor."
+    *   This memo supersedes earlier references to Marrowgate in `02_compliance_manual.md` and `04_business_continuity_plan.md`.
+    *   Therefore, the current vendor is Sennacott Retention Systems, LLC.
+
+5.  **Draft the Answer:**
+    *   Answer: Sennacott Retention Systems, LLC
+    *   Source Document: `06_policy_update_memo.md` (This is the latest document amending the policy).
+    *   Section: SECTION 6. ELECTRONIC COMMUNICATIONS ARCHIVING VENDOR (or just "SECTION 6" as labeled in the text provided). Looking at the text provided: `Section: SECTION 6. ELECTRONIC COMMUNICATIONS ARCHIVING VENDOR`.
+    *   Quote: "Effective August 3, 2026, Sennacott Retention Systems, LLC replaced Marrowgate Archiving, Inc. as the Firm's electronic communications archiving vendor."
+
+6.  **Verify Constraints:**

@@ -1,0 +1,142 @@
+*   Role: Senior analyst at a registered investment adviser.
+    *   Task: Compare two versions of a document (prior vs. current) and list material changes.
+    *   Output: JSON object with "changes" list.
+    *   Rules:
+        1.  Section-by-section comparison.
+        2.  Report only actual differences.
+        3.  Types: "added", "removed", "modified".
+        4.  Materiality: New/removed risk, exposure, right, obligation, provision; specific events, proceedings, regulations, products, parties, programs; changes in likelihood/severity; changes to numbers, rates, thresholds, periods, deadlines (excluding routine date roll-forwards).
+        5.  No minor edits (punctuation, rewordings with same meaning, etc.).
+        6.  Identical text = no change.
+        7.  Format: Heading, one-sentence description (old vs. new), verbatim quote.
+        8.  No preamble/commentary.
+
+    *   *Header:*
+        *   Prior: `# Caterpillar Inc.: Form 10-K for fiscal year ended 2024-12-31`
+        *   Current: `# Caterpillar Inc.: Form 10-K for fiscal year ended 2025-12-31`
+        *   Analysis: This is a date roll-forward (2024 to 2025). Rule 5 says "a date rolled forward with nothing else changed" is not a material change.
+
+    *   *Section 1: Item 1A. Risk Factors (excerpt, prior year) / Item 1A. Risk Factors (excerpt, current year)*
+        *   Prior: `## Item 1A. Risk Factors (excerpt, prior year)`
+        *   Current: `## Item 1A. Risk1A. Risk Factors (excerpt, current year)`
+        *   Analysis: The text "prior year" changed to "current year". This is a standard update for a new filing year. Is it material? Rule 5 says "a date rolled forward with nothing else changed" is not material. The change from "prior year" to "current year" is a standard update for the reporting cycle.
+
+    *   *Section 2: New regulations or changes in financial services regulation could adversely impact Caterpillar and Cat Financial.*
+        *   Prior: `### New regulations or changes in financial services regulation could adversely impact Caterpillar and Cat Financial.`
+        *   Current: `### New regulations or changes in financial services regulation could adversely impact Caterpillar and Cat Financial.`
+        *   Analysis: Identical. No change.
+
+    *   *Section 3: We are subject to stringent environmental laws and regulations that impose significant compliance costs.*
+        *   Prior: `### We are subject to stringent environmental laws and regulations that impose significant compliance costs.`
+        *   Current: `### We are subject to stringent environmental laws and regulations that impose significant compliance costs.`
+        *   Analysis: Identical. No change.
+
+    *   *Section 4: The Company’s amended and restated bylaws provide that the Court of Chancery of the State of Delaware will be the exclusive forum for certain legal actions between the Company and its shareholders, which could discourage claims or limit the ability of the Company’s shareholders to bring a claim in a judicial forum viewed by the shareholders as more favorable for disputes with the Company or the Company’s directors, officers or other employees.*
+        *   Prior: `### The Company’s amended and restated bylaws provide that the Court of Chancery of the State of Delaware will be the exclusive forum for certain legal actions between the Company and its shareholders, which could discourage claims or limit the ability of the Company’s shareholders to bring a claim in a judicial forum viewed by the shareholders as more favorable for disputes with the Company or the Company’s directors, officers or other employees.`
+        *   Current: `### The Company’s amended and restated bylaws provide that the Court of Chancery of the State of Delaware will be the exclusive forum for certain legal actions between the Company and its shareholders, which could discourage claims or limit the ability of the Company’s shareholders to bring a claim in a judicial forum viewed by the shareholders as more favorable for disputes with the Company or the Company’s directors, officers or other employees.`
+        *   Analysis: Identical. No change.
+
+    *   *Overall Check:*
+        *   The only difference in the entire text is the year in the header (2024 vs 2025) and the descriptor in the section header (prior year vs current year).
+        *   Rule 5: "Do not report minor edits: a date rolled forward with nothing else changed...".
+        *   The change from "prior year" to "current year" is a standard update for the reporting cycle, not a material change in risk, exposure, etc.
+
+    *   Since no material changes were found, the list should be empty.
+
+    *   Wait, let me double-check the text one more time very carefully.
+    *   Prior: `...fiscal year ended 2024-12-31`
+    *   Current: `...fiscal year ended 2025-12-31`
+    *   Prior: `...Risk Factors (excerpt, prior year)`
+    *   Current: `...Risk Factors (excerpt, current year)`
+    *   Everything else:
+        *   "New regulations or changes in financial services regulation..." - Identical.
+        *   "We are subject to stringent environmental laws..." - Identical.
+        *   "The Company’s amended and restated bylaws..." - Identical.
+
+    *   Conclusion: No material changes.
+
+    *   Rule 8: "If nothing material changed, return an empty list."
+
+    *   Wait, I should check if the "Item 1A" header itself is a section.
+    *   Rule 1: "A section is a heading and the text beneath it, up to the next heading."
+    *   Heading 1: `Item 1A. Risk Factors (excerpt, prior year)` vs `Item 1A. Risk Factors (excerpt, current year)`.
+    *   Is the change from "prior year" to "current year" material?
+    *   Rule 4: "A change is material if a reader reviewing the document year over year would need to know about it: a new or removed risk, exposure, right, obligation or provision; a new or dropped specific event, proceeding, regulation, product, party or program; a change in the stated likelihood or severity of something ("could" becoming "has", a risk escalated or softened); or any change to a number, rate, threshold, period or deadline other than a routine date roll-forward."
+    *   "prior year" to "current year" is a routine update for the reporting cycle.
+    *   Rule 5: "Do not report minor edits: a date rolled forward with nothing else changed, a renamed defined term with no change in substance, an updated cross-reference or section number, punctuation, or rewording with identical meaning."
+    *   "prior year" to "current year" is a rewording with identical meaning (it's just identifying which year's report it is).
+
+    *   Final check of the text:
+        *   "New regulations or changes in financial services regulation could adversely impact Caterpillar and Cat Financial." (Identical)
+        *   "We are subject to stringent environmental laws and regulations that impose significant compliance costs." (Identical)
+        *   "The Company’s amended and restated bylaws provide that the Court of Chancery of the State of Delaware will be the exclusive forum for certain legal actions between the Company and its shareholders, which could discourage claims or limit the ability of the Company’s shareholders to bring a claim in a judicial forum viewed by the shareholders as more favorable for disputes with the Company or the Company’s directors, officers or other employees." (Identical)
+
+    *   No material changes found.
+
+    *   Wait, let me look at the header again.
+    *   `# Caterpillar Inc.: Form 10-K for fiscal year ended 2024-12-31`
+    *   `# Caterpillar Inc.: Form 10-K for fiscal year ended 2025-12-31`
+    *   This is a date roll-forward. Rule 5 says "a date rolled forward with nothing else changed" is not a material change.
+
+    *   Result: Empty list.
+
+    *   Wait, I should check if the prompt asks for any specific format for the empty list.
+    *   "Return ONLY a JSON object. No markdown fence, no preamble, no commentary. The object has exactly one key, "changes", holding a list."
+    *   If the list is empty, it should be `{"changes": []}`.
+
+    *   Double check the text one more time.
+    *   Prior: `...risk factors (excerpt, prior year)`
+    *   Current: `...risk factors (excerpt, current year)`
+    *   Is "prior year" to "current year" a "rewording with identical meaning"? Yes, in the context of a 10-K filing, it's just a label for the year's report.
+
+    *   Wait, let me check the "Item 1A" heading again.
+    *   Prior: `## Item 1A. Risk Factors (excerpt, prior year)`
+    *   Current: `## Item 1A. Risk Factors (excerpt, current year)`
+    *   Is "Item 1A" a section? Yes.
+    *   Is the change from "prior year" to "current year" material?
+    *   Rule 4: "a change to a number, rate, threshold, period or deadline other than a routine date roll-forward."
+    *   "prior year" vs "current year" is not a number/rate/threshold/period/deadline in the sense of a contract or risk. It's a label.
+    *   Rule 5: "rewording with identical meaning" is not a material change.
+
+    *   Conclusion remains: No material changes.
+
+    *   Wait, I should check if there are any hidden differences.
+    *   "Cat Financial’s operations are highly regulated..." (Identical)
+    *   "In the United States, for example, certain Cat Financial activities are subject to the U.S. Dodd-Frank..." (Identical)
+    *   "As a result, Cat Financial has become and could continue to become subject to additional regulatory costs..." (Identical)
+    *   "Changes in regulations or additional regulations in the United States or internationally..." (Identical)
+    *   "Our facilities, operations and products are subject to increasingly stringent environmental laws..." (Identical)
+    *   "Some environmental laws impose strict, retroactive and joint and several liability..." (Identical)
+    *   "Failure to comply with environmental laws could expose us to penalties..." (Identical)
+    *   "The potential liabilities, sanctions, damages and remediation efforts..." (Identical)
+    *   "In addition, there can be no assurances that we will not be adversely affected..." (Identical)
+    *   "Environmental laws and regulations may change from time to time..." (Identical)
+    *   "Changes in environmental and climate change laws or regulations..." (Ident10)
+    *   "Changes in climate change concerns, or in the regulation of such concerns..." (Identical)
+    *   "If environmental laws or regulations are either changed or simply adopted..." (Wait, let me check "either changed or adopted" vs "either changed or adopted").
+    *   Prior: `If environmental laws or regulations are either changed or adopted and impose significant operational restrictions...`
+    *   Current: `If environmental laws or regulations are either changed or adopted and impose significant operational restrictions...`
+    *   Identical.
+
+    *   "The Company’s amended and restated bylaws provide that the Court of Chancery of the State of Delaware will be the exclusive forum..." (Identical)
+    *   "The Company’s amended and restated bylaws provide to the fullest extent permitted by law..." (Identical)
+    *   "The exclusive forum provisions in our bylaws could limit our shareholders’ ability..." (Identical)
+    *   "Alternatively, if a court were to find the choice of forum provision..." (Identical)
+    *   "The exclusive forum provision in the Company’s amended and restated bylaws will not preclude or contract the scope of exclusive federal or concurrent jurisdiction..." (Identical)
+
+    *   Conclusion: No material changes.
+
+    *   Wait, let me check the "Item 1A" heading again.
+    *   Prior: `## Item 1A. Risk Factors (excerpt, prior year)`
+    *   Current: `## Item 1A. Risk Factors (excerpt, current year)`
+    *   Is "prior year" to "current year" a "rewording with identical meaning"?
+    *   In the context of a 10-K, "prior year" refers to the previous year's filing, and "current year" refers to the current year's filing.
+    *   The change from "prior year" to "current year" is a standard update for the current filing.
+    *   Rule 5: "Do not report... a rewording with identical meaning."
+    *   The meaning of the section (Risk Factors) hasn't changed.
+
+    *   Final check on the "Item 1A" heading.
+    *   Prior: `## Item 1A. Risk Factors (excerpt, prior year)`
+    *   Current: `## Item 1A. Risk Factors (excerpt, current year)`
+    *   If I were to report it, the description would be "The year designation changed from 'prior year' to 'current year'."
+    *   But is it material? Rule 4 says "a change to a number, rate, threshold, period or deadline other than a routine date roll-forward."

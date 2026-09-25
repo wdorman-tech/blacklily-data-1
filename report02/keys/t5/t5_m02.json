@@ -1,0 +1,459 @@
+{
+  "meeting_id": "t5_m02",
+  "title": "Recently widowed client review: beneficiary updates, survivor benefits and liquidity",
+  "notes": "Colleen first says the Orrinsford insurance deposit was 300,000 and corrects it about fourteen minutes later to 262,400 (a policy loan was netted out), which moves the transfer from the stated 250,000 to 212,400, and the transcription renders the $1,800 monthly transfer once as $18,000 and the daughter's name as Shivon before it is spelled Siobhan. The Kessling pension call moves from Colleen to Imogen, the bills list moves from Friday September 18 to Friday September 25, the risk profile ends at moderate after Colleen first asks for conservative, next meeting moves from the week of November 16 to December 3, and the adviser's closing recap omits the 403(b) and group life update, the estate documents and the date-of-death valuation. The Roth conversion (declined), selling the house (deferred) and filing for Social Security now (advised against) are not actions and the late husband Walter is not a client name, while four reported items the key folds into keyed ones are acceptable extras for the adjudicator, not errors: Colleen signing and returning the e-sign packet, Renata truing up the $1,800 transfer once the bills list arrives, receipt of the $262,400 life insurance proceeds reported as a life event (part of e1 and a1), and the beneficiary and TOD designations reported as an account action (part of i3).",
+  "scalar_fields": {
+    "meeting_date": {
+      "expected": "September 15, 2026",
+      "accept": [
+        "\\bsep(t(ember)?)?\\.?\\s*15(th)?\\b",
+        "2026-09-15",
+        "\\b0?9/15/(20)?26\\b",
+        "\\b15(th)?\\s+(of\\s+)?sep(t(ember)?)?\\b",
+        "\\b15[/.]0?9[/.](20)?26\\b"
+      ],
+      "reject": {}
+    },
+    "client_names": {
+      "expected": "Colleen Rasmund",
+      "accept": [
+        "^(?!.*(^|[\\[,;\\\"']\\s*|\\band\\s+)walter(?![^(]*\\))).*(colleen\\b.{0,20}\\brasmund|rasmund,?\\s+colleen)"
+      ],
+      "match": "all",
+      "reject": {
+        "DECEASED_SPOUSE_LISTED": [
+          "(^|[\\[,;\\\"']\\s*|\\band\\s+)walter(?![^(]*\\))"
+        ]
+      }
+    },
+    "primary_goal": {
+      "expected": "Be okay on one income: keep enough accessible cash (liquidity) and stay in the house while Walter's estate is settled",
+      "accept": [
+        "liquid",
+        "cash[- ]?flow",
+        "(accessible|enough|the|available) cash",
+        "(stay|remain|keep|living)\\b.{0,30}\\b(house|home)\\b",
+        "\\b(one|single|her own|a single) income",
+        "(financial(ly)?|money)\\b.{0,20}(secur|stab|okay|\\bok\\b|safe)",
+        "\\bcash\\b.{0,20}(accessib|availab|on hand|reachable)",
+        "access to (her |the )?cash"
+      ],
+      "reject": {}
+    },
+    "retirement_target": {
+      "expected": "Age 67 (March 2031), changed during the meeting from 65",
+      "accept": [
+        "\\b67\\b",
+        "sixty[- ]seven",
+        "\\b2031\\b"
+      ],
+      "reject": {
+        "STALE_65": [
+          "^(?!.*(\\b67\\b|sixty[- ]seven|\\b2031\\b)).*(\\b65\\b|sixty[- ]five|\\b2029\\b)"
+        ]
+      }
+    },
+    "risk_tolerance": {
+      "expected": "Moderate",
+      "accept": [
+        "\\bmoderate\\b(?![- ]?aggressive)"
+      ],
+      "reject": {
+        "STALE_MODERATELY_AGGRESSIVE": [
+          "^(?!.*\\bmoderate\\b(?![- ]?aggressive)).*moderate(ly)?[- ]aggressive"
+        ],
+        "CLIENT_OPENING_CONSERVATIVE": [
+          "^(?!.*\\bmoderate\\b(?![- ]?aggressive)).*conservative"
+        ]
+      }
+    },
+    "risk_tolerance_change": {
+      "expected": "from moderately aggressive to moderate",
+      "accept": [
+        "^(?!.*moderate(ly)?[- ]aggressive\\W{0,5}(to|->|=>)\\s*(moderately\\s+)?conservative).*moderate(ly)?[- ]aggressive.{0,80}\\bmoderate\\b(?![- ]?aggressive)",
+        "\\bmoderate\\b(?![- ]?aggressive).{0,30}\\b(from|previously|was|formerly)\\b.{0,20}moderate(ly)?[- ]aggressive"
+      ],
+      "reject": {
+        "WRONG_TARGET_CONSERVATIVE": [
+          "\\bto\\s+(moderately\\s+)?conservative"
+        ],
+        "WRONG_NO_CHANGE": [
+          "^\\W*no change"
+        ]
+      }
+    },
+    "next_meeting": {
+      "expected": "Thursday, December 3, 2026 at 10:00 a.m., in person at the office",
+      "accept": [
+        "dec(ember)?\\.?\\s*0?3(rd)?\\b",
+        "\\b12/0?3\\b",
+        "2026-12-03",
+        "\\b3(rd)?\\s+dec(ember)?"
+      ],
+      "reject": {
+        "STALE_NOVEMBER_16": [
+          "^(?!.*(dec(ember)?|12/0?3)).*(nov(ember)?|11/16)"
+        ]
+      }
+    }
+  },
+  "life_events": [
+    {
+      "eid": "e1",
+      "expected": "Husband Walter Rasmund died on June 4, 2026; Colleen is widowed",
+      "match": [
+        "walter.{0,40}(died|death|pass(ed|ing)|deceased|loss)",
+        "(died|death|passing|passed|loss)\\b.{0,40}(walter|husband|spouse)",
+        "(husband|spouse)\\b.{0,40}(died|death|pass(ed|ing)|deceased|loss)",
+        "widow",
+        "bereave"
+      ],
+      "reject": {}
+    },
+    {
+      "eid": "e2",
+      "expected": "Daughter Siobhan Kearsley is pregnant; first grandchild due in February 2027",
+      "match": [
+        "grand(child|baby|son|daughter|kid|mother|parent|ma\\b|mom)",
+        "pregnan",
+        "expecting",
+        "\\bbaby\\b",
+        "due in feb"
+      ],
+      "reject": {
+        "ASR_NAME_SHIVON": [
+          "^(?!.*siobhan).*shivon"
+        ]
+      }
+    }
+  ],
+  "account_actions": [
+    {
+      "aid": "a1",
+      "expected": "Transfer $212,400 of life insurance proceeds from Esker Valley Savings checking into a new individual account at Brisbourne Aldercott, held in the Treasury money market fund ($50,000 stays at Esker Valley as a cash cushion)",
+      "match": [
+        "^(?!(?!.*(\\b212|\\b262|\\b250|\\b300|lump)).*(monthly|per month|a month|recurring|standing|systematic)).*(insurance|proceeds|\\b212|\\b262|orrinsford)"
+      ],
+      "amount_accept": [
+        "\\b212[,.]?4\\d{2}\\b",
+        "\\b212(\\.4)?\\s*(k|thousand|mm)?\\b",
+        "262[,.]?4\\d{2}.{0,40}(less|minus|net of|after|keep|leav).{0,30}\\b50"
+      ],
+      "amount_reject": {
+        "STALE_250000_FROM_300000": [
+          "^(?!.*\\b212).*(\\b250[,.]?(000)?\\b|\\b250k|two hundred (and )?fifty thousand)"
+        ],
+        "STALE_GROSS_300000": [
+          "^(?!.*\\b212).*(\\b300[,.]?(000)?\\b|\\b300k|three hundred thousand)"
+        ],
+        "GROSS_262400_NOT_NET": [
+          "^(?!.*(\\b212|less|minus|net of|after|keep|leav)).*262[,.]?4"
+        ]
+      }
+    },
+    {
+      "aid": "a2",
+      "expected": "Spousal rollover of Walter's traditional IRA, full balance (about $418,000), in kind into an IRA in Colleen's own name",
+      "match": [
+        "(roll[- ]?over|rolled|spousal|walter'?s ira|inherited ira|\\b418)"
+      ],
+      "amount_accept": [
+        "\\b418",
+        "four hundred (and )?eighteen",
+        "\\b(full|entire|whole)\\b",
+        "\\ball\\b",
+        "100\\s*(%|percent)",
+        "in[- ]kind"
+      ],
+      "amount_reject": {}
+    },
+    {
+      "aid": "a3",
+      "expected": "Standing monthly transfer of $1,800 from the new individual account (Treasury money market) to Esker Valley checking on the 15th, starting October 15, 2026",
+      "match": [
+        "monthly|per month|a month|/\\s*mo\\b|recurring|standing|systematic|each month|every month",
+        "\\b1,?800\\b|eighteen hundred|\\b18,?000\\b"
+      ],
+      "amount_accept": [
+        "\\b1,?800\\b",
+        "eighteen hundred",
+        "\\b1\\.8\\s*k\\b"
+      ],
+      "amount_reject": {
+        "ASR_18000": [
+          "^(?!.*(\\b1,?800\\b|eighteen hundred)).*(\\b18,?000\\b|eighteen thousand|\\b18k\\b)"
+        ]
+      }
+    },
+    {
+      "aid": "a4",
+      "expected": "Reallocate the entire new IRA and the individual brokerage account to the Moderate model portfolio once the rollover settles; no dollar amount stated",
+      "match": [
+        "model|realloc|rebalanc|\\bmoderate\\b"
+      ],
+      "amount_accept": [
+        "not[_ ]?found",
+        "\\bn/?a\\b",
+        "\\bnone\\b",
+        "not (specified|stated|given)",
+        "no (dollar )?amount",
+        "\\b(entire|full|whole)\\b",
+        "\\ball\\b",
+        "both accounts",
+        "\\b418"
+      ],
+      "amount_reject": {}
+    }
+  ],
+  "action_items": [
+    {
+      "iid": "i1",
+      "expected_task": "Call the Kessling pension center (once Colleen's third-party authorization is back) to obtain a benefit confirmation letter for the survivor pension and put a W-4P withholding election on file",
+      "match": [
+        "^(?!.*(\\be-?sign|packet|rollover|beneficiar)).*(kessling|pension|w-?4p|withholding)",
+        "\\b(call|contact|phone|reach out to|follow up with)\\w*\\b.{0,30}\\bkessling",
+        "\\bkessling\\b.{0,80}\\b(call|contact|w-?4p|withholding|letter|confirm)",
+        "\\b(obtain|get|request|call|contact|order)\\w*\\b.{0,40}\\b(w-?4p|withholding (form|election)|benefit (confirmation )?letter)"
+      ],
+      "owner_accept": [
+        "imogen|staveley|paraplanner"
+      ],
+      "owner_reject": {
+        "STALE_OWNER": [
+          "^(?!.*(imogen|staveley|paraplanner)).*(colleen|client|rasmund)"
+        ]
+      },
+      "due_accept": [
+        "\\boct(ober)?\\.?\\s*(1|first)(st)?\\b",
+        "\\b(1|first)(st)?\\s+(of\\s+)?oct(ober)?\\b",
+        "\\b10/0?1\\b",
+        "2026-10-01",
+        "\\bsep(t(ember)?)?\\.?\\s*30\\b",
+        "\\b30(th)?\\s+(of\\s+)?sep(t(ember)?)?\\b",
+        "\\b0?9/30\\b",
+        "2026-09-30",
+        "end of (the )?(month|september)",
+        "before (the )?(next|october) (pension )?payment"
+      ],
+      "due_reject": {},
+      "trap": "reassigned"
+    },
+    {
+      "iid": "i2",
+      "expected_task": "Send the adviser a list of recurring household bills (what, about how much, monthly or annual)",
+      "match": [
+        "^(?!\\W*((renata|szalai|advis[oe]r|imogen|staveley|paraplanner)\\s+(to|will|should|can)\\s+)?(true[- ]?up|adjust|revis|recalc|resiz|reassess)\\w*\\b)(?!(?!.*\\b(list|send|compil\\w*|provid\\w*|gather\\w*|pull\\w* together|put\\w* together)\\b).*\\btrue[- ]?up\\b).*(\\bbills?\\b|\\bexpens\\w*|spending|budget|(household|monthly|recurring|living|fixed) (costs|obligations|payments|charges)|cash[- ]?flow (list|worksheet))"
+      ],
+      "owner_accept": [
+        "colleen|rasmund|\\bclient\\b"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "\\bsep(t(ember)?)?\\.?\\s*25",
+        "\\b0?9/25\\b",
+        "2026-09-25",
+        "\\b25(th)?\\b",
+        "twenty[- ]fifth"
+      ],
+      "due_reject": {
+        "STALE_DUE": [
+          "^(?!.*(\\b25(th)?\\b|twenty[- ]fifth|another week|extra week|following friday)).*(\\bsep(t(ember)?)?\\.?\\s*18|\\b0?9/18\\b|2026-09-18|\\b18(th)?\\b|\\bthis friday\\b|\\bfriday\\b)"
+        ]
+      },
+      "trap": "due_changed"
+    },
+    {
+      "iid": "i3",
+      "expected_task": "Send one e-sign packet: spousal rollover and new individual account forms, bank transfer authorization for the insurance proceeds, beneficiary designations on the new IRA and new account naming Siobhan Kearsley and Declan Thomas Rasmund 50/50 per stirpes, TOD on the individual account, and the Kessling third-party authorization",
+      "match": [
+        "^(?!\\W*((colleen|client|she)\\s+(to|will|should|must|needs to)\\s+)?(review\\w*|sign\\w*|return\\w*|complet\\w*|fill\\w*|execut\\w*|countersign\\w*|watch\\w*|receiv\\w*|e-?sign(?!\\s*(packet|package|forms?|documents?|paperwork|envelope))|docusign(?!\\s*(packet|package|forms?|documents?|paperwork|envelope)))\\b(?!.*\\b(send|sends|sent|sending|prepar\\w*|email\\w*|mail\\w*|issu\\w*|assembl\\w*|generat\\w*)\\b))(?!.*\\b(call|contact|phone)\\w*\\b.{0,20}\\bkessling).*\\be-?sign",
+        "^(?!\\W*((colleen|client|she)\\s+(to|will|should|must|needs to)\\s+)?(review\\w*|sign\\w*|return\\w*|complet\\w*|fill\\w*|execut\\w*|countersign\\w*|watch\\w*|receiv\\w*|e-?sign(?!\\s*(packet|package|forms?|documents?|paperwork|envelope))|docusign(?!\\s*(packet|package|forms?|documents?|paperwork|envelope)))\\b(?!.*\\b(send|sends|sent|sending|prepar\\w*|email\\w*|mail\\w*|issu\\w*|assembl\\w*|generat\\w*)\\b))(?!.*\\b(call|contact|phone)\\w*\\b.{0,20}\\bkessling).*packet",
+        "^(?!\\W*((colleen|client|she)\\s+(to|will|should|must|needs to)\\s+)?(review\\w*|sign\\w*|return\\w*|complet\\w*|fill\\w*|execut\\w*|countersign\\w*|watch\\w*|receiv\\w*|e-?sign(?!\\s*(packet|package|forms?|documents?|paperwork|envelope))|docusign(?!\\s*(packet|package|forms?|documents?|paperwork|envelope)))\\b(?!.*\\b(send|sends|sent|sending|prepar\\w*|email\\w*|mail\\w*|issu\\w*|assembl\\w*|generat\\w*)\\b))(?!.*\\b(call|contact|phone)\\w*\\b.{0,20}\\bkessling)(?!.*(403|marrowfield|group life|hr portal|\\bhr\\b|employer|through work|at work|workplace|benefits (office|department|team|portal)|retirement plan|life insurance(?! (proceeds|money|payout|deposit|check)))).*(beneficiar|transfer[- ]on[- ]death|\\btod\\b)",
+        "^(?!\\W*((colleen|client|she)\\s+(to|will|should|must|needs to)\\s+)?(review\\w*|sign\\w*|return\\w*|complet\\w*|fill\\w*|execut\\w*|countersign\\w*|watch\\w*|receiv\\w*|e-?sign(?!\\s*(packet|package|forms?|documents?|paperwork|envelope))|docusign(?!\\s*(packet|package|forms?|documents?|paperwork|envelope)))\\b(?!.*\\b(send|sends|sent|sending|prepar\\w*|email\\w*|mail\\w*|issu\\w*|assembl\\w*|generat\\w*)\\b))(?!.*\\b(call|contact|phone)\\w*\\b.{0,20}\\bkessling).*(rollover|new account|account opening|transfer authori[sz]ation).{0,30}(forms?|paperwork|documents)"
+      ],
+      "owner_accept": [
+        "imogen|staveley|paraplanner"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "tomorrow",
+        "\\bsep(t(ember)?)?\\.?\\s*16\\b",
+        "\\b16(th)?\\s+(of\\s+)?sep(t(ember)?)?\\b",
+        "\\b0?9/16\\b",
+        "2026-09-16",
+        "wednesday",
+        "next (business )?day"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i4",
+      "expected_task": "Change the beneficiaries on the Marrowfield 403(b) and group life insurance to Siobhan and Declan, same 50/50 split, through the employer HR portal",
+      "match": [
+        "403\\s*\\(?b\\)?",
+        "marrowfield",
+        "group (term )?life",
+        "\\b(employer|hr|work(place)?)\\b.{0,40}(portal|plan|beneficiar)",
+        "benefits (office|department|team|portal)",
+        "beneficiar\\w*\\b.{0,60}\\b(retirement plan|life (insurance )?polic(y|ies)|(at|through) work)\\b",
+        "\\b(retirement plan|life (insurance )?polic(y|ies))\\b.{0,60}\\bbeneficiar"
+      ],
+      "owner_accept": [
+        "colleen|rasmund|\\bclient\\b"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "end of (the )?(month|september)",
+        "\\bsep(t(ember)?)?\\.?\\s*30\\b",
+        "\\b30(th)?\\s+(of\\s+)?sep(t(ember)?)?\\b",
+        "\\b0?9/30\\b",
+        "2026-09-30",
+        "month[- ]end",
+        "\\beom\\b"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i5",
+      "expected_task": "Run a full Social Security claiming analysis on both records (survivor benefit versus Colleen's own benefit and how to sequence them)",
+      "match": [
+        "^(?!(?!.*(social security|\\bssa?\\b)).*(kessling|pension|w-?4p|withholding)).*(social security|\\bssa?\\b|survivor\\b.{0,30}\\bbenefit|claiming).{0,80}(analy|strateg|compar|option|optim|best age|age to claim|claiming age|when\\b.{0,25}\\b(claim|file|start|take)|recommend|review|evaluat|model|project|numbers|sequenc|timing|\\bvs\\b|versus|whether|determin|decid|calculat|estimat|assess|figure out|work out|plan\\b|look into|research|work up)",
+        "^(?!(?!.*(social security|\\bssa?\\b)).*(kessling|pension|w-?4p|withholding)).*(analy|strateg|compar|option|optim|best age|age to claim|claiming age|when\\b.{0,25}\\b(claim|file|start|take)|recommend|review|evaluat|model|project|numbers|sequenc|timing|\\bvs\\b|versus|whether|determin|decid|calculat|estimat|assess|figure out|work out|plan\\b|look into|research|work up).{0,80}(social security|\\bssa?\\b|survivor\\b.{0,30}\\bbenefit|claiming)"
+      ],
+      "owner_accept": [
+        "renata|szalai|advis[oe]r"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "dec(ember)?\\.?\\s*0?3(rd)?\\b",
+        "\\b12/0?3\\b",
+        "2026-12-03",
+        "next (review |client )?(meeting|review)",
+        "\\b3(rd)?\\s+dec(ember)?",
+        "dec(ember)?\\.?\\s+(review|meeting)"
+      ],
+      "due_reject": {
+        "STALE_DUE": [
+          "^(?!.*(dec(ember)?|12/0?3|next (review |client )?meeting)).*(nov(ember)?|11/16)"
+        ]
+      },
+      "trap": "none"
+    },
+    {
+      "iid": "i6",
+      "expected_task": "Ask estate attorney Harriet Vosburgh at Thursday's meeting about updating her will and a new durable power of attorney and health care proxy (all currently name Walter)",
+      "match": [
+        "power of attorney|\\bpoa\\b",
+        "health ?care (proxy|agent|power|directive)|medical (proxy|power)",
+        "estate (plan(ning)? )?(documents|docs)|\\bestate plan\\b",
+        "\\b(her|own|colleen'?s|update (her|the)|new) will\\b(?!\\s+(be|call|send|have|do|get|pull|email|run))",
+        "\\b(updat\\w*|revis\\w*|redo\\w*|draft\\w*)\\b.{0,12}\\bwill\\b(?!\\s+(be|call|send|have|do|get|pull|email|run))"
+      ],
+      "owner_accept": [
+        "colleen|rasmund|\\bclient\\b"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "thursday",
+        "\\bsep(t(ember)?)?\\.?\\s*17\\b",
+        "\\b17(th)?\\s+(of\\s+)?sep(t(ember)?)?\\b",
+        "\\b0?9/17\\b",
+        "2026-09-17",
+        "(attorney|harriet|vosburgh)('s)? meeting|meeting with (the )?(estate )?(attorney|harriet|vosburgh)"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i7",
+      "expected_task": "Email Harriet Vosburgh the date-of-death valuation for the joint account and the IRA (estate inventory and new cost basis on Walter's half of the joint account)",
+      "match": [
+        "date[- ]of[- ]death",
+        "step[- ]?up",
+        "cost basis",
+        "\\bdod\\b",
+        "valuation",
+        "estate inventory",
+        "june 4",
+        "values? as of (his |walter'?s )?death"
+      ],
+      "owner_accept": [
+        "renata|szalai|advis[oe]r"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "thursday",
+        "\\bsep(t(ember)?)?\\.?\\s*1[67]\\b",
+        "\\b1[67](th)?\\s+(of\\s+)?sep(t(ember)?)?\\b",
+        "\\b0?9/1[67]\\b",
+        "2026-09-1[67]",
+        "before (the |her |colleen'?s |their )?(attorney |harriet |estate )?meeting",
+        "(attorney|harriet|vosburgh)('s)? meeting|meeting with (the )?(estate )?(attorney|harriet|vosburgh)"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    }
+  ],
+  "non_actions": [
+    {
+      "nid": "n1",
+      "what": "Converting part of the IRA to a Roth in 2026 while Colleen can still file jointly (adviser proposal, declined)",
+      "match": [
+        "^(?!(?=.*(roll[- ]?over|rolled|spousal|spouse'?s ira|walter'?s ira|own ira|traditional ira|inherited|model|realloc|rebalanc|social security|claiming|packet)).*\\b(no|not|without|declined)\\b.{0,15}\\broth\\b).*\\broth\\b"
+      ],
+      "kind": "declined_proposal"
+    },
+    {
+      "nid": "n2",
+      "what": "Selling the house and moving near Siobhan in Asheville (floated, explicitly not this year)",
+      "match": [
+        "^(?!(?=.*(insurance|proceeds|money market|treasury|\\b212|roll[- ]?over|model|packet|e-?sign|\\btod\\b|transfer[- ]on[- ]death|beneficiar|social security)).*\\b(no|not|without|like|such as|including|avoid\\w*|defer\\w*|hold\\w* off|postpon\\w*|before|rather than|instead of)\\b.{0,30}\\b(sell\\w*|sale|list\\w*|mov\\w*|relocat\\w*|downsiz\\w*|asheville)\\b).*asheville",
+        "^(?!(?=.*(insurance|proceeds|money market|treasury|\\b212|roll[- ]?over|model|packet|e-?sign|\\btod\\b|transfer[- ]on[- ]death|beneficiar|social security)).*\\b(no|not|without|like|such as|including|avoid\\w*|defer\\w*|hold\\w* off|postpon\\w*|before|rather than|instead of)\\b.{0,30}\\b(sell\\w*|sale|list\\w*|mov\\w*|relocat\\w*|downsiz\\w*|asheville)\\b).*\\bsell\\w*\\b.{0,20}\\b(the |her |their )?(house|home)\\b",
+        "^(?!(?=.*(insurance|proceeds|money market|treasury|\\b212|roll[- ]?over|model|packet|e-?sign|\\btod\\b|transfer[- ]on[- ]death|beneficiar|social security)).*\\b(no|not|without|like|such as|including|avoid\\w*|defer\\w*|hold\\w* off|postpon\\w*|before|rather than|instead of)\\b.{0,30}\\b(sell\\w*|sale|list\\w*|mov\\w*|relocat\\w*|downsiz\\w*|asheville)\\b).*\\bsale of (the |her |their )?(house|home)\\b",
+        "^(?!(?=.*(insurance|proceeds|money market|treasury|\\b212|roll[- ]?over|model|packet|e-?sign|\\btod\\b|transfer[- ]on[- ]death|beneficiar|social security)).*\\b(no|not|without|like|such as|including|avoid\\w*|defer\\w*|hold\\w* off|postpon\\w*|before|rather than|instead of)\\b.{0,30}\\b(sell\\w*|sale|list\\w*|mov\\w*|relocat\\w*|downsiz\\w*|asheville)\\b).*\\blist(ing)? (the |her )?(house|home)\\b",
+        "^(?!(?=.*(insurance|proceeds|money market|treasury|\\b212|roll[- ]?over|model|packet|e-?sign|\\btod\\b|transfer[- ]on[- ]death|beneficiar|social security)).*\\b(no|not|without|like|such as|including|avoid\\w*|defer\\w*|hold\\w* off|postpon\\w*|before|rather than|instead of)\\b.{0,30}\\b(sell\\w*|sale|list\\w*|mov\\w*|relocat\\w*|downsiz\\w*|asheville)\\b).*\\b(house|home)\\b.{0,20}\\bon the market\\b",
+        "^(?!(?=.*(insurance|proceeds|money market|treasury|\\b212|roll[- ]?over|model|packet|e-?sign|\\btod\\b|transfer[- ]on[- ]death|beneficiar|social security)).*\\b(no|not|without|like|such as|including|avoid\\w*|defer\\w*|hold\\w* off|postpon\\w*|before|rather than|instead of)\\b.{0,30}\\b(sell\\w*|sale|list\\w*|mov\\w*|relocat\\w*|downsiz\\w*|asheville)\\b).*\\brelocat\\w*\\b.{0,30}\\b(near|closer|siobhan|daughter|north carolina)",
+        "^(?!(?=.*(insurance|proceeds|money market|treasury|\\b212|roll[- ]?over|model|packet|e-?sign|\\btod\\b|transfer[- ]on[- ]death|beneficiar|social security)).*\\b(no|not|without|like|such as|including|avoid\\w*|defer\\w*|hold\\w* off|postpon\\w*|before|rather than|instead of)\\b.{0,30}\\b(sell\\w*|sale|list\\w*|mov\\w*|relocat\\w*|downsiz\\w*|asheville)\\b).*\\bmov(e|es|ing)\\b.{0,15}\\b(down (south|to asheville|to north carolina|to nc|near|closer)|near|closer|in with)\\b",
+        "^(?!(?=.*(insurance|proceeds|money market|treasury|\\b212|roll[- ]?over|model|packet|e-?sign|\\btod\\b|transfer[- ]on[- ]death|beneficiar|social security)).*\\b(no|not|without|like|such as|including|avoid\\w*|defer\\w*|hold\\w* off|postpon\\w*|before|rather than|instead of)\\b.{0,30}\\b(sell\\w*|sale|list\\w*|mov\\w*|relocat\\w*|downsiz\\w*|asheville)\\b).*\\bdownsiz",
+        "^(?!(?=.*(insurance|proceeds|money market|treasury|\\b212|roll[- ]?over|model|packet|e-?sign|\\btod\\b|transfer[- ]on[- ]death|beneficiar|social security)).*\\b(no|not|without|like|such as|including|avoid\\w*|defer\\w*|hold\\w* off|postpon\\w*|before|rather than|instead of)\\b.{0,30}\\b(sell\\w*|sale|list\\w*|mov\\w*|relocat\\w*|downsiz\\w*|asheville)\\b).*\\b(house|home) sale\\b"
+      ],
+      "kind": "tentative"
+    },
+    {
+      "nid": "n3",
+      "what": "Filing for the Social Security survivor benefit now (Colleen asked; adviser said not while she works full time)",
+      "match": [
+        "^(?!.*(analy|strateg|compar|project|numbers|sequenc|timing|\\bwhen\\b|optim|best age|optimal age|claiming age|age to claim|what age|which age|option|recommend|review|evaluat|model|kessling|pension|w-?4p|withholding|lump[- ]sum|death payment|\\bvs\\b|versus|whether|determin|decid|calculat|estimat|assess|figure out|work out|plan\\b|look into|research|work up|\\b67\\b|sixty[- ]seven|\\b70\\b|full retirement age|\\bfra\\b|2031)).*\\b(apply|applying|applied|claim|claims|claiming|file|files|filed|filing|start|starts|starting|begin|begins|beginning|collect|collecting|take|taking|draw|drawing)\\b.{0,40}(social security|survivor benefit|\\bssa?\\b)"
+      ],
+      "kind": "tentative"
+    }
+  ],
+  "corrected_figures": [
+    {
+      "what": "Life insurance death benefit deposited by Orrinsford Mutual (net of Walter's policy loan)",
+      "said_first": "300,000",
+      "corrected_to": "262,400",
+      "field": "account_actions"
+    },
+    {
+      "what": "Insurance proceeds moving to the new individual account after $50,000 stays at Esker Valley",
+      "said_first": "250,000",
+      "corrected_to": "212,400",
+      "field": "account_actions"
+    },
+    {
+      "what": "Standing monthly transfer amount: the transcription renders the adviser's first statement as $18,000; later turns give 1,800 and eighteen hundred",
+      "said_first": "18,000",
+      "corrected_to": "1,800",
+      "field": "account_actions"
+    },
+    {
+      "what": "Retirement age: 65 in last year's plan, changed in the meeting to 67",
+      "said_first": "65",
+      "corrected_to": "67",
+      "field": "scalar:retirement_target"
+    }
+  ]
+}

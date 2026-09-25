@@ -1,0 +1,42 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What approval requirements and dollar limits apply to political contributions by the Adviser's personnel?"
+    *   Key elements needed: Approval requirements (who must approve) and dollar limits (how much).
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "political contributions", "approval", "limits", "dollar", "personnel", "supervised persons".
+
+4.  **Evaluate Document Content:**
+
+    *   `01_brochure.md`: Discusses proxy voting policies (Item 17). No mention of political contribution limits or approval requirements for personnel.
+    *   `02_compliance_manual.md` (dated January 15, 2026):
+        *   Section 5.2 Gifts Received: Mentions $250 limit on gifts received. Not political contributions.
+        *   Section 5.3 Gifts Given: Mentions $250 limit on gifts given. Not political contributions.
+        *   Section 6.1 Scope: Discusses Rule 206(4)-5, government entities as investors, conflict of interest regarding compensation. No specific dollar limits or approval process for personnel contributions yet.
+        *   Section 6.2 Pre-Clearance and Limits:
+            *   "All supervised persons... must obtain the prior written approval of the CCO before making any political contribution..." (Approval requirement).
+            *   "...CCO will approve contributions by covered associates only within the following limits: up to $350 per election to an official for whom the covered associate is entitled to vote, and up to $150 per election to an official for whom the covered associate is not entitled to vote." (Dollar limits).
+            *   Also mentions: "Contributions by a spouse or household member that are directed or funded by a supervised person are treated as contributions of the supervised person."
+    *   `06_policy_update_memo.md` (dated August 24, 2026):
+        *   Section 2.3 Compliance Manual Section 5.2 (Gifts Received): Reduces gift received limit from $250 to $100.
+        *   States: "The limits on gifts given in Section 5.3 and on business entertainment in Section 5.4 are unchanged."
+        *   Does not mention political contributions (Section 6). It only amends Section 5.2.
+
+5.  **Determine the Current State:**
+    *   The question asks about political contributions by personnel.
+    *   `02_compliance_manual.md` Section 6.2 contains the specific rules for political contributions (approval and limits).
+    *   `06_policy_update_memo.md` does not

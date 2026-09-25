@@ -1,0 +1,34 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question using *only* the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (all docs here seem to be dated January 15, 2026).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Who is the Adviser's Chief Compliance Officer, and to whom does the CCO report?"
+    *   Key information needed: Name of CCO, Reporting line (to whom).
+
+3.  **Scan the Documents:**
+    *   Document: `02_compliance_manual.md`
+    *   Date: January 15, 2026
+    *   Section: `SECTION 2. CHIEF COMPLIANCE OFFICER > 2.1 Designation`
+        *   Text: "The Management Committee has designated Harriet Lomasney, General Counsel, as Chief Compliance Officer ("CCO")." -> Identifies CCO.
+    *   Section: `SECTION 2. CHIEF COMPLIANCE OFFICER > 2.2 Reporting Line and Authority`
+        *   Text: "The CCO reports to Callum R. Everdeen, Managing Partner and Chief Investment Officer..." -> Identifies reporting line.
+
+4.  **Synthesize the Answer:**
+    *   CCO Name: Harriet Lomasney, General Counsel.
+    *   Reports to: Callum R. Everdeen, Managing Partner and Chief Investment Officer.
+    *   Source Document: `02_compliance_manual.md`
+    *   Section: `SECTION 2. CHIEF COMPLIANCE OFFICER > 2.1 Designation` and `SECTION 2. CHIEF COMPLIANCE OFFICER > 2.2 Reporting Line and Authority`. Since the question asks for two pieces of info found in different subsections of the same section header, I need to decide how to cite. The instructions say "Cite the document file name and the section where the answer appears". Usually, if multiple sections are needed, I should combine them or pick the most relevant. However, the constraint says "the section" (singular). Looking at the structure:
+        *   2.1 Designation covers the name.
+        *   2.2 Reporting Line and Authority covers the reporting line.
+    *   To be accurate and complete within the constraints, I should probably combine the quotes or select the section that contains the most comprehensive info. However, since they are distinct subsections (2.1 and 2.2), I need to check if I can cite both or if I must pick one. The instruction says "the section where the answer appears". Since the answer spans two subsections under Section 2, I will cite the main section header `SECTION 2. CHIEF COMPLIANCE OFFICER` or specify the subsections if possible. Looking at the provided text labels: `SECTION 2. CHIEF COMPLIANCE OFFICER >

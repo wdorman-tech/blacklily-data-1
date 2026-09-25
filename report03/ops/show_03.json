@@ -1,0 +1,92 @@
+{
+ "gemma4:12b": {
+  "architecture": "gemma4",
+  "parameter_count": 11907350576,
+  "block_count": 48,
+  "attention_layers": 48,
+  "sliding_window_layers": 40,
+  "sliding_window": 1024,
+  "head_count_kv": [
+   1,
+   8
+  ],
+  "key_length": 512,
+  "value_length": 512,
+  "key_length_swa": 256,
+  "value_length_swa": 256,
+  "full_attention_interval": null,
+  "expert_count": null,
+  "expert_used_count": null,
+  "bits_per_weight": 5.08,
+  "kv_bytes_per_token_full_layers_q8_0": 8704,
+  "kv_bytes_at_ctx": 320864256,
+  "predicted_total_bytes_no_overhead": 7877372652
+ },
+ "qwen3.5:9b": {
+  "architecture": "qwen35",
+  "parameter_count": 9653104368,
+  "block_count": 32,
+  "attention_layers": 8,
+  "sliding_window_layers": 0,
+  "sliding_window": null,
+  "head_count_kv": [
+   0,
+   4
+  ],
+  "key_length": 256,
+  "value_length": 256,
+  "key_length_swa": 256,
+  "value_length_swa": 256,
+  "full_attention_interval": 4,
+  "expert_count": null,
+  "expert_used_count": null,
+  "bits_per_weight": 5.47,
+  "kv_bytes_per_token_full_layers_q8_0": 17408,
+  "kv_bytes_at_ctx": 285212672,
+  "predicted_total_bytes_no_overhead": 6879687383
+ },
+ "qwen2.5:14b-instruct-q4_K_M": {
+  "architecture": "qwen2",
+  "parameter_count": 14770033664,
+  "block_count": 48,
+  "attention_layers": 48,
+  "sliding_window_layers": 0,
+  "sliding_window": null,
+  "head_count_kv": [
+   8
+  ],
+  "key_length": 128,
+  "value_length": 128,
+  "key_length_swa": 128,
+  "value_length_swa": 128,
+  "full_attention_interval": null,
+  "expert_count": null,
+  "expert_used_count": null,
+  "bits_per_weight": 4.87,
+  "kv_bytes_per_token_full_layers_q8_0": 104448,
+  "kv_bytes_at_ctx": 1711276032,
+  "predicted_total_bytes_no_overhead": 10699400101
+ },
+ "ministral-3:14b": {
+  "architecture": "mistral3",
+  "parameter_count": 13945031680,
+  "block_count": 40,
+  "attention_layers": 40,
+  "sliding_window_layers": 0,
+  "sliding_window": null,
+  "head_count_kv": [
+   8
+  ],
+  "key_length": 128,
+  "value_length": 128,
+  "key_length_swa": 128,
+  "value_length_swa": 128,
+  "full_attention_interval": null,
+  "expert_count": null,
+  "expert_used_count": null,
+  "bits_per_weight": 5.21,
+  "kv_bytes_per_token_full_layers_q8_0": 87040,
+  "kv_bytes_at_ctx": 1426063360,
+  "predicted_total_bytes_no_overhead": 10508600906
+ }
+}

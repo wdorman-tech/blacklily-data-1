@@ -1,0 +1,50 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What are the coverage limit and deductible of the firm's cyber liability insurance policy, and who is the carrier?"
+    *   Key information needed: Coverage limit, Deductible, Carrier name.
+
+3.  **Scan the Documents:**
+    *   `01_brochure.md`: Contains AUM info, financial condition (prepayment fees), bankruptcy history. No cyber insurance details.
+    *   `02_compliance_manual.md`:
+        *   Section 11.1 Program: Mentions written information security program.
+        *   Section 11.4 Testing: Mentions Tallowmere Security Partners for penetration tests.
+        *   Section 11.5 Vendor Oversight: Mentions vendor due diligence, breach notification (72 hours).
+        *   Section 11.7 Cyber Insurance: "The Firm maintains a cyber liability insurance policy. The Chief Operating Officer reviews the scope of coverage at each renewal with the Information Security Officer and the CCO, and the CCO confirms that the incident response procedures in this Section and in the Business Continuity Plan are consistent with the policy's notice requirements."
+            *   Does it mention coverage limit? No.
+            *   Does it mention deductible? No.
+            *   Does it mention carrier? No.
+    *   `04_business_continuity_plan.md`:
+        *   Section 10.1 Incident Response Team: Mentions outside counsel (Garrow Whitcombe LLP) and cyber liability insurance policy approval for forensic firms.
+        *   Section 10.3 Ransomware: Mentions restoring systems from backups.
+            *   Does it mention coverage limit? No.
+            *   Does it mention deductible? No.
+            *   Does it mention carrier? No.
+
+4.  **Evaluate Findings:**
+    *   The documents confirm the firm maintains a cyber liability insurance policy (`02_compliance_manual.md`, Section 11.7).
+    *   However, none of the provided text specifies the coverage limit, deductible amount, or the name of the insurance carrier.
+    *   According to Rule #2: "If the documents do not answer the question, or address the topic without giving the specific detail asked for (a limit, a date, a name, a frequency), the answer is exactly NOT_IN_DOCUMENTS."
+
+5.  **Formulate Output:**
+    *   `answer`: "NOT_IN_DOCUMENTS"
+    *   `source_document`: ""
+    *   `section`: ""
+    *   `quote`: ""
+
+6.  **Final Review:**
+    *   Does the document mention cyber insurance? Yes (`02_compliance_manual.md`, Section 11.7).
+    *   Does it mention limit/d

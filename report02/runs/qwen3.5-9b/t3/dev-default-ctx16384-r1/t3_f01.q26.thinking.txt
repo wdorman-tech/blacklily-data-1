@@ -1,0 +1,41 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Describe the firm's cyber incident escalation process: how quickly must a suspected incident be reported internally, and who leads the incident response team?"
+    *   Key Information Needed:
+        1.  Timeframe for internal reporting of a suspected incident.
+        2.  Name/Title of the person leading the Incident Response Team.
+
+3.  **Scan Documents for Information:**
+
+    *   *Document 1:* `02_compliance_manual.md` (dated January 15, 2026)
+        *   Section 11.2: Mentions Owen Stahlberg is the Information Security Officer (ISO). Reports to Management Committee quarterly.
+        *   Section 11.5: Vendor oversight details.
+        *   Section 11.6 Incident Reporting and Response: "Any Supervised Person who suspects a cybersecurity incident must report it to the Information Security Officer within one hour of discovery." -> **Found reporting timeframe.**
+        *   Section 11.7: Cyber Insurance.
+
+    *   *Document 2:* `04_business_continuity_plan.md` (dated May 4, 2026)
+        *   Section 8.2 Internal Tree: Communication tree details.
+        *   Section 10.1 Incident Response Team: "The Incident Response Team is led by the Information Security Officer, Owen Stahlberg..." -> **Found team leader.**
+        *   Section 10.2 Response Phases.
+        *   Section 10.3 Ransomware.
+
+4.  **Synthesize the Answer:**
+    *   Reporting timeframe: "within one hour of discovery" (from `02_compliance_manual.md`, Section 11.6).
+    *   Team Leader: "Information Security Officer, Owen Stahlberg" (from `04_business_continuity_plan.md`, Section 10.1).
+    *   Note on Dates: `04_business_continuity_plan.md` is dated May 4, 2026. `02_compliance_manual.md` is dated January 15, 2026. Both are provided. The question asks for the firm's process. Usually, policies in the Compliance Manual govern reporting requirements, while the BCP governs response structure. Since both documents are provided and neither explicitly states one supersedes the other regarding these specific facts (except general rule "Later-dated documents supersede earlier ones"), I need to check if there is a conflict or if they complement each other.
+    *   Reporting: `02_compliance_manual.md` Section 11.6 says "within one hour".
+    *   Team Leader: `04_business_continuity_plan.md` Section 10.1 says

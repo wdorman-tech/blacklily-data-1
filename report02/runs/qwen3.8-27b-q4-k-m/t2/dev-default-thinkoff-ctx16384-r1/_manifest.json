@@ -1,0 +1,71 @@
+{
+ "task": "t2",
+ "model": "qwen3.8:27b-q4_K_M",
+ "split": "dev",
+ "run": "r1",
+ "variant": "default",
+ "think": "off",
+ "num_gpu": null,
+ "items": 1,
+ "started": "2026-09-23T15:34:12-0400",
+ "prompt_hashes": [
+  "2ab5c25bf8bc7da3fc867dd658211db92ac7a96cc3d6692b32b3b7a2af40a3e3",
+  "..."
+ ],
+ "system_hashes": [
+  "aa05aa43ac256ee3c7b839b175be263c78446bd9a9f3af84e122be084067c069"
+ ],
+ "subject": {
+  "via": "ollama /api/chat",
+  "model": "qwen3.8:27b-q4_K_M",
+  "digest": "25b843619e944cd0ae6069f94ff4e5e26a16e109ccbc0a66a0f05979ed70098e",
+  "size_bytes": 17741872132,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "qwen35",
+   "families": [
+    "qwen35"
+   ],
+   "parameter_size": "27.3B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 262144,
+   "embedding_length": 5120
+  }
+ },
+ "server": {
+  "flash_attention": "true",
+  "kv_cache_type": "q8_0",
+  "version": "0.34.2",
+  "num_parallel": 1
+ },
+ "options": {
+  "num_ctx": 16384,
+  "temperature": 0.0,
+  "top_p": 0.9,
+  "repeat_penalty": 1.0
+ },
+ "gpu_before": {
+  "vram_used_mib": 1495,
+  "vram_total_mib": 12227,
+  "gpu_util_pct": 5
+ },
+ "loaded": {
+  "size_bytes": 17824565161,
+  "size_vram_bytes": 9550230976,
+  "fully_on_gpu": false,
+  "context_length": 16384
+ },
+ "gpu_after_load": {
+  "vram_used_mib": 11295,
+  "vram_total_mib": 12227,
+  "gpu_util_pct": 21
+ },
+ "loaded_end": {
+  "size_bytes": 17824565161,
+  "size_vram_bytes": 9550230976,
+  "fully_on_gpu": false,
+  "context_length": 16384
+ },
+ "finished": "2026-09-23T15:34:45-0400"
+}

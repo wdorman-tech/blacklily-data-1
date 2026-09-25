@@ -1,0 +1,44 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones (not relevant here as dates seem consistent or irrelevant for this specific topic).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Is the Adviser a signatory to the Principles for Responsible Investment, and does it maintain a written ESG or responsible investment policy?"
+    *   Key information needed:
+        1.  Signatory status to PRI (Principles for Responsible Investment).
+        2.  Existence of a written ESG or responsible investment policy.
+
+3.  **Scan the Documents:**
+    *   `01_brochure.md`:
+        *   Item 4. Advisory Business: Discusses tailored services, restrictions, wrap fees. No mention of PRI or ESG policy.
+        *   Item 11. Code of Ethics: Discusses principal transactions, employee investments. No mention of PRI or ESG policy.
+        *   Item 17. Voting Client Securities: Discusses proxy voting policies, Harlaxton Proxy Services LLC. No mention of PRI or ESG policy.
+    *   `02_compliance_manual.md`:
+        *   Section 3. CODE OF ETHICS: Standards of Business Conduct. No mention of PRI or ESG policy.
+        *   Section 6. POLITICAL CONTRIBUTIONS: Rule 206(4)-5, government entities as investors. No mention of PRI or ESG policy.
+        *   Section 13. BOOKS AND RECORDS: Required records (trade records, etc.). No mention of PRI or ESG policy.
+    *   `03_valuation_policy.md`:
+        *   Section 1. PURPOSE, SCOPE AND PRINCIPLES: Discusses valuation of investments held by Flagship Fund, Offshore Fund, Co-Investment Fund. Mentions Management Committee and Valuation Committee. No mention of PRI or ESG policy.
+
+4.  **Evaluate Findings:**
+    *   I have scanned all provided text segments.
+    *   There is no mention of "Principles for Responsible Investment", "PRI", "ESG", "Environmental, Social, and Governance", or a specific "responsible investment policy" in any of the provided documents (`01_brochure.md`, `02_compliance_manual.md`, `03_valuation_policy.md`).
+    *   The proxy voting section mentions policies but not specifically an ESG or PRI signatory status.
+    *   Therefore, the information is not present in the documents.
+
+5.  **Formulate the Output:**
+    *   According to Rule 2: "If the documents do not answer the question... the answer is exactly NOT_IN_DOCUMENTS."
+    *   Source document and section should be empty strings per the JSON schema instructions for NOT_IN_DOCUMENTS cases (implied by "or "" if NOT_IN_DOCUMENTS").
+    *   Quote should be empty string.
+
+6

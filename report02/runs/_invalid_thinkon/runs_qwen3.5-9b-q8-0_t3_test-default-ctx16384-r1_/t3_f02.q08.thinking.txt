@@ -1,0 +1,58 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraint 1: Answer only from documents provided.
+    *   Constraint 2: If documents don't answer, return exactly "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Keep answers short and specific.
+    *   Constraint 5: Cite document file name and section.
+    *   Constraint 6: Quote supporting text verbatim.
+    *   Output Format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "What are the coverage limits of the Adviser's cyber liability insurance policy, and who is the carrier?"
+    *   Key Information Needed: Coverage limits (amount), Carrier name.
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "cyber liability insurance", "coverage limits", "carrier", "policy".
+
+4.  **Evaluate Document Content:**
+    *   `02_compliance_manual.md` | Section 11.5 Incident Response and Insurance:
+        *   Text: "The Adviser maintains a cyber liability insurance policy, and the President and Chief Operating Officer reviews the adequacy of its coverage at each annual renewal."
+        *   Does it mention limits? No.
+        *   Does it mention carrier name? No.
+    *   `04_business_continuity_plan.md` | Section 9. PANDEMIC AND CYBER INCIDENT RESPONSE:
+        *   Text: "The President and Chief Operating Officer notifies the carrier under the Adviser's cyber liability insurance policy."
+        *   Does it mention limits? No.
+        *   Does it mention carrier name? No (just says "the carrier").
+    *   `06_policy_update_memo.md` | Section 2. AMENDMENTS:
+        *   Text: Discusses vendor change (Oskerby to Anselby). Mentions backup platform unchanged. No mention of insurance limits or carrier.
+
+5.  **Determine Answer:**
+    *   The documents confirm the existence of a cyber liability insurance policy and that coverage adequacy is reviewed annually.
+    *   However, neither the specific coverage limits (e.g., $10 million) nor the name of the insurance carrier are mentioned in any of the provided text snippets.
+    *   According to Rule 2: "If the documents do not answer the question... the answer is exactly NOT_IN_DOCUMENTS."
+
+6.  **Construct JSON:**
+    *   "answer": "NOT_IN_DOCUMENTS"
+    *   "source_document": ""
+    *   "section": ""
+    *   "quote": ""
+
+7.  **Final Review:**
+    *   Does the text contain limits? No.
+    *   Does the text contain carrier name? No.
+    *   Is the output valid JSON without markdown? Yes.
+    *   Are keys correct? Yes.
+
+8.  **Output Generation:** (Drafting the JSON)
+    {
+      "answer": "NOT_IN_DOCUMENTS",
+      "source_document": "",
+      "section": "",
+      "quote": ""
+    }
+
+    Wait, I need to make sure I don't hallucinate. The prompt says

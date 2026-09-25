@@ -1,0 +1,38 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraint 1: Answer only from the documents provided.
+    *   Constraint 2: If documents don't answer, return exactly "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones (not relevant here as there's no conflict on this topic).
+    *   Constraint 4: Keep answers short and specific.
+    *   Constraint 5: Cite document file name and section.
+    *   Constraint 6: Quote supporting text verbatim.
+    *   Output Format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Does the firm maintain key-person life insurance on its founders or other principals? If so, state the insured amounts."
+
+3.  **Scan the Documents:**
+    *   Document 1: `01_brochure.md` (Form ADV Part 2A, dated March 27, 2026).
+        *   Section 4.1 Firm History and Ownership: Mentions founders Margaret A. Quenby and Daniel R. Holt, ownership structure (Parent, Trust Company), percentages held by individuals and QH Principals LLC. No mention of life insurance.
+        *   Section 7.1 Clients: Client types. No mention of insurance.
+        *   Section 8.3 Risk of Loss: Discusses valuation, third-party manager risk, leverage, tax, allocation, cybersecurity, custodian risk. No mention of key-person insurance.
+    *   Document 2: `02_compliance_manual.md` (Compliance Policies and Procedures Manual, dated January 15, 2026).
+        *   Section 1.1 Purpose: Mentions Valuation Policy and Business Continuity Plan incorporated by reference. No mention of insurance.
+        *   Section 1.2 Persons Covered: Defines Supervised Persons. No mention of insurance.
+        *   Section 3.1 Standards of Business Conduct: Fiduciary duty, confidentiality. No mention of insurance.
+        *   Section 11.7 Cyber Liability Insurance: Mentions cyber liability insurance policy, review by CFO/CCO. This is specific to cyber liability, not key-person life insurance.
+    *   Document 3: `04_business_continuity_plan.md` (Business Continuity Plan, dated April 21, 2026).
+        *   Section 1.1 Purpose and Scope: Describes how Firm will continue obligations during disruption. Mentions principal office, personnel, systems, vendors. No mention of key-person life insurance.
+
+4.  **Evaluate Findings:**
+    *   I have scanned all provided text segments.
+    *   There is no mention of "key-person life insurance", "life insurance", "founders", "principals" in the context of insurance coverage amounts or existence.
+    *   Document 1 mentions founders (Margaret A. Quenby, Daniel R. Holt) but does not discuss insurance on them.
+    *   Document 2 mentions Cyber Liability Insurance specifically, but not key-person life insurance.
+    *   Document 3 discusses business continuity but not specific insurance policies regarding personnel.
+
+5.  **Formulate Answer:**
+    *

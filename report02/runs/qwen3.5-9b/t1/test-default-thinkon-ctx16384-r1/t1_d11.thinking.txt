@@ -1,0 +1,128 @@
+The user wants me to extract key investment terms from the provided fund offering document into a structured JSON format. I need to follow strict rules about accuracy, citing text verbatim, and handling amendments/supplements correctly.
+
+**Key constraints:**
+1.  **Accuracy:** No guessing or inferring market standards. If not found, use `NOT_FOUND`. If explicitly stated as not applicable, use `NOT_APPLICABLE`.
+2.  **Citations:** Must be section/appendix identifiers from the document.
+3.  **Quotes:** Verbatim text supporting the value.
+4.  **Amendments:** Section 14 (Supplement/Amendment) overrides original text. I must read the whole document and report the *current* terms.
+5.  **JSON Format:** Only JSON, no markdown, no preamble.
+
+**Fields to extract:**
+- fund_name
+- fund_domicile
+- fund_structure
+- management_fee
+- performance_fee
+- hurdle_rate
+- high_water_mark
+- minimum_initial_investment
+- lockup_period
+- redemption_frequency
+- redemption_notice_days
+- gate_provision
+- key_man_provision
+- gp_commitment
+- fund_term
+- auditor
+- administrator
+- prime_broker
+- legal_counsel
+- mfn_election
+
+**Analysis of the Document:**
+
+1.  **fund_name**: "QUILLMARSH GLOBAL MACRO FUND, L.P." (Section 1.1).
+2.  **fund_domicile**: "Delaware Limited Partnership" (Header), "organized on October 15, 2018 under the Delaware Revised Uniform Limited Partnership Act" (Section 1.1). Value: "Delaware".
+3.  **fund_structure**: Section 1.2 says "Master-Feeder Structure". It invests in Master Fund. Feeder Funds are Class A and B Interests. So it's Open-end (redeemable) based on redemption terms, but the structure is Master-Feeder. The prompt asks for "Open-end (redeemable) or closed-end... and whether master-feeder."
+    - Section 1.2: "Master-Feeder Structure".
+    - Section 1.5: Offers Interests monthly.
+    - Section 7.1: Redeem as of last Business Day of each calendar month. This implies Open-end.
+    - Value: "Open-end; Master-Feeder".
+4.  **management_fee**: Section 1.7 and 5.1. Class A: 2.0% NAV. Class B: 1.5% NAV. Monthly in advance.
+    - Citation: Section 5.1 (or 1.7). Section 14 says terms unchanged except specific items.
+    - Quote: "at an annual rate of 2.0% of the net asset value of each Class A capital account and 1.5% of the net asset value of each Class B capital account".
+5.  **performance_fee**: Section 1.8 and 5.2. Incentive Allocation. Class A: 20% Net Profits. Class B: 17.5% Net Profits.
+    - Citation: Section 5.2.
+    - Quote: "20% of the Net Profits of each Class A capital account and 17.5% of the Net Profits of each Class B capital account".
+6.  **hurdle_rate**: Section 1.8 says "The Incentive Allocation is not subject to any hurdle rate or preferred return." Section 5.2 confirms "not subject to any hurdle rate, preferred return or minimum rate of return."
+    - Value: `NOT_APPLICABLE`.
+    - Quote: "The Incentive Allocation is not subject to any hurdle rate or preferred return." (Section 1.8) or Section 5.2.
+7.  **high_water_mark**: Section 1.9 and 5.3 discuss Loss Carryforward. "No Incentive Allocation is made with respect to a capital account until prior Net Losses allocated to it have been recovered." "The Loss Carryforward is not reset at any time". This implies a high water mark mechanism (loss carryforward).
+    - Value: "Yes; Perpetual" (based on "not reset"). Or just describe the mechanism. The prompt asks "Whether a high water mark or loss carryforward applies, and whether it is perpetual or resets."
+    - Quote: "The Loss Carryforward is not reset at any time".
+8.  **minimum_initial_investment**: Section 1.6. "$1,000,000 for each class of Interests."
+    - Citation: Section 1.6.
+    - Quote: "The minimum initial investment is $1,000,000 for each class of Interests."
+9.  **lockup_period**: Section 1.10 and 7.1. Class A: 12-month soft lock-up (3% charge). Class B: 24-month hard lock-up.
+    - Citation: Section 1.10.
+    - Quote: "Class A Interests are subject to a 12-month soft lock-up... Class B Interests are subject to a 24-month hard lock-up".
+10. **redemption_frequency**: Section 1.11 and 7.1. "last Business Day of each calendar month".
+    - Citation: Section 7.1.
+    - Quote: "a Limited Partner may redeem all or part of its Interests as of the last Business Day of each calendar month."
+11. **redemption_notice_days**: Section 1.11 says "at least 30 days' prior written notice". Section 14.1 changes this to 45 days effective July 1, 2026. The document date is July 2026 (Header). Section 14 applies.
+    - Citation: Section 14.1.
+    - Quote: "The notice period for redemptions is increased from 30 days to 45 days." / "A written redemption request... must be received by the Administrator at least 45 days before that Redemption Date."
+    - Value: "45 days".
+12. **gate_provision**: Section 1.12 says "None". Section 7.4 says "No Gate". However, Section 14.2 introduces a fund-level gate effective July 31, 2026 (Effective Date July 1, 2026).
+    - Citation: Section 14.2.
+    - Quote: "The Fund now imposes a fund-level gate as of each Redemption Date falling on or after July 31, 2026." / "aggregate redemption requests... exceed 15% of the net asset value".
+    - Value: "Fund-level; 15% threshold".
+13. **key_man_provision**: Section 4.3 and 9.10. Matthias Orlev. Triggers Key Person Event (death, incapacity >90 days, ceases to devote time).
+    - Citation: Section 4.3.
+    - Quote: "A 'Key Person Event' occurs if Matthias Orlev (a) dies, (b) is unable to perform his duties for 90 consecutive days by reason of incapacity, or (c) ceases to devote substantially all of his business time to, and to have ultimate responsibility for, the investment program of the Master Fund."
+14. **gp_commitment**: Section 1.14 says "None of them has committed to make or maintain any investment".
+    - Citation: Section 1.14.
+    - Quote: "None of them has committed to make or maintain any investment".
+    - Value: `NOT_FOUND` (or NOT_APPLICABLE? The prompt asks for "Required GP / sponsor / manager commitment." If they haven't committed, it's not a requirement. Usually, if there is no commitment, it's NOT_FOUND or NOT_APPLICABLE. Given the text says "None of them has committed", I will use `NOT_FOUND` as there is no required commitment stated, or `NOT_APPLICABLE` if interpreted as "no commitment exists". The rule says "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE". Here it states they haven't committed. So `NOT_APPLICABLE` fits better for "No commitment required/exists".)
+    - Wait, looking at Section 1.14: "None of them has committed to make or maintain any investment". This means there is no GP commitment. I will use `NOT_APPLICABLE`.
+15. **fund_term**: Section 1.15 says "no fixed term and will continue until dissolved".
+    - Citation: Section 1.15.
+    - Quote: "The Fund has no fixed term and will continue until dissolved in accordance with the Partnership Agreement."
+    - Value: "Perpetual".
+16. **auditor**: Section 13.9 says Brennick Tallow LLP (Fund). Section 14.3 changes this to Marbeck Pennycott LLP effective July 1, 2026. Document date is July 2026. Section 14 controls.
+    - Citation: Section 14.3.
+    - Quote: "The General Partner has appointed Marbeck Pennycott LLP as independent auditor of the Fund... with effect from the Effective Date".
+    - Value: "Marbeck Pennycott LLP".
+17. **administrator**: Section 13.7 and 1.17. Stellmoor Fund Services Ltd.
+    - Citation: Section 13.7.
+    - Quote: "Stellmoor Fund Services Ltd. (the 'Administrator') is administrator of the Fund".
+    - Value: "Stellmoor Fund Services Ltd."
+18. **prime_broker**: Section 13.8 and 1.17. Kittering Hale Securities LLC and Mallory Quenby & Co. LLC.
+    - Citation: Section 13.8.
+    - Quote: "Kittering Hale Securities LLC and Mallory Quenby & Co. LLC serve as prime brokers to the Master Fund".
+    - Value: "Kittering Hale Securities LLC and Mallory Quenby & Co. LLC".
+19. **legal_counsel**: Section 13.10 and 1.17. Tregarth Ellingsby LLP (US) and Carrick Mowbray (Cayman).
+    - Citation: Section 13.10.
+    - Quote: "Tregarth Ellingsby LLP... acts as U.S. counsel to the Fund... Carrick Mowbray... acts as Cayman Islands counsel".
+    - Value: "Tregarth Ellingsby LLP and Carrick Mowbray".
+20. **mfn_election**: Section 1.16 says "Limited Partners have no 'most favored nation' right to elect the terms of side letters granted to other investors." Section 5.7 confirms "the Fund does not offer any most favored nation election."
+    - Citation: Section 5.7.
+    - Quote: "the Fund does not offer any most favored nation election."
+    - Value: `NOT_APPLICABLE` (or "No"). The prompt asks "Whether a most favored nation election... is offered". If not offered, it's NOT_APPLICABLE or "No". Rule 3 says "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE". Since they explicitly state they do not offer it, `NOT_APPLICABLE` is appropriate. Or I could say "No" but the instruction says use `NOT_APPLICABLE` if it doesn't apply/exist. Let's look at the wording: "Whether a most favored nation election... is offered". If they don't offer it, does that mean the term "mfn_election" exists as "No"? Usually, in these schemas, if the feature isn't there, `NOT_APPLICABLE` is safer per Rule 3. However, often "No" is a valid value for boolean fields. But Rule 3 says "If the document states that a term does not exist or does not apply...". The term "mfn_election" exists as a concept, but the *election* is not offered. I will use `NOT_APPLICABLE` to be safe with Rule 3 ("does not apply to this fund"). Actually, looking at Section 5.7: "the Fund does not offer any most favored nation election." This means the term doesn't apply.
+    - Wait, checking Rule 3 again: "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE". Since the fund explicitly says it does not offer it, `NOT_APPLICABLE` is correct.
+
+**Refining Citations and Quotes:**
+- Need to ensure I use the *current* terms (Section 14 overrides).
+- For Auditor: Section 14.3 overrides Section 1.17/13.9. Use Marbeck Pennycott LLP.
+- For Gate: Section 14.2 overrides Section 1.12/7.4. Use Fund-level, 15%.
+- For Notice Days: Section 14.1 overrides Section 1.11/7.2. Use 45 days.
+
+**Double Check:**
+- fund_name: "QUILLMARSH GLOBAL MACRO FUND, L.P." (Header).
+- fund_domicile: "Delaware" (Section 1.1).
+- fund_structure: "Open-end; Master-Feeder" (Section 1.2 + 7.1).
+- management_fee: "2.0% of the net asset value of each Class A capital account and 1.5% of the net asset value of each Class B capital account" (Section 5.1).
+- performance_fee: "20% of the Net Profits of each Class A capital account and 17.5% of the Net Profits of each Class B capital account" (Section 5.2).
+- hurdle_rate: `NOT_APPLICABLE` (Section 1.8/5.2). Quote: "The Incentive Allocation is not subject to any hurdle rate or preferred return."
+- high_water_mark: "Yes; Perpetual" (Section 5.3). Quote: "The Loss Carryforward is not reset at any time".
+- minimum_initial_investment: "$1,000,000 for each class of Interests" (Section 1.6).
+- lockup_period: "Class A: 12-month soft lock-up; Class B: 24-month hard lock-up" (Section 1.10).
+- redemption_frequency: "Monthly" (Section 7.1). Quote: "as of the last Business Day of each calendar month".
+- redemption_notice_days: "45 days" (Section 14.1).
+- gate_provision: "Fund-level; 15% threshold" (Section 14.2).
+- key_man_provision: "Matthias Orlev; Death, incapacity >90 days, ceases to devote time" (Section 4.3).
+- gp_commitment: `NOT_APPLICABLE` (Section 1.14 says none committed). Quote: "None of them has committed to make or maintain any investment".
+- fund_term: "Perpetual" (Section 1.15).
+- auditor: "Marbeck Pennycott LLP" (Section 14.3).
+- administrator: "Stellmoor Fund Services Ltd." (Section 13.7).
+- prime_broker:

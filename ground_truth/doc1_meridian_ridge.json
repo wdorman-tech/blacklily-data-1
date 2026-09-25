@@ -1,0 +1,131 @@
+{
+  "doc_id": "doc1_meridian_ridge",
+  "doc_title": "Meridian Ridge Global Opportunities Fund, L.P. — PPM",
+  "difficulty": "baseline",
+  "notes": "Clean, well-structured open-end hedge fund PPM. Terms stated once, in the section where an analyst would expect them. Tests plain retrieval across a long document plus two-class handling.",
+  "fields": {
+    "fund_name": {
+      "expected": "Meridian Ridge Global Opportunities Fund, L.P.",
+      "citation": "Section 1.1",
+      "accept": ["meridian\\s+ridge\\s+global\\s+opportunities\\s+fund"],
+      "reject": {"master_fund_confusion": ["master\\s+fund,?\\s*ltd"]}
+    },
+    "fund_domicile": {
+      "expected": "Delaware",
+      "citation": "Section 1.1",
+      "accept": ["delaware"],
+      "reject": {"cayman_confusion": ["^(?!.*delaware).*cayman"]}
+    },
+    "fund_structure": {
+      "expected": "Open-end Delaware LP in a master-feeder structure; feeds into a Cayman master fund",
+      "citation": "Section 1.1",
+      "accept": ["master.?feeder|master\\s+fund"],
+      "reject": {}
+    },
+    "management_fee": {
+      "expected": "Class A 1.75% per annum; Class B 1.25% per annum, on NAV of capital account, accrued monthly / paid quarterly in arrears",
+      "citation": "Section 4.1",
+      "accept": ["1\\.75.*1\\.25|1\\.25.*1\\.75"],
+      "partial": ["1\\.75"],
+      "reject": {}
+    },
+    "performance_fee": {
+      "expected": "20% of Net Profits, identical for Class A and Class B",
+      "citation": "Section 4.2",
+      "accept": ["\\b20\\s*%|\\btwenty\\s+percent"],
+      "reject": {}
+    },
+    "hurdle_rate": {
+      "expected": "None — performance allocation is expressly not subject to a hurdle, preferred return or benchmark",
+      "citation": "Section 4.2",
+      "accept": ["NOT_APPLICABLE|\\bnone\\b|\\bno\\s+(hurdle|preferred)|not\\s+subject\\s+to"],
+      "reject": {"fabricated_hurdle": ["\\b\\d+(\\.\\d+)?\\s*%"]}
+    },
+    "high_water_mark": {
+      "expected": "Yes — perpetual, per-investor Loss Carryforward Account; reduced pro rata on partial redemption; does not reset",
+      "citation": "Section 4.3",
+      "accept": ["yes|perpetual|loss\\s+carryforward|applies"],
+      "reject": {"claims_no_hwm": ["^\\s*(no|none|not_applicable|not_found)\\b"]}
+    },
+    "minimum_initial_investment": {
+      "expected": "$2,000,000",
+      "citation": "Section 2.2",
+      "accept": ["2[,.]?000[,.]?000|\\$2(\\.0)?\\s*(million|mm|m\\b)"],
+      "reject": {"used_additional_sub": ["^(?!.*2[,.]?000).*250[,.]?000"]}
+    },
+    "lockup_period": {
+      "expected": "Class A 12 months; Class B 24 months; FIFO per subscription. Early redemption permitted with GP consent subject to 3% fee",
+      "citation": "Section 5.1",
+      "accept": ["(12|twelve).*(24|twenty.?four)|(24|twenty.?four).*(12|twelve)"],
+      "partial": ["12\\s*month|twelve\\s*month"],
+      "reject": {}
+    },
+    "redemption_frequency": {
+      "expected": "Quarterly — last business day of each calendar quarter",
+      "citation": "Section 5.2",
+      "accept": ["quarter"],
+      "reject": {"monthly_confusion": ["^(?!.*quarter).*monthly"]}
+    },
+    "redemption_notice_days": {
+      "expected": "90 calendar days",
+      "citation": "Section 5.3",
+      "accept": ["\\b90\\b|ninety"],
+      "reject": {"keyman_notice_confusion": ["^(?!.*(90|ninety)).*\\b(30|thirty)\\b"]}
+    },
+    "gate_provision": {
+      "expected": "Fund-level gate at 20% of NAV per Redemption Date; excess reduced pro rata and carried forward with priority",
+      "citation": "Section 5.5",
+      "accept": ["\\b20\\s*%"],
+      "reject": {"claims_no_gate": ["^\\s*(no|none|not_applicable|not_found)\\b"]}
+    },
+    "key_man_provision": {
+      "expected": "Yes — Dr. Elena Vasquez-Hartmann. On a Key Man Event, LPs may redeem next quarter-end free of lock-up, early redemption fee and the Gate, on 30 days' notice",
+      "citation": "Section 6.2",
+      "accept": ["vasquez"],
+      "reject": {"claims_no_keyman": ["^\\s*(no\\b|none|not_applicable|not_found)"]}
+    },
+    "gp_commitment": {
+      "expected": "Greater of $25,000,000 or 2% of aggregate Master Fund NAV, maintained for so long as the Partnership operates",
+      "citation": "Section 6.3",
+      "accept": ["25[,.]?000[,.]?000|\\$25\\s*(million|mm|m\\b)"],
+      "reject": {"claims_none": ["^\\s*(no\\b|none|not_applicable|not_found)"]}
+    },
+    "fund_term": {
+      "expected": "Perpetual — open-end, no fixed termination date, no investment period",
+      "citation": "Section 7.1",
+      "accept": ["perpetual|indefinite|open.?end|no\\s+fixed"],
+      "reject": {"fabricated_term": ["\\b(8|10|ten|eight)\\s*(-|\\s)?year"]}
+    },
+    "auditor": {
+      "expected": "Thornbury & Associates LLP",
+      "citation": "Section 9.2",
+      "accept": ["thornbury"],
+      "reject": {}
+    },
+    "administrator": {
+      "expected": "Calderon Fund Services (Cayman) Ltd.",
+      "citation": "Section 9.1",
+      "accept": ["calderon"],
+      "reject": {}
+    },
+    "prime_broker": {
+      "expected": "Harrington Sloan Securities LLC and Beaumont Clarke International Ltd.",
+      "citation": "Section 9.3",
+      "accept": ["harrington.*beaumont|beaumont.*harrington"],
+      "partial": ["harrington|beaumont"],
+      "reject": {"custodian_confusion": ["^(?!.*(harrington|beaumont)).*fairhaven"]}
+    },
+    "legal_counsel": {
+      "expected": "Whitlock Barr & Nunes LLP (U.S.); Kentish Drummond (Cayman)",
+      "citation": "Section 9.4",
+      "accept": ["whitlock"],
+      "reject": {}
+    },
+    "mfn_election": {
+      "expected": "No — the Partnership expressly does not offer an MFN election",
+      "citation": "Section 8.2",
+      "accept": ["^\\s*(no\\b|none|not\\s+offer|not_applicable)|does\\s+not\\s+offer|no\\s+mfn"],
+      "reject": {"claims_yes": ["^\\s*yes\\b"]}
+    }
+  }
+}

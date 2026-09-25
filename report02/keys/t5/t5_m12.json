@@ -1,0 +1,430 @@
+{
+  "meeting_id": "t5_m12",
+  "title": "Couple relocating to Tennessee: residency, home sale and 401(k) rollover",
+  "notes": "The 401(k) balance is first given as $430,000 (the total including unvested profit-sharing) and corrected minutes later to the $387,240 vested balance, and the closing date is auto-transcribed as October 13th before a later turn clarifies the 30th. The CPA email moves from Hollis to Jules, the rollover paperwork moves from Friday to October 6, the next meeting moves from November 3 to November 10, Graham's push to go more conservative ends in an explicit no change, and the December Roth conversion is declined. The adviser's closing recap omits three genuine items (Renata's deferral cap, the Tennessee licenses and the auto-investment pause), and the hold on gain-realizing sales that Hollis placed before the meeting is keyed as account action a4 because it is a trading restriction on a managed account that stays in force until October 1, whereas the address change the clients entered themselves is a profile update, not an account action, and is not keyed.",
+  "scalar_fields": {
+    "meeting_date": {
+      "expected": "September 15, 2026",
+      "accept": [
+        "sep(t(ember)?)?\\.? 15(th)?\\b",
+        "\\b0?9/15(/(20)?26)?\\b",
+        "2026-09-15",
+        "\\b15(th)? (of )?sep(t(ember)?)?\\b"
+      ],
+      "reject": {}
+    },
+    "client_names": {
+      "expected": "Renata Brennock; Graham Brennock",
+      "accept": [
+        "\\brenata\\b",
+        "\\bgraham\\b"
+      ],
+      "match": "all",
+      "reject": {}
+    },
+    "primary_goal": {
+      "expected": "Relocate to Tennessee cleanly: break Minnesota residency and establish Tennessee domicile, sell the Woodbury home and consolidate Renata's 401(k), without derailing the retirement plan",
+      "accept": [
+        "minnesota|\\bmn\\b|residen|domicile|\\bclean(ly)?\\b|relocat",
+        "\\b(mov(e|es|ed|ing)|transition(ing)?)\\b.{0,40}(tennessee|\\btn\\b|franklin|nashville)"
+      ],
+      "reject": {}
+    },
+    "retirement_target": {
+      "expected": "2039: Renata at 60, Graham at 63 (moved up from 2041 in the March plan)",
+      "accept": [
+        "2039",
+        "\\b60\\b",
+        "\\bsixty\\b(?![- ]?(one|two|three|four|five|six|seven|eight|nine))"
+      ],
+      "reject": {
+        "STALE_PRIOR_PLAN": [
+          "^(?!.*(2039|\\b60\\b)).*(2041|\\b62\\b|sixty[- ]two)"
+        ]
+      }
+    },
+    "risk_tolerance": {
+      "expected": "Moderate Growth (about 70% stocks / 30% bonds)",
+      "accept": [
+        "moderate[- ]growth",
+        "\\bmoderate\\b(?![- ](conservative|aggressive))",
+        "\\b70 ?/ ?30\\b",
+        "seventy[- /]thirty",
+        "70 ?(%|percent) (stocks|equit)"
+      ],
+      "reject": {
+        "WRONG_CONSERVATIVE": [
+          "^(?!.*moderate).*conservative"
+        ]
+      }
+    },
+    "risk_tolerance_change": {
+      "expected": "no change",
+      "accept": [
+        "\\bno changes?\\b",
+        "\\bunchanged\\b",
+        "^none\\b",
+        "(stays?|stayed|remains?|remained|keep|kept|leave|left|same|maintain(s|ed|ing)?|retain(s|ed)?).{0,40}moderate",
+        "\\bnot (being )?changed?\\b"
+      ],
+      "reject": {
+        "WRONG_CHANGE": [
+          "^(?!.*(no change|unchanged|stay|remain|declin|keep|kept|leave|left|maintain|retain)).*\\bfrom\\b.{1,60}\\bto\\b.{1,60}"
+        ]
+      }
+    },
+    "next_meeting": {
+      "expected": "Tuesday, November 10, 2026, 2:00 pm Central (video)",
+      "accept": [
+        "nov(ember)?\\.? 10(th)?\\b",
+        "\\b11/10\\b",
+        "2026-11-10",
+        "\\b10(th)? (of )?nov(ember)?\\b",
+        "^(?!.*\\b(sep(t(ember)?)?|oct(ober)?)\\b).*\\bthe 10(th)?\\b"
+      ],
+      "reject": {
+        "STALE_FIRST_PROPOSED": [
+          "^(?!.*(nov(ember)?\\.? 10|\\b11/10\\b|2026-11-10|\\b10(th)? (of )?nov|\\bthe 10(th)?\\b)).*(nov(ember)?\\.? 3(rd)?\\b|\\b11/0?3\\b|2026-11-03|first week of nov|\\bthe 3rd\\b)"
+        ]
+      }
+    }
+  },
+  "life_events": [
+    {
+      "eid": "e1",
+      "expected": "Renata leaving Grevholm Instruments (last day September 25, 2026) to become VP of distribution operations at Venholt Clinical Logistics in Brentwood, TN, starting October 5, 2026: $265,000 base, $40,000 sign-on (repayable if she leaves within 12 months), $15,000 moving lump sum; forfeits $42,760 of unvested profit-sharing",
+      "match": [
+        "venholt|ben ?holt|grevholm|distribution operations|\\bvp\\b|vice president|sign[- ]on|renata.{0,60}\\b(job|role|position|offer|employ)|\\b(job|role|position|offer)\\b.{0,60}renata"
+      ],
+      "reject": {
+        "STALE_ASR_NAME": [
+          "^(?!.*venholt).*ben ?holt"
+        ]
+      }
+    },
+    {
+      "eid": "e2",
+      "expected": "Family moving from Woodbury, MN to Franklin, TN: 12-month lease at $4,150 a month starting October 1, 2026; Tennessee residents from October 1; children start Franklin schools October 5",
+      "match": [
+        "franklin|\\blease\\b|\\brent(al|ing)?\\b|relocat(e|ed|es|ing|ion)(?![- ]?(payment|package|bonus|stipend|lump|money|allowance))|\\bmov(e|ed|es|ing)\\b.{0,40}(tennessee|\\btn\\b|nashville|franklin)|(tennessee|\\btn\\b) (residen|domicile)|school"
+      ],
+      "reject": {}
+    },
+    {
+      "eid": "e3",
+      "expected": "Sale of the Woodbury, MN home: under contract at $604,000, closing Friday, October 30, 2026 (mail-away close); estimated net proceeds $353,800; gain of about $128,000 fully covered by the $500,000 married-couple home sale exclusion",
+      "match": [
+        "\\bsale\\b|\\bsell(ing|s)?\\b|\\bsold\\b|under contract|closing"
+      ],
+      "reject": {
+        "STALE_ASR_DATE": [
+          "^(?!.*(\\b30(th)?\\b|thirtieth|10/30)).*(oct(ober)?\\.? 13(th)?\\b|\\b10/13\\b|thirteenth)"
+        ]
+      }
+    },
+    {
+      "eid": "e4",
+      "expected": "Graham's employer, Tollefsrud Mutual (Minneapolis), approved fully remote work from Tennessee; he keeps his job and travels to Minneapolis two or three days a quarter",
+      "match": [
+        "remote|tollefsrud|graham.{0,60}\\b(job|work|employer|employ)"
+      ],
+      "reject": {}
+    }
+  ],
+  "account_actions": [
+    {
+      "aid": "a1",
+      "expected": "Direct rollover of Renata's Grevholm Instruments 401(k) (vested balance only; all pre-tax, no company stock, no loan) to a new Rollover IRA at Ferrant Custody managed by Kessling Marrow; $387,240 as of September 15, 2026",
+      "match": [
+        "roll(ed|ing)?[- ]?over|grevholm|401\\s?\\(?k\\)?.{0,60}\\bira\\b"
+      ],
+      "amount_accept": [
+        "387",
+        "three hundred (and )?eighty[- ]seven"
+      ],
+      "amount_reject": {
+        "STALE_TOTAL_BALANCE": [
+          "^(?!.*(387|eighty[- ]seven)).*(430|four hundred (and )?thirty|four[- ]thirty)"
+        ]
+      }
+    },
+    {
+      "aid": "a2",
+      "expected": "Open a separate joint house account at Ferrant; the title company wires the Woodbury net sale proceeds (estimated $353,800) after the October 30 closing; invest $340,000 in a 3, 6, 9 and 12-month Treasury bill ladder (four $85,000 rungs), remainder in the money market",
+      "match": [
+        "t[- ]?bills?\\b|treasur|ladder|house (account|fund|reserve)|(sale|home|house) proceeds"
+      ],
+      "amount_accept": [
+        "340",
+        "three hundred (and )?forty",
+        "(\\b4|\\bfour)\\b.{0,20}\\$?85(,000|k\\b| ?thousand)",
+        "^(?!.*(ladder|t[- ]?bills?\\b|treasur)).*(353|three hundred (and )?fifty[- ]three)"
+      ],
+      "amount_reject": {
+        "FULL_NET_PROCEEDS": [
+          "^(?!.*(340|three hundred (and )?forty)).*353"
+        ]
+      }
+    },
+    {
+      "aid": "a3",
+      "expected": "Pause the $2,000 monthly automatic investment into the joint brokerage account for October through December 2026; resume January 2027",
+      "match": [
+        "\\b(paus|suspend|stop|skip|halt)\\w*\\b(?!.{0,30}\\b(realiz\\w*|gains?|sales?|sell\\w*)\\b)|automatic (monthly )?(investment|contribution|deposit|transfer)|auto[- ]?(invest|contribut|deposit)|monthly (contribution|investment|draft|deposit|transfer)"
+      ],
+      "amount_accept": [
+        "\\$?\\b2,?000\\b|two thousand|\\b2k\\b"
+      ],
+      "amount_reject": {}
+    },
+    {
+      "aid": "a4",
+      "expected": "Hold on the joint account, already placed by Hollis before the meeting and in force until October 1, 2026: no sales that realize gains until after October 1, so any 2026 gains are realized as Tennessee residents (a standing trading restriction on a managed account; no amount)",
+      "match": [
+        "\\bgains?\\b|\\b(hold|restriction|freeze|block)\\b.{0,40}\\b(sales?|sell\\w*|trad\\w*)\\b|\\b(sales?|sell\\w*|trad\\w*)\\b.{0,20}\\b(hold|restriction|freeze|block)\\b|\\b(no|avoid\\w*|defer\\w*|delay\\w*|postpon\\w*|restrict\\w*)\\b.{0,30}\\b(sales?|sell\\w*|trad\\w*)\\b.{0,40}\\b(until|after|before)\\b"
+      ],
+      "amount_accept": [
+        "not[_ ]?found|\\bn/?a\\b|\\bnone\\b|no (dollar )?amount|not applicable|unspecified|^\\W*$",
+        "\\bhold\\b|\\bgains?\\b|\\ball\\b"
+      ],
+      "amount_reject": {}
+    }
+  ],
+  "action_items": [
+    {
+      "iid": "i1",
+      "expected_task": "Prepare Renata's Rollover IRA application at Ferrant and the Grevholm distribution form (direct rollover of the vested balance; Graham primary beneficiary, Theo and Ingrid 50/50 contingent) and send them for her signature. Owner: Jules Marchetti. Due: Tuesday, October 6, 2026 (moved from Friday, September 18).",
+      "match": [
+        "roll(ed|ing)?[- ]?over|\\bira (application|app|paperwork|account)|distribution (form|paperwork|request)"
+      ],
+      "owner_accept": [
+        "jules|marchetti|associate"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "oct(ober)?\\.? 6(th)?\\b",
+        "\\b10/0?6\\b",
+        "2026-10-06",
+        "\\b6(th)? (of )?oct(ober)?\\b",
+        "\\bthe 6(th)?\\b"
+      ],
+      "due_reject": {
+        "STALE_DUE": [
+          "^(?!.*(oct(ober)?\\.? 6(th)?\\b|\\b10/0?6\\b|2026-10-06|\\b6(th)? (of )?oct|\\bthe 6(th)?\\b)).*(friday|sep(t(ember)?)?\\.? 18|\\b9/18\\b|2026-09-18)"
+        ]
+      },
+      "trap": "due_changed"
+    },
+    {
+      "iid": "i2",
+      "expected_task": "Email the Brennocks' CPA, Deb Kallistrom (Kallistrom Weir), the relocation packet: October 1 residency date, Renata's offer letter and most recent Grevholm paystub, Graham's remote approval and Minnesota workdays, and the estimated settlement statement; ask whether a fourth-quarter estimate is needed and whether the part-year position holds with the house owned through October 30; copy Hollis and the clients. Owner: Jules Marchetti (reassigned from Hollis Varga). Due: end of next week (Friday, September 25, 2026).",
+      "match": [
+        "\\bdeb\\b|kallistrom|\\bcpa\\b|accountant|tax (preparer|advis)"
+      ],
+      "owner_accept": [
+        "jules|marchetti|associate"
+      ],
+      "owner_reject": {
+        "STALE_OWNER": [
+          "^(?!.*(jules|marchetti|associate)).*(hollis|varga|advisor)"
+        ]
+      },
+      "due_accept": [
+        "end of (next|the following) week",
+        "sep(t(ember)?)?\\.? 25(th)?\\b",
+        "\\b9/25\\b",
+        "2026-09-25",
+        "\\b25(th)? (of )?sep(t(ember)?)?\\b"
+      ],
+      "due_reject": {},
+      "trap": "reassigned"
+    },
+    {
+      "iid": "i3",
+      "expected_task": "Submit the work-location change in Tollefsrud Mutual's HR portal so payroll moves Graham to Tennessee and stops Minnesota state withholding. Owner: Graham Brennock. Due: before October 1, 2026.",
+      "match": [
+        "payroll|work[- ]location|work state|tollefsrud|(state|minnesota|mn) (income )?(tax )?withholding|stop.{0,40}withholding"
+      ],
+      "owner_accept": [
+        "graham"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "oct(ober)?\\.? 1(st)?\\b",
+        "\\b10/0?1\\b",
+        "2026-10-01",
+        "first of october",
+        "sep(t(ember)?)?\\.? 30(th)?\\b",
+        "\\b9/30\\b",
+        "2026-09-30",
+        "before the (1st|first)",
+        "end of sep(t(ember)?)?",
+        "first (oct(ober)? )?pay ?(check|cheque|day|period|run)"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i4",
+      "expected_task": "At Venholt benefits enrollment, set Renata's 401(k) deferral so her 2026 total across both employers stays at the $24,500 limit (about $5,500 of room after roughly $19,000 at Grevholm), override any 6% auto-enrollment, and ask whether Venholt trues up the match. Owner: Renata Brennock. Due: her first day, Monday, October 5, 2026.",
+      "match": [
+        "deferral|contribution (limit|rate|election|percent)|24,?500|24\\.5|twenty[- ]four (thousand )?five|5,?500|fifty[- ]five hundred|true[- ]?up|trues up|auto[- ]?enrol"
+      ],
+      "owner_accept": [
+        "renata"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "oct(ober)?\\.? 5(th)?\\b",
+        "\\b10/0?5\\b",
+        "2026-10-05",
+        "first day",
+        "day one",
+        "enrol+ment",
+        "onboarding",
+        "start date",
+        "first week",
+        "\\bthe 5(th)?\\b",
+        "\\b(start(s|ed|ing)?|join(s|ed|ing)?|begin(s|ning)?)\\b.{0,20}(venholt|new (job|role|employer|position))"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i5",
+      "expected_task": "Get Tennessee driver's licenses, register to vote in Williamson County and register both cars in Tennessee. Owner: Renata and Graham Brennock. Due: end of October 2026 (within 30 days of becoming Tennessee residents on October 1; October 31, 2026).",
+      "match": [
+        "driver|licen[cs]e|\\bvot(e|er|ing)\\b|regist(er|ration).{0,40}(car|vehicle)|(car|vehicle)s?.{0,40}regist|\\bdmv\\b"
+      ],
+      "owner_accept": [
+        "renata.*graham|graham.*renata|\\bboth\\b|\\bclients\\b|couple|household|family|\\bmr\\.? (and|&) mrs\\.?",
+        "^(?!.*\\b(renata|graham)\\b).*\\b(brennocks?|client)\\b"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "end of oct(ober)?",
+        "oct(ober)?\\.? 3[01](st|th)?\\b",
+        "\\b10/3[01]\\b",
+        "2026-10-3[01]",
+        "(30|thirty) days"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i6",
+      "expected_task": "Open the separate joint house account at Ferrant and send Graham the wire instructions for the title company, a week ahead of the October 30 closing. Owner: Jules Marchetti. Due: Friday, October 23, 2026.",
+      "match": [
+        "\\bwir(e|ing) (instruction|info|detail)|house (account|fund|reserve)|title company|separate (joint )?account"
+      ],
+      "owner_accept": [
+        "jules|marchetti|associate"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "oct(ober)?\\.? 23(rd)?\\b",
+        "\\b10/23\\b",
+        "2026-10-23",
+        "\\b23(rd)? (of )?oct",
+        "week (before|ahead of|prior to) (the )?(oct(ober)?\\.? 30(th)? )?clos",
+        "\\bthe 23(rd)?\\b"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i7",
+      "expected_task": "Pause the $2,000 monthly automatic investment into the joint account for October through December (restart January) in the Ferrant app, before the October 1 draft. Owner: Renata Brennock. Due: tonight (September 15, 2026).",
+      "match": [
+        "\\b(paus|suspend)\\w*\\b(?!.{0,30}\\b(realiz\\w*|gains?|sales?|sell\\w*)\\b)|\\bstop.{0,40}(auto|monthly|contribution|investment|draft)|automatic (monthly )?(investment|contribution|deposit|transfer)|auto[- ]?(invest|contribut|deposit)|monthly (contribution|investment|draft|deposit|transfer)"
+      ],
+      "owner_accept": [
+        "renata"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "tonight",
+        "this evening",
+        "sep(t(ember)?)?\\.? 15(th)?\\b",
+        "\\b0?9/15\\b",
+        "2026-09-15",
+        "\\btoday\\b",
+        "same day",
+        "\\b(before|by|no later than|prior to|ahead of)\\b.{0,30}?(\\b1st\\b(?! week)|\\bfirst\\b(?! week)|oct(ober)?\\.? 1(st)?\\b|\\b10/0?1\\b|2026-10-01)",
+        "sep(t(ember)?)?\\.? 30(th)?\\b",
+        "\\b0?9/30\\b",
+        "2026-09-30",
+        "end of sep"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    }
+  ],
+  "non_actions": [
+    {
+      "nid": "n1",
+      "what": "Buying a lake cabin near Brainerd, Minnesota for summers: Graham's someday idea, deferred to retirement because it would add a Minnesota residency tie",
+      "match": [
+        "cabin|lake (place|home|house)|brainerd|second home|vacation (home|property)"
+      ],
+      "kind": "tentative"
+    },
+    {
+      "nid": "n2",
+      "what": "December 2026 Roth conversion of about $50,000 from the new rollover IRA after the move: proposed by Hollis, declined by Renata",
+      "match": [
+        "^(?!.*(roll(ed|ing)?[- ]?over|grevholm|401\\s?\\(?k\\)?.{0,60}\\bira\\b|\\bira (application|app|paperwork)|distribution (form|paperwork|request))).*conver(t|ts|ted|ting|sion)",
+        "^(?!.*(\\b(no|not|without|declin\\w*|skip\\w*|decided against|rejected|pass(ed)? on|lose|loses|losing|lost|forgo\\w*|giv(e|es|ing) up|preclud\\w*|block\\w*|prevent\\w*|rules? out)\\b.{0,25}(roth )?conver|conver\\w*.{0,20}\\b(declin\\w*|rejected|skipped|deferred|off the table|no longer|not (now|this year|possible|practical|viable|feasible|available|recommended|pursued|being done|an option)|(does ?n.?t|do ?n.?t|won.?t|will not|cannot|can.?t) work|impractical|precluded|unavailable|impossible)\\b)).*conver(t|ts|ted|ting|sion)"
+      ],
+      "kind": "declined_proposal"
+    },
+    {
+      "nid": "n3",
+      "what": "Moving the children's 529 accounts to a Tennessee plan: Graham asked, Hollis advised leaving them where they are",
+      "match": [
+        "\\b529"
+      ],
+      "kind": "tentative"
+    },
+    {
+      "nid": "n4",
+      "what": "Resuming backdoor Roth contributions for Renata by first moving the rollover IRA into the Venholt 401(k): a maybe, down the road, not now",
+      "match": [
+        "^(?!.*(roll(ed|ing)?[- ]?over|grevholm|401\\s?\\(?k\\)?.{0,60}\\bira\\b|\\bira (application|app|paperwork)|distribution (form|paperwork|request))).*(backdoor|pro[- ]?rata|\\broll[- ]ins?\\b)",
+        "^(?!.*(\\b(no|not|without|declin\\w*|skip\\w*|decided against|rejected|pass(ed)? on|lose|loses|losing|lost|forgo\\w*|giv(e|es|ing) up|preclud\\w*|block\\w*|prevent\\w*|rules? out)\\b.{0,25}(backdoor|pro[- ]?rata|\\broll[- ]ins?\\b)|(backdoor|pro[- ]?rata|\\broll[- ]ins?\\b).{0,40}\\b(declin\\w*|rejected|skipped|deferred|off the table|no longer|not (now|this year|possible|practical|viable|feasible|available|recommended|pursued|being done|an option)|(does ?n.?t|do ?n.?t|won.?t|will not|cannot|can.?t) work|impractical|precluded|unavailable|impossible)\\b)).*(backdoor|pro[- ]?rata|\\broll[- ]ins?\\b)",
+        "^(?!.*\\b(instead of|rather than|not|vs\\.?|versus)\\b.{0,25}venholt).*\\b(ira|rollover)\\b.{0,40}(?<!not )(?<!than )(?<!of )\\b(into|to) (the )?venholt('s)? (401|plan)"
+      ],
+      "kind": "tentative"
+    },
+    {
+      "nid": "n5",
+      "what": "Shifting the long-term accounts to a more conservative allocation (for example fifty-fifty) until settled: Graham floated it, both clients chose to leave the allocation alone",
+      "match": [
+        "^(?!.*(benefic|contingent|theo|ingrid|primary|kids|children|t[- ]?bills?\\b|treasur|ladder|house (account|money|fund|proceeds|reserve))).*(more conservative|conservative (allocation|portfolio|model|mix)|\\b50 ?/ ?50\\b|fifty[- ]fifty|de-?risk|reduce (equity|stock|risk))"
+      ],
+      "kind": "tentative"
+    },
+    {
+      "nid": "n6",
+      "what": "Electing COBRA for the four-day gap between Grevholm and Venholt medical coverage: only if a claim arises, nothing being done",
+      "match": [
+        "cobra"
+      ],
+      "kind": "tentative"
+    }
+  ],
+  "corrected_figures": [
+    {
+      "what": "Balance of Renata's Grevholm 401(k) to be rolled over (total balance first, vested balance on correction)",
+      "said_first": "about four thirty? Four hundred and thirty thousand",
+      "corrected_to": "$387,240",
+      "field": "account_actions"
+    },
+    {
+      "what": "Woodbury home closing date (auto-transcribed as the 13th; a later turn clarifies the 30th)",
+      "said_first": "closing is October 13th",
+      "corrected_to": "Thirtieth. Three-zero. October thirtieth.",
+      "field": "life_events"
+    }
+  ]
+}

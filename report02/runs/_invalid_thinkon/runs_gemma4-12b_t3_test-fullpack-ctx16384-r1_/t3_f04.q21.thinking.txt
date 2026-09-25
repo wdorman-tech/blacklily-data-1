@@ -1,0 +1,37 @@
+*   Question: What is the recovery time objective for the Firm's order management and trading systems?
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+    *   Keys: "answer", "source_document", "section", "quote".
+
+    *   Document 1: `01_valuation_policy.md` (not provided in the prompt, but the content is there).
+    *   Document 2: `04_business_continuity_plan.md`.
+    *   Document 3: `05_fee_schedule.md`.
+    *   Document 4: `06_policy_update_memo.md`.
+
+    *   In `04_business_continuity_plan.md`, Section 3.1: "Order management, trading platforms and market data | 4 hours | 15 minutes".
+    *   In `06_policy_update_memo.md`, Section 4.1: "This Section 4.1 amends Section 3.1 (Recovery Time and Recovery Point Objectives) of the Business Continuity Plan. ... Effective September 1, 2026, the recovery time objective for order management, trading platforms and market data is two hours from the declaration of a business disruption."
+
+    *   The question asks for the recovery time objective.
+    *   The original plan (04_business_continuity_plan.md) says 4 hours.
+    *   The update memo (06_policy_update_memo.md) amends this to 2 hours, effective September 1, 2026.
+    *   Since the memo is the most recent update (dated August 14, 2026), the current/updated objective is 2 hours.
+
+    *   Answer: 2 hours (effective September 1, 2026).
+    *   Source: 06_policy_update_memo.md
+    *   Section: SECTION 4. AMENDMENT TO THE BUSINESS CONTINUITY PLAN (specifically 4.1)
+    *   Quote: "Effective September 1, 2026, the recovery time objective for order management, trading platforms and market data is two hours from the declaration of a business disruption."
+
+    *   The question is "What is the recovery time objective...".
+    *   The memo explicitly states the new objective is 2 hours.
+
+    *   answer: "two hours from the declaration of a business disruption (effective September 1, 2026)"
+    *   source_document: "06_policy_update_memo.md"
+    *   section: "SECTION 4. AMENDMENT TO THE BUSINESS CONTINUITY PLAN"
+    *   quote: "Effective September 1, 2026, the recovery time objective for order management, trading platforms and market data is two hours from the declaration of a business disruption."
+
+    *   Wait, let me check if the question asks for the *current* one or just what's in the docs. The memo is the most specific update.
+    *   The original doc says 4 hours. The memo says 2 hours.
+    *   Usually, in these tasks, the most recent amendment is the correct answer.
+
+    *   Refining the answer: "two hours from the declaration of a business disruption" (as per the update).
+
+    *   Let's check the section in the memo. It's "SECTION 4. AMENDMENT TO THE BUSINESS CONTIN

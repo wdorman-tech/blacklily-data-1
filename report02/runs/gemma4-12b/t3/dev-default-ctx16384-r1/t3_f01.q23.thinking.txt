@@ -1,0 +1,40 @@
+*   Question: "Who conducts the firm's external penetration testing, and how often is it performed?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer is NOT_IN_DOCUMENTS.
+    *   Constraint 3: Later-dated documents supersede earlier ones (not applicable here as only one document mentions penetration testing).
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   `01_brochure.md`: Mentions "surprise examination" by "Pemberline & Rusk LLP" for trust assets. Not penetration testing.
+    *   `02_compliance_manual.md`:
+        *   Section 2.4: Mentions "compliance calendar", "form 13F", "form 13H", "custody examinations", "vendor reviews".
+        *   Section 11.4: "The Firm engages Tallowmere Security Partners to conduct an external penetration test of the Firm's network and client-facing applications annually."
+    *   `03_valuation_policy.md`: Mentions "annual compliance review" and "external review" of valuation policy.
+    *   `04_business_continuity_plan.md`: Mentions "testing and training" of the BCP.
+
+    *   Who: Tallowmere Security Partners.
+    *   How often: annually.
+    *   Source: `02_compliance_manual.md`
+    *   Section: `SECTION 11. CYBERSECURITY AND INFORMATION SECURITY > 11.4 Testing`
+    *   Quote: "The Firm engages Tallowmere Security Partners to conduct an external penetration test of the Firm's network and client-facing applications annually."
+
+    *   Answer: Tallowmere Security Partners conducts the external penetration test annually.
+    *   Source: 02_compliance_manual.md
+    *   Section: SECTION 11. CYBERSECURITY AND INFORMATION SECURITY > 11.4 Testing
+    *   Quote: "The Firm engages Tallowmere Security Partners to conduct an external penetration test of the Firm's network and client-facing applications annually."
+
+    *   "The Firm engages Tallowmere Security Partners to conduct an external penetration test of the Firm's network and client-facing applications annually."
+
+    *   Answer: Tallowmere Security Partners conducts the external penetration test annually.
+    *   Source: 02_compliance_manual.md
+    *   Section: SECTION 11. CYBERSECURITY AND INFORMATION SECURITY > 11.4 Testing
+    *   Quote: "The Firm engages Tallowmere Security Partners to conduct an external penetration test of the Firm's network and client-facing applications annually."
+
+    *   Wait, the prompt says "the answer is exactly NOT_IN_DOCUMENTS" if not found. If found, "Keep answers short and specific: the number, name, frequency, threshold or rule that was asked for, with enough words to be unambiguous."
+    *   Question: "Who conducts the firm's external penetration testing, and how often is it performed?"
+    *   Answer: Tallowmere Security Partners conducts the test annually.
+
+    *   Source: 02_compliance_manual.md
+    *   Section: SECTION 11. CYBERSECURITY AND INFORMATION SECURITY > 11.4 Testing
+    *   Quote: "The

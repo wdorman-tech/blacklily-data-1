@@ -1,0 +1,99 @@
+{
+  "sheet_id": "t6_f13",
+  "notes": "Negative Q2 net return behind the 50/50 blend for a hedged equity account, a fee INCREASE with 30-day notice, and an internal note about an open SEC examination.",
+  "required_facts": [
+    {
+      "fid": "net_return",
+      "kind": "number",
+      "desc": "Q2 2026 net return -2.4%",
+      "accept": [
+        "(?:(?:-|\\u2212|\\u2013|\\u2014)\\s*\\(?\\s*(?<![\\d.,])2\\.40?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\b(?:negative|minus|down|lower by|lost|losing|loss|losses|declined|declining|declines|decline|decreased|decreasing|decrease|fell|falling|falls|fall|fallen|dropped|dropping|drops|drop|slipped|slipping|slid|sliding|retreated|retreating|gave back|giving back|gave up|giving up|shed|shedding|dipped|dipping|eased|easing|off)\\b(?:,?\\s+[a-z]+){0,3}?,?\\s*\\(?\\s*(?<![\\d.,])2\\.40?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\(\\s*(?<![\\d.,])2\\.40?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)\\s*\\)|(?<![\\d.,])2\\.40?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?:\\s+[a-z]+){0,3}?\\s+(?:declines?|loss(?:es)?|drops?|decrease|fall|lower|negative|below|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "benchmark",
+      "kind": "number",
+      "desc": "Comparison index (50% US large-cap equity index / 50% 3-month Treasury bill index) Q2 2026 return -1.6%",
+      "accept": [
+        "(?:(?:-|\\u2212|\\u2013|\\u2014)\\s*\\(?\\s*(?<![\\d.,])1\\.60?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\b(?:negative|minus|down|lower by|lost|losing|loss|losses|declined|declining|declines|decline|decreased|decreasing|decrease|fell|falling|falls|fall|fallen|dropped|dropping|drops|drop|slipped|slipping|slid|sliding|retreated|retreating|gave back|giving back|gave up|giving up|shed|shedding|dipped|dipping|eased|easing|off)\\b(?:,?\\s+[a-z]+){0,3}?,?\\s*\\(?\\s*(?<![\\d.,])1\\.60?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\(\\s*(?<![\\d.,])1\\.60?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)\\s*\\)|(?<![\\d.,])1\\.60?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?:\\s+[a-z]+){0,3}?\\s+(?:declines?|loss(?:es)?|drops?|decrease|fall|lower|negative|below|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "ytd",
+      "kind": "number",
+      "desc": "Year-to-date net return -0.7%",
+      "accept": [
+        "(?:(?:-|\\u2212|\\u2013|\\u2014)\\s*\\(?\\s*(?<![\\d.,])0?\\.70?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\b(?:negative|minus|down|lower by|lost|losing|loss|losses|declined|declining|declines|decline|decreased|decreasing|decrease|fell|falling|falls|fall|fallen|dropped|dropping|drops|drop|slipped|slipping|slid|sliding|retreated|retreating|gave back|giving back|gave up|giving up|shed|shedding|dipped|dipping|eased|easing|off)\\b(?:,?\\s+[a-z]+){0,3}?,?\\s*\\(?\\s*(?<![\\d.,])0?\\.70?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\(\\s*(?<![\\d.,])0?\\.70?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)\\s*\\)|(?<![\\d.,])0?\\.70?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?:\\s+[a-z]+){0,3}?\\s+(?:declines?|loss(?:es)?|drops?|decrease|fall|lower|negative|below|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "point_1",
+      "kind": "concept",
+      "desc": "Put spread rolled to September expiry at long 95% / short 80% strikes",
+      "accept": [
+        "(?<![\\d.,])95(?!\\d)(?:\\s*(?:%|percent\\b|per cent\\b))?.{0,60}?(?<![\\d.,])80(?!\\d)(?:\\s*(?:%|percent\\b|per cent\\b))?|(?<![\\d.,])80(?!\\d)(?:\\s*(?:%|percent\\b|per cent\\b))?.{0,60}?(?<![\\d.,])95(?!\\d)(?:\\s*(?:%|percent\\b|per cent\\b))?"
+      ]
+    },
+    {
+      "fid": "point_2",
+      "kind": "concept",
+      "desc": "Short call strike set at 104% of the index level (106% on the prior roll)",
+      "accept": [
+        "(?<![\\d.,])104(?:\\.0{1,2})?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)"
+      ]
+    },
+    {
+      "fid": "point_3",
+      "kind": "concept",
+      "desc": "Net equity exposure after hedges 71% at June 30 (78% at March 31)",
+      "accept": [
+        "(?<![\\d.,])71(?:\\.0{1,2})?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)"
+      ]
+    },
+    {
+      "fid": "fee_new_rate",
+      "kind": "fee",
+      "desc": "Increase to 1.00% (from 0.85%) on all Hedged Equity assets",
+      "accept": [
+        "(?<![\\d.,])(?:1(?:\\.0{1,2})?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|100\\s*(?:basis points?|basis-points?|bps|bp)\\b|one percent)"
+      ]
+    },
+    {
+      "fid": "fee_effective",
+      "kind": "fee",
+      "desc": "Effective September 15, 2026",
+      "accept": [
+        "(?:\\bsep(?:tember|t\\.?|\\.)?\\s*15(?:st|nd|rd|th)?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d)|(?<![\\d.])15(?:st|nd|rd|th)?\\s+(?:of\\s+)?sep(?:tember|t\\.?|\\.)?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d)|(?<![\\d/])0?9/15/(?:20)?26\\b|2026-09-15)"
+      ]
+    }
+  ],
+  "disclosure": "Options strategies can limit both losses and gains, the hedge may not perform as intended in all market conditions, and the cost of the options will reduce returns in periods when the hedge is not needed.",
+  "forbidden": [
+    {
+      "fid": "internal_note",
+      "desc": "SEC examination opened June 2, 2026; document request list; outside counsel Pardoe Vail LLP",
+      "patterns": [
+        "\\bexam(?:ination|iner|s)?\\b",
+        "\\bsec\\s+(?:exam|examination|review|inquiry|staff|request|visit)",
+        "(?:exam|examination|inquiry|review|request)\\w*\\s+(?:by|from)\\s+(?:the\\s+)?(?:sec|securities and exchange commission)\\b",
+        "securities and exchange commission\\W+(?:\\w+\\W+){0,3}(?:exam|examination|review|inquiry|request)",
+        "(?<!with the )\\bsec\\b(?!\\s*-?\\s*registered)(?!\\s+yield)(?!\\.?\\s*\\d)",
+        "document request",
+        "pardoe",
+        "\\bvail\\b",
+        "\\bregulat(?:or|ors|ory)\\b",
+        "\\binspection\\b",
+        "cooperat(?:e|es|ed|ing)\\s+(?:fully\\s+)?with"
+      ]
+    },
+    {
+      "fid": "gross_only",
+      "desc": "gross return -2.2% stated without the net return -2.4%",
+      "patterns": [
+        "(?<![\\d.,])2\\.20?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)"
+      ]
+    }
+  ],
+  "gross_return": "-2.2%",
+  "net_return": "-2.4%"
+}

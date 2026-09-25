@@ -1,0 +1,42 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+    *   Question: "What is the management company's annual operating budget, and at what level of assets under management does the Adviser break even?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "operating budget", "break even", "assets under management", "budget", "expense", "overhead".
+
+3.  **Review Document Content:**
+    *   `01_brochure.md`:
+        *   Item 4. Advisory Business: Mentions employees, Management Committee, formation date. No mention of budget or break-even point.
+        *   Item 4. Assets Under Management: Mentions AUM ($1,874,612,000), Flagship Fund NAV, Co-Investment Fund NAV. No mention of break-even AUM.
+        *   Item 5. Fees and Compensation: Mentions management fees (2.00%, 1.50%, etc.), Class E no fee. No mention of operating budget or break-even analysis.
+        *   Item 18. Financial Information: Mentions prepayment limits, bankruptcy history. No budget info.
+    *   `02_compliance_manual.md`:
+        *   Section 15. Annual Review: Mentions CCO review, Ferrisburg Regulatory Consulting LLC. No budget or break-even info.
+    *   `03_valuation_policy.md`:
+        *   Section 1. Purpose, Scope and Principles: Mentions NAV calculation, Administrator. No budget or break-even info.
+    *   `05_fee_schedule.md`:
+        *   Section 2. Management Fees: Table of fees by class. No budget or break-even info.
+
+4.  **Evaluate Findings:**
+    *   The documents provide information on fees, AUM, employees, compliance reviews, and valuation policies.
+    *   None of the documents mention an "annual operating budget".
+    *   None of the documents mention a "break even" level of assets under management.
+
+5.  **Formulate Answer:**
+    *   Since the information is not present in any of the provided documents, the answer must be `NOT_IN_DOCUMENTS`.
+    *   According to Rule 2: "If the documents do not answer the question... the answer is exactly NOT_IN_DOCUMENTS."
+    *   According to Rule 5 & 6: Cite document file name and section. Since the info isn't there, I need to decide how to handle the citation fields for a `NOT_IN_DOCUMENTS` response. The prompt says "Cite the document file name and the section where the answer appears...". If the answer is NOT_IN_DOCUMENTS, logically the source_document and section should be empty strings as per the JSON schema description ("or "" if NOT_IN_DOCUMENTS").
+    *

@@ -1,0 +1,54 @@
+{
+ "pair_id": "t2_ko_5",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "The Coca-Cola Company",
+ "ticker": "KO",
+ "split": "test",
+ "prior": {
+  "fiscal_year_end": "2024-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/21344/000002134425000011/ko-20241231.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2025-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm"
+ },
+ "words": 935,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "modified",
+   "prior_heading": "Climate change and legal or regulatory responses thereto may have a long-term adverse impact on our business and results of operations.",
+   "current_heading": "Climate change and legal or regulatory responses thereto may have a long-term adverse impact on our business and results of operations.",
+   "similarity": 0.995,
+   "diff": [
+    "replace: [increasing] -> [ongoing]",
+    "delete: [25] -> []",
+    "replace: [Increasing] -> [Ongoing]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The climate change risk factor now describes concern over climate change as \"ongoing\" rather than \"increasing\" in both places it appears, including as the driver of additional legal and regulatory requirements; the deleted \"25\" is a page-number artifact, and the rest of the text is identical.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 3: calling the concern ongoing instead of increasing drops the claim that the pressure behind climate regulation is growing, which softens the risk's trajectory, and the two words do not mean the same thing, so this is not stylistic rewording."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: replacing \"increasing\" with \"ongoing\" drops the escalating trajectory of the concern that drives the regulatory and disclosure risk, softening its characterization rather than rewording it with identical meaning."
+    }
+   }
+  },
+  {
+   "aid": "a02",
+   "status": "unchanged",
+   "prior_heading": "Adverse weather conditions could reduce the demand for our products.",
+   "current_heading": "Adverse weather conditions could reduce the demand for our products.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  }
+ ]
+}

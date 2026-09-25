@@ -1,0 +1,47 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "How long does the firm retain its required books and records?"
+
+3.  **Scan the Documents:**
+    *   `01_brochure.md`: Contains info on surprise examinations (Item 15.3) and account statements (Item 15.4). No mention of book retention periods.
+    *   `02_compliance_manual.md`:
+        *   Section 1.1 Purpose: Mentions the manual sets out policies under Rule 206(4)-7.
+        *   Section 12.5 Disposal: Mentions shredding/secure destruction, vendor certification. No retention period.
+        *   Section 13.1 Retention Period: "The Firm retains all books and records required by Rule 204-2 for seven years from the end of the fiscal year during which the last entry was made on the record, the first two years in an appropriate office of the Firm."
+        *   Section 13.2 Electronic Storage: Mentions retention on Firm systems.
+        *   Section 13.3 Trust Company Records: Mentions QHTC retains trust records per South Dakota law.
+        *   Section 15.1 Requirement: Mentions annual review of policies.
+
+4.  **Evaluate Findings:**
+    *   The specific retention period is found in `02_compliance_manual.md`, Section 13.1 Retention Period.
+    *   Date of document: January 15, 2026.
+    *   Brochure date: March 27, 2026. (Brochure is later, but doesn't contain the retention info).
+    *   The Compliance Manual explicitly states the retention period for required books and records.
+
+5.  **Draft the Answer:**
+    *   Answer text: "seven years from the end of the fiscal year during which the last entry was made on the record" (plus context about location if needed, but the question asks "How long"). The quote should be verbatim.
+    *   Source Document: `02_compliance_manual.md`
+    *   Section: `13.1 Retention Period`
+    *   Quote: "The Firm retains all books and records required by Rule 204-2 for seven years from the end of the fiscal year during which the last entry was made on the record, the first two years in an appropriate office of the Firm."
+
+6.  **Verify Constraints:**
+    *   JSON format? Yes.
+    *   No markdown fences? Yes.
+    *   Keys: "answer", "source_document", "section", "quote"? Yes.
+    *   Verbatim quote? Yes.
+    *   Correct document/section? Yes.
+
+7.

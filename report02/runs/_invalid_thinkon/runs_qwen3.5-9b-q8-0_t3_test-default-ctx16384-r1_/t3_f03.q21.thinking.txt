@@ -1,0 +1,38 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents provided.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones (not relevant here as dates seem consistent or not conflicting on this topic).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "Is the firm a signatory to the Principles for Responsible Investment, and how are ESG factors integrated into manager selection?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "Principles for Responsible Investment", "PRI", "ESG", "Environmental", "Social", "Governance", "manager selection", "due diligence".
+
+3.  **Review Document 1 (01_brochure.md):**
+    *   Section 8.1 Methods of Analysis: Mentions fundamental analysis, financial statements, credit quality, operational due diligence (governance, valuation practices, etc.). No mention of PRI or ESG specifically in the context of signatory status or integration methodology beyond general governance checks.
+    *   Section 8.2 Investment Strategies: Lists strategies (Core Equity, fixed income, third-party managers, private markets, concentrated position). No mention of PRI or ESG integration.
+    *   Section 8.3 Risk of Loss: Discusses valuation, third-party risk, leverage, tax, allocation, cybersecurity, custodian. No mention of PRI or ESG.
+    *   Section 10.2 Outside Activities: Mentions Mr. Holt on LP advisory committees. No mention of PRI.
+    *   Section 11.3 Participation or Interest: Discusses principal transactions, cross trades, employee investment in private funds. No mention of PRI or ESG.
+    *   Section 13.1 Periodic Reviews: Mentions Relationship Lead reviews, Investment Committee reviews Core Equity monthly. No mention of PRI or ESG.
+    *   Section 16. Investment Discretion: Discusses discretionary authority. No mention of PRI or ESG.
+
+4.  **Review Document 2 (02_compliance_manual.md):**
+    *   Section 9.4 Limited Private Investment Opportunities: Discusses allocation of private funds, eligibility, pro rata allocation, minimum allocation $250k. No mention of PRI or ESG.
+
+5.  **Evaluate Findings:**
+    *   There is no mention of the "Principles for Responsible Investment" (PRI) in any of the provided text.
+    *   There is no specific description of how "ESG factors" are integrated into manager selection beyond general operational due diligence (governance, valuation practices, etc.) mentioned in 01_brochure.md Section 8.1, but it does not confirm signatory status or detail ESG integration specifically as requested.
+    *   The question asks for specific confirmation ("Is the firm a signatory...") and methodology ("how are ESG factors integrated...").
+    *   Since the documents do not contain this information, the answer must be "NOT_IN_DOCUMENTS".
+
+6.  **Construct JSON Output:**
+    *   "answer": "NOT_IN_DOCUMENT

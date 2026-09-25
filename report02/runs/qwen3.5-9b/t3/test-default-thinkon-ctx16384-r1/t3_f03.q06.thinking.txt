@@ -1,0 +1,39 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraint 1: Answer only from the documents provided.
+    *   Constraint 2: If documents don't answer, return exactly `NOT_IN_DOCUMENTS`.
+    *   Constraint 3: Later-dated documents supersede earlier ones (not relevant here as there's no conflict on this topic).
+    *   Constraint 4: Keep answers short and specific.
+    *   Constraint 5: Cite document file name and section.
+    *   Constraint 6: Quote supporting text verbatim.
+    *   Output Format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Does the firm maintain key-person life insurance on its founders or other principals? If so, state the insured amounts."
+
+3.  **Scan the Documents:**
+    *   Document 1: `01_brochure.md` (Form ADV Part 2A, dated March 27, 2026).
+        *   Sections scanned: Item 4 (Firm History and Ownership), Item 7 (Types of Clients), Item 8 (Methods of Analysis...).
+        *   Content: Mentions founders (Margaret A. Quenby, Daniel R. Holt), ownership structure, management committee, investment committee, private investments valuation, risks (leverage, tax, etc.). No mention of key-person life insurance.
+    *   Document 2: `02_compliance_manual.md` (Compliance Policies and Procedures Manual, dated January 15, 2026).
+        *   Sections scanned: Section 1 (Introduction), Section 3 (Code of Ethics), Section 11 (Cybersecurity...).
+        *   Content: Purpose, scope, persons covered, standards of conduct, cyber liability insurance. No mention of key-person life insurance on founders/principals.
+    *   Document 3: `04_business_continuity_plan.md` (Business Continuity Plan, dated April 21, 2026).
+        *   Sections scanned: Section 1 (Purpose and Plan Ownership).
+        *   Content: Purpose, scope, principal office address, coordination with QHTC. No mention of key-person life insurance.
+
+4.  **Evaluate Findings:**
+    *   I have searched all provided text for keywords like "insurance", "life", "key person", "founders", "principals".
+    *   `01_brochure.md` mentions founders (Quenby, Holt) but no insurance details.
+    *   `02_compliance_manual.md` mentions "cyber liability insurance" but not key-person life insurance.
+    *   `04_business_continuity_plan.md` does not mention insurance types other than implied operational continuity.
+    *   Conclusion: The documents do not contain information regarding key-person life insurance on founders or principals, nor insured amounts.
+
+5.  **Formulate the Output:**
+    *   Since the information is not in the documents, the answer must be `NOT_IN_DOCUMENTS`.
+    *   Source document: "" (empty string as per instructions for NOT_IN_DOCUMENTS).
+    *   Section: "" (empty string).
+    *   Quote: "" (empty string).

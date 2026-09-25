@@ -1,0 +1,36 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Does the Adviser compensate any third party for investor referrals or solicitation? If so, describe the arrangement."
+
+3.  **Scan the Documents for Keywords:**
+    *   Keywords: "compensate", "third party", "referrals", "solicitation", "placement agent", "fee", "commission", "introductions".
+
+4.  **Evaluate Document Content:**
+
+    *   `01_brochure.md` (Form ADV Part 2A, dated March 27, 2026):
+        *   Section: Item 14. Client Referrals and Other Compensation > 14.1 Placement Agent.
+        *   Text: "The Adviser has engaged Wexcombe Partners Ltd., a London-based placement agent, to introduce non-U.S. institutional investors to the Offshore Fund in the United Kingdom and Switzerland. The placement agreement was renewed in 2025 for a further three-year term. Wexcombe Partners Ltd. receives 20% of the management fees and incentive compensation received by the Adviser and the General Partner that are attributable to investors it introduces, for as long as those investors remain invested. These fees are paid by the Adviser from its own resources and are not charged to the Offshore Fund or its shareholders. This compensation gives the placement agent an incentive to recommend the Offshore Fund."
+        *   Section: Item 14. Client Referrals and Other Compensation > 14.2 Other Compensation.
+        *   Text: "The Adviser does not receive any economic benefit, other than the research described in Item 12, from any person other than the Funds for providing advisory services to the Funds." (This seems to contradict or clarify the placement agent fee context, but the Placement Agent section explicitly describes compensation for introducing investors).
+        *   Section: Item 12. Brokerage Practices > 12.4 Brokerage for Client Referrals and Directed Brokerage.
+        *   Text: "The Adviser does not select brokers in consideration of investor referrals." (This is about broker selection, not third-party compensation for referrals).
+
+    *   `02_compliance_manual.md` (Compliance Manual, dated January 15, 2026):
+        *   Section: SECTION 8. MARKETING AND INVESTOR COMMUNICATIONS > 8.4 (Not fully visible in the provided text snippet, but mentions "compensated solicitation activities of the placement agent described in Section 8.4"). Wait, looking at the provided text for `02_compliance_manual.md`:
+        *   Section: 8.1 Review and Approval.
+        *   Section: 8.2 Performance Presentation.
+        *   There is no Section

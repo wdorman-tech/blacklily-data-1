@@ -1,0 +1,28 @@
+*   Question: "When was the business continuity plan last tested in full, and what issues were identified?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   Document 04_business_continuity_plan.md contains a section on "TESTING".
+    *   Section 6.2 "Most Recent Full Test" in 04_business_continuity_plan.md states: "The most recent full test was conducted on Saturday, October 18, 2025. Twelve employees operated from the alternate site and the remainder worked remotely, and the Windsor systems were failed over to the recovery environment and restored. All critical systems were restored within their recovery time objectives. The test identified one issue: market data entitlements at the alternate site had not been updated for two traders hired in 2025. The entitlements were corrected in November 2025, and the Coordinator now confirms entitlements monthly."
+
+    *   Document 06_policy_update_memo.md (dated August 14, 2026) mentions updates to the Business Continuity Plan (Section 4).
+    *   Section 4.1 of the memo updates the "Recovery Time Objective for Trading Systems" to two hours (effective Sept 1, 2026).
+    *   It does *not* mention the date of the last full test or the issues identified in that specific test.
+
+    *   Date: Saturday, October 18, 2025.
+    *   Issues: "market data entitlements at the alternate site had not been updated for two traders hired in 2025."
+
+    *   Answer: "The most recent full test was conducted on Saturday, October 18, 2025. The test identified one issue: market data entitlements at the alternate site had not been updated for two traders hired in 2025."
+    *   Source: 04_business_continuity_plan.md
+    *   Section: Section 6.2
+    *   Quote: "The most recent full test was conducted on Saturday, October 18, 2025. Twelve employees operated from the alternate site and the remainder worked remotely, and the Windsor systems were failed over to the recovery environment and restored. All critical systems were restored within their recovery time objectives. The test identified one issue: market data entitlements at the alternate site had not been updated for two traders hired in 2025. The entitlements were corrected in November 2025, and the Coordinator now confirms entitlements monthly."
+
+    *   The question asks "When was the business continuity plan last tested in full, and what issues were identified?".
+    *   The text in 04_business_continuity_plan.md, Section 6.2 provides exactly this.
+    *   The memo (06_policy_update_memo.md) does not change the date or the specific issues of the *past* test, only the *future* recovery time objectives.
+
+    *   Answer: "The most recent full test was conducted on Saturday, October 18, 2025. The test identified one issue: market data entitlements at the alternate site had not been updated for two

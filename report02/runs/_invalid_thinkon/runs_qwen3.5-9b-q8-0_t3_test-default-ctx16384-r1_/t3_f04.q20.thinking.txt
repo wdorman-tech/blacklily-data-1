@@ -1,0 +1,44 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "Which firm performs the Firm's annual external penetration test, and when was the most recent penetration test completed?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "penetration test", "external", "annual", "firm", "completed", "date".
+
+3.  **Evaluate Document 1 (`02_compliance_manual.md`):**
+    *   Section 8.4 (Marketing): No mention of penetration tests.
+    *   Section 11.2 (Technical Controls): "An external penetration test is performed annually by a qualified independent firm that is not otherwise engaged to provide managed security services to the Firm, and the ISO tracks each finding to remediation."
+        *   *Finding:* Mentions "qualified independent firm", but does not name the specific firm.
+    *   Section 15 (Annual Review): No mention of penetration tests.
+
+4.  **Evaluate Document 2 (`03_valuation_policy.md`):**
+    *   Section 7.2 (Back-testing): No mention of penetration tests.
+    *   Section 8.3 (Pricing Vendor Due Diligence): No mention of penetration tests.
+
+5.  **Evaluate Document 3 (`04_business_continuity_plan.md`):**
+    *   Section 6.1 (Testing Program): Mentions "failover", "relocation", "Tabletop exercises", "call tree". No mention of penetration tests.
+    *   Section 6.2 (Most Recent Full Test): Mentions a full test on October 18, 2025, regarding business continuity/recovery. Not a penetration test.
+
+6.  **Synthesize Findings:**
+    *   The question asks for two things:
+        1.  Which firm performs the annual external penetration test?
+        2.  When was the most recent penetration test completed?
+    *   Document `02_compliance_manual.md`, Section 11.2 states: "An external penetration test is performed annually by a qualified independent firm that is not otherwise engaged to provide managed security services to the Firm..."
+        *   It does *not* name the specific firm (e.g., "Grisby Lane Security" is mentioned for managed security services, but the text distinguishes the penetration tester as "a qualified independent firm that is not otherwise engaged...").
+    *   The document states it is performed annually, but does *not* state when the most recent one was completed.
+    *   Therefore, specific details (Name of firm, Date of completion) are NOT in the documents.
+
+7.  **Determine Answer:**
+    *   Since the specific name of the firm and the specific date of the most recent test are not provided in the text, the answer must be "NOT_IN_DOCUMENTS".
+    *   Wait, I need

@@ -1,0 +1,53 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Who chairs the Valuation Committee?"
+
+3.  **Scan the Documents:**
+    *   Document 1: `03_valuation_policy.md` (dated February 10, 2026).
+        *   Section 2.1 Composition: Lists voting members (CFO, Controller, Director of Operations, President of Quenby Holt Trust Company) and non-voting members (CIO, Head of Private Investments, Chief Compliance Officer).
+        *   Does not explicitly state who *chairs* the committee. It lists composition but not chairmanship.
+    *   Document 2: `06_policy_update_memo.md` (dated September 8, 2026).
+        *   Section 4. VALUATION COMMITTEE MEETING FREQUENCY: Amends Valuation Policy Section 2.3 regarding meeting frequency.
+        *   Does not mention who chairs the committee.
+
+4.  **Evaluate Findings:**
+    *   I need to find a specific name or title of the person who *chairs* the Valuation Committee.
+    *   `03_valuation_policy.md` Section 2.1 lists members but does not specify a chairperson.
+    *   `06_policy_update_memo.md` discusses meeting frequency, not leadership structure/chairmanship.
+    *   There is no mention of a "Chair" or "Chairperson" in the provided text snippets.
+    *   Rule 2: If the documents do not answer the question... the answer is exactly `NOT_IN_DOCUMENTS`.
+
+5.  **Formulate the Output:**
+    *   `answer`: "NOT_IN_DOCUMENTS"
+    *   `source_document`: "" (since no document answers it)
+    *   `section`: "" (since no section answers it)
+    *   `quote`: "" (since no quote supports it)
+
+6.  **Double Check:**
+    *   Did I miss anything?
+    *   Section 2.1 says: "The Valuation Committee (the "Committee") consists of four voting members: the Chief Financial Officer, the Controller, the Director of Operations and the President of Quenby Holt Trust Company." It does not say who chairs.
+    *   Sometimes the CFO or Controller might chair by default in some contexts, but I cannot use general knowledge (Rule 1 & Rule 2).
+    *   The memo amends meeting frequency, not composition or chairmanship.
+    *   Conclusion: Information is not present.
+
+7.  **Construct JSON:**
+    ```json
+    {
+      "answer": "NOT_IN_DOCUMENTS",
+      "source_document": "",
+      "section": "",
+      "quote": ""

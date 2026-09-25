@@ -1,0 +1,40 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (all docs here seem to be dated January 15, 2026).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   "What proportion of expert network consultations does Compliance chaperone, and what other controls govern expert network use?"
+    *   Key information needed:
+        1.  Proportion of expert network consultations chaperoned by Compliance.
+        2.  Other controls governing expert network use.
+
+3.  **Scan the Documents:**
+    *   Document: `02_compliance_manual.md` (dated January 15, 2026).
+    *   Search for "expert network", "chaperone", "consultation".
+    *   Found Section: `SECTION 7. INSIDER TRADING AND MATERIAL NONPUBLIC INFORMATION > 7.4 Expert Networks`.
+
+4.  **Extract Information from Section 7.4:**
+    *   Text: "Supervised persons may use only expert network firms approved by the CCO after due diligence on the firm's compliance procedures." (Control 1: Approval)
+    *   Text: "Each consultation must be scheduled through the approved network's platform and pre-approved by the Compliance department." (Control 2: Scheduling/Pre-approval)
+    *   Text: "The Adviser does not consult current employees of any public company or of any government agency, or any person subject to a duty of confidentiality regarding the topic of the call." (Control 3: Eligibility)
+    *   Text: "Each call opens with a reminder that the expert may not disclose MNPI or confidential information." (Control 4: Reminder)
+    *   Text: "The Compliance department chaperones the first call with each new expert and at least 10% of all subsequent calls, selected at random." (Control 5: Chaperoning proportion/frequency).
+
+5.  **Synthesize the Answer:**
+    *   Proportion: "the first call with each new expert and at least 10% of all subsequent calls, selected at random".
+    *   Other controls: Approval by CCO after due diligence, scheduled through approved platform, pre-approved by Compliance, no current employees/government/confidentiality duty persons, reminder on MNPI.
+    *   Need to combine these into a concise answer string based *only* on the text.
+
+6.  **Draft the JSON Content:**
+    *   `answer`: "The Compliance department chaperones the first call with each new expert and at least 10% of all subsequent calls, selected at random. Other controls include: supervised persons may use only expert network firms approved by the CCO after due diligence on the firm's compliance procedures; each consultation must be scheduled through the approved network's platform and pre-approved by the Compliance department; the Adviser

@@ -1,0 +1,45 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "How frequently does the Valuation Committee meet?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "Valuation Committee", "meet", "frequency", "quarterly", "monthly".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Mentions "Valuation Committee chaired by the Chief Financial Officer" but doesn't specify meeting frequency in the provided snippet (Item 15.3 Valuation).
+    *   `03_valuation_policy.md` (dated November 3, 2025):
+        *   Section 2.3 Meetings: "The Committee meets quarterly, within ten business days after the end of each calendar quarter..."
+    *   `06_policy_update_memo.md` (dated August 24, 2026):
+        *   Section 2.4 Valuation Policy Section 2.3 (Meetings): "The Valuation Committee will meet monthly, within ten business days after the end of each calendar month, rather than quarterly..."
+        *   States: "This amendment supersedes Section 2.3 of the Valuation Policy."
+
+5.  **Determine Current Status:**
+    *   The `06_policy_update_memo.md` is dated August 24, 2026.
+    *   The `03_valuation_policy.md` is dated November 3, 2025.
+    *   Rule 3: Later-dated documents supersede earlier ones.
+    *   The memo explicitly states it supersedes Section 2.3 of the Valuation Policy regarding meeting frequency (quarterly vs monthly).
+    *   Therefore, the current frequency is "monthly".
+
+6.  **Draft the Answer:**
+    *   Answer: "The Valuation Committee will meet monthly" (or similar verbatim text).
+    *   Source Document: `06_policy_update_memo.md`
+    *   Section: `SECTION 2. AMENDMENTS > 2.4 Valuation Policy Section 2.3 (Meetings)` (Need to check exact section label in the text provided). The text says "Section: SECTION 2. AMENDMENTS > 2.4 Valuation Policy Section 2.3 (Meetings)".
+    *   Quote: "The Valuation Committee will meet monthly, within ten business days after the end of each calendar month, rather than quarterly, so that the Committee reviews Level 3 values, overrides and stale price reports within each monthly net asset value cycle."
+
+7.  **Refine for Constraints:**
+    *   JSON format only.
+    *   No markdown fences (```json).
+    *   Keys: "answer", "source_document", "section

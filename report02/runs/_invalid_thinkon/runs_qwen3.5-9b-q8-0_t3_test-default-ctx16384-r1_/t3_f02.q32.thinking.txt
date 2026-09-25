@@ -1,0 +1,39 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "Who approves pre-clearance requests for the Chief Compliance Officer's own personal trades?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "Chief Compliance Officer", "CCO", "personal trades", "pre-clearance", "approve", "approval".
+
+3.  **Analyze Document Content:**
+
+    *   `01_brochure.md`: Section 11.2 Personal Trading. Mentions employees must obtain pre-clearance from Compliance department. Mentions CCO approves private placements. Does not mention CCO's own personal trade approval specifically regarding pre-clearance.
+    *   `02_compliance_manual.md`: Section 4.2 Pre-Clearance.
+        *   Text: "Requests are submitted through the compliance platform and are approved or denied by the CCO or the Deputy CCO."
+        *   Text: "Pre-clearance requests submitted by the CCO are approved by the President and Chief Operating Officer, Mireille Dansby."
+    *   `02_compliance_manual.md`: Section 4.4 Prohibited Transactions. Mentions CCO approves private placements.
+    *   `02_compliance_manual.md`: Section 7.3 Wall-Crossings. Mentions CCO consents to MNPI.
+    *   `02_compliance_manual.md`: Section 7.4 Expert Networks. Mentions CCO approves expert network firms.
+    *   `02_compliance_manual.md`: Section 10.3 Approved Brokers. Mentions Best Execution Committee.
+    *   `04_business_continuity_plan.md`: Section 9.3 Temporary Delegation of Trading Authority. Mentions Head of Risk and senior analyst if CIO is unable.
+
+4.  **Evaluate Findings:**
+    *   The question asks specifically about the Chief Compliance Officer's (CCO) *own* personal trades pre-clearance approval.
+    *   In `02_compliance_manual.md`, Section 4.2 Pre-Clearance, there is a specific sentence: "Pre-clearance requests submitted by the CCO are approved by the President and Chief Operating Officer, Mireille Dansby."
+    *   This directly answers the question.
+
+5.  **Verify Constraints:**
+    *   Document Date: `02_compliance_manual.md` dated January 15, 2026.
+    *   Brochure Date: `01_brochure.md` dated March 27, 2026.
+    *   Rule 3 says "Later-dated documents supersede earlier ones." However, the Compliance Manual (Jan 2026) is more specific on internal procedures than the Brochure (March 2026). Usually, a Compliance Manual is an internal policy document, while a Brochure is public disclosure. The question asks

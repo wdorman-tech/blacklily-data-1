@@ -1,0 +1,56 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   **Role:** Research Analyst at a registered investment adviser.
+    *   **Audience:** Investment Committee.
+    *   **Task:** Turn the company's earnings release into a one-page brief.
+    *   **Constraint Checklist & Confidence Score:**
+        1.  Use only figures stated in the release (No calculations, no growth rates not stated, no margins not stated). -> **Critical.** I must extract numbers exactly as written.
+        2.  Label every non-GAAP/adjusted figure. -> **Critical.**
+        3.  State period for non-quarter figures. -> **Critical.**
+        4.  No outside knowledge. -> **Critical.**
+        5.  If no guidance, say so plainly. -> **Critical.** (Release says "Forward-looking statements... reflect management's expectations" but doesn't give specific numbers for next quarter/year in the text provided, just mentions Exhibit 99.2 for supplemental info and risk factors. I need to check if specific guidance numbers are in the text. Scanning text... No specific revenue/earnings guidance numbers for Q3 or FY2026 are explicitly stated in the provided text, only references to Exhibit 99.2. So I must say no guidance is given in this release.)
+        6.  No buy/sell/hold recommendation. -> **Critical.**
+    *   **Format:** Markdown.
+    *   **Word Count:** 350 to 450 words total.
+    *   **Structure:**
+        *   Headline (Bold, one sentence).
+        *   ## Results (3-5 bullets).
+        *   ## Segments and drivers (2-4 bullets).
+        *   ## Outlook (1-3 bullets).
+        *   ## Capital and balance sheet (1-3 bullets).
+        *   ## Watch items (2-3 bullets).
+
+2.  **Analyze the Release Data:**
+    *   **Date:** Q2 2026 ended June 30, 2026.
+    *   **Sales:** Global Systemwide sales increased 5% (4% in constant currencies) to $37 billion for the quarter.
+    *   **Loyalty:** Systemwide sales to loyalty members (trailing twelve months) increased over 20% to $40 billion. 90-day active loyalty users up 13% to nearly 220 million.
+    *   **Comparable Sales:** Global comparable sales increased 1.3%. U.S. 0.8%, International Operated 1.5%, International Developmental Licensed 1.9%.
+    *   **Revenues:** Consolidated revenues increased 4% (2% in constant currencies). Q2 2026: $7,099 million.
+    *   **Operating Income:** Consolidated operating income increased 3% (2% in constant currencies). Q2 2026: $3,338 million.
+    *   **Charges:** Pre-tax charges of $52 million ($0.06 per share) for current year. Prior year charges $43 million ($0.05 per share).
+    *   **EPS:** Diluted earnings per share was $3.32 (increase 6% / 5% constant currency). Excluding charges: $3.38 (increase 6% / 5% constant currency).
+    *   **Six Months:** Revenues $13,616 million (6% increase). Operating income $6,292 million (7% increase). Net income $4,345 million (5% increase). EPS $6.10 (6% increase).
+    *   **Balance Sheet/Capital:** The release mentions "Free cash flow" definition but does not provide specific FCF numbers for the quarter in the main text tables provided (Table 2 shows Net Income, Table 3 shows Income Statement). Wait, looking closely at the provided text... There is no explicit Free Cash Flow number stated in the text provided. It defines it but doesn't give the value. I cannot invent a number. I must check if there are any balance sheet numbers. The text includes "Condensed Consolidated Statement of Income". No Balance Sheet (Assets/Liabilities) is explicitly shown with numbers other than income statement items. There is no mention of debt levels, cash balances, or share buybacks in the provided text snippets.
+    *   **Outlook:** The release mentions forward-looking statements but does not provide specific numerical guidance for Q3 or FY2026 in this text. It refers to Exhibit 99.2. I must state no guidance is given in this release.
+    *   **Segments:** U.S., International Operated, International Developmental Licensed.
+    *   **Drivers:** Check growth, product mix, guest counts (U.S.), Germany/Australia/U.K. (Intl Operated), Japan (Intl Dev).
+
+3.  **Drafting - Section by Section (monitoring word count):**
+
+    *   *Headline:* McDonald's Q2 2026 Sales Rise 5% Amid Restructuring Charges
+    *   *Results:* Need 3-5 bullets. Use exact numbers.
+        *   Global Systemwide sales increased 5% (4% in constant currencies) to $37 billion for the quarter.
+        *   Consolidated revenues increased 4% (2% in constant currencies) to $7,099 million.
+        *   Diluted earnings per share was $3.32, an increase of 6% (5% in constant currencies). Excluding current year charges of $0.06 per share, diluted earnings per share was $3.38.
+        *   Consolidated operating income increased 3% (2% in constant currencies) to $3,338 million.
+    *   *Segments and drivers:* Need 2-4 bullets.
+        *   U.S. comparable sales increased 0.8%, driven by positive check growth including favorable product mix partly offset by negative comparable guest counts.
+        *   International Operated Markets comparable sales increased 1.5%, led by Germany, Australia and the U.K., partly offset by France.
+        *   International Developmental Licensed Markets comparable sales increased 1.9%, led by Japan with all geographic regions reflecting positive comparable sales.
+    *   *Outlook:* Need 1-3 bullets.
+        *   Management stated they see an opportunity to raise the bar in the U.S. and accelerate performance in their largest market.
+        *   The release contains forward-looking statements but does not provide specific numerical guidance for future periods.
+        *   (Maybe skip second point if word count is tight, but need to be clear about lack of guidance). Let's stick to what is explicitly said. "McDonald’s delivered positive comparable sales growth across every segment...". No specific Q3 numbers.
+    *   *Capital and balance sheet:* Need 1-3 bullets.
+        *   The release defines free cash flow as cash provided by operations less capital expenditures

@@ -1,0 +1,35 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "Identify the Funds' prime brokers."
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "prime broker", "Funds", "brokers".
+    *   Document 1: `01_brochure.md` (Form ADV Part 2A, dated March 27, 2026).
+        *   Section: Item 12. Brokerage Practices > 12.2 Prime Brokers.
+        *   Text: "Brisworth Tallent Securities LLC serves as the primary prime broker to the Flagship Fund and the Co-Investment Fund, and Quarrington Prime Services LLC serves as a second prime broker to the Flagship Fund."
+    *   Document 2: `02_compliance_manual.md` (Compliance Manual, dated January 15, 2026).
+        *   Section: SECTION 10. BEST EXECUTION > 10.3 Approved Brokers.
+        *   Text: Discusses approved broker list and reviews, but doesn't name specific prime brokers.
+    *   Document 3: `03_valuation_policy.md` (Valuation Policy and Procedures, dated November 3, 2025).
+        *   Section: SECTION 3. PRICING HIERARCHY AND SOURCES > 3.1 Primary and Secondary Pricing Vendors.
+        *   Text: Discusses pricing vendors (Orrisdale Market Data LLC, Pennick Pricing Services Inc.), not prime brokers.
+
+3.  **Evaluate Findings:**
+    *   The question asks to identify the Funds' prime brokers.
+    *   `01_brochure.md`, Section "Item 12. Brokerage Practices > 12.2 Prime Brokers" explicitly names them.
+    *   Text: "Brisworth Tallent Securities LLC serves as the primary prime broker to the Flagship Fund and the Co-Investment Fund, and Quarrington Prime Services LLC serves as a second prime broker to the Flagship Fund."
+    *   Date check: `01_brochure.md` is dated March 27, 2026. `02_compliance_manual.md` is dated January 15, 2026. `03_valuation_policy.md` is dated November 3, 2025. The brochure is the most recent regarding this specific information (and it's the only one mentioning prime brokers by name).
+    *   Constraint Check: "Later-dated documents supersede earlier ones." Since the brochure is the latest document and contains the answer, use it.
+    *   Answer Formulation: Extract the names of the prime brokers from the text.
+    *   Citation: `01_brochure.md`, Section `Item 12. Brokerage Practices

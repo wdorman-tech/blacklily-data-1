@@ -1,0 +1,94 @@
+The user wants me to compare two versions of a 3M Company Form 10-K document (Risk Factors section) and identify material changes.
+I need to output a JSON object with a "changes" key containing a list of change objects.
+Each change object must have: "type", "heading", "description", "quote".
+
+**Rules:**
+1. Compare section by section.
+2. Report only material changes (new/removed risk, exposure, right, obligation, provision; new/dropped event/proceeding/regulation/product/party/program; change in likelihood/severity; change to number/rate/threshold/period/deadline other than routine date roll-forward).
+3. Do not report minor edits (date roll-forward only, renamed defined term without substance, updated cross-reference/section number, punctuation, rewording with identical meaning).
+4. Quote must be verbatim from the current version for added/modified sections, prior version for removed ones.
+5. Return ONLY JSON object. No markdown fences.
+
+**Analysis of Differences:**
+
+1.  **Header Date:**
+    *   Prior: `# 3M Company: Form 10-K for fiscal year ended 2024-12-31`
+    *   Current: `# 3M Company: Form 10-K for fiscal year ended 2025-12-31`
+    *   Rule 5 says "Do not report minor edits: a date rolled forward with nothing else changed". This is a routine date roll-forward. I should ignore this unless there are other changes in that section (which is just the header).
+
+2.  **Section: Risks Related to Our Products and Customer Preferences**
+    *   **Subsection:** `### * The Company’s results are affected by competitive conditions and customer preferences.`
+        *   Prior text ends with "...increasing volume of available data." followed by page break "13".
+        *   Current text adds: "Tariffs and other trade restrictions may also: increase the cost of raw materials... Any of the foregoing could have a material adverse effect on the Company’s business, financial condition, and results of operations."
+        *   Change Type: Modified.
+        *   Heading: `### * The Company’s results are affected by competitive conditions and customer preferences.`
+        *   Description: Added new paragraph regarding tariffs and trade restrictions affecting costs, supply chains, and markets.
+        *   Quote (Current): "Tariffs and other trade restrictions may also: increase the cost of raw materials and components imported from other countries, leading to higher production costs and product pricing to the extent those increased costs are offset through pricing actions; disrupt established supply chains, forcing the Company to find new suppliers or relocate production, which can be time-consuming and costly; limit the Company's access to end markets and, in turn, result in reduced sales and revenue; lower profitability; result in uncertainty related to planning long-term investments and strategies; and have other competitive effects. Any of the foregoing could have a material adverse effect on the Company’s business, financial condition, and results of operations."
+        *   Wait, I need to check if the prior version had "Any of the foregoing..." at the end. Prior version ended with "...increasing volume of available data." then page break. Current version has that text plus the tariff paragraph. So it's a modification (addition).
+    *   **Subsection:** `### * The Company’s growth objectives are largely dependent on the timing and market acceptance of its new product offerings...`
+        *   Prior: "This ability is subject to difficulties or delays in product development..."
+        *   Current: "The ability to successfully bring new products to market is subject to difficulties or delays in product development..."
+        *   Change: "This ability" vs "The ability to successfully bring new products to market". This looks like a minor edit/rewording with identical meaning. Rule 5 says "rewording with identical meaning" is not material. I will skip this.
+    *   **Subsection:** `### * The Company’s future results are subject to vulnerability with respect to materials...`
+        *   Prior: "...due to shortages, increased demand and wages, strikes or other labor disruptions, logistics, supply chain interruptions, manufacturing site disruptions, regulatory developments, natural disasters, and other disruptive factors."
+        *   Current: Same list.
+        *   Prior text body: "Supplier relationships have been and could be interrupted in the future due to supplier material shortage..."
+        *   Current text body: "Supplier relationships have been and could be interrupted or terminated in the future due to events such as supplier material shortages..." (Added "or terminated", pluralized "shortages").
+        *   Prior: "...natural and other disasters, and other disruptive events such as military conflicts, or be terminated."
+        *   Current: "...natural and other disasters, and other disruptive events such as those noted in the first risk factor above. In addition, some of our suppliers..." (Wait, looking closely at the text provided).
+        *   Let's compare the body paragraphs carefully.
+        *   Prior: "Supplier relationships have been and could be interrupted in the future due to supplier material shortage, climate impacts and severe weather events, natural and other disasters, and other disruptive events such as military conflicts, or be terminated."
+        *   Current: "Supplier relationships have been and could be interrupted or terminated in the future due to events such as supplier material shortages, climate impacts and severe weather events, natural and other disasters, and other disruptive events such as those noted in the first risk factor above. In addition, some of our suppliers..."
+        *   Wait, looking at the Current Version text provided in the prompt: "Supplier relationships have been and could be interrupted or terminated in the future due to events such as supplier material shortages, climate impacts and severe weather events, natural and other disasters, and other disruptive events such as those noted in the first risk factor above. In addition, some of our suppliers are limited- or sole-source suppliers..."
+        *   Prior Version text: "Supplier relationships have been and could be interrupted in the future due to supplier material shortage, climate impacts and severe weather events, natural and other disasters, and other disruptive events such as military conflicts, or be terminated. In addition, some of our suppliers are limited- or sole-source suppliers..."
+        *   Differences:
+            1. "interrupted" vs "interrupted or terminated". (Minor?)
+            2. "supplier material shortage" vs "supplier material shortages". (Pluralization).
+            3. "military conflicts" vs "those noted in the first risk factor above". (Cross-reference change).
+        *   Is this material? The cross-reference change ("military conflicts" -> "those noted in the first risk factor above") is a substantive reference change, potentially removing specific mention of military conflicts as a standalone item and referring back. However, Rule 5 says "updated cross-reference... Do not report it". But here the text *content* changes from listing "military conflicts" to referring to another section. This might be considered a material change in substance (removing specific risk disclosure).
+        4. Prior: "...or be terminated." Current: "...interrupted or terminated..."
+        5. Prior: "...natural and other disasters, and other disruptive events such as military conflicts, or be terminated." Current: "...natural and other disasters, and other disruptive events such as those noted in the first risk factor above."
+        *   Actually, looking at the Current Version text provided: "Supplier relationships have been and could be interrupted or terminated in the future due to events such as supplier material shortages, climate impacts and severe weather events, natural and other disasters, and other disruptive events such as those noted in the first risk factor above. In addition, some of our suppliers are limited- or sole-source suppliers..."
+        *   Prior Version text: "Supplier relationships have been and could be interrupted in the future due to supplier material shortage, climate impacts and severe weather events, natural and other disasters, and other disruptive events such as military conflicts, or be terminated. In addition, some of our suppliers are limited- or sole-source suppliers..."
+        *   The change from "military conflicts" to "those noted in the first risk factor above" is a cross-reference update. Rule 5 says "Do not report minor edits: ... an updated cross-reference...". However, removing the specific mention of military conflicts might be material if it changes the scope of risks disclosed. But usually, cross-referencing is standard boilerplate cleanup. I will lean towards ignoring this unless it significantly alters the risk profile. The instruction says "updated cross-reference or section number" is not material.
+        *   However, there is a significant addition in the first subsection (Tariffs). That is definitely material.
+        *   Let's check the rest of that paragraph.
+        *   Prior: "...regulatory developments, natural disasters, and other disruptive factors."
+        *   Current: "...regulatory developments, natural disasters, and other disruptive factors." (Same)
+        *   Prior: "The Company depends on various components..."
+        *   Current: "The Company depends on various components..." (Same)
+        *   Prior: "Supplier relationships have been and could be interrupted in the future due to supplier material shortage..."
+        *   Current: "Supplier relationships have been and could be interrupted or terminated in the future due to events such as supplier material shortages..."
+        *   The change "interrupted" -> "interrupted or terminated" is minor. "shortage" -> "shortages" is minor. "military conflicts" -> "those noted in the first risk factor above". This is a cross-reference update. I will treat this paragraph as unchanged for materiality purposes based on Rule 5 (updated cross-reference).
+        *   Wait, looking at the Current Version text again: "In addition, some of our suppliers are limited- or sole-source suppliers..." vs Prior "In addition, some of our suppliers are limited- or sole-source suppliers...".
+        *   There is a slight difference in the first paragraph of this section regarding the Tariffs. That is definitely material.
+        *   Is there anything else?
+        *   Prior: "...and other disruptive events such as military conflicts, or be terminated."
+        *   Current: "...and other disruptive events such as those noted in the first risk factor above."
+        *   This removes "military conflicts" explicitly. Rule 5 says "updated cross-reference". I will exclude this from the list of material changes unless I consider removing a specific risk event material. Usually, referencing another section is standard. I'll stick to the Tariff addition as the main change here.
+
+3.  **Section: Risks Related to Our Business**
+    *   **Subsection:** `### * The Company employs information including operational technology systems...`
+        *   Prior: "...expose the Company to numerous expenses, liabilities, and other negative consequences, any or all of which could have a material adverse effect on the Company’s business, reputation, and results of operations."
+        *   Current: "...expose the Company to numerous expenses, liabilities, and other negative consequences, any or all of which could have a material adverse effect on the Company’s business, reputation, and results of operations." (Same)
+        *   Prior body paragraph 2: "...including privacy laws and regulations in the U.S. and other jurisdictions; interference with the Company’s operations; the incurrence of remediation costs; loss of intellectual property protection; the loss of customer, supplier, or employee relationships; and damage to the Company’s reputation, any of which could have a material adverse effect the Company’s business."
+        *   Current body paragraph 2: "...including privacy laws and regulations in the U.S. and other jurisdictions; interference with the Company’s operations; the incurrence of remediation costs; loss of intellectual property protection; the loss of customer, supplier, or employee relationships; and damage to the Company’s reputation, any of which could have a material adverse effect the Company’s business." (Same)
+        *   Wait, looking closely at the Current Version text provided in the prompt for this section.
+        *   Prior: "...any or all of which could have a material adverse effect on the Company’s business, reputation, and results of operations."
+        *   Current: "...any or all of which could have a material adverse effect on the Company’s business, reputation, and results of operations."
+        *   Prior body paragraph 2 end: "...material adverse effect the Company’s business." (Missing "on"?)
+        *   Current body paragraph 2 end: "...material adverse effect the Company’s business." (Same typo/grammar).
+        *   Wait, I need to check if there is a new subsection.
+    *   **New Subsection:** `### *The Company’s use of artificial intelligence technologies exposes the Company to risks which could have a material adverse effect on the Company’s business, reputation and results of operations.`
+        *   This entire section is ADDED in the Current Version.
+        *   Heading: `### *TheCompany’s use of artificial intelligence technologies exposes the Company to risks which could have a material adverse effect on the Company’s business, reputation and results of operations.` (Note the lack of space after asterisk in current version heading).
+        *   Description: Added new risk factor regarding AI technologies.
+        *   Quote: The full text of the new subsection.
+    *   **Subsection:** `### * Acquisitions, strategic alliances...`
+        *   Prior: "...separation of Solventum, the Company and Solventum entered into various agreements..."
+        *   Current: Same text.
+    *   **Subsection:** `### * The Company’s future results may be affected by its operational execution...`
+        *   Prior: "Workforce restructuring activities impact business groups, functions, and geographies, and the structural reorganization is expected to reduce the size of the corporate center..."
+        *   Current: "Workforce restructuring activities are expected to deliver benefits, but also impact business groups, functions, and geographies." (Removed specific details about reducing corporate center size, simplifying supply chain, etc., replaced with general statement).
+        *   Prior: "...with the goal of improving the Company's longer-term outlook in overall performance. There can be no assurance that we will realize the benefits..."
+        *   Current: "...There can be no assurance that we will realize the benefits of such activities, or

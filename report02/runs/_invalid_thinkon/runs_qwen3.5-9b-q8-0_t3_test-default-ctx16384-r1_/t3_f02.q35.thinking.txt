@@ -1,0 +1,33 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "Does the Adviser compensate any third party for investor referrals or solicitation? If so, describe the arrangement."
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "compensate", "third party", "investor referrals", "solicitation", "placement agent", "fee", "introductions".
+
+3.  **Evaluate Document 1 (`01_brochure.md`):**
+    *   Section `Item 6. Performance-Based Fees and Side-by-Side Management`: Discusses qualified clients, Rule 205-3. No mention of third-party compensation for referrals here.
+    *   Section `Item 9. Disciplinary Information`: Legal/disciplinary events. Irrelevant.
+    *   Section `Item 12. Brokerage Practices`: Discusses research, soft dollars, commission sharing. Mentions "Best Execution Committee". No referral compensation here.
+    *   Section `Item 12.4 Brokerage for Client Referrals and Directed Brokerage`: Explicitly states: "The Adviser does not select brokers in consideration of investor referrals." It mentions the capital introduction group of Brisworth Tallent Securities LLC introduced investors without compensation. This addresses broker selection, not adviser compensation for referrals generally.
+    *   Section `Item 14. Client Referrals and Other Compensation`:
+        *   Subsection `14.1 Placement Agent`: "The Adviser has engaged Wexcombe Partners Ltd., a London-based placement agent, to introduce non-U.S. institutional investors... The placement agreement was renewed in 2025 for a further three-year term. Wexcombe Partners Ltd. receives 20% of the management fees and incentive compensation received by the Adviser and the General Partner that are attributable to investors it introduces... These fees are paid by the Adviser from its own resources..."
+        *   Subsection `14.2 Other Compensation`: "The Adviser does not receive any economic benefit, other than the research described in Item 12, from any person other than the Funds for providing advisory services to the Funds."
+
+4.  **Evaluate Document 2 (`02_compliance_manual.md`):**
+    *   Section `SECTION 8. MARKETING AND INVESTOR COMMUNICATIONS`: Discusses approval of ads, performance presentation. No mention of third-party compensation for referrals/solicitation.
+
+5.  **Synthesize Findings:**
+    *   The question asks if the Adviser compensates any third party for investor referrals or solicitation.
+    *   Document `01_brochure.md`, Section `Item 14. Client Referrals and Other Compensation > 14.1 Placement Agent` explicitly states: "The Adviser has engaged Wexcombe Partners Ltd., a London-based placement agent, to introduce non-U.S. institutional investors... Wexcombe Partners Ltd. receives

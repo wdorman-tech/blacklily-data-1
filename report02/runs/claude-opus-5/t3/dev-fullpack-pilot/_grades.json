@@ -1,0 +1,1606 @@
+{
+ "task": "t3",
+ "model": "claude-opus-5",
+ "items": {
+  "t3_f01.q01": {
+   "units": [
+    {
+     "uid": "q01",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "The firm is a Virginia limited liability company. Two members each own 25% or more: Margaret L. Tennick (Managing Partner and CEO) owns 46% of the membership interests, and Daniel R. Arlow (Chief Investment Officer) owns 34%. The remaining 20% is held by Tennick Arlow Employee Holdings, LLC, which is below 25%. That entity is owned by nine senior employees, none of whom holds an indirect interest of 5% or more.",
+     "expected": "Margaret L. Tennick owns 46% and Daniel R. Arlow owns 34% of the membership interests; the remaining 20% is held by Tennick Arlow Employee Holdings, LLC, owned by nine senior employees, none with an indirect interest of 5% or more.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Tennick Arlow Wealth Partners, LLC is a Virginia limited liability company formed in March 2009 by Margaret L. Tennick and Daniel R. Arlow. ... Ms. Tennick is the Firm's Managing Partner and Chief Executive Officer, and Mr. Arlow is its Chief Investment Officer. Ms. Tennick owns 46% of the Firm's membership interests and Mr. Arlow owns 34%. The remaining 20% is held by Tennick Arlow Employee Holdings, LLC, an entity owned by nine senior employees of the Firm, none of whom holds an indirect inter"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:01_brochure.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 8.07,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34600,
+    "output_tokens": 665,
+    "thinking_tokens": 227,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q02": {
+   "units": [
+    {
+     "uid": "q02",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "8 hours from the declaration of a Significant Business Disruption. The memo dated August 17, 2026 shortened it from the 24 hours stated in Business Continuity Plan Section 3.1.",
+     "expected": "8 hours from the declaration of a Significant Business Disruption (shortened from 24 hours by the CCO memorandum dated August 17, 2026).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The recovery time objective for Tier 1 systems is shortened from 24 hours to 8 hours from the declaration of a Significant Business Disruption. This change supersedes the 24-hour objective stated in Section 3.1 of the Business Continuity Plan."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:06_policy_update_memo.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 4.83,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34591,
+    "output_tokens": 273,
+    "thinking_tokens": 45,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q03": {
+   "units": [
+    {
+     "uid": "q03",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "unanswerable_clean",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 4.02,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34607,
+    "output_tokens": 102,
+    "thinking_tokens": 59,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q04": {
+   "units": [
+    {
+     "uid": "q04",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "Pre-clearance requests are approved or denied by the CCO (Theodora K. Marsh) or the Compliance Manager. Requests submitted by the CCO are decided by the Compliance Manager. An approval is valid only until the close of regular trading on the business day on which it is granted. An order not executed within that period, including an unfilled limit order, requires a new request.",
+     "expected": "The CCO or the Compliance Manager approves requests (the Compliance Manager approves the CCO's own requests); an approval is valid only until the close of regular trading on the business day on which it is granted.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Pre-clearance requests are approved or denied by the CCO or the Compliance Manager; requests submitted by the CCO are approved or denied by the Compliance Manager. ... A pre-clearance approval is valid only until the close of regular trading on the business day on which it is granted. An order that is not executed within that period, including an unfilled limit order, requires a new request."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:02_compliance_manual.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 5.62,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34604,
+    "output_tokens": 402,
+    "thinking_tokens": 94,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q05": {
+   "units": [
+    {
+     "uid": "q05",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "near_miss",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 3.8,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34602,
+    "output_tokens": 43,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q06": {
+   "units": [
+    {
+     "uid": "q06",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Private fund interests are Level 3 assets. They are valued at the most recent net asset value reported by the fund's administrator or general partner, adjusted for capital contributions and distributions made after the date of that net asset value. Where the custodian also reports a value, Operations compares the two and refers any difference of more than 1% to the Director of Operations.",
+     "expected": "At the most recent net asset value reported by the fund's administrator or general partner, adjusted for capital contributions and distributions made after the NAV date (a Level 3 methodology); a custodian-reported value differing by more than 1% is referred to the Director of Operations.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Interests in private funds are valued at the most recent net asset value reported by the fund's administrator or general partner, adjusted for capital contributions and distributions made after the date of that net asset value. When the custodian reports a value for a private fund interest, the Operations department compares it with the value determined under this Section and refers any difference of more than 1% to the Director of Operations."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:03_valuation_policy.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 8.23,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34593,
+    "output_tokens": 540,
+    "thinking_tokens": 247,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q07": {
+   "units": [
+    {
+     "uid": "q07",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Quarterly in advance. Fees are calculated on the Billing Value of each account on the last business day of the preceding calendar quarter. Billing Value is the custodian-reported value, or the Valuation Policy value for assets the custodian does not price, including accrued interest.",
+     "expected": "Quarterly in advance, based on the Billing Value of each account (custodian-reported value, or Valuation Policy value for assets the custodian does not price) on the last business day of the preceding calendar quarter.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Wealth management and Fixed Income Mandate fees are billed quarterly in advance, based on the Billing Value of each account on the last business day of the preceding calendar quarter. ... \"Billing Value\" means the value of Billable Assets as reported by the custodian or, for assets the custodian does not price, as determined under the Firm's Valuation Policy, including accrued interest."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:05_fee_schedule.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 8.81,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34591,
+    "output_tokens": 786,
+    "thinking_tokens": 510,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q08": {
+   "units": [
+    {
+     "uid": "q08",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "60 calendar days for Reportable Securities acquired in a Covered Account on or after August 17, 2026, the date of the policy update memorandum that amended Compliance Manual Section 4.5. Securities acquired before that date remain subject to the prior 30-calendar-day period. The disgorgement and hardship exception provisions of Section 4.5 are unchanged.",
+     "expected": "60 calendar days for Reportable Securities acquired on or after August 17, 2026 (increased from 30 calendar days by the CCO memorandum; securities acquired before that date remain subject to 30 days).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The minimum holding period for Reportable Securities acquired in a Covered Account is increased from 30 calendar days to 60 calendar days. This change supersedes the 30-day period stated in Section 4.5 of the Compliance Manual. The 60-day period applies to every Reportable Security acquired on or after the date of this memorandum; securities acquired before that date remain subject to the 30-day period. The disgorgement and hardship exception provisions of Section 4.5 are unchanged."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:06_policy_update_memo.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 7.7,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34587,
+    "output_tokens": 684,
+    "thinking_tokens": 304,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q09": {
+   "units": [
+    {
+     "uid": "q09",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "If the Richmond principal office is unavailable, the Charlottesville, Virginia office is the primary alternate site for trading, operations and client service. If both Richmond and Charlottesville are unavailable, the Raleigh, North Carolina office is the secondary alternate site. Each office keeps workstations, network connections and printers configured for use by personnel from the other offices. The August 17, 2026 memorandum does not amend this provision.",
+     "expected": "The Charlottesville office is the primary alternate site for trading, operations and client service; if both the Richmond and Charlottesville offices are unavailable, the Raleigh office is the secondary alternate site. All personnel can also work remotely on Firm-managed laptops.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "If the Richmond office is unavailable, the Charlottesville office serves as the primary alternate site for trading, operations and client service. If both the Richmond and Charlottesville offices are unavailable, the Raleigh office serves as the secondary alternate site. If the Charlottesville or Raleigh office is unavailable, its personnel work from the Richmond office or remotely. Each office maintains workstations, network connections and printers configured for use by personnel from the othe"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:04_business_continuity_plan.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 7.67,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34594,
+    "output_tokens": 591,
+    "thinking_tokens": 223,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q10": {
+   "units": [
+    {
+     "uid": "q10",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "unanswerable_clean",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 11.04,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34601,
+    "output_tokens": 118,
+    "thinking_tokens": 79,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q11": {
+   "units": [
+    {
+     "uid": "q11",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "Employees (Supervised Persons) may not accept gifts with an aggregate value above $250 per calendar year from any single person or entity that does business, or seeks to do business, with the Firm. Every gift above $50 must be reported in the Compliance Platform within ten business days. Business entertainment with an estimated cost above $400 per person per event requires the CCO's prior approval.",
+     "expected": "Gifts from any single source may not exceed $250 in aggregate per calendar year (every gift above $50 must be reported within ten business days); business entertainment with an estimated cost above $400 per person per event requires the CCO's prior approval.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "No Supervised Person may accept gifts with an aggregate value exceeding $250 per calendar year from any single person or entity that does business with, or seeks to do business with, the Firm, including clients, custodians, fund sponsors and vendors. ... Every gift with a value above $50, given or received, must be reported in the Compliance Platform within ten business days. ... Business entertainment with an estimated cost exceeding $400 per person per event requires the prior approval of the "
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:02_compliance_manual.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 7.56,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34600,
+    "output_tokens": 747,
+    "thinking_tokens": 391,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q12": {
+   "units": [
+    {
+     "uid": "q12",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "near_miss",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 3.82,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34595,
+    "output_tokens": 104,
+    "thinking_tokens": 61,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q13": {
+   "units": [
+    {
+     "uid": "q13",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Because Ms. Tennick and two other supervised persons serve as trustees of certain client trusts, the Firm is deemed to have custody of those trusts' assets. Under Rule 206(4)-2 under the Advisers Act, those trust assets are subject to an annual surprise examination. The examination is performed by the independent public accountant Pemberline & Rusk LLP. Assets held under standing letters of authorization are excluded from the examination.",
+     "expected": "Because Margaret Tennick and two other supervised persons serve as trustees of certain client trusts, the Firm is deemed to have custody of those trusts' assets; Pemberline & Rusk LLP performs the annual surprise examination under Rule 206(4)-2.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Because Ms. Tennick and two other supervised persons serve as trustees of certain client trusts, the Firm is deemed to have custody of those trusts' assets. As required by Rule 206(4)-2 under the Advisers Act, those assets are subject to an annual surprise examination by an independent public accountant, Pemberline & Rusk LLP, at a time chosen by the accountant without prior notice to the Firm."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:01_brochure.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 7.53,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34597,
+    "output_tokens": 567,
+    "thinking_tokens": 224,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q14": {
+   "units": [
+    {
+     "uid": "q14",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "The Valuation Committee has four voting members: the Chief Financial Officer as Chair (currently Graham Oyelaran), the Chief Operating Officer, the Director of Operations, and a senior portfolio manager designated annually by the Chief Investment Officer. The Chief Compliance Officer attends each meeting as a non-voting member. A quorum is three voting members, one of whom must be the Chair or the Chief Operating Officer, and decisions are made by a majority of the voting members present. The Committee meets quarterly, within 15 business days after the end of each calendar quarter, and at other times at the request of any member.",
+     "expected": "Chaired by the Chief Financial Officer (Graham Oyelaran), with the COO, the Director of Operations and a senior portfolio manager designated annually by the CIO as the other voting members and the CCO as a non-voting member; a quorum is three voting members including the Chair or the COO; it meets quarterly within 15 business days after each quarter-end and at other times on any member's request.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The Valuation Committee consists of the Chief Financial Officer, who serves as Chair, the Chief Operating Officer, the Director of Operations and a senior portfolio manager designated annually by the Chief Investment Officer. The Chief Compliance Officer attends each meeting as a non-voting member. The Chair of the Committee is currently Graham Oyelaran, Chief Financial Officer. ... A quorum consists of three voting members, one of whom must be the Chair or the Chief Operating Officer. Decisions"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:03_valuation_policy.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 7.95,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34594,
+    "output_tokens": 656,
+    "thinking_tokens": 141,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q15": {
+   "units": [
+    {
+     "uid": "q15",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "Household assets above $7,500,000 (effective for the billing period that began July 1, 2026, superseding the prior breakpoint of $10,000,000).",
+     "expected": "On household assets above $7,500,000 (lowered from $10,000,000 by the CCO memorandum dated August 17, 2026, effective for the billing period that began July 1, 2026).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The 0.35% rate now applies to household assets above $7,500,000, rather than above $10,000,000, and the 0.50% tier now covers household assets above $5,000,000 up to $7,500,000."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:06_policy_update_memo.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 3.69,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34601,
+    "output_tokens": 179,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q16": {
+   "units": [
+    {
+     "uid": "q16",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Compliance reviews lexicon alerts daily and reviews a random sample of at least 50 messages each week, drawn from all Supervised Persons. Each review and any escalation is documented in the Compliance Platform. The August 17, 2026 policy update memo left these review procedures unchanged.",
+     "expected": "Compliance reviews lexicon alerts daily and reviews a random sample of not less than 50 messages each week drawn from all Supervised Persons, documenting each review and escalation in the Compliance Platform.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Compliance reviews lexicon alerts daily and reviews a random sample of not less than 50 messages each week, drawn from all Supervised Persons. Each review and any escalation is documented in the Compliance Platform."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:02_compliance_manual.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 6.69,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34589,
+    "output_tokens": 491,
+    "thinking_tokens": 251,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q17": {
+   "units": [
+    {
+     "uid": "q17",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "unanswerable_clean",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 3.09,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34598,
+    "output_tokens": 99,
+    "thinking_tokens": 56,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q18": {
+   "units": [
+    {
+     "uid": "q18",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "The Business Continuity Plan is tested at least annually. The most recent full test was conducted on October 22, 2025.",
+     "expected": "At least annually; the most recent full test was conducted on October 22, 2025 (a tabletop exercise combined with a live exercise), and the results were reported to the Management Committee on November 12, 2025.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The Plan is tested at least annually. The most recent full test of the Plan was conducted on October 22, 2025."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:04_business_continuity_plan.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 4.16,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34591,
+    "output_tokens": 269,
+    "thinking_tokens": 135,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q19": {
+   "units": [
+    {
+     "uid": "q19",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "Trade errors (errors in placing, executing or allocating a trade, including wrong account, security, side or quantity, or a trade that violates a client's restrictions) are corrected promptly at no cost to the client. The Firm reimburses the client for any loss, and any gain remains in the client's account. The Head of Trading records every trade error in the Trade Error Log, and the CCO reviews each entry. Any trade error resulting in a loss or gain exceeding $5,000 is reported to the Management Committee at its next meeting.",
+     "expected": "The Firm reimburses the client for any loss and any gain remains in the client's account; every error is recorded in the Trade Error Log and reviewed by the CCO, and any error resulting in a loss or gain exceeding $5,000 is reported to the Management Committee at its next meeting.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": "A trade error is any error in the placement, execution or allocation of a trade, including a trade for the wrong account, security, side or quantity, or a trade that violates a client's restrictions. Trade errors are corrected promptly at no cost to the client. The Firm reimburses the client for any loss, and any gain remains in the client's account. The Head of Trading records every trade error in the Trade Error Log, and the CCO reviews each entry. Any trade error resulting in a loss or gain e"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:01_brochure.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.8,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34606,
+    "output_tokens": 590,
+    "thinking_tokens": 167,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q20": {
+   "units": [
+    {
+     "uid": "q20",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "near_miss",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 3.45,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34595,
+    "output_tokens": 43,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q21": {
+   "units": [
+    {
+     "uid": "q21",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "As of December 31, 2025 (the Firm's fiscal year ends December 31), regulatory assets under management were $2,046,300,000, of which $1,982,100,000 was managed on a discretionary basis. The remaining $64,200,000 was non-discretionary.",
+     "expected": "$2,046,300,000 as of December 31, 2025, of which $1,982,100,000 was managed on a discretionary basis and $64,200,000 on a non-discretionary basis (about 1,140 households).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "As of December 31, 2025, the Firm managed $2,046,300,000 of regulatory assets under management, of which $1,982,100,000 was managed on a discretionary basis and $64,200,000 on a non-discretionary basis."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:01_brochure.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 5.22,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34612,
+    "output_tokens": 329,
+    "thinking_tokens": 103,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q22": {
+   "units": [
+    {
+     "uid": "q22",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "Both the Chief Financial Officer and the Chief Compliance Officer must approve the override in writing before it is applied. This replaces the earlier requirement for advance approval by the Director of Operations.",
+     "expected": "Both the Chief Financial Officer and the Chief Compliance Officer must approve it in writing before it is applied (per the CCO memorandum dated August 17, 2026, replacing approval by the Director of Operations).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Any override of a primary source price used for billing or client reporting must now be approved in writing by both the Chief Financial Officer and the Chief Compliance Officer before it is applied. This change supersedes the requirement in Section 4.2 of the Valuation Policy that overrides be approved in advance by the Director of Operations."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:06_policy_update_memo.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 4.87,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34595,
+    "output_tokens": 235,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q23": {
+   "units": [
+    {
+     "uid": "q23",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Tallowmere Security Partners conducts the external penetration test of the Firm's network and client-facing applications, annually.",
+     "expected": "Tallowmere Security Partners conducts an external penetration test of the network and client-facing applications annually (vulnerability scans and simulated phishing are quarterly).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The Firm engages Tallowmere Security Partners to conduct an external penetration test of the Firm's network and client-facing applications annually."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:02_compliance_manual.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 4.79,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34590,
+    "output_tokens": 240,
+    "thinking_tokens": 83,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q24": {
+   "units": [
+    {
+     "uid": "q24",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "unanswerable_clean",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 3.15,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34611,
+    "output_tokens": 89,
+    "thinking_tokens": 46,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q25": {
+   "units": [
+    {
+     "uid": "q25",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "For new clients, the minimum household relationship is $1,000,000 of Billable Assets and the minimum annual fee is $10,000, billed as $2,500 per quarter. The Managing Partner may waive or reduce either minimum in writing.",
+     "expected": "$1,000,000 of Billable Assets and a minimum annual fee of $10,000 (billed $2,500 per quarter); households that became clients before July 1, 2025 remain under the $750,000 minimum, and the Managing Partner may waive either minimum.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The minimum household relationship for new clients is $1,000,000 of Billable Assets, and the minimum annual fee is $10,000, billed as $2,500 per quarter."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:05_fee_schedule.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 6.59,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34595,
+    "output_tokens": 437,
+    "thinking_tokens": 243,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q26": {
+   "units": [
+    {
+     "uid": "q26",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "A Supervised Person who suspects a cybersecurity incident must report it to the Information Security Officer within one hour of discovery. The Information Security Officer then activates the Incident Response Team. The team is led by the Information Security Officer, Owen Stahlberg (Director of Technology). It also includes the Chief Operating Officer, the Chief Compliance Officer and outside counsel Garrow Whitcombe LLP.",
+     "expected": "A suspected incident must be reported to the Information Security Officer within one hour of discovery; the Incident Response Team is led by the Information Security Officer, Owen Stahlberg, and includes the COO, the CCO and outside counsel Garrow Whitcombe LLP.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": false,
+      "gold_doc_retrieved": true,
+      "quote": "Any Supervised Person who suspects a cybersecurity incident must report it to the Information Security Officer within one hour of discovery. The Information Security Officer activates the Incident Response Team described in Section 10 of the Business Continuity Plan. [...] The Incident Response Team is led by the Information Security Officer, Owen Stahlberg, and includes the Chief Operating Officer, the Chief Compliance Officer and the Firm's outside counsel, Garrow Whitcombe LLP."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:02_compliance_manual.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 8.24,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34610,
+    "output_tokens": 773,
+    "thinking_tokens": 364,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q27": {
+   "units": [
+    {
+     "uid": "q27",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "near_miss",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 4.29,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34583,
+    "output_tokens": 96,
+    "thinking_tokens": 53,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q28": {
+   "units": [
+    {
+     "uid": "q28",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Yes. The firm votes proxies for securities in client accounts under its Proxy Voting Policy unless the client retains proxy voting authority in the advisory agreement. It uses a third-party service, Veridane Proxy Services, Inc., for proxy research, vote recommendations, vote execution and voting records.",
+     "expected": "Yes, unless the client retains voting authority; the Firm has retained Veridane Proxy Services, Inc. to provide research and vote recommendations under Investment Policy Committee guidelines, execute votes and maintain voting records.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Unless a client retains proxy voting authority in the advisory agreement, we vote proxies for the securities in the client's accounts under our Proxy Voting Policy, in what we believe to be the client's best interest ... We have retained Veridane Proxy Services, Inc. to provide proxy research and vote recommendations under guidelines adopted by our Investment Policy Committee, to execute votes through its electronic platform and to maintain voting records."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:01_brochure.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.77,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34603,
+    "output_tokens": 657,
+    "thinking_tokens": 330,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q29": {
+   "units": [
+    {
+     "uid": "q29",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "The portfolio accounting system flags a price as stale when: (1) a listed equity security or exchange-traded fund's price has not changed for five consecutive business days; (2) a fixed income security's price has not changed for ten consecutive business days; or (3) a private fund's most recent reported net asset value is dated more than 120 days before the valuation date.",
+     "expected": "A listed equity or ETF price unchanged for five consecutive business days, a fixed income price unchanged for ten consecutive business days, and a private fund NAV dated more than 120 days before the valuation date.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The portfolio accounting system flags as stale a listed equity security or exchange-traded fund whose price has not changed for five consecutive business days, a fixed income security whose price has not changed for ten consecutive business days, and a private fund whose most recent reported net asset value is dated more than 120 days before the valuation date."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:03_valuation_policy.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 5.0,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34583,
+    "output_tokens": 282,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q30": {
+   "units": [
+    {
+     "uid": "q30",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "Sennacott Retention Systems, LLC (effective August 3, 2026, replacing Marrowgate Archiving, Inc.)",
+     "expected": "Sennacott Retention Systems, LLC, which replaced Marrowgate Archiving, Inc. effective August 3, 2026.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Effective August 3, 2026, Sennacott Retention Systems, LLC replaced Marrowgate Archiving, Inc. as the Firm's electronic communications archiving vendor. This change supersedes the references to Marrowgate Archiving, Inc. in Section 14.3 of the Compliance Manual and Section 5.2 of the Business Continuity Plan."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:06_policy_update_memo.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 4.4,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34586,
+    "output_tokens": 243,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q31": {
+   "units": [
+    {
+     "uid": "q31",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Theodora K. Marsh is the Chief Compliance Officer. The CCO reports to the Managing Partner and has direct and unrestricted access to the Management Committee.",
+     "expected": "Theodora K. Marsh; she reports to the Managing Partner and has direct and unrestricted access to the Management Committee.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The Management Committee has designated Theodora K. Marsh as the Firm's Chief Compliance Officer. The CCO reports to the Managing Partner and has direct and unrestricted access to the Management Committee."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:02_compliance_manual.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 4.72,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34595,
+    "output_tokens": 203,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q32": {
+   "units": [
+    {
+     "uid": "q32",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "unanswerable_clean",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 3.14,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34604,
+    "output_tokens": 39,
+    "thinking_tokens": 0,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q33": {
+   "units": [
+    {
+     "uid": "q33",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "Norcastle Managed Services, LLC runs incremental backups of the Firm's file server and document management system every four hours from 6:00 a.m. to 10:00 p.m. Eastern time on business days, plus a full backup every night. Tessaline and the Firm's client relationship management provider back up their own cloud applications. Backup copies are replicated to Norcastle's secondary data center in Columbus, Ohio, more than 300 miles from each Firm office. Nightly backups are kept in immutable storage for 35 days, and a monthly full backup is kept for 12 months.",
+     "expected": "Norcastle Managed Services performs incremental backups every four hours between 6:00 a.m. and 10:00 p.m. Eastern on business days and a full backup nightly; copies are replicated to Norcastle's secondary data center in Columbus, Ohio, more than 300 miles from each office, with nightly backups kept in immutable storage for 35 days and monthly full backups retained for 12 months.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Norcastle performs incremental backups of the Firm's file server and document management system every four hours between 6:00 a.m. and 10:00 p.m. Eastern time on business days, and a full backup every night. Cloud applications provided by Tessaline and the Firm's client relationship management provider are backed up by those providers under their own controls, which the BCP Coordinator reviews annually. [...] Backup copies are replicated to Norcastle's secondary data center in Columbus, Ohio, mo"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:04_business_continuity_plan.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 7.74,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34589,
+    "output_tokens": 736,
+    "thinking_tokens": 259,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q34": {
+   "units": [
+    {
+     "uid": "q34",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Yes. Kilnwick Tax Services, LLC, a tax preparation and tax planning firm, is under common control with the Firm: Margaret L. Tennick and Daniel R. Arlow together own all of Kilnwick's membership interests. Kilnwick prepares federal and state income tax returns and gift tax returns for individuals and trusts, including some Firm clients. Its fees are charged separately under a written engagement letter and are not offset against advisory fees. Because Ms. Tennick and Mr. Arlow benefit from Kilnwick's revenue, the Firm has an incentive to recommend Kilnwick. The Firm manages this conflict in four ways: (1) it discloses the conflict; (2) it does not require any client to use Kilnwick; (3) it pays wealth advisors no compensation for referrals to Kilnwick; and (4) it shares client information with Kilnwick only with the client's written consent.",
+     "expected": "Yes. Kilnwick Tax Services, LLC, a tax preparation and planning firm under common control (wholly owned by Ms. Tennick and Mr. Arlow), prepares returns for some clients for separate fees not offset against advisory fees; the conflict is addressed by disclosure, no obligation to use Kilnwick, no referral compensation to wealth advisors, and sharing client information only with written consent.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Kilnwick Tax Services, LLC (\"Kilnwick\") is a tax preparation and tax planning firm under common control with the Firm: Ms. Tennick and Mr. Arlow together own all of Kilnwick's membership interests. Kilnwick prepares federal and state income tax returns and gift tax returns for individuals and trusts, including some of our clients. Kilnwick's fees are charged separately under a written engagement letter and are not offset against our advisory fees. Because Ms. Tennick and Mr. Arlow benefit from K"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:01_brochure.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 11.51,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34611,
+    "output_tokens": 923,
+    "thinking_tokens": 254,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q35": {
+   "units": [
+    {
+     "uid": "q35",
+     "score": 1.0,
+     "verdict": "ABSTAINED",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "near_miss",
+     "hallucination": false,
+     "got": "NOT_IN_DOCUMENTS",
+     "expected": "NOT_IN_DOCUMENTS",
+     "extra": {
+      "answerable": false,
+      "abstained": true,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": ""
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:unanswerable",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 12.31,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34599,
+    "output_tokens": 80,
+    "thinking_tokens": 37,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q36": {
+   "units": [
+    {
+     "uid": "q36",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "The firm does not currently advise any government entity, but it applies political contribution controls under Rule 206(4)-5 to all Supervised Persons. Pre-clearance: every Supervised Person must obtain CCO pre-clearance before making any political contribution, regardless of amount, to a state or local official, a candidate for state or local office, a state or local political party, or a political action committee. This also covers contributions by a spouse or domestic partner from jointly held funds. Supervised Persons may not solicit or coordinate contributions, and the CCO records each request and decision. New-hire look-back: before an offer is extended, the CCO reviews the candidate's contributions for the two years before the hiring date if the candidate will solicit clients or supervise those who do, and for the six months before the hiring date for all other candidates. The CCO keeps contribution records as required by Rule 204-2(a)(18). The August 17, 2026 amendments memo does not change this policy.",
+     "expected": "All Supervised Persons must obtain CCO pre-clearance before making any political contribution, regardless of amount, to a state or local official or candidate, a state or local party or a PAC; for candidates who will solicit clients or supervise those who do, the CCO reviews contributions made during the two years before hire (six months for other candidates).",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "The Firm does not currently advise any government entity. Because an existing client may become affiliated with a government entity, and because the Firm may seek such clients in the future, the Firm applies the following controls to all Supervised Persons. [...] All Supervised Persons must obtain pre-clearance from the CCO before making any political contribution, regardless of amount, to a state or local official, a candidate for state or local office, a state or local political party, or a po"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:02_compliance_manual.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 10.92,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34603,
+    "output_tokens": 1246,
+    "thinking_tokens": 430,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q37": {
+   "units": [
+    {
+     "uid": "q37",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "multi_part",
+     "hallucination": false,
+     "got": "Either party may terminate the Investment Advisory Agreement on 30 days' written notice. On termination, the unearned portion of the prepaid (quarterly-in-advance) fee is refunded pro rata based on the days remaining in the quarter after the effective date of termination. Refunds are paid within 15 business days of that date, and the Firm charges no termination fee. A client who terminates within five business days of signing the agreement receives a full refund of any fees paid. The August 17, 2026 policy update memo does not amend these provisions, and the brochure (Item 5.7) states the same terms.",
+     "expected": "Either party may terminate on 30 days' written notice; the unearned portion of prepaid fees is refunded pro rata for the days remaining in the quarter after the effective termination date, paid within 15 business days, with no termination fee; a client who terminates within five business days of signing receives a full refund.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Either party may terminate the Investment Advisory Agreement upon 30 days' written notice to the other party. ... On termination, the unearned portion of the prepaid fee is refunded pro rata based on the number of days remaining in the quarter after the effective date of termination. Refunds are paid within 15 business days of the effective date of termination. No termination fee is charged by the Firm. ... A client who terminates within five business days of signing the Investment Advisory Agre"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:05_fee_schedule.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 10.96,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34596,
+    "output_tokens": 905,
+    "thinking_tokens": 451,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q38": {
+   "units": [
+    {
+     "uid": "q38",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Yes. An independent valuation firm, currently Wraxall Dunmore Advisory, LLC, reviews the Valuation Policy every two years and tests a sample of Level 3 valuations and price overrides. Its report goes to the Valuation Committee and the Management Committee. Separately, the Chief Compliance Officer reviews the Policy annually as part of the Firm's annual compliance review. No later memorandum amends these provisions.",
+     "expected": "Yes. Every two years an independent valuation firm, currently Wraxall Dunmore Advisory, LLC, reviews the Valuation Policy and tests a sample of Level 3 valuations and price overrides; the CCO also reviews the Policy annually.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Every two years, an independent valuation firm, currently Wraxall Dunmore Advisory, LLC, reviews this Policy and tests a sample of Level 3 valuations and price overrides. The external reviewer's report is delivered to the Valuation Committee and the Management Committee, and the Chief Compliance Officer tracks each recommendation to resolution. ... The Chief Compliance Officer reviews the adequacy of this Policy and the effectiveness of its implementation annually as part of the Firm's annual co"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:03_valuation_policy.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 11.05,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34593,
+    "output_tokens": 884,
+    "thinking_tokens": 489,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q39": {
+   "units": [
+    {
+     "uid": "q39",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Portfolio management staff review every account at least quarterly (and each household's wealth advisor meets with the household at least annually). An account is rebalanced when any asset class deviates from its target weight by more than five percentage points, or sooner when cash flows, tax considerations or client instructions require.",
+     "expected": "Wealth advisors meet with each household at least annually; portfolio management staff review every account at least quarterly; an account is rebalanced when any asset class deviates from its target weight by more than five percentage points.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Each household's wealth advisor meets with the household at least annually to review its objectives, financial circumstances and Investment Policy Statement. Our portfolio management staff review every account at least quarterly for adherence to its model, its asset allocation targets and any client restrictions. An account is rebalanced when any asset class deviates from its target weight by more than five percentage points, or sooner when cash flows, tax considerations or client instructions r"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:01_brochure.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 5.7,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34596,
+    "output_tokens": 482,
+    "thinking_tokens": 195,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t3_f01.q40": {
+   "units": [
+    {
+     "uid": "q40",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "The Management Committee approved the most recent amendments on August 12, 2026. They were issued by a Chief Compliance Officer memorandum dated August 17, 2026, and each amendment takes effect on that date unless its section states otherwise. The exceptions are the archiving vendor change, effective August 3, 2026, and the fee breakpoint change, effective for the billing period that began July 1, 2026.",
+     "expected": "The Management Committee approved the amendments on August 12, 2026; the CCO circulated them in a memorandum dated August 17, 2026.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "On August 12, 2026, the Management Committee approved the amendments described in this memorandum. Each amendment identifies the document and section it amends and supersedes the provision it identifies."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:06_policy_update_memo.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 9.69,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 34594,
+    "output_tokens": 709,
+    "thinking_tokens": 465,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  }
+ }
+}

@@ -1,0 +1,191 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from the provided private fund offering document (PPM).
+    *   Output Format: JSON object only. No markdown, no preamble, no commentary.
+    *   Constraints:
+        *   Accuracy is paramount. No guessing, no inferring market standards.
+        *   If not found -> "NOT_FOUND".
+        *   If not applicable -> "NOT_APPLICABLE" (with quote).
+        *   Amendments/Supplements supersede original text.
+        *   Report every variant if differs by class/tier.
+        *   Citations must be section/appendix identifiers.
+        *   Quotes must be verbatim.
+    *   Fields to extract: fund_name, fund_domicile, fund_structure, management_fee, performance_fee, hurdle_rate, high_water_mark, minimum_initial_investment, lockup_period, redemption_frequency, redemption_notice_days, gate_provision, key_man_provision, gp_commitment, fund_term, auditor, administrator, prime_broker, legal_counsel, mfn_election.
+
+2.  **Scan the Document for Each Field:**
+
+    *   **fund_name**:
+        *   Search: "Tarrenfield Oakes Real Estate Partners III, L.P." appears in title and Section 1.1.
+        *   Quote: "Tarrenfield Oakes Real Estate Partners III, L.P. is a Delaware limited partnership..." (Section 1.1). Or Title "# TARRENFIELD OAKES REAL ESTATE PARTNERS III, L.P.".
+        *   Value: Tarrenfield Oakes Real Estate Partners III, L.P.
+        *   Citation: Section 1.1 (or Title). Let's use Section 1.1 as it defines the entity.
+
+    *   **fund_domicile**:
+        *   Search: "Delaware".
+        *   Quote: "Tarrenfield Oakes Real Estate Partners III, L.P. is a Delaware limited partnership..." (Section 1.1).
+        *   Value: Delaware.
+        *   Citation: Section 1.1.
+
+    *   **fund_structure**:
+        *   Search: "closed-end", "master-feeder".
+        *   Quote: "The Fund is a closed-end fund... The Fund is a single, stand-alone vehicle and is not organized as part of a master-feeder structure." (Section 1.1).
+        *   Value: Closed-end; Not master-feeder.
+        *   Citation: Section 1.1.
+
+    *   **management_fee**:
+        *   Search: "Management Fee", "1.50%", "1.25%".
+        *   Quote (Section 1.8): "During the Investment Period, 1.50% per annum of Capital Commitments; thereafter, 1.50% per annum of Invested Equity. For Large Commitment Limited Partners, the rate is 1.25% per annum on the same bases."
+        *   Quote (Section 4.1): "during the Investment Period, at 1.50% per annum of that Limited Partner's Capital Commitment; and after the Investment Period, at 1.50% per annum of that Limited Partner's share of Invested Equity... For a Limited Partner whose Capital Commitment... is $50,000,000 or more (a "Large Commitment Limited Partner"), the rate under each of clauses (a) and (b) is 1.25% per annum instead of 1.50% per annum."
+        *   Value: 1.50% per annum on Capital Commitments during Investment Period; 1.50% per annum on Invested Equity thereafter; 1.25% per annum for Large Commitment Limited Partners ($50M+) on same bases.
+        *   Citation: Section 4.1 (more detailed).
+        *   Note: Supplement No. 13.6 says terms unchanged except Section 13 changes. Section 13 doesn't change fees.
+
+    *   **performance_fee**:
+        *   Search: "Carried Interest", "20%", "80/20".
+        *   Quote (Section 1.9): "...50% to it and 50% to the General Partner (the "Catch-Up") until the General Partner has received 20% of the profits distributed; and thereafter, 80% to it and 20% to the General Partner."
+        *   Quote (Section 5.2): "...(d) 80/20 Split: thereafter, 80% to the Limited Partner and 20% to the General Partner... The Carried Interest rate of 20% applies to every Limited Partner other than the Sponsor and its employees..."
+        *   Value: 20% carried interest (Catch-Up to 20%).
+        *   Citation: Section 5.2.
+
+    *   **hurdle_rate**:
+        *   Search: "Preferred Return", "9%", "hard hurdle".
+        *   Quote (Section 1.9): "...until it has received a 9% per annum internal rate of return, compounded annually, on those Capital Contributions (the "Preferred Return"), which operates as a hard hurdle..."
+        *   Quote (Section 5.3): "The Preferred Return is a hard hurdle."
+        *   Value: 9% per annum internal rate of return; Hard hurdle.
+        *   Citation: Section 5.3.
+
+    *   **high_water_mark**:
+        *   Search: "high-water mark", "loss carryforward".
+        *   Quote (Section 5.4): "...no high-water mark or loss carryforward applies to the Interests."
+        *   Value: NOT_APPLICABLE.
+        *   Citation: Section 5.4.
+
+    *   **minimum_initial_investment**:
+        *   Search: "Minimum Commitment", "$5,000,000".
+        *   Quote (Section 1.4): "The minimum Capital Commitment of each Limited Partner is $5,000,000."
+        *   Value: $5,000,000.
+        *   Citation: Section 1.4.
+
+    *   **lockup_period**:
+        *   Search: "Lock-up", "redeemable".
+        *   Quote (Section 6.3): "Limited Partners have no right to withdraw from the Fund or to redeem, in whole or in part, their Interests at any time... Accordingly, no lock-up, redemption right, notice period or gate applies to the Interests."
+        *   Value: NOT_APPLICABLE (Closed-end, no redemptions).
+        *   Citation: Section 6.3.
+
+    *   **redemption_frequency**:
+        *   Search: "redeem", "frequency".
+        *   Quote (Section 6.3): "...no redemption mechanism."
+        *   Value: NOT_APPLICABLE.
+        *   Citation: Section 6.3.
+
+    *   **redemption_notice_days**:
+        *   Search: "notice", "days".
+        *   Quote (Section 6.3): "...no lock-up, redemption right, notice period or gate applies to the Interests."
+        *   Value: NOT_APPLICABLE.
+        *   Citation: Section 6.3.
+
+    *   **gate_provision**:
+        *   Search: "Gate", "threshold".
+        *   Quote (Section 6.3): "...no lock-up, redemption right, notice period or gate applies to the Interests."
+        *   Value: NOT_APPLICABLE.
+        *   Citation: Section 6.3.
+
+    *   **key_man_provision**:
+        *   Search: "Key Person", "Section 7.1".
+        *   Quote (Section 7.1): "The "Key Persons" are Garrett Vashon and Ines Kalloway. A "Key Person Event" occurs if, during the Investment Period, either Key Person ceases to devote substantially all of his or her business time to the Fund... Upon a Key Person Event, the Investment Period is automatically suspended..."
+        *   Value: Garrett Vashon and Ines Kalloway; triggers suspension of Investment Period.
+        *   Citation: Section 7.1.
+
+    *   **gp_commitment**:
+        *   Search: "Sponsor Commitment", "$7,500,000".
+        *   Quote (Section 1.5): "The General Partner... will commit, in the aggregate, the greater of $7,500,000 or 2.0% of the aggregate Capital Commitments of the Limited Partners..."
+        *   Quote (Section 13.2): "...the Sponsor Commitment is currently $7,500,000; it will increase at subsequent closings to the extent 2.0% of Limited Partner Capital Commitments exceeds that amount."
+        *   Value: Greater of $7,500,000 or 2.0% of aggregate Capital Commitments of Limited Partners.
+        *   Citation: Section 1.5 (Superseded/Confirmed by Section 13.2 regarding current status, but the term definition is in 1.5). I will use Section 1.5 for the definition and note the current amount if needed, but the field asks for "Required GP / sponsor / manager commitment". The definition is the requirement.
+        *   Value: Greater of $7,500,000 or 2.0% of aggregate Capital Commitments of Limited Partners.
+        *   Citation: Section 1.5.
+
+    *   **fund_term**:
+        *   Search: "Term", "eighth anniversary".
+        *   Quote (Section 1.7): "The term of the Fund ends on the eighth anniversary of the Initial Closing Date, subject to two one-year extensions..."
+        *   Quote (Section 7.4): "...In no event will the term extend beyond the tenth anniversary of the Initial Closing Date."
+        *   Value: Eighth anniversary of Initial Closing Date, with two one-year extensions (max tenth anniversary).
+        *   Citation: Section 1.7 / Section 7.4.
+
+    *   **auditor**:
+        *   Search: "Auditor", "Wexcombe", "Lindenhall".
+        *   Original text (Section 9.2): "Wexcombe Adair LLP... has been appointed..."
+        *   Supplement (Section 13.4): "Effective June 1, 2026, the General Partner... engaged Lindenhall Crewe LLP as the independent auditor of the Fund... All references in this Memorandum to Wexcombe Adair LLP as the independent auditor of the Fund are to be read as references to Lindenhall Crewe LLP."
+        *   Value: Lindenhall Crewe LLP.
+        *   Citation: Section 13.4 (Supersedes Section 9.2).
+
+    *   **administrator**:
+        *   Search: "Administrator", "Ostrander".
+        *   Quote (Section 9.1): "Ostrander Pell Fund Services, LLC (the "Administrator") serves as administrator of the Fund."
+        *   Value: Ostrander Pell Fund Services, LLC.
+        *   Citation: Section 9.1.
+
+    *   **prime_broker**:
+        *   Search: "Prime broker", "banking".
+        *   Quote (Section 9.5): "The Fund maintains its operating accounts with, and expects to obtain any Subscription Facility from, United States commercial banks."
+        *   No specific prime broker named other than generic "United States commercial banks" or "Ellery Plains Bank, N.A." for the Subscription Facility in Section 13.5.
+        *   Quote (Section 13.5): "...entered into a $75,000,000 revolving Subscription Facility with Ellery Plains Bank, N.A...."
+        *   Is this a prime broker? The text says "Subscription Facility". Section 9.5 mentions "United States commercial banks". It does not explicitly name a "Prime Broker". However, often the bank providing the facility acts as one. But strict extraction: No specific "Prime Broker" title is assigned to a named entity in the Service Providers section (Section 9). Section 13.5 names Ellery Plains Bank for the Subscription Facility.
+        *   Decision: The document does not explicitly state "Prime Broker". It lists "United States commercial banks" generally in 9.5 and names Ellery Plains Bank for the facility in 13.5. I should report NOT_FOUND if no specific prime broker is identified by that title or clear function. However, often the Subscription Facility lender is the prime. But to be accurate per rules ("Every value must be supported by text that actually appears"), "Prime Broker" is not explicitly stated.
+        *   Re-reading Section 9.5: "The Fund maintains its operating accounts with... United States commercial banks." No name.
+        *   Re-reading Section 13.5: "...Subscription Facility with Ellery Plains Bank, N.A...."
+        *   Is there a Prime Broker? Usually distinct from the facility lender unless specified. I will mark NOT_FOUND as "Prime Broker" is not explicitly defined or named in the Service Providers section (Section 9).
+        *   Wait, check Section 13.5 again. It names Ellery Plains Bank for the Subscription Facility. Does it say Prime Broker? No.
+        *   Value: NOT_FOUND.
+        *   Citation: "" (since not found).
+
+    *   **legal_counsel**:
+        *   Search: "Legal Counsel", "Haverill".
+        *   Quote (Section 9.3): "Haverill Quint LLP acts as counsel to the Fund..."
+        *   Value: Haverill Quint LLP.
+        *   Citation: Section 9.3.
+
+    *   **mfn_election**:
+        *   Search: "Most Favored Nation", "Side Letters".
+        *   Quote (Section 7.5): "Each Limited Partner whose Capital Commitment... is $25,000,000 or more may elect to receive the benefit of any right granted in a side letter..."
+        *   Value: Yes; Eligible for Limited Partners with Capital Commitment >= $25,000,000.
+        *   Citation: Section 7.5.
+
+3.  **Refine Values and Citations:**
+
+    *   **fund_name**: "Tarrenfield Oakes Real Estate Partners III, L.P." (Section 1.1).
+    *   **fund_domicile**: "Delaware" (Section 1.1).
+    *   **fund_structure**: "Closed-end; Not master-feeder" (Section 1.1).
+    *   **management_fee**: "1.50% per annum on Capital Commitments during Investment Period; 1.50% per annum on Invested Equity thereafter; 1.25% per annum for Large Commitment Limited Partners ($50M+) on same bases" (Section 4.1).
+    *   **performance_fee**: "20% carried interest with Catch-Up to 20%" (Section 5.2). Or just "20%". Quote: "80/20 Split: thereafter, 80% to the Limited Partner and 20% to the General Partner."
+    *   **hurdle_rate**: "9% per annum internal rate of return; Hard hurdle" (Section 5.3).
+    *   **high_water_mark**: "NOT_APPLICABLE" (Section 5.4). Quote: "no high-water mark or loss carryforward applies to the Interests."
+    *   **minimum_initial_investment**: "$5,000,000" (Section 1.4).
+    *   **lockup_period**: "NOT_APPLICABLE" (Section 6.3). Quote: "no lock-up... applies to the Interests."
+    *   **redemption_frequency**: "NOT_APPLICABLE" (Section 6.3).
+    *   **redemption_notice_days**: "NOT_APPLICABLE" (Section 6.3).
+    *   **gate_provision**: "NOT_APPLICABLE" (Section 6.3).
+    *   **key_man_provision**: "Garrett Vashon and Ines Kalloway; triggers suspension of Investment Period" (Section 7.1).
+    *   **gp_commitment**: "Greater of $7,500,000 or 2.0% of aggregate Capital Commitments of Limited Partners" (Section 1.5).
+    *   **fund_term**: "Eighth anniversary of Initial Closing Date; two one-year extensions; max tenth anniversary" (Section 1.7 / Section 7.4).
+    *   **auditor**: "Lindenhall Crewe LLP" (Section 13.4).
+    *   **administrator**: "Ostrander Pell Fund Services, LLC" (Section 9.1).
+    *   **prime_broker**: "NOT_FOUND". (No explicit prime broker named).
+    *   **legal_counsel**: "Haverill Quint LLP" (Section 9.3).
+    *   **mfn_election**: "Yes; Limited Partners with Capital Commitment >= $25,000,000" (Section 7.5).
+
+4.  **Final Review against Constraints:**
+    *   JSON only? Yes.
+    *   No markdown fences? Yes.
+    *   Verbatim quotes? Yes.
+    *   Citations correct? Yes.
+    *   Supplements applied? Yes (Auditor changed in 13.4).
+    *   NOT_FOUND/NOT_APPLICABLE used correctly? Yes.
+
+5.  **Construct JSON:**
+    *   Ensure keys match exactly: fund_name, fund_domicile, fund_structure, management_fee, performance_fee, hurdle_rate, high_water_mark, minimum_initial_investment, lockup_period, redemption_frequency, redemption_notice_days, gate_provision, key_man_provision, gp_commitment, fund_term, auditor, administrator, prime_broker, legal_counsel, mfn_election.
+    *   Ensure nested structure: "value", "citation", "quote".
+
+    *   *Self-Correction on Prime Broker*: Section

@@ -1,0 +1,162 @@
+*   Role: Client service associate at a wealth management firm.
+    *   Task: Update CRM from a meeting transcript.
+    *   Rules:
+        1.  Record only what was said (no extra planning).
+        2.  Record final versions of figures/owners/dates.
+        3.  Action items = tasks agreed to do (not ideas/proposals).
+        4.  Owner = person's name.
+        5.  Due dates = as stated (add calendar date if needed).
+        6.  Use NOT_FOUND for missing fields.
+        7.  Correct misheard names/numbers based on later context.
+    *   Output: JSON only, no markdown, no preamble.
+
+    *   *Meeting Date:* September 15, 2026.
+    *   *Clients:* Glenn Ostrander, Patrice Ostrander.
+    *   *Primary Goal:* Retirement planning (specifically retirement date, pension selection, and portfolio alignment).
+    *   *Retirement Target:* June 30, 2027 (for both).
+    *   *Risk Tolerance:* Currently "moderate growth" (70/30), moving to "moderate" (60/40).
+    *   *Risk Tolerance Change:* From moderate growth to moderate.
+    *   *Life Events:*
+        *   New grandchild (Nora) born August 9.
+        *   Patrice's mother moving to assisted living in November (first week, approx. Nov 2).
+        *   Roof paid for in March.
+    *   *Account Actions:*
+        *   Move $40,000 from credit union to the joint account's money market.
+        *   Roll over Ferncastle 401(k) (balance $118,400) into Patrice's IRA.
+        *   Rebalance joint account and Patrice's IRA from moderate growth to moderate (60/40).
+    *   *Action Items:*
+        *   Provide pension estimate PDF (full document) to Lena. Owner: Glenn Ostrander. Due: Wednesday, September 23, 2026.
+        *   Provide Patrice's Social Security statement to Kiran. Owner: Glenn Ostrander. Due: Monday, September 21, 2026 (Transcript says "by Monday", and the meeting is Tuesday the 15th, so the next Monday is the 21st). *Wait, let me re-read.* "Can you pull Patrice's statement and drop it in the portal? By Monday...".
+        *   Get HR confirmation in writing (medical bridge, notice period, etc.). Owner: Glenn Ostrander. Due: Before November 10, 2026.
+        *   Prepare DocuSign for rollover and risk profile. Owner: Kiran Bastable. Due: September 16, 2026 (Transcript says "tomorrow").
+        *   Run Social Security comparison and updated projection. Owner: Kiran Bastable. Due: September 25, 2026.
+        *   Send updated projection to CPA (Deb Szymanski). Owner: Lena Castellaw. Due: October 2, 2026.
+    *   *Next Meeting:* November 10, 2026, at 2:00 PM.
+
+    *   *meeting_date:* "2026-09-15"
+    *   *client_names:* ["Glenn Ostrander", "Patrice Ostrander"]
+    *   *primary_goal:* "Retirement planning, including retirement date selection, pension choice, and portfolio risk adjustment."
+    *   *retirement_target:* "June 30, 2027"
+    *   *risk_tolerance:* "moderate"
+    *   *risk_tolerance_change:* "from moderate growth to moderate"
+    *   *life_events:* ["New grandchild (Nora) born August 9", "Patrice's mother moving to assisted living in early November", "Roof paid for in March"]
+    *   *account_actions:*
+        *   {"action": "Move $40,000 from credit union to joint account money market", "account": "joint account", "amount": "40,000"}
+        *   {"action": "Roll over Ferncastle 401(k) into IRA", "account": "Patrice's IRA", "amount": "118,400"}
+        *   {"action": "Rebalance joint account and Patrice's IRA from moderate growth to moderate (60/40)", "account": "joint account and Patrice's IRA", "amount": "NOT_FOUND"}
+    *   *action_items:*
+        *   {"task": "Provide pension estimate PDF to portal", "owner": "Glenn Ostrander", "due": "2026-09-23"}
+        *   {"task": "Provide Patrice's Social Security statement to portal", "owner": "Glenn Ostrander", "due": "2026-09-21"}
+        *   {"task": "Obtain HR confirmation in writing regarding medical bridge and notice periods", "owner": "Glenn Ostrander", "due": "2026-11-10"}
+        *   {"task": "Prepare DocuSign for rollover and risk profile", "owner": "Kiran Bastable", "due": "2026-09-16"}
+        *   {"task": "Run Social Security comparison and updated projection", "owner": "Kiran Bastable", "due": "2026-09-25"}
+        *   {"task": "Send updated projection to CPA (Deb Szymanski)", "owner": "Lena Castellaw", "due": "2026-10-02"}
+    *   *next_meeting:* "2026-11-10"
+
+    *   *Rule 1 (No extra items):* Only included what was discussed.
+    *   *Rule 2 (Final versions):* Used 118,400 for the 401k (corrected from 140,000). Used 40,000 for the cash move (negotiated from 50,000).
+    *   *Rule 3 (Action items):* Only included things they agreed to do.
+    *   *Rule 4 (Owner):* Names used.
+    *   *Rule 5 (Dates):* Added years to dates.
+    *   *Rule 6 (NOT_FOUND):* Used where applicable.
+    *   *Rule 7 (Clarification):* Used "Deb Szymanski" and "Kiran Bastable".
+
+    *   *Refining Action Items:*
+        *   "Provide pension estimate PDF" - Glenn said "Wednesday the 23rd".
+        *   "Provide Patrice's Social Security statement" - "By Monday". Since meeting is Tuesday 15th, Monday is 21st.
+        *   "Obtain HR confirmation" - "Before November".
+        *   "Prepare DocuSign" - "Tomorrow" (Sept 16).
+        *   "Run Social Security comparison" - "Friday the 25th".
+        *   "Send updated projection to CPA" - "October 2nd".
+
+    *   *Refining Account Actions:*
+        *   "Move $40,000 from credit union to money market" - Account: "joint account".
+        *   "Roll over Ferncastle 401(k)" - Account: "Patrice's IRA".
+        *   "Rebalance portfolio" - Account: "joint account and Patrice's IRA".
+
+    *   *Refining Risk Tolerance:*
+        *   Current: "moderate growth"
+        *   New: "moderate"
+        *   Change: "from moderate growth to moderate"
+
+    *   *Refining Life Events:*
+        *   "New grandchild (Nora) born August 9"
+        *   "Patrice's mother moving to assisted living in early November"
+        *   "Roof paid for in March"
+
+    *   *Refining Retirement Target:* "June 30, 2027"
+
+    *   *Refining Primary Goal:* "Retirement planning, including retirement date, pension selection, and portfolio risk adjustment."
+
+    *   *Wait, check the "account_actions" amount field.*
+        *   Move 40k: amount "40,000"
+        *   Roll 118.4k: amount "118,400"
+        *   Rebalance: amount "NOT_FOUND" (The amount is a percentage/shift, not a specific dollar amount mentioned for the action itself, though the 47,400 was mentioned as the calculation for the shift).
+
+    *   *Check "next_meeting":* "2026-11-10" (or "November 10, 2026").
+
+    *   *Double check dates:*
+        *   Meeting: Sept 15, 2026.
+        *   "Wednesday the 23rd" -> 2026-09-23.
+        *   "Monday" -> 2026-09-21.
+        *   "Tomorrow" -> 2026-09-16.
+        *   "Friday the 25th" -> 2026-09-25.
+        *   "October 2nd" -> 2026-10-02.
+        *   "November 10th" -> 2026-11-10.
+
+    *   *Refining "risk_tolerance_change":* "from moderate growth to moderate".
+
+    *   *Refining "primary_goal":* "Retirement planning, pension selection, and portfolio risk adjustment."
+
+    *   *Refining "life_events":*
+        *   "New grandchild (Nera) born August 9" (Wait, transcript says "Nora").
+        *   "Patrice's mother moving to assisted living in early November"
+        *   "Roof paid for in March"
+
+    *   *Refining "account_actions":*
+        *   Action: "Move $40,000 from credit union to joint account money market", Account: "joint account", Amount: "40,000"
+        *   Action: "Roll over Ferncastle 401(k) into IRA", Account: "Patrice's IRA", Amount: "118,400"
+        *   Action: "Rebalance joint account and Patrice's IRA from moderate growth to moderate", Account: "joint account and Patrice's IRA", Amount: "NOT_FOUND"
+
+    *   *Refining "action_items":*
+        *   Task: "Provide pension estimate PDF", Owner: "Glenn Ostrander", Due: "2026-09-23"
+        *   Task: "Provide Patrice's Social Security statement", Owner: "Glenn Ostrander", Due: "2026-09-21"
+        *   Task: "Obtain HR confirmation in writing", Owner: "Glenn Ostrander", Due: "2026-11-10"
+        *   Task: "Prepare DocuSign for rollover and risk profile", Owner: "Kiran Bastable", Due: "2026-09-16"
+        *   Task: "Run Social Security comparison and updated projection", Owner: "Kiran Bastable", Due: "2026-09-25"
+        *   Task: "Send updated projection to CPA (Deb Szymanski)", Owner: "Lena Castellaw", Due: "2026-10-02"
+
+    *   *Wait, check the "account_actions" for the rebalance.* The prompt says "what will be done".
+    *   "Rebalance joint account and Patrice's IRA from moderate growth to moderate" is a good description.
+
+    *   *Check "risk_tolerance":* "moderate".
+    *   *Check "risk_tolerance_change":* "from moderate growth to moderate".
+
+    *   *Check "retirement_target":* "June 30, 2027".
+
+    *   *Check "primary_goal":* "Retirement planning, pension selection, and portfolio risk adjustment."
+
+    *   *Check "client_names":* ["Glenn Ostrander", "Patrice Ostrander"]
+
+    *   *Check "meeting_date":* "2026-09-15"
+
+    *   *Check "next_meeting":* "2026-11-10"
+
+    *   *Double check "action_items" owner names:*
+        *   "Kiran Bastable"
+        *   "Lena Castellaw"
+        *   "Glenn Ostrander"
+
+    *   *Double check "account_actions" account names:*
+        *   "joint account"
+        *   "Patrice's IRA"
+        *   "joint account and Patrice's IRA"
+
+    *   *Double check "life_events" list:*
+        *   "New grandchild (Nora) born August 9"
+        *   "Patrice's mother moving to assisted living in early November"
+        *   "Roof paid for in March"
+
+    *   *Wait, one more check on the "action_items" for the HR stuff.*
+        *   "Obtain HR confirmation in writing" - Owner: "Glenn Ostrander".
+        

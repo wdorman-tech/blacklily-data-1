@@ -1,0 +1,76 @@
+*   Role: Marketing review analyst at an SEC-registered investment adviser.
+    *   Task: Review draft marketing materials against a specific checklist (C1-C9) based on Rule 206(4)-1.
+    *   Output: JSON object with "flags" (category, quote, reason).
+    *   Constraints:
+        *   Only flag items under C1-C9.
+        *   Quote verbatim.
+        *   Do not flag if requirements are met (e.g., net/gross shown together, etc.).
+        *   One flag per distinct issue.
+        *   No preamble, no markdown, just JSON.
+
+    *   C1: Testimonial/endorsement without disclosure of status, compensation, and conflict.
+    *   C2: Gross performance without net performance shown with equal prominence.
+    *   C3: Performance of a non-private fund without 1, 5, 10-year results. (Note: The fund in the draft *is* a private fund, so C3 might not apply unless it's a non-private fund. The text says "Treharne Kilbride Event Opportunities Fund, LP" - this is a private fund).
+    *   C4: Performance time periods/results not fair and balanced (e.g., cherry-picking).
+    *   C5: Hypothetical/model/backtested/projected performance without criteria, assumptions, risks, and limitations.
+    *   C6: Material statement of fact untrue or unsubstantiable (absolute claims).
+    *   C7: Third-party rating/ranking without date, period, source, and compensation disclosure.
+    *   C8: Performance of selected positions/subset without total portfolio performance.
+    *   C9: Benefits described without fair/balanced treatment of risks/limitations.
+
+    *   *Slide 1:* "The Fund has never finished a calendar year in negative territory, through the 2018 selloff, the 2020 drawdown and the 2022 rate shock."
+        *   Check C6: "The Fund has never finished a calendar year in negative territory". This is an absolute claim. However, the table in Slide 4 shows 2022 as -1.2% (Gross) and -3.0% (Net).
+        *   Wait, look at the table: 2022 is -1.2% (Gross) and -3.0% (Net).
+        *   The claim "The Fund has never finished a calendar year in negative territory" is factually contradicted by the data in the table (2022 is negative).
+        *   Wait, let me re-read the table.
+            *   2017: 14.2 / 10.0
+            *   2018: 4.1 / 1.9
+            *   2019: 12.6 / 8.7
+            *   2020: 28.8 / 21.6
+            *   2021: 21.5 / 15.8
+            *   2022: -1.2 / -3.0
+            *   2023: 5.4 / 3.5
+            *   2024: 11.3 / 7.6
+            *   2025: 9.8 / 6.4
+            *   2026: 4.6 / 3.0
+        *   The claim "The Fund has never finished a calendar year in negative territory" is an absolute claim (C6). Even if it were true, it's an absolute claim. But since it's actually contradicted by the data provided in the same document, it's definitely a "material statement of fact that is untrue".
+
+    *   *Slide 4:* "Annualized since inception, January 1, 2017 through December 31, 2025: 11.5% gross of fees and 7.8% net of fees."
+        *   Check C2: Gross and net are shown together. No issue.
+
+    *   *Slide 5:* "The last restructuring cycle shows what the strategy can do: from the March 23, 2020 market low through June 30, 2021, the Fund returned 71.4% net of fees."
+        *   Check C4: This is a specific window (March 2020 to June 2021). Is it "fair and balanced"? It's a specific period of high performance. However, the text immediately follows with "A full pipeline does not ensure returns: announced transactions can be delayed, repriced or abandoned."
+        *   Is it a "favourable window selected out of a longer record"? Yes, it highlights a specific high-performing period. However, the prompt says "unless it's fair and balanced". The inclusion of the disclaimer about the pipeline might mitigate this, but the selection of a specific "success" window is a classic C4 issue.
+        *   Wait, let's look at C4 again: "Performance time periods or results chosen or presented in a way that is not fair and balanced, such as a favourable window selected out of a longer record."
+        *   The text "from the March 23, 2020 market low through June 30, 2021" is a specific window.
+
+    *   *Slide 6:* "A hypothetical portfolio of 54% global equities, 36% U.S. investment-grade bonds and 10% in the Fund... would have returned 7.98% annualized...".
+        *   Check C5: Does it have criteria, assumptions, risks, and limitations?
+        *   "Criteria and assumptions: equities are the Hesketh Global Equity Index and bonds the Hesketh U.S. Aggregate Bond Index... rebalancing assumes no costs or taxes."
+        *   "Risks and limitations: the results are prepared with hindsight, reflect no actual trading, and would differ under another period, weighting or rebalancing rule. The Fund's lock-up and quarterly redemption terms may make annual rebalancing unachievable, and its future returns and correlations may differ materially from its history."
+        *   It seems to have the required components for C5.
+
+    *   *Slide 7:* "The incentive allocation may encourage risk-taking; the Fund and the managed accounts share opportunities under a written allocation policy."
+        *   Check C9: "Benefits described without fair and balanced treatment of the material risks or limitations that go with them."
+        *   The "benefit" is the "incentive allocation" (which is actually a risk/conflict, but the text acknowledges it). This doesn't seem to be a clear violation of C9 because the risk is stated.
+
+    *   *Slide 3:* "The Fund has never finished a calendar year in negative territory, through the 2018 selloff, the 2020 drawdown and the 2022 rate shock."
+        *   This is a "material statement of fact that is untrue" (C6) because the table in Slide 4 shows a negative return in 2022 (-1.2% gross, -3.0% net).
+
+    *   *Slide 5:* "The last restructuring cycle shows what the strategy can do: from the March 23, 2020 market low through June 30, 2021, the Fund returned 71.4% net of fees."
+        *   This is a "favourable window selected out of a longer record" (C4).
+
+    *   *C1:* No testimonials.
+    *   *C2:* Gross and net are shown together in Slide 4.
+    *   *C3:* It's a private fund.
+    *   *C4:* Slide 5 highlights a specific window (March 2020 - June 2021).
+    *   *C5:* Slide 6 includes assumptions and risks.
+    *   *C6:* Slide 3 makes an absolute claim ("never finished a calendar year in negative territory") which is contradicted by the data in Slide 4.
+    *   *C7:* No third-party ratings.
+    *   *C8:* No subset of portfolio performance shown without total.
+    *   *C9:* Risks are mentioned in Slide 7.
+
+    *   Flag 1: C6. Quote: "The Fund has never finished a calendar year in negative territory, through the 2018 selloff, the 2020 drawdown and the 2022 rate shock." Reason: This is an absolute claim that is contradicted by the performance data provided in Slide 4, which shows a negative return in 2022.
+    *   Flag 2: C4. Quote: "The last restructuring cycle shows what the strategy can do: from the March 23, 2020 market low through June 30, 2021, the Fund returned 71.4% net of fees." Reason: This highlights a specific favorable time period out of the fund's total history.
+
+    *   Wait,

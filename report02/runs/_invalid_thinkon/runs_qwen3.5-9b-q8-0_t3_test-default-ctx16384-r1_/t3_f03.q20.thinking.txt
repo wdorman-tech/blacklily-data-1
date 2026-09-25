@@ -1,0 +1,43 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question using *only* the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Identify the qualified custodian(s) holding client assets and the independent public accountant that performs the firm's surprise custody examination."
+    *   Required Information:
+        1.  Qualified custodian(s).
+        2.  Independent public accountant for surprise examination.
+
+3.  **Scan Documents for Information:**
+
+    *   *Document 1:* `01_brochure.md | Form ADV Part 2A: Firm Brochure, dated March 27, 2026`
+        *   Section: Item 12. Brokerage Practices > 12.1 Selection and Recommendation of Custodians
+            *   Text: "The Firm recommends that clients establish accounts with Norrell Bay Trust & Custody, N.A. ("Norrell Bay")..."
+            *   Text: "...the Firm recommends accounts at Corvedale Clay Securities, LLC ("Corvedale Clay")."
+        *   Section: Item 15. Custody > 15.1 Qualified Custodians
+            *   Text: "Client assets are held by Norrell Bay Trust & Custody, N.A., a national banking association, which serves as the qualified custodian for substantially all client accounts."
+            *   Text: "A limited number of accounts... are held at Corvedale Clay Securities, LLC..."
+        *   Section: Item 15. Custody > 15.3 Surprise Examination
+            *   Text: "The Firm engages Aldwick Brennan LLP, an independent public accountant, to conduct an annual surprise examination of client funds and securities over which the Firm or a related person has custody..."
+
+    *   *Document 2:* `02_compliance_manual.md | Compliance Policies and Procedures Manual, dated January 15, 2026`
+        *   Section: SECTION 15. ANNUAL REVIEW > 15.2 Conduct and Reporting
+            *   Text mentions CCO, Hethersett Compliance Advisors, LLC (not the surprise exam accountant).
+
+4.  **Synthesize Findings:**
+    *   Qualified Custodians: Norrell Bay Trust & Custody, N.A. (substantially all), Corvedale Clay Securities, LLC (limited number). Source: `01_brochure.md`, Section `Item 15. Custody > 15.1 Qualified Custodians`.
+    *   Independent Public Accountant: Aldwick Brennan LLP. Source: `01_brochure.md`, Section `Item 15. Custody > 15.3 Surprise Examination`.
+
+5.  **Draft the Answer:**
+    *   The question asks for both custodians and the accountant.
+    *   I need to combine this into a single "answer" string, citing the source

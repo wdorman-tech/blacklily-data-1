@@ -1,0 +1,29 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Part 1: What is the annual limit on gifts a supervised person may accept from a single business contact?
+    *   Part 2: Who must approve business entertainment above the per-event threshold?
+
+3.  **Scan Documents for Information:**
+
+    *   *Document 1:* `01_brochure.md` (March 27, 2026). Section 14.2. Discusses economic benefits. Not relevant to gift limits or entertainment approval.
+    *   *Document 2:* `02_compliance_manual.md` (January 15, 2026).
+        *   Section 5.2 Gifts Received: "Supervised persons may not accept gifts from any single business contact... with an aggregate value exceeding $250 per calendar year."
+        *   Section 5.3 Entertainment: "Entertainment with a value exceeding $500 per person per event requires the prior approval of the CCO."
+    *   *Document 3:* `06_policy_update_memo.md` (August 14, 2026). Section 2. Amendments to the Compliance Manual.
+        *   Section 2.2 Gifts Received: "Effective September 1, 2026, supervised persons may not accept gifts from any single business contact with an aggregate value exceeding $100 per calendar year. The $100 limit supersedes the $250 limit stated in Section 5.2."
+        *   Note: The question asks for the current limit. Since this memo is dated August 14, 2026 (later than Jan 15, 2026), and states "Effective September 1, 2026", I need to determine if the new limit applies now or if the old one still applies for the current date context. However, usually in DDQs asking about policy limits, the *current effective* policy is required. The memo says "Effective September 1, 2026". Today's date isn't explicitly given, but the documents are dated March 27, 2026 (Brochure), Jan 15, 2026 (Manual), and Aug 14, 2026 (Memo). The Memo is the latest document. It amends Section 5.2.
+        *   Rule 3 says: "Later-dated documents supersede earlier ones. Where a policy update memorandum or amendment changes a provision, answer with the provision currently in effect, not the original."
+        *   The Memo (Aug 14, 2026) states the new limit is $100 effective Sept 1, 2026. Since the Memo itself is dated Aug 14,

@@ -1,0 +1,40 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Which pricing services does the Firm use to value fixed income securities, and which one is primary?"
+    *   Key information needed: Names of pricing services used, identification of the primary service.
+
+3.  **Scan the Documents:**
+    *   `01_brochure.md`: Discusses strategies (Core Fixed Income, Long Duration Credit, Insurance Core). No mention of specific pricing services.
+    *   `02_compliance_manual.md`: Discusses best execution review. No mention of pricing services.
+    *   `03_valuation_policy.md`:
+        *   Section 1.1 Purpose: Mentions determining fair value, ASC Topic 820.
+        *   Section 3.1 Hierarchy: Lists order of sources (exchange price, primary pricing service, secondary pricing service, broker quotations, Committee).
+        *   Section 3.2 Primary Pricing Service: "Lanthorn Evaluated Pricing, Inc. is the primary pricing service for all fixed income securities held by the Firm's clients..."
+        *   Section 3.3 Secondary Pricing Service: "Brayford Pricing Data LLC is the secondary pricing service."
+        *   Section 3.5 Instrument-Specific Sources: Mentions Treasury futures, swaps, money market funds, privately placed notes.
+        *   Section 3.6 New Issues: Mentions broker quotations or secondary pricing service if primary doesn't cover.
+
+4.  **Synthesize the Answer:**
+    *   Primary Service: Lanthorn Evaluated Pricing, Inc. (Section 3.2).
+    *   Secondary Service: Brayford Pricing Data LLC (Section 3.3).
+    *   Context: Used for fixed income securities (Section 3.2 explicitly says "for all fixed income securities held by the Firm's clients").
+    *   Document Date: `03_valuation_policy.md` dated February 10, 2026.
+    *   Other documents are earlier or irrelevant (`01_brochure.md` March 27, 2026 is later but doesn't contain pricing info; `02_compliance_manual.md` January 15, 2026). Wait, check dates.
+        *   `01_brochure.md`: March 27, 2026.
+        *   `02_compliance_manual.md`: January 15, 2026.
+        *   `03_valuation_policy.md`: February 10, 2026.
+    *   Rule 3: Later-dated documents supersede earlier ones. However, the question is about pricing services. Only `03_valuation_policy.md` contains this information. The brochure doesn

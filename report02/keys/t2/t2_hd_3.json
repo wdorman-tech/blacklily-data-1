@@ -1,0 +1,276 @@
+{
+ "pair_id": "t2_hd_3",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "The Home Depot, Inc.",
+ "ticker": "HD",
+ "split": "test",
+ "prior": {
+  "fiscal_year_end": "2025-02-02",
+  "url": "https://www.sec.gov/Archives/edgar/data/354950/000035495025000085/hd-20250202.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2026-02-01",
+  "url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026019436/hd-20260201.htm"
+ },
+ "words": 6730,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "modified",
+   "prior_heading": "Our business is subject to seasonal influences, and uncharacteristic or significant weather conditions, climate change, natural disasters, as well as other catastrophic or uncharacteristic events, could impact our operations and financial results.",
+   "current_heading": "Natural disasters, unseasonable, unexpected or extreme weather conditions, as well as other catastrophic or uncharacteristic events, could impact our operations and financial results, seasonal events such as storms may impact sales compared to prior periods, and the potential impacts of catastrophic or uncharacteristic events may lead to changes in demand or availability of products or cause business interruptions.",
+   "similarity": 0.638,
+   "diff": [
+    "replace: [Our business is subject to seasonal influences, and uncharacteristic] -> [Natural disasters, unseasonable, unexpected]",
+    "replace: [significant] -> [extreme]",
+    "delete: [climate change, natural disasters,] -> []",
+    "replace: [results.] -> [results, seasonal events such as storms may impact sales compared to prior periods, and the potential impacts of catastrophic or uncharacteristic events may lead to changes in demand or availability of products or cause business interruptions.]",
+    "insert: [] -> [tensions or conflicts,]",
+    "insert: [] -> [Table of Contents]",
+    "insert: [] -> [the]",
+    "replace: [disruption] -> [disruptions]",
+    "replace: [disruption] -> [disruptions]",
+    "insert: [] -> [Demand for certain of our products has historically been influenced by the occurrence of seasonal events, such as storms. The impact of these events on our sales varies depending on their location, frequency and magnitude. Sustained periods without such events can lead, and in the past have led, to ]",
+    "replace: [These] -> [Over time, these]",
+    "delete: [over time] -> []",
+    "..."
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds a new paragraph disclosing that demand depends on seasonal events such as storms and that sustained periods without such events have in the past led to lower sales versus prior periods, rewrites the headline around that point (dropping 'climate change' from it), and widens 'geopolitical or military conflicts' to include geopolitical tensions.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1 and 3: a new exposure (sales dependence on storm activity) is disclosed and characterized as already realized ('in the past have led to lower sales'), with the headline reframed accordingly."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1 and criterion 3: a new demand dependency on storm activity is disclosed and framed as realized ('in the past have led'), which goes beyond stylistic rewording."
+    }
+   }
+  },
+  {
+   "aid": "a02",
+   "status": "modified",
+   "prior_heading": "If we fail to identify and develop relationships with a sufficient number of qualified suppliers, or if our suppliers experience financial difficulties or other challenges, our ability to timely and efficiently access products that meet our high standards for quality could be adversely affected.",
+   "current_heading": "If we fail to identify and develop relationships with a sufficient number of qualified suppliers, or if our suppliers experience financial difficulties or other challenges, our ability to timely and efficiently access products that meet our high standards for quality could be adversely affected.",
+   "similarity": 0.983,
+   "diff": [
+    "replace: [satisfy] -> [meet]",
+    "insert: [] -> [tensions or conflicts,]",
+    "delete: [Table of Contents] -> []",
+    "replace: [practices;] -> [practices or operations;]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Widens the list of supply access disruptors from 'geopolitical or military conflicts' to 'geopolitical tensions or conflicts, or military conflicts' and extends supplier controversies from 'business practices' to 'business practices or operations', with 'satisfy' reworded to 'meet'.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 3: scope widened (geopolitical tensions and supplier operations added as sources of disruption), which is not identical in meaning, though the change is boilerplate and marginal."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: scope widened by adding geopolitical tensions and supplier operations as risk sources; the remaining 'satisfy' to 'meet' change is stylistic but the section contains both kinds."
+    }
+   }
+  },
+  {
+   "aid": "a03",
+   "status": "modified",
+   "prior_heading": "Failure to achieve and maintain a high level of product and service quality and safety and ensure compliance with responsible sourcing laws and standards could damage our reputation with customers, expose us to litigation or enforcement actions, and negatively impact our sales and results of operations.",
+   "current_heading": "Failure to achieve and maintain a high level of product and service quality and safety and ensure compliance with responsible sourcing laws and standards could damage our reputation with customers, expose us to litigation or enforcement actions, and negatively impact our sales and results of operations.",
+   "similarity": 0.381,
+   "diff": [
+    "delete: [instance, certain of the Company’s suppliers have also been involved in litigation or governmental enforcement actions related to perfluoroalkyl and polyfluoroalkyl substances, also known as “PFAS,” and we could be exposed to similar actions. For] -> []",
+    "insert: [] -> [Furthermore, our delivery operations and reliance on third-party carriers expose us to potential liability for property damage, personal injury, or vehicular accidents, which Table of Contents could result in financial losses and reputational harm.]",
+    "insert: [] -> [and services]",
+    "replace: [sourcing, which has been an increasing focus of government regulators.] -> [sourcing.]",
+    "delete: [the terms of] -> []",
+    "replace: [the] -> [applicable]",
+    "replace: [of the jurisdictions from which products and materials are sourced, regarding] -> [governing]",
+    "replace: [including] -> [such as]",
+    "replace: [We have a responsible sourcing audit process, but] -> [However,]",
+    "replace: [potential] -> [potential,]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Drops the disclosure that certain suppliers have faced PFAS litigation or enforcement actions to which the Company could be similarly exposed, adds a new liability risk from delivery operations and reliance on third-party carriers (property damage, personal injury, vehicular accidents), removes the statement that the Company has a responsible sourcing audit process, and drops the note that responsible sourcing is an increasing focus of government regulators.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1 and 2: a new exposure (delivery and carrier liability) is added, a named matter (PFAS supplier litigation) and a mitigating fact (the audit process) are removed, and regulatory focus language is softened."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1 and criterion 2: a new delivery and carrier liability exposure is disclosed, a named proceeding category (PFAS) is dropped, and a mitigating fact (the audit process) is removed."
+    }
+   }
+  },
+  {
+   "aid": "a04",
+   "status": "modified",
+   "prior_heading": "Our proprietary products subject us to certain increased risks, including regulatory, product liability, intellectual property, supplier relations, and reputational risks.",
+   "current_heading": "Our proprietary products subject us to certain increased risks, including regulatory, product liability, intellectual property, supplier relations, and reputational risks.",
+   "similarity": 0.993,
+   "diff": [
+    "delete: [Table of Contents] -> []"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The only change is removal of a 'Table of Contents' page-break artifact; the risk factor text is otherwise identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: page layout artifact only, equivalent to a formatting or cross-reference change with no change in substance."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: page-break formatting only, no change in substance under any criterion."
+    }
+   }
+  },
+  {
+   "aid": "a05",
+   "status": "unchanged",
+   "prior_heading": "If we are unable to effectively manage our installation services business, we could lose sales and be subject to fines, lawsuits, reputational damage or the loss of our general contractor licenses.",
+   "current_heading": "If we are unable to effectively manage our installation services business, we could lose sales and be subject to fines, lawsuits, reputational damage or the loss of our general contractor licenses.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a06",
+   "status": "modified",
+   "prior_heading": "Uncertainty regarding the housing and home improvement markets, economic conditions, political and social climate, public health issues, and other factors beyond our control could adversely affect demand for our products and services, our costs of doing business, and our financial performance.",
+   "current_heading": "Adverse conditions in or uncertainty regarding the housing and home improvement markets, economic conditions, political and social climate, public health issues, and other factors beyond our control could adversely affect demand for our products and services, our costs of doing business, and our financial performance.",
+   "similarity": 0.662,
+   "diff": [
+    "replace: [Uncertainty] -> [Adverse conditions in or uncertainty]",
+    "insert: [] -> [Table of Contents]",
+    "insert: [] -> [tariff and trade policy;]",
+    "insert: [] -> [or quarantines]",
+    "insert: [] -> [tensions or conflicts,]",
+    "delete: [and] -> []",
+    "insert: [] -> [and potential societal shifts in investment in large home improvement projects]",
+    "delete: [a number of merchandise categories were impacted by inflation in recent years due to, among other things, global supply chain disruptions and the uncertain economic and geopolitical environment. In an effort to address inflation, central banks raised interest rates. Notwithstanding recent rate cuts,] -> []",
+    "replace: [2024] -> [2025 and the significant increase in home prices in recent years have impacted housing affordability. Together, these factors have contributed to historically low levels of housing turnover, which]",
+    "replace: [adversely impacted and may continue to adversely impact] -> [reduced]",
+    "replace: [larger remodeling projects. Additionally, the inflationary outlook in the U.S. is currently uncertain,] -> [projects]",
+    "replace: [persistent or increasing inflation could lead to] -> [other purchases associated with buying and selling]",
+    "..."
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Replaces the inflation and rate-cut-reversal discussion with a new statement that the high interest rate environment throughout fiscal 2025 and a significant rise in home prices have impacted housing affordability and contributed to historically low housing turnover that has reduced demand, adds tariff and trade policy, quarantines, geopolitical tensions and potential societal shifts in investment in large home improvement projects as factors, and changes trade credit use by specialty trade and MRO customers from 'primarily' to 'increasingly'.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1, 2 and 3: new risks (tariff and trade policy, housing affordability and turnover, societal shifts in large project spending) are added, the inflation and rate reversal risk is dropped, and the demand impact is stated as realized ('has reduced demand')."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1 and criterion 3: new risks (housing affordability and turnover, tariffs, societal shifts in large projects) are disclosed as realized impacts while the inflationary outlook and rate-reversal risk are removed, beyond the fiscal 2024 to 2025 roll-forward."
+    }
+   }
+  },
+  {
+   "aid": "a07",
+   "status": "modified",
+   "prior_heading": "Our costs of doing business could increase as a result of changes in, expanded enforcement of, or adoption of new federal, state, local or international laws, regulations and executive orders.",
+   "current_heading": "Our costs of doing business could increase as a result of changes in, expanded enforcement of, or adoption of new federal, state, local or international laws, regulations and executive orders.",
+   "similarity": 0.809,
+   "diff": [
+    "delete: [Table of Contents] -> []",
+    "replace: [trade;] -> [trade and tariffs;]",
+    "delete: [While recent changes in the U.S. administration and Congress have and are expected to continue to lead to adoption and implementation of new laws, executive orders, regulations, policies, or reforms, the extent to which they will impact our business cannot be determined.] -> []",
+    "replace: [are increasingly focusing] -> [remain focused]",
+    "replace: [are likely to] -> [may]",
+    "replace: [pace,] -> [pace or scale,]",
+    "replace: [disclosure.] -> [disclosures.]",
+    "insert: [] -> [Table of Contents]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Drops the sentence that changes in the U.S. administration and Congress have led and are expected to lead to new laws and policies of undeterminable impact, adds tariffs to the regulated areas ('international trade' to 'international trade and tariffs'), and softens stakeholder focus from 'are increasingly focusing' to 'remain focused' and cost impact from 'are likely to continue' to 'may continue'.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2 and 3: a referenced development (the change in U.S. administration and Congress) is dropped, tariffs are added as a regulatory area, and the likelihood of continued cost increases is softened from 'likely' to 'may'."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1 and criterion 3: a previously disclosed regulatory development is removed, tariffs are added as a regulatory area, and the likelihood characterization is softened."
+    }
+   }
+  },
+  {
+   "aid": "a08",
+   "status": "modified",
+   "prior_heading": "If we cannot successfully manage the challenges presented by operating in international markets, we may not be successful in our international operations and our sales and profitability may be negatively impacted.",
+   "current_heading": "If we cannot successfully manage the challenges presented by operating in international markets, we may not be successful in our international operations and our sales and profitability may be negatively impacted.",
+   "similarity": 0.532,
+   "diff": [
+    "replace: [conduct retail operations] -> [operate]",
+    "insert: [] -> [tensions]",
+    "insert: [] -> [conflicts,]",
+    "replace: [our ability to identify] -> [identifying]",
+    "replace: [gain] -> [gaining]",
+    "replace: [China] -> [numerous other countries]",
+    "delete: [significant] -> []",
+    "insert: [] -> [since the beginning of fiscal 2025. Following the recent U.S. Supreme Court decision that struck down tariffs previously imposed under the International Emergency Economic Powers Act, there is additional uncertainty regarding the U.S. tariff regime,]",
+    "insert: [] -> [the imposition by the U.S. government of new or different]",
+    "replace: [have been recently proposed, and in some cases enacted, on imports from Mexico, Canada, China, and other countries.] -> [under different authority.]",
+    "delete: [Table of Contents] -> []"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds a reference to the recent U.S. Supreme Court decision striking down tariffs imposed under the International Emergency Economic Powers Act and the resulting uncertainty about new tariffs under different authority, broadens trade tensions from 'the U.S. and China' to 'the U.S. and numerous other countries' with tariffs since the beginning of fiscal 2025, drops 'significant' before tariffs, and removes the reference to tariffs proposed or enacted on imports from Mexico, Canada and China.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2 and 3: a new specific development (the Supreme Court IEEPA tariff decision) is referenced, the counterparty scope of trade tensions is widened beyond China, and 'significant' is removed from the tariff characterization."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 2 and criterion 3: a new specific proceeding (the Supreme Court IEEPA ruling) is referenced, the named counterparties change from China, Mexico and Canada to numerous other countries, and proposed tariffs are now described as enacted."
+    }
+   }
+  },
+  {
+   "aid": "a09",
+   "status": "modified",
+   "prior_heading": "The inflation or deflation of commodity and other prices could affect our prices, demand for our products, our sales and our profit margins.",
+   "current_heading": "The inflation or deflation of commodity and other prices could affect our prices, demand for our products, our sales and our profit margins.",
+   "similarity": 0.405,
+   "diff": [
+    "replace: [countries due to the change in the administration in the U.S.,] -> [countries,]",
+    "insert: [] -> [tensions or]",
+    "insert: [] -> [military conflicts or acts of war,]",
+    "insert: [] -> [in recent years,]",
+    "delete: [have] -> []",
+    "insert: [] -> [we are unable to mitigate the impact of]",
+    "replace: [exceeds our ability to manage related expenses,] -> [through vendor negotiations and other strategic initiatives,]",
+    "replace: [not be able] -> [need]",
+    "replace: [offset the increases without] -> [increase prices to a point which could]",
+    "replace: [impacting] -> [impact]",
+    "replace: [demand.] -> [demand for our products.]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Removes the attribution of trade policy changes to 'the change in the administration in the U.S.', adds geopolitical tensions and military conflicts or acts of war as price drivers, recasts the Europe and Middle East conflicts' inflationary effect as past ('in recent years ... exacerbated'), and replaces 'may not be able to offset the increases' with a new mitigation statement (vendor negotiations and other strategic initiatives) and a stated consequence that the Company may need to increase prices.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1, 2 and 3: a mitigating fact (vendor negotiations and strategic initiatives) is newly disclosed, a referenced development (the U.S. administration change) is dropped, and the conflict-driven inflation is moved from ongoing to past."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1 and criterion 2: a new mitigating fact (vendor negotiations and strategic initiatives) and a new price-increase response are disclosed, and the specific U.S. administration change is dropped as a cited driver."
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+*   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from a fund offering document into a specific JSON structure.
+    *   Constraints:
+        *   Accuracy is paramount. No invented terms.
+        *   Use `NOT_FOUND` if not stated.
+        *   Use `NOT_APPLICABLE` if stated as not applicable.
+        *   Amendments/Supplements supersede original text.
+        *   Report all variants for different share classes in one string.
+        *   Distinguish between commitment and current holding.
+        *   Citations must be section/appendix identifiers.
+        *   Quotes must be verbatim.
+        *   Output format: JSON only, no markdown, no preamble.
+
+    *   `fund_name`: Skelmorlie Ridge Multi-Strategy Fund, L.P. (Section 1.1, 2.2)
+    *   `fund_domicile`: Delaware (Section 1.1, 2.2)
+    *   `fund_structure`: Open-end, stand-alone (not master-feeder). (Section 1.2, 2.2)
+    *   `management_fee`: Class A: 2.00% on Capital Account NAV; Class B: 1.50% on Capital Account NAV; Founders Class: 1.00% on Capital Account NAV. (Section 2.3, 4.1)
+    *   `performance_fee`: Class A: 20%; Class B: 17.5%; Founders Class: 15%. (Section 2.3, 4.2)
+    *   `hurdle_rate`: None. (Section 2.2, 4.4)
+    *   `high_water_mark`: Loss Carryforward (functions as a high water mark, cumulative, does not reset or expire). (Section 4.3)
+    *   `minimum_initial_investment`: Class A: $5,000,000; Class B: $5,000,000; Founders Class: $10,000,000. (Section 2.2, 2.3, 5.2)
+    *   `lockup_period`: Class A: 12 months, soft; Class B: 24 months, hard; Founders Class: 36 months, hard. (Section 2.3, 6.1)
+    *   `redemption_frequency`: Quarterly. (Section

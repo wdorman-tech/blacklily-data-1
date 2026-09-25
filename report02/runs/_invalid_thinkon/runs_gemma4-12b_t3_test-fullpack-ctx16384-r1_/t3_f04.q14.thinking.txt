@@ -1,0 +1,33 @@
+*   Question: "After how many consecutive business days without a price change is a security flagged as stale?"
+    *   Constraint: Return only a JSON object.
+
+    *   Document 1: `01_valuation_policy.md`
+        *   Section 6.1: "A security whose price from its assigned source has not changed for five consecutive business days is flagged as stale."
+    *   Document 2: `04_business_continuity_plan.md` (Not relevant)
+    *   Document 3: `05_fee_schedule.md` (Not relevant)
+    *   Document 4: `06_policy_update_memo.md`
+        *   Section 3.1: "This Section 3.1 amends Section 6.1 (Stale Price Threshold) of the Valuation Policy and Procedures. Effective September 1, 2026, a security whose price from its assigned source has not changed for three consecutive business days is flagged as stale. The three-day threshold supersedes the five-day threshold stated in Section 6.1."
+
+    *   The original policy (01_valuation_policy.md) says 5 days.
+    *   The update memo (06_policy_update_memo.md) amends this to 3 days, effective September 1, 2026.
+    *   The question asks "After how many consecutive business days... is a security flagged as stale?"
+    *   Since the memo is dated August 14, 2026, and the update is effective September 1, 2026, the current/updated rule is 3 days. However, the prompt asks for the answer based on the documents.
+    *   Wait, the question is "After how many consecutive business days...".
+    *   In the original policy: 5.
+    *   In the update memo: 3.
+    *   The update memo explicitly states: "The three-day threshold supersedes the five-day threshold stated in Section 6.1."
+    *   Usually, in these tasks, if a memo updates a policy, the updated value is the current answer.
+    *   Let's look at the date of the memo: August 14, 2026. The update is effective September 1, 2026.
+    *   The question doesn't specify a date.
+    *   Let's check the wording of the memo again: "Effective September 1, 2026, a security whose price from its assigned study has not changed for three consecutive business days is flagged as stale."
+    *   The original policy says 5.
+    *   If I have to choose one, the most recent/current rule is 3.
+
+    *   "answer": "3" (or "three")
+    *   "source_document": "06_policy_update_memo.md"
+    *   "section": "Section 3.1"
+    *   "quote": "Effective September 1, 2026, a security whose price from its assigned source has not changed for three consecutive business days is flagged as stale."
+
+    *   Wait, let me double-check the original document.
+    *   01_valuation_policy.md, Section 6.1: "A security whose price from its assigned source has not changed for five consecutive business days is flagged as stale."
+    *   06_policy_update_

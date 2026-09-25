@@ -1,0 +1,38 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Where is the Adviser's alternate recovery site, who operates it, and how quickly can it be occupied?"
+    *   Required Information: Location, Operator, Occupancy Time.
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "alternate site", "recovery facility", "occupy", "available", "hours", "operator", "operated by".
+
+4.  **Evaluate Document Content:**
+
+    *   *Document 1:* `04_business_continuity_plan.md` (dated February 9, 2026)
+        *   Section: `SECTION 3. ALTERNATE SITE AND REMOTE OPERATIONS > 3.1 Alternate Site`
+        *   Text: "The Adviser subscribes to a workspace recovery facility in Norwalk, Connecticut, operated by Ravensholt Recovery Services LLC. The subscription provides eight dedicated seats... available within four hours of the Adviser's declaration of an SBD."
+        *   Location: Norwalk, Connecticut.
+        *   Operator: Ravensholt Recovery Services LLC.
+        *   Time: Within four hours.
+
+    *   *Document 2:* `06_policy_update_memo.md` (dated August 24, 2026)
+        *   Section: `SECTION 2. AMENDMENTS > 2.5 Business Continuity Plan Section 5.2 (IT Managed Service Provider)`
+        *   Text: "Effective September 1, 2026, Anselby Managed IT LLC replaces Oskerby Technology Group LLC... The backup platform, backup schedule and storage locations described in Section 6 of the Business Continuity Plan are unchanged."
+        *   This memo updates Section 5.2 (IT Managed Service Provider) but explicitly states "The backup platform, backup schedule and storage locations described in Section 6 of the Business Continuity Plan are unchanged." It does not mention changing the alternate site details (Section 3).
+        *   Since the question asks about the alternate recovery site (Section 3), and the memo only updates Section 5.2 (IT Managed Service Provider) and confirms Section 6 is unchanged, I need to check if Section 3 was updated. The memo title says "Amendments to Firm Policies and Fee Schedule". Section 2.5 specifically references "Business Continuity Plan Section 5.2". It does not mention Section 3.
+        *   Therefore, the information in `04_business_continuity_plan.md` regarding Section 3 remains valid unless superseded by a later document that changes Section 3. The memo says "This amendment supersedes Section 5.2 of the Business Continuity Plan." It does not mention superseding Section 3.
+        *   So

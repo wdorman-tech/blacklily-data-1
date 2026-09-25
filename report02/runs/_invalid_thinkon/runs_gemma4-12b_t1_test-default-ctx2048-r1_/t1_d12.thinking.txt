@@ -1,0 +1,82 @@
+The user wants a JSON object representing the information in the provided text.
+
+    *   *Document 1 (Implicitly Supplement No. 1 or a previous version):*
+        *   Section S-2 (implied by context of S-6): Management Fee for Class A (1.75%) and Class B (1.25%).
+        *   Section S-3: Redemption Notice Period (reduced from 90 to 60 days starting March 31, 2025).
+        *   Section S-4: Position limits (updated text regarding federal speculative limits).
+        *   AUM (as of Sept 30, 2024): ~$2.3 billion.
+
+    *   *Document 2 (Supplement No. 2 dated 1 July 2025):*
+        *   Section S-5: Introduction (precedes Supplement No. 1).
+        *   Section S-6: Class B Management Fee (reduced from 1.25% to 1.00% starting July 1, 2025).
+        *   Section S-7: Directors (Callum Aldersey resigned April 30, 2025; Ffion Latchmere appointed May 1, 2025).
+        *   Section S-8: General (AUM as of March 31, 2025: ~$2.6 billion).
+
+    *   Entity: Vessary Point Commodities Fund Ltd.
+    *   Documents:
+        1.  Confidential Offering Memorandum (March 1, 2024)
+        2.  Supplement No. 1 (December 2, 2024)
+        3.  Supplement No. 2 (July 1, 2025)
+    *   Key Changes/Data Points:
+        *   Management Fees (Class A, Class B)
+        *   Redemption Notice Period
+        *   Position Limits
+        *   AUM (at different dates)
+        *   Director Changes
+
+    *   *Structure:*
+        *   `fund_name`: "Vessary Point Commodities Fund Ltd."
+        *   `documents`: List of supplements.
+        *   `key_dates`: Dates of updates.
+        *   `fee_structure`: Class A and Class B.
+        *   `operational_changes`: Redemption notice, position limits.
+        *   `governance`: Director changes.
+        *   `assets_under_management`: List of dates and values.
+
+    *   *Refining the JSON structure:*
+        ```json
+        {
+          "fund_name": "Vessary Point Commodities Fund Ltd.",
+          "documents": [
+            {
+              "title": "Confidential Offering Memorandum",
+              "date": "2024-03-01"
+            },
+            {
+              "title": "Supplement No. 1",
+              "date": "2024-12-02"
+            },
+            {
+              "title": "Supplement No. 2",
+              "date": "2025-07-01"
+            }
+          ],
+          "management_fees": {
+            "class_a": {
+              "rate": "1.75% per annum",
+              "effective_date": "As per Supplement No. 1"
+            },
+            "class_b": {
+              "previous_rate": "1.25% per annum",
+              "new_rate": "1.00% per annum",
+              "effective_date": "2025-07-01"
+            }
+          },
+          "redemption_notice_period": {
+            "original_period": "90 calendar days",
+            "new_period": "60 calendar days",
+            "effective_date": "2025-03-31"
+          },
+          "position_limits": "Federal speculative position limits apply to core referenced futures contracts in agricultural, energy and metals commodities and to economically equivalent swaps, in addition to exchange limits.",
+          "governance": {
+            "resigned_directors": [
+              {
+                "name": "Callum Aldersey",
+                "resignation_date": "2025-04-30"
+              }
+            ],
+            "appointed_directors": [
+              {
+                "name": "Ffion Latchmere",
+                "appointment_date": "2025-05-01",
+                "

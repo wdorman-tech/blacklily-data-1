@@ -1,0 +1,25 @@
+*   Question: "When was the firm last examined by the SEC, and did that examination result in a deficiency letter?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer NOT_IN_DOCUMENTS.
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   `01_brochure.md`: Mentions "annual surprise examination by an independent public accountant" for trust assets, but doesn't mention an SEC examination date or deficiency letters.
+    *   `02_compliance_manual.md`:
+        *   Section 2.4: Mentions "custody examinations" in the compliance calendar.
+        *   Section 2.5: Mentions "Any Supervised Person who receives a... visit from the SEC... must refer it immediately to the CCO... The CCO prepares the Firm's written response to any deficiency letter within the time requested by the staff..."
+    *   `03_valuation_policy.md`: Mentions annual compliance review.
+    *   `06_policy_update_memo.md`: Mentions updates to pre-clearance rules and billing tiers.
+
+    *   The question asks for a specific date of the last SEC examination and whether it resulted in a deficiency letter.
+    *   `02_compliance_manual.md` Section 2.5 mentions that the CCO *prepares* responses to deficiency letters if they occur, but it does not state *when* the last examination occurred or if a deficiency letter was actually issued in a specific instance.
+    *   `01_brochure.md` mentions an examination by an independent public accountant, not the SEC.
+
+    *   The documents do not provide a specific date for the last SEC examination or state whether a deficiency letter was issued.
+
+    *   Answer: NOT_IN_DOCUMENTS
+    *   Source: ""
+    *   Section: ""
+    *   Quote: ""

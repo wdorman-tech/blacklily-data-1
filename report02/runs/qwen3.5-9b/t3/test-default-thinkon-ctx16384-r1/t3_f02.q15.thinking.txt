@@ -1,0 +1,62 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "In what year was the Funds' current fund administrator appointed?"
+
+3.  **Scan the Documents for Keywords:**
+    *   Keywords: "administrator", "appointed", "year", "date", "Carvell Brink Fund Services Ltd." (identified as Administrator in one doc).
+
+4.  **Review Document Content:**
+    *   `01_brochure.md` (March 27, 2026):
+        *   Item 15. Custody > 15.2 Administrator: "Carvell Brink Fund Services Ltd. (the "Administrator") serves as administrator to each of the Funds."
+        *   Does not mention when they were appointed or the year of appointment.
+    *   `03_valuation_policy.md` (November 3, 2025):
+        *   Section 1.2 Scope and Frequency: Mentions Administrator calculates NAV.
+        *   Section 8.2 Administrator: Describes Administrator's duties.
+        *   Does not mention appointment date or year.
+    *   `06_policy_update_memo.md` (August 24, 2026):
+        *   Preamble: Mentions amendments to policies, fee schedule, etc.
+        *   Does not mention administrator appointment date.
+
+5.  **Evaluate Findings:**
+    *   The documents identify the current Administrator ("Carvell Brink Fund Services Ltd.").
+    *   None of the documents state when this Administrator was appointed or the year of appointment.
+    *   Therefore, the information is not in the documents.
+
+6.  **Formulate Output:**
+    *   "answer": "NOT_IN_DOCUMENTS"
+    *   "source_document": ""
+    *   "section": ""
+    *   "quote": ""
+
+7.  **Final Check:**
+    *   Does any document mention a date related to the administrator's engagement?
+    *   `01_brochure.md` Item 4.2 mentions funds commenced trading (2017, 2018) and Co-Investment Fund formed (June 2024). It does not say when the Administrator was appointed.
+    *   `06_policy_update_memo.md` is a fictional memo about amendments.
+    *   Conclusion: Information is missing.
+
+8.  **Construct JSON:**
+    ```json
+    {
+      "answer": "NOT_IN_DOCUMENTS",
+      "source_document": "",
+      "section": "",
+      "quote": ""
+    }
+    ```
+    Wait, I need to ensure strict adherence to the instruction: "Return ONLY a JSON object. No markdown fence, no preamble, no commentary."
+
+    Let

@@ -1,0 +1,33 @@
+*   Question: "What is the recovery time objective for the Firm's order management and trading systems?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite document file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   `01_brochure.md`: Mentions "order management system" in Item 12.1, but doesn't mention "recovery time objective".
+    *   `02_compliance_manual.md`: Mentions "order management system" in Section 11.1, but doesn't mention "recovery time objective".
+    *   `03_valuation_policy.md`: No mention of "recovery time objective".
+    *   `04_business_continuity_plan.md`: Section 3.1 "Recovery Time and Recovery Point Objectives" table lists "Order management, trading platforms and market data" with a "Recovery time objective" of "4 hours".
+    *   `05_fee_schedule.md`: No mention of "recovery time objective".
+    *   `06_policy_update_memo.md`: Section 4.1 "Recovery Time Objective for Trading Systems" amends Section 3.1 of the Business Continuity Plan. It states: "Effective September 1, 2026, the recovery time objective for order management, trading platforms and market data is two hours from the declaration of a business disruption."
+
+    *   The original document (`04_business_continuity_plan.md`) says 4 hours.
+    *   The update memo (`06_policy_update_memo.md`) is dated August 14, 2026.
+    *   The update memo states: "Effective September 1, 2026, the recovery time objective for order management, trading platforms and market data is two hours from the declaration of a business disruption. The two-hour objective supersedes the four-hour objective stated in Section 3.1."
+    *   Since the question is asked in the context of the current state (and the memo is the latest document), the answer is "two hours".
+
+    *   Answer: two hours
+    *   Source: 06_policy_update_memo.md
+    *   Section: SECTION 4. AMENDMENT TO THE BUSINESS CONTINUITY PLAN
+    *   Quote: "Effective September 1, 2026, the recovery time objective for order management, trading platforms and market data is two hours from the declaration of a business disruption."
+
+    *   Wait, the question asks for the "recovery time objective for the Firm's order management and trading systems".
+    *   The memo says: "the recovery time objective for order management, trading platforms and market data is two hours".
+    *   The question asks for "order management and trading systems". The memo covers "order management, trading platforms and market data". This matches the scope.
+
+    *   Answer: two hours
+    *   Source: 06_policy_update_memo.md
+    *   Section: SECTION 4. AMENDMENT TO THE BUSINESS CONTINUITY PLAN
+    *   Quote: "Effective September 1, 2026, the recovery time objective for order management, trading platforms and market

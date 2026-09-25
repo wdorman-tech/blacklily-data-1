@@ -1,0 +1,179 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from the provided private fund offering document (Private Placement Memorandum).
+    *   Output Format: ONLY a JSON object. No markdown, no preamble, no commentary.
+    *   Constraints:
+        *   Accuracy is paramount. No guessing, no inferring market standards.
+        *   Every value must be supported by text in the document.
+        *   If not found: `NOT_FOUND`.
+        *   If not applicable: `NOT_APPLICABLE` (with quote).
+        *   Amendments/Supplements supersede original text. Report current effective terms.
+        *   Multiple variants (classes/tiers) must be reported in one value string.
+        *   Citations must be section/appendix identifiers from the document.
+        *   Quotes must be verbatim.
+    *   Fields to extract: `fund_name`, `fund_domicile`, `fund_structure`, `management_fee`, `performance_fee`, `hurdle_rate`, `high_water_mark`, `minimum_initial_investment`, `lockup_period`, `redemption_frequency`, `redemption_notice_days`, `gate_provision`, `key_man_provision`, `gp_commitment`, `fund_term`, `auditor`, `administrator`, `prime_broker`, `legal_counsel`, `mfn_election`.
+
+2.  **Scan the Document for Each Field:**
+
+    *   **fund_name**:
+        *   Search: "Quillmarsh Global Macro Fund, L.P." appears in the title and Section 1.1.
+        *   Quote: "QUILLMARSH GLOBAL MACRO FUND, L.P." (Title) or "Quillmarsh Global Macro Fund, L.P. (the "Fund" or the "Partnership")" (Section 1.1).
+        *   Citation: Title or Section 1.1. Let's use Section 1.1 for consistency with text body. Actually, the title is clearer. But Section 1.1 defines it. Let's look for the most explicit definition. "Quillmarsh Global Macro Fund, L.P. (the "Fund" or the "Partnership")".
+        *   Value: Quillmarsh Global Macro Fund, L.P.
+
+    *   **fund_domicile**:
+        *   Search: "Delaware", "Cayman Islands".
+        *   Section 1.1: "...organized on October 15, 2018 under the Delaware Revised Uniform Limited Partnership Act..."
+        *   Section 1.2: "...Quillmarsh Global Macro Master Fund, Ltd., a Cayman Islands exempted company..." (Master Fund).
+        *   The question asks for the "offered entity". Section 1.1 says "The Fund... is a limited partnership organized... under the Delaware Revised Uniform Limited Partnership Act".
+        *   Value: Delaware.
+        *   Citation: Section 1.1.
+        *   Quote: "...organized on October 15, 2018 under the Delaware Revised Uniform Limited Partnership Act..."
+
+    *   **fund_structure**:
+        *   Search: "Master-Feeder", "Limited Partnership".
+        *   Section 1.2: "The Fund invests substantially all of its assets in Quillmarsh Global Macro Master Fund, Ltd...". "Quillmarsh Global Macro Offshore Feeder... also invests substantially all of its assets in the Master Fund".
+        *   Structure: Closed-end (Limited Partnership), Master-Feeder.
+        *   Value: Closed-end; master-feeder.
+        *   Citation: Section 1.2.
+        *   Quote: "The Fund invests substantially all of its assets in Quillmarsh Global Macro Master Fund, Ltd...".
+
+    *   **management_fee**:
+        *   Search: "Management Fee", "annual rate".
+        *   Section 1.7: "...at an annual rate of 2.0% of the net asset value of each Class A capital account and 1.5% of the net asset value of each Class B capital account..."
+        *   Section 5.1 confirms this (and mentions monthly in advance).
+        *   Note: Section 14.4 says "Except as set forth in this Section 14, the terms described in this Memorandum, including the Management Fee... are unchanged." So original text stands.
+        *   Value: 2.0% of net asset value for Class A; 1.5% of net asset value for Class B.
+        *   Citation: Section 1.7 (or 5.1). Let's use 1.7 as it's in Summary.
+        *   Quote: "...at an annual rate of 2.0% of the net asset value of each Class A capital account and 1.5% of the net asset value of each Class B capital account..."
+
+    *   **performance_fee**:
+        *   Search: "Incentive Allocation", "Net Profits".
+        *   Section 1.8: "...20% of the Net Profits of each Class A capital account and 17.5% of the Net Profits of each Class B capital account..."
+        *   Section 5.2 confirms this.
+        *   Value: 20% for Class A; 17.5% for Class B.
+        *   Citation: Section 1.8.
+        *   Quote: "...20% of the Net Profits of each Class A capital account and 17.5% of the Net Profits of each Class B capital account..."
+
+    *   **hurdle_rate**:
+        *   Search: "hurdle", "preferred return".
+        *   Section 1.8: "The Incentive Allocation is not subject to any hurdle rate or preferred return."
+        *   Value: NOT_FOUND (or explicitly stated as none). The text says it is *not* subject to one. So the value for the field "hurdle_rate" should reflect that there isn't one, or state "None". However, the instruction says "If the document does not state a term, the value is exactly NOT_FOUND." If the document states it does not exist, is it NOT_FOUND or NOT_APPLICABLE?
+        *   Rule 3: "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE, and you say so in the quote."
+        *   Quote: "The Incentive Allocation is not subject to any hurdle rate or preferred return." (Section 1.8).
+        *   Value: NOT_APPLICABLE.
+
+    *   **high_water_mark**:
+        *   Search: "Loss Carryforward", "High Water Mark".
+        *   Section 1.9: "No Incentive Allocation is made with respect to a capital account until prior Net Losses allocated to it have been recovered." (Implies loss carryforward).
+        *   Section 5.3: "A memorandum account (the "Loss Carryforward") is maintained for each capital account... The Loss Carryforward is not reset at fiscal year end or otherwise."
+        *   Value: Yes, Loss Carryforward; Perpetual (not reset).
+        *   Citation: Section 5.3.
+        *   Quote: "The Loss Carryforward is not reset at any time and is reduced proportionately upon a partial redemption." (Section 1.9) or "The Loss Carryforward is not reset at fiscal year end or otherwise." (Section 5.3). Let's use Section 5.3 for the reset detail.
+        *   Wait, Rule 4: Amendments supersede. Section 14 says terms unchanged regarding fees/lockup/etc. Does it mention High Water Mark? No. So original text applies.
+        *   Value: Loss Carryforward; perpetual (not reset).
+        *   Citation: Section 5.3.
+        *   Quote: "The Loss Carryforward is not reset at fiscal year end or otherwise."
+
+    *   **minimum_initial_investment**:
+        *   Search: "Minimum Investment".
+        *   Section 1.6: "The minimum initial investment is $1,000,000 for each class of Interests."
+        *   Value: $1,000,000.
+        *   Citation: Section 1.6.
+        *   Quote: "The minimum initial investment is $1,000,000 for each class of Interests."
+
+    *   **lockup_period**:
+        *   Search: "Lock-Up".
+        *   Section 1.10: "Class A Interests are subject to a 12-month soft lock-up... Class B Interests are subject to a 24-month hard lock-up..."
+        *   Section 14.4 says terms unchanged (including lock-up).
+        *   Value: Class A: 12-month soft lock-up; Class B: 24-month hard lock-up.
+        *   Citation: Section 1.10.
+        *   Quote: "Class A Interests are subject to a 12-month soft lock-up... Class B Interests are subject to a 24-month hard lock-up..."
+
+    *   **redemption_frequency**:
+        *   Search: "Redeem", "Redemption Date".
+        *   Section 1.11: "...redeem as of the last Business Day of each calendar month..."
+        *   Value: Monthly (last Business Day of each calendar month).
+        *   Citation: Section 1.11.
+        *   Quote: "...redeem as of the last Business Day of each calendar month..."
+
+    *   **redemption_notice_days**:
+        *   Search: "notice".
+        *   Section 1.11: "...on at least 30 days' prior written notice to the Administrator."
+        *   Section 7.2: "...at least 30 days before the applicable Redemption Date."
+        *   **CRITICAL UPDATE**: Section 14.1 "The notice period for redemptions is increased from 30 days to 45 days. A written redemption request for any Redemption Date falling on or after August 31, 2026 must be received by the Administrator at least 45 days before that Redemption Date."
+        *   Section 14 controls (Rule 4).
+        *   Value: 45 days.
+        *   Citation: Section 14.1.
+        *   Quote: "The notice period for redemptions is increased from 30 days to 45 days."
+
+    *   **gate_provision**:
+        *   Search: "Gate".
+        *   Section 1.12: "None." (Original text).
+        *   Section 7.4: "The Fund does not impose a gate." (Original text).
+        *   **CRITICAL UPDATE**: Section 14.2 "The Fund now imposes a fund-level gate as of each Redemption Date falling on or after July 31, 2026. If aggregate redemption requests... exceed 15%..."
+        *   Section 14 controls (Rule 4).
+        *   Value: Fund-level gate at 15% NAV threshold.
+        *   Citation: Section 14.2.
+        *   Quote: "If aggregate redemption requests of all Limited Partners as of any Redemption Date exceed 15% of the net asset value of the Fund as of that Redemption Date... the General Partner may reduce each request pro rata..."
+
+    *   **key_man_provision**:
+        *   Search: "Key Person".
+        *   Section 1.13: "If Matthias Orlev dies, becomes incapacitated or ceases to direct the investment program..."
+        *   Section 4.3: Defines Key Person Event (Matthias Orlev).
+        *   Value: Matthias Orlev; triggers redemption rights.
+        *   Citation: Section 1.13.
+        *   Quote: "If Matthias Orlev dies, becomes incapacitated or ceases to direct the investment program of the Master Fund, Limited Partners will be notified and may redeem on the special terms described in Section 4.4."
+
+    *   **gp_commitment**:
+        *   Search: "commitment", "General Partner".
+        *   Section 1.14: "...None of them has committed to make or maintain any investment..." (Refers to GP/IM principals).
+        *   Is there a specific GP commitment amount?
+        *   Scan for "GP commitment" or "sponsor commitment".
+        *   Section 1.3 mentions Matthias Orlev is managing member.
+        *   No specific dollar amount commitment found for the GP itself in the text provided.
+        *   Value: NOT_FOUND.
+        *   Citation: "".
+
+    *   **fund_term**:
+        *   Search: "Term".
+        *   Section 1.15: "The Fund has no fixed term and will continue until dissolved..."
+        *   Value: Perpetual (no fixed term).
+        *   Citation: Section 1.15.
+        *   Quote: "The Fund has no fixed term and will continue until dissolved in accordance with the Partnership Agreement."
+
+    *   **auditor**:
+        *   Search: "Auditor".
+        *   Section 1.17: "Independent auditor: Brennick Tallow LLP (the Fund)..."
+        *   **CRITICAL UPDATE**: Section 14.3 "The General Partner has appointed Marbeck Pennycott LLP as independent auditor of the Fund... replacing Brennick Tallow LLP... with effect from the Effective Date, beginning with the fiscal year ending December 31, 2026."
+        *   Section 14 controls (Rule 4).
+        *   Value: Marbeck Pennycott LLP.
+        *   Citation: Section 14.3.
+        *   Quote: "The General Partner has appointed Marbeck Pennycott LLP as independent auditor of the Fund..."
+
+    *   **administrator**:
+        *   Search: "Administrator".
+        *   Section 1.17: "Administrator: Stellmoor Fund Services Ltd."
+        *   Section 13.7 confirms this.
+        *   No amendment in Section 14 regarding Administrator.
+        *   Value: Stellmoor Fund Services Ltd.
+        *   Citation: Section 1.17.
+        *   Quote: "Administrator: Stellmoor Fund Services Ltd."
+
+    *   **prime_broker**:
+        *   Search: "Prime brokers".
+        *   Section 1.17: "Prime brokers: Kittering Hale Securities LLC and Mallory Quenby & Co. LLC."
+        *   Section 13.8 confirms this.
+        *   No amendment in Section 14 regarding Prime Brokers.
+        *   Value: Kittering Hale Securities LLC and Mallory Quenby & Co. LLC.
+        *   Citation: Section 1.17.
+        *   Quote: "Prime brokers: Kittering Hale Securities LLC and Mallory Quenby & Co. LLC."
+
+    *   **legal_counsel**:
+        *   Search: "Legal counsel".
+        *   Section 1.17: "Legal counsel: Tregarth Ellingsby LLP (United States) and Carrick Mowbray (Cayman Islands)."
+        *   Section 13.10 confirms this.
+        *   No amendment in Section 14 regarding Legal Counsel.
+        *   Value: Tregarth Ellingsby LLP (United States) and Carrick Mowbray (Cayman

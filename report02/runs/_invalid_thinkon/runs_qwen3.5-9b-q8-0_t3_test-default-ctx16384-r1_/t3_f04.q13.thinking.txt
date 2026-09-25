@@ -1,0 +1,31 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question using *only* the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "What were the Firm's regulatory assets under management at the most recent year end, and how much was discretionary versus non-discretionary?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "regulatory assets under management", "AUM", "discretionary", "non-discretionary", "year end".
+
+3.  **Evaluate Document Content:**
+    *   `01_brochure.md`:
+        *   Section: Item 2. Material Changes > 2.1 Changes Since the Last Annual Amendment (dated March 27, 2026). Mentions Item 4 reports regulatory assets under management as of December 31, 2025.
+        *   Section: Item 4. Advisory Business > 4.5 Assets Under Management (dated March 27, 2026).
+            *   Text: "As of December 31, 2025, the Firm had regulatory assets under management of approximately $16,418 million, of which $15,962 million was managed on a discretionary basis and $456 million on a non-discretionary basis."
+    *   `02_compliance_manual.md`: Privacy section. Irrelevant.
+    *   `05_fee_schedule.md`: Fee schedules. Mentions non-discretionary fees range, but not AUM totals.
+    *   `06_policy_update_memo.md`: Compliance Memorandum dated August 14, 2026. This is a later document than the brochure (March 27, 2026). However, it is an amendment memo regarding policies, valuation, business continuity, and fee schedule. It does not contain updated AUM figures. The AUM figure in the brochure is dated December 31, 2025. The question asks for "the most recent year end". The brochure explicitly states "As of December 31, 2025... regulatory assets under management". There are no other documents providing a more recent year-end AUM figure (e.g., 2026). The memo is dated August 2026 but discusses policy amendments, not updated financials like AUM.
+    *   Rule 3: "Later-dated documents supersede earlier ones. Where a policy update memorandum or amendment changes a provision, answer with the provision currently in effect, not the original."
+        *   Does the memo change the AUM provision? No. It amends policies, valuation, BCP, and Fee Schedule. It does not update the AUM figure found in the brochure.
+        *   Therefore, the information in `01_brochure.md` Section 4.5 is the correct source for the AUM data.
+
+4.  **Formulate the Answer:**

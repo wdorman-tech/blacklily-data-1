@@ -1,0 +1,4 @@
+Launched 2026-09-23 14:50 as the resident rerun (--run ctl, no --num-gpu), but Ollama reused the
+already-loaded gpu24 runner because the request did not set num_gpu (see _manifest.json loaded:
+4.46 of 9.00 GB in VRAM). It is therefore a second spilled run. Stopped by hand after 2 items,
+both byte-identical to the first spilled run. Renamed from test-default-thinkoff-ctx16384-ctl.

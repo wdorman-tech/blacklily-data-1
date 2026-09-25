@@ -1,0 +1,138 @@
+*   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from a fund offering document into a JSON object.
+    *   Constraints:
+        *   Accuracy is paramount. No invented terms.
+        *   Use `NOT_FOUND` if not stated.
+        *   Use `NOT_APPLICABLE` if stated as not applicable.
+        *   Amendments/Supplements (like the Side Letter) supersede original text.
+        *   Report all variants (share class, etc.) in one string.
+        *   Distinguish between commitment and current holding.
+        *   Citations must be section/appendix identifiers.
+        *   Quotes must be verbatim.
+        *   Output format: JSON only, no markdown, no preamble.
+
+    *   `fund_name`: "Brackenholt Senior Lending Fund, LP" (Section 1.1, Title).
+    *   `fund_domicile`: "Delaware" (Title, Section 1.1, Section 2.1).
+    *   `fund_structure`: "open-end, evergreen vehicle" (Section 2.1). Not a master-feeder (Section 2.1).
+    *   `management_fee`:
+        *   Standard: "1.25% per annum of net asset value" (Section 1.1, Section 4.1).
+        *   Side Letter (Hallowby College): "0.95% of the net asset value of that Capital Account" (Appendix B, Section 1).
+        *   *Note:* The prompt says "Give every class or tier."
+    *   `performance_fee`:
+        *   Income: "12.5% of Pre-Incentive Fee Net Investment Income over a 1.25% quarterly Hurdle Rate with a full catch-up" (Section 1.1).
+        *   Capital Gains: "12.5% of cumulative net realized capital gains" (Section 1.1, Section 4.2).
+        *   *Note:* Side Letter says "The Incentive Fee shall apply to the Investor's Capital Account without modification." (Appendix B, Section 1).
+    *   `hurdle_rate`:
+        *   Income: "1.25% per quarter (5.0% annualized)" (Section 4.3).
+        *   Capital Gains: "The Capital Gains Incentive Fee has no hurdle or catch-up" (Section 4.4).
+    *   `high_water_mark`:
+        *   Income: "There is no high-water mark, look-back or loss carryforward with respect to the Income Incentive Fee" (Section 4.3).
+        *   Capital Gains: "The Loss Carryforward is perpetual and is not reset at year end or upon the admission or repurchase of Limited Partners." (Section 4.4).
+    *   `minimum_initial_investment`: "$1,000,000 initial" (Section 1.1, Section 5.2).
+    *   `lockup_period`:
+        *   Hard lock: "There is no hard lock-up." (Section 6.4).
+        *   Soft lock (Early Repurchase Deduction): "2.0% of the net asset value of the Interests repurchased" (Section 6.4).
+        *   *Note:* Side Letter waives this for Hallowby College (Appendix B, Section 2).
+    *   `redemption_frequency`: "quarterly repurchase offers" (Section 1.1, Section 6.1).
+    *   `redemption_notice_days`: "60 days" (Section 6.2).
+    *   `gate_provision`: "limited to 5.0% of net asset value per quarter" (Section 1.1, Section 6.3).
+    *   `key_man_provision`: "The Partnership Agreement does not contain a key person provision." (Section 3.2).
+    *   `gp_commitment`: "Neither the General Partner nor the Adviser has made, or is required to make or maintain, any capital commitment to the Fund." (Section 3.3).
+    *   `fund_term`: "Evergreen, with no fixed term" (Section 1.1).
+    *   `auditor`: "Tessier Mulvane LLP" (Section 8.2, Appendix A).
+    *   `administrator`: "Rendlesham Fund Services, LLC" (Section 8.1, Appendix A).
+    *   `prime_broker`: "The Fund does not engage a prime broker." (Section 8.5).
+    *   `legal_counsel`: "Pellow Ainsworth LLP" (Section 8.4, Appendix A).
+    *   `mfn_election`: "Each Limited Partner whose aggregate subscriptions to the Fund, net of amounts repurchased, equal or exceed $25,000,000 (an "MFN Investor") may elect the benefit of any side letter term granted after the Initial Closing Date to another Limited Partner whose net subscriptions are equal to or less than its own." (Section 7.2).
+
+    *   `fund_name`: "Brackenholt Senior Lending Fund, LP" (Section 1.1).
+    *   `fund_domicile`: "Delaware" (Section 1.1).
+    *   `fund_structure`: "open-end, evergreen vehicle; not a master-feeder" (Section 2.1).
+    *   `management_fee`: "1.25% per annum of net asset value (Section 4.1); 0.95% of the net asset value of that Capital Account for Hallowby College (Appendix B, Section 1)".
+    *   `performance_fee`: "12.5% of Pre-Incentive Fee Net Investment Income over a 1.25% quarterly Hurdle Rate with a full catch-up (Section 1.1); 12.5% of cumulative net realized capital gains (Section 1.1, Section 4.2)".
+    *   `hurdle_rate`: "1.25% per quarter (5.0% annualized) (Section 4.3); Capital Gains Incentive Fee has no hurdle or catch-up (Section 4.4)".
+    *   `high_water_mark`: "There is no high-water mark, look-back or loss carryforward with respect to the Income Incentive Fee (Section 4.3); The Loss Carryforward [for Capital Gains Incentive Fee] is perpetual and is not reset at year end or upon the admission or repurchase of Limited Partners (Section 4.4)".
+    *   `minimum_initial_investment`: "$1,000,000 initial (Section 1.1, Section 5.2)".
+    *   `lockup_period`: "No hard lock-up (Section 6.4); 2.0% Early Repurchase Deduction within one year of issuance (Section 6.4); Early Repurchase Deduction shall not apply to any Interests held by the Investor [Hallowby College] (Appendix B, Section 2)".
+    *   `redemption_frequency`: "quarterly repurchase offers (Section 1.1, Section 6.1)".
+    *   `redemption_notice_days`: "60 days (Section 6.2)".
+    *   `gate_provision`: "limited to 5.0% of net asset value per quarter (Section 1.1, Section 6.3)".
+    *   `key_man_provision`: "The Partnership Agreement does not contain a key person provision (Section 3.2)".
+    *   `gp_commitment`: "Neither the General Partner nor the Adviser has made, or is required to make or maintain, any capital commitment to the Fund (Section 3.3)".
+    *   `fund_term`: "Evergreen, with no fixed term (Section 1.1, Section 12.2)".
+    *   `auditor`: "Tessier Mulvane LLP (Section 8.2, Appendix A)".
+    *   `administrator`: "Rendlesham Fund Services, LLC (Section 8.1, Appendix A)".
+    *   `prime_broker`: "The Fund does not engage a prime broker (Section 8.5)".
+    *   `legal_counsel`: "Pellow Ainsworth LLP (Section 8.4, Appendix A)".
+    *   `mfn_election`: "Each Limited Partner whose aggregate subscriptions to the Fund, net of amounts repurchased, equal or exceed $25,000,000 (an \"MFN Investor\") may elect the benefit of any side letter term granted after the Initial Closing Date to another Limited Partner whose net subscriptions are equal to or less than its own (Section 7.2)".
+
+    *   *Management Fee:* The prompt asks for "every class or tier". The standard is 1.25%, the Hallowby tier is 0.95%.
+    *   *Performance Fee:* Two components (Income and Capital Gains).
+    *   *Hurdle Rate:* Income has a hurdle, Capital Gains does not.
+    *   *High Water Mark:* Income has no HWM, Capital Gains has a "Loss Carryforward" (which is the mechanism for HWM/LCR).
+    *   *Lock-up:* Need to mention the 2% deduction as the "soft" lock and the waiver in the side letter.
+    *   *Gate:* 5% of NAV.
+    *   *Key Man:* Explicitly stated as not existing.
+    *   *GP Commitment:* Explicitly stated as none.
+    *   *Prime Broker:* Explicitly stated as none.
+
+    *   *Refining Management Fee:* "1.25% per annum of net asset value (Section 4.1); 0.95% of the net asset value of that Capital Account (Appendix B, Section 1)"
+    *   *Refining Performance Fee:* "12.5% of Pre-Incentive Fee Net Investment Income over a 1.25% quarterly Hurdle Rate with a full catch-up (Section 1.1); 12.5% of cumulative net realized capital gains (Section 1.1, Section 4.2)"
+    *   *Refining Hurdle Rate:* "1.25% per quarter (5.0% annualized) (Section 4.3); Capital Gains Incentive Fee has no hurdle or catch-up (Section 4.4)"
+    *   *Refining High Water Mark:* "There is no high-water mark, look-back or loss carryforward with respect to the Income Incentive Fee (Section 4.3); The Loss Carryforward [for Capital Gains Incentive Fee] is perpetual and is not reset at year end or upon the admission or repurchase of Limited Partners (Section 4.4)"
+    *   *Refining Lock-up:* "No hard lock-up (Section 6.4); 2.0% Early Repurchase Deduction within one year of issuance (Section 6.4); Early Repurchase Deduction shall not apply to any Interests held by the Investor [Hallowby College] (Appendix B, Section 2)"
+    *   *Refining Gate:* "limited to 5.0% of net asset value per quarter (Section 1.1, Section 6.3)"
+
+    *   *Wait, check "mfn_election" requirement:* "Whether a most favored nation election on side letters is offered, and its scope."
+    *   *Quote for MFN:* "Each Limited Partner whose aggregate subscriptions to the Fund, net of amounts repurchased, equal or exceed $25,000,000 (an \"MFN Investor\") may elect the benefit of any side letter term granted after the Initial Closing Date to another Limited Partner whose net subscriptions are equal to or less than its own." (Section 7.2).
+
+    *   *Check "fund_structure" requirement:* "Open-end (redeemable) or closed-end (drawdown, no redemptions), and whether master-feeder."
+    *   *Quote for Structure:* "The Fund is structured as an open-end, evergreen vehicle: it has no fixed term, it does not call capital from Limited Partners in drawdowns... It is not a feeder fund, does not invest through a master fund and has no feeder funds of its own." (Section 2.1).
+
+    *   *Check "management_fee" requirement:* "Annual management fee rate AND the basis it is charged on. Give every class or tier."
+    *   *Quote for Management Fee:* "1.25% per annum of net asset value (Section 4.1); 0.95% of the net asset value of that Capital Account (Appendix B, Section 1)"
+
+    *   *Check "performance_fee" requirement:* "Performance allocation / incentive allocation / carried interest rate. Give every class."
+    *   *Quote for Performance Fee:* "12.5% of Pre-Incentive Fee Net Investment Income over a 1.25% quarterly Hurdle Rate with a full catch-up (Section 1.1); 12.5% of cumulative net realized capital gains (Section 1.1, Section 4.2)"
+
+    *   *Check "hurdle_rate" requirement:* "Preferred return, hurdle or benchmark the performance fee is subject to. State the type (hard/soft, catch-up) if given."
+    *   *Quote for Hurdle Rate:* "1.25% per quarter (5.0% annualized) (Section 4.3); The Capital Gains Incentive Fee has no hurdle or catch-up (Section 4.4)"
+
+    *   *Check "high_water_mark" requirement:* "Whether a high water mark or loss carryforward applies, and whether it is perpetual or resets."
+    *   *Quote for High Water Mark:* "There is no high-water mark, look-back or loss carryforward with respect to the Income Incentive Fee (Section 4.3); The Loss Carryforward is perpetual and is not reset at year end or upon the admission or repurchase of Limited Partners (Section 4.4)"
+
+    *   *Check "lockup_period" requirement:* "Lock-up. Distinguish a hard lock from a soft lock (early redemption charge). Give every class."
+    *   *Quote for Lock-up:* "There is no hard lock-up (Section 6.4); 2.0% Early Repurchase Deduction within one year of issuance (Section 6.4); Early Repurchase Deduction shall not apply to any Interests held by the Investor (Appendix B, Section 2)"
+
+    *   *Check "gate_provision" requirement:* "Redemption gate: level (fund or investor) and threshold."
+    *   *Quote for Gate:* "limited to 5.0% of net asset value per quarter (Section 1.1, Section 6.3)"
+
+    *   *Check "key_man_provision" requirement:* "Key person clause: who is named and what it triggers."
+    *   *Quote for Key Man:* "The Partnership Agreement does not contain a key person provision (Section 3.2)"
+
+    *   *Check "gp_commitment" requirement:* "Required GP / sponsor / manager commitment. A disclosed current holding is NOT a commitment."
+    *   *Quote for GP Commitment:* "Neither the General Partner nor the Adviser has made, or is required to make or maintain, any capital commitment to the Fund (Section 3.3)"
+
+    *   *Check "fund_term" requirement:* "Term of the fund, including extensions, or perpetual."
+    *   *Quote for Fund Term:* "Evergreen, with no fixed term (Section 1.1); The Fund has no fixed term and will continue until dissolved (Section 12.2)"
+
+    *   *Check "auditor" requirement:* "Independent registered public accounting firm CURRENTLY appointed."
+    *   *Quote for Auditor:* "Tessier Mulvane LLP (Section 8.2, Appendix A)"
+
+    *   *Check "administrator" requirement:* "Fund administrator."
+    *   *Quote for Administrator:* "Rendlesham Fund Services, LLC (Section 8.1, Appendix A)"
+
+    *   *Check "prime_broker" requirement:* "Prime broker(s)."
+    *   *Quote for Prime Broker:* "The Fund does not engage a prime broker (Section 8.5)"
+
+    *   *Check "legal_counsel" requirement:* "Law firm(s) acting as counsel to the fund."
+    *   *Quote for Legal Counsel:* "Pellow Ainsworth LLP (Section 8.4, Appendix A)"
+
+    *   *Check "mfn_selection" requirement:* "Whether a most favored nation election on side letters is offered, and its scope."
+    *   *Quote for MFN:* "Each Limited Partner whose aggregate subscriptions to the Fund, net of amounts repurchased, equal or exceed $25,000,000 (an \"MFN Investor\") may elect the benefit of any side letter term granted after the Initial Closing Date to another Limited Partner whose net subscriptions are equal to or less than its own (Section 7.2)"
+
+    *   *Refining "fund_structure" value:* "open-end, evergreen vehicle; not a master-feeder"
+    *   *Refining "management_fee" value:* "1.25% per annum of net asset value (Section 4.1); 0.95% of the net asset value of that Capital Account (Appendix B, Section 1)"
+    *   *Refining "performance_fee" value:* "12.5% of Pre-Incentive Fee Net Investment Income over a 1.25% quarterly Hurdle Rate with a full catch-up (Section 1.1); 12.5% of cumulative net realized capital gains (Section 1.1, Section 4.2)"
+    *   *Refining "hurdle_rate" value:* "1.25% per quarter (5.0% annualized) (Section 4.3); The Capital Gains Incentive Fee has no hurdle or catch-up (Section 4.4)"
+    *   *Refining "high_water_mark" value:* "There is no high-water mark, look-back or loss carryforward with respect to the Income Incentive Fee (Section 4.3); The Loss Carryforward

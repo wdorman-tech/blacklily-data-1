@@ -1,0 +1,172 @@
+*   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from a fund offering document into a specific JSON structure.
+    *   Constraints:
+        *   Accuracy is paramount. No invented terms.
+        *   Use `NOT_FOUND` if not stated.
+        *   Use `NOT_APPLICABLE` if stated as not applicable.
+        *   Amendments/supplements override original text.
+        *   Report all variants (share class, etc.) in one string.
+        *   Distinguish between commitment and current holding.
+        *   Citations must be section/appendix identifiers.
+        *   Quotes must be verbatim.
+        *   Output format: JSON only, no markdown, no preamble.
+
+    *   `fund_name`: "Meridian Ridge Global Opportunities Fund, L.P." (Section 1.1)
+    *   `fund_domicile`: "Delaware" (Section 1.1 - "organized under the Delaware Revised Uniform Limited Partnership Act").
+    *   `fund_structure`: "master-feeder" (Section 1.1). "open-end" (Section 7.1).
+    *   `management_fee`:
+        *   Class A: 1.75% of net asset value.
+        *   Class B: 1.25% of net asset value.
+        *   (Section 4.1)
+    *   `performance_fee`: 20% of the Net Profits. (Section 4.2)
+    *   `hurdle_rate`: "not subject to a preferred return, hurdle rate or benchmark." (Section 4.2)
+    *   `high_water_mark`: "perpetual high water mark on a per-investor basis." (Section 4.3)
+    *   `minimum_initial_investment`: "$2,000,000" (Section 2.2).
+    *   `lockup_period`:
+        *   Class A: 12 months.
+        *   Class B: 24 months.
+        *   (Section 5.1)
+    *   `redemption_frequency`: "last business day of each calendar quarter" (Section 5.2).
+    *   `redemption_notice_days`: "ninety (90) calendar days" (Section 5.3).
+    *   `gate_provision`: "20% of the Partnership's net asset value" (Section 5.5). "investor-level gate at the Partnership level".
+    *   `key_man_provision`: "Dr. Elena Vasquez-Hartmann". Trigger: "ceases for any reason to devote substantially all of her business time to the affairs of the Investment Manager and the Partnership". Effect: "right to redeem all or any portion of its Interests as of the last business day of the calendar quarter following the quarter in which notice is given, without regard to any unexpired lock-up period, without payment of any early redemption fee, and without application of the Gate". (Section 6.2)
+    *   `gp_commitment`: "greater of $25,000,000 or 2% of the aggregate net asset value of the Master Fund". (Section 6.3)
+    *   `fund_term`: "perpetual term". (Section 7.1)
+    *   `auditor`: "Thornbury & Associates LLP". (Section 9.2)
+    *   `administrator`: "Calderon Fund Services (Cayman) Ltd." (Section 9.1)
+    *   `prime_broker`: "Harrington Sloan Securities LLC and Beaumont Clarke International Ltd." (Section 9.3)
+    *   `legal_counsel`: "Whitlock Barr & Nunes LLP" (U.S. counsel), "Kentish Drummond (Cayman)" (Cayman Islands counsel). (Section 9.4)
+    *   `mfn_election`: "The Partnership does not offer a 'most favored nation' election to Limited Partners." (Section 8.2)
+
+    *   `fund_name`:
+        *   Value: "Meridian Ridge Global Opportunities Fund, L.P."
+        *   Citation: "Section 1.1"
+        *   Quote: "Meridian Ridge Global Opportunities Fund, L.P. (the \"Partnership\" or the \"Fund\")"
+    *   `fund_domicile`:
+        *   Value: "Delaware"
+        *   Citation: "Section 1.1"
+        *   Quote: "organized under the Delaware Revised Uniform Limited Partnership Act"
+    *   `fund_structure`:
+        *   Value: "open-end, master-feeder"
+        *   Citation: "Section 1.1, Section 7.1"
+        *   Quote: "The Partnership operates as a \"master-feeder\" structure. ... The Partnership is an open-end vehicle and is not subject to a fixed termination date, an investment period, or a harvest period."
+    *   `management_fee`:
+        *   Value: "Class A: 1.75% of the net asset value; Class B: 1.25% of the net asset value"
+        *   Citation: "Section 4.1"
+        *   Quote: "With respect to Class A Interests, the Management Fee is charged at an annual rate of 1.75% of the net asset value of each Limited Partner's capital account... With respect to Class B Interests, the Management Fee is charged at an annual rate of 1.25% of the net asset value of each Limited Partner's capital account"
+    *   `performance_fee`:
+        *   Value: "20% of the Net Profits"
+        *   Citation: "Section 4.2"
+        *   Quote: "equal to 20% of the Net Profits allocated to such capital account for such Performance Period"
+    *   `hurdle_rate`:
+        *   Value: "NOT_APPLICABLE"
+        *   Citation: "Section 4.2"
+        *   Quote: "The Performance Allocation is not subject to a preferred return, hurdle rate or benchmark."
+    *   `high_water_mark`:
+        *   Value: "perpetual high water mark on a per-investor basis"
+        *   Citation: "Section 4.3"
+        *   Quote: "operates as a perpetual high water mark on a per-investor basis."
+    *   `minimum_initial_investment`:
+        *   Value: "$2,000,000"
+        *   Citation: "Section 2.2"
+        *   Quote: "The minimum initial subscription for Interests is $2,000,000."
+    *   `lockup_period`:
+        *   Value: "Class A: twelve (12) month; Class B: twenty-four (24) month"
+        *   Citation: "Section 5.1"
+        *   Quote: "Class A Interests are subject to a twelve (12) month lock-up period... Class B Interests are subject to a twenty-four (24) month lock-up period"
+    *   `redemption_frequency`:
+        *   Value: "last business day of each calendar quarter"
+        *   Citation: "Section 5.2"
+        *   Quote: "Interest may be redeemed as of the last business day of each calendar quarter (each, a \"Redemption Date\")."
+    *   `redemption_notice_days`:
+        *   Value: "ninety (90) calendar days"
+        *   Citation: "Section 5.3"
+        *   Quote: "not less than ninety (90) calendar days prior to the applicable Redemption Date."
+    *   `gate_provision`:
+        *   Value: "20% of the Partnership's net asset value (investor-level gate at the Partnership level)"
+        *   Citation: "Section 5.5"
+        *   Quote: "limit aggregate redemptions effective as of any single Redemption Date to 20% of the Partnership's net asset value... The Gate is an investor-level gate at the Partnership level"
+    *   `key_man_provision`:
+        *   Value: "Dr. Elena Vasquez-Hartmann; triggers right to redeem all or any portion of Interests as of the last business day of the calendar quarter following the quarter in which notice is given, without regard to any unexpired lock-up period, without payment of any early redemption fee, and without application of the Gate"
+        *   Citation: "Section 6.2"
+        *   Quote: "If Dr. Elena Vasquez-Hartmann ceases for any reason to devote substantially all of her business time to the affairs of the Investment Manager and the Partnership (a \"Key Man Event\")... Upon the occurrence of a Key Man Event, each Limited Partner shall have the right to redeem all or any portion of its Interests as of the last business day of the calendar quarter following the quarter in which notice is given, without regard to any unexpired lock-up period, without payment of any early redemption fee, and without application of the Gate"
+    *   `gp_commitment`:
+        *   Value: "greater of $25,000,000 or 2% of the aggregate net asset value of the Master Fund"
+        *   Citation: "Section 6.3"
+        *   Quote: "not less than the greater of $25,000,000 or 2% of the aggregate net asset value of the Master Fund"
+    *   `fund_term`:
+        *   Value: "perpetual"
+        *   Citation: "Section 7.1"
+        *   Quote: "The Partnership has a perpetual term"
+    *   `auditor`:
+        *   Value: "Thornbury & Associates LLP"
+        *   Citation: "Section 9.2"
+        *   Quote: "Thornbury & Associates LLP has been appointed as the independent registered public accounting firm"
+    *   `administrator`:
+        *   Value: "Calderon Fund Services (Cayman) Ltd."
+        *   Citation: "Section 9.1"
+        *   Quote: "Calderon Fund Services (Cayman) Ltd. serves as administrator to the Partnership"
+    *   `prime_broker`:
+        *   Value: "Harrington Sloan Securities LLC and Beaumont Clarke International Ltd."
+        *   Citation: "Section 9.3"
+        *   Quote: "Harrington Sloan Securities LLC and Beaumont Clarke International Ltd."
+    *   `legal_counsel`:
+        *   Value: "Whitlock Barr & Nunes LLP (U.S. counsel); Kentish Drummond (Cayman) (Cayman Islands counsel)"
+        *   Citation: "Section 9.4"
+        *   Quote: "Whitlock Barr & Nunes LLP serves as U.S. counsel... Kentish Drummond (Cayman) serves as Cayman Islands counsel"
+    *   `mfn_election`:
+        *   Value: "NOT_APPLICABLE"
+        *   Citation: "Section 8.2"
+        *   Quote: "The Partnership does not offer a \"most favored nation\" election to Limited Partners."
+
+    *   `fund_structure`: "open-end (redeemable) or closed-end (drawdown, no redemptions), and whether master-feeder."
+        *   Value: "open-end, master-feeder"
+    *   `management_fee`: "Annual management fee rate AND the basis it is charged on. Give every class or tier."
+        *   Value: "Class A: 1.75% of the net asset value; Class B: 1.25% of the net asset value"
+    *   `performance_fee`: "Performance allocation / incentive allocation / carried interest rate. Give every class."
+        *   Value: "20% of the Net Profits"
+    *   `hurdle_rate`: "Preferred return, hurdle or benchmark the performance fee is subject to. State the type (hard/soft, catch-up) if given."
+        *   Value: "NOT_APPLICABLE" (Since it says "not subject to a preferred return, hurdle rate or benchmark")
+    *   `high_water_mark`: "Whether a high water mark or loss carryforward applies, and whether it is perpetual or resets."
+        *   Value: "perpetual high water mark"
+    *   `lockup_period`: "Lock-up. Distinguish a hard lock from a soft lock (early redemption charge). Give every class."
+        *   Note: The text says "Class A Interests are subject to a twelve (12) month lock-up period" and "Class B Interests are subject to a twenty-four (24) month lock-up period". It doesn't explicitly call them "hard" or "soft", but the existence of an "early redemption fee" (Section 5.4) implies a soft lock for those who pay the fee. However, the prompt asks to distinguish if the document does. It doesn't. I will stick to the terms provided.
+    *   `gate_provision`: "Redemption gate: level (fund or investor) and threshold."
+        *   Value: "investor-level gate at the Partnership level; 20% of the Partnership's net asset value"
+    *   `key_man_provision`: "Key person clause: who is named and what it triggers."
+        *   Value: "Dr. Elena Vasquez-Hartmann; triggers right to redeem all or any portion of its Interests as of the last business day of the calendar quarter following the quarter in which notice is given, without regard to any unexpired lock-up period, without payment of any early redemption fee, and without application of the Gate"
+    *   `mfn_election`: "Whether a most favored nation election on side letters is offered, and its scope."
+        *   Value: "NOT_APPLICABLE" (The text says "The Partnership does not offer a 'most favored nation' election to Limited Partners.")
+
+    *   `fund_name`: "Meridian Ridge Global Opportunities Fund, L.P." (Section 1.1)
+    *   `fund_domicile`: "Delaware" (Section 1.1)
+    *   `fund_structure`: "open-end, master-feeder" (Section 1.1, Section 7.1)
+    *   `management_fee`: "Class A: 1.75% of the net asset value; Class B: 1.25% of the net asset value" (Section 4.1)
+    *   `performance_fee`: "20% of the Net Profits" (Section 4.2)
+    *   `hurdle_rate`: "NOT_APPLICABLE" (Section 4.2)
+    *   `high_water_mark`: "perpetual high water mark" (Section 4.3)
+    *   `minimum_initial_investment`: "$2,000,000" (Section 2.2)
+    *   `lockup_period`: "Class A: twelve (12) month; Class B: twenty-four (24) month" (Section 5.1)
+    *   `redemption_frequency`: "last business day of each calendar quarter" (Section 5.2)
+    *   `redemption_notice_days`: "ninety (90) calendar days" (Section 5.3)
+    *   `gate_provision`: "investor-level gate at the Partnership level; 20% of the Partnership's net asset value" (Section 5.5)
+    *   `key_man_provision`: "Dr. Elena Vasquez-Hartmann; triggers right to redeem all or any portion of its Interests as of the last business day of the calendar quarter following the quarter in which notice is given, without regard to any unexpired lock-up period, without payment of any early redemption fee, and without application of the Gate" (Section 6.2)
+    *   `gp_commitment`: "greater of $25,000,000 or 2% of the aggregate net asset value of the Master Fund" (Section 6.3)
+    *   `fund_term`: "perpetual" (Section 7.1)
+    *   `auditor`: "Thornbury & Associates LLP" (Section 9.2)
+    *   `administrator`: "Calderon Fund Services (Cayman) Ltd." (Section 9.1)
+    *   `prime_broker`: "Harrington Sloan Securities LLC and Beaumont Clarke International Ltd." (Section 9.3)
+    *   `legal_counsel`: "Whitlock Barr & Nunes LLP (U.S. counsel); Kentish Drummond (Cayman) (Cayman Islands counsel)" (Section 9.4)
+    *   `mfn_election`: "NOT_APPLICABLE" (Section 8.2)
+
+    *   `hurdle_rate`: The text says "The Performance Allocation is not subject to a preferred return, hurdle rate or benchmark." This means the term "hurdle rate" is explicitly mentioned as not applicable.
+    *   `mfn_election`: The text says "The Partnership does not offer a 'most favored nation' election to Limited Partners." This means the term "mfn_election" is explicitly mentioned as not applicable.
+
+    *   `fund_structure`: "open-end, master-feeder"
+    *   `management_fee`: "Class A: 1.75% of the net asset value; Class B: 1.25% of the net asset value"
+    *   `performance_fee`: "20% of the Net Profits"
+    *   `hurdle_rate`: "NOT_APPLICABLE"
+    *   `high_water_mark`: "perpetual high water mark"
+    *   `minimum_initial_investment`: "$2,000,000"
+    *   `lockup_period`: "Class A: twelve (12) month; Class B: twenty-four (24) month"
+    *   `redemption_

@@ -1,0 +1,152 @@
+*   Role: Senior analyst at a registered investment adviser.
+    *   Task: Compare two versions of a document and list material changes for an annual review.
+    *   Rules:
+        1.  Compare section by section.
+        2.  Report only if text differs.
+        3.  Types: "added", "removed", "modified".
+        4.  Materiality: New/removed risk, exposure, right, obligation, provision; new/dropped event, proceeding, regulation, product, party, program; change in likelihood/severity; change in numbers, rates, thresholds, periods, deadlines (excluding routine date roll-forward).
+        5.  No minor edits (punctuation, rewordings with same meaning, etc.).
+        6.  Identical text = no change.
+        7.  Output format: JSON object with "changes" list. Each item: "type", "heading", "description", "quote".
+        8.  No preamble, no markdown, just the JSON.
+
+    *   *Header/Intro:*
+        *   Prior: "Limited Partnership Agreement" / "Dated as of April 7, 2025"
+        *   Current: "Amended and Restated Limited Partnership Agreement" / "Dated as of January 26, 2026"
+        *   Intro text: Current version adds "and amends and restates in its entirety the Limited Partnership Agreement of the Partnership dated as of April 7, 2025."
+        *   *Analysis:* The title change and the "Amended and Restated" language are standard for a restatement, but the prompt asks for material changes. The date change (April 7, 2025 to Jan 26, 2026) is a date roll-forward/update for the document's effective date. However, the "Amended and Restated" part is a change in the document's status. But wait, the rule says "a date rolled forward with nothing else changed" is not material. The title change is a naming change. Let's look at the specific sections.
+
+    *   *Section 1.1 Definitions:*
+        *   Compare text: Identical. (No change).
+
+    *   *Section 1.2 Name, Office and Purpose:*
+        *   Prior: "principle office"
+        *   Current: "principal office"
+        *   *Analysis:* Spelling correction. Not material.
+
+    *   *Section 1.3 Term:*
+        *   Compare text: Identical. (No change).
+
+    *   *Section 2.1 Commitments and Closings:*
+        *   Prior: "updated through April 7, 2025"
+        *   Current: "updated through January 26, 2026"
+        *   *Analysis:* Date roll-forward. Not material.
+
+    *   *Section 2.2 Capital Calls:*
+        *   Prior: "Drawdown Notice"
+        *   Current: "Capital Call Notice"
+        *   *Analysis:* Renamed defined term with no change in substance. Not material.
+
+    *   *Section 2.3 Defaulting Partners:*
+        *   Compare text: Identical. (No change).
+
+    *   *Section 2.4 Investment Limitations (Prior) vs. 2.4 Subscription Credit Facility (Current):*
+        *   Prior: "2.4 Investment Limitations" (contains rules about 20% cap, 25% outside US/Canada, etc.)
+        *   Current: "2.4 Subscription Credit Facility" (contains rules about borrowing under revolving credit facilities).
+        *   *Analysis:* This is a major structural change. The content of 2.4 in the prior version is moved to 5.6 in the current version. The new content in 2.4 is a new provision.
+        *   *Action:* Report as "modified" (or "removed" and "added" if they were different sections, but they share the same number/heading position). Wait, the rule says "A section is a heading and the text beneath it, up to the next heading."
+        *   *Refinement:* The heading "2.4 Investment Limitations" in the prior version is replaced by "2.4 Subscription Credit Facility" in the current version.
+        *   *Wait:* Let's look at the whole document.
+        *   Prior 2.4: "Investment Limitations"
+        *   Current 2.4: "Subscription Credit Facility"
+        *   Current 5.6: "Investment Limitations"
+        *   *Decision:* Since the content of 2.4 changed completely, it's a "modified" section.
+
+    *   *Section 3.1 Distribution Waterfall:*
+        *   Prior: (c) "third, 100% to the General Partner until the General Partner has received 20% of the aggregate amounts distributed under clause (b) and this clause (c);"
+        *   Current: (c) "third, 80% to the General Partner and 20% to the Limited Partner until the General Partner has received 20% of the aggregate amounts distributed under clause (b) and this clause (c);"
+        *   *Analysis:* This is a material change in the distribution waterfall (the split between GP and LP in the third tier).
+        *   *Action:* Report as "modified".
+
+    *   *Section 3.2 General Partner Clawback:*
+        *   Compare text: Identical. (No change).
+
+    *   *Section 3.3 Tax Distributions:*
+        *   Compare text: Identical. (No change).
+
+    *   *Section 4.1 Management Fee:*
+        *   Prior: (b) "thereafter, 1.50% of the Net Invested Capital"
+        *   Current: (b) "thereafter, 1.25% of the Net Invested Capital"
+        *   *Analysis:* Change in a percentage rate. Material.
+        *   *Action:* Report as "modified".
+
+    *   *Section 4.2 Fee Offset:*
+        *   Prior: "To the extent the reduction in excess of the Management Fee for a quarter shall be carried forward and, to the extent not applied by dissolution, refunded to the Limited Partners."
+        *   Current: "To the extent the reduction for a quarter exceeds the Management Fee for that quarter, the excess shall be carried forward, and any excess not applied by dissolution shall be refunded to the Limited Partners."
+        *   *Analysis:* Rewording with identical meaning. Not material.
+
+    *   *Section 4.3 Organizational and Partnership Expenses:*
+        *   Prior: Ends with "...and winding-up expenses. The Manager shall bear its own ordinary overhead..."
+        *   Current: Adds "Partnership Expenses also include the allocable share of the Partnership in the regulatory compliance costs of the Manager and the General Partner, including Form PF and Form ADV filings and responses to regulatory examinations."
+        *   *Analysis:* New provision regarding regulatory compliance costs. Material.
+        *   *Action:* Report as "modified".
+
+    *   *Section 5.1 Authority of the General Partner:*
+        *   Compare text: Identical. (No change).
+
+    *   *Section 5.2 Advisory Committee:*
+        *   Prior: "...waivers of the investment limitations in Section 2.4..."
+        *   Current: "...waivers of the investment limitations in Section 5.6..."
+        *   *Analysis:* Updated cross-reference. Not material.
+
+    *   *Section 5.3 Conflicts and Co-Investment:*
+        *   Prior: "...unless the Affiliated Transaction has been approved in advance by the Advisory Committee."
+        *   Current: "...unless the Affiliated Transaction has been approved in advance by the General Partner as fair and reasonable to the Partnership, with written notice to the Advisory Committee."
+        *   *Analysis:* Change in the approval process (GP approval + notice vs. Advisory Committee approval). Material.
+        *   *Action:* Report as "modified".
+
+    *   *Section 5.4 Successor Funds:*
+        *   Compare text: Identical. (No change).
+
+    *   *Section 5.5 Key Person Event:*
+        *   Prior: "Upon a Key Person Event, the General Partner may suspend..."
+        *   Current: "Upon a Key Person Event, the General Partner shall suspend..."
+        *   *Analysis:* Change from "may" to "shall" (discretionary to mandatory). Material.
+        *   *Action:* Report as "modified".
+
+    *   *Section 5.6 Investment Limitations:*
+        *   Prior: (This section didn't exist as 5.6, it was 2.4).
+        *   Current: "5.6 Investment Limitations"
+        *   *Analysis:* This is a new section number/location for the same content, but since the prompt says "A section is a heading and the text beneath it... Report a change only where the text actually differs", and the content of 2.4 changed, and 5.6 is new.
+        *   *Wait:* Let's look at the structure.
+        *   Prior: 2.4 Investment Limitations
+        *   Current: 2.4 Subscription Credit Facility; 5.6 Investment Limitations.
+        *   *Decision:* 2.4 is "modified" because the text changed. 5.6 is "added" because it's a new heading in the current version. However, the content of 5.6 is identical to the old 2.4.
+        *   *Rule 6:* "A section that appears in both versions with identical text is unchanged, even if it moved to a different position or is renumbered. Do not report it."
+        *   *Refinement:* Since the text of "Investment Limitations" is the same in both (just different numbers), it is not reported as a change. However, the *heading* "2.4" changed from "Investment Limitations" to "Subscription Credit Facility".
+        *   *Wait:* Rule 1: "A section is a heading and the text beneath it...".
+        *   *Analysis:*
+            *   Prior 2.4: "Investment Limitations" + [Text]
+            *   Current 2.4: "Subscription Credit Facility" + [New Text]
+            *   Current 5.6: "Investment Limitations" + [Old 2.4 Text]
+        *   *Action:* 2.4 is "modified" because the heading and the text changed. 5.6 is "added" because it's a new heading in the current version. But wait, if the text is identical to the old 2.4, does it count as "added"? Rule 6 says if it's identical, don't report. But the *heading* is different.
+        *   *Let's re-read Rule 6:* "A section that appears in both versions with identical text is unchanged, even if it moved to a different position or is renumbered. Do not report it."
+        *   *Interpretation:* If the text under "Investment Limitations" is the same, don't report it. But the heading "2.4" in the current version is "Subscription Credit Facility". This is a new piece of content.
+        *   *Decision:*
+            1.  2.4 is "modified" because the heading changed from "Investment Limitations" to "Subscription Credit Facility" and the text changed.
+            2.  5.6 is "added" because it's a new heading. (Wait, if the text is identical to the old 2.4, Rule 6 says don't report it. But the *heading* is different. This is tricky. If I don't report 5.6, the user won't know about the new section. If I do, I might violate Rule 6. However, the *heading* is part of the section. The heading "5.6 Investment Limitations" is new in the current version. The heading "2.4 Subscription Credit Facility" is new in the current version.
+        *   *Let's look at 2.4 again:*
+            *   Prior: 2.4 Investment Limitations
+            *   Current: 2.4 Subscription Credit Facility
+            *   The text in 2.4 is completely different. So 2.4 is "modified".
+        *   *Let's look at 5.6:*
+            *   Current: 5.6 Investment Limitations
+            *   Is there a 5.6 in the prior? No.
+            *   Is the text identical to a previous section? Yes, it's identical to the old 2.4.
+            *   Rule 6 says: "A section that appears in both versions with identical text is unchanged, even if it moved to a different position or is renumbered. Do not report it."
+            *   Since the text is identical to the old 2.4, I should not report 5.6 as a change.
+
+    *   *Section 5.7 Continuation Vehicle Transactions:*
+        *   Current: "5.7 Continuation Vehicle Transactions"
+        *   Prior: (No 5.7)
+        *   *Analysis:* New section.
+        *   *Action:* "added".
+
+    *   *Section 6.1 Exculpation and Indemnification:*
+        *   Prior: "...other than a proceeding initiated by a Covered Person against the Partnership or another Covered Person."
+        *   Current: "...other than a proceeding initiated by a Covered Person against the Partnership or another Covered Person, other than a proceeding to enforce its rights under this Section 6.1."
+        *   *Analysis:* Added a specific exception for enforcing rights. Material.
+        *   *Action:* "modified".
+
+    *   *Section 7.1 Transfers by Limited Partners:*
+        *   Compare text: Identical. (No change).

@@ -1,0 +1,42 @@
+*   Question: "What recovery time objective and recovery point objective apply to the firm's most critical systems?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "recovery time objective" (RTO)
+    *   "recovery point objective" (RPO)
+    *   "critical systems" or "Tier 1" (since Tier 1 usually denotes the most critical).
+
+    *   `01_brochure.md`: Mentions "Custody" and "Risk of Loss", but doesn't detail RTO/RPO.
+    *   `02_compliance_manual.md`: Section 11 (Cybersecurity) mentions "critical security patches" and "emergency response", but doesn't list RTO/RPO.
+    *   `03_valuation_policy.md`: Deals with valuation of assets.
+    *   `04_business_continuity_plan.md`: Section 4.1 "System Tiers and Objectives" lists "Tier 1" systems.
+    *   `05_fee_schedule.md`: Deals with fees.
+    *   `06_policy_update_memo.md`: Mentions updates to the BCP, but doesn't change the RTO/RPO values.
+
+    *   Section 4.1 "System Tiers and Objectives" in `04_business_continuity_plan.md`.
+    *   Table:
+        *   Tier 1: "Custodian portals and trading platforms, order management system, email, remote access, bill payment platform"
+        *   Recovery time objective: 4 hours
+        *   Recovery point objective: 1 hour
+
+    *   The question asks for "most critical systems".
+    *   The BCP defines "Tier 1" as the systems with the shortest recovery times (4 hours) and points (1 hour).
+    *   The list of Tier 1 systems includes "Custodian portals and trading platforms, order management system, email, remote access, bill payment platform".
+    *   The question asks for the RTO and RPO for these systems.
+
+    *   Answer: "recovery time objective of four hours and a recovery point objective of one hour"
+    *   Source: `04_business_continuity_plan.md`
+    *   Section: "Section 4.1"
+    *   Quote: "Tier 1 systems carry a recovery time objective of four hours and a recovery point objective of one hour." (Wait, the table is the specific part, but the text above it defines the values).
+
+    *   Let's look at the table in 4.1:
+        "Tier 1 | Custodian portals and trading platforms, order management system, email, remote access, bill payment platform | 4 hours | 1 hour"
+    *   The text above the table says: "Tier 1 systems carry a recovery time objective of four hours and a recovery point objective of one hour."
+
+    *   Answer: "recovery time objective of four hours and a recovery point objective of one hour"
+    *   Source: `04_business_continuity_plan.md`
+    *   Section:

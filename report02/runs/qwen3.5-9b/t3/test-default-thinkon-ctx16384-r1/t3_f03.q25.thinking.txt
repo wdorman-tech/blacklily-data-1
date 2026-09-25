@@ -1,0 +1,33 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Describe the firm's cyber incident response arrangements, including who leads the response and which outside firms are engaged."
+    *   Key elements needed:
+        *   Who leads the response?
+        *   Which outside firms are engaged?
+
+3.  **Scan the Documents:**
+    *   Document 1: `02_compliance_manual.md` (dated January 15, 2026).
+        *   Section 11.6 Incident Response: "Any Supervised Person who suspects a cybersecurity incident must report it immediately to the ISO. The ISO acts as Incident Response Lead and notifies the CCO within one hour... Northgale Security Operations, Inc. will be engaged to perform containment, forensic investigation and eradication."
+        *   Section 11.7 Cyber Liability Insurance: Mentions review annually.
+    *   Document 2: `04_business_continuity_plan.md` (dated April 21, 2026).
+        *   Section 8.2 Cyber Incident Response: "A cyber incident is managed under the incident response procedures in Section 11.6 of the Compliance Manual, with the Director of Technology and Information Security as Incident Response Lead. If the incident impairs operations, the BCP Coordinator may declare a business disruption. Northgale Security Operations, Inc. performs containment and forensic investigation. Vellacott Pryor LLP serves as the Firm's outside breach counsel..."
+    *   Date Comparison: `04_business_continuity_plan.md` (April 21, 2026) is later than `02_compliance_manual.md` (January 15, 2026). Rule 3 states later-dated documents supersede earlier ones.
+    *   Content Comparison:
+        *   Compliance Manual (Jan): ISO acts as Incident Response Lead. Northgale Security Operations, Inc. engaged for containment/forensics.
+        *   BCP (April): Director of Technology and Information Security as Incident Response Lead. Northgale Security Operations, Inc. performs containment/forensics. Vellacott Pryor LLP serves as outside breach counsel.
+        *   Note: The Compliance Manual refers to "ISO" while the BCP refers to "Director of Technology and Information Security". These are likely the same role/person (Ingrid P. Solheim is named in Section 11.1 of the Compliance Manual). However, the BCP document is later dated (April vs January).
+        *   The question asks for "cyber incident response arrangements". Both documents address this. Since the BCP is later dated, it supersedes the earlier manual regarding specific arrangements if there's a conflict or update. However, Section 8.2 of the BCP explicitly references

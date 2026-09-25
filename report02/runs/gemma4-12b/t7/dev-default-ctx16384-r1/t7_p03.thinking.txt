@@ -1,0 +1,100 @@
+*   Role: Marketing review analyst at an SEC-registered investment adviser.
+    *   Task: Review draft marketing materials against a specific checklist (C1-C9) based on Rule 206(4)-1.
+    *   Output: JSON object with "flags" list.
+    *   Rules:
+        1.  Only flag items under C1-C9.
+        2.  Quote verbatim.
+        3.  Do not flag if requirements are met (e.g., C1 is met if status, compensation, and conflict are disclosed).
+        4.  One flag per distinct issue.
+        5.  Empty list if no issues.
+
+    *   C1: Testimonial/endorsement without disclosure of status, compensation, and material conflict.
+    *   C2: Gross performance without net performance of equal prominence.
+    *   C3: Performance of non-private fund portfolio without 1, 5, 10-year periods.
+    *   C4: Performance results not fair/balanced (e.g., cherry-picked window).
+    *   C5: Hypothetical/model/backtested/projected performance without criteria, assumptions, risks, limitations.
+    *   C6: Material statement of fact untrue or unsubstantiated (absolute claims).
+    *   C7: Third-party rating/ranking without date, period, source, and compensation disclosure.
+    *   C8: Performance of subset of portfolio without total portfolio performance.
+    *   C9: Benefits described without fair/balanced treatment of risks/limitations.
+
+    *   *Section: "From a Client"*
+        *   Quote: "After my wife died, Eleanor sat with me at our kitchen table three times that first winter. She went through every account, every beneficiary form and the estate filings with me, and she never once made me feel rushed."
+        *   Disclosure: "Mr. Venning is a current client of Calderstone & Pym. He was not paid and received no cash or non-cash compensation for this statement. His son, Peter Venning, is an associate advisor at the firm, a relationship that could give Mr. Venning a reason to speak favorably about us. His experience may not be representative of the experience of other clients."
+        *   Analysis: The disclosure includes: 1) Current client status ("Mr. Venning is a current client"), 2) Compensation ("He was not paid and received no cash or non-cash compensation"), 3) Material conflict ("His son... is an associate advisor... a relationship that could give Mr. Venning a reason to speak favorably").
+        *   Conclusion: C1 is satisfied. No flag.
+
+    *   *Section: "Firm News"*
+        *   Quote: "In May 2026, Rennick Fiduciary Survey named Calderstone & Pym one of its 2026 Client Service Leaders among independent advisers in New England. The designation was based on client questionnaires completed between October 1, 2025 and March 31, 2026, and was created and tabulated by Rennick Fiduciary Survey, which is not affiliated with the firm. Rennick selected the clients surveyed, and its questionnaire allowed favorable and unfavorable answers with equal ease. Calderstone & Pym paid Rennick a $1,750 fee to use the designation in its communications; no fee was paid to be considered for or to receive it. The designation reflects client views on service, not investment performance, and does not predict future service or results."
+        *   Analysis:
+            *   Date given: "May 2026"
+            *   Period covered: "October 1, 2025 and March 31, 2026"
+            *   Who gave it: "Rennick Fiduciary Survey"
+            *   Compensation: "Calderstone & Pym paid Rennick a $1,750 fee to use the designation"
+        *   Conclusion: C7 is satisfied. No flag.
+
+    *   *Other sections:*
+        *   "The qualified charitable distribution" and "The donor-advised fund" sections describe tax strategies and account types. No performance figures, hypothetical results, or absolute claims are made.
+        *   C2, C3, C4, C5, C8: No performance data is presented, so these are not applicable.
+        *   C6: No absolute claims like "never losing money" or "best firm" are made.
+        *   C9: The text discusses the "trade-offs" and "limitations" of the donor-advised fund (e.g., "irrevocable", "sponsors charge administrative fees", "invested balance can lose value"). This seems balanced.
+
+    *   C1: Disclosure present.
+    *   C2: No performance data.
+    *   C3: No performance data.
+    *   C4: No performance data.
+    *   C5: No hypothetical/projected performance.
+    *   C6: No unsubstantiated absolute claims.
+    *   C7: Disclosure present.
+    *   C8: No performance data.
+    *   C9: Risks/limitations of the products discussed are mentioned.
+
+    The draft appears to comply with all requirements of the checklist.
+
+    *   Wait, let me double-check C1 and C7.
+    *   C1: "testimonial or endorsement without clear and prominent disclosure of whether the person is a current client, whether they were compensated, and any material conflict of interest."
+        *   Draft: "Mr. Venning is a current client... He was not paid... His son... is an associate advisor... a relationship that could give Mr. Venning a reason to speak favorably about us."
+        *   This covers all three requirements.
+    *   C7: "A third-party rating or ranking without the date it was given, the period it covers, who gave it, and whether compensation was paid for it."
+        *   Draft: "In May 2026 [Date], Rennick Fiduciary Survey [Who] named Calderstone & Pym one of its 2026 Client Service Leaders... based on client questionnaires completed between October 1, 2025 and March 31, 2026 [Period]... Calderstone & Pym paid Rennick a $1,750 fee to use the designation [Compensation]."
+        *   This covers all four requirements.
+
+    No flags found.
+
+    *   Rule 5: "If nothing in the draft falls under the checklist, return an empty list."
+
+    *   Wait, let me re-read the text one more time to ensure I didn't miss a "hidden" performance claim or a "hidden" testimonial.
+    *   "The designation reflects client views on service, not investment performance, and does not predict future service or results." - This is a standard disclaimer, not a performance claim.
+    *   "The amount is excluded from your taxable income..." - Tax fact.
+    *   "The trade-offs are real." - Acknowledgment of risk.
+
+    The draft is clean.
+
+    *   JSON structure: `{"flags": []}`
+
+    *   Wait, let me check C6 again. "A material statement of fact that is untrue or that the adviser could not substantiate (absolute claims such as never losing money, guaranteed results, being the top or best firm without support)."
+    *   The text says "one of its 2026 Client Service Leaders". This is a specific award from a specific survey. It's not an absolute claim like "The Best Firm in the World".
+
+    *   Check C9: "Benefits described without fair and balanced treatment of the material risks or limitations that go with them."
+    *   The text discusses the benefits of QCDs and DAFs, but also mentions "The limits matter," "The trade-offs are real," "irrevocable," "sponsors charge administrative fees," and "invested balance can lose value." This seems balanced.
+
+    *   Check C1 again: "clear and prominent disclosure". The disclosure is immediately following the quote.
+
+    *   Check C7 again: "date it was given, the period it covers, who gave it, and whether compensation was paid for it."
+        *   Date: May 2026.
+        *   Period: October 1, 2025 and March 31, 2026.
+        *   Who: Rennick Fiduciary Survey.
+        *   Compensation: $1,750 fee.
+    *   All requirements met.
+
+    Final check on the prompt: "Return ONLY a JSON object. No markdown fence, no preamble, no commentary."
+
+    Wait, I should double check if "one of its 2026 Client Service Leaders" is a "ranking". Yes, it is. But the disclosure is there.
+
+    One more look at C1. "clear and prominent". The text is in a separate paragraph immediately following the quote. That is standard.
+
+    One more look at C6. "absolute claims such as... being the top or best firm without support". The text says "one of its... Leaders". This is a specific award, not a general claim of being "the best".
+
+    The list should be empty.
+
+    Wait, I should check if "The amount is excluded from your

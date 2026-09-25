@@ -1,0 +1,33 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones (only one document provided here).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Describe the composition of the Valuation Committee, including voting and non-voting members, and its quorum requirement."
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "Valuation Committee", "composition", "voting members", "non-voting members", "quorum".
+    *   Document 1: `03_valuation_policy.md` (dated February 10, 2026).
+
+4.  **Locate Relevant Information:**
+    *   Section: `SECTION 2. VALUATION COMMITTEE` -> Subsection `2.1 Composition`.
+        *   Text: "The voting members of the Valuation Committee (the "Committee") are the Chief Financial Officer, Ines Morrow-Tate, who chairs the Committee; the Chief Risk Officer, Yuki Ashbury; and the Director of Portfolio Operations, Leopold Sarkis. The Chief Compliance Officer, Priya Castellane, and the Head of Credit Research, Rafael Denholm, attend as non-voting members. Portfolio managers and traders are not members; they may be invited to provide market information but leave the meeting before any vote."
+    *   Section: `SECTION 2. VALUATION COMMITTEE` -> Subsection `2.2 Quorum and Voting`.
+        *   Text: "A quorum consists of two voting members, at least one of whom must be the Chief Financial Officer or the Chief Risk Officer."
+
+5.  **Synthesize the Answer:**
+    *   The question asks for composition (voting/non-voting) AND quorum requirement.
+    *   I need to combine information from Section 2.1 and Section 2.2 of `03_valuation_policy.md`.
+    *   Draft Answer: Voting members are the Chief Financial Officer, Ines Morrow-Tate; the Chief Risk Officer, Yuki Ashbury; and the Director of Portfolio Operations, Leopold Sarkis. Non-voting members are the Chief Compliance Officer, Priya Castellane, and the Head of Credit Research, Rafael Denholm. A quorum consists of two voting members, at least one of whom must be the Chief Financial Officer or the Chief Risk Officer.
+    *   Constraint Check: "Keep answers short and specific". I should quote the relevant text verbatim as per Rule 6 ("Quote the supporting text verbatim"). Since the question asks for a description based on two subsections, I should probably quote both sections or combine them if they are contiguous in logic (they are under Section 2). However, Rule 6 says "Quote the supporting text verbatim". Usually, this means I extract the exact sentences that answer the question.
+    *   Let's check the constraint: "Cite the document file name and the section where the answer appears

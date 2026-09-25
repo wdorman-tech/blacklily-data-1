@@ -1,0 +1,40 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "What is the recovery time objective for the Firm's order management and trading systems?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "recovery time objective", "order management", "trading systems", "trading platforms".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Discusses review frequency (daily, weekly, monthly, quarterly). No mention of recovery time objectives for business continuity.
+    *   `04_business_continuity_plan.md` (dated December 1, 2025):
+        *   Section 3.1: Lists "Order management, trading platforms and market data" with a Recovery time objective of "4 hours".
+    *   `06_policy_update_memo.md` (dated August 14, 2026):
+        *   Section 4.1: Amends Section 3.1 of the Business Continuity Plan.
+        *   States: "Effective September 1, 2026, the recovery time objective for order management, trading platforms and market data is two hours from the declaration of a business disruption."
+        *   States: "The two-hour objective supersedes the four-hour objective stated in Section 3.1."
+    *   Date Comparison:
+        *   `04_business_continuity_plan.md`: December 1, 2025.
+        *   `06_policy_update_memo.md`: August 14, 2026.
+        *   The memo is later dated and explicitly amends the plan.
+    *   Current Status: The memo states the objective is now "two hours" effective September 1, 2026. Since the current date isn't specified but the memo is an amendment to the plan, I must follow Rule 3 ("Later-dated documents supersede earlier ones"). The memo explicitly says it supersedes the four-hour objective.
+    *   Therefore, the current answer should reflect the amended policy in the memo.
+
+5.  **Formulate the Answer:**
+    *   Value: "two hours" (or "two hours from the declaration of a business disruption").
+    *   Source Document: `06_policy_update_memo.md` (as it supersedes the earlier plan).
+    *   Section: `SECTION 4. AMENDMENT TO THE BUSINESS CONTINUITY PLAN > 4.1 Recovery Time Objective for Trading Systems`. I should use the section label as labelled in the document header provided in the text. The text says "Section: SECTION 4. AMENDMENT TO THE BUSINESS CONTINUITY PLAN". The specific subsection is `4.1 Recovery Time Objective for Trading Systems`.
+    *   Quote: "Effective September 1,

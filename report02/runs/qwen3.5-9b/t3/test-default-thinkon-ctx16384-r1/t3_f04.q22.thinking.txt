@@ -1,0 +1,33 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "How are partially filled aggregated orders allocated among participating accounts?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "partially filled", "aggregated orders", "allocated", "accounts".
+
+4.  **Evaluate Document Content:**
+
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section Item 12.5 Aggregation and Allocation: "if it is partially filled, it is allocated pro rata based on the pre-allocated amounts, subject to minimum denomination and minimum lot size considerations."
+    *   `02_compliance_manual.md` (January 15, 2026):
+        *   Section 9.2 Allocation of Partial Fills: "If an aggregated order is partially filled, the executed amount is allocated pro rata among participating accounts based on their pre-allocated amounts. Where a pro rata allocation would give an account less than $250,000 par value, or less than the security's minimum denomination, the trader may reallocate that amount pro rata among the other participating accounts."
+    *   `01_brochure.md` (March 27, 2026) is later dated than `02_compliance_manual.md` (January 15, 2026).
+    *   Rule 3: "Later-dated documents supersede earlier ones."
+    *   However, I need to check if the content differs significantly or if one is more specific. Both describe pro-rata allocation based on pre-allocated amounts. The Compliance Manual (Jan 15) has a specific threshold detail ($250k par value). The Brochure (March 27) mentions "subject to minimum denomination and minimum lot size considerations".
+    *   Since the Brochure is later dated (March 27, 2026 vs Jan 15, 2026), it technically supersedes the Compliance Manual regarding policies described therein. However, usually, a Compliance Manual is an internal policy document, while a Brochure is public disclosure. The prompt says "Later-dated documents supersede earlier ones."
+    *   Let's look at the specific text in the later document (`01_brochure.md`, Section 12.5 Aggregation and Allocation): "if it is partially filled, it is allocated pro rata based on the pre-allocated amounts, subject to minimum denomination and minimum lot size considerations."
+    *   The Compliance Manual (`02_compliance_manual.md`, Section 9.2) says: "If an aggregated order is partially filled, the executed amount is allocated pro rata among participating accounts based on their pre-allocated amounts. Where a pro rata allocation would

@@ -1,0 +1,100 @@
+{
+  "sheet_id": "t6_f12",
+  "notes": "Positive Q3 net return for a short Treasury ladder, a fee cut on the whole account, and an internal note about a reimbursed duplicate-purchase trade error.",
+  "required_facts": [
+    {
+      "fid": "net_return",
+      "kind": "number",
+      "desc": "Q3 2026 net return 1.3%",
+      "accept": [
+        "(?<![^\\w]-)(?<!^-)(?<![(\\[]- )(?<![(\\[] - )(?<!^- )(?<!: - )(?<!\\u2212)(?<!\\u2013)(?<!\\u2014)(?<!negative )(?<!minus )(?<!down )(?<!lost )(?<!fell )(?<!declined )(?<!loss of )(?<!decline of )(?<!falling )(?<!losing )(?<!dropped )(?<!dipped )(?<!slipped )(?<!slid )(?<![\\d.,])1\\.30?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?!\\s+(?:declines?|loss(?:es)?|drops?|decrease|negative|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "benchmark",
+      "kind": "number",
+      "desc": "Comparison index (1-3 year US Treasury index) Q3 2026 return 1.2%",
+      "accept": [
+        "(?<![^\\w]-)(?<!^-)(?<![(\\[]- )(?<![(\\[] - )(?<!^- )(?<!: - )(?<!\\u2212)(?<!\\u2013)(?<!\\u2014)(?<!negative )(?<!minus )(?<!down )(?<!lost )(?<!fell )(?<!declined )(?<!loss of )(?<!decline of )(?<!falling )(?<!losing )(?<!dropped )(?<!dipped )(?<!slipped )(?<!slid )(?<![\\d.,])1\\.20?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?!\\s+(?:declines?|loss(?:es)?|drops?|decrease|negative|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "ytd",
+      "kind": "number",
+      "desc": "Year-to-date net return 3.6%",
+      "accept": [
+        "(?<![^\\w]-)(?<!^-)(?<![(\\[]- )(?<![(\\[] - )(?<!^- )(?<!: - )(?<!\\u2212)(?<!\\u2013)(?<!\\u2014)(?<!negative )(?<!minus )(?<!down )(?<!lost )(?<!fell )(?<!declined )(?<!loss of )(?<!decline of )(?<!falling )(?<!losing )(?<!dropped )(?<!dipped )(?<!slipped )(?<!slid )(?<![\\d.,])3\\.60?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?!\\s+(?:declines?|loss(?:es)?|drops?|decrease|negative|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "point_1",
+      "kind": "concept",
+      "desc": "September maturity rolled into a new 3-year Treasury rung at 3.72% yield to maturity",
+      "accept": [
+        "(?<![\\d.,])3\\.72(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)"
+      ]
+    },
+    {
+      "fid": "point_2",
+      "kind": "concept",
+      "desc": "Ladder duration 1.7 years after the roll (from 1.5)",
+      "accept": [
+        "(?<![\\d.,])1\\.70?(?!\\d)(?!\\.\\d)(?!\\s*(?:%|percent|per cent))"
+      ]
+    },
+    {
+      "fid": "point_3",
+      "kind": "concept",
+      "desc": "Agencies cut to 12% of the ladder from 20%",
+      "accept": [
+        "(?<![\\d.,])12(?:\\.0{1,2})?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)"
+      ]
+    },
+    {
+      "fid": "fee_new_rate",
+      "kind": "fee",
+      "desc": "New rate 0.30% (from 0.40%) on all Liquidity Reserve assets",
+      "accept": [
+        "(?<![\\d.,])(?:0?\\.30?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|30\\s*(?:basis points?|basis-points?|bps|bp)\\b)"
+      ]
+    },
+    {
+      "fid": "fee_effective",
+      "kind": "fee",
+      "desc": "Effective November 1, 2026",
+      "accept": [
+        "(?:\\bnov(?:ember|\\.)?\\s*1(?:st|nd|rd|th)?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d)|(?<![\\d.])1(?:st|nd|rd|th)?\\s+(?:of\\s+)?nov(?:ember|\\.)?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d)|(?<![\\d/])11/0?1/(?:20)?26\\b|2026-11-01|\\bfirst\\s+(?:day\\s+)?of\\s+nov(?:ember|\\.)?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d))"
+      ]
+    }
+  ],
+  "disclosure": "Yield to maturity reflects the yield at the time of purchase, assumes the security is held to maturity, and is not a forecast of the return you will receive.",
+  "forbidden": [
+    {
+      "fid": "internal_note",
+      "desc": "Trade error TE-2026-014: duplicate purchase sold at a $1,164 loss and reimbursed by the firm",
+      "patterns": [
+        "trade error",
+        "\\bduplicate",
+        "1,?164",
+        "reimburs",
+        "te-2026",
+        "made whole|(?:account|portfolio) (?:is|was) (?:made )?whole",
+        "(?:entered|bought|placed|purchased)\\s+(?:\\w+\\s+){0,3}twice",
+        "(?<!tracking )\\berror",
+        "\\berroneous",
+        "\\bmistak",
+        "at no cost to you|at (?:our|the firm's) (?:own )?expense",
+        "(?:firm|we) (?:absorbed|covered) (?:the|a|any|this) (?:small )?(?:cost|loss)"
+      ]
+    },
+    {
+      "fid": "gross_only",
+      "desc": "gross return 1.4% stated without the net return 1.3%",
+      "patterns": [
+        "(?<![\\d.,])1\\.40?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)"
+      ]
+    }
+  ],
+  "gross_return": "1.4%",
+  "net_return": "1.3%"
+}

@@ -1,0 +1,42 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question using *only* the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: State the firm's total regulatory assets under management as of its most recent fiscal year end, with the split between discretionary and non-discretionary assets.
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "regulatory assets under management", "discretionary", "non-discretionary", "fiscal year end", "total".
+
+3.  **Evaluate Document 1 (`01_brochure.md`):**
+    *   Section: Item 4. Advisory Business > 4.3 Assets Under Management.
+    *   Text: "As of December 31, 2025, the Firm managed regulatory assets under management of $6,480,000,000, of which $5,910,000,000 was managed on a discretionary basis and $570,000,000 on a non-discretionary basis..."
+    *   Date: March 27, 2026 (Brochure date).
+    *   Data Point: Regulatory AUM as of Dec 31, 2025. Total: $6,480,000,000. Discretionary: $5,910,000,000. Non-discretionary: $570,000,000.
+    *   This matches the question requirements (total regulatory AUM, split between discretionary and non-discretionary).
+
+4.  **Evaluate Document 2 (`02_compliance_manual.md`):**
+    *   No relevant data on AUM figures.
+
+5.  **Evaluate Document 3 (`03_valuation_policy.md`):**
+    *   Discusses valuation scope, not specific AUM numbers.
+
+6.  **Evaluate Document 4 (`05_fee_schedule.md`):**
+    *   Discusses fee base, not total regulatory AUM figures.
+
+7.  **Determine the Best Answer:**
+    *   The information is found in `01_brochure.md`, Section: Item 4. Advisory Business > 4.3 Assets Under Management.
+    *   The text explicitly states the total regulatory AUM and the split.
+    *   Date check: The document is dated March 27, 2026. The data is "As of December 31, 2025". This represents the most recent fiscal year end mentioned in the provided documents (assuming Dec 31 is the fiscal year end).
+    *   Constraint Check: "Answer only from the documents provided." -> Yes. "Quote the supporting text verbatim." -> Yes.
+
+8.  **Draft the JSON:**
+    *   `answer`: As of December 31, 2025,

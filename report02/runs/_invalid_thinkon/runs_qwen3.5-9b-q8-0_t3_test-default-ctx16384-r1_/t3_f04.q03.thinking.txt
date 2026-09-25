@@ -1,0 +1,43 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: Does the Firm maintain key-person life insurance on its principals? If so, identify the insurer and the coverage amount.
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "key-person", "life insurance", "insurance", "principals", "coverage", "insurer".
+
+3.  **Review Document Content:**
+    *   `01_brochure.md`:
+        *   Item 4. Advisory Business: Describes strategies (Core Fixed Income, Long Duration Credit, Insurance Core). No mention of key-person insurance.
+        *   Item 7. Types of Clients: Describes clients (pension plans, insurance companies, Commingled Fund). No mention of key-person insurance.
+        *   Item 8. Methods of Analysis...: Describes strategies and risk. Mentions "The Firm maintains a cyber liability insurance policy" in the Compliance Manual section below, but not here. Wait, checking Item 8 text provided: "The Firm does not engage in securities lending on behalf of clients." No mention of key-person insurance.
+        *   Item 11. Code of Ethics...: Mentions principal transactions. No mention of key-person insurance.
+        *   Item 12. Brokerage Practices: Mentions directed brokerage. No mention of key-person insurance.
+    *   `02_compliance_manual.md`:
+        *   SECTION 11. CYBERSECURITY AND INFORMATION SECURITY > 11.5 Cyber Insurance: "The Firm maintains a cyber liability insurance policy." This is about cyber, not key-person life insurance.
+        *   SECTION 12. PRIVACY > 12.1 Scope: Discusses privacy and Regulation S-P. No mention of key-person insurance.
+    *   `06_policy_update_memo.md`:
+        *   Preamble: Mentions amendments to Compliance Manual, Valuation Policy, Business Continuity Plan, Fee Schedule. Does not explicitly detail the content regarding key-person insurance in the provided text snippet (it's a preamble).
+
+4.  **Evaluate Findings:**
+    *   I have searched all provided text for "key-person", "life insurance", "principals" in the context of insurance coverage.
+    *   The only insurance mentioned is "cyber liability insurance policy" in `02_compliance_manual.md` Section 11.5.
+    *   There is no mention of key-person life insurance on principals, insurers, or coverage amounts in any of the provided documents.
+
+5.  **Formulate Answer:**
+    *   Since the information is not present, the answer must be "NOT_IN_DOCUMENTS".
+    *   Source document: "" (empty string as per instructions for NOT_IN_DOCUMENTS).
+    *   Section: "" (empty string).
+    *   Quote: "" (empty string).
+
+6.

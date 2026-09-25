@@ -1,0 +1,165 @@
+{
+ "pair_id": "t2_cat_1",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "Caterpillar Inc.",
+ "ticker": "CAT",
+ "split": "dev",
+ "prior": {
+  "fiscal_year_end": "2024-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/18230/000001823025000008/cat-20241231.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2025-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/18230/000001823026000008/cat-20251231.htm"
+ },
+ "words": 6582,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "unchanged",
+   "prior_heading": "Our business and the industries we serve are highly sensitive to global and regional economic conditions.",
+   "current_heading": "Our business and the industries we serve are highly sensitive to global and regional economic conditions.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a02",
+   "status": "modified",
+   "prior_heading": "Catastrophic events could materially adversely affect our business, results of operations and/or financial condition.",
+   "current_heading": "Catastrophic events could materially adversely affect our business, results of operations and/or financial condition.",
+   "similarity": 0.995,
+   "diff": [
+    "insert: [] -> [10 Table of Contents]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The only change is a page-break artifact (page number 10 and a Table of Contents link) that now falls at the end of this risk factor; the catastrophic events text is word-for-word identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "Minor: the only difference is page-layout residue; there is no change in wording, substance, likelihood, scope or numbers, so no criterion 1 to 4 applies."
+    },
+    "B": {
+     "material": false,
+     "rationale": "Minor: the change is a page-break and layout artifact, not a change in wording, so no criterion applies; it is closest to a cross-reference or punctuation change."
+    }
+   }
+  },
+  {
+   "aid": "a03",
+   "status": "modified",
+   "prior_heading": "Commodity price changes, material price increases, fluctuations in demand for our products and services, significant disruptions to our supply chains or significant shortages of labor and material may adversely impact our financial results or our ability to meet commitments to customers.",
+   "current_heading": "Commodity price changes, material price increases, fluctuations in demand for our products and services, significant disruptions to our supply chains or significant shortages of labor and material may adversely impact our financial results or our ability to meet commitments to customers.",
+   "similarity": 0.997,
+   "diff": [
+    "delete: [10 Table of Contents] -> []"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The page-break artifact (page number 10 and a Table of Contents link) that split the first sentence mid-word in the prior year is gone; the commodity, supply chain and monetary/fiscal policy text is otherwise identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "Minor: removal of page-layout residue with identical meaning; no new or dropped risk, event, characterization or number, so no criterion 1 to 4 applies."
+    },
+    "B": {
+     "material": false,
+     "rationale": "Minor: the only change is removing a page-break artifact, with every word of the risk disclosure unchanged, so no criterion applies."
+    }
+   }
+  },
+  {
+   "aid": "a04",
+   "status": "modified",
+   "prior_heading": "Our global operations are exposed to political and economic risks, commercial instability and events beyond our control in the countries in which we operate.",
+   "current_heading": "Our global operations are exposed to political and economic risks, commercial instability and events beyond our control in the countries in which we operate.",
+   "similarity": 0.944,
+   "diff": [
+    "insert: [] -> [11 Table of Contents]",
+    "delete: [11 Table of Contents] -> []"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The page-break artifact (page number 11 and a Table of Contents link) moved from after the last bullet to between the tariffs bullet and the trade agreements bullet; the list of political, economic and trade risks is unchanged.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "Minor: only the position of page-layout residue changed; every bullet and sentence is identical, so no criterion 1 to 4 applies."
+    },
+    "B": {
+     "material": false,
+     "rationale": "Minor: the page-break artifact moved position only, with no risk, jurisdiction or bullet added or dropped, so no criterion applies."
+    }
+   }
+  },
+  {
+   "aid": "a05",
+   "status": "unchanged",
+   "prior_heading": "The success of our business depends on our ability to develop, produce and market quality products that meet our customers’ needs.",
+   "current_heading": "The success of our business depends on our ability to develop, produce and market quality products that meet our customers’ needs.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a06",
+   "status": "unchanged",
+   "prior_heading": "We operate in a highly competitive environment, which could adversely affect our sales and pricing.",
+   "current_heading": "We operate in a highly competitive environment, which could adversely affect our sales and pricing.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a07",
+   "status": "unchanged",
+   "prior_heading": "Increased information technology security threats and more sophisticated computer crime pose a risk to our systems, networks, products and services.",
+   "current_heading": "Increased information technology security threats and more sophisticated computer crime pose a risk to our systems, networks, products and services.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a08",
+   "status": "unchanged",
+   "prior_heading": "Our business is subject to the inventory management decisions and sourcing practices of our dealers and our OEM customers.",
+   "current_heading": "Our business is subject to the inventory management decisions and sourcing practices of our dealers and our OEM customers.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a09",
+   "status": "unchanged",
+   "prior_heading": "We may not realize all of the anticipated benefits of our acquisitions, joint ventures or divestitures, or these benefits may take longer to realize than expected.",
+   "current_heading": "We may not realize all of the anticipated benefits of our acquisitions, joint ventures or divestitures, or these benefits may take longer to realize than expected.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a10",
+   "status": "unchanged",
+   "prior_heading": "Union disputes or other labor matters could adversely affect our operations and financial results.",
+   "current_heading": "Union disputes or other labor matters could adversely affect our operations and financial results.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  }
+ ]
+}

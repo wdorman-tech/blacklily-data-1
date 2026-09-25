@@ -1,0 +1,48 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question using *only* the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "How many Code of Ethics violations has the Firm recorded in the past three years, and were any of them material?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "violations", "Code of Ethics", "past three years", "material", "number", "count".
+
+3.  **Evaluate Document Content:**
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section 11.1: Mentions Code of Ethics exists, employees acknowledge it. No mention of violation counts.
+        *   Section 11.4: Principal transactions. Irrelevant.
+    *   `02_compliance_manual.md` (January 15, 2026):
+        *   Section 1.1: Purpose. Mentions Code of Ethics in Section 3. No violation counts.
+        *   Section 3.1: Standards of Business Conduct. General rules. No violation counts.
+        *   Section 3.3: Reporting Violations. Describes process (report to CCO, hotline, log). No specific counts or history.
+        *   Section 3.4: Sanctions. Describes types of sanctions. No specific counts or history.
+        *   Section 3.5: Acknowledgments. Timing for acknowledgment. No violation counts.
+        *   Section 15.3: Contents of the Annual Report. Mentions "Code of Ethics violations and the sanctions imposed" are summarized in the annual report. Does not state the actual number or materiality in this document itself.
+
+4.  **Determine Answer:**
+    *   The documents describe *policies* regarding Code of Ethics, reporting, and sanctions.
+    *   They do *not* contain historical data on how many violations occurred in the past three years.
+    *   They do *not* state whether any were material.
+    *   Section 15.3 mentions that the annual report summarizes these matters, but the document provided is the Compliance Manual itself, not the Annual Report for a specific year containing the data. Even if it did contain the summary, the text provided does not list the numbers.
+    *   Therefore, the specific information requested (count and materiality of violations in the past three years) is not present in the provided text.
+
+5.  **Formulate Output:**
+    *   "answer": "NOT_IN_DOCUMENTS"
+    *   "source_document": ""
+    *   "section": ""
+    *   "quote": ""
+
+6.  **Final Review against Constraints:**
+    *   JSON object only? Yes.
+    *   No markdown fences? Yes.
+    *   Keys correct? Yes.
+    *   Values correct based on rules (Rule 2:

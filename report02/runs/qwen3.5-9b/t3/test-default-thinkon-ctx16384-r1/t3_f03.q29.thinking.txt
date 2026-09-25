@@ -1,0 +1,43 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "How many investment and client-service professionals have left the firm in each of the past three years?"
+    *   Key information needed: Number of employees/professionals who left (turnover) for the past three years.
+
+3.  **Scan the Documents:**
+    *   `01_brochure.md` (Form ADV Part 2A, dated March 27, 2026):
+        *   Item 2. Material Changes: Mentions Julian F. Ashdown joined in August 2025. No mention of departures/turnover statistics.
+        *   Item 3. Table of Contents: Lists sections.
+        *   Item 4. Advisory Business: Not shown in detail, but likely general description.
+        *   Item 5. Fees and Compensation: Discusses fees, termination, refunds. No turnover stats.
+        *   Item 7. Types of Clients: Describes client types. No turnover stats.
+        *   Item 10. Other Financial Industry Activities: Mentions Mr. Holt's outside activities. No turnover stats.
+        *   Item 14. Client Referrals: Discusses referral fees. No turnover stats.
+    *   `02_compliance_manual.md` (Compliance Policies and Procedures Manual, dated January 15, 2026):
+        *   Section 1. Introduction and Scope: Defines "Supervised Persons". No turnover stats.
+    *   `05_fee_schedule.md` (Schedule of Fees, dated January 1, 2026):
+        *   Section 5. Billing, Termination and Refunds: Discusses termination fees/refunds. No turnover stats.
+
+4.  **Evaluate Findings:**
+    *   I have scanned all provided text segments.
+    *   None of the documents contain information regarding the number of investment and client-service professionals who left the firm in the past three years.
+    *   The "Material Changes" section mentions a new hire (Julian F. Ashdown) but not departures or aggregate turnover numbers.
+    *   The question asks for specific data ("How many... in each of the past three years").
+    *   This information is absent from the provided text.
+
+5.  **Formulate the Answer:**
+    *   According to Rule 2: "If the documents do not answer the question... the answer is exactly NOT_IN_DOCUMENTS."
+    *   Source document: "" (empty string as per instruction for NOT_IN_DOCUMENTS case, though usually I'd pick the closest relevant doc if it existed, but here none exist). The instruction says `source_document` - the file name of the document that answers it, or "" if NOT

@@ -1,0 +1,33 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Input Question: "When was the business continuity plan last exercised in full, and what did that exercise involve?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "exercise", "full", "last", "recent", "business continuity plan", "BCP".
+    *   Document 1: `04_business_continuity_plan.md` (Business Continuity Plan, dated February 9, 2026).
+
+3.  **Locate Relevant Information:**
+    *   Section 7. TESTING > 7.1 Frequency mentions testing frequency ("at least annually").
+    *   Section 7. TESTING > 7.2 Most Recent Exercises looks promising.
+    *   Text in 7.2: "The most recent full exercise was conducted on November 14, 2025."
+    *   Text continues: "Six employees operated from the Norwalk alternate site for the full trading day, the remaining employees worked remotely, and all Tier 1 systems were available within the four-hour RTO. The exercise identified a delay in activating the recorded softphone licenses, which was remediated in December 2025."
+
+4.  **Synthesize the Answer:**
+    *   Date: November 14, 2025.
+    *   Involvement: Six employees operated from the Norwalk alternate site for the full trading day, the remaining employees worked remotely, and all Tier 1 systems were available within the four-hour RTO. (Also mentions a delay in softphone licenses remediated later, but the core "what did it involve" is the setup described).
+    *   I need to construct the "answer" string based on the question ("When... and what did that exercise involve?").
+    *   Source Document: `04_business_continuity_plan.md`
+    *   Section: `SECTION 7. TESTING > 7.2 Most Recent Exercises` (or just `7.2 Most Recent Exercises` as labeled in the text). The prompt asks for "section where the answer appears, as they are labelled in the documents". The header says `Section: SECTION 7. TESTING > 7.2 Most Recent Exercises`. I should use the specific section label provided in the document header structure or the subsection title. Looking at the provided text blocks:
+        *   `<<< 04_business_continuity_plan.md | Business Continuity Plan, dated February 9, 2026 | Section: SECTION 7. TESTING > 7.2 Most Recent Exercises >>>`
+        *   So the section label is `SECTION 7. TESTING > 7.2 Most Recent Exercises`. Or perhaps just `7.2 Most Recent Exercises`. I will use the specific subsection identifier found in the header line for precision: `SECTION 7. TESTING > 7.2 Most Recent Exercises

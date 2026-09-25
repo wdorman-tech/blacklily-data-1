@@ -1,0 +1,39 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific (number, name, frequency, threshold, rule).
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Describe the firm's alternate business site, including its location, capacity and how quickly it can be occupied."
+    *   Key Information Needed: Location, Capacity, Occupancy Time.
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "alternate site", "location", "capacity", "occupied", "hours".
+    *   Document 1: `04_business_continuity_plan.md` (dated April 21, 2026).
+        *   Section 3.1 Alternate Site: "The Firm's alternate site is a dedicated work-area recovery suite of 12 seats operated by Halvern Recovery Services, LLC in Bloomington, Minnesota. The suite is contracted for the Firm's exclusive use upon declaration and is available for occupancy within four hours of the Firm's notice of declaration."
+    *   Document 2: `06_policy_update_memo.md` (dated September 8, 2026).
+        *   Section 6. OFFSITE DATA BACKUP VENDOR: Discusses backup vendor changes (Kelvedon vs Ferncastle). Does not mention alternate site location/capacity/occupancy time.
+
+4.  **Evaluate Findings:**
+    *   The `04_business_continuity_plan.md` document contains the specific details requested.
+    *   Location: Bloomington, Minnesota.
+    *   Capacity: 12 seats.
+    *   Occupancy Time: within four hours of the Firm's notice of declaration.
+    *   Date of Document: April 21, 2026.
+    *   Is there a superseding document regarding this specific info? The `06_policy_update_memo.md` is dated September 8, 2026 (later), but it only amends Sections 5.1 and 5.2 of the BCP regarding Data Backup Vendor. It does not amend Section 3.1 (Alternate Site). Therefore, the April 21, 2026 document remains valid for this question.
+    *   Constraint Check: "Later-dated documents supersede earlier ones." Since the memo only amends backup vendor sections, the alternate site info in the BCP stands.
+
+5.  **Draft the Answer:**
+    *   Combine the relevant sentences from Section 3.1 of `04_business_continuity_plan.md`.
+    *   Text: "The Firm's alternate site is a dedicated work-area recovery suite of 12 seats operated by Halvern Recovery Services, LLC in Bloomington, Minnesota. The suite is contracted for the Firm's exclusive use upon declaration and is available for occupancy within four hours of the Firm's notice of declaration."
+    *

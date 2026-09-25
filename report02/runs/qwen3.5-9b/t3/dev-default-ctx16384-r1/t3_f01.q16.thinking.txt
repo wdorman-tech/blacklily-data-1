@@ -1,0 +1,42 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (not relevant here as dates are consistent or close).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "How does the compliance team surveil employees' electronic communications, and how often?"
+    *   Key elements needed: Method of surveillance (how) and Frequency (how often).
+
+3.  **Scan the Documents:**
+    *   Document 1: `02_compliance_manual.md` (dated January 15, 2026).
+        *   Section 1.2 Scope: General scope.
+        *   Section 11.4 Testing: Cybersecurity testing (penetration tests, vulnerability scans, phishing exercises). Not about surveillance of employee communications.
+        *   Section 14.1 Approved Channels: Where comms can happen.
+        *   Section 14.2 Prohibited Channels: What not to use.
+        *   Section 14.3 Archiving: Retention by Marrowgate Archiving, Inc.
+        *   Section 14.4 Surveillance and Review: "Compliance reviews lexicon alerts daily and reviews a random sample of not less than 50 messages each week, drawn from all Supervised Persons."
+        *   Section 14.5 Quarterly Certification: Certification frequency.
+    *   Document 2: `03_valuation_policy.md` (dated February 10, 2026).
+        *   Section 8.1 Annual Compliance Review: CCO reviews policy annually.
+
+4.  **Evaluate Findings against the Question:**
+    *   The question asks about surveillance of employees' electronic communications.
+    *   Document `02_compliance_manual.md`, Section 14.4 "Surveillance and Review" contains specific details on this.
+    *   Method: "Compliance reviews lexicon alerts daily and reviews a random sample of not less than 50 messages each week".
+    *   Frequency: "daily" (for lexicon alerts) and "each week" (for message review).
+    *   This matches the question's requirements.
+
+5.  **Draft the JSON Content:**
+    *   `answer`: Needs to be specific based on the text. "Compliance reviews lexicon alerts daily and reviews a random sample of not less than 50 messages each week, drawn from all Supervised Persons."
+    *   `source_document`: `02_compliance_manual.md`
+    *   `section`: `SECTION 14. ELECTRONIC COMMUNICATIONS > 14.4 Surveillance and Review` (or just the section label as provided in the text). The prompt asks for "the section where the answer appears, as they are labelled in the documents". In the text provided, it says `Section: SECTION 14. ELECTRONIC COMM

@@ -1,0 +1,32 @@
+*   Question: "What are the coverage limits of the Firm's cyber liability insurance policy, and who is the carrier?"
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+    *   Keys: "answer", "source_document", "section", "quote".
+
+    *   Document 1: `01_valuation_policy.md` (Valuation Policy and Procedures)
+    *   Document 2: `04_business_continuity_plan.md` (Business Continuity Plan)
+    *   Document 3: `05_fee_schedule.md` (Fee Schedule)
+    *   Document 4: `06_policy_update_memo.md` (Compliance Memorandum)
+
+    *   Search for "cyber", "insurance", "carrier", "limit".
+    *   In `04_business_continuity_plan.md`:
+        *   Section 9.5 (Notifications) mentions: "The Chief Financial Officer notifies the Firm's cyber liability insurer in accordance with the terms of the policy."
+    *   Check other documents:
+        *   `01_valuation_policy.md`: No mention of insurance.
+        *   `05_fee_schedule.md`: No mention of insurance.
+        *   `06_policy_update_memo.md`: No mention of insurance.
+
+    *   The document mentions that the Chief Financial Officer notifies the "Firm's cyber liability insurer", but it does *not* state the name of the carrier or the coverage limits.
+
+    *   Answer: NOT_IN_DOCUMENTS
+    *   source_document: ""
+    *   section: ""
+    *   quote: ""
+
+    *   The question asks for "coverage limits" and "who is the carrier".
+    *   The text in 9.5 says: "The Chief Financial Officer notifies the Firm's cyber liability insurer in accordance with the terms of the policy."
+    *   This confirms the existence of a policy, but does not provide the carrier name or the limits.
+
+    *   answer: "NOT_IN_DOCUMENTS"
+    *   source_document: ""
+    *   section: ""
+    *   quote: ""

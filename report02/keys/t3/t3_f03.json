@@ -1,0 +1,854 @@
+{
+  "firm_id": "t3_f03",
+  "firm_name": "Quenby Holt Family Office, LLC",
+  "firm_type": "Multi-family office RIA serving about 60 families, with an affiliated South Dakota trust company (Quenby Holt Trust Company) and outsourced custody",
+  "documents": [
+    "01_brochure.md",
+    "02_compliance_manual.md",
+    "03_valuation_policy.md",
+    "04_business_continuity_plan.md",
+    "05_fee_schedule.md",
+    "06_policy_update_memo.md"
+  ],
+  "questions": [
+    {
+      "qid": "q01",
+      "question": "State the firm's total regulatory assets under management as of its most recent fiscal year end, with the split between discretionary and non-discretionary assets.",
+      "answerable": true,
+      "trap": "none",
+      "expected": "$6.48 billion ($6,480,000,000) as of December 31, 2025: $5.91 billion discretionary and $570 million non-discretionary, for 62 client families. About $1.35 billion of reporting-only assets is excluded.",
+      "accept": [
+        "6[.,]48"
+      ],
+      "partial": [
+        "5[.,]91",
+        "6[.,]5\\s?(billion|bn)\\b"
+      ],
+      "reject": {
+        "HALLUCINATED_includes_reporting_only": [
+          "^(?!.*6[.,]48).*7[.,]83"
+        ]
+      },
+      "source_document": "01_brochure.md",
+      "section": "Item 4.3",
+      "quote": "As of December 31, 2025, the Firm managed regulatory assets under management of $6,480,000,000, of which $5,910,000,000 was managed on a discretionary basis and $570,000,000 on a non-discretionary basis",
+      "also_needs": []
+    },
+    {
+      "qid": "q02",
+      "question": "When was the firm's most recent external penetration test completed, and what were its principal findings?",
+      "answerable": false,
+      "trap": "near_miss",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_test_date": [
+          "^(?!.*(not|\\bno\\b|none|never|absent|silent|unspecified|n't|no\\s+information)).*\\b(19|20)\\d\\d\\b"
+        ]
+      },
+      "source_document": "02_compliance_manual.md",
+      "section": "Section 11.4",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q03",
+      "question": "What is the firm's limit on gifts given to or received from any single source, and what approval is required above it?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "An aggregate $250 per source or recipient per calendar year; gifts above that require the CCO's prior written approval. Cash and cash equivalents are prohibited regardless of amount (entertainment above $500 per person per event separately needs CCO pre-approval).",
+      "accept": [
+        "\\$?\\s?\\b250\\b|two hundred (and )?fifty"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_entertainment_threshold": [
+          "^(?!.*\\b250\\b).*\\b500\\b"
+        ]
+      },
+      "source_document": "02_compliance_manual.md",
+      "section": "Section 5.2",
+      "quote": "No Supervised Person may give or accept gifts with an aggregate value exceeding $250 per source or recipient per calendar year without the prior written approval of the CCO.",
+      "also_needs": []
+    },
+    {
+      "qid": "q04",
+      "question": "At what level of Family Relationship assets does the first advisory fee breakpoint (the step from the 0.80% rate to the 0.60% rate) currently occur?",
+      "answerable": true,
+      "trap": "supersession",
+      "expected": "$20,000,000: the 0.80% rate applies to the first $20 million and 0.60% applies above $20 million up to $50 million. The September 8, 2026 memo (Section 7) lowered the breakpoint from $25,000,000, effective for fees billed for the quarter beginning July 1, 2026.",
+      "accept": [
+        "\\b20,000,000\\b|\\b20(\\.0)?\\s?(million|mm|m)\\b|twenty million"
+      ],
+      "partial": [],
+      "reject": {
+        "STALE_breakpoint_25m": [
+          "^(?!.*(\\b20,000,000\\b|\\b20(\\.0)?\\s?(million|mm|m)\\b|twenty million)).*(25,000,000|\\b25\\s?(million|mm|m)\\b|twenty[- ]five million)"
+        ]
+      },
+      "source_document": "06_policy_update_memo.md",
+      "section": "Section 7",
+      "quote": "The first breakpoint is lowered from $25,000,000 to $20,000,000. The 0.80% rate now applies to the first $20,000,000 of Family Relationship assets, and the 0.60% rate applies to Family Relationship assets above $20,000,000 up to $50,000,000.",
+      "also_needs": []
+    },
+    {
+      "qid": "q05",
+      "question": "Describe the firm's alternate business site, including its location, capacity and how quickly it can be occupied.",
+      "answerable": true,
+      "trap": "none",
+      "expected": "A dedicated 12-seat work-area recovery suite operated by Halvern Recovery Services, LLC in Bloomington, Minnesota, available within four hours of the Firm's notice of declaration; personnel not assigned there work remotely.",
+      "accept": [
+        "^(?=.*bloomington)(?=.*(\\b12\\b|twelve))(?=.*\\b(four|4)[- ]?(hours?|hrs?|h)\\b).*",
+        "^(?=.*halvern)(?=.*bloomington)(?=.*(\\b12\\b|twelve|\\b(four|4)[- ]?(hours?|hrs?|h)\\b)).*"
+      ],
+      "partial": [
+        "bloomington",
+        "\\b12[- ]seat|twelve[- ]seat"
+      ],
+      "reject": {},
+      "source_document": "04_business_continuity_plan.md",
+      "section": "Section 3.1",
+      "quote": "The Firm's alternate site is a dedicated work-area recovery suite of 12 seats operated by Halvern Recovery Services, LLC in Bloomington, Minnesota. The suite is contracted for the Firm's exclusive use upon declaration and is available for occupancy within four hours of the Firm's notice of declaration.",
+      "also_needs": []
+    },
+    {
+      "qid": "q06",
+      "question": "Does the firm maintain key-person life insurance on its founders or other principals? If so, state the insured amounts.",
+      "answerable": false,
+      "trap": "unanswerable_clean",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_key_person_policy": [
+          "^(?!.*(not|\\bno\\b|none|never|absent|silent|unspecified|n't|no\\s+information)).*key[- ]?(person|man)"
+        ]
+      },
+      "source_document": "",
+      "section": "",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q07",
+      "question": "If Quenby Holt Trust Company serves as full trustee of a client trust, what does it charge, and is that fee credited against the Firm's advisory fee?",
+      "answerable": true,
+      "trap": "multi_part",
+      "expected": "QHTC charges 0.10% of trust assets per year as full trustee, subject to a $10,000 minimum per trust. The trustee fee is in addition to, and not offset against, the Firm's advisory fee (trust assets remain in the advisory fee base).",
+      "accept": [
+        "^(?!.*(?:^|[.;:!?]\\s)(?!(?:(?![.;:!?](?:\\s|$)).)*(?:\\b(?:no|none|neither|nor|not|never|without)\\b|n't))(?:(?![.;:!?](?:\\s|$)).)*\\b(?:is|are|will be|would be|gets?)\\s+(?:fully\\s+|partially\\s+)?(?:offset|credited)\\s+against)(?=.*(0?\\.10?\\s?(%|percent)|\\b10\\s?(basis points|bps|bp)\\b|ten basis points|one[- ]tenth of (one |1 )?(percent|%)))(?=.*(in addition|not (be )?(offset|credited|reduced|netted|deducted)|no (offset|credit|reduction)|additional to|on top of|\\bno\\b[.,;:]|n't (be )?(offset|credited|reduced|deducted)|separate(ly)?|(does not|doesn't) reduce|never (be )?(offset|credited)|(no (part|portion)|none|neither)\\b[^;]{0,60}(offset|credited|reduc)|both fees (are )?(charged|apply|payable|paid))).*"
+      ],
+      "partial": [
+        "0?\\.10?\\s?(%|percent)|\\b10\\s?(basis points|bps)\\b"
+      ],
+      "reject": {
+        "HALLUCINATED_offset": [
+          "^(?!.*(not|\\bno\\b|none|neither|no offset|in addition|n't|never|rather than|instead of|without (any )?(offset|credit))).*(offset|credited) against",
+          "(?:^|[.;:!?]\\s)(?!(?:(?![.;:!?](?:\\s|$)).)*(?:\\b(?:no|none|neither|nor|not|never|without)\\b|n't))(?:(?![.;:!?](?:\\s|$)).)*\\b(?:is|are|will be|would be|gets?)\\s+(?:fully\\s+|partially\\s+)?(?:offset|credited)\\s+against"
+        ]
+      },
+      "source_document": "05_fee_schedule.md",
+      "section": "Section 3.1",
+      "quote": "Where Quenby Holt Trust Company serves as full trustee, it charges an annual fee of 0.10% of trust assets, subject to a minimum of $10,000 per trust per year.",
+      "also_needs": [
+        {
+          "source_document": "01_brochure.md",
+          "section": "Item 5.4",
+          "quote": "Trustee fees charged by Quenby Holt Trust Company are in addition to, and are not offset against, the Firm's advisory fee."
+        }
+      ]
+    },
+    {
+      "qid": "q08",
+      "question": "Describe the composition of the Valuation Committee and its quorum requirement.",
+      "answerable": true,
+      "trap": "multi_part",
+      "expected": "Four voting members: the Chief Financial Officer, the Controller, the Director of Operations and the President of Quenby Holt Trust Company; the CIO, Head of Private Investments and CCO attend as non-voting members. A quorum is three voting members, one of whom must be the CFO or the Controller; decisions are by majority of voting members present.",
+      "accept": [
+        "^(?=.*(quorum[^.]{0,120}\\b(three|3)\\b|\\b(three|3)\\b[^.]{0,120}quorum))(?=.*(chief financial officer|\\bcfo\\b|controller)).*"
+      ],
+      "partial": [
+        "\\b(four|4) voting"
+      ],
+      "reject": {},
+      "source_document": "03_valuation_policy.md",
+      "section": "Section 2.2",
+      "quote": "A quorum consists of three voting members, one of whom must be the Chief Financial Officer or the Controller.",
+      "also_needs": [
+        {
+          "source_document": "03_valuation_policy.md",
+          "section": "Section 2.1",
+          "quote": "The Valuation Committee (the \"Committee\") consists of four voting members: the Chief Financial Officer, the Controller, the Director of Operations and the President of Quenby Holt Trust Company. The Chief Investment Officer, the Head of Private Investments and the Chief Compliance Officer attend as non-voting members."
+        }
+      ]
+    },
+    {
+      "qid": "q09",
+      "question": "Are any personal securities transactions by access persons exempt from pre-clearance on a de minimis basis? If so, state the threshold.",
+      "answerable": true,
+      "trap": "supersession",
+      "expected": "Yes. Transactions in issuers with a market capitalization of at least $10 billion are exempt from pre-clearance if the access person's aggregate transactions in that issuer do not exceed $10,000 in any 30-calendar-day period (reduced from $25,000 by the September 8, 2026 memo). Such trades remain reportable and subject to the holding period, and the exemption does not apply to Restricted List or Client-Affiliated Issuer List securities.",
+      "accept": [
+        "\\b10,000(?![,\\d])|\\$\\s?10\\s?(k|thousand)\\b|ten thousand"
+      ],
+      "partial": [],
+      "reject": {
+        "STALE_de_minimis_25000": [
+          "^(?!.*(\\b10,000(?![,\\d])|\\$\\s?10\\s?(k|thousand)\\b|ten thousand)).*(25,000|\\b25\\s?(k|thousand)\\b|twenty[- ]five thousand)"
+        ]
+      },
+      "source_document": "06_policy_update_memo.md",
+      "section": "Section 2",
+      "quote": "The aggregate amount below which transactions in an issuer with a market capitalization of at least $10 billion are exempt from pre-clearance is reduced from $25,000 to $10,000 in any 30 calendar day period.",
+      "also_needs": []
+    },
+    {
+      "qid": "q10",
+      "question": "In what year was Norrell Bay Trust & Custody, N.A. first appointed as the qualified custodian for the firm's client accounts?",
+      "answerable": false,
+      "trap": "near_miss",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_appointment_year": [
+          "^(?!.*(not|\\bno\\b|none|never|absent|silent|unspecified|n't|no\\s+information)).*\\b(19|20)\\d\\d\\b"
+        ]
+      },
+      "source_document": "01_brochure.md",
+      "section": "Item 15.1",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q11",
+      "question": "Who is the firm's Chief Compliance Officer, and to whom does the CCO report?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "Theresa L. Vannoy. She reports directly to the Managing Partner (Margaret A. Quenby, who is also CEO) and has unrestricted access to the Management Committee.",
+      "accept": [
+        "^(?=.*vannoy)(?=.*(managing partner|margaret|chief executive|\\bceo\\b|ms\\.? quenby|\\bquenby\\b(?!\\s+holt))).*"
+      ],
+      "partial": [
+        "vannoy"
+      ],
+      "reject": {},
+      "source_document": "02_compliance_manual.md",
+      "section": "Section 2.1",
+      "quote": "The Management Committee has designated Theresa L. Vannoy as Chief Compliance Officer of the Firm (the \"CCO\"). The CCO reports directly to the Managing Partner and has unrestricted access to the Management Committee.",
+      "also_needs": []
+    },
+    {
+      "qid": "q12",
+      "question": "How are private fund interests valued for purposes of calculating the advisory fee, and are unfunded commitments included in the fee base?",
+      "answerable": true,
+      "trap": "multi_part",
+      "expected": "They are included at values determined under the Valuation Policy: the most recent net asset value reported by the general partner or fund administrator, adjusted for capital calls and distributions after the reporting date. Unfunded capital commitments are excluded from the fee base.",
+      "accept": [
+        "^(?!.*unfunded (capital )?commitments? (are|is) included)(?=.*(net asset value|\\bnav\\b))(?=.*(unfunded[^.]{0,80}(exclud|not included|not part|not counted)|exclud[^.]{0,60}unfunded|not include[^.]{0,40}unfunded|unfunded[^.]{0,80}(n't|do(es)? not|are not|is not|never)[^.]{0,30}(includ|count|part)|\\bno\\b[.,;:])).*"
+      ],
+      "partial": [
+        "net asset value|\\bnav\\b"
+      ],
+      "reject": {
+        "HALLUCINATED_committed_capital_basis": [
+          "^(?!.*(exclud|not included|not part|not counted|n't|not (on |based on )?committed capital|rather than committed capital|do(es)? not count|\\bno\\b)).*(committed capital|unfunded commitments? (are|is) included)"
+        ]
+      },
+      "source_document": "03_valuation_policy.md",
+      "section": "Section 4.2",
+      "quote": "Interests in private funds are valued at the most recent net asset value reported by the general partner or fund administrator, adjusted for capital calls and distributions occurring after the reporting date.",
+      "also_needs": [
+        {
+          "source_document": "05_fee_schedule.md",
+          "section": "Section 2.4",
+          "quote": "Interests in private funds, co-investments and other private investments are included at their values determined under the Firm's Valuation Policy. Unfunded capital commitments are excluded from the fee base."
+        }
+      ]
+    },
+    {
+      "qid": "q13",
+      "question": "What percentage of the firm's total annual revenue is attributable to its largest client family?",
+      "answerable": false,
+      "trap": "unanswerable_clean",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_percentage": [
+          "^(?!.*(not|\\bno\\b|none|never|absent|silent|unspecified|n't|no\\s+information)).*\\d+(\\.\\d+)?\\s?(%|percent)"
+        ]
+      },
+      "source_document": "",
+      "section": "",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q14",
+      "question": "What recovery time objective and recovery point objective apply to the firm's most critical systems?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "Tier 1 systems (custodian portals and trading platforms, order management, email, remote access, bill payment) have a recovery time objective of four hours and a recovery point objective of one hour.",
+      "accept": [
+        "^(?=.*\\b(four|4)[- ]?(hours?|hrs?|h)\\b)(?=.*(\\b(one|1)[- ]?(hours?|hrs?|h)\\b|\\b60[- ]?min|\\ban hour\\b)).*"
+      ],
+      "partial": [
+        "\\b(four|4)[- ]?(hours?|hrs?|h)\\b"
+      ],
+      "reject": {},
+      "source_document": "04_business_continuity_plan.md",
+      "section": "Section 4.1",
+      "quote": "Tier 1 systems carry a recovery time objective of four hours and a recovery point objective of one hour.",
+      "also_needs": []
+    },
+    {
+      "qid": "q15",
+      "question": "Which third-party vendor currently performs the firm's offsite data backups?",
+      "answerable": true,
+      "trap": "supersession",
+      "expected": "Kelvedon Cloud Recovery, Inc., which replaced Ferncastle Data Vault, Inc. effective August 31, 2026 (September 8, 2026 memo); copies replicate to Kelvedon facilities in Kansas City, Missouri and Denver, Colorado.",
+      "accept": [
+        "kelvedon"
+      ],
+      "partial": [],
+      "reject": {
+        "STALE_ferncastle": [
+          "^(?!.*kelvedon).*ferncastle"
+        ]
+      },
+      "source_document": "06_policy_update_memo.md",
+      "section": "Section 6",
+      "quote": "Effective August 31, 2026, following completion of the data migration, Kelvedon Cloud Recovery, Inc. replaced Ferncastle Data Vault, Inc. as the Firm's offsite data backup provider.",
+      "also_needs": []
+    },
+    {
+      "qid": "q16",
+      "question": "Identify the firm's principal owners and their ownership percentages.",
+      "answerable": true,
+      "trap": "none",
+      "expected": "The Firm is wholly owned by Quenby Holt Holdings, LLC, whose principal owners are Margaret A. Quenby (42%) and Daniel R. Holt (34%); the remaining 24% is held by QH Principals LLC, owned by five senior employees, none above 7%.",
+      "accept": [
+        "^(?=.*quenby)(?=.*holt)(?=.*(\\b42\\s?(%|percent)|forty[- ]two percent))(?=.*(\\b34\\s?(%|percent)|thirty[- ]four percent)).*"
+      ],
+      "partial": [
+        "\\b42\\s?(%|percent)",
+        "\\b34\\s?(%|percent)",
+        "holdings[^.]{0,60}(100\\s?%|100 percent|wholly|all of)|wholly[- ]owned"
+      ],
+      "reject": {},
+      "source_document": "01_brochure.md",
+      "section": "Item 4.1",
+      "quote": "The Parent's principal owners are Margaret A. Quenby, who holds 42% of its membership interests, and Daniel R. Holt, who holds 34%.",
+      "also_needs": []
+    },
+    {
+      "qid": "q17",
+      "question": "How does the firm allocate capacity-constrained private fund and co-investment opportunities among client families?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "The Investment Committee first determines which Family Relationships are eligible (investor qualification, suitability, liquidity, concentration, IPS). If demand exceeds capacity, it allocates pro rata in proportion to each family's shortfall relative to its IPS private markets target allocation, with a $250,000 minimum per family. The Head of Private Investments documents it, the CCO reviews each allocation before commitments are submitted, and employees participate only after eligible families' demand is met.",
+      "accept": [
+        "^(?=.*(pro[- ]?rata|in proportion|proportional))(?=.*(shortfall|short of|below (its|their|the)[^.]{0,40}target|\\bgap|deficit|underweight|under[- ]?allocat|relative to[^.]{0,40}target)).*"
+      ],
+      "partial": [
+        "pro[- ]?rata|in proportion|proportional"
+      ],
+      "reject": {},
+      "source_document": "02_compliance_manual.md",
+      "section": "Section 9.4",
+      "quote": "Where aggregate eligible demand exceeds available capacity, the Investment Committee allocates the opportunity among eligible Family Relationships pro rata in proportion to each Family Relationship's shortfall relative to the private markets target allocation in its Investment Policy Statement, subject to a minimum allocation of $250,000 per Family Relationship.",
+      "also_needs": []
+    },
+    {
+      "qid": "q18",
+      "question": "Who chairs the Valuation Committee?",
+      "answerable": false,
+      "trap": "near_miss",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_chair": [
+          "^(?!.*(not|\\bno\\b|none|never|absent|silent|unspecified|n't|no\\s+information)).*(chair|is led by|leads the (valuation )?committee)"
+        ]
+      },
+      "source_document": "03_valuation_policy.md",
+      "section": "Section 2.1",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q19",
+      "question": "How does the firm identify and escalate stale prices?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "A daily stale price report flags any security whose price has not changed for five consecutive business days, which Operations investigates; a price unchanged for ten consecutive business days is escalated to the Valuation Committee. Private fund NAVs dated more than 120 days before the valuation date are also flagged.",
+      "accept": [
+        "^(?=.*\\b(five|5)\\b)(?=.*\\b(ten|10)\\b)(?=.*(business|trading|consecutive) days?).*"
+      ],
+      "partial": [
+        "\\b(five|5)\\b[^.]{0,40}days?"
+      ],
+      "reject": {},
+      "source_document": "03_valuation_policy.md",
+      "section": "Section 6.1",
+      "quote": "Operations produces a daily stale price report that flags any security whose price has not changed for five consecutive business days.",
+      "also_needs": [
+        {
+          "source_document": "03_valuation_policy.md",
+          "section": "Section 6.1",
+          "quote": "A security whose price has not changed for ten consecutive business days is escalated to the Valuation Committee"
+        }
+      ]
+    },
+    {
+      "qid": "q20",
+      "question": "Identify the qualified custodian(s) holding client assets and the independent public accountant that performs the firm's surprise custody examination.",
+      "answerable": true,
+      "trap": "multi_part",
+      "expected": "Norrell Bay Trust & Custody, N.A. is qualified custodian for substantially all accounts, with a limited number of securities-based lending and option accounts at Corvedale Clay Securities, LLC. Aldwick Brennan LLP performs the annual surprise examination.",
+      "accept": [
+        "^(?=.*norrell)(?=.*aldwick).*"
+      ],
+      "partial": [
+        "norrell",
+        "aldwick"
+      ],
+      "reject": {},
+      "source_document": "01_brochure.md",
+      "section": "Item 15.1",
+      "quote": "Client assets are held by Norrell Bay Trust & Custody, N.A., a national banking association, which serves as the qualified custodian for substantially all client accounts.",
+      "also_needs": [
+        {
+          "source_document": "01_brochure.md",
+          "section": "Item 15.3",
+          "quote": "The Firm engages Aldwick Brennan LLP, an independent public accountant, to conduct an annual surprise examination of client funds and securities over which the Firm or a related person has custody"
+        }
+      ]
+    },
+    {
+      "qid": "q21",
+      "question": "Is the firm a signatory to the Principles for Responsible Investment, and how are ESG factors integrated into manager selection?",
+      "answerable": false,
+      "trap": "unanswerable_clean",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_pri_signatory": [
+          "^(?!.*(not|\\bno\\b|none|never|absent|silent|unspecified|n't|no\\s+information)).*(signator|esg (factors|integration|criteria) (are|is))"
+        ]
+      },
+      "source_document": "",
+      "section": "",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q22",
+      "question": "Who conducts the firm's annual review of its compliance program, and by what date is the resulting report delivered?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "The CCO, with the assistance of Hethersett Compliance Advisors, LLC; a written report goes to the Management Committee no later than April 30 each year.",
+      "accept": [
+        "^(?=.*hethersett)(?=.*(april\\s?30|30(th)?\\s?(of\\s)?april|4/30|end of april)).*"
+      ],
+      "partial": [
+        "hethersett",
+        "april\\s?30|end of april"
+      ],
+      "reject": {},
+      "source_document": "02_compliance_manual.md",
+      "section": "Section 15.2",
+      "quote": "The CCO conducts the annual review with the assistance of Hethersett Compliance Advisors, LLC.",
+      "also_needs": [
+        {
+          "source_document": "02_compliance_manual.md",
+          "section": "Section 15.2",
+          "quote": "The CCO delivers a written report of its findings to the Management Committee no later than April 30 of each year."
+        }
+      ]
+    },
+    {
+      "qid": "q23",
+      "question": "How frequently does the Valuation Committee meet?",
+      "answerable": true,
+      "trap": "supersession",
+      "expected": "Monthly, within 10 business days after the end of each calendar month (changed from quarterly by the September 8, 2026 memo; the first monthly meeting follows September 30, 2026). The CFO or Controller may also call special meetings.",
+      "accept": [
+        "monthly|(each|every) (calendar )?month|once a month|month[- ]end"
+      ],
+      "partial": [],
+      "reject": {
+        "STALE_quarterly": [
+          "^(?!.*(monthly|(each|every) (calendar )?month|once a month|month[- ]end)).*quarter"
+        ]
+      },
+      "source_document": "06_policy_update_memo.md",
+      "section": "Section 4",
+      "quote": "The Valuation Committee will meet monthly, within 10 business days after the end of each calendar month, rather than quarterly.",
+      "also_needs": []
+    },
+    {
+      "qid": "q24",
+      "question": "What advisory fee rate applies to Family Relationship assets above $250 million?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "0.20% per year (reduced from 0.25% effective January 1, 2026).",
+      "accept": [
+        "0?\\.20?\\s?(%|percent)|\\b20\\s?(basis points|bps|bp)\\b|twenty basis points"
+      ],
+      "partial": [],
+      "reject": {
+        "STALE_pre_2026_rate": [
+          "^(?!.*(0?\\.20?\\s?(%|percent)|\\b20\\s?(basis points|bps|bp)\\b|twenty basis points)).*0?\\.25\\s?(%|percent)"
+        ]
+      },
+      "source_document": "05_fee_schedule.md",
+      "section": "Section 2.1",
+      "quote": "Family Relationship assets in excess of $250,000,000 are charged at 0.20% per year.",
+      "also_needs": []
+    },
+    {
+      "qid": "q25",
+      "question": "Describe the firm's cyber incident response arrangements, including who leads the response and which outside firms are engaged.",
+      "answerable": true,
+      "trap": "none",
+      "expected": "The Director of Technology and Information Security (Ingrid P. Solheim), as ISO and Incident Response Lead, leads the response and notifies the CCO within one hour; Northgale Security Operations, Inc. performs containment, forensic investigation and eradication; Vellacott Pryor LLP acts as outside breach counsel; the CFO notifies the cyber liability insurer; custodians are asked to apply heightened review to disbursements.",
+      "accept": [
+        "^(?=.*northgale)(?=.*vellacott).*"
+      ],
+      "partial": [
+        "northgale",
+        "vellacott",
+        "solheim|director of technology"
+      ],
+      "reject": {},
+      "source_document": "04_business_continuity_plan.md",
+      "section": "Section 8.2",
+      "quote": "A cyber incident is managed under the incident response procedures in Section 11.6 of the Compliance Manual, with the Director of Technology and Information Security as Incident Response Lead. If the incident impairs operations, the BCP Coordinator may declare a business disruption. Northgale Security Operations, Inc. performs containment and forensic investigation. Vellacott Pryor LLP serves as the Firm's outside breach counsel and advises on privilege, notification obligations and communications.",
+      "also_needs": [
+        {
+          "source_document": "02_compliance_manual.md",
+          "section": "Section 11.6",
+          "quote": "The ISO acts as Incident Response Lead and notifies the CCO within one hour of determining that an incident may involve client information or funds."
+        }
+      ]
+    },
+    {
+      "qid": "q26",
+      "question": "What is the coverage limit of the firm's cyber liability insurance policy?",
+      "answerable": false,
+      "trap": "near_miss",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_limit": [
+          "^(?!.*(not|\\bno\\b|none|never|absent|silent|unspecified|n't|no\\s+information)).*(\\$\\s?\\d|\\d+(\\.\\d+)?\\s?(million|mm)\\b)"
+        ]
+      },
+      "source_document": "02_compliance_manual.md",
+      "section": "Section 11.7",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q27",
+      "question": "Who owns the business continuity plan, and who serves as the alternate?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "Renata S. Oyelaran, Director of Operations, owns the plan as BCP Coordinator; Ingrid P. Solheim, Director of Technology and Information Security, is alternate BCP Coordinator.",
+      "accept": [
+        "^(?=.*oyelaran)(?=.*solheim).*"
+      ],
+      "partial": [
+        "oyelaran"
+      ],
+      "reject": {},
+      "source_document": "04_business_continuity_plan.md",
+      "section": "Section 1.2",
+      "quote": "The Plan is owned by Renata S. Oyelaran, Director of Operations, who serves as BCP Coordinator. Ingrid P. Solheim, Director of Technology and Information Security, serves as alternate BCP Coordinator.",
+      "also_needs": []
+    },
+    {
+      "qid": "q28",
+      "question": "How does the firm control trading in securities of public companies at which a member of a client family is an officer, director or 10% holder?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "Such issuers are placed on a Client-Affiliated Issuer List maintained by the CCO. No transaction in their securities may be made for any client account or employee Reportable Account without the CCO's prior approval, and the de minimis exemption does not apply. Trades for the affiliated family member's own accounts also require written confirmation that the trade is permitted under the issuer's trading window or a Rule 10b5-1 plan and that Rule 144 or Section 16 filings will be made.",
+      "accept": [
+        "^(?=.*(client[- ]affiliated|affiliated issuer))(?=.*(chief compliance officer|\\bcco\\b))(?=.*(approv|pre-?clear)).*"
+      ],
+      "partial": [
+        "client[- ]affiliated|affiliated issuer",
+        "^(?!.*restricted list)(?=.*\\blist\\b)(?=.*(chief compliance officer|\\bcco\\b))(?=.*(approv|pre-?clear)).*"
+      ],
+      "reject": {},
+      "source_document": "02_compliance_manual.md",
+      "section": "Section 7.3",
+      "quote": "The CCO maintains a Client-Affiliated Issuer List of public companies of which a member of a client family is an officer, director or beneficial owner of 10% or more of any class of equity securities. No transaction in a security of an issuer on the Client-Affiliated Issuer List may be effected for any client account or Reportable Account without the prior approval of the CCO.",
+      "also_needs": []
+    },
+    {
+      "qid": "q29",
+      "question": "How many investment and client-service professionals have left the firm in each of the past three years?",
+      "answerable": false,
+      "trap": "unanswerable_clean",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_departure_count": [
+          "^(?!.*(not|\\bno\\b|none|never|absent|silent|unspecified|n't|no\\s+information)).*\\b(\\d+|one|two|three|four|five|six|seven|eight|nine|ten)\\s?(%|percent|employees|professionals|departures|people|staff)"
+        ]
+      },
+      "source_document": "",
+      "section": "",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q30",
+      "question": "Which independent firm reviews Level 3 valuations, and how often is each position independently valued?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "Tessier Arkwright Valuation Group values each direct Level 3 position with a carrying value above $10 million at least annually, and every other direct Level 3 position at least once every three years; it reports to the Valuation Committee.",
+      "accept": [
+        "^(?=.*tessier)(?=.*(10,000,000|\\b10\\s?(million|mm|m)\\b|ten million)).*"
+      ],
+      "partial": [
+        "tessier"
+      ],
+      "reject": {},
+      "source_document": "03_valuation_policy.md",
+      "section": "Section 8.1",
+      "quote": "Tessier Arkwright Valuation Group performs an independent valuation of each direct Level 3 position with a carrying value above $10,000,000 at least annually, and of every other direct Level 3 position at least once every three years.",
+      "also_needs": []
+    },
+    {
+      "qid": "q31",
+      "question": "Describe the firm's proxy voting practices, including any third-party service provider used.",
+      "answerable": true,
+      "trap": "none",
+      "expected": "The Firm votes proxies for discretionary accounts (except third-party manager sleeves, which the managers vote) unless the client retains authority in writing, using Stannard Proxy Services, Inc. for research, recommendations under Firm guidelines, and vote execution and recordkeeping; conflicted votes follow Stannard's recommendation.",
+      "accept": [
+        "stannard"
+      ],
+      "partial": [],
+      "reject": {},
+      "source_document": "01_brochure.md",
+      "section": "Item 17.1",
+      "quote": "The Firm votes proxies for securities held in discretionary accounts, other than securities held in sleeves managed by third-party managers, unless the client has retained voting authority in writing. The Firm has engaged Stannard Proxy Services, Inc. to provide proxy research, vote recommendations under guidelines adopted by the Firm, and vote execution and recordkeeping.",
+      "also_needs": []
+    },
+    {
+      "qid": "q32",
+      "question": "Who must approve an override of a price supplied by a pricing source?",
+      "answerable": true,
+      "trap": "supersession",
+      "expected": "Two voting members of the Valuation Committee, one of whom must be the Chief Financial Officer, approving in advance and in writing on the Controller's written recommendation (September 8, 2026 memo; the Chief Investment Officer may no longer approve overrides).",
+      "accept": [
+        "^(?=.*(chief financial officer|\\bcfo\\b))(?=.*((two|2|dual|both)\\b[^.]{0,60}\\bmembers?|(one other|one additional|one more|another|a second|any other|an additional|at least one other|a further|(and|plus|with|together with)\\s+(one|a|any))\\b[^.]{0,40}\\bmember)).*"
+      ],
+      "partial": [
+        "valuation committee"
+      ],
+      "reject": {
+        "STALE_cio_approval": [
+          "^(?!.*(chief financial officer|\\bcfo\\b)).*(chief investment officer|\\bcio\\b)"
+        ]
+      },
+      "source_document": "06_policy_update_memo.md",
+      "section": "Section 5",
+      "quote": "Any override of a price supplied by a pricing source must be approved in advance, in writing, by two voting members of the Valuation Committee, one of whom must be the Chief Financial Officer.",
+      "also_needs": []
+    },
+    {
+      "qid": "q33",
+      "question": "What are the firm's minimum relationship size and minimum annual fee, and who may approve exceptions?",
+      "answerable": true,
+      "trap": "multi_part",
+      "expected": "The Firm generally requires a $15 million minimum Family Relationship and charges a minimum annual advisory fee of $150,000 per Family Relationship (excluding trust company and supplemental fees); waivers or other departures require the Managing Partner's written approval.",
+      "accept": [
+        "^(?=.*(150,000|\\b150\\s?(k|thousand)\\b))(?=.*(15,000,000|\\b15(\\.0)?\\s?(million|mm|m)\\b|fifteen million)).*"
+      ],
+      "partial": [
+        "150,000|\\b150\\s?(k|thousand)\\b",
+        "15,000,000|\\b15(\\.0)?\\s?(million|mm|m)\\b|fifteen million",
+        "managing partner"
+      ],
+      "reject": {},
+      "source_document": "01_brochure.md",
+      "section": "Item 7.2",
+      "quote": "The Firm generally requires a minimum Family Relationship of $15,000,000 in assets under management and charges the minimum annual fee described in Item 5.3. The Managing Partner may waive the minimum",
+      "also_needs": [
+        {
+          "source_document": "01_brochure.md",
+          "section": "Item 5.3",
+          "quote": "The minimum annual advisory fee is $150,000 per Family Relationship."
+        },
+        {
+          "source_document": "01_brochure.md",
+          "section": "Item 5.3",
+          "quote": "Any non-standard fee arrangement requires the written approval of the Managing Partner."
+        },
+        {
+          "source_document": "05_fee_schedule.md",
+          "section": "Section 4.1",
+          "quote": "The minimum does not include Trust Company fees or supplemental service fees."
+        }
+      ]
+    },
+    {
+      "qid": "q34",
+      "question": "How long does the firm retain its required books and records?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "Seven years from the end of the fiscal year of the last entry, the first two years in an appropriate Firm office; organizational documents for the life of the Firm plus three years. Electronic communications are archived by Arcwell Archive Services, Inc. in non-rewriteable, non-erasable format.",
+      "accept": [
+        "\\b(seven|7)[- ]years?"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_regulatory_five_years": [
+          "^(?!.*\\b(seven|7)[- ]years?).*\\b(five|5)[- ]years?"
+        ]
+      },
+      "source_document": "02_compliance_manual.md",
+      "section": "Section 13.1",
+      "quote": "The Firm retains all books and records required by Rule 204-2 for seven years from the end of the fiscal year during which the last entry was made on the record, the first two years in an appropriate office of the Firm.",
+      "also_needs": []
+    },
+    {
+      "qid": "q35",
+      "question": "What is the amount of capital that Quenby Holt Trust Company currently maintains, and what is its regulatory minimum?",
+      "answerable": false,
+      "trap": "near_miss",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_capital_amount": [
+          "^(?!.*(not|\\bno\\b|none|never|absent|silent|unspecified|n't|no\\s+information)).*(\\$\\s?\\d|\\d+(\\.\\d+)?\\s?(million|mm)\\b)"
+        ]
+      },
+      "source_document": "01_brochure.md",
+      "section": "Item 10.1",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q36",
+      "question": "When was the business continuity plan last exercised in a full-scale test?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "November 14, 2025, when all Tier 1 systems were restored within 3 hours and 10 minutes. Full-scale exercises are held at least annually, tabletop exercises at least semi-annually (most recently March 19, 2026), and the call tree is tested quarterly.",
+      "accept": [
+        "nov(ember|\\.)?\\s?14(th)?,?\\s?2025|14(th)?\\s?nov(ember|\\.)?,?\\s?2025|11/14/(20)?25|2025-11-14"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_tabletop_date_as_full_test": [
+          "^(?!.*(nov(ember|\\.)?\\s?14|14(th)?\\s?nov|11/14|2025-11-14)).*march\\s?19"
+        ]
+      },
+      "source_document": "04_business_continuity_plan.md",
+      "section": "Section 6.2",
+      "quote": "The most recent full-scale test was conducted on November 14, 2025.",
+      "also_needs": []
+    },
+    {
+      "qid": "q37",
+      "question": "What are the firm's primary and secondary pricing sources for fixed income securities?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "Ostrander Valuation Data, Inc. is the primary source (evaluated bid prices) and Kilbride Evaluated Pricing LLC is the secondary source; vendor prices are compared daily with custodian prices from Norrell Bay and Corvedale Clay.",
+      "accept": [
+        "^(?=.*ostrander)(?=.*kilbride).*"
+      ],
+      "partial": [
+        "ostrander"
+      ],
+      "reject": {},
+      "source_document": "03_valuation_policy.md",
+      "section": "Section 3.3",
+      "quote": "Ostrander Valuation Data, Inc. is the primary pricing source and supplies evaluated bid prices. Kilbride Evaluated Pricing LLC serves as the secondary source",
+      "also_needs": []
+    },
+    {
+      "qid": "q38",
+      "question": "Does the firm run criminal history and credit checks on prospective employees before hire? Describe the checks performed.",
+      "answerable": false,
+      "trap": "unanswerable_clean",
+      "expected": "NOT_IN_DOCUMENTS",
+      "accept": [
+        "NOT_IN_DOCUMENTS|not\\s+(stated|specified|addressed|provided|disclosed|included)|does\\s+not\\s+(state|specify|address)|no\\s+information"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_screening_steps": [
+          "^(?!.*(not|\\bno\\b|none|never|absent|silent|unspecified|n't|no\\s+information|\\bnor\\b|neither)).*(criminal|credit (check|history|report)|fingerprint|form u4|finra)"
+        ]
+      },
+      "source_document": "",
+      "section": "",
+      "quote": "",
+      "also_needs": []
+    },
+    {
+      "qid": "q39",
+      "question": "What are the termination provisions of the advisory agreement, and how are prepaid fees handled on termination?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "Either party may terminate on 30 days' written notice; fees are prorated to the effective date of termination and unearned prepaid fees are refunded pro rata within 30 days after that date. No termination fee is charged, and a client terminating within five business days of signing receives a full refund.",
+      "accept": [
+        "^(?=.*\\b(30|thirty)[- ]days?)(?=.*(pro[- ]?rat|refund)).*"
+      ],
+      "partial": [],
+      "reject": {},
+      "source_document": "05_fee_schedule.md",
+      "section": "Section 5.3",
+      "quote": "Either party may terminate the investment management agreement on 30 days' written notice. Fees are prorated to the effective date of termination, and unearned fees paid in advance are refunded to the client on a pro rata basis within 30 days after the effective date of termination.",
+      "also_needs": []
+    },
+    {
+      "qid": "q40",
+      "question": "When were the firm's compliance policies most recently amended, and who issued the amendments?",
+      "answerable": true,
+      "trap": "none",
+      "expected": "By memorandum dated September 8, 2026 from Theresa L. Vannoy, Chief Compliance Officer, recording six amendments to the Compliance Manual, Valuation Policy, Business Continuity Plan and Schedule of Fees (five approved by the Management Committee on September 3, 2026; the fee breakpoint change approved June 9, 2026).",
+      "accept": [
+        "^(?=.*(sept(ember|\\.)?[^.]{0,8}2026|9/[38]/(20)?26|2026-09-0[38]))(?=.*(vannoy|chief compliance officer|\\bcco\\b|management committee)).*"
+      ],
+      "partial": [
+        "sept(ember|\\.)?[^.]{0,8}2026"
+      ],
+      "reject": {},
+      "source_document": "06_policy_update_memo.md",
+      "section": "Section 1",
+      "quote": "This memorandum, issued by the Chief Compliance Officer on September 8, 2026, records six amendments to the Firm's policies and procedures.",
+      "also_needs": []
+    }
+  ]
+}

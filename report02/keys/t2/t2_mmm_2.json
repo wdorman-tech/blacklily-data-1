@@ -1,0 +1,287 @@
+{
+ "pair_id": "t2_mmm_2",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "3M Company",
+ "ticker": "MMM",
+ "split": "dev",
+ "prior": {
+  "fiscal_year_end": "2024-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/66740/000006674025000006/mmm-20241231.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2025-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/66740/000006674026000014/mmm-20251231.htm"
+ },
+ "words": 6582,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "modified",
+   "prior_heading": "* The Company’s results are affected by competitive conditions and customer preferences.",
+   "current_heading": "* The Company’s results are affected by competitive conditions and customer preferences.",
+   "similarity": 0.714,
+   "diff": [
+    "replace: [things,] -> [things:]",
+    "insert: [] -> [third-party manufactured]",
+    "replace: [13 Table] -> [Tariffs and other trade restrictions may also: increase the cost]",
+    "replace: [Contents] -> [raw materials and components imported from other countries, leading to higher production costs and product pricing to the extent those increased costs are offset through pricing actions; disrupt established supply chains, forcing the Company to find new suppliers or relocate production, which can be]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds a new passage on tariffs and other trade restrictions raising imported raw material and component costs, disrupting supply chains, limiting access to end markets, lowering profitability and clouding long-term planning, and narrows the PFAS customer-preference reference to products without third-party manufactured PFAS.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: tariffs and trade restrictions are a newly disclosed exposure (criterion 2 also applies to the new trade-restriction reference, and criterion 3 to the narrowed PFAS scope)."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1 and 2: a new exposure (tariffs and trade restrictions) is disclosed, and the PFAS qualifier changes the scope of the customer-preference risk."
+    }
+   }
+  },
+  {
+   "aid": "a02",
+   "status": "modified",
+   "prior_heading": "* The Company’s growth objectives are largely dependent on the timing and market acceptance of its new product offerings, including its ability to continually renew its pipeline of new products and to bring those products to market.",
+   "current_heading": "* The Company’s growth objectives are largely dependent on the timing and market acceptance of its new product offerings, including its ability to continually renew its pipeline of new products and to bring those products to market.",
+   "similarity": 0.943,
+   "diff": [
+    "replace: [This] -> [The]",
+    "insert: [] -> [to successfully bring new products to market]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The opening words change from \"This ability\" to \"The ability to successfully bring new products to market\" with the rest of the text unchanged.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: stylistic rewording that spells out the antecedent with identical meaning."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: stylistic rewording that spells out the antecedent with identical meaning."
+    }
+   }
+  },
+  {
+   "aid": "a03",
+   "status": "modified",
+   "prior_heading": "* The Company’s future results are subject to vulnerability with respect to materials and fluctuations in the costs and availability of purchased components, compounds, raw materials, energy, and labor due to shortages, increased demand and wages, strikes or other labor disruptions, logistics, supply chain interruptions, manufacturing site disruptions, regulatory developments, natural disasters, and other disruptive factors.",
+   "current_heading": "* The Company’s future results are subject to vulnerability with respect to materials and fluctuations in the costs and availability of purchased components, compounds, raw materials, energy, and labor due to shortages, increased demand and wages, strikes or other labor disruptions, logistics, supply chain interruptions, manufacturing site disruptions, regulatory developments, natural disasters, and other disruptive factors.",
+   "similarity": 0.962,
+   "diff": [
+    "insert: [] -> [or terminated]",
+    "insert: [] -> [events such as]",
+    "replace: [shortage,] -> [shortages,]",
+    "replace: [military conflicts, or be terminated.] -> [those noted in the first risk factor above.]",
+    "insert: [] -> [14 Table of Contents]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Military conflicts are dropped as a named example of events that could interrupt or terminate supplier relationships and are replaced by a pointer to the disruptive events in the first risk factor (which now covers tariffs and trade restrictions), alongside minor wording changes (\"shortage\" to \"shortages\", \"interrupted or terminated\").",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2: a specific type of event (military conflicts) is dropped from the list of supply disruption causes and replaced with a reference to newly disclosed trade-restriction events, which is more than a cross-reference update."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1 and 2: military conflicts is dropped as a disclosed cause of supplier interruption and trade restrictions are pulled in by reference, which is a change in substance rather than a pure cross-reference update."
+    }
+   }
+  },
+  {
+   "aid": "a04",
+   "status": "modified",
+   "prior_heading": "* The Company employs information including operational technology systems to support its business and to collect, store, and/or use proprietary and confidential information, including ongoing phased implementation of an enterprise resource planning (ERP) system as part of its business transformation on a worldwide basis over the next several years. Network disruptions, security and data breaches, cyberattacks, and other cybersecurity incidents involving the Company’s information technology systems, networks and infrastructure could disrupt or interfere with the Company’s operations; result in the compromise and misappropriation of proprietary and confidential information belonging to the Company or its customers, suppliers, and employees; and expose the Company to numerous expenses, liabilities, and other negative consequences, any or all of which could have a material adverse effect on the Company’s business, reputation, and results of operations.",
+   "current_heading": "* The Company employs information including operational technology systems to support its business and to collect, store, and/or use proprietary and confidential information, including ongoing phased implementation of an enterprise resource planning (ERP) system as part of its business transformation on a worldwide basis over the next several years. Network disruptions, security and data breaches, cyberattacks, and other cybersecurity incidents involving the Company’s information technology systems, networks and infrastructure could: disrupt or interfere with the Company’s operations; result in the compromise and misappropriation of proprietary and confidential information belonging to the Company or its customers, suppliers, and employees; and expose the Company to numerous expenses, liabilities, and other negative consequences, any or all of which could have a material adverse effect on the Company’s business, reputation, and results of operations.",
+   "similarity": 0.833,
+   "diff": [
+    "replace: [could] -> [could:]",
+    "delete: [14 Table of Contents] -> []",
+    "replace: [of] -> [of:]",
+    "insert: [] -> [15 Table of Contents]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "Only colons are added after \"could\" and \"risk of\" and page-number and table-of-contents artifacts move; the cybersecurity disclosure is otherwise identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: punctuation and page-break formatting only."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: punctuation and page-marker changes only."
+    }
+   }
+  },
+  {
+   "aid": "a05",
+   "status": "added",
+   "prior_heading": "",
+   "current_heading": "*The Company’s use of artificial intelligence technologies exposes the Company to risks which could have a material adverse effect on the Company’s business, reputation and results of operations.",
+   "similarity": 0.0,
+   "diff": [],
+   "material": true,
+   "rationale": "",
+   "description": "New risk factor on the Company's use of artificial intelligence, covering inaccurate or biased outputs, third-party AI vendor dependence, leakage of confidential or third-party data into AI systems, evolving AI regulation, competitive pressure, and resulting legal, regulatory and reputational harm."
+  },
+  {
+   "aid": "a06",
+   "status": "unchanged",
+   "prior_heading": "* Acquisitions, strategic alliances, divestitures, and other strategic events resulting from portfolio management actions and other evolving business strategies could affect future results.",
+   "current_heading": "* Acquisitions, strategic alliances, divestitures, and other strategic events resulting from portfolio management actions and other evolving business strategies could affect future results.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a07",
+   "status": "modified",
+   "prior_heading": "* The Company’s future results may be affected by its operational execution, including through organizational restructurings and scenarios where the Company generates fewer productivity improvements than planned.",
+   "current_heading": "* The Company’s future results may be affected by its operational execution, including through organizational restructurings and scenarios where the Company generates fewer productivity improvements than planned.",
+   "similarity": 0.392,
+   "diff": [
+    "insert: [] -> [are expected to deliver benefits, but also]",
+    "replace: [geographies, and the structural reorganization is expected to reduce the size of the corporate center, simplify supply chain, streamline 3M's geographic footprint, reduce layers of management, further align business go-to-market models to customers, and reduce manufacturing roles to align with produ] -> [geographies.]",
+    "replace: [as] -> [as:]",
+    "insert: [] -> [16 Table of Contents]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The description of the structural reorganization (shrinking the corporate center, simplifying the supply chain, streamlining the geographic footprint, removing management layers, realigning go-to-market models and cutting manufacturing roles to match production volumes) is deleted and replaced with a general statement that workforce restructuring is expected to deliver benefits but also affects business groups, functions and geographies.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2: a specific named program (the structural reorganization and its stated actions, including manufacturing role reductions) is dropped from the disclosure."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 2: a specific named program (the structural reorganization and its stated components) is dropped from the disclosure."
+    }
+   }
+  },
+  {
+   "aid": "a08",
+   "status": "modified",
+   "prior_heading": "* The Company's defined benefit pension and postretirement plans are subject to financial market risks that could have a material adverse effect on our results.",
+   "current_heading": "* The Company's defined benefit pension and postretirement plans are subject to financial market risks that could have a material adverse effect on our results.",
+   "similarity": 0.984,
+   "diff": [
+    "delete: [15 Table of Contents] -> []"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "Only a page-number and table-of-contents artifact is removed; the pension and postretirement plan text is identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: page-break formatting only."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: page-marker artifact with no change in wording."
+    }
+   }
+  },
+  {
+   "aid": "a09",
+   "status": "modified",
+   "prior_heading": "* Change in the Company’s credit ratings or increases in benchmark interest rates could increase cost of funding.",
+   "current_heading": "* Change in the Company’s credit ratings or increases in benchmark interest rates could increase cost of funding.",
+   "similarity": 0.992,
+   "diff": [
+    "replace: [negative] -> [stable]",
+    "replace: [Fitch.] -> [Fitch Ratings.]",
+    "replace: [expense] -> [expenses]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The S&P Global Ratings outlook on 3M's BBB+ credit rating changes from negative to stable, while the Moody's A3 stable and Fitch A- stable ratings are unchanged and \"Fitch\" is renamed \"Fitch Ratings\".",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 4: a rating (the S&P outlook) changes from negative to stable, which also softens the stated risk under criterion 3."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 4 and 3: a credit rating outlook changes (negative to stable), softening the disclosed funding-cost risk."
+    }
+   }
+  },
+  {
+   "aid": "a10",
+   "status": "unchanged",
+   "prior_heading": "* Changes in tax rates, laws, or regulations could adversely impact our financial results.",
+   "current_heading": "* Changes in tax rates, laws, or regulations could adversely impact our financial results.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a11",
+   "status": "modified",
+   "prior_heading": "* The Company is subject to risks related to the Company's Aearo Entities and CAE Settlement.",
+   "current_heading": "* The Company is subject to risks related to the Company's Aearo Entities and CAE Settlement.",
+   "similarity": 0.994,
+   "diff": [
+    "replace: [19,] -> [17,]",
+    "insert: [] -> [17 Table of Contents]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The cross-reference to the Commitments and Contingencies footnote changes from Note 19 to Note 17, and a page-break artifact is added, with the CAE Settlement terms ($6.0 billion, 2023 to 2029, more than 99% participation) unchanged.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: cross-reference update and page-break formatting only."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: cross-reference update only."
+    }
+   }
+  },
+  {
+   "aid": "a12",
+   "status": "unchanged",
+   "prior_heading": "Risks Related to the Spin-off of Solventum, the Company’s Former Health Care Business",
+   "current_heading": "Risks Related to the Spin-off of Solventum, the Company’s Former Health Care Business",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a13",
+   "status": "modified",
+   "prior_heading": "* The Company is subject to risks related to the separation of Solventum, the Company's former Health Care business, into an independent public company.",
+   "current_heading": "* The Company is subject to risks related to the separation of Solventum, the Company's former Health Care business, into an independent public company.",
+   "similarity": 0.524,
+   "diff": [
+    "replace: [counterparties; and the risk that any consents or approvals required will not be obtained or will be obtained subject to material modifications to the terms of the underlying arrangement.] -> [counterparties.]",
+    "delete: [16 Table of Contents] -> []"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The risk that consents or approvals required for the Solventum separation will not be obtained, or will be obtained subject to material modifications to the underlying arrangements, is deleted.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: a previously disclosed risk is removed."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: a previously disclosed risk is removed."
+    }
+   }
+  }
+ ]
+}

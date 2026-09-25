@@ -1,0 +1,45 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Return ONLY a JSON object with keys: "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: State the Adviser's regulatory assets under management, the date as of which the figure is calculated, and how much is managed on a discretionary versus non-discretionary basis.
+    *   Required Information:
+        1.  Regulatory Assets Under Management (AUM).
+        2.  Date as of calculation.
+        3.  Discretionary vs. Non-discretionary breakdown.
+
+3.  **Scan the Documents:**
+
+    *   **Document 1:** `01_brochure.md` | Form ADV Part 2A: Firm Brochure, dated March 27, 2026.
+        *   **Section:** Item 4. Advisory Business > 4.4 Assets Under Management.
+        *   **Text:** "As of December 31, 2025, the Adviser managed regulatory assets under management of $1,874,612,000, all on a discretionary basis. The Adviser does not manage any assets on a non-discretionary basis."
+        *   **Relevance:** This section contains all three pieces of information requested (AUM amount, date, discretionary/non-discretionary status).
+
+    *   **Document 2:** `01_brochure.md` | Form ADV Part 2A: Firm Brochure, dated March 27, 2026.
+        *   **Section:** Item 2. Material Changes > 2.1 Summary of Material Changes.
+        *   **Text:** Mentions Item 4 reports regulatory assets under management as of December 31, 2025. (Confirms the date and existence).
+
+    *   **Document 3:** `02_compliance_manual.md` | Compliance Manual, dated January 15, 2026.
+        *   **Relevance:** Does not contain AUM figures.
+
+4.  **Synthesize the Answer:**
+    *   Source Document: `01_brochure.md` (Most recent brochure, March 27, 2026).
+    *   Section: Item 4. Advisory Business > 4.4 Assets Under Management.
+    *   Quote: "As of December 31, 2025, the Adviser managed regulatory assets under management of $1,874,612,000, all on a discretionary basis. The Adviser does not manage any assets on a non-discretionary basis."
+    *   Answer Construction: Combine the details into a concise statement based on the quote.
+
+5.  **Format Output:**
+    *   JSON object.
+    *   Keys: "answer", "source_document

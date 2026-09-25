@@ -1,0 +1,411 @@
+{
+  "meeting_id": "t5_m03",
+  "title": "Business owner between signing and closing on a company sale: net proceeds, escrows and the tax reserve",
+  "notes": "Dermot gives the net closing wire as 11.1 million and about twelve minutes later Renata reads the draft funds flow memo showing 10,496,300 (the first figure was before banker and legal fees), which also moves the amount phased into the moderate model from eight and a half to 7.9 million; the transcript first renders the closing date as October 13th and the buyer as Chorister, both clarified only after the associate joins, and the next meeting is first floated for the 13th before landing on Wednesday, October 14. The wire-instruction letter moves from Lowell to Dermot because deal counsel accepts only seller-signed instructions with a callback, the IPS due date moves from Friday to September 29, the closing recap omits the COBRA comparison, Renata's document forwarding and the clients' own DocuSign signing (i7, which shares every noun with the associate's i1 and differs only in who acts); the loss of the Tallowbrook group health plan at closing is keyed as part of e2 (Dermot stops being an employee), so a separately listed health-coverage event matches neither e1 nor e2 and goes to adjudication, as does a client item to read and sign the revised IPS. The mortgage payoff and the $200,000 stake in Wes Hollingshed's shop are explicitly deferred and the $400,000 donor-advised fund proposal is declined, so none of them is an action.",
+  "scalar_fields": {
+    "meeting_date": {
+      "expected": "September 16, 2026",
+      "accept": [
+        "sep(t(ember)?)?\\.? 16(th)?\\b",
+        "\\b16(th)? (of )?sep",
+        "2026-09-16",
+        "\\b0?9/16\\b",
+        "\\b16/0?9/",
+        "\\b0?9-16-(20)?26"
+      ],
+      "reject": {}
+    },
+    "client_names": {
+      "expected": "Dermot Quillane; Renata Quillane",
+      "accept": [
+        "^(?!.*(lowell|pennacott|ifeoma|maduka|emory|lorna)).*dermot",
+        "^(?!.*(lowell|pennacott|ifeoma|maduka|emory|lorna)).*renata"
+      ],
+      "match": "all",
+      "reject": {
+        "WRONG_STAFF_AS_CLIENT": [
+          "lowell|pennacott|ifeoma|maduka|emory|lorna"
+        ]
+      }
+    },
+    "primary_goal": {
+      "expected": "Preserve the proceeds from the sale of the business and turn them into income that lasts the rest of both their lives",
+      "accept": [
+        "preserv|protect|safeguard|not lose|don'?t lose|capital preservation",
+        "(proceeds|sale|money|wealth|portfolio).*(retire|income|last|live on)",
+        "(retire|income).*(proceeds|sale)",
+        "income.*(last|lifetime|rest of)"
+      ],
+      "reject": {}
+    },
+    "retirement_target": {
+      "expected": "Dermot fully retires at the end of his 12-month consulting agreement with the buyer, end of October 2027, at age 62 (the 2024 plan assumed 65); Renata is already retired",
+      "accept": [
+        "2027",
+        "\\b62\\b|sixty[- ]two",
+        "(end|expir|conclu|complet|finish|after).{0,40}(consult|transition)",
+        "(consult|transition).{0,60}(end|expir|over|done|conclu|complet)",
+        "(12|twelve)[- ]months? (after|from|post)[- ]?clos"
+      ],
+      "reject": {
+        "STALE_65": [
+          "^(?!.*(2027|\\b62\\b|sixty[- ]two|earlier than|sooner than|instead of|rather than|not at (age )?(65|sixty[- ]five)|previous(ly)?|originally|old plan|prior plan|2024 plan|after (the )?((12|twelve)[- ]month |one[- ]year )?consult|end of (the )?consult|consult\\w* (agreement |year |period |term )?(ends|is over|expires)|consult|transition)).*(\\b65\\b|sixty[- ]five)"
+        ]
+      }
+    },
+    "risk_tolerance": {
+      "expected": "Moderate (the firm's 50/50 model), household-wide",
+      "accept": [
+        "\\bmoderate\\b(?![- ](aggressive|growth))",
+        "\\b50/50\\b|\\b50-50\\b|fifty[- ]fifty"
+      ],
+      "reject": {
+        "STALE_MODERATELY_AGGRESSIVE": [
+          "^(?!.*\\bmoderate\\b(?![- ](aggressive|growth))).*(moderate(ly)?[- ]aggressive|moderate[- ]growth|70/30|70-30)"
+        ],
+        "WRONG_CONSERVATIVE": [
+          "^(?!.*\\bmoderate\\b(?![- ](aggressive|growth))).*conservative"
+        ]
+      }
+    },
+    "risk_tolerance_change": {
+      "expected": "from moderately aggressive to moderate",
+      "accept": [
+        "moderate(ly)?[- ]aggressive.*\\bmoderate\\b(?![- ](aggressive|growth))",
+        "\\bmoderate\\b(?![- ](aggressive|growth)).*(from|was|previously|prior|down).*(moderate(ly)?[- ]aggressive|70[/-]30)",
+        "70[/-]30.*50[/-]50",
+        "(lower|reduc|decreas|down|de-?risk).*\\bmoderate\\b(?![- ](aggressive|growth))"
+      ],
+      "reject": {
+        "WRONG_NO_CHANGE": [
+          "^(?!.*(moderate(ly)?[- ]aggressive|70[/-]30)).*(no change|unchanged)"
+        ],
+        "WRONG_CONSERVATIVE": [
+          "^(?!.*\\bmoderate\\b(?![- ](aggressive|growth))).*conservative"
+        ]
+      }
+    },
+    "next_meeting": {
+      "expected": "Wednesday, October 14, 2026 at 10:00 a.m., in person at the office",
+      "accept": [
+        "oct(ober)?\\.? 14",
+        "\\b14(th)? (of )?oct",
+        "\\b10/14\\b|2026-10-14|\\b14/10\\b|\\b10-14-(20)?26",
+        "wednesday,? (the )?14"
+      ],
+      "reject": {
+        "STALE_PROPOSED_13TH": [
+          "^(?!.*(14|fourteenth)).*(13|thirteenth)"
+        ]
+      }
+    }
+  },
+  "life_events": [
+    {
+      "eid": "e1",
+      "expected": "Sale of Tallowbrook Precision, Inc. to Corrister Industrial Holdings, Inc. for $14.5 million: stock purchase agreement signed September 2, 2026 with a 338(h)(10) election; closing scheduled for Friday, October 30, 2026",
+      "match": [
+        "^(?!.*(health|cobra|marketplace|insurance|medicare)).*(tallowbrook|corrister|chorister)",
+        "stock purchase|\\bspa\\b|338|\\bh ?10\\b|purchase agreement",
+        "14[.,]5|14,500|fourteen (point )?five",
+        "(sale|sell|sold|selling)\\b.{0,40}(business|company|shop|tallowbrook|stock)|(business|company|shop)\\b.{0,20}\\b(sale|sold)|acqui(red|sition)"
+      ],
+      "reject": {
+        "STALE_CLOSING_DATE": [
+          "^(?!.*(october 30|oct\\.? 30|\\b30(th)? (of )?oct|\\b10/30\\b|2026-10-30|10-30-2026|30th|thirtieth)).*(october 13|oct\\.? 13|\\b13(th)? (of )?oct|\\b10/13\\b|2026-10-13|10-13-2026|13th|thirteenth)"
+        ],
+        "STALE_BUYER_NAME": [
+          "^(?!.*corrister).*chorister"
+        ]
+      }
+    },
+    {
+      "eid": "e2",
+      "expected": "Dermot stops being an employee at closing (so the couple leaves the Tallowbrook group health plan, with COBRA or a marketplace plan from November 1, 2026 as the bridge to Medicare) and moves to a 12-month consulting agreement with the buyer at $20,000 a month, then fully retires at the end of October 2027 at age 62",
+      "match": [
+        "^(?!.*(health|cobra|marketplace|insurance|medicare)).*(consult|retir|step(s|ping)? down|no longer (an )?employee)",
+        "consulting (agreement|arrangement|contract|role|engagement|period|year|term|deal)|(becom\\w*|transition\\w*|mov\\w*|switch\\w*|convert\\w*|stays? on|remain\\w*|work\\w*|serv\\w*) (on )?(as )?(an? )?(paid )?consultant|(12|twelve)[- ]month|\\$?20,000|\\$20k|\\b20k\\b|twenty thousand|fully retir|full retirement|retire\\w* (fully|completely|for good)|retire\\w*.{0,40}(2027|\\b62\\b|sixty[- ]two)|(2027|\\b62\\b|sixty[- ]two).{0,40}retire"
+      ],
+      "reject": {
+        "STALE_65": [
+          "^(?!.*(2027|\\b62\\b|sixty[- ]two|earlier than|sooner than|instead of|rather than|not at (age )?(65|sixty[- ]five)|previous(ly)?|originally|old plan|prior plan|2024 plan|after (the )?((12|twelve)[- ]month |one[- ]year )?consult|end of (the )?consult|consult\\w* (agreement |year |period |term )?(ends|is over|expires))).*(\\b65\\b|sixty[- ]five)"
+        ]
+      }
+    }
+  ],
+  "account_actions": [
+    {
+      "aid": "a1",
+      "expected": "Open a new brokerage account at Wickstead titled to the Quillane Family Trust and receive the net closing wire of $10,496,300 on October 30, 2026",
+      "match": [
+        "\\bwire\\b|deposit|receiv|closing proceeds|net proceeds|proceeds of the sale|sale proceeds",
+        "\\bopen(ing|ed)?\\b|establish|new (brokerage |trust |taxable )?account",
+        "10,?496|10\\.49|10\\.5(?!\\d)|ten (point )?five|ten and a half|10 and a half"
+      ],
+      "amount_accept": [
+        "10,?496",
+        "10\\.49",
+        "10\\.5",
+        "ten (point )?five",
+        "ten and a half",
+        "10 and a half"
+      ],
+      "amount_reject": {
+        "STALE_11_1": [
+          "^(?!.*(10,?496|10\\.49|10\\.5|ten (point )?five|ten and a half|10 and a half)).*(11\\.1|11,1\\d\\d|eleven (point )?one)"
+        ]
+      }
+    },
+    {
+      "aid": "a2",
+      "expected": "Buy a Treasury bill ladder of $2,600,000 in the trust account as the tax reserve, split between early January and early April 2027 maturities",
+      "match": [
+        "t-?bills?|treasur(y|ies)|ladder",
+        "tax (reserve|set[- ]aside|liabilit|payment|bill)|reserve for (the )?tax|(for|to pay) (the )?(irs|tax)|estimated tax"
+      ],
+      "amount_accept": [
+        "(?<!\\d-)(?<!\\d -)(?<!\\d- )(?<!\\d to )(?<!-\\$)(?<!- \\$)(?<!to \\$)\\b2\\.6",
+        "(?<!\\d-)(?<!\\d -)(?<!\\d- )(?<!\\d to )(?<!-\\$)(?<!- \\$)(?<!to \\$)\\b2,?600,?000",
+        "(?<!to )two (point )?six"
+      ],
+      "amount_reject": {
+        "WRONG_LOW_END": [
+          "^(?!.*(2\\.6|2,?600|two (point )?six)).*(2\\.4|2,?400|two (point )?four)"
+        ],
+        "WRONG_RANGE": [
+          "2\\.4\\d*\\s*(million|m|mm)?\\s*(-|to)\\s*\\$?2\\.6|2,?400,?000\\s*(-|to)\\s*\\$?2,?600,?000|two (point )?four to two (point )?six"
+        ]
+      }
+    },
+    {
+      "aid": "a3",
+      "expected": "Invest the remaining $7,896,300 (about $7.9 million) in the moderate 50/50 model in three tranches: one third at funding, one third in January 2027, one third in March 2027",
+      "match": [
+        "tranche|thirds|in (three|3) (pieces|parts|installments|stages|steps)|phas(e|ed|ing)|staged|dollar[- ]cost|\\bdca\\b",
+        "7[.,]9|7,896|seven (point )?nine",
+        "^(?!.*(\\bira|rebalanc|realloc)).*(remain|rest of|balance of)",
+        "^(?!.*(\\bira|rebalanc|realloc)).*(moderate|50/50|50-50|fifty[- ]fifty).{0,20}(model|portfolio|allocation)"
+      ],
+      "amount_accept": [
+        "7[.,]9",
+        "7,?896",
+        "seven (point )?nine",
+        "2[.,]63"
+      ],
+      "amount_reject": {
+        "STALE_8_5": [
+          "^(?!.*(7[.,]9|7,?896|seven (point )?nine|2[.,]63)).*(8[.,]5|8,?5\\d\\d|eight and a half|eight (point )?five)"
+        ]
+      }
+    },
+    {
+      "aid": "a4",
+      "expected": "Rebalance Dermot's IRA (about $1.14 million) and Renata's IRA (about $420,000), about $1.56 million combined, from the 70/30 model to the moderate 50/50 model once the new IPS is signed",
+      "match": [
+        "\\bira|rebalanc|realloc"
+      ],
+      "amount_accept": [
+        "1[.,]56",
+        "1,560",
+        "1\\.14",
+        "1,140",
+        "420",
+        "both iras|entire|full balance",
+        "\\ball\\b|100 ?%|whole|\\bn/?a\\b|not applicable"
+      ],
+      "amount_reject": {}
+    }
+  ],
+  "action_items": [
+    {
+      "iid": "i1",
+      "expected_task": "Prepare the new Quillane Family Trust account application, source-of-funds form and wire instruction letter at Wickstead and send them by DocuSign for signature before the clients fly out",
+      "match": [
+        "docusign|\\be-?sign|electronic signature",
+        "^(?!.*(emory|venner|call ?back|counsel|attorney|lawyer|law firm)).*(application|paperwork|packet|source[- ]of[- ]funds|anti-money|\\baml\\b|account (forms?|documents|docs)|(open|opening|set ?up|new).{0,30}account)",
+        "^(?!\\W*(((the )?clients?|dermot (and|&) renata|renata (and|&) dermot|dermot|renata|(the )?quillanes?|both( clients)?)( quillane)?\\s+(to\\s+|will\\s+|should\\s+|must\\s+)?)?((read|review)\\s*(,|and|&)\\s*)?(read|review|sign|e-?sign|approve|execute|countersign)\\b)(?!.*\\b(sent|prepared|drafted|issued|delivered|emailed|circulated|generated|written)\\s+(by|from)\\b)(?!.*(cobra|marketplace|health|\\bips\\b|investment policy|policy statement|projection))(?=.*(e-?sign|electronic signature|(docusign|application|packet|paperwork|source[- ]of[- ]funds|anti-money|\\baml\\b|account (forms?|documents|docs)|onboarding)|account)).*\\b(send|sends|sending|sent|prepar\\w*|draft\\w*|put together|e-?mail\\w*|circulat\\w*|issu\\w*|deliver\\w*|generat\\w*|submit\\w*)\\b"
+      ],
+      "owner_accept": [
+        "ifeoma|maduka|associate"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "tomorrow",
+        "sep(t(ember)?)?\\.? 17|\\b17(th)? (of )?sep|\\b17th\\b|\\b0?9/17\\b|2026-09-17",
+        "thursday",
+        "before (9|nine)"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i2",
+      "expected_task": "Sign the wire instruction letter for the new trust account, email it to Emory (seller's counsel at Venner Holloway), and confirm the instructions on the firm's callback",
+      "match": [
+        "(emory|venner|attorney|counsel|law firm|lawyer).*(wire|instruction)",
+        "(wire|instruction).*(emory|venner|attorney|counsel|law firm|lawyer)",
+        "calls? ?back|call-back|verification call|verbal(ly)?|confirm.{0,30}(by|on|over) (the )?(phone|call)",
+        "^(?!.*(application|source[- ]of[- ]funds|prepar)).*\\bwire\\b.{0,30}(letter|instruction)"
+      ],
+      "owner_accept": [
+        "dermot"
+      ],
+      "owner_reject": {
+        "STALE_OWNER": [
+          "^(?!.*dermot).*(lowell|pennacott|advis)"
+        ]
+      },
+      "due_accept": [
+        "oct(ober)?\\.? 23|\\b23(rd)? (of )?oct|\\b10/23\\b|2026-10-23",
+        "twenty[- ]?third|23rd",
+        "(a|one) week before (the )?clos"
+      ],
+      "due_reject": {},
+      "trap": "reassigned"
+    },
+    {
+      "iid": "i3",
+      "expected_task": "Draft the revised Investment Policy Statement with the moderate profile and the full proceeds plan and send it to the clients for signature",
+      "match": [
+        "\\bips\\b|investment policy|policy statement",
+        "^(?!\\W*(((the )?clients?|dermot (and|&) renata|renata (and|&) dermot|dermot|renata|(the )?quillanes?|both( clients)?)( quillane)?\\s+(to\\s+|will\\s+|should\\s+|must\\s+)?)?((read|review)\\s*(,|and|&)\\s*)?(read|review|sign|e-?sign|approve|execute|countersign)\\b)(?!.*\\b(sent|prepared|drafted|issued|delivered|emailed|circulated|generated|written)\\s+(by|from)\\b)(?=.*(\\bips\\b|investment policy|policy statement)).*\\b(draft\\w*|prepar\\w*|send|sends|sending|sent|deliver\\w*|writ\\w*|circulat\\w*|put together|updat\\w*|revis\\w*)"
+      ],
+      "owner_accept": [
+        "lowell|pennacott|advis"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "sep(t(ember)?)?\\.? 29|\\b29(th)? (of )?sep|\\b0?9/29\\b|2026-09-29",
+        "twenty[- ]?ninth|29th",
+        "tuesday"
+      ],
+      "due_reject": {
+        "STALE_DUE": [
+          "^(?!.*(29|twenty[- ]?ninth|tuesday)).*(friday|sep(t(ember)?)?\\.? 18|\\b18(th)? (of )?sep|\\b0?9/18\\b|18th|eighteenth)"
+        ]
+      },
+      "trap": "due_changed"
+    },
+    {
+      "iid": "i4",
+      "expected_task": "Deliver the full 2026 tax projection: 338(h)(10) recapture, installment treatment of the indemnity escrow and earnout, and whether the estimated tax safe harbor is met",
+      "match": [
+        "projection|tax (estimate|analysis|calculation|picture|numbers)",
+        "^(?!.*\\b(ask|asks|asking|tell|remind|follow up with|check with|coordinate with|make sure|have lorna|get lorna)\\b).*(338|\\(h\\) ?\\(10\\)|\\bh ?10\\b|recapture|safe harbor|installment|estimated tax)",
+        "(full|complete|final|detailed|updated|comprehensive|2026)\\b.{0,15}projection"
+      ],
+      "owner_accept": [
+        "lorna|\\bcpa\\b|accountant|tax (advis|prepar|professional)"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "oct(ober)?\\.? 0?9(th)?\\b|\\b0?9(th)? (of )?oct|\\b10/0?9\\b|2026-10-09",
+        "\\bninth\\b|\\b9th\\b"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i5",
+      "expected_task": "Forward the executed stock purchase agreement, all schedules and the draft funds flow memo to Lowell, Ifeoma and Lorna",
+      "match": [
+        "forward|(send|email|e-mail|share)\\w*\\b.{0,80}\\b(lowell|ifeoma|lorna|advis\\w*|associate|cpa|accountant)",
+        "^(?!.*(projection|recapture|safe harbor|docusign)).*(purchase agreement|\\bspa\\b|funds flow|schedules|closing (documents|docs)|deal documents)"
+      ],
+      "owner_accept": [
+        "renata"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "tonight|today|this evening|end of (the )?day|same day|night of|evening of|wednesday|night",
+        "sep(t(ember)?)?\\.? 16|\\b16(th)? (of )?sep|\\b0?9/16\\b|2026-09-16"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i6",
+      "expected_task": "Prepare a side-by-side comparison of COBRA and marketplace health coverage for after closing, getting the COBRA rates from Joanne Liddell",
+      "match": [
+        "cobra|marketplace|health (insurance|coverage|plan)|\\baca\\b",
+        "side[- ]by[- ]side|compar\\w*|premium|deductible|joanne|liddell|anand|in[- ]network"
+      ],
+      "owner_accept": [
+        "ifeoma|maduka|associate"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "next (meeting|review)|oct(ober)?\\.? 14|\\b14(th)? (of )?oct|\\b10/14\\b|2026-10-14"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i7",
+      "expected_task": "Sign the Wickstead DocuSign packet (trust account application, source-of-funds form and wire instruction letter) at home before the flight",
+      "match": [
+        "^(?!.*(emory|venner|call ?back|counsel|attorney|lawyer|law firm|\\bips\\b|investment policy|policy statement))(?!\\W*((ifeoma|maduka|associate|lowell|pennacott|advis\\w*)[\\w\\s()]{0,25}?\\s(to|will)\\s+)?(send|prepar|draft|put together|e-?mail|circulat|issu|deliver|generat|submit|set up|open|process))(?=.*(docusign|application|packet|paperwork|source[- ]of[- ]funds|anti-money|\\baml\\b|account (forms?|documents|docs)|onboarding)).*\\b(e-?)?sign(s|ed|ing)?\\b",
+        "^(?!.*(emory|venner|call ?back|counsel|attorney|lawyer|law firm|\\bips\\b|investment policy|policy statement)).*(docusign|application|packet|paperwork|source[- ]of[- ]funds|anti-money|\\baml\\b|account (forms?|documents|docs)|onboarding)",
+        "^(?!.*(emory|venner|call ?back|counsel|attorney|lawyer|law firm|\\bips\\b|investment policy|policy statement))(?=.*(docusign|application|packet|paperwork|source[- ]of[- ]funds|anti-money|\\baml\\b|account (forms?|documents|docs)|onboarding))\\W*(((the )?clients?|dermot (and|&) renata|renata (and|&) dermot|dermot|renata|(the )?quillanes?|both( clients)?)( quillane)?\\s+(to\\s+|will\\s+|should\\s+|must\\s+)?)?((read|review)\\s*(,|and|&)\\s*)?(read|review|sign|e-?sign|approve|execute|countersign)\\b"
+      ],
+      "owner_accept": [
+        "dermot|renata|client|quillane|both|co-?trustee"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "tomorrow",
+        "sep(t(ember)?)?\\.? 17|\\b17(th)? (of )?sep|\\b17th\\b|\\b0?9/17\\b|2026-09-17",
+        "thursday",
+        "before (the |their |they |we |leaving |flying )?(flight|fly|flying|leav|trip|depart|asheville)|1:40|one[- ]forty"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    }
+  ],
+  "non_actions": [
+    {
+      "nid": "n1",
+      "what": "Paying off the remaining home mortgage (about $310,000 at two and seven-eighths percent), floated by Renata at [00:26:00] and explicitly deferred until the indemnity escrow releases in 2028",
+      "match": [
+        "mortgage"
+      ],
+      "kind": "tentative"
+    },
+    {
+      "nid": "n2",
+      "what": "Lowell's proposal at [00:21:33] to put $400,000 into a donor-advised fund in 2026 against the recapture income; both clients decline",
+      "match": [
+        "donor[- ]advised|\\bdaf\\b|charit|philanthrop|(400,000|\\$400k|\\b400k|four hundred thousand).{0,40}(donat|gift|grant)|(donat|gift|grant).{0,40}(400,000|\\$400k|\\b400k|four hundred thousand)"
+      ],
+      "kind": "declined_proposal"
+    },
+    {
+      "nid": "n3",
+      "what": "A $200,000 stake in Wes Hollingshed's new machine shop; raised by Dermot at [00:27:04]; he told Wes maybe next year, not now, and to ask again next summer",
+      "match": [
+        "hollingshed|\\bwes\\b|plant manager|new (machine )?shop|\\bstake in\\b|200,000|\\$200k|\\b200k|two hundred thousand"
+      ],
+      "kind": "tentative"
+    }
+  ],
+  "corrected_figures": [
+    {
+      "what": "Net cash wired to the sellers at closing (a1): Dermot's figure came from the LOI spreadsheet before the Kelsall Brook and Venner Holloway fees; first figure at [00:05:06], Renata reads the draft funds flow memo at [00:16:53]",
+      "said_first": "11.1 million",
+      "corrected_to": "10,496,300",
+      "field": "account_actions"
+    },
+    {
+      "what": "Remaining proceeds phased into the moderate model after the $2.6 million tax reserve (a3), recomputed by Lowell once the wire amount is corrected",
+      "said_first": "eight and a half",
+      "corrected_to": "7,896,300",
+      "field": "account_actions"
+    },
+    {
+      "what": "Closing date as first transcribed (thirtieth rendered as 13th); first at [00:02:44], Dermot clarifies three-zero at [00:16:02] when Ifeoma reads it back",
+      "said_first": "October 13th",
+      "corrected_to": "October 30th",
+      "field": "life_events"
+    }
+  ]
+}

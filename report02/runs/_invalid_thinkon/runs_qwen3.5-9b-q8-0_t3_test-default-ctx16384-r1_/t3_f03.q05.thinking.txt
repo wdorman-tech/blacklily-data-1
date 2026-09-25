@@ -1,0 +1,38 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Describe the firm's alternate business site, including its location, capacity and how quickly it can be occupied."
+    *   Key information needed: Location, Capacity (seats), Occupancy time.
+
+3.  **Scan Documents:**
+    *   Document 1: `04_business_continuity_plan.md` (dated April 21, 2026).
+        *   Section 1.1: Mentions principal office location (Minneapolis), but not alternate site details yet.
+        *   Section 3.1 Alternate Site: "The Firm's alternate site is a dedicated work-area recovery suite of 12 seats operated by Halvern Recovery Services, LLC in Bloomington, Minnesota. The suite is contracted for the Firm's exclusive use upon declaration and is available for occupancy within four hours of the Firm's notice of declaration."
+        *   Section 3.2 Remote Operations: Discusses remote work, not alternate site specifics.
+        *   Section 3.3 Trust Company Operations: Discusses QHTC location (Sioux Falls), secondary location, but this is for trust administration, not the firm's main alternate business site described in 3.1.
+        *   Section 6.1 Frequency: Testing info.
+        *   Section 6.2 Most Recent Tests: Mentions test date and results.
+        *   Section 8.1 Pandemic...: Discusses remote ops.
+    *   Document 2: `06_policy_update_memo.md` (dated September 8, 2026).
+        *   Section 6. OFFSITE DATA BACKUP VENDOR: Updates backup vendor from Ferncastle to Kelvedon. Does not mention alternate site location or capacity.
+
+4.  **Evaluate Findings:**
+    *   The `04_business_continuity_plan.md` document contains the specific details requested.
+    *   Location: Bloomington, Minnesota (operated by Halvern Recovery Services, LLC).
+    *   Capacity: 12 seats.
+    *   Occupancy time: within four hours of the Firm's notice of declaration.
+    *   Date check: The BCP is dated April 21, 2026. The Policy Update Memo is dated September 8, 2026. The memo amends Sections 5.1 and 5.2 regarding Data Backup Vendors. It does not amend Section 3 (Alternate Site). Therefore, the BCP details remain valid for this question.
+    *   Source: `04_business_continuity_plan.md`.
+    *   Section: `SECTION 3. ALTERNATE SITE AND REMOTE OPERATIONS > 3.1 Alternate Site` (or just `SECTION 3. ALTERNATE SITE AND REMOTE OPERATIONS` or

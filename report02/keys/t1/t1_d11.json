@@ -1,0 +1,453 @@
+{
+  "doc_id": "t1_d11",
+  "doc_title": "Quillmarsh Global Macro Fund, L.P. Confidential Private Placement Memorandum",
+  "doc_type": "PPM",
+  "difficulty": "adversarial",
+  "notes": "The longest document in the corpus (about 8,700 words): a Delaware feeder into a Cayman master, with heavy risk-factor, tax, ERISA and regulatory sections in the middle. Three terms are superseded only by the final section, Section 14, which nothing earlier refers to: the redemption notice moves from 30 to 45 days, a 15% fund-level gate replaces an express no-gate statement made in Sections 1.12, 7.4 and 9.12, and a new auditor replaces the firm named in the summary, the service-provider section and the directory. Fees, incentive allocation and lock-up also differ by class, and the feeder, master and offshore feeder names invite a wrong fund_name or domicile.",
+  "traps": {
+    "redemption_notice_days": "The body states 30 days' notice in Sections 1.11 and 7.2, but Section 14.1 at the very end raises it to 45 days; the correct answer is 45 days.",
+    "gate_provision": "The body states three times that there is no gate, but Section 14.2 at the end imposes a fund-level gate of 15% of the Fund's net asset value per Redemption Date, measured for the Fund and not for each Limited Partner; the correct answer is that 15% fund-level gate, and an investor-level gate is wrong.",
+    "auditor": "Sections 1.17, 13.9 and 13.11 name Brennick Tallow LLP, but Section 14.3 at the end appoints Marbeck Pennycott LLP (and Marbeck Pennycott (Cayman) for the Master Fund); the current auditor is Marbeck Pennycott.",
+    "management_fee": "The fee differs by class (2.0% for Class A, 1.5% for Class B, both on capital account net asset value); a correct answer gives both classes.",
+    "performance_fee": "The incentive allocation differs by class (20% for Class A, 17.5% for Class B); a correct answer gives both classes.",
+    "lockup_period": "Class A has a 12-month soft lock with a 3% early redemption charge while Class B has a 24-month hard lock; a correct answer gives both and distinguishes hard from soft, and an answer that swaps the classes is wrong.",
+    "gp_commitment": "The $31.4 million affiliated holding in Section 1.14 is a disclosed holding, and the same paragraph says none of the holders has committed to make or maintain any investment; the correct answer is that no GP commitment is stated.",
+    "hurdle_rate": "The document expressly says the incentive allocation is not subject to any hurdle rate, preferred return or minimum rate of return; the loss carryforward is not a hurdle.",
+    "mfn_election": "The side letter section expressly says the Fund does not offer any most favored nation election; the correct answer is NOT_APPLICABLE."
+  },
+  "fields": {
+    "fund_name": {
+      "expected": "Quillmarsh Global Macro Fund, L.P.",
+      "citation": "Section 1.1",
+      "quote": "Quillmarsh Global Macro Fund, L.P. (the \"Fund\" or the \"Partnership\") is a limited partnership organized on October 15, 2018",
+      "accept": [
+        "quillmarsh global macro fund,?\\s*l\\.?\\s?p",
+        "quillmarsh global macro fund,? (?:a )?(?:delaware )?limited partnership"
+      ],
+      "partial": [
+        "^(?!.*global macro (?:master|offshore) fund).*quillmarsh global macro fund\\b"
+      ],
+      "reject": {
+        "MASTER_OR_OFFSHORE_ENTITY": [
+          "^(?!(?:.*?quillmarsh global macro fund,?\\s*l\\.?\\s?p)|(?:.*?quillmarsh global macro fund,? (?:a )?(?:delaware )?limited partnership)).*(?:global macro master fund|global macro offshore fund|master fund,? ltd|offshore fund,? ltd)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "fund_domicile": {
+      "expected": "Delaware (limited partnership organized under the Delaware Revised Uniform Limited Partnership Act)",
+      "citation": "Section 1.1",
+      "quote": "is a limited partnership organized on October 15, 2018 under the Delaware Revised Uniform Limited Partnership Act",
+      "accept": [
+        "delaware"
+      ],
+      "partial": [],
+      "reject": {
+        "MASTER_DOMICILE": [
+          "^(?!.*delaware).*cayman"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "fund_structure": {
+      "expected": "Open-end (monthly redemptions), master-feeder: a Delaware feeder fund investing substantially all of its assets in Quillmarsh Global Macro Master Fund, Ltd., a Cayman Islands master fund, alongside an offshore feeder",
+      "citation": "Section 1.2",
+      "quote": "The Fund invests substantially all of its assets in Quillmarsh Global Macro Master Fund, Ltd., a Cayman Islands exempted company (the \"Master Fund\").",
+      "accept": [
+        "^(?=.*(open[- ]?end|redeemable|evergreen|monthly redemption|monthly liquidity))(?=.*(master[- /]?feeder|feeder|master fund))"
+      ],
+      "partial": [
+        "master[- /]?feeder",
+        "feeder",
+        "open[- ]?end"
+      ],
+      "reject": {
+        "CLOSED_END": [
+          "^(?!.*open[- ]?end).*closed[- ]?end"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "management_fee": {
+      "expected": "Class A: 2.0% per annum of the net asset value of each Class A capital account; Class B: 1.5% per annum of the net asset value of each Class B capital account; paid monthly in advance (about 0.1667% and 0.125% per month) at the Fund level, with no management fee charged by the Master Fund",
+      "citation": "Section 5.1",
+      "quote": "at an annual rate of 2.0% of the net asset value of each Class A capital account and 1.5% of the net asset value of each Class B capital account",
+      "accept": [
+        "^(?:(?=.*respectively)|(?!.*(?:(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b)[^.;%\\d,)/|]){0,25}?(?<![\\d.])1\\.50*\\s*(?:%|percent|per ?cent)|(?<![\\d.])1\\.50*\\s*(?:%|percent|per ?cent)(?:(?!class [ab]\\b|\\band\\b)[^;,.\\d%]){0,45}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)|(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b)[^.;%\\d,)/|]){0,25}?(?<![\\d.])2(?:\\.0+)?\\s*(?:%|percent|per ?cent)|(?<![\\d.])2(?:\\.0+)?\\s*(?:%|percent|per ?cent)(?:(?!class [ab]\\b|\\band\\b)[^;,.\\d%]){0,45}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b))))(?=.*(?:(?<![\\d.])2(?:\\.0+)?\\s*(?:%|percent|per ?cent)|two per ?cent|(?<![\\d.])200 ?(?:bps|basis points)))(?=.*(?:(?<![\\d.])1\\.50*\\s*(?:%|percent|per ?cent)|one and (?:one[- ])?(?:a )?half per ?cent|(?<![\\d.])150 ?(?:bps|basis points)))(?=.*(?:net asset value|net assets?|\\bnav\\b|capital account))"
+      ],
+      "partial": [
+        "^(?:(?=.*respectively)|(?!.*(?:(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b)[^.;%\\d,)/|]){0,25}?(?<![\\d.])1\\.50*\\s*(?:%|percent|per ?cent)|(?<![\\d.])1\\.50*\\s*(?:%|percent|per ?cent)(?:(?!class [ab]\\b|\\band\\b)[^;,.\\d%]){0,45}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)|(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b)[^.;%\\d,)/|]){0,25}?(?<![\\d.])2(?:\\.0+)?\\s*(?:%|percent|per ?cent)|(?<![\\d.])2(?:\\.0+)?\\s*(?:%|percent|per ?cent)(?:(?!class [ab]\\b|\\band\\b)[^;,.\\d%]){0,45}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b))))(?=.*(?:(?<![\\d.])2(?:\\.0+)?\\s*(?:%|percent|per ?cent)|two per ?cent|(?<![\\d.])200 ?(?:bps|basis points)))(?=.*(?:(?<![\\d.])1\\.50*\\s*(?:%|percent|per ?cent)|one and (?:one[- ])?(?:a )?half per ?cent|(?<![\\d.])150 ?(?:bps|basis points)))",
+        "^(?:(?=.*respectively)|(?!.*(?:(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b)[^.;%\\d,)/|]){0,25}?(?<![\\d.])1\\.50*\\s*(?:%|percent|per ?cent)|(?<![\\d.])1\\.50*\\s*(?:%|percent|per ?cent)(?:(?!class [ab]\\b|\\band\\b)[^;,.\\d%]){0,45}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)|(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b)[^.;%\\d,)/|]){0,25}?(?<![\\d.])2(?:\\.0+)?\\s*(?:%|percent|per ?cent)|(?<![\\d.])2(?:\\.0+)?\\s*(?:%|percent|per ?cent)(?:(?!class [ab]\\b|\\band\\b)[^;,.\\d%]){0,45}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b))))(?=.*(?:(?<![\\d.])2(?:\\.0+)?\\s*(?:%|percent|per ?cent)|two per ?cent|(?<![\\d.])200 ?(?:bps|basis points)))"
+      ],
+      "reject": {
+        "SWAPPED_CLASSES": [
+          "^(?!.*respectively).*(?:(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b)[^.;%\\d,)/|]){0,25}?(?<![\\d.])1\\.50*\\s*(?:%|percent|per ?cent)|(?<![\\d.])1\\.50*\\s*(?:%|percent|per ?cent)(?:(?!class [ab]\\b|\\band\\b)[^;,.\\d%]){0,45}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)|(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b)[^.;%\\d,)/|]){0,25}?(?<![\\d.])2(?:\\.0+)?\\s*(?:%|percent|per ?cent)|(?<![\\d.])2(?:\\.0+)?\\s*(?:%|percent|per ?cent)(?:(?!class [ab]\\b|\\band\\b)[^;,.\\d%]){0,45}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b))"
+        ],
+        "WRONG_BASIS_COMMITMENTS": [
+          "^(?!.*(net asset value|net assets?|\\bnav\\b|capital account)).*\\bcommitments?\\b"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "class_variants"
+    },
+    "performance_fee": {
+      "expected": "Incentive allocation to the General Partner of 20% of Net Profits for Class A and 17.5% of Net Profits for Class B, made at each fiscal year end and on redemption, in excess of the loss carryforward",
+      "citation": "Section 5.2",
+      "quote": "20% of the Net Profits of each Class A capital account and 17.5% of the Net Profits of each Class B capital account",
+      "accept": [
+        "^(?:(?=.*respectively)|(?!.*(?:(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b)[^.;%\\d,)/|]){0,25}?(?<![\\d.])17\\.50*\\s*(?:%|percent|per ?cent)|(?<![\\d.])17\\.50*\\s*(?:%|percent|per ?cent)(?:(?!class [ab]\\b|\\band\\b)[^;,.\\d%]){0,45}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)|(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b)[^.;%\\d,)/|]){0,25}?(?<![\\d.])20(?:\\.0+)?\\s*(?:%|percent|per ?cent)|(?<![\\d.])20(?:\\.0+)?\\s*(?:%|percent|per ?cent)(?:(?!class [ab]\\b|\\band\\b)[^;,.\\d%]){0,45}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b))))(?=.*(?:(?<![\\d.])20(?:\\.0+)?\\s*(?:%|percent|per ?cent)|twenty per ?cent))(?=.*(?:(?<![\\d.])17\\.50*\\s*(?:%|percent|per ?cent)|seventeen and (?:one[- ])?(?:a )?half per ?cent))"
+      ],
+      "partial": [
+        "^(?:(?=.*respectively)|(?!.*(?:(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b)[^.;%\\d,)/|]){0,25}?(?<![\\d.])17\\.50*\\s*(?:%|percent|per ?cent)|(?<![\\d.])17\\.50*\\s*(?:%|percent|per ?cent)(?:(?!class [ab]\\b|\\band\\b)[^;,.\\d%]){0,45}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)|(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b)[^.;%\\d,)/|]){0,25}?(?<![\\d.])20(?:\\.0+)?\\s*(?:%|percent|per ?cent)|(?<![\\d.])20(?:\\.0+)?\\s*(?:%|percent|per ?cent)(?:(?!class [ab]\\b|\\band\\b)[^;,.\\d%]){0,45}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b))))(?=.*(?:(?<![\\d.])20(?:\\.0+)?\\s*(?:%|percent|per ?cent)|twenty per ?cent))",
+        "^(?:(?=.*respectively)|(?!.*(?:(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b)[^.;%\\d,)/|]){0,25}?(?<![\\d.])17\\.50*\\s*(?:%|percent|per ?cent)|(?<![\\d.])17\\.50*\\s*(?:%|percent|per ?cent)(?:(?!class [ab]\\b|\\band\\b)[^;,.\\d%]){0,45}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)|(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b)[^.;%\\d,)/|]){0,25}?(?<![\\d.])20(?:\\.0+)?\\s*(?:%|percent|per ?cent)|(?<![\\d.])20(?:\\.0+)?\\s*(?:%|percent|per ?cent)(?:(?!class [ab]\\b|\\band\\b)[^;,.\\d%]){0,45}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b))))(?=.*(?:(?<![\\d.])17\\.50*\\s*(?:%|percent|per ?cent)|seventeen and (?:one[- ])?(?:a )?half per ?cent))"
+      ],
+      "reject": {
+        "SWAPPED_CLASSES": [
+          "^(?!.*respectively).*(?:(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b)[^.;%\\d,)/|]){0,25}?(?<![\\d.])17\\.50*\\s*(?:%|percent|per ?cent)|(?<![\\d.])17\\.50*\\s*(?:%|percent|per ?cent)(?:(?!class [ab]\\b|\\band\\b)[^;,.\\d%]){0,45}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)|(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b)[^.;%\\d,)/|]){0,25}?(?<![\\d.])20(?:\\.0+)?\\s*(?:%|percent|per ?cent)|(?<![\\d.])20(?:\\.0+)?\\s*(?:%|percent|per ?cent)(?:(?!class [ab]\\b|\\band\\b)[^;,.\\d%]){0,45}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b))"
+        ],
+        "UNIFORM_RATE_ALL_CLASSES": [
+          "^(?!.*(17\\.5|seventeen)).*(both|all|each) class"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "class_variants"
+    },
+    "hurdle_rate": {
+      "expected": "NOT_APPLICABLE: the Incentive Allocation is not subject to any hurdle rate, preferred return or minimum rate of return (only a loss carryforward applies)",
+      "citation": "Section 5.2",
+      "quote": "The Incentive Allocation is not subject to any hurdle rate, preferred return or minimum rate of return.",
+      "accept": [
+        "not[_ ]applicable",
+        "not[_ ]found",
+        "\\bnone\\b",
+        "\\bn/a\\b",
+        "\\bno (?:\\w+ ){0,2}(?:hurdle|preferred return|minimum (?:rate|return)|benchmark)",
+        "not subject to (?:a |any )?(?:hurdle|preferred|minimum)",
+        "without (?:a |any )?(?:hurdle|preferred return|minimum (?:rate|return))",
+        "(?:does not|doesn't|do not|is not|isn't) (?:have|impose|apply|provide|include|contain|use|specify|state|subject)[^.;]{0,30}(?:hurdle|preferred|minimum rate|benchmark)",
+        "^no\\b(?!\\w)",
+        "^(?!.*(?:(?<![\\d.])(?!(?:20|17\\.5|2|1\\.5|3)(?:\\.0+)?\\s*(?:%|percent|per ?cent))\\d+(?:\\.\\d+)?\\s*(?:%|percent|per ?cent)|\\bbps\\b|basis points|sofr|libor|t-?bills?|treasury)).*not (?:stated|specified|addressed|disclosed|provided|mentioned)",
+        "^(?!.*(?:(?<![\\d.])(?!(?:20|17\\.5|2|1\\.5|3)(?:\\.0+)?\\s*(?:%|percent|per ?cent))\\d+(?:\\.\\d+)?\\s*(?:%|percent|per ?cent)|\\bbps\\b|basis points|sofr|libor|t-?bills?|treasury)).*(?:does not|doesn't) (?:apply|provide|offer|contain|include|specify|state|require|impose|have)",
+        "^(?!.*(?:(?<![\\d.])(?!(?:20|17\\.5|2|1\\.5|3)(?:\\.0+)?\\s*(?:%|percent|per ?cent))\\d+(?:\\.\\d+)?\\s*(?:%|percent|per ?cent)|\\bbps\\b|basis points|sofr|libor|t-?bills?|treasury)).*\\bno (?:such )?(?:provision|clause|term)\\b",
+        "^(?!.*(?:(?<![\\d.])(?!(?:20|17\\.5|2|1\\.5|3)(?:\\.0+)?\\s*(?:%|percent|per ?cent))\\d+(?:\\.\\d+)?\\s*(?:%|percent|per ?cent)|\\bbps\\b|basis points|sofr|libor|t-?bills?|treasury)).*\\bsilent\\b"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_HURDLE": [
+          "^(?!(?:.*?not[_ ]applicable)|(?:.*?not[_ ]found)|(?:.*?\\bnone\\b)|(?:.*?\\bn/a\\b)|(?:.*?\\bno (?:\\w+ ){0,2}(?:hurdle|preferred return|minimum (?:rate|return)|benchmark))|(?:.*?not subject to (?:a |any )?(?:hurdle|preferred|minimum))|(?:.*?without (?:a |any )?(?:hurdle|preferred return|minimum (?:rate|return)))|(?:.*?(?:does not|doesn't|do not|is not|isn't) (?:have|impose|apply|provide|include|contain|use|specify|state|subject)[^.;]{0,30}(?:hurdle|preferred|minimum rate|benchmark))|(?:^no\\b(?!\\w))|(?:^(?!.*(?:(?<![\\d.])(?!(?:20|17\\.5|2|1\\.5|3)(?:\\.0+)?\\s*(?:%|percent|per ?cent))\\d+(?:\\.\\d+)?\\s*(?:%|percent|per ?cent)|\\bbps\\b|basis points|sofr|libor|t-?bills?|treasury)).*not (?:stated|specified|addressed|disclosed|provided|mentioned))|(?:^(?!.*(?:(?<![\\d.])(?!(?:20|17\\.5|2|1\\.5|3)(?:\\.0+)?\\s*(?:%|percent|per ?cent))\\d+(?:\\.\\d+)?\\s*(?:%|percent|per ?cent)|\\bbps\\b|basis points|sofr|libor|t-?bills?|treasury)).*(?:does not|doesn't) (?:apply|provide|offer|contain|include|specify|state|require|impose|have))|(?:^(?!.*(?:(?<![\\d.])(?!(?:20|17\\.5|2|1\\.5|3)(?:\\.0+)?\\s*(?:%|percent|per ?cent))\\d+(?:\\.\\d+)?\\s*(?:%|percent|per ?cent)|\\bbps\\b|basis points|sofr|libor|t-?bills?|treasury)).*\\bno (?:such )?(?:provision|clause|term)\\b)|(?:^(?!.*(?:(?<![\\d.])(?!(?:20|17\\.5|2|1\\.5|3)(?:\\.0+)?\\s*(?:%|percent|per ?cent))\\d+(?:\\.\\d+)?\\s*(?:%|percent|per ?cent)|\\bbps\\b|basis points|sofr|libor|t-?bills?|treasury)).*\\bsilent\\b)).*(?:(?<![\\d.])\\d+(?:\\.\\d+)?\\s*(?:%|percent|per ?cent)|sofr|libor|t-?bills?|treasury)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    },
+    "high_water_mark": {
+      "expected": "Yes: a loss carryforward (high-water mark) is kept for each capital account; it is perpetual (never reset) and is reduced proportionately on partial redemptions",
+      "citation": "Section 5.3",
+      "quote": "The Loss Carryforward is not reset at fiscal year end or otherwise.",
+      "accept": [
+        "^(?=.*(?:(?:loss carry[- ]?forward|high[- ]?water[- ]?mark|\\bhwm\\b|loss recovery|(?:prior |previous )?(?:net )?losses (?:must be |are |have been )?(?:recovered|recouped))|^yes\\b))(?=.*(?:perpetual|permanent|indefinite|lifetime|life of the|never (?:be )?reset|not (?:be )?(?:subject to (?:any |a )?)?(?:periodically )?reset|n't (?:be )?reset|cannot be reset|no (?:annual |periodic |year[- ]end )?resets?|without (?:any |a )?reset|does not reset|(?:does not|doesn't|never|not) expire))"
+      ],
+      "partial": [
+        "(?:loss carry[- ]?forward|high[- ]?water[- ]?mark|\\bhwm\\b|loss recovery|(?:prior |previous )?(?:net )?losses (?:must be |are |have been )?(?:recovered|recouped))",
+        "^yes\\b"
+      ],
+      "reject": {
+        "RESETS": [
+          "^(?!.*(?:perpetual|permanent|indefinite|lifetime|life of the|never (?:be )?reset|not (?:be )?(?:subject to (?:any |a )?)?(?:periodically )?reset|n't (?:be )?reset|cannot be reset|no (?:annual |periodic |year[- ]end )?resets?|without (?:any |a )?reset|does not reset|(?:does not|doesn't|never|not) expire)).*\\bresets?\\b"
+        ],
+        "NO_HWM": [
+          "^(?!.*(?:loss carry[- ]?forward|high[- ]?water[- ]?mark|\\bhwm\\b|loss recovery|(?:prior |previous )?(?:net )?losses (?:must be |are |have been )?(?:recovered|recouped))).*(\\bnone\\b|not_applicable|not_found)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "minimum_initial_investment": {
+      "expected": "$1,000,000 for each class of Interests (minimum additional investment $100,000); the General Partner may accept lesser amounts",
+      "citation": "Section 1.6",
+      "quote": "The minimum initial investment is $1,000,000 for each class of Interests.",
+      "accept": [
+        "1,000,000",
+        "(?<![\\d.,])\\$?\\s?1(\\.0+)?\\s*(million|mm|mn|m)\\b",
+        "one million"
+      ],
+      "partial": [],
+      "reject": {
+        "ADDITIONAL_MINIMUM": [
+          "^(?!.*(1,000,000|(?<![\\d.,])\\$?\\s?1(\\.0+)?\\s*(million|mm|mn|m)\\b|one million)).*(100,000|\\$?100\\s?k\\b|100 thousand)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "lockup_period": {
+      "expected": "Class A: 12-month soft lock-up (3% early redemption charge on redemptions before the first anniversary of purchase); Class B: 24-month hard lock-up",
+      "citation": "Section 1.10",
+      "quote": "Class A Interests are subject to a 12-month soft lock-up: redemptions as of a Redemption Date preceding the first anniversary of purchase bear an early redemption charge of 3% of the amount redeemed, retained by the Fund. Class B Interests are subject to a 24-month hard lock-up",
+      "accept": [
+        "^(?:(?=.*respectively)|(?!.*(?:(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|twelve|one[- ]year)[^.;\\d,)/|]){0,25}?(?:(?<![\\d.])24(?!\\d)|twenty[- ]four|two[- ]years?|(?<![\\d.])2[- ]years?)|(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|twenty[- ]four|two[- ]years?)[^.;\\d,)/|]){0,25}?(?:(?<![\\d.])12(?!\\d)|twelve|one[- ]year|(?<![\\d.])1[- ]year)|(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|\\bsoft\\b)[^.;,)/|]){0,30}?\\bhard\\b|(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|\\bhard\\b)[^.;,)/|]){0,30}?\\bsoft\\b|\\bhard\\b(?:(?!class [ab]\\b|\\band\\b|\\bsoft\\b)[^;,.]){0,30}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)|\\bsoft\\b(?:(?!class [ab]\\b|\\band\\b|\\bhard\\b)[^;,.]){0,30}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b))))(?=.*(?:(?<![\\d.])12[- ]?(?:months?|mos?\\b|m\\b)|twelve[- ]months?|one[- ]year|(?<![\\d.])1[- ]year|first anniversary))(?=.*(?:\\bsoft\\b|early redemption (?:charge|fee|penalty)|redemption (?:charge|fee|penalty)|(?<![\\d.])3(?:\\.0+)?\\s*(?:%|percent|per ?cent)))(?=.*(?:(?<![\\d.])24[- ]?(?:months?|mos?\\b|m\\b)|twenty[- ]four[- ]months?|two[- ]years?|(?<![\\d.])2[- ]years?|second anniversary))(?=.*(?:\\bhard\\b|may not (?:be )?redeem|cannot (?:be )?redeem|can't (?:be )?redeem|no redemptions?|not (?:be )?redeemable|prohibit|not permitted))"
+      ],
+      "partial": [
+        "^(?:(?=.*respectively)|(?!.*(?:(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|twelve|one[- ]year)[^.;\\d,)/|]){0,25}?(?:(?<![\\d.])24(?!\\d)|twenty[- ]four|two[- ]years?|(?<![\\d.])2[- ]years?)|(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|twenty[- ]four|two[- ]years?)[^.;\\d,)/|]){0,25}?(?:(?<![\\d.])12(?!\\d)|twelve|one[- ]year|(?<![\\d.])1[- ]year)|(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|\\bsoft\\b)[^.;,)/|]){0,30}?\\bhard\\b|(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|\\bhard\\b)[^.;,)/|]){0,30}?\\bsoft\\b|\\bhard\\b(?:(?!class [ab]\\b|\\band\\b|\\bsoft\\b)[^;,.]){0,30}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)|\\bsoft\\b(?:(?!class [ab]\\b|\\band\\b|\\bhard\\b)[^;,.]){0,30}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b))))(?=.*(?:(?<![\\d.])12[- ]?(?:months?|mos?\\b|m\\b)|twelve[- ]months?|one[- ]year|(?<![\\d.])1[- ]year|first anniversary))(?=.*(?:\\bsoft\\b|early redemption (?:charge|fee|penalty)|redemption (?:charge|fee|penalty)|(?<![\\d.])3(?:\\.0+)?\\s*(?:%|percent|per ?cent)))",
+        "^(?:(?=.*respectively)|(?!.*(?:(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|twelve|one[- ]year)[^.;\\d,)/|]){0,25}?(?:(?<![\\d.])24(?!\\d)|twenty[- ]four|two[- ]years?|(?<![\\d.])2[- ]years?)|(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|twenty[- ]four|two[- ]years?)[^.;\\d,)/|]){0,25}?(?:(?<![\\d.])12(?!\\d)|twelve|one[- ]year|(?<![\\d.])1[- ]year)|(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|\\bsoft\\b)[^.;,)/|]){0,30}?\\bhard\\b|(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|\\bhard\\b)[^.;,)/|]){0,30}?\\bsoft\\b|\\bhard\\b(?:(?!class [ab]\\b|\\band\\b|\\bsoft\\b)[^;,.]){0,30}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)|\\bsoft\\b(?:(?!class [ab]\\b|\\band\\b|\\bhard\\b)[^;,.]){0,30}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b))))(?=.*(?:(?<![\\d.])24[- ]?(?:months?|mos?\\b|m\\b)|twenty[- ]four[- ]months?|two[- ]years?|(?<![\\d.])2[- ]years?|second anniversary))(?=.*(?:\\bhard\\b|may not (?:be )?redeem|cannot (?:be )?redeem|can't (?:be )?redeem|no redemptions?|not (?:be )?redeemable|prohibit|not permitted))",
+        "^(?:(?=.*respectively)|(?!.*(?:(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|twelve|one[- ]year)[^.;\\d,)/|]){0,25}?(?:(?<![\\d.])24(?!\\d)|twenty[- ]four|two[- ]years?|(?<![\\d.])2[- ]years?)|(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|twenty[- ]four|two[- ]years?)[^.;\\d,)/|]){0,25}?(?:(?<![\\d.])12(?!\\d)|twelve|one[- ]year|(?<![\\d.])1[- ]year)|(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|\\bsoft\\b)[^.;,)/|]){0,30}?\\bhard\\b|(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|\\bhard\\b)[^.;,)/|]){0,30}?\\bsoft\\b|\\bhard\\b(?:(?!class [ab]\\b|\\band\\b|\\bsoft\\b)[^;,.]){0,30}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)|\\bsoft\\b(?:(?!class [ab]\\b|\\band\\b|\\bhard\\b)[^;,.]){0,30}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b))))(?=.*(?:(?<![\\d.])12[- ]?(?:months?|mos?\\b|m\\b)|twelve[- ]months?|one[- ]year|(?<![\\d.])1[- ]year|first anniversary))(?=.*(?:(?<![\\d.])24[- ]?(?:months?|mos?\\b|m\\b)|twenty[- ]four[- ]months?|two[- ]years?|(?<![\\d.])2[- ]years?|second anniversary))"
+      ],
+      "reject": {
+        "SWAPPED_CLASSES": [
+          "^(?!.*respectively).*(?:(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|twelve|one[- ]year)[^.;\\d,)/|]){0,25}?(?:(?<![\\d.])24(?!\\d)|twenty[- ]four|two[- ]years?|(?<![\\d.])2[- ]years?)|(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|twenty[- ]four|two[- ]years?)[^.;\\d,)/|]){0,25}?(?:(?<![\\d.])12(?!\\d)|twelve|one[- ]year|(?<![\\d.])1[- ]year)|(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|\\bsoft\\b)[^.;,)/|]){0,30}?\\bhard\\b|(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)(?:(?!class [ab]\\b|\\band\\b|\\bfor\\b|\\bversus\\b|\\bvs\\b|\\bwhile\\b|\\bwhereas\\b|\\bcompared\\b|\\bunlike\\b|\\bhard\\b)[^.;,)/|]){0,30}?\\bsoft\\b|\\bhard\\b(?:(?!class [ab]\\b|\\band\\b|\\bsoft\\b)[^;,.]){0,30}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class a\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b)|\\bsoft\\b(?:(?!class [ab]\\b|\\band\\b|\\bhard\\b)[^;,.]){0,30}?(?:\\bfor|\\bto|\\bon|\\bof|\\bin|\\()\\s*(?:the |each |all )?(?<!and )(?<!& )(?<!/)(?<!, )class b\\b(?!\\s*(?:and|&|/|,|or)\\s*(?:class )?[ab]\\b))"
+        ],
+        "NO_LOCKUP": [
+          "^(?!.*(month|year)).*(\\bnone\\b|no lock|not_applicable|not_found)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "class_variants"
+    },
+    "redemption_frequency": {
+      "expected": "Monthly, as of the last Business Day of each calendar month (after the applicable lock-up)",
+      "citation": "Section 7.1",
+      "quote": "may redeem all or part of its Interests as of the last Business Day of each calendar month",
+      "accept": [
+        "monthly",
+        "each (calendar )?month",
+        "every month",
+        "month[- ]end",
+        "per month"
+      ],
+      "partial": [],
+      "reject": {
+        "WRONG_FREQUENCY": [
+          "^(?!.*month).*(quarter|annual|semi-annual)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "redemption_notice_days": {
+      "expected": "45 days' prior written notice (increased from 30 days by Section 14, effective July 1, 2026, for Redemption Dates on or after August 31, 2026)",
+      "citation": "Section 14.1",
+      "quote": "The notice period for redemptions is increased from 30 days to 45 days.",
+      "accept": [
+        "(?<!\\d)45(?!\\d)",
+        "forty[- ]five"
+      ],
+      "partial": [],
+      "reject": {
+        "STALE_30_DAYS": [
+          "^(?!.*((?<!\\d)45(?!\\d)|forty[- ]five)).*((?<!\\d)30(?!\\d)|thirty)"
+        ],
+        "KEY_PERSON_10_DAYS": [
+          "^(?!.*((?<!\\d)45(?!\\d)|forty[- ]five)).*((?<!\\d)10(?!\\d)|\\bten\\b)[- ]?days?"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": true,
+      "trap_type": "late_position"
+    },
+    "gate_provision": {
+      "expected": "Fund-level gate introduced by Section 14 (the body says there is no gate): if aggregate redemption requests as of a Redemption Date exceed 15% of the Fund's net asset value, requests are reduced pro rata and the unsatisfied portion is carried forward without priority; applies from the July 31, 2026 Redemption Date",
+      "citation": "Section 14.2",
+      "quote": "If aggregate redemption requests of all Limited Partners as of any Redemption Date exceed 15% of the net asset value of the Fund",
+      "accept": [
+        "^(?!.*(?:^|[.;,(:\\[]|\\bbut\\b)(?:(?!\\b(?:not|no|never|neither|nor|rather than|instead of|unlike|as opposed to|other than|without)\\b)[^.;,(:\\[])*?(?:investor[- ]level|(?:limited partner|lp)[- ]level|(?<!rata )per[- ](?:investor|limited partner)|(?<!based on )(?<!proportion to )(?<!according to )(?<!relative to )(?<!reference to )(?<!accordance with )each (?:limited partner|investor|lp)'?s (?:capital account|holding|account|investment))(?!\\s*(?:gates?\\s*)?(?:(?:does not|doesn't|do not|don't|is not|isn't|are not|aren't|will not|won't|not|never)\\b|:\\s*(?:none|n/?a|no|not)\\b|[-=]\\s*(?:none|n/?a|no)\\b|\\(?(?:none|n/?a)\\b)))(?=.*(?:(?<![\\d.])15(?:\\.0+)?\\s*(?:%|percent|per ?cent)|fifteen per ?cent))(?=.*(?:fund[- ]?(?:level|wide)|fund gate|partnership[- ]?(?:level|wide)|aggregate|net assets?|net asset value|\\bnav\\b|of the (?:fund|partnership)|(?:fund|partnership)'s|all (?:limited partners|investors)))"
+      ],
+      "partial": [
+        "^(?!.*(?:^|[.;,(:\\[]|\\bbut\\b)(?:(?!\\b(?:not|no|never|neither|nor|rather than|instead of|unlike|as opposed to|other than|without)\\b)[^.;,(:\\[])*?(?:investor[- ]level|(?:limited partner|lp)[- ]level|(?<!rata )per[- ](?:investor|limited partner)|(?<!based on )(?<!proportion to )(?<!according to )(?<!relative to )(?<!reference to )(?<!accordance with )each (?:limited partner|investor|lp)'?s (?:capital account|holding|account|investment))(?!\\s*(?:gates?\\s*)?(?:(?:does not|doesn't|do not|don't|is not|isn't|are not|aren't|will not|won't|not|never)\\b|:\\s*(?:none|n/?a|no|not)\\b|[-=]\\s*(?:none|n/?a|no)\\b|\\(?(?:none|n/?a)\\b))).*(?:(?<![\\d.])15(?:\\.0+)?\\s*(?:%|percent|per ?cent)|fifteen per ?cent)",
+        "^(?!.*(?:^|[.;,(:\\[]|\\bbut\\b)(?:(?!\\b(?:not|no|never|neither|nor|rather than|instead of|unlike|as opposed to|other than|without)\\b)[^.;,(:\\[])*?(?:investor[- ]level|(?:limited partner|lp)[- ]level|(?<!rata )per[- ](?:investor|limited partner)|(?<!based on )(?<!proportion to )(?<!according to )(?<!relative to )(?<!reference to )(?<!accordance with )each (?:limited partner|investor|lp)'?s (?:capital account|holding|account|investment))(?!\\s*(?:gates?\\s*)?(?:(?:does not|doesn't|do not|don't|is not|isn't|are not|aren't|will not|won't|not|never)\\b|:\\s*(?:none|n/?a|no|not)\\b|[-=]\\s*(?:none|n/?a|no)\\b|\\(?(?:none|n/?a)\\b)))(?!.*(\\bno\\b|\\bnone\\b|\\bnot\\b)).*(?:fund[- ]?(?:level|wide)|partnership[- ]?(?:level|wide)|fund gate).*gate"
+      ],
+      "reject": {
+        "STALE_NO_GATE": [
+          "^(?!.*(?:(?<![\\d.])15(?:\\.0+)?\\s*(?:%|percent|per ?cent)|fifteen per ?cent)).*(\\bno\\b.*gate|\\bnone\\b|not_applicable|not_found|not applicable|does not impose|no limit)"
+        ],
+        "INVESTOR_LEVEL": [
+          "(?:^|[.;,(:\\[]|\\bbut\\b)(?:(?!\\b(?:not|no|never|neither|nor|rather than|instead of|unlike|as opposed to|other than|without)\\b)[^.;,(:\\[])*?(?:investor[- ]level|(?:limited partner|lp)[- ]level|(?<!rata )per[- ](?:investor|limited partner)|(?<!based on )(?<!proportion to )(?<!according to )(?<!relative to )(?<!reference to )(?<!accordance with )each (?:limited partner|investor|lp)'?s (?:capital account|holding|account|investment))(?!\\s*(?:gates?\\s*)?(?:(?:does not|doesn't|do not|don't|is not|isn't|are not|aren't|will not|won't|not|never)\\b|:\\s*(?:none|n/?a|no|not)\\b|[-=]\\s*(?:none|n/?a|no)\\b|\\(?(?:none|n/?a)\\b))"
+        ],
+        "HOLDBACK_AS_GATE": [
+          "^(?!.*(?:(?<![\\d.])15(?:\\.0+)?\\s*(?:%|percent|per ?cent)|fifteen per ?cent)).*(holdback|held back|(?<![\\d.])5\\s*(%|percent))"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": true,
+      "trap_type": "late_position"
+    },
+    "key_man_provision": {
+      "expected": "Matthias Orlev. A Key Person Event (his death, incapacity for 90 consecutive days, or ceasing to devote substantially all his business time to and have ultimate responsibility for the Master Fund's program) requires written notice to Limited Partners within five Business Days; each Limited Partner may then redeem as of either of the next two Redemption Dates on 10 days' notice, without regard to lock-up and without early redemption charge, and subscriptions are suspended until then",
+      "citation": "Section 4.3",
+      "quote": "A \"Key Person Event\" occurs if Matthias Orlev (a) dies,",
+      "accept": [
+        "^(?!.*\\b(?:castellane|toller|aske|marrant|treanor)\\b)(?=.*orlev)(?=.*(redeem|redemption|withdraw|\\bexit|liquidity))"
+      ],
+      "partial": [
+        "orlev"
+      ],
+      "reject": {
+        "HALLUCINATED_OTHER_KEY_PERSON": [
+          "^(?!.*orlev).*\\b(?:castellane|toller|aske|marrant|treanor)\\b"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "gp_commitment": {
+      "expected": "NOT_FOUND: no GP or sponsor commitment is required; the approximately $31.4 million held by the General Partner, the Investment Manager and their personnel is a disclosed holding, and none of them has committed to make or maintain any investment",
+      "citation": "Section 1.14",
+      "quote": "None of them has committed to make or maintain any investment, and each may redeem on the terms applicable to other investors.",
+      "accept": [
+        "not[_ ]found",
+        "not[_ ]applicable",
+        "\\bnone\\b",
+        "\\bn/a\\b",
+        "\\bno\\b[^.;]{0,40}(?:commitment|required|requirement|obligation|obligated)",
+        "\\bno (?:binding |formal |required )?commitment",
+        "not an? (?:[\\w-]+ ){0,3}commitment",
+        "not (?:required|obligated|obliged|committed)",
+        "(?:has|have) not (?:committed|agreed)",
+        "(?:does not|doesn't|do not|don't) (?:require|impose|mandate)",
+        "(?:does not|doesn't|do not|don't) (?:have|make|provide for|contain|include|specify|state)[^.;]{0,30}commitment",
+        "(?:neither|none of)[^.;]{0,80}(?:committed|obligated|required)",
+        "^no\\b(?!\\w)",
+        "^(?!.*\\d).*not (?:stated|specified|addressed|disclosed|provided|mentioned)",
+        "^(?!.*\\d).*(?:does not|doesn't) (?:apply|provide|offer|contain|include|specify|state|have|address|mention)",
+        "^(?!.*\\d).*\\bno (?:such )?(?:provision|clause|term)\\b",
+        "^(?!.*\\d).*\\bsilent\\b"
+      ],
+      "partial": [],
+      "reject": {
+        "HOLDING_AS_COMMITMENT": [
+          "^(?!(?:.*?not[_ ]found)|(?:.*?not[_ ]applicable)|(?:.*?\\bnone\\b)|(?:.*?\\bn/a\\b)|(?:.*?\\bno\\b[^.;]{0,40}(?:commitment|required|requirement|obligation|obligated))|(?:.*?\\bno (?:binding |formal |required )?commitment)|(?:.*?not an? (?:[\\w-]+ ){0,3}commitment)|(?:.*?not (?:required|obligated|obliged|committed))|(?:.*?(?:has|have) not (?:committed|agreed))|(?:.*?(?:does not|doesn't|do not|don't) (?:require|impose|mandate))|(?:.*?(?:does not|doesn't|do not|don't) (?:have|make|provide for|contain|include|specify|state)[^.;]{0,30}commitment)|(?:.*?(?:neither|none of)[^.;]{0,80}(?:committed|obligated|required))|(?:^no\\b(?!\\w))|(?:^(?!.*\\d).*not (?:stated|specified|addressed|disclosed|provided|mentioned))|(?:^(?!.*\\d).*(?:does not|doesn't) (?:apply|provide|offer|contain|include|specify|state|have|address|mention))|(?:^(?!.*\\d).*\\bno (?:such )?(?:provision|clause|term)\\b)|(?:^(?!.*\\d).*\\bsilent\\b)).*(?:31\\.4|\\$?\\s*31\\s*(?:million|mm|m)\\b|(?<![\\d.])38\\s*%)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "holding_not_commitment"
+    },
+    "fund_term": {
+      "expected": "No fixed term (perpetual); the Fund continues until dissolved in accordance with the Partnership Agreement",
+      "citation": "Section 1.15",
+      "quote": "The Fund has no fixed term and will continue until dissolved in accordance with the Partnership Agreement.",
+      "accept": [
+        "perpetual",
+        "indefinite",
+        "\\bno (?:fixed |set |stated |specified |definite |finite )?(?:term|duration|termination date|maturity|end date)\\b",
+        "until (?:it is |its |the fund is |the fund.s |the partnership is |the partnership.s )?dissol(?:ved|ution)",
+        "\\bnot? (?:have |has )?(?:a )?(?:fixed|set|stated|specified|definite) (?:term|duration)",
+        "unlimited",
+        "open[- ]ended",
+        "evergreen"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_FIXED_TERM": [
+          "^(?!(?:.*?perpetual)|(?:.*?indefinite)|(?:.*?\\bno (?:fixed |set |stated |specified |definite |finite )?(?:term|duration|termination date|maturity|end date)\\b)|(?:.*?until (?:it is |its |the fund is |the fund.s |the partnership is |the partnership.s )?dissol(?:ved|ution))|(?:.*?\\bnot? (?:have |has )?(?:a )?(?:fixed|set|stated|specified|definite) (?:term|duration))|(?:.*?unlimited)|(?:.*?open[- ]ended)|(?:.*?evergreen)).*(?<!\\d)\\d+[- ]?(?:years?|yrs?)\\b"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "auditor": {
+      "expected": "Marbeck Pennycott LLP (the Fund) and Marbeck Pennycott (Cayman) (the Master Fund), appointed by Section 14 effective July 1, 2026 in place of Brennick Tallow LLP and Brennick Tallow (Cayman)",
+      "citation": "Section 14.3",
+      "quote": "The General Partner has appointed Marbeck Pennycott LLP as independent auditor of the Fund",
+      "accept": [
+        "marbeck\\s*pennycott"
+      ],
+      "partial": [],
+      "reject": {
+        "STALE_BRENNICK_TALLOW": [
+          "^(?!.*marbeck).*brennick"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": true,
+      "trap_type": "late_position"
+    },
+    "administrator": {
+      "expected": "Stellmoor Fund Services Ltd.",
+      "citation": "Section 13.7",
+      "quote": "Stellmoor Fund Services Ltd. (the \"Administrator\") is administrator of the Fund, the Master Fund and the Offshore Feeder.",
+      "accept": [
+        "stellmoor"
+      ],
+      "partial": [],
+      "reject": {},
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "prime_broker": {
+      "expected": "Kittering Hale Securities LLC and Mallory Quenby & Co. LLC (Kittering Hale Futures LLC acts as futures commission merchant)",
+      "citation": "Section 13.8",
+      "quote": "Kittering Hale Securities LLC and Mallory Quenby & Co. LLC serve as prime brokers to the Master Fund",
+      "accept": [
+        "^(?=.*kittering\\s*hale)(?=.*quenby)"
+      ],
+      "partial": [
+        "kittering\\s*hale",
+        "mallory\\s*quenby"
+      ],
+      "reject": {},
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "legal_counsel": {
+      "expected": "Tregarth Ellingsby LLP (U.S. counsel to the Fund, the General Partner and the Investment Manager); Carrick Mowbray acts as Cayman Islands counsel to the Master Fund and the Offshore Feeder",
+      "citation": "Section 13.10",
+      "quote": "Tregarth Ellingsby LLP, New York, New York, acts as U.S. counsel to the Fund, the General Partner and the Investment Manager.",
+      "accept": [
+        "tregarth\\s*ellingsby"
+      ],
+      "partial": [
+        "^(?!.*tregarth).*carrick\\s*mowbray"
+      ],
+      "reject": {},
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "mfn_election": {
+      "expected": "NOT_APPLICABLE: the Fund does not offer any most favored nation election; Limited Partners may not elect the benefit of side letter terms granted to other investors",
+      "citation": "Section 5.7",
+      "quote": "the Fund does not offer any most favored nation election",
+      "accept": [
+        "not[_ ]applicable",
+        "not[_ ]found",
+        "\\bnone\\b",
+        "\\bn/a\\b",
+        "\\bno\\b[^.;]{0,40}(?:mfn|most[- ]favou?red|election)",
+        "(?:does not|doesn't|do not|don't|will not|won't) (?:offer|provide|grant|include|contain|have)[^.;]{0,30}(?:mfn|most[- ]favou?red|election)",
+        "^no\\b(?!\\w)",
+        "^(?!.*(?:\\$\\s*\\d|usd\\s*\\d|(?<![\\w.])\\d[\\d,.]*\\s*(?:million|mm|mn|m|k)\\b|(?<!not )(?<!n't )(?<!never )(?:available|offered|granted|extended) to (?:investors|limited partners|lps|those|holders|certain|any investor|each investor|qualifying|eligible|large))).*not (?:offered|entitled|available|granted|permitted|provided)",
+        "^(?!.*(?:\\$\\s*\\d|usd\\s*\\d|(?<![\\w.])\\d[\\d,.]*\\s*(?:million|mm|mn|m|k)\\b|(?<!not )(?<!n't )(?<!never )(?:available|offered|granted|extended) to (?:investors|limited partners|lps|those|holders|certain|any investor|each investor|qualifying|eligible|large))).*\\bno\\b[^.;]{0,40}(?:right|entitlement)",
+        "^(?!.*(?:\\$\\s*\\d|usd\\s*\\d|(?<![\\w.])\\d[\\d,.]*\\s*(?:million|mm|mn|m|k)\\b|(?<!not )(?<!n't )(?<!never )(?:available|offered|granted|extended) to (?:investors|limited partners|lps|those|holders|certain|any investor|each investor|qualifying|eligible|large))).*not (?:stated|specified|addressed|disclosed|mentioned)",
+        "^(?!.*(?:\\$\\s*\\d|usd\\s*\\d|(?<![\\w.])\\d[\\d,.]*\\s*(?:million|mm|mn|m|k)\\b|(?<!not )(?<!n't )(?<!never )(?:available|offered|granted|extended) to (?:investors|limited partners|lps|those|holders|certain|any investor|each investor|qualifying|eligible|large))).*(?:does not|doesn't) (?:apply|provide|offer|contain|include|specify|state|require|impose|have|grant)",
+        "^(?!.*(?:\\$\\s*\\d|usd\\s*\\d|(?<![\\w.])\\d[\\d,.]*\\s*(?:million|mm|mn|m|k)\\b|(?<!not )(?<!n't )(?<!never )(?:available|offered|granted|extended) to (?:investors|limited partners|lps|those|holders|certain|any investor|each investor|qualifying|eligible|large))).*\\bno (?:such )?(?:provision|clause|term)\\b",
+        "^(?!.*(?:\\$\\s*\\d|usd\\s*\\d|(?<![\\w.])\\d[\\d,.]*\\s*(?:million|mm|mn|m|k)\\b|(?<!not )(?<!n't )(?<!never )(?:available|offered|granted|extended) to (?:investors|limited partners|lps|those|holders|certain|any investor|each investor|qualifying|eligible|large))).*\\bsilent\\b"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_MFN": [
+          "^(?!(?:.*?not[_ ]applicable)|(?:.*?not[_ ]found)|(?:.*?\\bnone\\b)|(?:.*?\\bn/a\\b)|(?:.*?\\bno\\b[^.;]{0,40}(?:mfn|most[- ]favou?red|election))|(?:.*?(?:does not|doesn't|do not|don't|will not|won't) (?:offer|provide|grant|include|contain|have)[^.;]{0,30}(?:mfn|most[- ]favou?red|election))|(?:^no\\b(?!\\w))|(?:^(?!.*(?:\\$\\s*\\d|usd\\s*\\d|(?<![\\w.])\\d[\\d,.]*\\s*(?:million|mm|mn|m|k)\\b|(?<!not )(?<!n't )(?<!never )(?:available|offered|granted|extended) to (?:investors|limited partners|lps|those|holders|certain|any investor|each investor|qualifying|eligible|large))).*not (?:offered|entitled|available|granted|permitted|provided))|(?:^(?!.*(?:\\$\\s*\\d|usd\\s*\\d|(?<![\\w.])\\d[\\d,.]*\\s*(?:million|mm|mn|m|k)\\b|(?<!not )(?<!n't )(?<!never )(?:available|offered|granted|extended) to (?:investors|limited partners|lps|those|holders|certain|any investor|each investor|qualifying|eligible|large))).*\\bno\\b[^.;]{0,40}(?:right|entitlement))|(?:^(?!.*(?:\\$\\s*\\d|usd\\s*\\d|(?<![\\w.])\\d[\\d,.]*\\s*(?:million|mm|mn|m|k)\\b|(?<!not )(?<!n't )(?<!never )(?:available|offered|granted|extended) to (?:investors|limited partners|lps|those|holders|certain|any investor|each investor|qualifying|eligible|large))).*not (?:stated|specified|addressed|disclosed|mentioned))|(?:^(?!.*(?:\\$\\s*\\d|usd\\s*\\d|(?<![\\w.])\\d[\\d,.]*\\s*(?:million|mm|mn|m|k)\\b|(?<!not )(?<!n't )(?<!never )(?:available|offered|granted|extended) to (?:investors|limited partners|lps|those|holders|certain|any investor|each investor|qualifying|eligible|large))).*(?:does not|doesn't) (?:apply|provide|offer|contain|include|specify|state|require|impose|have|grant))|(?:^(?!.*(?:\\$\\s*\\d|usd\\s*\\d|(?<![\\w.])\\d[\\d,.]*\\s*(?:million|mm|mn|m|k)\\b|(?<!not )(?<!n't )(?<!never )(?:available|offered|granted|extended) to (?:investors|limited partners|lps|those|holders|certain|any investor|each investor|qualifying|eligible|large))).*\\bno (?:such )?(?:provision|clause|term)\\b)|(?:^(?!.*(?:\\$\\s*\\d|usd\\s*\\d|(?<![\\w.])\\d[\\d,.]*\\s*(?:million|mm|mn|m|k)\\b|(?<!not )(?<!n't )(?<!never )(?:available|offered|granted|extended) to (?:investors|limited partners|lps|those|holders|certain|any investor|each investor|qualifying|eligible|large))).*\\bsilent\\b)).*(?:mfn|most[- ]favou?red)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    }
+  }
+}

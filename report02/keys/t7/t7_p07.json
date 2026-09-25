@@ -1,0 +1,33 @@
+{
+  "piece_id": "t7_p07",
+  "form": "website \"Our Performance\" page copy",
+  "notes": "Small-cap value SMA composite performance page with complete 1-, 5-, 10-year and calendar-year tables, carrying a gross-only year-to-date subhead, an outperformance claim the page's own table contradicts and a trough-start window, with a properly handled contributor and detractor list as the decoy.",
+  "planted": [
+    {
+      "iid": "p1",
+      "category": "C2",
+      "span": "Year to date through June 30, 2026, the Focused Small Cap Value composite is up 11.3% before fees, against a 4.2% gain for its comparison index.",
+      "explanation": "The hero subhead presents a year-to-date composite return before fees, and no net-of-fees return for that period appears anywhere on the page."
+    },
+    {
+      "iid": "p2",
+      "category": "C6",
+      "span": "Over the ten calendar years from 2016 through 2025, the composite outperformed its comparison index in every single year, net of fees.",
+      "explanation": "The calendar-year table on the same page shows the composite trailing its index net of fees in 2016 (23.6% vs 31.7%) and 2020 (1.1% vs 4.6%), so the statement is untrue."
+    },
+    {
+      "iid": "p3",
+      "category": "C4",
+      "span": "Measured from the market low on March 23, 2020 through December 31, 2021, the composite returned 131.4% net of fees.",
+      "explanation": "The window is chosen to start at the March 2020 market bottom and end after the recovery, a period selected for its flattering result rather than presented in a fair and balanced way."
+    }
+  ],
+  "decoys": [
+    {
+      "did": "d1",
+      "looks_like": "C8",
+      "span": "The five largest contributors to the composite's return were a regional bank holding company (+3.1 percentage points), an aftermarket truck-parts distributor (+2.6), a specialty chemicals producer (+2.2), a title insurance underwriter (+1.9) and a short-line railroad operator (+1.7). The five largest detractors were a home-furnishings retailer (-1.4), a contract driller (-0.8), a hospital operator (-0.5), a trucking company (-0.4) and a homebuilder (-0.3).",
+      "why_ok": "The five largest contributors are paired with the five largest detractors and sit beside the composite's total net and gross return for the same twelve months, with one methodology for every holding and an offer of the full contribution list."
+    }
+  ]
+}

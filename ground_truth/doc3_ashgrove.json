@@ -1,0 +1,255 @@
+{
+  "doc_id": "doc3_ashgrove",
+  "doc_title": "Ashgrove Special Situations Fund, L.P. \u2014 OM + Supplement No. 1",
+  "difficulty": "adversarial",
+  "notes": "The real diligence test. Supplement No. 1 at the end of the document silently supersedes four terms stated in the body (management fee, hurdle, redemption notice, auditor) with NO cross-reference markers in the body pointing to it -- the model must read to the end and reconcile on its own. Appendix B still carries the superseded auditor name, so a model that trusts the service-provider table gets it wrong. Two fields are explicitly absent and invite fabrication: there is no key person provision and no GP commitment, though a $4.2m current GP holding is disclosed as a fact. Prime broker is never mentioned anywhere.",
+  "traps": {
+    "management_fee": "Body says 2.00%. Supplement S-2 replaces it with 1.60%.",
+    "hurdle_rate": "Body says no hurdle. Supplement S-3 adds a 4.00% soft hurdle with full catch-up on Class I only.",
+    "redemption_notice_days": "Body says 60 days. Supplement S-4 replaces it with 45 days.",
+    "auditor": "Body Section 9.2 AND the Appendix B service-provider table both name Ardmore Pike & Levinson. Supplement S-5 replaces them with Wexley Sandoval Partners; Ardmore stays on for tax only.",
+    "gp_commitment": "No commitment exists. A $4.2m / 3.1% current holding is disclosed and expressly stated not to be a commitment.",
+    "key_man_provision": "Expressly absent. Named individual (Brannigan-Tate) is present and tempting.",
+    "minimum_initial_investment": "$1,000,000 initial is unchanged; Supplement S-6 raises only the ADDITIONAL subscription to $250,000.",
+    "lockup_period": "Soft lock, not hard: no lock-up, but an 18-month 2.00% early redemption charge.",
+    "gate_provision": "Stated only in Appendix A, not in the redemption section.",
+    "prime_broker": "Never mentioned anywhere in the document. Pure NOT_FOUND."
+  },
+  "fields": {
+    "fund_name": {
+      "expected": "Ashgrove Special Situations Fund, L.P.",
+      "citation": "Section 1.1",
+      "accept": [
+        "ashgrove\\s+special\\s+situations\\s+fund"
+      ],
+      "reject": {}
+    },
+    "fund_domicile": {
+      "expected": "Delaware",
+      "citation": "Section 1.1",
+      "accept": [
+        "delaware"
+      ],
+      "reject": {}
+    },
+    "fund_structure": {
+      "expected": "Open-end Delaware LP investing directly; no master-feeder, no offshore parallel vehicle; two classes (F and I)",
+      "citation": "Section 1.1",
+      "accept": [
+        "direct|no\\s+master|open.?end|not.*master.?feeder"
+      ],
+      "reject": {
+        "fabricated_masterfeeder": [
+          "^(?!.*(no|not|without)).*master.?feeder"
+        ]
+      }
+    },
+    "management_fee": {
+      "expected": "1.60% per annum of NAV, effective 1 January 2025 (Supplement No. 1 replaced the original 2.00%); identical for Class F and Class I",
+      "citation": "Supplement No. 1, Section S-2",
+      "accept": [
+        "1\\.6(0)?\\s*%"
+      ],
+      "reject": {
+        "STALE_used_superseded_body_value": [
+          "^(?!.*1\\.6).*2\\.0{1,2}\\s*%"
+        ]
+      },
+      "supersession_test": true
+    },
+    "performance_fee": {
+      "expected": "Class F 15% of Net New Appreciation; Class I 20% of Net New Appreciation",
+      "citation": "Section 4.2; confirmed unchanged by Supplement No. 1, Section S-7",
+      "accept": [
+        "(15.*20|20.*15)"
+      ],
+      "partial": [
+        "\\b20\\s*%"
+      ],
+      "reject": {}
+    },
+    "hurdle_rate": {
+      "expected": "Class I: 4.00% per annum preferred return, soft hurdle with full catch-up, effective 1 January 2025 (added by Supplement No. 1). Class F: none.",
+      "citation": "Supplement No. 1, Section S-3",
+      "accept": [
+        "4(\\.0{1,2})?\\s*%"
+      ],
+      "reject": {
+        "STALE_used_superseded_body_value": [
+          "^(?!.*4).*(no\\s+hurdle|none|not_applicable|not\\s+subject)"
+        ]
+      },
+      "supersession_test": true
+    },
+    "high_water_mark": {
+      "expected": "Yes \u2014 perpetual, per-LP and per-subscription; does not reset on fee change or change of control",
+      "citation": "Section 4.4",
+      "accept": [
+        "yes|perpetual|applies"
+      ],
+      "reject": {
+        "claims_none": [
+          "^\\s*(no\\b|none|not_applicable|not_found)"
+        ]
+      }
+    },
+    "minimum_initial_investment": {
+      "expected": "$1,000,000 for Class I initial subscription (unchanged; Supplement No. 1 raised only the additional-subscription minimum to $250,000)",
+      "citation": "Section 3.1; Supplement No. 1, Section S-6",
+      "accept": [
+        "1[,.]?000[,.]?000|\\$1(\\.0)?\\s*(million|mm|m\\b)"
+      ],
+      "reject": {
+        "confused_with_additional_sub": [
+          "^(?!.*1[,.]?000[,.]?000).*250[,.]?000"
+        ],
+        "used_founders_class": [
+          "^(?!.*1[,.]?000[,.]?000).*5[,.]?000[,.]?000"
+        ]
+      }
+    },
+    "lockup_period": {
+      "expected": "No hard lock-up. Soft lock: 2.00% early redemption charge on interests redeemed within 18 months of subscription, FIFO",
+      "citation": "Section 5.1",
+      "accept": [
+        "18|eighteen"
+      ],
+      "reject": {
+        "claims_hard_lock": [
+          "^(?!.*(soft|charge|fee|no\\s+hard)).*hard\\s+lock"
+        ],
+        "claims_no_lockup_at_all": [
+          "^\\s*(none|not_applicable|not_found)\\s*$"
+        ]
+      }
+    },
+    "redemption_frequency": {
+      "expected": "Quarterly \u2014 last business day of each calendar quarter",
+      "citation": "Section 5.2",
+      "accept": [
+        "quarter"
+      ],
+      "reject": {}
+    },
+    "redemption_notice_days": {
+      "expected": "45 calendar days, effective 1 January 2025 (Supplement No. 1 replaced the original 60 days)",
+      "citation": "Supplement No. 1, Section S-4",
+      "accept": [
+        "\\b45\\b|forty.?five"
+      ],
+      "reject": {
+        "STALE_used_superseded_body_value": [
+          "^(?!.*(45|forty.?five)).*\\b(60|sixty)\\b"
+        ]
+      },
+      "supersession_test": true
+    },
+    "gate_provision": {
+      "expected": "Fund-level gate at 25% of NAV per redemption date; no investor-level gate; excess reduced pro rata and carried forward with priority; GP may waive",
+      "citation": "Appendix A",
+      "accept": [
+        "\\b25\\s*%"
+      ],
+      "reject": {
+        "claims_none": [
+          "^\\s*(no\\b|none|not_applicable|not_found)"
+        ],
+        "doc1_bleed": [
+          "^(?!.*25).*\\b20\\s*%"
+        ]
+      }
+    },
+    "key_man_provision": {
+      "expected": "NOT_APPLICABLE \u2014 the Partnership expressly provides no key person provision and no associated redemption right. Departure of Brannigan-Tate triggers nothing.",
+      "citation": "Section 6.3",
+      "accept": [
+        "NOT_APPLICABLE|NOT_FOUND|not\\s+applicable|^\\s*(no\\b|none)|does\\s+not\\s+provide|no\\s+key\\s*(person|man)|absence"
+      ],
+      "reject": {
+        "HALLUCINATED_keyman": [
+          "brannigan"
+        ]
+      },
+      "absence_test": true
+    },
+    "gp_commitment": {
+      "expected": "NOT_APPLICABLE \u2014 no required GP commitment. A current holding of approximately $4,200,000 (~3.1% of NAV) is disclosed as fact and expressly stated not to be a commitment, and is redeemable at any time.",
+      "citation": "Section 6.4",
+      "accept": [
+        "NOT_APPLICABLE|NOT_FOUND|not\\s+applicable|^\\s*(no\\b|none)|has\\s+not\\s+committed|no\\s+(required|minimum|stated)\\s+.*commitment|not\\s+constitute\\s+a\\s+commitment"
+      ],
+      "reject": {
+        "HALLUCINATED_holding_as_commitment": [
+          "^(?!.*(not|no)\\s).*4[,.]?200[,.]?000|^(?!.*(not|no)\\s).*3\\.1\\s*%"
+        ]
+      },
+      "absence_test": true
+    },
+    "fund_term": {
+      "expected": "Perpetual \u2014 no fixed termination date, no investment period",
+      "citation": "Section 7.1",
+      "accept": [
+        "perpetual|indefinite|no\\s+fixed"
+      ],
+      "reject": {
+        "fabricated_term": [
+          "\\b\\d+\\s*(-|\\s)?year"
+        ]
+      }
+    },
+    "auditor": {
+      "expected": "Wexley Sandoval Partners LLP, appointed for FY2024 (Supplement No. 1 replaced Ardmore Pike & Levinson LLP, who remain only for tax preparation)",
+      "citation": "Supplement No. 1, Section S-5",
+      "accept": [
+        "wexley"
+      ],
+      "reject": {
+        "STALE_used_superseded_body_value": [
+          "^(?!.*wexley).*ardmore"
+        ]
+      },
+      "supersession_test": true
+    },
+    "administrator": {
+      "expected": "Kestrel Harbour Fund Administration, LLC",
+      "citation": "Section 9.1",
+      "accept": [
+        "kestrel"
+      ],
+      "reject": {}
+    },
+    "prime_broker": {
+      "expected": "NOT_FOUND -- no prime broker is named anywhere in the document",
+      "citation": "",
+      "accept": [
+        "NOT_FOUND|NOT_APPLICABLE|not\\s+applicable|not\\s+found|^\\s*(no\\b|none)|no\\s+prime"
+      ],
+      "reject": {
+        "HALLUCINATED_prime_broker": [
+          "kestrel|farrow|wexley|ardmore|llc|llp|ltd|securities|bank"
+        ]
+      },
+      "absence_test": true
+    },
+    "legal_counsel": {
+      "expected": "Farrow Tindall Greaves LLP",
+      "citation": "Section 9.3",
+      "accept": [
+        "farrow"
+      ],
+      "reject": {}
+    },
+    "mfn_election": {
+      "expected": "No \u2014 the Partnership expressly does not offer an MFN election; side letter terms are not disclosed to other LPs",
+      "citation": "Section 8",
+      "accept": [
+        "^\\s*(no\\b|none|not_applicable)|does\\s+not\\s+offer|no\\s+mfn"
+      ],
+      "reject": {
+        "claims_yes": [
+          "^\\s*yes\\b"
+        ]
+      }
+    }
+  }
+}

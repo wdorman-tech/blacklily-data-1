@@ -1,0 +1,40 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What is the Adviser's estimate of the asset capacity of its long/short equity strategy?"
+    *   Key concept: "asset capacity" (how much money the strategy can handle).
+    *   Strategy type: "long/short equity strategy".
+
+3.  **Scan the Documents:**
+    *   `01_brochure.md`:
+        *   Section 4.1 Firm Overview: Mentions firm formation, employees, management committee. No mention of asset capacity.
+        *   Section 4.2 The Funds: Describes Flagship Fund (long/short equity), Offshore Fund, Co-Investment Fund. Mentions NAVs as of Dec 31, 2025 ($1,182.4 million for Flagship including Offshore). No mention of *capacity* limits or estimates.
+        *   Section 4.4 Assets Under Management: States AUM is $1,874,612,000 as of Dec 31, 2025. Mentions regulatory AUM calculation. No mention of capacity.
+        *   Section 8.1 Methods of Analysis: Describes research, sectors. No capacity info.
+        *   Section 8.2 Investment Strategy and Portfolio Guidelines: Describes Flagship Fund strategy (long/short equity), guidelines (exposure limits, position limits). Mentions leverage, derivatives. No mention of asset capacity estimates.
+        *   Section 8.4 Material Risks: Discusses risks. No capacity info.
+    *   `03_valuation_policy.md`:
+        *   Section 1.2 Scope and Frequency: Discusses NAV calculation frequency. No capacity info.
+    *   `04_business_continuity_plan.md`:
+        *   Section 3.1 Alternate Site: Discusses recovery facility. No capacity info.
+
+4.  **Evaluate Findings:**
+    *   I need to find information regarding "asset capacity" or an estimate of how much assets the long/short equity strategy can hold/manage.
+    *   The documents mention current AUM ($1.87B), NAVs, and portfolio guidelines (exposure limits).
+    *   None of the provided text explicitly states an "estimate of the asset capacity".
+    *   Often, firms state they have no specific limit or that capacity is unlimited, but I must not guess.
+    *   Scanning specifically for keywords: "capacity", "limit", "size", "hold", "manage".
+    *   In `01_brochure.md` Section 8.2: "The Flagship Fund seeks attractive risk-adjusted returns... by holding long positions... and short positions... operates under the following portfolio guidelines..." It lists exposure

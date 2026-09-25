@@ -1,0 +1,41 @@
+The user wants a JSON representation of the provided legal agreement between an Adviser and an Investor.
+
+    *   *Parties:*
+        *   Adviser/General Partner: BRACKENHOLT CREDIT GP, LLC / BRACKENHOLT CAPITAL ADVISORS, LLC (Dalia Ferrante).
+        *   Investor: THE TRUSTEES OF HALLOWBY COLLEGE (Margaret Quennell).
+    *   *Key Provisions:*
+        1.  **Management Fee:**
+            *   Standard: 1.25% (from Memorandum).
+            *   Special Rate: 0.95% starting June 1, 2026.
+            *   Condition for 1.25% revert: If Capital Account < $40M due to repurchases.
+            *   Exclusion: Performance-related declines don't trigger the 1.25% rate.
+            *   Incentive Fee: Remains unchanged.
+        2.  **Early Repurchase Deduction:** Not applicable to this Investor.
+        3.  **Key Person Notification:**
+            *   Specified Persons: Dalia Ferrante, Nicholas Oyelaran.
+            *   Trigger: Death, disability, termination, or reduction in time.
+            *   Notice: Within 5 Business Days.
+            *   Investor Right: Can request repurchase 30 days after notice (subject to limits/proration).
+        4.  **Reporting:**
+            *   Quarterly: Schedule of investments (industry, tranche, fair value, risk rating) within 45 days.
+            *   Annual: UBTI info within 90 days.
+        5.  **Confidentiality and Affiliate Transfers:**
+            *   Disclosure allowed to trustees, auditors, etc.
+            *   Pre-approved transfer to entities under common control with Hallowby College (if eligible and not a public partnership).
+        6.  **Most Favored Nation (MFN):**
+            *   Investor is an MFN Investor.
+            *   Exclusions from MFN: Paragraphs 3, 5, and the UBTI part of 4.
+            *   Conditional MFN: Paragraphs 1 and 2 only for investors with equal/greater holdings.
+        7.  **Notices:** Specific addresses/counsel provided.
+        8.  **Miscellaneous:** Delaware law, supersedes Partnership Agreement for these specific terms.
+
+    *   `parties`: { `adviser`: "BRACKENHOLT CREDIT GP, LLC / BRACKENHOLT CAPITAL ADVISORS, LLC", `investor`: "THE TRUSTEES OF HALLOWBY COLLEGE" }
+    *   `management_fee`: { `base_rate`: "1.25%", `special_rate`: "0.95%", `special_rate_start_date`: "2026-06-01", `reversion_threshold`: 40000000, `reversion_condition`: "repurchases", `performance_exclusion`: true }
+    *   `early_repurchase_deduction`: false
+    *   `key_person_notification`: { `specified_persons`: ["Dalia Ferrante", "Nicholas Oyelaran"], `notice_period_days`: 5, `repurchase_request_window_days`: 30 }
+    *   `reporting_requirements`: { `quarterly_reporting_days`: 45, `annual_reporting_days`: 90 }
+    *   `confidentiality_and_transfers`: { `allowed_disclosure_parties`: ["trustees", "investment committee", "auditors", "consultants", "legal counsel"], `pre_approved_transfers`: "entities under common control with Hallowby College" }
+    *   `most_favored_nation`: { `status`: "MFN Investor", `excluded_clauses`: [3, 5, 4_ubti_portion], `conditional_clauses`: [1, 2] }
+    *   `governing_law`: "Delaware"
+
+    *   Ensure the JSON is clean and captures the logic of the text.

@@ -1,0 +1,793 @@
+{
+  "meeting_id": "t5_m01",
+  "title": "Ostrander retirement timing and pension election review",
+  "notes": "The retirement date moves from December 31 to June 30, 2027, so the December-start 100% survivor figure ($3,855) and Glenn's first-choice single life figure ($4,180) are live distractors for the elected $3,655, and Lena's lump-sum rollover suggestion is declined. Patrice corrects her old 401(k) balance from $140,000 to $118,400 several minutes after stating it, the cash transfer is revised from $50,000 to $40,000, the Social Security statement task moves from Glenn to Patrice, and the pension PDF slips from Friday the 18th to Wednesday the 23rd. The transcription renders Kiran as \"Karen\" and the CPA as \"Shimansky\" before later turns clarify both, Lena's recap leaves out the Social Security statement, the $40,000 transfer, the CPA hand-off and the HR letter (Glenn adds back only the last), the rebalance is both account action a2 and Kiran's trade commitment i7, the 529, Roth conversions and lump sum must not surface as actions, and an adjudicator should treat the clients signing the DocuSign and Glenn returning the pension election form when the packet arrives in early January as acceptable implicit items, not hallucinations.",
+  "scalar_fields": {
+    "meeting_date": {
+      "expected": "Tuesday, September 15, 2026",
+      "accept": [
+        "sep(t(ember)?)?\\.?\\s*15(th)?,?\\s*2026",
+        "2026-09-15",
+        "\\b0?9/15/(20)?26\\b",
+        "\\b15(th)?\\s+(of\\s+)?sep(t(ember)?)?\\.?,?\\s*2026"
+      ],
+      "reject": {},
+      "evidence": [
+        {
+          "ts": "header",
+          "quote": "Date: Tuesday, September 15, 2026, 2:00 PM"
+        }
+      ]
+    },
+    "client_names": {
+      "expected": "Glenn Ostrander; Patrice Ostrander",
+      "accept": [
+        "\\bglenn\\b",
+        "\\bpatrice\\b",
+        "ostrander"
+      ],
+      "match": "all",
+      "reject": {
+        "NON_CLIENT": [
+          "\\b(lena|castellaw|kiran|bastable|karen|kelsey|marcus|nora|tyler|tanya|szymanski|shimansky)\\b"
+        ]
+      },
+      "evidence": [
+        {
+          "ts": "header",
+          "quote": "Glenn Ostrander (Client), Patrice Ostrander (Client)"
+        }
+      ]
+    },
+    "primary_goal": {
+      "expected": "Retire together on a date they are confident in (now June 30, 2027) with lifetime income that lasts for whichever spouse lives longer",
+      "accept": [
+        "retir.{0,120}(date|timing|when|june|2027|income|pension|surviv|lasts|outlive|secur|confiden|comfortab)",
+        "(date|timing|when|june|2027|income|pension|surviv|secur).{0,120}retir",
+        "(income|lasts|outlive|surviv).{0,80}(longer|lifetime|lives?|life|both|surviv|either)"
+      ],
+      "reject": {},
+      "evidence": [
+        {
+          "ts": "00:03:09",
+          "quote": "You both want to retire on a date you're confident in, with income that lasts as long as whichever one of you lives longer."
+        }
+      ]
+    },
+    "retirement_target": {
+      "expected": "Glenn's last day June 30, 2027 (age 63), Tollard pension starting July 1, 2027; Patrice stops working at the same time",
+      "accept": [
+        "(\\bjune\\b|\\bjun\\b|6/30|06/30|2027-06|mid.2027|july 1,? 2027|7/1/(20)?27)",
+        "^(?!.*(\\bdec(ember)?\\b|\\bdec\\.|12/31|year.end|end of (the year|next year|2027)|late 2027|\\bq4\\b|2028)).*(\\b2027\\b|\\b63\\b|sixty.three)"
+      ],
+      "reject": {
+        "STALE_DEC_31_2027": [
+          "^(?!.*(\\bjune\\b|\\bjun\\b|6/30|06/30|2027-06|mid.2027|july 1,? 2027|7/1/(20)?27)).*(dec(ember)?\\b|\\bdec\\.|end of (next year|2027)|year.end|12/31|2027-12|jan(uary)?\\.? 1,? 2028)"
+        ]
+      },
+      "evidence": [
+        {
+          "ts": "00:03:52",
+          "quote": "December 31st, 2027. Finish the year, clean break."
+        },
+        {
+          "ts": "00:11:02",
+          "quote": "Yeah, let's say June. June 30th, 2027."
+        },
+        {
+          "ts": "00:11:15",
+          "quote": "The target is Glenn's last day June 30th, 2027, pension starting July 1st."
+        },
+        {
+          "ts": "00:11:26",
+          "quote": "When he's done, I'm done."
+        }
+      ]
+    },
+    "risk_tolerance": {
+      "expected": "Moderate (60/40)",
+      "accept": [
+        "\\bmoderate\\b(?![\\s-]*growth)",
+        "60\\s*/\\s*40",
+        "\\b60-40\\b",
+        "\\b60\\s*(%|percent)\\s*(equit|stock)",
+        "\\bsixty\\b.{0,20}\\bforty\\b"
+      ],
+      "reject": {
+        "STALE_MODERATE_GROWTH": [
+          "^(?!.*(\\bmoderate\\b(?![\\s-]*growth)|60\\s*/\\s*40|\\b60-40\\b|\\b60\\s*(%|percent)\\s*(equit|stock)|\\bsixty\\b.{0,20}\\bforty\\b)).*(moderate[\\s-]*growth|70\\s*/\\s*30|\\b70-30\\b|\\bgrowth\\b)"
+        ]
+      },
+      "evidence": [
+        {
+          "ts": "00:20:27",
+          "quote": "Moderate is the 60/40 model."
+        },
+        {
+          "ts": "00:22:02",
+          "quote": "So my recommendation is we move you from moderate growth to moderate. 60/40."
+        },
+        {
+          "ts": "00:22:39",
+          "quote": "Okay. Fine. Moderate. Do it."
+        }
+      ]
+    },
+    "risk_tolerance_change": {
+      "expected": "from Moderate Growth (70/30) to Moderate (60/40)",
+      "accept": [
+        "(moderate[\\s-]*growth|70\\s*/\\s*30|\\b70-30\\b).{0,60}(\\bmoderate\\b(?![\\s-]*growth)|60\\s*/\\s*40|\\b60-40\\b)",
+        "(\\bmoderate\\b(?![\\s-]*growth)|60\\s*/\\s*40|\\b60-40\\b).{0,30}from.{0,30}(moderate[\\s-]*growth|70\\s*/\\s*30|\\b70-30\\b)",
+        "70\\s*(%|percent).{0,40}60\\s*(%|percent)"
+      ],
+      "reject": {
+        "NO_CHANGE": [
+          "^(?!.*(60\\s*/\\s*40|\\b60-40\\b|\\bmoderate\\b(?![\\s-]*growth))).*(no change|unchanged)"
+        ],
+        "REVERSED": [
+          "from\\s+\\bmoderate\\b(?![\\s-]*growth).{0,30}to\\s+moderate[\\s-]*growth"
+        ]
+      },
+      "evidence": [
+        {
+          "ts": "00:22:02",
+          "quote": "So my recommendation is we move you from moderate growth to moderate. 60/40."
+        },
+        {
+          "ts": "00:22:51",
+          "quote": "Okay, so the risk profile goes from moderate growth to moderate."
+        }
+      ]
+    },
+    "next_meeting": {
+      "expected": "Tuesday, November 10, 2026, 2:00 PM, in the office",
+      "accept": [
+        "(nov(ember)?\\.?\\s*10(th)?\\b|\\b10(th)?\\s+(of\\s+)?nov|\\b11/10\\b|2026-11-10)"
+      ],
+      "reject": {
+        "STALE_NOV_3": [
+          "^(?!.*(nov(ember)?\\.?\\s*10(th)?\\b|\\b10(th)?\\s+(of\\s+)?nov|\\b11/10\\b|2026-11-10)).*(nov(ember)?\\.?\\s*3(rd)?\\b|\\b3(rd)?\\s+(of\\s+)?nov|\\b11/0?3\\b|2026-11-03|election day)"
+        ]
+      },
+      "evidence": [
+        {
+          "ts": "00:29:03",
+          "quote": "How's Tuesday, November 3rd, at two?"
+        },
+        {
+          "ts": "00:29:17",
+          "quote": "Oh, no, that's Election Day."
+        },
+        {
+          "ts": "00:29:35",
+          "quote": "November 10th at two, in the office this time."
+        }
+      ]
+    }
+  },
+  "life_events": [
+    {
+      "eid": "e1",
+      "expected": "Glenn retiring from Tollard Electric Company, last day June 30, 2027 (age 63); Patrice stopping her bookkeeping at the vet clinic at the same time",
+      "match": [
+        "retir|last day|stop(s|ping)? work"
+      ],
+      "reject": {
+        "STALE_DEC_31_2027": [
+          "^(?!.*(\\bjune\\b|\\bjun\\b|6/30|06/30|2027-06|mid.2027|july 1,? 2027|7/1/(20)?27)).*(dec(ember)?\\b|\\bdec\\.|end of (next year|2027)|year.end|12/31|2027-12|jan(uary)?\\.? 1,? 2028)"
+        ]
+      },
+      "evidence": [
+        {
+          "ts": "00:11:02",
+          "quote": "Yeah, let's say June. June 30th, 2027."
+        },
+        {
+          "ts": "00:11:26",
+          "quote": "When he's done, I'm done."
+        }
+      ]
+    },
+    {
+      "eid": "e2",
+      "expected": "Patrice's mother (87, two falls this summer) moving into assisted living in early November 2026, the 2nd at the earliest; her own assets and the house sale cover the cost and Patrice's brother holds power of attorney",
+      "match": [
+        "assisted|senior living|care facility|(mother|\\bmom\\b).{0,60}(mov|care|living|facility|fell|fall)"
+      ],
+      "reject": {},
+      "evidence": [
+        {
+          "ts": "00:04:06",
+          "quote": "we're moving her into assisted living in November."
+        },
+        {
+          "ts": "00:05:00",
+          "quote": "They said the 2nd at the earliest."
+        },
+        {
+          "ts": "00:04:25",
+          "quote": "my brother has the power of attorney"
+        }
+      ]
+    },
+    {
+      "eid": "e3",
+      "expected": "First grandchild, Nora, born August 9, 2026 to daughter Kelsey and Marcus",
+      "match": [
+        "grand|\\bnora\\b|\\bborn\\b|birth|\\bbaby\\b"
+      ],
+      "reject": {},
+      "evidence": [
+        {
+          "ts": "00:01:32",
+          "quote": "She came August 9th, seven pounds four ounces"
+        },
+        {
+          "ts": "00:01:49",
+          "quote": "That's the first grandchild, right?"
+        }
+      ]
+    }
+  ],
+  "account_actions": [
+    {
+      "aid": "a1",
+      "expected": "Elect the 100% joint and survivor annuity (election form arrives in the packet around early January) | Glenn's Tollard Electric Company pension | $3,655 per month starting July 1, 2027",
+      "match": [
+        "survivor|\\bj\\s*&\\s*s\\b|\\bj\\s*and\\s*s\\b|3,?655|joint (life|annuity)|\\bqjsa\\b"
+      ],
+      "amount_accept": [
+        "3,?655"
+      ],
+      "amount_reject": {
+        "STALE_SINGLE_LIFE": [
+          "^(?!.*3,?655).*4,?180"
+        ],
+        "STALE_DEC_START": [
+          "^(?!.*3,?655).*3,?855"
+        ],
+        "WRONG_OPTION_50": [
+          "^(?!.*3,?655).*3,?885"
+        ],
+        "LUMP_SUM": [
+          "^(?!.*3,?655).*716"
+        ]
+      },
+      "evidence": [
+        {
+          "ts": "00:05:19",
+          "quote": "Single life is 4,180 a month."
+        },
+        {
+          "ts": "00:14:59",
+          "quote": "My gut says take the single life."
+        },
+        {
+          "ts": "00:19:06",
+          "quote": "Okay, so the decision is 100% joint and survivor, 3,655 a month, starting July 1st, 2027."
+        }
+      ]
+    },
+    {
+      "aid": "a2",
+      "expected": "Rebalance from the 70/30 moderate growth model to the 60/40 moderate model, stock funds to bond funds, trades placed once the updated risk profile is signed | Joint account and Patrice's IRA (about $474,000 managed) | about $47,400",
+      "match": [
+        "rebalanc|reallocat|60\\s*/\\s*40|\\b60-40\\b|moderate model|stock.{0,40}bond|equit.{0,40}(bond|fixed)|moderate[\\s-]*growth.{0,60}\\bmoderate\\b(?![\\s-]*growth)|\\b47,?4\\d{2}\\b"
+      ],
+      "amount_accept": [
+        "\\b47,?4\\d{2}\\b|\\b47,?000\\b|\\b47(\\.4)?\\s*k\\b|\\$47(\\.4)?\\b|forty.seven thousand|\\b10\\s*(%|percent)|\\bten percent"
+      ],
+      "amount_reject": {
+        "WRONG_BASE": [
+          "^(?!.*(\\b47,?4\\d{2}\\b|\\b47,?000\\b|\\b47(\\.4)?\\s*k\\b|forty.seven|\\b10\\s*(%|percent)|\\bten percent)).*474"
+        ]
+      },
+      "evidence": [
+        {
+          "ts": "00:22:18",
+          "quote": "Ten percent of that is roughly $47,400 moving from stock funds into bond funds."
+        },
+        {
+          "ts": "00:22:51",
+          "quote": "once it's signed, Kiran places the trades."
+        }
+      ]
+    },
+    {
+      "aid": "a3",
+      "expected": "Transfer to start the retirement cash reserve | Credit union savings to the money market in the joint account | $40,000 (leaves $45,000 at the credit union)",
+      "match": [
+        "credit union|money market|cash reserve|\\bcash\\b|savings"
+      ],
+      "amount_accept": [
+        "\\b40,?000\\b|\\b40\\s*k\\b|\\$40\\b|\\b40\\s*thousand|forty(?![\\s-]*five) thousand"
+      ],
+      "amount_reject": {
+        "STALE_50K": [
+          "^(?!.*(\\b40,?000\\b|\\b40\\s*k\\b|\\$40\\b|\\b40\\s*thousand|forty(?![\\s-]*five))).*(\\b50,?000\\b|\\b50\\s*k\\b|\\$50\\b|fifty)"
+        ],
+        "WRONG_BALANCE": [
+          "^(?!.*(\\b40,?000\\b|\\b40\\s*k\\b|\\$40\\b|\\b40\\s*thousand|forty(?![\\s-]*five) thousand)).*(\\b85,?000\\b|\\b85\\s*k\\b|\\$85\\b)"
+        ]
+      },
+      "evidence": [
+        {
+          "ts": "00:25:16",
+          "quote": "My suggestion is we move 50,000 from the credit union into the joint account's money market"
+        },
+        {
+          "ts": "00:26:03",
+          "quote": "What if we move 40 instead?"
+        },
+        {
+          "ts": "00:26:15",
+          "quote": "40,000 from the credit union to the money market in the joint account."
+        }
+      ]
+    },
+    {
+      "aid": "a4",
+      "expected": "Direct rollover, trustee to trustee | Patrice's former-employer Ferncastle Dental 401(k) into her IRA at the firm | $118,400 (June 30 statement)",
+      "match": [
+        "^(?!.*rebalanc).*(401|roll.?over|ferncastle|dental|trustee|former employer|118,?4)"
+      ],
+      "amount_accept": [
+        "\\b118\\b|118,?4|118\\s*k|one hundred (and )?eighteen"
+      ],
+      "amount_reject": {
+        "STALE_140K": [
+          "^(?!.*(118|eighteen)).*(\\b140\\b|140,?000|140\\s*k|one hundred (and )?forty)"
+        ]
+      },
+      "evidence": [
+        {
+          "ts": "00:23:24",
+          "quote": "It's about 140,000. I think. 140."
+        },
+        {
+          "ts": "00:23:28",
+          "quote": "So the idea is we roll that into your IRA here, direct rollover, trustee to trustee"
+        },
+        {
+          "ts": "00:26:25",
+          "quote": "I was wrong, it's not 140. It's 118,400. As of June 30th."
+        }
+      ]
+    }
+  ],
+  "action_items": [
+    {
+      "iid": "i1",
+      "expected_task": "Download Patrice's current Social Security statement (my Social Security, ID.me code goes to her phone) and upload it to the portal",
+      "match": [
+        "(social security|\\bssa\\b|\\bss\\b|ssa\\.gov).{0,60}(statement|earnings record|estimate)|statement.{0,60}(social security|\\bssa\\b|\\bss\\b)|my social security|id\\.me"
+      ],
+      "owner_accept": [
+        "^(?!.*(glenn(\\s+ostrander)?\\s*(and|&|/|,|\\+)\\s*patrice|patrice(\\s+ostrander)?\\s*(and|&|/|\\+)\\s*glenn|\\bboth\\b)).*patrice"
+      ],
+      "owner_reject": {
+        "STALE_OWNER": [
+          "^(?!.*patrice).*glenn"
+        ]
+      },
+      "due_accept": [
+        "monday",
+        "sep(t(ember)?)?\\.?\\s*21",
+        "\\b0?9/21\\b",
+        "2026-09-21",
+        "\\b21(st)?\\s+(of\\s+)?sep"
+      ],
+      "due_reject": {},
+      "trap": "reassigned",
+      "evidence": [
+        {
+          "ts": "00:13:21",
+          "quote": "Can you pull Patrice's statement and drop it in the portal? By Monday"
+        },
+        {
+          "ts": "00:13:29",
+          "quote": "Yeah, I'll grab it tonight or tomorrow."
+        },
+        {
+          "ts": "00:19:52",
+          "quote": "So I'll do it. I'll pull mine and put it in the portal."
+        },
+        {
+          "ts": "00:19:58",
+          "quote": "So that one's Patrice's, not Glenn's."
+        },
+        {
+          "ts": "00:20:08",
+          "quote": "Monday's fine."
+        }
+      ]
+    },
+    {
+      "iid": "i2",
+      "expected_task": "Download the full Tollard pension estimate statement PDF (early retirement reduction factors and 417(e) lump-sum rates) and put it in the portal",
+      "match": [
+        "^(?!.*((cpa|accountant|\\bdeb\\b|szymanski|shimansky|tax preparer|tax (professional|advis|prep))|social security|\\bss\\b|\\bssa|claiming)).*(pension.{0,40}(statement|pdf|estimate|document|paperwork)|tollard.{0,40}(estimate|statement|pdf)|benefit estimate|estimate statement|\\bpdf\\b|417|reduction factor)"
+      ],
+      "owner_accept": [
+        "glenn"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "^(?!.*(\\b16(th)?\\b|9/16|tomorrow)).*wednesday",
+        "sep(t(ember)?)?\\.?\\s*23",
+        "\\b0?9/23\\b",
+        "2026-09-23",
+        "\\b23(rd)?\\b"
+      ],
+      "due_reject": {
+        "STALE_DUE": [
+          "^(?!.*(wednesday|\\b23(rd)?\\b|9/23|09-23)).*(friday|sep(t(ember)?)?\\.?\\s*18|\\b0?9/18\\b|2026-09-18|\\b18(th)?\\b)"
+        ]
+      },
+      "trap": "due_changed",
+      "evidence": [
+        {
+          "ts": "00:05:56",
+          "quote": "I need the actual estimate statement, the whole PDF."
+        },
+        {
+          "ts": "00:06:36",
+          "quote": "Can you get it to me by Friday?"
+        },
+        {
+          "ts": "00:28:33",
+          "quote": "I said Friday, but we're leaving for the lake Friday morning"
+        },
+        {
+          "ts": "00:28:56",
+          "quote": "Wednesday's fine. That's the 23rd."
+        }
+      ]
+    },
+    {
+      "iid": "i3",
+      "expected_task": "Run the Social Security claiming comparison (Glenn at 67 vs 70; Patrice at 62, 65 and 67, own vs spousal) on top of the pension, plus an updated retirement projection with a June 30, 2027 retirement date",
+      "match": [
+        "^(?!.*(cpa|accountant|\\bdeb\\b|szymanski|shimansky|tax preparer|tax (professional|advis|prep))).*(claim|compar|projection|analy[sz]|scenario|monte carlo|social security|spousal)"
+      ],
+      "owner_accept": [
+        "kiran|bastable|paraplanner"
+      ],
+      "owner_reject": {
+        "ASR_MISHEARD_NAME": [
+          "^(?!.*(kiran|bastable|paraplanner)).*karen"
+        ]
+      },
+      "due_accept": [
+        "end of next week",
+        "^(?!.*(\\b18(th)?\\b|9/18|this friday)).*friday",
+        "sep(t(ember)?)?\\.?\\s*25",
+        "\\b0?9/25\\b",
+        "2026-09-25",
+        "\\b25(th)?\\b"
+      ],
+      "due_reject": {
+        "WRONG_FRIDAY": [
+          "^(?!.*(\\b25(th)?\\b|9/25|end of next week|next friday)).*(sep(t(ember)?)?\\.?\\s*18|\\b0?9/18\\b|2026-09-18|\\b18(th)?\\b|this friday|end of (the|this) week)"
+        ]
+      },
+      "trap": "none",
+      "evidence": [
+        {
+          "ts": "00:12:35",
+          "quote": "I'll have Karen on my team run that for you."
+        },
+        {
+          "ts": "00:12:56",
+          "quote": "Is that the young man who called about the beneficiary forms?"
+        },
+        {
+          "ts": "00:13:42",
+          "quote": "Kiran, I just volunteered you."
+        },
+        {
+          "ts": "00:14:06",
+          "quote": "End of next week, the 25th, works."
+        }
+      ]
+    },
+    {
+      "iid": "i4",
+      "expected_task": "Send one DocuSign with the Ferncastle 401(k) rollover request, letter of instruction, updated risk profile and the CPA information release for Deb Szymanski",
+      "match": [
+        "^(?!.*(projection|withholding|w-4p)).*(docusign|roll.?over|letter of instruction|paperwork|release|authoriz|e-?sign)"
+      ],
+      "owner_accept": [
+        "kiran|bastable|paraplanner"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "tomorrow",
+        "^(?!.*(\\b23(rd)?\\b|9/23|next wednesday)).*wednesday",
+        "sep(t(ember)?)?\\.?\\s*16",
+        "\\b0?9/16\\b",
+        "2026-09-16",
+        "\\b16(th)?\\b"
+      ],
+      "due_reject": {
+        "WRONG_WEDNESDAY": [
+          "^(?!.*(\\b16(th)?\\b|9/16|tomorrow)).*(\\b23(rd)?\\b|9/23|next wednesday)"
+        ]
+      },
+      "trap": "none",
+      "evidence": [
+        {
+          "ts": "00:23:52",
+          "quote": "I'll prep the rollover request and the letter of instruction and send it all in one DocuSign. I can have it out tomorrow."
+        },
+        {
+          "ts": "00:24:09",
+          "quote": "Put the updated risk profile in the same envelope"
+        },
+        {
+          "ts": "00:24:48",
+          "quote": "I'll add her to your information release so we're allowed to talk to her."
+        },
+        {
+          "ts": "00:25:01",
+          "quote": "That'll go in the DocuSign tomorrow too."
+        }
+      ]
+    },
+    {
+      "iid": "i5",
+      "expected_task": "Get written confirmation from Tollard HR (Tanya in benefits) of the retiree medical premium (about $1,150 a month for both), Patrice's coverage until her own Medicare, dental, the notice period, the retirement application date and when the election packet is mailed",
+      "match": [
+        "\\bhr\\b|human resources|benefits (office|dep|team)|tanya|retiree\\b|medical|health|premium|dental|coverage|insurance|notice (period|requirement)|(when|timing|date).{0,40}election packet|election packet.{0,40}(timing|mail|sent|go(es)? out)"
+      ],
+      "owner_accept": [
+        "glenn"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "^(?!.*(nov(ember)?\\.?\\s*0?3(rd)?\\b|\\b0?3(rd)?\\s+(of\\s+)?nov|\\b11/0?3\\b|2026-11-03|election day)).*before.{0,30}(next|november|nov\\b|nov\\.|meet)",
+        "^(?!.*(nov(ember)?\\.?\\s*0?3(rd)?\\b|\\b0?3(rd)?\\s+(of\\s+)?nov|\\b11/0?3\\b|2026-11-03|election day)).*next meeting",
+        "nov(ember)?\\.?\\s*10(th)?\\b",
+        "\\b10(th)?\\s+(of\\s+)?nov",
+        "\\b11/10\\b",
+        "2026-11-10",
+        "^(?!.*(nov(ember)?\\.?\\s*0?3(rd)?\\b|\\b0?3(rd)?\\s+(of\\s+)?nov|\\b11/0?3\\b|2026-11-03|election day)).*(\\bnovember\\b|\\bnov\\b)"
+      ],
+      "due_reject": {
+        "STALE_NOV_3": [
+          "^(?!.*(nov(ember)?\\.?\\s*10(th)?\\b|\\b10(th)?\\s+(of\\s+)?nov|\\b11/10\\b|2026-11-10)).*(nov(ember)?\\.?\\s*0?3(rd)?\\b|\\b0?3(rd)?\\s+(of\\s+)?nov|\\b11/0?3\\b|2026-11-03|election day)"
+        ]
+      },
+      "trap": "none",
+      "evidence": [
+        {
+          "ts": "00:10:25",
+          "quote": "Can you get it confirmed in writing? An email from HR is fine."
+        },
+        {
+          "ts": "00:10:43",
+          "quote": "I'll call Tanya in benefits."
+        },
+        {
+          "ts": "00:10:47",
+          "quote": "Before we meet in November is fine for that one."
+        }
+      ]
+    },
+    {
+      "iid": "i6",
+      "expected_task": "Send CPA Deb Szymanski the updated projection with the pension numbers and 2027 income picture and ask her to model the pension (W-4P) withholding, once the information release is signed",
+      "match": [
+        "^(?!.*(docusign|roll.?over|letter of instruction|paperwork|(add|include)\\w*.{0,40}(release|authoriz))).*((cpa|accountant|\\bdeb\\b|szymanski|shimansky|tax preparer|tax (professional|advis|prep))|withholding|w-4p)"
+      ],
+      "owner_accept": [
+        "lena|castellaw|\\badvis[oe]r\\b"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "oct(ober)?\\.?\\s*0?2(nd)?\\b",
+        "\\b0?2(nd)?\\s+(of\\s+)?oct",
+        "\\b10/0?2\\b",
+        "2026-10-02",
+        "\\b2nd\\b"
+      ],
+      "due_reject": {},
+      "trap": "none",
+      "evidence": [
+        {
+          "ts": "00:24:44",
+          "quote": "Deb Shimansky, yes."
+        },
+        {
+          "ts": "00:24:57",
+          "quote": "S-Z-Y-M-A-N-S-K-I. Szymanski."
+        },
+        {
+          "ts": "00:28:11",
+          "quote": "What I will do is send Deb the updated projection once Kiran's done"
+        },
+        {
+          "ts": "00:28:11",
+          "quote": "I'll get it to her by Friday the 2nd."
+        },
+        {
+          "ts": "00:28:30",
+          "quote": "Of October, sorry. October 2nd."
+        }
+      ]
+    },
+    {
+      "iid": "i7",
+      "expected_task": "Place the trades moving the joint account and Patrice's IRA from the 70/30 moderate growth model to the 60/40 moderate model (about $47,400 from stock funds to bond funds)",
+      "match": [
+        "\\btrades?\\b|\\btrading\\b",
+        "^(?!.*(docusign|roll.?over|letter of instruction|e-?sign)).*(rebalanc|re-?allocat|60\\s*/\\s*40|\\b60-40\\b|moderate model)"
+      ],
+      "owner_accept": [
+        "kiran|bastable|paraplanner"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "same.day",
+        "\\bsign",
+        "come?s?\\s+back|\\breturn",
+        "receiv|\\bupon\\b|\\bonce\\b|\\bafter\\b|\\bwhen\\b"
+      ],
+      "due_reject": {
+        "WRONG_DOCUSIGN_SEND_DATE": [
+          "^(?!.*(sign|same.day|come?s?\\s+back|return|receiv)).*(tomorrow|sep(t(ember)?)?\\.?\\s*16|\\b0?9/16\\b|2026-09-16)"
+        ]
+      },
+      "trap": "none",
+      "evidence": [
+        {
+          "ts": "00:22:51",
+          "quote": "once it's signed, Kiran places the trades."
+        },
+        {
+          "ts": "00:23:06",
+          "quote": "Got it. Same day it comes back."
+        },
+        {
+          "ts": "00:29:42",
+          "quote": "the rebalance happens once the profile's signed"
+        }
+      ]
+    }
+  ],
+  "non_actions": [
+    {
+      "nid": "n1",
+      "what": "Opening a 529 plan for granddaughter Nora: raised by Patrice, parked by Lena until both are retired and a year of real spending is known",
+      "match": [
+        "529|college|educat|(account|sav|fund|gift)\\w*.{0,40}\\bnora\\b|\\bnora\\b.{0,40}(account|sav|fund|gift)"
+      ],
+      "kind": "tentative",
+      "evidence": [
+        {
+          "ts": "00:02:14",
+          "quote": "We were talking about opening one of those 529s for her."
+        },
+        {
+          "ts": "00:02:56",
+          "quote": "So let's call it parked."
+        },
+        {
+          "ts": "00:03:06",
+          "quote": "Okay. That's fair. Not now."
+        }
+      ]
+    },
+    {
+      "nid": "n2",
+      "what": "Roth conversions: raised by Glenn, deferred by Lena (not now and probably not in 2027 because of income and IRMAA; maybe look again next fall)",
+      "match": [
+        "\\broths?\\b"
+      ],
+      "kind": "tentative",
+      "evidence": [
+        {
+          "ts": "00:27:14",
+          "quote": "What about the Roth thing?"
+        },
+        {
+          "ts": "00:27:59",
+          "quote": "Let's not do anything with it now."
+        },
+        {
+          "ts": "00:28:09",
+          "quote": "Park it. Okay."
+        }
+      ]
+    },
+    {
+      "nid": "n3",
+      "what": "Lena's suggestion to take the $716,400 pension lump sum and roll it into an IRA managed by the firm; Glenn and Patrice declined in favor of the annuity",
+      "match": [
+        "^(?!.*(joint|survivor|j\\s*&\\s*s|3,?655|\\bpdf\\b|statement|upload|portal|download|417)).*((take|elect(s|ed|ing)?\\b|choos|roll|accept|cash)\\w*.{0,40}lump|lump.{0,60}(\\bira\\b|roll))",
+        "^(?!.*(joint|survivor|j\\s*&\\s*s|3,?655|\\bpdf\\b|statement|upload|portal|download|417)).*716"
+      ],
+      "kind": "declined_proposal",
+      "evidence": [
+        {
+          "ts": "00:17:27",
+          "quote": "My suggestion would be to roll it straight into an IRA, no tax on the rollover"
+        },
+        {
+          "ts": "00:18:28",
+          "quote": "No, I don't want the lump sum."
+        },
+        {
+          "ts": "00:18:40",
+          "quote": "The lump sum's off the table."
+        }
+      ]
+    }
+  ],
+  "corrected_figures": [
+    {
+      "what": "Balance of Patrice's Ferncastle Dental 401(k) being rolled into her IRA",
+      "said_first": "$140,000",
+      "corrected_to": "$118,400 (June 30 statement)",
+      "field": "account_actions",
+      "evidence": [
+        {
+          "ts": "00:23:24",
+          "quote": "It's about 140,000. I think. 140."
+        },
+        {
+          "ts": "00:26:25",
+          "quote": "It's 118,400. As of June 30th."
+        }
+      ]
+    },
+    {
+      "what": "Amount moved from credit union savings to the joint account money market",
+      "said_first": "$50,000 (Lena's first suggestion, leaving $35,000)",
+      "corrected_to": "$40,000 (leaving $45,000 at the credit union)",
+      "field": "account_actions",
+      "evidence": [
+        {
+          "ts": "00:25:16",
+          "quote": "My suggestion is we move 50,000 from the credit union"
+        },
+        {
+          "ts": "00:26:15",
+          "quote": "40,000 from the credit union to the money market in the joint account."
+        }
+      ]
+    },
+    {
+      "what": "Glenn's retirement date",
+      "said_first": "December 31, 2027",
+      "corrected_to": "June 30, 2027 (pension starts July 1, 2027)",
+      "field": "scalar:retirement_target",
+      "evidence": [
+        {
+          "ts": "00:03:52",
+          "quote": "December 31st, 2027."
+        },
+        {
+          "ts": "00:11:02",
+          "quote": "Yeah, let's say June. June 30th, 2027."
+        }
+      ]
+    },
+    {
+      "what": "Next meeting date",
+      "said_first": "Tuesday, November 3, 2026 (Election Day, Patrice works the polls)",
+      "corrected_to": "Tuesday, November 10, 2026 at 2:00 PM",
+      "field": "scalar:next_meeting",
+      "evidence": [
+        {
+          "ts": "00:29:03",
+          "quote": "How's Tuesday, November 3rd, at two?"
+        },
+        {
+          "ts": "00:29:25",
+          "quote": "November 10th, two o'clock?"
+        }
+      ]
+    }
+  ]
+}

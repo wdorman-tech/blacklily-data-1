@@ -1,0 +1,44 @@
+*   Question: "Which firm performs the Firm's annual external penetration test, and when was the most recent penetration test completed?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite document file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "penetration test"
+    *   "external penetration test"
+    *   "security"
+    *   "audit"
+
+    *   `01_brochure.md`: Mentions "cybersecurity" in Item 8.4, but no specific mention of a penetration test.
+    *   `02_compliance_manual.md`: Section 11 (Cybersecurity and Information Security).
+        *   Section 11.2: "An external penetration test is performed annually by a qualified independent firm that is not otherwise engaged to provide managed security services to the Firm, and the ISO tracks each finding to remediation."
+    *   `03_valuation_policy.md`: No mention of penetration tests.
+    *   `04_business_continuity_plan.md`: No mention of penetration tests.
+    *   `05_fee_schedule.md`: No mention of penetration tests.
+    *   `06_policy_update_memo.md`: No mention of penetration tests.
+
+    *   The question asks: "Which firm performs the Firm's annual external penetration test, and when was the most recent penetration test completed?"
+    *   Document `02_compliance_manual.md`, Section 11.2 says: "An external penetration test is performed annually by a qualified independent firm that is not otherwise engaged to provide managed security services to the Firm..."
+    *   Does it name the firm? No, it says "a qualified independent firm".
+    *   Does it give a date for the most recent test? No.
+
+    *   The question asks for a specific firm name and a specific date.
+    *   The document says "a qualified independent firm" (not a specific name) and does not provide a date for the most recent test.
+    *   Therefore, the specific details (name of the firm and date of the most recent test) are not in the documents.
+
+    *   Wait, let me re-read. "An external penetration test is performed annually by a qualified independent firm that is not otherwise engaged to provide managed security services to the Firm".
+    *   The question asks "Which firm...". The text says "a qualified independent firm". This is not a specific name.
+    *   The question asks "when was the most recent...". The text does not provide a date.
+
+    *   Since the specific firm name and the specific date are not provided, the answer is NOT_IN_DOCUMENTS.
+
+    *   Answer: NOT_IN_DOCUMENTS
+    *   Source: ""
+    *   Section: ""
+    *   Quote: ""
+
+    *   Wait, let me double-check all documents for any mention of "penetration" or "test".
+    *   `01_brochure.md`: No.
+    *   `02_compliance_manual.md`: Section 11.2: "An external penetration test is performed annually by a qualified independent firm that is not otherwise engaged

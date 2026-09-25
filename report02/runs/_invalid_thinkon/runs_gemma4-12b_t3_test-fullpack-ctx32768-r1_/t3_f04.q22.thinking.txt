@@ -1,0 +1,33 @@
+*   Question: "How are partially filled aggregated orders allocated among participating accounts?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer is NOT_IN_DOCUMENTS.
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "aggregated orders"
+    *   "partially filled"
+    *   "allocation"
+
+    *   *01_brochure.md*: Item 12.5 "Aggregation and Allocation" says: "If an aggregated order is completely filled, it is allocated according to that pre-allocation; if it is partially filled, it is allocated pro rata based on the pre-allocated amounts, subject to minimum denomination and minimum lot size considerations."
+    *   *02_compliance_manual.md*: Section 9.2 "Allocation of Partial Fills" says: "If an aggregated order is partially filled, the executed amount is allocated pro rata among participating accounts based on their pre-allocated amounts. Where a pro rata allocation would give an account less than $250,000 par value, or less than the security's minimum denomination, the trader may reallocate that amount pro rata among the other participating accounts. Each participating account receives the average price."
+    *   *03_valuation_policy.md*: No mention of order allocation.
+    *   *04_business_continuity_plan.md*: No mention of order allocation.
+    *   *05_fee_schedule.md*: No mention of order allocation.
+    *   *06_policy_update_memo.md*: No mention of order allocation.
+
+    *   The question asks how "partially filled aggregated orders" are allocated.
+    *   *01_brochure.md* (Item 12.5) provides a general rule: "pro rata based on the pre-allocated amounts, subject to minimum denomination and minimum lot size considerations."
+    *   *02_compliance_manual.md* (Section 9.2) provides a more detailed rule: "pro rata among participating accounts based on their pre-allocated amounts. Where a pro rata allocation would give an account less than $250,000 par value, or less than the security's minimum denomination, the trader may reallocate that amount pro rata among the other participating accounts. Each participating account receives the average price."
+
+    *   Rule 3: "Later-dated documents supersede earlier ones."
+    *   *01_brochure.md* is dated March 27, 2026.
+    *   *02_compliance_manual.md* is Version 2026.1, effective January 15, 2026.
+    *   *06_policy_update_memo.md* is dated August 14, 2026.
+    *   Wait, the rule says "Later-dated documents supersede earlier ones."
+    *   The brochure is dated March 27, 2026.
+    *   The Compliance Manual is dated January 15, 2026.
+    *   The Policy Update Memo is dated August 14, 2026.
+    *   The question is about "partially filled aggregated orders".
+    *

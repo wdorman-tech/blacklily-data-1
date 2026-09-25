@@ -1,0 +1,121 @@
+The user wants me to compare two versions of a Limited Partnership Agreement (Prior Version dated April 7, 2025 vs Current Version dated January 26, 2026) and identify material changes.
+
+I need to follow the rules strictly:
+1.  **Section by Section comparison**: Compare headings and text beneath them.
+2.  **Material Changes Only**: Report only where text actually differs in substance (new/removed risk, exposure, right, obligation, provision; new/dropped event/proceeding/regulation/product/party/program; change in likelihood/severity; change to number/rate/threshold/period/deadline other than routine date roll-forward).
+3.  **No Minor Edits**: Ignore date roll-forwards (unless substantive), renamed defined terms without substance, updated cross-references, punctuation, rewording with identical meaning.
+4.  **Format**: JSON object with key "changes", list of objects with keys "type", "heading", "description", "quote".
+5.  **Quote Source**: Current version for added/modified, Prior version for removed.
+6.  **Output**: ONLY JSON, no markdown fences, no preamble.
+
+Let's go through the document section by section.
+
+**Header Info:**
+- Title: "Limited Partnership Agreement" vs "Amended and Restated Limited Partnership Agreement". This is a change in title/substance (restatement). However, usually, the header metadata isn't treated as a "section" with a heading for the purpose of the list unless it's a specific section. The prompt says "A section is a heading and the text beneath it". The document starts with `# Tamberlow Capital Partners III, L.P.` then `**Limited Partnership Agreement**` etc.
+- Date: April 7, 2025 vs January 26, 2026. This is a date roll-forward. Rule 5 says "Do not report minor edits: a date rolled forward with nothing else changed". However, the title also changes from "Limited Partnership Agreement" to "Amended and Restated Limited Partnership Agreement". Is this material? Usually, the document type change implies a restatement. But looking at the text content is more important.
+- Introductory paragraph: "This Limited Partnership Agreement... is made as of April 7, 2025..." vs "This Amended and Restated Limited Partnership Agreement... is made as of January 26, 2026... and amends and restates in its entirety the Limited Partnership Agreement of the Partnership dated as of April 7, 2025."
+    - This paragraph changes significantly. It adds "Amended and Restated", changes date, adds reference to prior agreement.
+    - Is this a section? There is no explicit heading like `## ARTICLE I` before this intro text. The first heading is `## ARTICLE I. ORGANIZATION AND DEFINITIONS`.
+    - Rule 1: "A section is a heading and the text beneath it". The intro text doesn't have a specific heading above it other than the document title block. Usually, in these comparisons, the preamble/intro before Article I is often treated as part of the document but might not have a specific "heading" to list under if there isn't one. However, looking at the structure:
+        - Prior: `# Tamberlow Capital Partners III, L.P.` -> `**Limited Partnership Agreement**` -> `**Dated as of April 7, 2025**` -> Disclaimer -> Intro text. Then `## ARTICLE I...`.
+        - Current: Same structure but with "Amended and Restated" in title and date.
+    - If there is no heading for the intro paragraph, I cannot list it under a heading per Rule 1 ("A section is a heading and the text beneath it"). However, often the preamble is considered part of the document. But strictly following Rule 1, I need a heading. The first explicit heading is `## ARTICLE I. ORGANIZATION AND DEFINITIONS`.
+    - Let's check if there are changes *within* Article I sections.
+
+**Article I. Organization and Definitions**
+- **1.1 Definitions**: Text looks identical. "Affiliate", "Business Day", "Commitment", etc. No substantive changes found in the text provided.
+- **1.2 Name, Office and Purpose**:
+    - Prior: "principle office" (typo?) vs Current: "principal office". Rule 5 says "Do not report minor edits... punctuation, or rewording with identical meaning." Changing "principle" to "principal" is a correction of a typo, likely not material substance. However, the text is otherwise identical.
+    - Prior: "...with all powers of a limited partnership under the Delaware Revised Uniform Limited Partnership Act (the "Act")."
+    - Current: Same.
+    - Change? "principle" vs "principal". This is a typo fix. Rule 5 says "Do not report minor edits... punctuation, or rewording with identical meaning." A typo correction is usually considered a minor edit unless it changes legal meaning (which "principal" vs "principle" in this context does not). I will skip this as a material change.
+- **1.3 Term**: Text looks identical.
+
+**Article II. Capital Contributions**
+- **2.1 Commitments and Closings**:
+    - Prior: "...updated through April 7, 2025."
+    - Current: "...updated through January 26, 2026."
+    - Rule 5: "a date rolled forward with nothing else changed". This is a date roll-forward. I should not report this unless there is something else changed in the section. The rest of the paragraph looks identical.
+- **2.2 Capital Calls**:
+    - Prior: "...written notice (a "Drawdown Notice")..."
+    - Current: "...written notice (a "Capital Call Notice")..."
+    - Change: Term change from "Drawdown Notice" to "Capital Call Notice". Rule 5 says "renamed defined term with no change in substance". This is a rename. I should not report it unless the substance changed. The definition of the notice itself seems identical otherwise.
+- **2.3 Defaulting Partners**: Text looks identical.
+- **2.4 Investment Limitations** (Prior) vs **2.4 Subscription Credit Facility** (Current):
+    - Prior Article II has section 2.4 "Investment Limitations".
+    - Current Article II has section 2.4 "Subscription Credit Facility".
+    - Wait, looking at the text:
+        - Prior Version Article II ends with 2.3 Defaulting Partners. Then Article III starts.
+        - Current Version Article II has 2.1, 2.2, 2.3, **2.4 Subscription Credit Facility**.
+        - Prior Version Article II does *not* have a section 2.4 Investment Limitations? Wait, let me check the Prior text provided.
+        - Prior Text: `### 2.3 Defaulting Partners` ... `### 2.4 Investment Limitations`. Ah, I missed it in my first scan.
+        - Let's re-read Prior Article II carefully.
+            - `### 2.1 Commitments and Closings`
+            - `### 2.2 Capital Calls`
+            - `### 2.3 Defaulting Partners`
+            - `### 2.4 Investment Limitations` (Wait, in the Prior text provided in the prompt: `### 2.4 Investment Limitations` is present under Article II? Let me check the prompt's Prior Version text again.)
+            - Prior Version Text:
+                ```
+                ## ARTICLE II. CAPITAL CONTRIBUTIONS
+
+                ### 2.1 Commitments and Closings
+                ...
+                ### 2.2 Capital Calls
+                ...
+                ### 2.3 Defaulting Partners
+                ...
+                ### 2.4 Investment Limitations
+                Without the consent of the Advisory Committee, the Partnership shall not (a) invest more than 20%...
+                ```
+            - Current Version Text:
+                ```
+                ## ARTICLE II. CAPITAL CONTRIBUTIONS
+
+                ### 2.1 Commitments and Closings
+                ...
+                ### 2.2 Capital Calls
+                ...
+                ### 2.3 Defaulting Partners
+                ...
+                ### 2.4 Subscription Credit Facility
+                The Partnership may borrow under revolving credit facilities...
+                ```
+            - So Section 2.4 changed completely from "Investment Limitations" to "Subscription Credit Facility". This is a **modified** section (or removed/added depending on how you view the content). The content of Investment Limitations moved to Article V in the Current Version (Section 5.6).
+            - In Prior: Section 2.4 was Investment Limitations.
+            - In Current: Section 2.4 is Subscription Credit Facility. Section 5.6 is Investment Limitations.
+            - So Section 2.4 is **modified** (content changed entirely). The heading changed from "Investment Limitations" to "Subscription Credit Facility".
+            - Also, the content of "Investment Limitations" appears in Current Version as Section 5.6.
+            - Is this a material change? Yes, completely different provision in that section number.
+            - Quote: Prior text for 2.4 Investment Limitations vs Current text for 2.4 Subscription Credit Facility.
+- **Article III. Distributions**
+    - **3.1 Distribution Waterfall**:
+        - Prior: `(c) third, 100% to the General Partner until the General Partner has received 20% of the aggregate amounts distributed under clause (b) and this clause (c); and`
+        - Current: `(c) third, 80% to the General Partner and 20% to the Limited Partner until the General Partner has received 20% of the aggregate amounts distributed under clause (b) and this clause (c); and`
+        - Change: Prior says "100% to the General Partner". Current says "80% to the General Partner and 20% to the Limited Partner". This is a material change in the distribution waterfall.
+    - **3.2 General Partner Clawback**: Text looks identical.
+- **Article IV. Fees and Expenses**
+    - **4.1 Management Fee**:
+        - Prior: `...and (b) thereafter, 1.50% of the Net Invested Capital...`
+        - Current: `...and (b) thereafter, 1.25% of the Net Invested Capital...`
+        - Change: Rate changed from 1.50% to 1.25%. Material change.
+    - **4.2 Fee Offset**:
+        - Prior: `Any reduction in excess of the Management Fee for a quarter shall be carried forward and, to the extent not applied by dissolution, refunded to the Limited Partners.`
+        - Current: `To the extent the reduction for a quarter exceeds the Management Fee for that quarter, the excess shall be carried forward, and any excess not applied by dissolution shall be refunded to the Limited Partners.`
+        - Change: "Any reduction in excess of the Management Fee" vs "To the extent the reduction for a quarter exceeds the Management Fee". This is rewording with identical meaning. Rule 5 says "Do not report minor edits... rewording with identical meaning." I will skip this unless there's a substantive difference. The substance (carry forward and refund) is the same.
+        - Wait, looking closer at Prior: `Any reduction in excess of the Management Fee for a quarter shall be carried forward and, to the extent not applied by dissolution, refunded to the Limited Partners.`
+        - Current: `To the extent the reduction for a quarter exceeds the Management Fee for that quarter, the excess shall be carried forward, and any excess not applied by dissolution shall be refunded to the Limited Partners.`
+        - This is stylistic rewording. I will treat as unchanged/minor edit.
+    - **4.3 Organizational and Partnership Expenses**:
+        - Prior: `...fees of Pellorin Fund Administration, LLC, as administrator, Ferrand Oakes LLP, as auditor, and legal counsel; costs of reports to Partners and of Advisory Committee meetings; insurance premiums; taxes; litigation and indemnification expenses; and winding-up expenses. The Manager shall bear its own ordinary overhead...`
+        - Current: `...fees of Pellorin Fund Administration, LLC, as administrator, Ferrand Oakes LLP, as auditor, and legal counsel; costs of reports to Partners and of Advisory Committee meetings; insurance premiums; taxes; litigation and indemnification expenses; and winding-up expenses. Partnership Expenses also include the allocable share of the Partnership in the regulatory compliance costs of the Manager and the General Partner, including Form PF and Form ADV filings and responses to regulatory examinations. The Manager shall bear its own ordinary overhead...`
+        - Change: Current adds a sentence about regulatory compliance costs (Form PF, Form ADV). This is a new obligation/provision. Material change.
+- **Article V. Management**
+    - **5.1 Authority of the General Partner**: Text looks identical.
+    - **5.2 Advisory Committee**:
+        - Prior: `...waivers of the investment limitations in Section 2.4 and other matters referred to it under this Agreement.`
+        - Current: `...waivers of the investment limitations in Section 5.6 and other matters referred to it under this Agreement.`
+        - Change: Cross-reference changed from Section 2.4 to Section 5.6. Rule 5 says "updated cross-reference or section number". Do not report minor edits. This is a cross-reference update due to the reorganization of sections (Investment Limitations moved from 2.4 to 5.6). I should not report this as a material change if it's just updating the reference to match the new location.
+    - **5.3 Conflicts and Co-Investment**:
+        - Prior: `...unless the Affiliated Transaction has been approved in advance by the Advisory Committee.`
+        - Current: `...unless the Affiliated Transaction has been approved in advance by the General Partner as fair and reasonable to the Partnership, with written notice to the Advisory Committee.`
+        - Change

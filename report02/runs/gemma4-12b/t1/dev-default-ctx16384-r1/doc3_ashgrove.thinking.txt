@@ -1,0 +1,139 @@
+*   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from a fund offering document into a JSON object.
+    *   Constraints:
+        *   Accuracy is paramount.
+        *   No invented terms.
+        *   Use `NOT_FOUND` if not stated.
+        *   Use `NOT_APPLICABLE` if stated as not applicable.
+        *   Amendments/Supplements supersede original text.
+        *   Report all variants (class/tier) in one string.
+        *   Distinguish between commitment and current holding.
+        *   Citations must be section/appendix identifiers.
+        *   Quotes must be verbatim.
+        *   Output format: JSON only, no markdown, no preamble.
+
+    *   `fund_name`: "ASHGROVE SPECIAL SITUATIONS FUND, L.P." (Section 1.1)
+    *   `fund_domicile`: "Delaware" (Section 1.1)
+    *   `fund_structure`: "The Partnership invests directly and does not operate as a feeder into a master fund." (Section 1.1). It's a "limited partnership". It's not a master-feeder.
+    *   `management_fee`:
+        *   Original: 2.00% of net asset value of each Limited Partner's capital account (Section 4.1).
+        *   Supplement S-2: "The Partnership pays the Investment Manager a management fee accrued monthly and payable quarterly in arrears at an annual rate of 1.60% of the net asset value of each Limited Partner's capital account, determined prior to accrual of the Incentive Allocation. The Management Fee rate is identical for Class F and Class I Interests."
+        *   Final Value: "1.60% of the net asset value of each Limited Partner's capital account (identical for Class F and Class I Interests)"
+    *   `performance_fee`:
+        *   Class F: "15% of Net New Appreciation" (Section 4.2).
+        *   Class I: "20% of Net New Appreciation" (Section 4.2).
+    *   `hurdle_rate`:
+        *   Class F: "no hurdle rate or preferred return applies" (Section S-3).
+        *   Class I: "preferred return of 4.00% per annum, calculated on the opening capital account balance for each Incentive Period and adjusted pro rata for subscriptions and redemptions during the period. The preferred return operates as a soft hurdle with full catch-up" (Section S-3).
+    *   `high_water_mark`: "perpetual high water mark" (Section 4.4).
+    *   `minimum_initial_investment`:
+        *   Class F: "$5,000,000" (Section 2).
+        *   Class I: "$1,000,000" (Section 3.1).
+    *   `lockup_period`:
+        *   "not subject to a hard lock-up" (Section 5.1).
+        *   "offered as a soft lock-up: Interests redeemed within eighteen (18) months of the date of the relevant subscription are subject to an early redemption charge of 2.00% of the redemption proceeds" (Section 5.1).
+    *   `redemption_frequency`: "quarterly" (Section 5.2).
+    *   `redemption_notice_days`:
+        *   Original: 60 days (Section 5.3).
+        *   Supplement S-4: "forty-five (45) calendar days" (Section S-4).
+    *   `gate_provision`:
+        *   "fund-level gate: 25% of the Partnership's net asset value as of the applicable redemption date" (Appendix A).
+        *   "Investor-level gate: None. The Partnership applies a fund-level gate only." (Appendix A).
+    *   `key_man_provision`: "the Partnership does not provide any key person provision, key man clause, or associated redemption right" (Section 6.3).
+    *   `gp_commitment`: "The General Partner has not committed, and does not commit, to maintain any minimum investment in the Partnership. There is no required general partner commitment, no stated minimum dollar amount, and no stated minimum percentage of net asset value." (Section 6.4). Note: The $4.2M is a "disclosed current holding", not a commitment.
+    *   `fund_term`: "perpetual" (Section 7.1).
+    *   `auditor`:
+        *   Original: Ardmore Pike & Levinson LLP (Section 9.2).
+        *   Supplement S-5: "Wexley Sandoval Partners LLP" (Section S-5).
+    *   `administrator`: "Kestrel Harbour Fund Administration, LLC" (Section 9.1).
+    *   `prime_broker`: NOT_FOUND.
+    *   `legal_counsel`: "Farrow Tindall Greaves LLP" (Section 9.3).
+    *   `mfn_election`: "The Partnership does not offer a most favored nation election." (Section 8).
+
+    *   `fund_name`: "ASHGROVE SPECIAL SITUATIONS FUND, L.P." (Section 1.1)
+    *   `fund_domicile`: "Delaware" (Section 1.1)
+    *   `fund_structure`: "not a master-feeder" (Section 1.1). "The Partnership invests directly and does not operate as a feeder into a master fund."
+    *   `management_fee`: "1.60% of the net asset value of each Limited Partner's capital account (identical for Class F and Class I Interests)" (Section S-2).
+    *   `performance_fee`: "Class F: 15% of Net New Appreciation; Class I: 20% of Net New Appreciation" (Section 4.2).
+    *   `hurdle_rate`: "Class F: no hurdle rate or preferred return applies; Class I: preferred return of 4.00% per annum, calculated on the opening capital account balance for each Incentive Period and adjusted pro rata for subscriptions and redemptions during the period. The preferred return operates as a soft hurdle with full catch-up" (Section S-3).
+    *   `high_water_mark`: "perpetual high water mark" (Section 4.4).
+    *   `minimum_initial_investment`: "Class F: $5,000,000; Class I: $1,000,000" (Section 2, Section 3.1).
+    *   `lockup_period`: "not subject to a hard lock-up; soft lock-up: Interests redeemed within eighteen (18) months of the date of the relevant subscription are subject to an early redemption charge of 2.00% of the redemption proceeds" (Section 5.1).
+    *   `redemption_frequency`: "quarterly" (Section 5.2).
+    *   `redemption_notice_days`: "forty-five (45) calendar days" (Section S-4).
+    *   `gate_provision`: "fund-level gate: 25% of the Partnership's net asset value as of the applicable redemption date; Investor-level gate: None. The Partnership applies a fund-level gate only." (Appendix A).
+    *   `key_man_provision`: "the Partnership does not provide any key person provision, key man clause, or associated redemption right" (Section 6.3).
+    *   `gp_commitment`: "NOT_APPLICABLE" (Section 6.4).
+    *   `fund_term`: "perpetual" (Section 7.1).
+    *   `auditor`: "Wexley Sandoval Partners LLP" (Section S-5).
+    *   `administrator`: "Kestrel Harbour Fund Administration, LLC" (Section 9.1).
+    *   `prime_broker`: "NOT_FOUND"
+    *   `legal_counsel`: "Farrow Tindall Greaves LLP" (Section 9.3).
+    *   `mfn_election`: "The Partnership does not offer a most favored nation election." (Section 8).
+
+    *   `fund_name`: "ASHGROVE SPECIAL SITUATIONS FUND, L.P." (Section 1.1)
+    *   `fund_domicile`: "Delaware" (Section 1.1)
+    *   `fund_structure`: "not a master-feeder" (Section 1.1)
+    *   `management_fee`: "1.60% of the net asset value of each Limited Partner's capital account" (Section S-2)
+    *   `performance_fee`: "Class F: 15% of Net New Appreciation; Class I: 20% of Net New Appreciation" (Section 4.2)
+    *   `hurdle_rate`: "Class F: no hurdle rate or preferred return applies; Class I: preferred return of 4.00% per annum... soft hurdle with full catch-up" (Section S-3)
+    *   `high_water_mark`: "perpetual high water mark" (Section 4.4)
+    *   `minimum_initial_investment`: "Class F: $5,000,000; Class I: $1,000,000" (Section 2, Section 3.1)
+    *   `lockup_period`: "not subject to a hard lock-up; soft lock-up: Interests redeemed within eighteen (18) months of the date of the relevant subscription are subject to an early redemption charge of 2.00% of the redemption proceeds" (Section 5.1)
+    *   `redemption_frequency`: "quarterly" (Section 5.2)
+    *   `redemption_notice_days`: "forty-five (45) calendar days" (Section S-4)
+    *   `gate_provision`: "fund-level gate: 25% of the Partnership's net asset value as of the applicable redemption date; Investor-level gate: None. The Partnership applies a fund-level gate only." (Appendix A)
+    *   `key_man_provision`: "the Partnership does not provide any key person provision, key man clause, or associated redemption right" (Section 6.3)
+    *   `gp_commitment`: "NOT_APPLICABLE" (Section 6.4)
+    *   `fund_term`: "perpetual" (Section 7.1)
+    *   `auditor`: "Wexley Sandoval Partners LLP" (Section S-5)
+    *   `administrator`: "Kestrel Harbour Fund Administration, LLC" (Section 9.1)
+    *   `prime_broker`: "NOT_FOUND"
+    *   `legal_counsel`: "Farrow Tindall Greaves LLP" (Section 9.3)
+    *   `mfn_election`: "The Partnership does not offer a most favored nation election." (Section 8)
+
+    *   `management_fee`: "1.60% of the net asset value of each Limited Partner's capital account" (Section S-2).
+    *   `performance_fee`: "Class F: 15% of Net New Appreciation; Class I: 20% of Net New Appreciation" (Section 4.2).
+    *   `hurdle_rate`: "Class F: no hurdle rate or preferred return applies; Class I: preferred return of 4.00% per annum... soft hurdle with full catch-up" (Section S-3).
+    *   `minimum_initial_investment`: "Class F: $5,000,000; Class I: $1,000,000" (Section 2, Section 3.1).
+    *   `lockup_period`: "not subject to a hard lock-up; soft lock-up: Interests redeemed within eighteen (18) months of the date of the relevant subscription are subject to an early redemption charge of 2.00% of the redemption proceeds" (Section 5.1).
+    *   `gate_provision`: "fund-level gate: 25% of the Partnership's net asset value as of the applicable redemption date; Investor-level gate: None. The Partnership applies a fund-level gate only." (Appendix A).
+    *   `gp_commitment`: "The General Partner has not committed, and does not commit, to maintain any minimum investment in the Partnership. There is no required general partner commitment, no stated minimum dollar amount, and no stated minimum percentage of net asset value." (Section 6.4). Since the text says "no required general partner commitment", the value is NOT_APPLICABLE.
+
+    *   `fund_name`: "ASHGROVE SPECIAL SITUATIONS FUND, L.P." (Section 1.1)
+    *   `fund_domicile`: "Delaware" (Section 1.1)
+    *   `fund_structure`: "not a master-feeder" (Section 1.1)
+    *   `management_fee`: "1.60% of the net asset value of each Limited Partner's capital account" (Section S-2)
+    *   `performance_fee`: "Class F: 15% of Net New Appreciation; Class I: 20% of Net New Appreciation" (Section 4.2)
+    *   `hurdle_rate`: "Class F: no hurdle rate or preferred return applies; Class I: preferred return of 4.00% per annum... soft hurdle with full catch-up" (Section S-3)
+    *   `high_water_mark`: "perpetual high water mark" (Section 4.4)
+    *   `minimum_initial_investment`: "Class F: $5,000,000; Class I: $1,000,000" (Section 2, Section 3.1)
+    *   `lockup_period`: "not subject to a hard lock-up; soft lock-up: Interests redeemed within eighteen (18) months of the date of the relevant subscription are subject to an early redemption charge of 2.00% of the redemption proceeds" (Section 5.1)
+    *   `redemption_frequency`: "quarterly" (Section 5.2)
+    *   `redemption_notice_days`: "forty-five (45) calendar days" (Section S-4)
+    *   `gate_provision`: "fund-level gate: 25% of the Partnership's net asset value as of the applicable redemption date; Investor-level gate: None. The Partnership applies a fund-level gate only." (Appendix A)
+    *   `key_man_provision`: "the Partnership does not provide any key person provision, key man clause, or associated redemption right" (Section 6.3)
+    *   `gp_commitment`: "NOT_APPLICABLE" (Section 6.4)
+    *   `fund_term`: "perpetual" (Section 7.1)
+    *   `auditor`: "Wexley Sandoval Partners LLP" (Section S-5)
+    *   `administrator`: "Kestrel Harbour Fund Administration, LLC" (Section 9.1)
+    *   `prime_broker`: "NOT_FOUND"
+    *   `legal_counsel`: "Farrow Tindell Greaves LLP" (Section 9.3)
+    *   `mfn_election`: "The Partnership does not offer a most favored nation election." (Section 8)
+
+    *   `fund_structure`: "not a master-feeder" (Section 1.1)
+    *   `management_fee`: "1.60% of the net asset value of each Limited Partner's capital account" (Section S-2)
+    *   `performance_fee`: "Class F: 15% of Net New Appreciation; Class I: 20% of Net New Appreciation" (Section 4.2)
+    *   `hurdle_rate`: "Class F: no hurdle rate or preferred return applies; Class I: preferred return of 4.00% per annum... soft hurdle with full catch-up" (Section S-3)
+    *   `minimum_initial_investment`: "Class F: $5,000,000; Class I: $1,000,000" (Section 2, Section 3.1)
+    *   `lockup_period`: "not subject to a hard lock-up; soft lock-up: Interests redeemed within eighteen (18) months of the date of the relevant subscription are subject to an early redemption charge of 2.00% of the redemption proceeds" (Section 5.1)
+    *   `gate_provision`: "fund-level gate: 25% of the Partnership's net asset value as of the applicable redemption date; Investor-level gate: None. The Partnership applies a fund-level gate only." (Appendix A)
+    *   `gp_commitment`: "NOT_APPLICABLE" (Section 6.4)
+    *   `auditor`: "Wexley Sandoval Partners LLP" (Section S-5)
+
+    *   `fund_name`: "ASHGROVE SPECIAL SITUATIONS FUND, L.P." (Section 1.1)
+    *   `fund_domicile`: "Delaware" (Section 1.1)
+    *   `fund_structure`: "not a master-feeder" (Section 1.1)
+    *   `management_fee`: "1.60% of the net asset value of each Limited Partner's capital account" (Section S-2)
+    *   `performance_fee`: "Class F: 15% of Net New Appreciation; Class I: 20% of Net New Appreciation" (Section 4.2)
+    *   `hurdle_rate`: "Class F: no hurdle rate or preferred return applies; Class I: preferred return

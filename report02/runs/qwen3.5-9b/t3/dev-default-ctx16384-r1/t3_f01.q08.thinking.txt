@@ -1,0 +1,32 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Rules:
+        1.  Answer only from documents.
+        2.  If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        3.  Later-dated documents supersede earlier ones.
+        4.  Keep answers short and specific.
+        5.  Cite document file name and section.
+        6.  Quote supporting text verbatim.
+    *   Output Format: JSON object with keys `answer`, `source_document`, `section`, `quote`. No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "What minimum holding period applies to employees' personal securities transactions?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "minimum holding period", "employees", "personal securities transactions", "Reportable Security", "Covered Account".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Mentions personal trading rules (pre-clearance, blackout periods, etc.) but doesn't specify a minimum holding period number in the snippet provided.
+    *   `02_compliance_manual.md` (dated January 15, 2026):
+        *   Section 4.5 Minimum Holding Period: "A Reportable Security acquired in a Covered Account must be held for at least 30 calendar days."
+    *   `06_policy_update_memo.md` (dated August 17, 2026):
+        *   Section: SECTION 2. PERSONAL TRADING: MINIMUM HOLDING PERIOD.
+        *   Text: "**Amends:** Compliance Manual, Section 4.5 (Minimum Holding Period). The minimum holding period for Reportable Securities acquired in a Covered Account is increased from 30 calendar days to 60 calendar days. This change supersedes the 30-day period stated in Section 4.5 of the Compliance Manual. The 60-day period applies to every Reportable Security acquired on or after the date of this memorandum..."
+    *   Rule 3 (Later-dated documents supersede earlier ones): The memo dated August 17, 2026 supersedes the January 15, 2026 manual regarding the holding period.
+    *   Current effective rule: 60 calendar days for securities acquired on or after the date of the memorandum (August 17, 2026). The question asks generally "What minimum holding period applies...", implying the current policy.
+    *   However, I need to check if the answer should reflect the specific text from the superseding document or just the number. Rule 4 says "Keep answers short and specific: the number...". Rule 5 says "Cite the document file name and the section where the answer appears". Rule 6 says "Quote the supporting text verbatim."
+    *   Since the memo explicitly states it supersedes the manual, I should use the memo as the source for the current rule.
+    *   The question asks about "employees' personal securities transactions". The documents refer to "Supervised Person" and "Reportable Security acquired in a Covered Account". In the context of DDQs for RIAs, "Supervised Person" generally equates to employees managing client accounts or trading personally under the firm's rules

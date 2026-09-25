@@ -1,0 +1,78 @@
+The objective is to extract specific information from the provided legal document (a Limited Partnership Agreement and its First Amendment) and format it into a JSON object.
+
+    *   *Key Persons:*
+        *   Original: Graham Oduya, Celia Brandvold.
+        *   Amendment: Celia Brandvold resigned (Jan 17, 2025); Tomas Wexcombe joined (April 22, 2025).
+        *   Current: Graham Oduya, Tomas Wexcombe.
+    *   *Investment Period:*
+        *   Suspended: Jan 17, 2025 (due to Brandvold's departure).
+        *   Resumed: April 22, 2025 (upon Wexcombe's appointment).
+        *   End Date: Not explicitly stated as a date in the main text, but the Amendment says "no later than the fifth (5th) anniversary of the Initial Closing Date".
+    *   *Term:*
+        *   Expiration Date: December 16, 2034.
+        *   Extension: Up to two (2) successive periods of one (1) year each (requires Majority in Interest consent).
+    *   *Management Fee (Post-Investment Period):*
+        *   Rate: 1.25% per annum (0.3125% per quarter) of Net Invested Capital.
+    *   *Net Invested Capital Definition:* Invested Capital minus permanent write-downs/write-offs of Portfolio Investments not yet disposed of.
+    *   *Advisory Committee:* 3 to 7 representatives of Limited Partners (not Affiliates of GP).
+    *   *Audit Firm:* Aldwin Treloar LLP (or other firm selected by GP).
+    *   *Administrator:* Kinnaird Stroud Fund Services, LLC.
+    *   *Legal Counsel (Fund):* Pellow Ashdown LLP.
+    *   *Counsel to Advisory Committee (for Amendment):* Varley Dunmore LLP.
+    *   *Governing Law:* Delaware.
+    *   *Capital Commitments (Final Closing):* $712,500,000 (total for Partnership and Parallel Fund).
+    *   *GP/Affiliate Commitment:* $14,250,000.
+    *   *Key Person Event:* Death, permanent disability, ceasing to be a managing member of GP, or ceasing to devote Required Time.
+    *   *Suspension Period:* 180 days to find a replacement or get a majority vote.
+
+    *   `key_persons`: List of names.
+    *   `investment_period`: { `status`: "active", `resumed_date`: "2025-04-22", `end_date_limit`: "5th anniversary of Initial Closing Date" }
+    *   `term`: { `expiration_date`: "2034-12-16", `extension_options`: "Up to two 1-year periods" }
+    *   `management_fee_post_investment_period`: { `annual_rate`: "1.25%", `quarterly_rate`: "0.3125%", `basis`: "Net Invested Capital" }
+    *   `service_providers`: { `auditor`: "Aldwin Treloar LLP", `administrator`: "Kinnaird Stroud Fund Services, LLC", `legal_counsel`: "Pellow Ashdown LLP" }
+    *   `governing_law`: "Delaware"
+    *   `capital_commitments`: { `total_aggregate`: 712500000, `gp_affiliate_total`: 14250000 }
+
+    *   *Key Persons:* Graham Oduya, Tomas Wexcombe.
+    *   *Investment Period:* Started/Resumed April 22, 2025.
+    *   *Term:* Ends Dec 16, 2034.
+    *   *Management Fee:* 1.25% of Net Invested Capital.
+    *   *Audit:* Aldwin Treloar LLP.
+    *   *Admin:* Kinnaird Stroud Fund Services, LLC.
+    *   *Counsel:* Pellow Ashhdown LLP.
+
+    ```json
+    {
+      "key_persons": ["Graham Oduya", "Tomas Wexcombe"],
+      "investment_period": {
+        "status": "Active",
+        "resumed_date": "2025-04-22",
+        "duration_limit": "5th anniversary of Initial Closing Date"
+      },
+      "term": {
+        "expiration_date": "2034-12-16",
+        "extension_provisions": "Up to two (2) successive periods of one (1) year each"
+      },
+      "management_fee_post_investment_period": {
+        "annual_rate": "1.25%",
+        "quarterly_rate": "0.3125%",
+        "basis": "Net Invested Capital"
+      },
+      "service_providers": {
+        "auditor": "Aldwin Treloar LLP",
+        "administrator": "Kinnaird Stroud Fund Services, LLC",
+        "legal_counsel": "Pellow Ashdown LLP"
+      },
+      "governing_law": "Delaware",
+      "capital_commitments": {
+        "total_aggregate_partnership_and_parallel": 712500000,
+        "gp_and_affiliate_total": 14250000
+      }
+    }
+    ```
+
+    *   Check dates: April 22, 2025 is the amendment date.
+    *   Check names: Graham Oduya, Tomas Wexcombe.
+    *   Check fees: 1.25% (0.3125% quarterly).
+    *   Check terms: 2034-12-16.
+    *   Check entities: Aldwin Treloar, Kinnaird Stroud, Pellow Ashdown.

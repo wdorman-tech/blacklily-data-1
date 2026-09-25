@@ -1,0 +1,31 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: Describe the performance-based compensation received by the Adviser's affiliates from the Flagship Fund and from the Co-Investment Fund.
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "performance-based compensation", "incentive allocation", "carried interest", "Flagship Fund", "Co-Investment Fund", "Affiliates", "Adviser's principals and employees".
+
+3.  **Analyze Document Content:**
+
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section Item 4. Advisory Business > 4.2 The Funds: Mentions Flagship Fund, Offshore Fund, Co-Investment Fund. Mentions Sallowmere Partners GP, LLC serves as general partner of the Flagship Fund, and Sallowmere Co-Invest GP, LLC serves as general partner of the Co-Investment Fund (each a "General Partner"). Each General Partner is under common control with the Adviser.
+        *   Section Item 6. Performance-Based Fees and Side-by-Side Management > 6.1 Incentive Allocation: "As of December 31 of each year, and as of the effective date of any redemption, Sallowmere Partners GP, LLC receives an incentive allocation from each Class A capital account in the Flagship Fund equal to 20% of the net profits allocated to that capital account for the period, and from each Class F capital account equal to 15% of such net profits. Class E capital accounts bear no incentive allocation."
+        *   Section Item 6. Performance-Based Fees and Side-by-Side Management > 6.4 Side-by-Side Management and Conflicts of Interest: "The Adviser manages the Flagship Fund and the Co-Investment Fund side by side. The Flagship Fund pays a management fee and an annual incentive allocation, while the Co-Investment Fund pays no management fee and a lower carried interest on realized profits only."
+        *   Section Item 11. Code of Ethics... > 11.4 Investment by Principals and Employees in the Funds: "The Adviser's principals and employees invest in the Flagship Fund through Class E interests, which bear no management fee or incentive allocation. These investments may create an incentive to favor the Flagship Fund over the Co-Investment Fund, in which personnel do not invest."
+
+    *   `02_compliance_manual.md` (January 15, 2026):
+        *   Section 8.2 Performance Presentation: Discusses performance presentation rules, not compensation details.
+
+    *   `05_fee_schedule.md` (January 1, 2026):
+        *   Section 3. INCENTIVE ALLOCATION > 3.1 Rate: "The general partner of the Flagship Fund receives an incentive allocation equal to

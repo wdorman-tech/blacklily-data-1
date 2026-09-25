@@ -1,0 +1,441 @@
+{
+  "doc_id": "t1_d07",
+  "doc_title": "Brackenholt Senior Lending Fund, LP Confidential Private Placement Memorandum with Executed Side Letter",
+  "doc_type": "PPM",
+  "difficulty": "adversarial",
+  "notes": "Semi-liquid evergreen private credit PPM with an executed side letter appended that gives one endowment a 0.95% management fee, a waiver of the 2.0% early repurchase deduction, and a key-person notification right carrying a 30-day tender window; every fund-level answer must come from the PPM body. The two-part incentive fee (quarterly income fee over a 1.25% hurdle with full catch-up, annual cumulative capital gains fee) requires the reader to state that the loss carryforward applies only to the capital gains fee. The three absence fields (key person, GP commitment, prime broker) each sit next to near-miss content: named side-letter key persons, a disclosed $14.2 million adviser holding, and a custodian and credit facility lender.",
+  "traps": {
+    "management_fee": "The appended Hallowby College side letter cuts that investor's fee to 0.95% unless repurchases take its Capital Account below $40,000,000 (a decline from investment performance does not restore the higher rate); the fund-level rate is 1.25% per annum of net asset value under Section 4.1.",
+    "lockup_period": "The side letter waives the Early Repurchase Deduction for Hallowby only; the Fund has no hard lock but a one-year soft lock with a 2.0% deduction under Section 6.4.",
+    "redemption_notice_days": "After a Key Person Notice the side letter lets Hallowby tender on 30 days' notice for one Repurchase Date, and Section 6.1 has a 20 Business Day Repurchase Offer Notice running from the Fund; the investor notice period is 60 days under Section 6.2.",
+    "key_man_provision": "The side letter names Dalia Ferrante and Nicholas Oyelaran and grants Hallowby a notification right, but Section 3.2 states the Partnership Agreement has no key person provision, so the fund-level answer is NOT_APPLICABLE.",
+    "legal_counsel": "The side letter notice clause names Marchbank Toller LLP as counsel to the investor and Section 8.4 names Rushmere Quaye as Cayman counsel to the Parallel Fund only; counsel to the Fund is Pellow Ainsworth LLP.",
+    "gp_commitment": "Section 3.3 discloses about $14.2 million of Interests held by the Adviser and its personnel but states that no commitment has been made or is required, so the answer is NOT_APPLICABLE.",
+    "prime_broker": "Section 8.5 states the Fund does not engage a prime broker; Garrowby Trust Company, N.A. (custodian) and Sallowfield Bank, N.A. (credit facility lender) are not prime brokers."
+  },
+  "fields": {
+    "fund_name": {
+      "expected": "Brackenholt Senior Lending Fund, LP",
+      "citation": "Section 2.1",
+      "quote": "Brackenholt Senior Lending Fund, LP was formed as a limited partnership under the Delaware Revised Uniform Limited Partnership Act",
+      "accept": [
+        "brackenholt senior lending fund,?[^;]{0,20}(l\\.?\\s?p\\b\\.?|limited partnership)"
+      ],
+      "partial": [
+        "^(?!.*(cayman|\\bltd\\b)).*brackenholt senior lending fund"
+      ],
+      "reject": {
+        "PARALLEL_FUND": [
+          "^(?!.*lending fund,?[^;]{0,20}(l\\.?\\s?p\\b|limited partnership)).*(\\(cayman\\)|cayman\\)?,? ltd|exempted company)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "fund_domicile": {
+      "expected": "Delaware (limited partnership formed under the Delaware Revised Uniform Limited Partnership Act)",
+      "citation": "Section 2.1",
+      "quote": "formed as a limited partnership under the Delaware Revised Uniform Limited Partnership Act on January 22, 2024",
+      "accept": [
+        "delaware"
+      ],
+      "partial": [],
+      "reject": {
+        "PARALLEL_FUND_DOMICILE": [
+          "^(?!.*delaware).*cayman"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "fund_structure": {
+      "expected": "Open-end evergreen (semi-liquid) fund: no fixed term, no capital drawdowns, monthly subscriptions at NAV, liquidity only through discretionary quarterly repurchase (tender) offers; standalone fund, not master-feeder (a Cayman parallel fund invests alongside it)",
+      "citation": "Section 2.1",
+      "quote": "The Fund is structured as an open-end, evergreen vehicle: it has no fixed term, it does not call capital from Limited Partners in drawdowns",
+      "accept": [
+        "^(?!.*master.?feeder).*(open.?end|evergreen|semi.?liquid|perpetual|no fixed term|continuous(ly)? offered|tender offer|repurchase offer)",
+        "^(?=.*(\\bnot?\\b|\\bnon\\b|neither|standalone|stand.alone|rather than|instead of|without)[^.;,]{0,30}master.?feeder)(?=.*(open.?end|evergreen|semi.?liquid|perpetual|no fixed term|continuous(ly)? offered|tender offer|repurchase offer))"
+      ],
+      "partial": [],
+      "reject": {
+        "CLOSED_END_DRAWDOWN": [
+          "^(?!.*(open.?end|evergreen|semi.?liquid|perpetual|no fixed term|not (a )?closed.?end|non.?closed)).*closed.?end",
+          "^(?!.*(open.?end|evergreen|semi.?liquid|perpetual|no fixed term|continuous|tender|repurchase offer|no capital call|not a drawdown|non.?drawdown|no drawdown|does not call|without capital call)).*(draw.?down|capital call)"
+        ],
+        "MASTER_FEEDER": [
+          "^(?!.*(\\bnot?\\b|\\bnon\\b|neither|standalone|stand.alone|rather than|instead of|without)[^.;,]{0,30}master.?feeder).*master.?feeder"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "management_fee": {
+      "expected": "1.25% per annum of the Fund's net asset value (charged on net assets, not gross assets or borrowings), accrued and paid monthly in arrears; single fund-level rate, with Interests of the Adviser and its personnel bearing no fee",
+      "citation": "Section 4.1",
+      "quote": "at an annual rate of 1.25% of the Fund's net asset value",
+      "accept": [
+        "^(?=.*((?<![\\d.])1\\.250?\\s*(%|percent|pct)|one and (one|a).quarter percent|(?<![\\d.])125\\s*(bps|basis points)))(?=.*(net asset value|\\bnav\\b|net assets))"
+      ],
+      "partial": [
+        "^(?!(?!.*(net asset|\\bnav\\b|net assets)).*(gross assets|total assets)).*(((?<![\\d.])1\\.250?\\s*(%|percent|pct)|one and (one|a).quarter percent|(?<![\\d.])125\\s*(bps|basis points)))"
+      ],
+      "reject": {
+        "SIDE_LETTER_FEE": [
+          "^(?!.*((?<![\\d.])1\\.250?\\s*(%|percent|pct)|one and (one|a).quarter percent|(?<![\\d.])125\\s*(bps|basis points))).*(\\.95\\s*(%|percent|pct)|\\b95\\s*(basis points|bps))"
+        ],
+        "GROSS_ASSETS_BASIS": [
+          "^(?!.*(net asset|\\bnav\\b|net assets)).*(gross assets|total assets)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "side_letter"
+    },
+    "performance_fee": {
+      "expected": "Two-part incentive fee: (1) Income Incentive Fee of 12.5% of pre-incentive fee net investment income, paid quarterly in arrears, over a 1.25% per quarter (5.0% annualized) hurdle with a 100% (full) catch-up up to 1.4286% per quarter; (2) Capital Gains Incentive Fee of 12.5% of cumulative realized capital gains net of cumulative realized capital losses and unrealized capital depreciation, less prior capital gains incentive fees, paid annually",
+      "citation": "Section 4.2",
+      "quote": "an Income Incentive Fee equal to 12.5% of Pre-Incentive Fee Net Investment Income in excess of the Hurdle Rate, subject to the catch-up, as described in Section 4.3; and a Capital Gains Incentive Fee equal to 12.5% of cumulative net realized capital gains",
+      "accept": [
+        "^(?=.*((?<![\\d.])12\\.50?\\s*(%|percent|pct)|twelve and (one.)?half percent)[^;]{0,120}(income|\\bnii\\b))(?=.*(((?<![\\d.])12\\.50?\\s*(%|percent|pct)|twelve and (one.)?half percent)(?:(?!income|\\bnii\\b)[^;]){0,80}capital[\\s-]gains?|capital[\\s-]gains?(?:(?!income|\\bnii\\b)[^;]){0,80}((?<![\\d.])12\\.50?\\s*(%|percent|pct)|twelve and (one.)?half percent)))",
+        "^(?=.*((?<![\\d.])12\\.50?\\s*(%|percent|pct)|twelve and (one.)?half percent).*((?<![\\d.])12\\.50?\\s*(%|percent|pct)|twelve and (one.)?half percent))(?=.*capital[\\s-]gains?)(?=.*(income|\\bnii\\b))",
+        "^(?=.*((?<![\\d.])12\\.50?\\s*(%|percent|pct)|twelve and (one.)?half percent))(?=.*\\b(each|both)\\b)(?=.*capital[\\s-]gains?)(?=.*(income|\\bnii\\b))",
+        "^(?=.*((?<![\\d.])12\\.50?\\s*(%|percent|pct)|twelve and (one.)?half percent)[^;.]{0,60}(income|\\bnii\\b)\\s*,?\\s*(and|&|plus)\\s+(of |on )?((cumulative|net|realized|realised)\\s+)*capital[\\s-]gains?\\b(?!\\s*(incentive )?fee))"
+      ],
+      "partial": [
+        "^(?!.*(capital[\\s-]gains?[^;]{0,60}(?<![\\d.])(20|15|17\\.5)(\\.0+)?\\s*(%|percent)|(?<![\\d.])(20|15|17\\.5)(\\.0+)?\\s*(%|percent)[^;.]{0,40}capital[\\s-]gains?)).*((?<![\\d.])12\\.50?\\s*(%|percent|pct)|twelve and (one.)?half percent)"
+      ],
+      "reject": {
+        "HALLUCINATED_20PCT": [
+          "^(?!.*12\\.5).*(?<![\\d.])20(\\.0+)?\\s*(%|percent)",
+          "capital[\\s-]gains?[^;]{0,60}(?<![\\d.])(20|15|17\\.5)(\\.0+)?\\s*(%|percent)|(?<![\\d.])(20|15|17\\.5)(\\.0+)?\\s*(%|percent)[^;.]{0,40}capital[\\s-]gains?"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "hurdle_rate": {
+      "expected": "1.25% per quarter (5.0% annualized) on pre-incentive fee net investment income measured against prior quarter-end NAV, for the income incentive fee; 100% (full) catch-up between 1.25% and 1.4286% per quarter (5.7143% annualized); non-cumulative and non-compounding, with no carryforward of shortfalls; the capital gains incentive fee has no hurdle",
+      "citation": "Section 4.3",
+      "quote": "is compared to a hurdle rate of 1.25% per quarter (5.0% annualized)",
+      "accept": [
+        "^(?=.*((?<![\\d.])1\\.25\\s*(%|percent|pct)|(?<![\\d.])5(\\.0+)?\\s*(%|percent|pct)|five percent))(?=.*(?<!no )(?<!no-)(?<!without )(?<!without a )catch.?up)"
+      ],
+      "partial": [
+        "^(?!(?!.*((full|100\\s*%|100 percent)[^.;]{0,20}catch.?up|catch.?up[^.;]{0,20}(full|100\\s*%|100 percent)|with (a |full )?catch.?up|catch.?up (to|of|up to|between|zone)|\\b(no|without)[^.;]{0,20}catch.?up[^.;]{0,40}capital gains|capital gains[^.;]{0,60}\\b(no|without)\\b[^.;]{0,30}catch.?up)).*\\b(no|without( a)?)[\\s-]catch.?up).*((?<![\\d.])1\\.25\\s*(%|percent|pct)\\s*(per|a|each|/)?\\s*quarter|(?<![\\d.])5(\\.0+)?\\s*(%|percent|pct)\\s*(annual|per annum|per year|a year))",
+        "^(?!(?!.*((full|100\\s*%|100 percent)[^.;]{0,20}catch.?up|catch.?up[^.;]{0,20}(full|100\\s*%|100 percent)|with (a |full )?catch.?up|catch.?up (to|of|up to|between|zone)|\\b(no|without)[^.;]{0,20}catch.?up[^.;]{0,40}capital gains|capital gains[^.;]{0,60}\\b(no|without)\\b[^.;]{0,30}catch.?up)).*\\b(no|without( a)?)[\\s-]catch.?up).*(quarter[^.;]{0,30}(?<![\\d.])1\\.25\\s*(%|percent|pct)|(annual|per annum|per year)[^.;]{0,20}(?<![\\d.])5(\\.0+)?\\s*(%|percent|pct))"
+      ],
+      "reject": {
+        "HALLUCINATED_8PCT": [
+          "^(?!.*((?<![\\d.])1\\.25\\s*(%|percent|pct)|(?<![\\d.])5(\\.0+)?\\s*(%|percent|pct))).*(?<![\\d.])8(\\.0+)?\\s*(%|percent)"
+        ],
+        "NO_HURDLE": [
+          "^(?!.*((?<![\\d.])1\\.25\\s*(%|percent|pct)|(?<![\\d.])5(\\.0+)?\\s*(%|percent|pct))).*(not_applicable|not_found|no hurdle|\\bnone\\b)"
+        ],
+        "NO_CATCHUP": [
+          "^(?!.*((full|100\\s*%|100 percent)[^.;]{0,20}catch.?up|catch.?up[^.;]{0,20}(full|100\\s*%|100 percent)|with (a |full )?catch.?up|catch.?up (to|of|up to|between|zone)|\\b(no|without)[^.;]{0,20}catch.?up[^.;]{0,40}capital gains|capital gains[^.;]{0,60}\\b(no|without)\\b[^.;]{0,30}catch.?up)).*\\b(no|without( a)?)[\\s-]catch.?up"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "high_water_mark": {
+      "expected": "Loss carryforward applies to the capital gains incentive fee only: that fee is computed cumulatively from inception, so realized capital losses and unrealized depreciation are carried forward (perpetual, no reset) and must be recovered before further capital gains fees; no high-water mark, look-back or loss carryforward on the income incentive fee",
+      "citation": "Section 4.4",
+      "quote": "The Loss Carryforward applies only to the Capital Gains Incentive Fee.",
+      "accept": [
+        "^(?=.*((capital gains?( incentive)? fee|\\bcgif\\b|capital gains? (component|portion|part)\\b)[^.;]{0,80}(loss carry.?forward|carr(y|ied|ies|ying) forward|cumulative|recover|recoup|high.?water|\\bhwm\\b)|(loss carry.?forward|carr(y|ied|ies|ying) forward|cumulative|recover|recoup|high.?water|\\bhwm\\b)[^.;]{0,80}(capital gains?( incentive)? fee|\\bcgif\\b|capital gains? (component|portion|part)\\b)))(?=.*(\\bonly\\b|solely|exclusively|income[^.;]{0,60}(\\bno\\b|\\bnot\\b|\\bnone\\b|without|\\bn/a\\b)|(\\bno\\b|\\bnot\\b|\\bnone\\b|neither)[^.;]{0,60}income))",
+        "^(?!.*(\\bboth\\b|income[^.;]{0,30}\\band\\b[^.;]{0,30}capital|capital gains?[^.;]{0,40}\\band\\b[^.;]{0,30}income))(?=.*\\bno (high.?water|hwm)\\b)(?=.*((capital gains?( incentive)? fee|\\bcgif\\b|capital gains? (component|portion|part)\\b)[^.;]{0,80}(loss carry.?forward|carr(y|ied|ies|ying) forward|cumulative|recover|recoup|high.?water|\\bhwm\\b)|(loss carry.?forward|carr(y|ied|ies|ying) forward|cumulative|recover|recoup|high.?water|\\bhwm\\b)[^.;]{0,80}(capital gains?( incentive)? fee|\\bcgif\\b|capital gains? (component|portion|part)\\b)))"
+      ],
+      "partial": [
+        "^(?!.*(\\bboth\\b|income( incentive)? fee only|only (to |on |for )?(the )?income|appl(y|ies) to (all|the income|each)|income[^.;]{0,30}\\band\\b[^.;]{0,30}capital gains?|capital gains?[^.;]{0,40}\\band\\b[^.;]{0,30}income)).*((capital gains?( incentive)? fee|\\bcgif\\b|capital gains? (component|portion|part)\\b)[^.;]{0,80}(loss carry.?forward|carr(y|ied|ies|ying) forward|cumulative|recover|recoup|high.?water|\\bhwm\\b)|(loss carry.?forward|carr(y|ied|ies|ying) forward|cumulative|recover|recoup|high.?water|\\bhwm\\b)[^.;]{0,80}(capital gains?( incentive)? fee|\\bcgif\\b|capital gains? (component|portion|part)\\b))",
+        "^(?!.*(\\bboth\\b|income( incentive)? fee only|only (to |on |for )?(the )?income|appl(y|ies) to (all|the income|each)|income[^.;]{0,30}\\band\\b[^.;]{0,30}capital gains?|capital gains?[^.;]{0,40}\\band\\b[^.;]{0,30}income)).*(loss carry.?forward|carr(y|ied|ies|ying) forward)"
+      ],
+      "reject": {
+        "NO_HWM_OR_CARRYFORWARD": [
+          "^(?!.*capital gain).*(not_applicable|not_found|\\bnone\\b|no high.?water|no hwm|no loss carry)",
+          "^(?!.*(\\bonly\\b|solely|exclusively)).*(high.?water|loss carry.?forward|\\bhwm\\b)[^.;]{0,80}\\b(either|neither|both)\\b[^.;]{0,60}capital gains"
+        ],
+        "APPLIED_TO_INCOME_FEE": [
+          "^(?!.*(\\bonly\\b|solely|exclusively|income[^.;]{0,60}(\\bno\\b|\\bnot\\b|\\bnone\\b|without|\\bn/a\\b)|(\\bno\\b|\\bnot\\b|\\bnone\\b|neither)[^.;]{0,60}income)).*(high.?water|loss carry.?forward|\\bhwm\\b)[^.;]{0,40}appl(y|ies) to (both|all|the income|each|the incentive fee)",
+          "^(?!.*(\\bonly\\b|solely|exclusively|income[^.;]{0,60}(\\bno\\b|\\bnot\\b|\\bnone\\b|without|\\bn/a\\b)|(\\bno\\b|\\bnot\\b|\\bnone\\b|neither)[^.;]{0,60}income)).*(loss carry.?forward|carr(y|ied|ies|ying) forward|cumulative|recover|recoup|high.?water|\\bhwm\\b)[^.]{0,120}(\\bboth\\b|\\bincome\\b[^.;]{0,30}\\band\\b[^.;]{0,30}capital gains|capital gains[^.;]{0,30}\\band\\b[^.;]{0,30}\\bincome\\b|including the income|each (component|part)|all components)",
+          "(loss carry.?forward|carr(y|ied|ies|ying) forward|high.?water|\\bhwm\\b)[^.]{0,120}(\\bonly\\b (to |on |for )?(the )?income( incentive)? fee|income( incentive)? fee only)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "minimum_initial_investment": {
+      "expected": "$1,000,000 (General Partner may accept lesser amounts); minimum additional subscription $100,000",
+      "citation": "Section 5.2",
+      "quote": "The minimum initial subscription is $1,000,000",
+      "accept": [
+        "((?<![\\d,])1,000,000|(?<![\\d.,])1(\\.0+)?\\s*(million|mm|m)\\b|one million)"
+      ],
+      "partial": [],
+      "reject": {
+        "ADDITIONAL_MINIMUM": [
+          "^(?!.*((?<![\\d,])1,000,000|(?<![\\d.,])1(\\.0+)?\\s*(million|mm|m)\\b|one million)).*(100,000|(?<![\\d.,])100\\s*(k|thousand))"
+        ],
+        "PARTIAL_REPURCHASE_FLOOR": [
+          "^(?!.*((?<![\\d,])1,000,000|(?<![\\d.,])1(\\.0+)?\\s*(million|mm|m)\\b|one million)).*(500,000|(?<![\\d.,])500\\s*(k|thousand))"
+        ],
+        "SIDE_LETTER_SUBSCRIPTION": [
+          "^(?!.*((?<![\\d,])1,000,000|(?<![\\d.,])1(\\.0+)?\\s*(million|mm|m)\\b|one million)).*(60,000,000|(?<![\\d.,])60\\s*(million|mm|m)\\b)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "lockup_period": {
+      "expected": "No hard lock-up; one-year soft lock: Interests repurchased within one year after issuance bear a 2.0% Early Repurchase Deduction (retained by the Fund; not applied to reinvested distributions)",
+      "citation": "Section 6.4",
+      "quote": "within one year after the Subscription Date on which they were issued are subject to a deduction of 2.0% of the net asset value of the Interests repurchased",
+      "accept": [
+        "^(?!(?!.*(no hard|not a hard|soft|hard lock(.?up)?( period)?\\s*(:|-|is|=)?\\s*(none|not applicable|n/a|no\\b|not imposed|does not))).*hard lock)(?=.*((?<![\\d.])2(\\.0+)?\\s*(%|percent|pct)|two percent))(?=.*(\\b(one|1|12|twelve)[\\s-]*(year|yr|month)|\\b(first|a)[\\s-]*(year|yr)\\b))"
+      ],
+      "partial": [
+        "^(?!(?!.*((?<![\\d.])2(\\.0+)?\\s*(%|percent|pct)|two percent)).*(waive|no lock|\\bnone\\b|not_applicable|not applicable|\\bn/a\\b|not_found|no early))^(?!(?!.*(no hard|not a hard|soft|hard lock(.?up)?( period)?\\s*(:|-|is|=)?\\s*(none|not applicable|n/a|no\\b|not imposed|does not))).*hard lock).*(soft lock|early repurchase (deduction|fee|charge)|(?<![\\d.])2(\\.0+)?\\s*(%|percent|pct))"
+      ],
+      "reject": {
+        "SIDE_LETTER_WAIVER": [
+          "^(?!.*((?<![\\d.])2(\\.0+)?\\s*(%|percent|pct)|two percent)).*(waive|no lock|\\bnone\\b|not_applicable|not applicable|\\bn/a\\b|not_found|no early)"
+        ],
+        "HARD_LOCK": [
+          "^(?!.*(no hard|not a hard|soft|hard lock(.?up)?( period)?\\s*(:|-|is|=)?\\s*(none|not applicable|n/a|no\\b|not imposed|does not))).*hard lock"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "side_letter"
+    },
+    "redemption_frequency": {
+      "expected": "Quarterly: discretionary repurchase (tender) offers as of the last Business Day of each calendar quarter; no right to redeem on demand",
+      "citation": "Section 6.1",
+      "quote": "to offer to repurchase Interests quarterly, as of the last Business Day of each calendar quarter",
+      "accept": [
+        "^(?!(?:.*[.;])?(?:(?!subscri|valu|\\bnav\\b|statement|report|distribut|not monthly)[^.;])*\\bmonthly\\b(?:(?!subscri|valu|\\bnav\\b|statement|report|distribut|not monthly)[^.;])*(?:[.;]|$)).*quarter"
+      ],
+      "partial": [],
+      "reject": {
+        "WRONG_FREQUENCY": [
+          "^(?!.*quarter).*(monthly|annual|semi.?annual|daily|weekly)",
+          "(?:^|[.;])(?:(?!subscri|valu|\\bnav\\b|statement|report|distribut|not monthly)[^.;])*\\bmonthly\\b(?:(?!subscri|valu|\\bnav\\b|statement|report|distribut|not monthly)[^.;])*(?:[.;]|$)"
+        ],
+        "NO_REDEMPTION": [
+          "^(?!.*quarter).*(not_applicable|not applicable|\\bn/a\\b|not_found|no redemption|not redeemable|no right to redeem|\\bnone\\b)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "redemption_notice_days": {
+      "expected": "60 days' prior written notice: an irrevocable Repurchase Request must be received by the Administrator not later than 60 days before the Repurchase Date",
+      "citation": "Section 6.2",
+      "quote": "so that it is received not later than 60 days prior to the applicable Repurchase Date",
+      "accept": [
+        "((?<![\\d.])60\\b|sixty)"
+      ],
+      "partial": [],
+      "reject": {
+        "SIDE_LETTER_KEY_PERSON_WINDOW": [
+          "^(?!.*((?<![\\d.])60\\b|sixty)).*((?<![\\d.])30\\b|thirty)"
+        ],
+        "REPURCHASE_OFFER_NOTICE": [
+          "^(?!.*((?<![\\d.])60\\b|sixty)).*((?<![\\d.])20\\b|twenty)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "side_letter"
+    },
+    "gate_provision": {
+      "expected": "Fund-level quarterly gate: aggregate repurchases limited to 5.0% of the Fund's net asset value (as of the prior quarter-end) per Repurchase Date, pro rata if oversubscribed, unfilled portions do not carry over; the GP may repurchase up to an additional 2.0% of NAV at its discretion",
+      "citation": "Section 6.3",
+      "quote": "is limited to 5.0% of the Fund's net asset value as of the last Valuation Date of the immediately preceding calendar quarter",
+      "accept": [
+        "^(?!(?=.*investor.level)(?!.*(fund.level|level of the fund|fund.wide|across all|not (on |at )?(an? |the )?investor.level|rather than (at |on )?(the |an? )?(individual )?investor.level|no investor.level)))(?=.*((?<![\\d.])5(\\.0+)?\\s*(%|percent|pct)|five percent))(?=.*(fund|\\bnav\\b|net asset value|aggregate))"
+      ],
+      "partial": [
+        "^(?!(?=.*investor.level)(?!.*(fund.level|level of the fund|fund.wide|across all|not (on |at )?(an? |the )?investor.level|rather than (at |on )?(the |an? )?(individual )?investor.level|no investor.level))).*((?<![\\d.])5(\\.0+)?\\s*(%|percent|pct)|five percent)"
+      ],
+      "reject": {
+        "INVESTOR_LEVEL": [
+          "^(?!.*(fund.level|level of the fund|fund.wide|across all|not (on |at )?(an? |the )?investor.level|rather than (at |on )?(the |an? )?(individual )?investor.level|no investor.level)).*investor.level"
+        ],
+        "NO_GATE": [
+          "^(?!.*((?<![\\d.])5(\\.0+)?\\s*(%|percent|pct)|five percent)).*(not_applicable|not_found|no gate|\\bnone\\b)"
+        ],
+        "DISCRETIONARY_TOTAL_AS_GATE": [
+          "^(?!.*((?<![\\d.])5(\\.0+)?\\s*(%|percent|pct)|five percent)).*(?<![\\d.])7(\\.0+)?\\s*(%|percent)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "key_man_provision": {
+      "expected": "NOT_APPLICABLE: the Partnership Agreement does not contain a key person provision",
+      "citation": "Section 3.2",
+      "quote": "The Partnership Agreement does not contain a key person provision.",
+      "accept": [
+        "not_applicable|not_found|\\bn/a\\b|\\bnone\\b|\\bno\\b[^.;]{0,30}key.?(man|person)s?\\b(?![\\s-]*(event|notice))|(does not|doesn't|did not) (contain|include|have|provide|impose|exist|apply(?! to (any |all |the )?(other|others|remaining|non)\\b)|create|establish)|contains no|not (stated|provided|applicable(?! to (any |all |the )?(other|others|remaining|non)\\b)|included|specified)|absent|no such|not (in|part of|contained in) the partnership agreement|no (fund.level )?key.?(man|person)[\\s-]*(event or )?(provision|clause)"
+      ],
+      "partial": [],
+      "reject": {
+        "SIDE_LETTER_KEY_PERSONS": [
+          "^(?!.*(not_applicable|not_found|\\bn/a\\b|\\bnone\\b|\\bno\\b[^.;]{0,30}key.?(man|person)s?\\b(?![\\s-]*(event|notice))|(does not|doesn't|did not) (contain|include|have|provide|impose|exist|apply(?! to (any |all |the )?(other|others|remaining|non)\\b)|create|establish)|contains no|not (stated|provided|applicable(?! to (any |all |the )?(other|others|remaining|non)\\b)|included|specified)|absent|no such|not (in|part of|contained in) the partnership agreement|no (fund.level )?key.?(man|person)[\\s-]*(event or )?(provision|clause))).*(ferrante|oyelaran|kabberley|specified person|key person notice)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "side_letter"
+    },
+    "gp_commitment": {
+      "expected": "NOT_APPLICABLE: neither the General Partner nor the Adviser is required to make any capital commitment (the approximately $14.2 million of Interests held by the Adviser and its personnel is a voluntary holding, not a commitment)",
+      "citation": "Section 3.3",
+      "quote": "Neither the General Partner nor the Adviser has made, or is required to make or maintain, any capital commitment to the Fund.",
+      "accept": [
+        "not_applicable|not_found|\\bnone\\b|no (required |minimum |binding )?(gp |general partner |sponsor |manager |adviser )?(or sponsor |/sponsor )?(capital )?commitment|not (required|obligated|obliged)|no (requirement|obligation)|neither the (gp|general partner)\\b|(does not|doesn't) (require|have|make|impose)|not (stated|specified|applicable)|not a commitment"
+      ],
+      "partial": [],
+      "reject": {
+        "HOLDING_AS_COMMITMENT": [
+          "^(?!.*(not_applicable|not_found|\\bnone\\b|no (required |minimum |binding )?(gp |general partner |sponsor |manager |adviser )?(or sponsor |/sponsor )?(capital )?commitment|not (required|obligated|obliged)|no (requirement|obligation)|neither the (gp|general partner)\\b|(does not|doesn't) (require|have|make|impose)|not (stated|specified|applicable)|not a commitment|voluntary)).*(14\\.2|14,200,000|(?<![\\d.])2\\.2\\s*%)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "holding_not_commitment"
+    },
+    "fund_term": {
+      "expected": "Perpetual (evergreen): no fixed term; the Fund continues until dissolved",
+      "citation": "Section 12.2",
+      "quote": "The Fund has no fixed term and will continue until dissolved.",
+      "accept": [
+        "perpetual|evergreen|no (fixed|set|stated|specified|definite) (term|duration|termination date|life)|indefinite|unlimited|until dissolved|open.?ended|until (its |the fund's )?dissol(ved|ution)|not (have|has) a fixed (term|duration)|\\bno (fixed |set |stated |specified )?(term|duration|maturity|termination date|end date)\\b"
+      ],
+      "partial": [
+        "not[_\\s]applicable"
+      ],
+      "reject": {
+        "HALLUCINATED_TERM": [
+          "^(?!.*(perpetual|evergreen|no (fixed|set|stated|specified|definite) (term|duration|termination date|life)|indefinite|unlimited|until dissolved|open.?ended|until (its |the fund's )?dissol(ved|ution)|not (have|has) a fixed (term|duration)|\\bno (fixed |set |stated |specified )?(term|duration|maturity|termination date|end date)\\b)).*(?<![\\d.])\\d+[\\s-]*(year|yr)"
+        ],
+        "CREDIT_FACILITY_MATURITY": [
+          "^(?!.*(perpetual|evergreen|no (fixed|set|stated|specified|definite) (term|duration|termination date|life)|indefinite|unlimited|until dissolved|open.?ended|until (its |the fund's )?dissol(ved|ution)|not (have|has) a fixed (term|duration)|\\bno (fixed |set |stated |specified )?(term|duration|maturity|termination date|end date)\\b)).*(2029|credit facility)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "auditor": {
+      "expected": "Tessier Mulvane LLP",
+      "citation": "Section 8.2",
+      "quote": "Tessier Mulvane LLP serves as the independent auditor of the Fund.",
+      "accept": [
+        "tessier\\s*mulvane"
+      ],
+      "partial": [],
+      "reject": {
+        "TAX_PREPARER": [
+          "^(?!.*tessier).*kellaway"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "administrator": {
+      "expected": "Rendlesham Fund Services, LLC",
+      "citation": "Section 8.1",
+      "quote": "Rendlesham Fund Services, LLC serves as administrator of the Fund",
+      "accept": [
+        "rendlesham"
+      ],
+      "partial": [],
+      "reject": {
+        "VALUATION_FIRM": [
+          "^(?!.*rendlesham).*ambleton"
+        ],
+        "CUSTODIAN": [
+          "^(?!.*rendlesham).*garrowby"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "prime_broker": {
+      "expected": "NOT_APPLICABLE: the Fund does not engage a prime broker",
+      "citation": "Section 8.5",
+      "quote": "The Fund does not engage a prime broker.",
+      "accept": [
+        "not_applicable|not_found|\\bn/a\\b|\\bnone\\b|no prime broker|(does not|doesn't) (engage|use|have|retain|employ|impose)|not (applicable|stated|engaged|specified|provided)"
+      ],
+      "partial": [],
+      "reject": {
+        "CUSTODIAN_AS_PRIME_BROKER": [
+          "^(?!.*(not_applicable|not_found|\\bnone\\b|no prime broker|does not|doesn't)).*garrowby"
+        ],
+        "LENDER_AS_PRIME_BROKER": [
+          "^(?!.*(not_applicable|not_found|\\bnone\\b|no prime broker|does not|doesn't)).*sallowfield"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    },
+    "legal_counsel": {
+      "expected": "Pellow Ainsworth LLP (counsel to the Fund, the General Partner and the Adviser)",
+      "citation": "Section 8.4",
+      "quote": "Pellow Ainsworth LLP acts as legal counsel to the Fund, the General Partner and the Adviser",
+      "accept": [
+        "^(?!(?:.*[.;])?(?:(?!investor|hallowby|side letter)[^.;])*marchbank(?:(?!investor|hallowby|side letter)[^.;])*(?:[.;]|$)).*pellow\\s*ainsworth"
+      ],
+      "partial": [],
+      "reject": {
+        "SIDE_LETTER_INVESTOR_COUNSEL": [
+          "^(?!.*pellow).*marchbank",
+          "(?:^|[.;])(?:(?!investor|hallowby|side letter)[^.;])*marchbank(?:(?!investor|hallowby|side letter)[^.;])*(?:[.;]|$)"
+        ],
+        "PARALLEL_FUND_COUNSEL": [
+          "^(?!.*pellow).*rushmere"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "side_letter"
+    },
+    "mfn_election": {
+      "expected": "Yes: Limited Partners with aggregate net subscriptions of at least $25,000,000 may elect side letter terms granted after the Initial Closing Date to Limited Partners with equal or smaller net subscriptions, subject to the same conditions; excludes legal, regulatory, tax or policy status terms, confidentiality and disclosure terms, affiliate-transfer consents and personnel notification rights",
+      "citation": "Section 7.2",
+      "quote": "Each Limited Partner whose aggregate subscriptions to the Fund, net of amounts repurchased, equal or exceed $25,000,000",
+      "accept": [
+        "^(?=.*((?<![\\d.,])25,000,000|(?<![\\d.,])25(\\.0+)?\\s*(million|mm|m)\\b|twenty.five million))(?=.*(yes|offer|elect|mfn|most.favou?red))"
+      ],
+      "partial": [
+        "^(?!.*(not_applicable|not_found|\\bnone\\b|no mfn|not offered|does not offer|60,000,000|(?<![\\d.,])60\\s*(million|mm|m)\\b|40,000,000|(?<![\\d.,])40\\s*(million|mm|m)\\b)).*(\\bmfn\\b|most.favou?red)"
+      ],
+      "reject": {
+        "NO_MFN": [
+          "^(?!.*25).*(not_applicable|not_found|\\bnone\\b|no mfn|not offered|does not offer)"
+        ],
+        "SIDE_LETTER_SUBSCRIPTION_AS_THRESHOLD": [
+          "^(?!.*25).*(60,000,000|(?<![\\d.,])60\\s*(million|mm|m)\\b|40,000,000|(?<![\\d.,])40\\s*(million|mm|m)\\b)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    }
+  }
+}

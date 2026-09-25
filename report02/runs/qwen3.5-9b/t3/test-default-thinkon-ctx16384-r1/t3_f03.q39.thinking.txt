@@ -1,0 +1,42 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What are the termination provisions of the advisory agreement, and how are prepaid fees handled on termination?"
+    *   Key information needed: Termination notice period, refund policy for prepaid fees (specifically unearned fees).
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "termination", "notice", "refund", "prepaid", "fees".
+
+4.  **Evaluate Document Content:**
+
+    *   **Document 1:** `01_brochure.md` (dated March 27, 2026)
+        *   Section: Item 5. Fees and Compensation > 5.6 Termination and Refunds
+        *   Text: "Either the client or the Firm may terminate the Agreement on 30 days' written notice. Upon termination, the advisory fee is prorated to the effective date of termination, and any unearned fee paid in advance is refunded within 30 days after that date. A client who terminates within five business days of signing the Agreement receives a full refund of any fee paid. No termination fee is charged."
+        *   Date: March 27, 2026.
+
+    *   **Document 2:** `05_fee_schedule.md` (dated January 1, 2026)
+        *   Section: SECTION 5. BILLING, TERMINATION AND REFUNDS > 5.3 Termination and Refunds
+        *   Text: "Either party may terminate the investment management agreement on 30 days' written notice. Fees are prorated to the effective date of termination, and unearned fees paid in advance are refunded to the client on a pro rata basis within 30 days after the effective date of termination. A client may terminate within five business days after signing the agreement and receive a full refund. No termination fee is charged."
+        *   Date: January 1, 2026.
+
+5.  **Determine Superseding Document:**
+    *   Rule 3: Later-dated documents supersede earlier ones.
+    *   `01_brochure.md` (March 27, 2026) is later than `05_fee_schedule.md` (January 1, 2026).
+    *   Therefore, use information from `01_brochure.md`.
+
+6.  **Draft the Answer:**
+    *   Source: `01_brochure.md`
+    *   Section: Item 5. Fees and Compensation > 5.6 Termination and Refunds (Note: The prompt asks for "section where the answer appears, as they are labelled in the documents". In `01_brochure.md`, the header says "Section:

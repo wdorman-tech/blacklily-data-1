@@ -1,0 +1,42 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "When was the firm's most recent surprise custody examination completed, and were any exceptions noted?"
+    *   Key information needed: Date of most recent surprise custody examination, status of exceptions (if any).
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "surprise examination", "custody", "examination", "date", "completed", "exceptions", "noted".
+
+4.  **Evaluate Document Content:**
+
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section: Item 15. Custody > 15.3 Trustee Appointments and Surprise Examination.
+        *   Text: "Because Ms. Tennick and two other supervised persons serve as trustees of certain client trusts, the Firm is deemed to have custody of those trusts' assets. As required by Rule 206(4)-2 under the Advisers Act, those assets are subject to an annual surprise examination by an independent public accountant, Pemberline & Rusk LLP, at a time chosen by the accountant without prior notice to the Firm. The accountant files Form ADV-E with the SEC within 120 days of the examination date."
+        *   Analysis: Mentions "annual surprise examination", but does not specify the *most recent* date completed or any exceptions noted. It describes the process (annual, independent accountant).
+
+    *   `02_compliance_manual.md` (January 15, 2026):
+        *   Section: SECTION 2. CHIEF COMPLIANCE OFFICER > 2.4 Compliance Calendar and Testing.
+        *   Text: "The CCO maintains a compliance calendar of recurring obligations, including Form ADV amendments, Form 13F and Form 13H filings, code of ethics reports, custody examinations and vendor reviews."
+        *   Analysis: Mentions "custody examinations" are on the calendar, but no specific dates or results.
+
+    *   `03_valuation_policy.md` (February 10, 2026):
+        *   Section: SECTION 8. INDEPENDENT REVIEW > 8.2 External Review.
+        *   Text: "Every two years, an independent valuation firm... reviews this Policy..."
+        *   Analysis: Irrelevant to custody examinations.
+
+    *   `04_business_continuity_plan.md` (May 4, 2026):
+        *   Section: SECTION 7. TESTING AND TRAINING > 7.1 Testing Frequency and Most Recent Test.
+        *   Text: "The Plan is tested at least annually. The most recent full test of the Plan was conducted on October 22,

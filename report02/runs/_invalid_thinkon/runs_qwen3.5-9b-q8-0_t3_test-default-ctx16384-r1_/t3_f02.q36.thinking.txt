@@ -1,0 +1,32 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Describe the Adviser's stale price monitoring, including the thresholds that trigger escalation."
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "stale price", "monitoring", "thresholds", "escalation".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Discusses brokerage practices, best execution, Tessingham Execution Analytics. No mention of stale price monitoring.
+    *   `02_compliance_manual.md`: Discusses Best Execution duty. No mention of stale price monitoring.
+    *   `03_valuation_policy.md`:
+        *   Section 2.4 Responsibilities: Valuation Committee duties. No specific stale price thresholds here.
+        *   Section 3.1 Primary and Secondary Pricing Vendors: Vendor approval. No stale price info.
+        *   Section 3.6 Vendor Tolerance Checks: Discusses price differences between vendors (1% equities/ETFs, 2% OTC). Not exactly "stale price monitoring" in the sense of unchanged prices over time, but related to pricing checks.
+        *   Section 6. STALE PRICE MONITORING: This looks promising.
+            *   Title: "SECTION 6. STALE PRICE MONITORING".
+            *   Subsection 6.1 Stale Price Reports.
+            *   Content: "The Administrator and the Controller each produce a daily report of positions whose price has not changed. A price that is unchanged for three consecutive business days is flagged and investigated by the Controller. A price that is unchanged for five consecutive business days is escalated to the Chief Financial Officer. A price that is unchanged for ten consecutive business days may not continue to be used without a fair value determination by the Committee."
+    *   `06_policy_update_memo.md`: Discusses amendments to Form ADV Part 2A, Large Investor Rate, holding period, and Compliance Manual updates. Does not override the specific stale price policy details in the Valuation Policy unless it explicitly changes them (it mentions updating Standard DDQ responses under Section 8.3 of the Compliance Manual, but doesn't change the Valuation Policy text itself regarding thresholds). The Valuation Policy is dated November 3, 2025. The Memo is dated August 24, 2026. However, the Memo refers to updating DDQ responses and filing brochure amendments, not necessarily rewriting the Valuation Policy's specific operational thresholds unless stated. The question asks about the Adviser's stale price monitoring *based on documents*. The Valuation Policy contains the specific rules. The Memo mentions "Standard due diligence questionnaire responses will be updated under Section 8.3 of the Compliance Manual." It does not explicitly state that the stale price thresholds in the Valuation Policy have changed, only that DD

@@ -1,0 +1,40 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Who is the owner of the business continuity plan?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "owner", "business continuity plan", "BCP", "Plan".
+
+4.  **Evaluate Document 1 (`04_business_continuity_plan.md`):**
+    *   Section: `SECTION 2. PLAN GOVERNANCE > 2.1 Plan Owner`
+    *   Text: "The President and Chief Operating Officer, Mireille Dansby, is the owner of the Plan and is accountable for its maintenance, resourcing and execution."
+    *   Date: February 9, 2026.
+
+5.  **Evaluate Document 2 (`06_policy_update_memo.md`):**
+    *   Section: `SECTION 2. AMENDMENTS > 2.5 Business Continuity Plan Section 5.2 (IT Managed Service Provider)`
+    *   Date: August 24, 2026.
+    *   Content: Discusses IT managed service provider changes (Oskerby to Anselby). Mentions "This amendment supersedes Section 5.2 of the Business Continuity Plan." Does not mention changing the Plan Owner.
+
+6.  **Determine Superseding Status:**
+    *   Document 1 is dated February 9, 2026.
+    *   Document 2 is dated August 24, 2026.
+    *   Document 2 amends Section 5.2 of the BCP regarding IT providers. It does not amend Section 2.1 regarding Plan Owner.
+    *   Therefore, the information in Document 1 remains valid for the question about the Plan Owner.
+
+7.  **Formulate the Answer:**
+    *   Answer: The President and Chief Operating Officer, Mireille Dansby.
+    *   Source Document: `04_business_continuity_plan.md`
+    *   Section: `SECTION 2. PLAN GOVERNANCE > 2.1 Plan Owner` (Need to check exact section label format). The text says "Section: SECTION 2. PLAN GOVERNANCE > 2.1 Plan Owner". I should use the specific section identifier provided in the document header or content. The prompt asks for "section where the answer appears, as they are labelled in the documents." The header says `SECTION 2. PLAN GOVERNANCE` and the subsection is `2.1 Plan Owner`. I will combine them or use the most specific label. Looking at the provided text structure: `<<< 04_business_continuity_plan.md | Business Continuity Plan, dated February 9, 2026 | Section: SECTION 2. PLAN GOVERNANCE > 2.1 Plan Owner >>>`. I will use

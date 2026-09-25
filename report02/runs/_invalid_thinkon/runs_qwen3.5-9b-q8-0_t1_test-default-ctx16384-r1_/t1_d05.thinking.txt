@@ -1,0 +1,204 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from the provided private fund offering document (PMM).
+    *   Output Format: JSON object only. No markdown, no preamble, no commentary.
+    *   Constraints:
+        *   Accuracy is paramount. No guessing, no inferring market standards.
+        *   If not found -> "NOT_FOUND".
+        *   If not applicable -> "NOT_APPLICABLE" (with quote).
+        *   Amendments/Supplements override original text (check for this).
+        *   Report variants if they differ by class/tier.
+        *   Citations must be section/appendix identifiers from the document.
+        *   Quotes must be verbatim.
+    *   Fields to extract: fund_name, fund_domicile, fund_structure, management_fee, performance_fee, hurdle_rate, high_water_mark, minimum_initial_investment, lockup_period, redemption_frequency, redemption_notice_days, gate_provision, key_man_provision, gp_commitment, fund_term, auditor, administrator, prime_broker, legal_counsel, mfn_election.
+
+2.  **Scan the Document for Each Field:**
+
+    *   **fund_name**:
+        *   Search: "Skelmorlie Ridge Multi-Strategy Fund, L.P." appears in title and Section 1.1.
+        *   Quote: "Skelmorlie Ridge Multi-Strategy Fund, L.P. (the "Fund") is a limited partnership..." (Section 1.1). Or Title "# Skelmorlie Ridge Multi-Strategy Fund, L.P.".
+        *   Value: "Skelmorlie Ridge Multi-Strategy Fund, L.P."
+        *   Citation: "Title" or "Section 1.1". Let's use Section 1.1 as it defines the entity formally. Actually, the title is often better for name, but Section 1.1 explicitly names it. I'll use Section 1.1 quote.
+        *   Quote: "Skelmorlie Ridge Multi-Strategy Fund, L.P. (the "Fund") is a limited partnership..."
+
+    *   **fund_domicile**:
+        *   Search: "organized under", "Delaware".
+        *   Section 1.1: "...organized under the Delaware Revised Uniform Limited Partnership Act (the "Delaware Act")..."
+        *   Value: "Delaware"
+        *   Citation: "Section 1.1"
+        *   Quote: "Skelmorlie Ridge Multi-Strategy Fund, L.P. (the "Fund") is a limited partnership organized under the Delaware Revised Uniform Limited Partnership Act (the "Delaware Act")..."
+
+    *   **fund_structure**:
+        *   Search: "Structure", "Open-end", "Closed-end", "Master-feeder".
+        *   Section 1.2: "The Fund is an open-end fund... The Fund is a stand-alone fund. It is not a feeder fund and does not invest through a master fund."
+        *   Section 2.2 Table: "Structure | Open-end, stand-alone fund; no master fund."
+        *   Value: "Open-end, stand-alone fund" (or similar). The prompt asks for "Open-end (redeemable) or closed-end (drawdown, no redemptions), and whether master-feeder."
+        *   Quote: "The Fund is an open-end fund that offers Interests monthly and permits Limited Partners to redeem quarterly..." (Section 1.2) OR "Structure | Open-end, stand-alone fund; no master fund." (Section 2.2). I'll use Section 1.2 for the definition.
+        *   Value: "Open-end, stand-alone fund"
+
+    *   **management_fee**:
+        *   Search: "Management Fee", "annual rate".
+        *   Section 2.3 Table: Lists rates per class.
+            *   Class A: 2.00%
+            *   Class B: 1.50%
+            *   Founders Class: 1.00%
+        *   Basis: "on Capital Account NAV" (Section 2.3 Table) or "charged on the NAV of each Capital Account" (Section 4.1).
+        *   Value: "Class A Interests: 2.00%; Class B Interests: 1.50%; Founders Class Interests: 1.00% (on Capital Account NAV)"
+        *   Citation: "Section 2.3"
+        *   Quote: "Management Fee (annual rate, on Capital Account NAV) | 2.00% | 1.50% | 1.00%"
+
+    *   **performance_fee**:
+        *   Search: "Incentive Allocation", "Carried Interest".
+        *   Section 2.3 Table: Lists rates per class.
+            *   Class A: 20%
+            *   Class B: 17.5%
+            *   Founders Class: 15%
+        *   Basis: "of Net Profits" (Section 2.3).
+        *   Value: "Class A Interests: 20%; Class B Interests: 17.5%; Founders Class Interests: 15% (of Net Profits)"
+        *   Citation: "Section 2.3"
+        *   Quote: "Incentive Allocation (of Net Profits, subject to Loss Carryforward) | 20% | 17.5% | 15%"
+
+    *   **hurdle_rate**:
+        *   Search: "Hurdle", "Preferred Return".
+        *   Section 2.2 Table: "Hurdle | None (Section 4.4)"
+        *   Section 4.4 Title: "No Hurdle or Preferred Return"
+        *   Value: "None"
+        *   Citation: "Section 4.4"
+        *   Quote: "The Incentive Allocation is not subject to any hurdle rate or preferred return..."
+
+    *   **high_water_mark**:
+        *   Search: "High Water Mark", "Loss Carryforward".
+        *   Section 2.3 Table mentions "subject to Loss Carryforward".
+        *   Section 4.3 Title: "Loss Carryforward"
+        *   Section 4.3 Text: "...functions as a high water mark (the "Loss Carryforward"). ... is cumulative, and does not reset or expire..."
+        *   Value: "Yes, Loss Carryforward; perpetual (does not reset)"
+        *   Citation: "Section 4.3"
+        *   Quote: "The Incentive Allocation is subject to a loss carryforward that functions as a high water mark (the "Loss Carryforward"). ... The Loss Carryforward is maintained separately for each Capital Account, is cumulative, and does not reset or expire..."
+
+    *   **minimum_initial_investment**:
+        *   Search: "Minimum Initial Investment".
+        *   Section 2.2 Table: "$5,000,000 for Class A Interests and Class B Interests; $10,000,000 for Founders Class Interests"
+        *   Section 2.3 Table: "Minimum initial investment | $5,000,000 | $5,000,000 | $10,000,000"
+        *   Section 5.2: "$5,000,000 for Class A Interests and Class B Interests and $10,000,000 for Founders Class Interests."
+        *   Value: "Class A Interests: $5,000,000; Class B Interests: $5,000,000; Founders Class Interests: $10,000,000"
+        *   Citation: "Section 2.3"
+        *   Quote: "Minimum initial investment | $5,000,000 | $5,000,000 | $10,000,000"
+
+    *   **lockup_period**:
+        *   Search: "Lock-Up".
+        *   Section 2.3 Table:
+            *   Class A: 12 months, soft
+            *   Class B: 24 months, hard
+            *   Founders Class: 36 months, hard
+        *   Section 6.1: "Where that table designates a lock-up as soft... Where it designates a lock-up as hard..."
+        *   Value: "Class A Interests: 12 months (soft); Class B Interests: 24 months (hard); Founders Class Interests: 36 months (hard)"
+        *   Citation: "Section 2.3"
+        *   Quote: "Lock-Up Period (from each Subscription Date) | 12 months, soft | 24 months, hard | 36 months, hard"
+
+    *   **redemption_frequency**:
+        *   Search: "Redemption", "Quarterly".
+        *   Section 1.2: "...permits Limited Partners to redeem quarterly..."
+        *   Section 2.2 Table: "Redemptions | Quarterly..."
+        *   Section 2.3 Table: "Redemption Dates after lock-up | Quarterly | Quarterly | Quarterly"
+        *   Value: "Quarterly"
+        *   Citation: "Section 1.2"
+        *   Quote: "The Fund is an open-end fund that offers Interests monthly and permits Limited Partners to redeem quarterly..."
+
+    *   **redemption_notice_days**:
+        *   Search: "Redemption Notice".
+        *   Section 2.3 Table:
+            *   Class A: 60 days
+            *   Class B: 60 days
+            *   Founders Class: 90 days
+        *   Value: "Class A Interests: 60 days; Class B Interests: 60 days; Founders Class Interests: 90 days"
+        *   Citation: "Section 2.3"
+        *   Quote: "Redemption Notice (prior written notice to the Administrator) | 60 days | 60 days | 90 days"
+
+    *   **gate_provision**:
+        *   Search: "Gate".
+        *   Section 2.2 Table: "Gate | Investor-level only; the Fund does not impose a Fund-level gate. As of any Redemption Date, a Limited Partner may redeem no more than 12.5% of the Gate Base of its Capital Account for a Class."
+        *   Section 6.3: "Redemptions are subject to the investor-level gate described in the table in Section 2.2..."
+        *   Value: "Investor-level only; 12.5% of Gate Base"
+        *   Citation: "Section 2.2"
+        *   Quote: "Gate | Investor-level only; the Fund does not impose a Fund-level gate. As of any Redemption Date, a Limited Partner may redeem no more than 12.5% of the Gate Base of its Capital Account for a Class."
+
+    *   **key_man_provision**:
+        *   Search: "Key Person".
+        *   Section 2.2 Table: "Key Person | Orla Penhallow (Section 7.1)"
+        *   Section 7.1: "A "Key Person Event" occurs if Orla Penhallow dies or becomes permanently incapacitated, ceases to serve as Chief Investment Officer of the Investment Manager, or ceases to devote substantially all of her business time..."
+        *   Value: "Orla Penhallow; triggers redemption rights without lock-up/charge/notice/gate"
+        *   Citation: "Section 7.1"
+        *   Quote: "A "Key Person Event" occurs if Orla Penhallow dies or becomes permanently incapacitated, ceases to serve as Chief Investment Officer of the Investment Manager, or ceases to devote substantially all of her business time to the Investment Manager and its affiliated funds for more than 120 consecutive days."
+
+    *   **gp_commitment**:
+        *   Search: "General Partner", "Commitment", "Investment".
+        *   Section 8.2: "None of the General Partner, the Investment Manager or any principal has agreed or is required to make or maintain any investment in the Fund..."
+        *   Value: "NOT_FOUND" (Document says they hold interests but not a commitment). Wait, Section 8.2 says "As of June 1, 2026... held Founders Class Interests with an aggregate NAV of approximately $42 million". This is a disclosed current holding, NOT a commitment. The prompt says: "A disclosed current holding is NOT a commitment."
+        *   Value: "NOT_FOUND"
+        *   Citation: "" (Since it's not found as a commitment)
+        *   Quote: ""
+
+    *   **fund_term**:
+        *   Search: "Term".
+        *   Section 1.2: "The Fund has no fixed term."
+        *   Section 2.2 Table: "Term | No fixed term; continues until dissolved under the Partnership Agreement"
+        *   Value: "No fixed term; perpetual (continues until dissolved)"
+        *   Citation: "Section 1.2"
+        *   Quote: "The Fund has no fixed term. It will continue until dissolved under the Partnership Agreement..."
+
+    *   **auditor**:
+        *   Search: "Auditor", "Independent Auditor".
+        *   Section 2.2 Table: "Independent Auditor | Marrable Oakshott LLP"
+        *   Section 9.3: "Marrable Oakshott LLP, an independent registered public accounting firm, has been appointed as the Fund's independent auditor."
+        *   Value: "Marrable Oakshott LLP"
+        *   Citation: "Section 9.3"
+        *   Quote: "Marrable Oakshott LLP, an independent registered public accounting firm, has been appointed as the Fund's independent auditor."
+
+    *   **administrator**:
+        *   Search: "Administrator".
+        *   Section 2.2 Table: "Administrator | Wendlebury Fund Services, LLC"
+        *   Section 9.1: "Wendlebury Fund Services, LLC serves as the Fund's administrator..."
+        *   Value: "Wendlebury Fund Services, LLC"
+        *   Citation: "Section 9.1"
+        *   Quote: "Wendlebury Fund Services, LLC serves as the Fund's administrator under an administration agreement dated as of February 14, 2025."
+
+    *   **prime_broker**:
+        *   Search: "Prime Broker".
+        *   Section 2.2 Table: "Prime Brokers | Orrinshaw Securities LLC; Kestermoor Prime Services LLC"
+        *   Section 9.2: "Orrinshaw Securities LLC and Kestermoor Prime Services LLC serve as the Fund's prime brokers..."
+        *   Value: "Orrinshaw Securities LLC; Kestermoor Prime Services LLC"
+        *   Citation: "Section 9.2"
+        *   Quote: "Orrinshaw Securities LLC and Kestermoor Prime Services LLC serve as the Fund's prime brokers (each, a "Prime Broker")..."
+
+    *   **legal_counsel**:
+        *   Search: "Counsel", "Law Firm".
+        *   Section 2.2 Table: "Fund Counsel | Hollinrake Vaux LLP"
+        *   Section 9.4: "Hollinrake Vaux LLP acts as counsel to the Fund..."
+        *   Value: "Hollinrake Vaux LLP"
+        *   Citation: "Section 9.4"
+        *   Quote: "Hollinrake Vaux LLP acts as counsel to the Fund, the General Partner and the Investment Manager in connection with the offering of Interests."
+
+    *   **mfn_election**:
+        *   Search: "Most Favored Nation", "Side Letters".
+        *   Section 10.1: "The Fund does not offer a "most favored nation" election..."
+        *   Value: "NOT_APPLICABLE" (or "No")
+        *   Citation: "Section 10.1"
+        *   Quote: "The Fund does not offer a "most favored nation" election: no Limited Partner is entitled to elect the benefit of terms granted to another Limited Partner..."
+
+3.  **Review and Refine:**
+    *   Check for amendments/supplements. The document mentions "Amended and Restated Agreement... dated as of April 1, 2025". There are no separate supplements listed at the end that override this text (the text itself says it summarizes the Amended and Restated Agreement). I must treat the provided text as the current version.
+    *   Check for "NOT_FOUND" vs "NOT_APPLICABLE".
+        *   GP Commitment: Document explicitly states they are not required to make an investment. So "NOT_FOUND" is appropriate for a commitment term.
+        *   MFN Election: Document explicitly says it does not offer one. "NOT_APPLICABLE" fits the rule "If the document states that a term does not exist or does not apply to this fund, the value is exactly NOT_APPLICABLE".
+    *   Check Quotes: Ensure verbatim.
+    *   Check Citations: Ensure they match section headers or table references in the text.
+    *   Check JSON structure: Keys must be exact strings. Values must be strings.
+
+4.  **Final Verification of Fields:**
+    *   fund_name: "Skelmorlie Ridge Multi-Strategy Fund, L.P." (Section 1.1)
+    *   fund_domicile: "Delaware" (Section 1.1)
+    *   fund_structure: "Open-end, stand-alone fund" (Section 1.2 / Section 2.2)
+    *   management_fee: "Class A Interests: 2.00%; Class B Interests: 1.50%; Founders Class Interests: 1.00% (on Capital Account NAV)" (Section 2.3)
+    *   performance_fee: "Class A Interests: 20%; Class B Interests: 17.5%; Found

@@ -1,0 +1,374 @@
+{
+  "meeting_id": "t5_m11",
+  "title": "Aging parent in memory care: LTC claim, POA update and gifting",
+  "notes": "Three figures move: Callowmere's monthly cost is stated as $9,800 and corrected to $8,900 about thirteen minutes later, which drops the cash raise from $30,000 to $25,000, and the retirement target moves from last year's 2030 to 2033. The Tessaly claim call is given to Jonah before he joins and then moved to Nadia, the attorney consult is pulled forward from end of month to September 18 because of the September 22 neurology evaluation, and the closing recap omits Theo's bank-statement task and Nadia's call to Erik. Ingrid's proposed gifts, the company-stock sale Theo declines, their own long-term care coverage and moving Ingrid's IRA are all non-actions, and Nadia's floated 50/50 ends in an explicit no change.",
+  "scalar_fields": {
+    "meeting_date": {
+      "expected": "2026-09-10 (Thursday, September 10, 2026)",
+      "accept": [
+        "2026-09-10",
+        "\\b0?9/10/(20)?26\\b",
+        "sep(t(ember)?)?\\.?\\s+10(th)?,?\\s+2026",
+        "\\b10(th)?\\s+(of\\s+)?sep(t(ember)?)?\\.?,?\\s+2026"
+      ],
+      "reject": {}
+    },
+    "client_names": {
+      "expected": "Nadia Wrenshaw; Theo Wrenshaw",
+      "accept": [
+        "\\bnadia\\b",
+        "\\btheo(dore)?\\b"
+      ],
+      "match": "all",
+      "reject": {
+        "WRONG_PARENT_AS_CLIENT": [
+          "ingrid|solvang"
+        ],
+        "WRONG_STAFF_AS_CLIENT": [
+          "celeste|varnham|jonah|tebbetts"
+        ]
+      }
+    },
+    "primary_goal": {
+      "expected": "Pay for Nadia's mother Ingrid's care and get her legal documents in order without derailing the Wrenshaws' own retirement plan",
+      "accept": [
+        "(\\bmom\\b|mother|ingrid|parent|solvang).{0,80}\\bcare\\b",
+        "\\bcare\\b.{0,80}(\\bmom\\b|mother|ingrid|parent|solvang)",
+        "\\b(memory|long[- ]term|elder)\\s+care\\b.{0,120}(retire|own plan|derail)",
+        "(\\bmom\\b|mother|ingrid|parent|solvang).{0,80}(cost|bills|expenses|callowmere)",
+        "\\b(pay|fund|cover)\\w*.{0,60}(\\bmom\\b|mother|ingrid|parent|solvang)",
+        "caregiv"
+      ],
+      "reject": {}
+    },
+    "retirement_target": {
+      "expected": "2033, when Theo turns 65 (moved from 2030 at Theo 62); Nadia retires at the same time",
+      "accept": [
+        "2033",
+        "\\b65\\b|sixty[- ]five"
+      ],
+      "reject": {
+        "STALE_2030": [
+          "^(?!.*(2033|\\b65\\b|sixty[- ]five)).*(2030|\\b62\\b|sixty[- ]two)"
+        ]
+      }
+    },
+    "risk_tolerance": {
+      "expected": "Moderate growth (about 65% stocks / 35% bonds)",
+      "accept": [
+        "moderate(ly)?[\\s-]*growth",
+        "\\b65\\s*(%|percent)?\\s*(/|-|stocks?|equit)",
+        "sixty[- ]five\\s*(percent)?\\s*(/|,|stocks?|equit)"
+      ],
+      "reject": {
+        "WRONG_FLOATED_50_50": [
+          "^(?!.*(moderate(ly)?[\\s-]*growth|\\b65\\b|sixty[- ]five)).*(50\\s*/\\s*50|fifty[\\s-]*fifty|conservative)"
+        ]
+      }
+    },
+    "risk_tolerance_change": {
+      "expected": "no change",
+      "accept": [
+        "\\bno change",
+        "\\bunchanged\\b",
+        "\\bno (risk )?(tolerance )?change",
+        "\\bnot? chang",
+        "\\b(remain|remains|stay|stays|kept|keep|keeps)\\b.{0,40}(moderate|same|where|growth)"
+      ],
+      "reject": {
+        "WRONG_FLOATED_CHANGE": [
+          "^(?!.*(no change|unchanged|not? chang|remain|stay|kept|keep)).*(\\bfrom\\b.{0,60}\\bto\\b|conservative|50\\s*/\\s*50|fifty[\\s-]*fifty)"
+        ]
+      }
+    },
+    "next_meeting": {
+      "expected": "Tuesday, October 27, 2026 at 2:00 p.m., in person at the office",
+      "accept": [
+        "oct(ober)?\\.?\\s+27",
+        "\\b10/27\\b",
+        "2026-10-27",
+        "\\b27(th)?\\s+(of\\s+)?oct"
+      ],
+      "reject": {
+        "STALE_OCT_20": [
+          "^(?!.*27).*(oct(ober)?\\.?\\s+20\\b|\\b10/20\\b|2026-10-20|\\b20th\\b)"
+        ]
+      }
+    }
+  },
+  "life_events": [
+    {
+      "eid": "e1",
+      "expected": "Ingrid Solvang (Nadia's mother, 84) fell and broke her hip on June 8, 2026, had a skilled nursing rehab stay June 11 to August 14, and was diagnosed in July with mild Alzheimer's type dementia",
+      "match": [
+        "\\bhip\\b|fractur|\\bfell\\b|\\bfall\\b|\\bbroke\\b",
+        "alzheimer|dementia|diagnos|cognitive"
+      ],
+      "reject": {}
+    },
+    {
+      "eid": "e2",
+      "expected": "Ingrid moved into memory care at Callowmere Commons (Henrico) on August 17, 2026, at $8,900 a month for level one care; $6,000 community fee already paid",
+      "match": [
+        "memory care|callowmere|assisted living|moved (in)?to|8,?900|9,?800"
+      ],
+      "reject": {
+        "STALE_COST_9800": [
+          "^(?!.*(8,?900|eighty[- ]nine hundred|8\\.9k)).*(9,?800|ninety[- ]eight hundred|9\\.8k)"
+        ]
+      }
+    },
+    {
+      "eid": "e3",
+      "expected": "Ingrid's Lynchburg house is under contract at $331,000 (listed at $345,000), closing October 23, 2026, about $305,000 net expected",
+      "match": [
+        "\\bhouse\\b|\\bproperty\\b|real estate|under contract|\\bclosing\\b|331,?000|\\b331k\\b"
+      ],
+      "reject": {}
+    },
+    {
+      "eid": "e4",
+      "expected": "Nadia is cutting back to 32 hours a week (0.8, four days) starting with the pay period that begins October 4, 2026, to be available for her mother; pay drops from about $148,000 to about $118,000 with benefits unchanged",
+      "match": [
+        "\\b32\\b|thirty[- ]two|part[- ]time|0?\\.8\\b|point eight|reduc\\w*\\s+(her\\s+)?(work|schedule|hours)|cut\\w*\\s+back|\\bfour[- ]day|80\\s*(%|percent)|\\b148,?000|\\b148k\\b|reduc\\w*\\s+in\\s+(her\\s+)?(work\\s+)?hours|(fewer|reduced) hours"
+      ],
+      "reject": {}
+    }
+  ],
+  "account_actions": [
+    {
+      "aid": "a1",
+      "expected": "Sell $25,000 of the short-term bond fund in the joint brokerage account and send the cash to the Wrenshaws' joint checking to front Ingrid's care bills through year end (to be documented as a loan)",
+      "match": [
+        "\\bbond",
+        "25,?000|\\b25k\\b|twenty[- ]five thousand|\\b25 thousand",
+        "30,?000|\\b30k\\b|thirty thousand"
+      ],
+      "amount_accept": [
+        "25,?000|\\b25k\\b|twenty[- ]five thousand|\\b25 thousand"
+      ],
+      "amount_reject": {
+        "STALE_30K": [
+          "^(?!.*(25,?000|\\b25k\\b|twenty[- ]five thousand|\\b25 thousand)).*(30,?000|\\b30k\\b|thirty thousand)"
+        ]
+      }
+    },
+    {
+      "aid": "a2",
+      "expected": "Reduce the monthly automatic investment from joint checking into the joint brokerage account from $2,500 to $1,000 a month, starting with the October draft",
+      "match": [
+        "automatic|\\bdraft\\b|recurring|systematic|monthly (contribution|investment|deposit|transfer|savings)",
+        "2,?500|twenty[- ]five hundred",
+        "\\b1,?000\\s*(a|per|/)\\s*mo"
+      ],
+      "amount_accept": [
+        "\\b1,?000\\b|one thousand|\\b1k\\b",
+        "(reduc|less|lower|cut|decreas|drop|down)\\w*.{0,90}\\bby\\s+\\$?1,?500\\b|-\\s*\\$?1,?500\\b|\\$?1,?500\\s*(/\\s*mo\\w*\\s*)?(less|lower|reduction|decrease|cut)"
+      ],
+      "amount_reject": {
+        "STALE_2500": [
+          "^(?!.*(\\b1,?000\\b|one thousand|\\b1k\\b)).*(2,?500|twenty[- ]five hundred)"
+        ]
+      }
+    }
+  ],
+  "action_items": [
+    {
+      "iid": "i1",
+      "expected_task": "Call Tessaly Mutual to open Ingrid's long-term care claim; ask whether the skilled nursing rehab days count toward the 90-day elimination period and get the rep's name. Owner: Nadia (first given to Jonah). Due as said: \"tomorrow\" = Friday, September 11, 2026.",
+      "match": [
+        "\\bclaim|elimination",
+        "\\b(call|contact|phone|reach)\\w*.{0,30}tessaly"
+      ],
+      "owner_accept": [
+        "\\bnadia\\b"
+      ],
+      "owner_reject": {
+        "STALE_OWNER": [
+          "^(?!.*\\bnadia\\b).*(jonah|tebbetts|paraplanner)"
+        ]
+      },
+      "due_accept": [
+        "^(?!.*(\\b18\\b|\\b18th|\\b25|\\boct)).*(tomorrow|\\bfri(day)?\\b)",
+        "sep(t(ember)?)?\\.?\\s+11\\b|\\b0?9/11\\b|2026-09-11|\\b11th\\b|\\b11(th)?\\s+(of\\s+)?sep"
+      ],
+      "due_reject": {},
+      "trap": "reassigned"
+    },
+    {
+      "iid": "i2",
+      "expected_task": "Meet with elder law attorney Mireille Taskent (Taskent & Orlow) to execute a new durable power of attorney for Ingrid naming Nadia as agent with express gifting and Medicaid planning powers, plus an advance medical directive, a HIPAA release, a promissory note for the money being fronted, and a Medicaid backup plan. Owner: Nadia. Due as said: \"by next Friday, the 18th\" = Friday, September 18, 2026 (first set as the end of the month).",
+      "match": [
+        "^(?!(\\w+\\s+){0,2}(to\\s+)?(send|sent|e-?mail|introduc|intro\\b|connect|refer)).*((?<!power of )attorney|lawyer|elder law)",
+        "^(?!(\\w+\\s+){0,2}(to\\s+)?(send|sent|e-?mail|introduc|intro\\b|connect|refer)).*(taskent|tashkent|mireille|mariel)",
+        "power of attorney|\\bd?poa\\b|directive|hipaa|promissory"
+      ],
+      "owner_accept": [
+        "\\bnadia\\b"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "\\b18(th)?\\b|eighteenth|next friday"
+      ],
+      "due_reject": {
+        "STALE_DUE": [
+          "^(?!.*(\\b18(th)?\\b|eighteenth|next friday)).*(end of (the )?(month|september)|\\b30(th)?\\b|thirtieth)"
+        ],
+        "WRONG_DUE_NEURO_APPT": [
+          "^(?!.*(\\b18(th)?\\b|eighteenth|next friday)).*(\\b22(nd)?\\b|twenty[- ]second)"
+        ]
+      },
+      "trap": "due_changed"
+    },
+    {
+      "iid": "i3",
+      "expected_task": "Send an introduction email to elder law attorney Mireille Taskent, copying Nadia. Owner: Celeste. Due as said: \"this afternoon\" = Thursday, September 10, 2026.",
+      "match": [
+        "\\bintro|introduc|referral|\\be-?mail|\\bconnect"
+      ],
+      "owner_accept": [
+        "celeste|varnham|advis[eo]r"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "today|this afternoon|sep(t(ember)?)?\\.?\\s+10\\b|\\b0?9/10\\b|2026-09-10|\\b10th\\b|same day|end of (the )?day|\\beod\\b|\\b10(th)?\\s+(of\\s+)?sep"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i4",
+      "expected_task": "Pull five years (60 months) of Ingrid's bank statements, scan the paper ones from the file box, and upload them to Jonah through the portal for the attorney's look-back review. Owner: Theo. Due as said: \"by Tuesday\" = Tuesday, September 15, 2026.",
+      "match": [
+        "statement",
+        "look[- ]?back",
+        "\\b(60|sixty) months|\\b(five|5) years of"
+      ],
+      "owner_accept": [
+        "\\btheo(dore)?\\b"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "^(?!.*(\\b22|\\boct)).*\\btue(s(day)?)?\\b",
+        "sep(t(ember)?)?\\.?\\s+15\\b|\\b0?9/15\\b|2026-09-15|\\b15th\\b|\\b15(th)?\\s+(of\\s+)?sep"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i5",
+      "expected_task": "Build a care-funding projection for Ingrid showing how long her assets last (about $305,000 house proceeds, $118,000 IRA with required distributions, $2,850 monthly income, Callowmere at $8,900 with annual increases, Tessaly benefit for three years once it starts), plus a scenario with a higher level of care in two years. Owner: Jonah. Due as said: \"next Wednesday, the 16th\" = Wednesday, September 16, 2026.",
+      "match": [
+        "^(?!.*(2033|retirement (plan|projection|model|analysis)|wrenshaws'? (own )?plan|\\bre-?run|statement)).*(project|runway|cash[- ]?flow|\\bmodel|analysis|how long|forecast|deplet|how many years|longevity|\\blast)"
+      ],
+      "owner_accept": [
+        "jonah|tebbetts|paraplanner"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "\\bwed(nesday)?\\b|\\b16(th)?\\b|sixteenth"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i6",
+      "expected_task": "Call her brother Erik to explain the new power of attorney (Erik as successor agent), the care costs and the money being fronted. Owner: Nadia. Due as said: \"this weekend\" = September 12 to 13, 2026.",
+      "match": [
+        "\\berik\\b|\\bbrother\\b",
+        "\\b(call|talk|tell|speak|update|brief|discuss|inform|loop|let|notify|explain|ask|confirm|reach|contact|phone|text)\\w*\\b.{0,60}\\b(erik|brother)\\b|\\b(erik|brother)\\b.{0,40}\\b(call|talk|conversation|weekend|know|update|brief|inform|loop)"
+      ],
+      "owner_accept": [
+        "\\bnadia\\b"
+      ],
+      "owner_reject": {},
+      "due_accept": [
+        "weekend|\\bsat(urday)?\\b|\\bsun(day)?\\b|sep(t(ember)?)?\\.?\\s+1[23]\\b|\\b0?9/1[23]\\b|2026-09-1[23]|\\b1[23](th)?\\s+(of\\s+)?sep|\\b12(th)?\\s*(-|to|and|&|/)\\s*13(th)?\\s+(of\\s+)?sep"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    },
+    {
+      "iid": "i7",
+      "expected_task": "Rerun the Wrenshaws' retirement plan at a 2033 retirement date with Nadia at 32 hours and the lower $1,000 monthly savings, for review at the next meeting. Owner: Celeste. Due as said: \"the next meeting\" = Tuesday, October 27, 2026.",
+      "match": [
+        "2033",
+        "retirement (plan|projection|analysis|model)",
+        "financial plan",
+        "\\bre-?run",
+        "^(?!.*(ingrid|\\bmom\\b|mother|\\bcare\\b)).*((plan|projection).{0,40}(update|refresh)|(update|refresh)\\w*.{0,40}(plan|projection))"
+      ],
+      "owner_accept": [
+        "celeste|varnham|advis[eo]r"
+      ],
+      "owner_reject": {
+        "WRONG_OWNER_PARAPLANNER": [
+          "^(?!.*(celeste|varnham|advis[eo]r)).*(jonah|tebbetts|paraplanner)"
+        ]
+      },
+      "due_accept": [
+        "\\b27(th)?\\b|twenty[- ]seventh|next (meeting|review)|oct(ober)?\\.?\\s+27"
+      ],
+      "due_reject": {},
+      "trap": "none"
+    }
+  ],
+  "non_actions": [
+    {
+      "nid": "n1",
+      "what": "Ingrid giving $10,000 to each of her four grandchildren ($40,000) this Christmas, or giving the house money to Nadia and Erik to shelter it from Medicaid; floated by Nadia, advised against and dropped: no gifts out of Ingrid's money",
+      "match": [
+        "^(?!.*(\\bno\\b(?! (date|deadline|due|specific|timing|amount|owner))|\\bnot\\b(?! (specified|stated|set|given|established|found|discussed|mentioned|applicable))|declin|usual|hundred|\\$100\\b)).*grand(kid|child|son|daughter)",
+        "^(?!.*(treated as|look like|not a gift|\\bno\\b(?! (date|deadline|due|specific|timing|amount|owner))|\\bnot\\b(?! (specified|stated|set|given|established|found|discussed|mentioned|applicable))|promissory|\\bloan)).*\\b(gift|give|giving)\\w*.{0,50}(house|sale) (money|proceeds)",
+        "^(?!.*(treated as|look like|not a gift|\\bno\\b(?! (date|deadline|due|specific|timing|amount|owner))|\\bnot\\b(?! (specified|stated|set|given|established|found|discussed|mentioned|applicable))|promissory|\\bloan)).*(house|sale) (money|proceeds).{0,50}\\b(gift|give)",
+        "40,?000|\\b40k\\b|forty thousand",
+        "10,?000\\s+(each|to each|per)"
+      ],
+      "kind": "tentative"
+    },
+    {
+      "nid": "n2",
+      "what": "Selling Theo's company stock (about $198,000, 39% of the joint account) to raise the cash and trimming it toward 25%: Celeste proposed it at 00:08:43 and Theo refused at 00:09:08",
+      "match": [
+        "^(?!.*(\\bbond|declin|instead|rather than|\\bnot\\b(?! (specified|stated|set|given|established|found|discussed|mentioned|applicable))|\\bno\\b(?! (date|deadline|due|specific|timing|amount|owner))|\\bhold(s|ing)?\\b|\\bkeep|retain|\\bleav|document|\\bnote\\b)).*(company stock|employer stock|company shares|\\bconcentrat)"
+      ],
+      "kind": "declined_proposal"
+    },
+    {
+      "nid": "n3",
+      "what": "Long-term care insurance (traditional or hybrid) for Nadia and Theo themselves; Theo raised it and deferred it, nothing done now",
+      "match": [
+        "^(?!.*(\\bclaim|ingrid|mother|\\bmom\\b|tessaly|elimination|parent|solvang|projection)).*(long[- ]term care|\\bltc\\b|hybrid)"
+      ],
+      "kind": "tentative"
+    },
+    {
+      "nid": "n4",
+      "what": "Moving Ingrid's IRA to Aldenmoor once a new power of attorney is in place; explicitly deferred (not today)",
+      "match": [
+        "^(?!.*(project|\\bmodel|how long|\\brmd|required (minimum )?distribution|where it is|stays? (put|in place)|\\bno (transfer|move|moving|change|rollover|action)|\\bnot (\\w+ )?(mov|transfer|roll|chang)|before (\\w+ ){0,2}(mov|transfer|roll))).*(\\bira\\b.{0,60}\\b(move|moving|transfer|consolidat|roll|bring)|\\b(move|moving|transfer|consolidat|roll|bring)\\w*.{0,60}\\bira\\b)"
+      ],
+      "kind": "tentative"
+    }
+  ],
+  "corrected_figures": [
+    {
+      "what": "Callowmere Commons monthly cost for Ingrid's memory care",
+      "said_first": "$9,800 a month",
+      "corrected_to": "$8,900 a month",
+      "field": "life_events"
+    },
+    {
+      "what": "Cash to raise from the joint account to front Ingrid's bills through year end, recomputed after the cost correction",
+      "said_first": "$30,000",
+      "corrected_to": "$25,000",
+      "field": "account_actions"
+    },
+    {
+      "what": "Retirement target year, last year's plan versus the date set in this meeting",
+      "said_first": "2030",
+      "corrected_to": "2033",
+      "field": "scalar:retirement_target"
+    }
+  ]
+}

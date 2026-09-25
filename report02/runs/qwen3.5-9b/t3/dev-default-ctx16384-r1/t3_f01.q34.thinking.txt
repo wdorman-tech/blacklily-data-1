@@ -1,0 +1,30 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Does the firm have any affiliated entities that provide services to clients? Describe the affiliation and how the resulting conflict of interest is managed."
+    *   Key elements needed: Existence of affiliated entities providing services, description of affiliation, management of conflict of interest.
+
+3.  **Scan the Documents:**
+
+    *   **Document 1:** `01_brochure.md` (Form ADV Part 2A: Firm Brochure, dated March 27, 2026)
+        *   *Section:* Item 10. Other Financial Industry Activities and Affiliations > 10.2 Kilnwick Tax Services, LLC
+            *   Content: "Kilnwick Tax Services, LLC ("Kilnwick") is a tax preparation and tax planning firm under common control with the Firm: Ms. Tennick and Mr. Arlow together own all of Kilnwick's membership interests. Kilnwick prepares federal and state income tax returns and gift tax returns for individuals and trusts, including some of our clients... Because Ms. Tennick and Mr. Arlow benefit from Kilnwick's revenue, we have an incentive to recommend Kilnwick to our clients. We address this conflict by disclosing it, by not requiring any client to use Kilnwick, by paying our wealth advisors no compensation for referrals to Kilnwick, and by sharing client information with Kilnwick only with the client's written consent."
+            *   Relevance: This directly answers the question about affiliated entities (Kilnwick), services provided (tax prep/planning), affiliation (common control/ownership), and conflict management (disclosure, no requirement, no compensation, consent for info).
+        *   *Section:* Item 10. Other Financial Industry Activities and Affiliations > 10.3 Trustee and Other Fiduciary Appointments
+            *   Content: "At the request of a grantor or a family, Ms. Tennick and two other senior wealth advisors serve as trustee or co-trustee of certain client trusts... These appointments cause the Firm to have custody of the trusts' assets..."
+            *   Relevance: Mentions trusteeship (service), but Kilnwick is the clearer "affiliated entity" example regarding conflict management. The question asks about "any affiliated entities". Kilnwick fits best as an external entity under common control. Trustee appointments are internal personnel roles, though they involve fiduciary duties. The Kilnwick section explicitly discusses "affiliations" and "conflict of interest".
+        *   *Section:* Item 10. Other Financial Industry Activities and Affiliations > 10.4 Third-Party Private Funds
+            *   Content: "We recommend unaffiliated private funds... We do not sponsor

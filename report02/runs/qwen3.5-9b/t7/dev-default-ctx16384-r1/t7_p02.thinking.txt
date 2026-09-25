@@ -1,0 +1,74 @@
+The user wants me to review a draft marketing piece for an SEC-registered investment adviser against a specific checklist (Rule 206(4)-1).
+I need to output ONLY a JSON object with a key "flags" containing a list of issues found.
+Each flag must have "category", "quote", and "reason".
+
+Checklist items:
+C1: Testimonial/endorsement without disclosure (client status, compensation, conflicts).
+C2: Gross performance without net performance shown with equal prominence.
+C3: Performance of a portfolio other than a private fund without 1-, 5-, 10-year periods.
+C4: Performance time periods/results chosen not fair/balanced (favorable window).
+C5: Hypothetical/model/backtested/projected performance without criteria, assumptions, risks, limitations.
+C6: Material statement of fact untrue or unsubstantiated (absolute claims like never losing money, guaranteed results, top/best).
+C7: Third-party rating/ranking without date, period, source, compensation.
+C8: Performance of selected positions/subset without total portfolio performance.
+C9: Benefits described without fair/balanced treatment of material risks/limitations.
+
+Let's scan the text for issues.
+
+**Slide 1:**
+- "Firm assets of $1.42 billion..."
+- "Principals and employees have $61 million in the Fund, on which they pay no management fee or incentive allocation." -> This is a conflict of interest disclosure (they pay no fees). Is this a testimonial? No.
+
+**Slide 3:**
+- "Capital preservation comes first: the Fund has never finished a calendar year in negative territory, through the 2018 selloff, the 2020 drawdown and the 2022 rate shock."
+- Quote: "the Fund has never finished a calendar year in negative territory"
+- This is an absolute claim (C6). It claims they never lost money for a full year. Looking at Slide 4 table: 2018 Gross 4.1%, Net 1.9%. 2019 Gross 12.6%, Net 8.7%. 2020 Gross 28.8%, Net 21.6%. 2021 Gross 21.5%, Net 15.8%. 2022 Gross -1.2%, Net -3.0%. 2023 Gross 5.4%, Net 3.5%.
+- Wait, the text says "never finished a calendar year in negative territory".
+- Slide 4 table shows 2022: Gross -1.2%, Net -3.0%.
+- So the claim "never finished a calendar year in negative territory" is factually untrue based on the data provided in the same document (Slide 4). This falls under C6 (untrue statement of fact).
+- Also, Slide 5 mentions: "from the March 23, 2020 market low through June 30, 2021, the Fund returned 71.4% net of fees." This is a specific period selection. Is it fair? It's a favorable window (C4).
+- Slide 6: "HYPOTHETICAL PERFORMANCE... would have returned 7.98% annualized from 2017 through 2025". It lists criteria and assumptions and risks. This seems compliant with C5 because it includes the text "Criteria and assumptions..." and "Risks and limitations...".
+- Slide 4 Table: Shows Gross and Net side by side. Compliant with C2.
+- Slide 3 Claim: "Fund has never finished a calendar year in negative territory". Slide 4 shows 2022 returns were negative (-1.2% gross, -3.0% net). This is a direct contradiction. This is C6 (untrue statement of fact).
+
+**Slide 5:**
+- "from the March 23, 2020 market low through June 30, 2021, the Fund returned 71.4% net of fees."
+- This is a specific period selection (March 2020 to June 2021). Is it fair? It's a "last restructuring cycle". It might be considered a favorable window (C4) if it cherry-picks a high return period without showing the full context or acknowledging the risk of that specific window. However, usually C4 flags are about selecting a start/end date to show best performance while hiding worst. Here they explicitly state the dates and say "The last restructuring cycle shows what the strategy can do". It's borderline. But given the absolute claim in Slide 3 is definitely C6, let's focus on that first.
+- Is there a testimonial? No.
+- Is there a rating? No.
+
+**Slide 4:**
+- Table shows Gross and Net. Compliant with C2.
+- Shows annual returns since inception (2017-2025). This is a private fund (LP). Rule 206(4)-1 requires 1, 5, 10 years for non-private funds. For private funds, it's different (often life of fund or if shorter). The text says "Calendar-year returns since the Fund's launch on January 1, 2017." It shows annual data. This seems okay for a private fund context unless specific periods are required by rule interpretation. Usually C3 applies to non-private funds. This is an LP (Limited Partnership), likely a private fund. So C3 might not apply strictly if it's a private fund. The prompt says "Performance of a portfolio other than a private fund without results for 1-, 5- and 10-year periods". Since this is an LP, C3 likely doesn't trigger unless the firm claims it's not a private fund. It says "Fund", "LP". So C3 is likely not applicable.
+
+**Slide 3:**
+- Quote: "the Fund has never finished a calendar year in negative territory"
+- Reason: This contradicts Slide 4 which shows 2022 returns were negative (-1.2% gross, -3.0% net). This is an untrue statement of fact (C6).
+
+**Slide 5:**
+- Quote: "from the March 23, 2020 market low through June 30, 2021, the Fund returned 71.4% net of fees."
+- Reason: This presents a specific performance period that may be viewed as a favorable window without showing the full record or acknowledging the risk of selecting this specific timeframe (C4). However, it explicitly states the dates. C4 is about "performance time periods or results chosen or presented in a way that is not fair and balanced, such as a favourable window selected out of a longer record." Presenting a 15-month period with high returns might be considered cherry-picking if not contextualized well. But often specific event-driven windows are disclosed. However, combined with the absolute claim C6, this is less critical. Let's look for clearer flags.
+
+**Slide 3:**
+- Quote: "Capital preservation comes first: the Fund has never finished a calendar year in negative territory"
+- This is definitely C6 because Slide 4 shows 2022 was negative.
+
+**Slide 6:**
+- Hypothetical performance section includes criteria, assumptions, risks. Compliant with C5.
+
+**Slide 7:**
+- Risks are listed. Compliant with C9 (benefits described without fair and balanced treatment of material risks). Slide 3 claims "Capital preservation comes first" and "never finished a calendar year in negative territory". Slide 7 lists risks like "Investors can lose all or most of their investment", "Short losses are theoretically unlimited", etc. This seems to balance the benefits (capital preservation claim) with risks. However, the C6 flag regarding the untrue statement overrides the risk disclosure because the risk disclosure doesn't make the untrue fact true.
+
+**Slide 1:**
+- "Principals and employees have $61 million in the Fund, on which they pay no management fee or incentive allocation."
+- This is a conflict of interest. Is it disclosed? Yes, it's stated. C1 requires disclosure of conflicts. It seems disclosed here.
+
+**Slide 4:**
+- "Annualized since inception... 11.5% gross of fees and 7.8% net of fees."
+- Table shows Gross and Net side by side. Compliant with C2.
+
+**Checklist Review:**
+C1: Testimonial? No testimonials found.
+C2: Gross without Net? No, Slide 4 has both.
+C3: Non-private fund performance periods? It's an LP (private fund). Rule 206(4)-1 requires 1, 5, 10 years for non-private funds. Private funds have different rules (often life of fund). The text shows annual returns since inception. This is likely compliant for a private fund.
+C4: Favorable window? Slide 5 mentions "from the March 23, 2020 market low through June 30, 2021". This is a specific period. Is it unfair? It's an event-driven strategy ("last restructuring cycle"). It might be acceptable to show a specific cycle performance if disclosed as such. However, C4 flags "performance time periods or results chosen or presented in a way that is not fair and balanced

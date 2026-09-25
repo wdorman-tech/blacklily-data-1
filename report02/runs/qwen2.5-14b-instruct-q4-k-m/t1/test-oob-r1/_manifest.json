@@ -1,0 +1,72 @@
+{
+ "task": "t1",
+ "model": "qwen2.5:14b-instruct-q4_K_M",
+ "split": "test",
+ "run": "r1",
+ "variant": "oob",
+ "think": "auto",
+ "items": 9,
+ "started": "2026-09-23T02:45:47-0400",
+ "prompt_hashes": [
+  "32dd96f4dd6d49245cd8f58d85d683e6c262dc05fc893a0927885e6f6221f634",
+  "34fea86cd3d52ab19d01bafac72fb28db5c245b0e99fe69bf8dd914ad6e6d0f0",
+  "3d7ff3264d5485827082af196dffe6707b6a50b979f3d1102809310eec2b8b6d",
+  "..."
+ ],
+ "system_hashes": [
+  "22fb8acf4de05c3ff5f9c8091feba15a1e5127752e30514a9d3e50db60760d52"
+ ],
+ "subject": {
+  "via": "ollama /api/chat",
+  "model": "qwen2.5:14b-instruct-q4_K_M",
+  "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+  "size_bytes": 8988124069,
+  "details": {
+   "parent_model": "",
+   "format": "gguf",
+   "family": "qwen2",
+   "families": [
+    "qwen2"
+   ],
+   "parameter_size": "14.8B",
+   "quantization_level": "Q4_K_M",
+   "context_length": 32768,
+   "embedding_length": 5120
+  }
+ },
+ "server": {
+  "flash_attention": "true",
+  "kv_cache_type": "q8_0",
+  "version": "0.34.2",
+  "num_parallel": 1
+ },
+ "options": {
+  "num_ctx": 0,
+  "temperature": 0.0,
+  "top_p": 0.9,
+  "repeat_penalty": 1.0
+ },
+ "gpu_before": {
+  "vram_used_mib": 9824,
+  "vram_total_mib": 12227,
+  "gpu_util_pct": 2
+ },
+ "loaded": {
+  "size_bytes": 9092695325,
+  "size_vram_bytes": 9092695325,
+  "fully_on_gpu": true,
+  "context_length": 4096
+ },
+ "gpu_after_load": {
+  "vram_used_mib": 10356,
+  "vram_total_mib": 12227,
+  "gpu_util_pct": 22
+ },
+ "loaded_end": {
+  "size_bytes": 9092695325,
+  "size_vram_bytes": 9092695325,
+  "fully_on_gpu": true,
+  "context_length": 4096
+ },
+ "finished": "2026-09-23T02:48:37-0400"
+}

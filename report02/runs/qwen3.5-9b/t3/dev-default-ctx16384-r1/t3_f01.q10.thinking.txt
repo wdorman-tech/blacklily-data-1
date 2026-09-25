@@ -1,0 +1,46 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+    *   Question: "Describe the succession plan for the firm's founding principals, including any buy-sell agreement and how it is funded."
+
+2.  **Scan the Documents:**
+    *   Document 1: `02_compliance_manual.md` (Jan 15, 2026). Section 4.6 discusses IPOs and Limited Offerings for Supervised Persons. No mention of succession planning or buy-sell agreements.
+    *   Document 2: `04_business_continuity_plan.md` (May 4, 2026).
+        *   Preamble: Synthetic document notice.
+        *   Section 1.1 Purpose: Business continuity during disruption.
+        *   Section 1.2 Scope: Offices, personnel, custodians.
+        *   Section 2.1 Plan Owner: Harriet Solberg (COO), Owen Stahlberg (Tech Director).
+        *   Section 2.3 Declaration and Delegation of Authority: Who declares disruption (Plan Owner -> CFO -> Managing Partner).
+        *   Section 5.2 Critical Vendor List: Vendor list.
+        *   Section 7.3 Training: Training schedule.
+    *   Search for keywords: "succession", "buy-sell", "funding", "principals", "founders".
+
+3.  **Evaluate Findings:**
+    *   The `02_compliance_manual.md` mentions "Managing Partner" and "CCO" but does not discuss succession planning for founding principals or buy-sell agreements.
+    *   The `04_business_continuity_plan.md` discusses business continuity (disruption recovery), roles during disruption (COO, CFO, Managing Partner), but does not contain a specific succession plan for the firm's founding principals regarding ownership transfer, buy-sell agreements, or funding mechanisms. It mentions "Managing Partner" as a fallback authority in Section 2.3, but this is about declaring a business disruption, not succession planning for principals' departure/death/retirement.
+    *   There is no mention of a buy-sell agreement or funding mechanism in either document.
+
+4.  **Formulate Answer:**
+    *   Since the information is not present in the provided documents, the answer must be `NOT_IN_DOCUMENTS`.
+    *   Source document: "" (empty string as per instructions for NOT_IN_DOCUMENTS).
+    *   Section: "" (empty string).
+    *   Quote: "" (empty string).
+
+5.  **Construct JSON:**
+    *   Ensure valid JSON.
+    *   Ensure no markdown code blocks (```json ... ```).
+    *   Ensure keys match exactly: "answer", "source_document", "section", "quote".
+
+6.  **Final Check:**
+    *   Did I miss

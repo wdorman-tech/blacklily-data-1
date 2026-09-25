@@ -1,0 +1,1029 @@
+{
+ "task": "t7",
+ "model": "qwen3.8:27b-q4_K_M",
+ "items": {
+  "t7_p06": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C3",
+     "hallucination": false,
+     "got": "Since its launch in January 2012, the Core Income Strategy composite has returned 5.4% a year, net of fees, through June 30, 2026.",
+     "expected": "Since its launch in January 2012, the Core Income Strategy composite has returned 5.4% a year, net of fees, through June 30, 2026.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C9",
+     "hallucination": false,
+     "got": "For clients who want more from the stock sleeve, our Enhanced Yield option writes covered calls on the dividend stocks, collecting option premium every month and turning those holdings into a second monthly source of income.",
+     "expected": "For clients who want more from the stock sleeve, our Enhanced Yield option writes covered calls on the dividend stocks, collecting option premium every month and turning those holdings into a second monthly source of income.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p3",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C1",
+     "hallucination": false,
+     "got": "As Dr. Warren Ellsby, a retired anesthesiologist in Maryville, put it: \"Priya and her team turned twenty years of scattered accounts into one plan I actually understand, and I sleep better at night because of it.\"",
+     "expected": "As Dr. Warren Ellsby, a retired anesthesiologist in Maryville, put it: \"Priya and her team turned twenty years of scattered accounts into one plan I actually understand, and I sleep better at night because of it.\"",
+     "extra": {
+      "category_match": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 3,
+   "group": "t7_p06",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 75.18,
+    "prompt_tokens": 1882,
+    "output_tokens": 337,
+    "output_tokens_per_sec": 4.7,
+    "prompt_tokens_per_sec": 594.8,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11031
+   }
+  },
+  "t7_p07": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C2",
+     "hallucination": false,
+     "got": "",
+     "expected": "Year to date through June 30, 2026, the Focused Small Cap Value composite is up 11.3% before fees, against a 4.2% gain for its comparison index.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C6",
+     "hallucination": false,
+     "got": "",
+     "expected": "Over the ten calendar years from 2016 through 2025, the composite outperformed its comparison index in every single year, net of fees.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p3",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C4",
+     "hallucination": false,
+     "got": "Measured from the market low on March 23, 2020 through December 31, 2021, the composite returned 131.4% net of fees. That is the stretch we point to when clients ask what the discipline is for.",
+     "expected": "Measured from the market low on March 23, 2020 through December 31, 2021, the composite returned 131.4% net of fees.",
+     "extra": {
+      "category_match": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 1,
+   "group": "t7_p07",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 32.21,
+    "prompt_tokens": 2220,
+    "output_tokens": 133,
+    "output_tokens_per_sec": 4.7,
+    "prompt_tokens_per_sec": 596.5,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11031
+   }
+  },
+  "t7_p08": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C7",
+     "hallucination": false,
+     "got": "Ranked the No. 1 event-driven fund by Brisenden Okehurst Research, ahead of more than 140 peer funds.",
+     "expected": "Ranked the No. 1 event-driven fund by Brisenden Okehurst Research, ahead of more than 140 peer funds.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C4",
+     "hallucination": false,
+     "got": "Our best twelve months: from April 1, 2020 through March 31, 2021, the Fund returned 41.8% net of fees as merger spreads normalized.",
+     "expected": "Our best twelve months: from April 1, 2020 through March 31, 2021, the Fund returned 41.8% net of fees as merger spreads normalized.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p3",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C5",
+     "hallucination": false,
+     "got": "Applied to the Fund's history, the Enhanced Series would have returned 19.1% annualized, net of fees, since January 1, 2017, including 24.2% in 2025.",
+     "expected": "Applied to the Fund's history, the Enhanced Series would have returned 19.1% annualized, net of fees, since January 1, 2017, including 24.2% in 2025.",
+     "extra": {
+      "category_match": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 3,
+   "group": "t7_p08",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 67.18,
+    "prompt_tokens": 2208,
+    "output_tokens": 295,
+    "output_tokens_per_sec": 4.7,
+    "prompt_tokens_per_sec": 595.4,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11031
+   }
+  },
+  "t7_p09": {
+   "units": [],
+   "parse_problems": [],
+   "n_flags": 0,
+   "group": "t7_p09",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 5.36,
+    "prompt_tokens": 2045,
+    "output_tokens": 10,
+    "output_tokens_per_sec": 5.2,
+    "prompt_tokens_per_sec": 620.0,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11031
+   }
+  },
+  "t7_p10": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C8",
+     "hallucination": false,
+     "got": "Our three best ideas of 2025 were a mid-cap semiconductor equipment maker (up 94%), a regional railcar lessor (up 61%) and a specialty property insurer (up 47%).",
+     "expected": "Our three best ideas of 2025 were a mid-cap semiconductor equipment maker (up 94%), a regional railcar lessor (up 61%) and a specialty property insurer (up 47%).",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C1",
+     "hallucination": false,
+     "got": "",
+     "expected": "\"When one of my clients is two or three years from retirement, Fairlop Wendt is the first call I make,\" says Janelle Strome, CPA, managing partner of Castlerow Tax & Accounting in Meridian.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p3",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C6",
+     "hallucination": false,
+     "got": "With three years of spending set aside, a market decline will never force a Fairlop Wendt client to sell stocks at a loss to pay their bills.",
+     "expected": "With three years of spending set aside, a market decline will never force a Fairlop Wendt client to sell stocks at a loss to pay their bills.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p4",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C5",
+     "hallucination": false,
+     "got": "Even so, when we ran our reserve rules through every rolling 25-year retirement since 1928, a client with a three-year reserve finished with more money than one without it in 64 of those 74 periods.",
+     "expected": "Even so, when we ran our reserve rules through every rolling 25-year retirement since 1928, a client with a three-year reserve finished with more money than one without it in 64 of those 74 periods.",
+     "extra": {
+      "category_match": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 3,
+   "group": "t7_p10",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 67.11,
+    "prompt_tokens": 1696,
+    "output_tokens": 301,
+    "output_tokens_per_sec": 4.7,
+    "prompt_tokens_per_sec": 574.0,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11031
+   }
+  },
+  "t7_p11": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C8",
+     "hallucination": false,
+     "got": "Hal walks through the three holdings that did the heavy lifting over the past twelve months: Norrland Freight Systems gained 64%, Pellmar Medical Devices rose 52% and Wickenby Water & Power returned 41%.",
+     "expected": "Hal walks through the three holdings that did the heavy lifting over the past twelve months: Norrland Freight Systems gained 64%, Pellmar Medical Devices rose 52% and Wickenby Water & Power returned 41%.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C6",
+     "hallucination": false,
+     "got": "Hal explains why our dividend discipline is the reason no Tollemarsh client has ever lost money over a full market cycle, and why that record is not going to change.",
+     "expected": "Hal explains why our dividend discipline is the reason no Tollemarsh client has ever lost money over a full market cycle, and why that record is not going to change.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p3",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C1",
+     "hallucination": false,
+     "got": "This one comes from Margaret T. in Cape Elizabeth: \"Hal and Ines took the guesswork out of our retirement. Moving our savings to Tollemarsh was the best financial decision we have ever made.\"",
+     "expected": "This one comes from Margaret T. in Cape Elizabeth: \"Hal and Ines took the guesswork out of our retirement. Moving our savings to Tollemarsh was the best financial decision we have ever made.\"",
+     "extra": {
+      "category_match": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 3,
+   "group": "t7_p11",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 66.35,
+    "prompt_tokens": 1867,
+    "output_tokens": 295,
+    "output_tokens_per_sec": 4.7,
+    "prompt_tokens_per_sec": 599.5,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11031
+   }
+  },
+  "t7_p12": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C7",
+     "hallucination": false,
+     "got": "Dana Ollerby, who was named one of America's Top Retirement Planners by Quillmere Wealth Digest.",
+     "expected": "Your host is Managing Partner Dana Ollerby, who was named one of America's Top Retirement Planners by Quillmere Wealth Digest.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C5",
+     "hallucination": false,
+     "got": "Our Retirement Income Model, applied to market returns for every 30-year period from 1970 through 2025, would have supported a 6.5% annual withdrawal, raised each year for inflation, without ever running out of money.",
+     "expected": "Our Retirement Income Model, applied to market returns for every 30-year period from 1970 through 2025, would have supported a 6.5% annual withdrawal, raised each year for inflation, without ever running out of money.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p3",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C9",
+     "hallucination": false,
+     "got": "Learn how our Private Credit Income sleeve can pay a monthly distribution, smooth out the swings on your statement and add a source of return that does not move with the stock market.",
+     "expected": "Learn how our Private Credit Income sleeve can pay a monthly distribution, smooth out the swings on your statement and add a source of return that does not move with the stock market.",
+     "extra": {
+      "category_match": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 3,
+   "group": "t7_p12",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 69.84,
+    "prompt_tokens": 1852,
+    "output_tokens": 312,
+    "output_tokens_per_sec": 4.7,
+    "prompt_tokens_per_sec": 598.4,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11031
+   }
+  },
+  "t7_p13": {
+   "units": [],
+   "parse_problems": [],
+   "n_flags": 0,
+   "group": "t7_p13",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 6.72,
+    "prompt_tokens": 2077,
+    "output_tokens": 10,
+    "output_tokens_per_sec": 5.2,
+    "prompt_tokens_per_sec": 443.3,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11031
+   }
+  },
+  "t7_p14": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C2",
+     "hallucination": false,
+     "got": "Our Core Equity composite, annualized returns before fees for periods ended June 30, 2026: 1 year 14.2%, 5 years 11.6%, 10 years 12.3%.",
+     "expected": "Our Core Equity composite, annualized returns before fees for periods ended June 30, 2026: 1 year 14.2%, 5 years 11.6%, 10 years 12.3%.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C3",
+     "hallucination": false,
+     "got": "",
+     "expected": "Over the three years ended June 30, 2026, our Balanced Income composite, launched in 2012, returned 7.9% a year net of fees and 8.6% a year gross of fees.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p3",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C9",
+     "hallucination": false,
+     "got": "",
+     "expected": "Our Buffered Equity sleeve lets clients keep participating in stock market gains while a 15% buffer absorbs the first leg of any decline, so they can stay invested through rough patches without the sleepless nights.",
+     "extra": {
+      "category_match": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 1,
+   "group": "t7_p14",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 27.2,
+    "prompt_tokens": 1950,
+    "output_tokens": 112,
+    "output_tokens_per_sec": 4.7,
+    "prompt_tokens_per_sec": 603.9,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11031
+   }
+  },
+  "t7_p15": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C4",
+     "hallucination": false,
+     "got": "",
+     "expected": "Up 168.0% since the March 2020 market low. From the bottom of the pandemic sell-off on March 23, 2020 through June 30, 2026, our composite gained 168.0% cumulative, net of fees.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C6",
+     "hallucination": false,
+     "got": "No dividend manager in Virginia can match our record of protecting client capital when markets fall.",
+     "expected": "No dividend manager in Virginia can match our record of protecting client capital when markets fall.",
+     "extra": {
+      "category_match": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 1,
+   "group": "t7_p15",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 18.98,
+    "prompt_tokens": 1956,
+    "output_tokens": 74,
+    "output_tokens_per_sec": 4.7,
+    "prompt_tokens_per_sec": 613.9,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11031
+   }
+  },
+  "t7_p16": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C2",
+     "hallucination": false,
+     "got": "In the first half of 2026, the Fund returned 9.4% gross of fees, against 3.1% for the Tennock U.S. Small/Mid Cap Index, with gross exposure held between 140% and 165%.",
+     "expected": "In the first half of 2026, the Fund returned 9.4% gross of fees, against 3.1% for the Tennock U.S. Small/Mid Cap Index, with gross exposure held between 140% and 165%.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C4",
+     "hallucination": false,
+     "got": "Measured from September 30, 2022, the month-end closest to the market low, through June 30, 2026, the Fund compounded at 14.6% annualized net of fees, turning $1 million into $1.67 million.",
+     "expected": "Measured from September 30, 2022, the month-end closest to the market low, through June 30, 2026, the Fund compounded at 14.6% annualized net of fees, turning $1 million into $1.67 million.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p3",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C7",
+     "hallucination": false,
+     "got": "Named a Top 10 Long/Short Equity Manager by a leading independent hedge fund research service, reflecting the Fund's risk-adjusted returns.",
+     "expected": "Named a Top 10 Long/Short Equity Manager by a leading independent hedge fund research service, reflecting the Fund's risk-adjusted returns.",
+     "extra": {
+      "category_match": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 3,
+   "group": "t7_p16",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 81.87,
+    "prompt_tokens": 2246,
+    "output_tokens": 363,
+    "output_tokens_per_sec": 4.6,
+    "prompt_tokens_per_sec": 605.7,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11031
+   }
+  },
+  "t7_p17": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C6",
+     "hallucination": false,
+     "got": "the Kettleby Rowan income framework is built so that our retired clients never have to worry about running out of money, no matter what the markets do.",
+     "expected": "the Kettleby Rowan income framework is built so that our retired clients never have to worry about running out of money, no matter what the markets do.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C9",
+     "hallucination": false,
+     "got": "",
+     "expected": "Interval funds give individual investors a simple way into private credit: higher yields than most public bond funds, steady quarterly distributions and far less of the day-to-day price movement you see in stocks.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p3",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C1",
+     "hallucination": false,
+     "got": "\"After thirty years of watching our 401(k)s bounce around, Elise and I finally sleep at night. Kettleby Rowan built us an income plan that just works.\" Gordon Tamblyn, Meridian, Idaho",
+     "expected": "After thirty years of watching our 401(k)s bounce around, Elise and I finally sleep at night. Kettleby Rowan built us an income plan that just works.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "flag_03",
+     "score": 0.0,
+     "verdict": "FLAGGED_DECOY",
+     "kind": "extra_flag",
+     "error_kind": "decoy_flagged",
+     "trap": "decoy",
+     "hallucination": true,
+     "got": "Kettleby Rowan Wealth Advisors was named to the Garthside Advisor Review 2026 list of Top Fee-Only Advisers, published April 14, 2026. The list was compiled and tabulated by Garthside Advisor Review from data for the twelve months ended December 31, 2025, weighing assets under management, client ret",
+     "expected": "",
+     "extra": {
+      "category": "C7",
+      "reason": "The disclosure of compensation is ambiguous, as it states the firm did not pay to be 'considered' but pays a 'licensing fee' to display the designation, which may constitute compensation for the ranking or its use.",
+      "quote_grounded": true,
+      "needs_adjudication": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 3,
+   "group": "t7_p17",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 88.1,
+    "prompt_tokens": 1853,
+    "output_tokens": 397,
+    "output_tokens_per_sec": 4.7,
+    "prompt_tokens_per_sec": 601.5,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11031
+   }
+  },
+  "t7_p18": {
+   "units": [],
+   "parse_problems": [],
+   "n_flags": 0,
+   "group": "t7_p18",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 5.24,
+    "prompt_tokens": 1888,
+    "output_tokens": 10,
+    "output_tokens_per_sec": 5.2,
+    "prompt_tokens_per_sec": 600.9,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11031
+   }
+  },
+  "t7_p19": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C3",
+     "hallucination": false,
+     "got": "",
+     "expected": "Our Concentrated Quality composite returned 7.8% net of fees in the first half of 2026 and 16.4% a year net over the last three years, versus 5.1% and 12.9% for the Stellbrook U.S. Large/Mid Cap Index.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C8",
+     "hallucination": false,
+     "got": "Our three biggest winners over the past twelve months, Harrowfield Instruments (+94%), Clemency Data Systems (+71%) and Aughton Grain Logistics (+58%), show what patient ownership of great businesses can deliver.",
+     "expected": "Our three biggest winners over the past twelve months, Harrowfield Instruments (+94%), Clemency Data Systems (+71%) and Aughton Grain Logistics (+58%), show what patient ownership of great businesses can deliver.",
+     "extra": {
+      "category_match": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 1,
+   "group": "t7_p19",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 26.36,
+    "prompt_tokens": 1925,
+    "output_tokens": 109,
+    "output_tokens_per_sec": 4.7,
+    "prompt_tokens_per_sec": 604.1,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11031
+   }
+  },
+  "t7_p20": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C6",
+     "hallucination": false,
+     "got": "With Marrowby Glen, your principal is safe: our high-grade municipal portfolios protect capital in every market environment.",
+     "expected": "With Marrowby Glen, your principal is safe: our high-grade municipal portfolios protect capital in every market environment.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C5",
+     "hallucination": false,
+     "got": "Applied to historical market data from 2006 through 2025, the Tactical Duration model would have returned 4.7% a year against 3.2% for the Index, beating it in 15 of 20 years.",
+     "expected": "Applied to historical market data from 2006 through 2025, the Tactical Duration model would have returned 4.7% a year against 3.2% for the Index, beating it in 15 of 20 years.",
+     "extra": {
+      "category_match": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 2,
+   "group": "t7_p20",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 48.67,
+    "prompt_tokens": 1942,
+    "output_tokens": 213,
+    "output_tokens_per_sec": 4.7,
+    "prompt_tokens_per_sec": 606.7,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11031
+   }
+  },
+  "t7_p21": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C9",
+     "hallucination": false,
+     "got": "",
+     "expected": "Anand explains why our Private Income Sleeve offers higher income than public bonds and less sensitivity to interest rates, because its loans carry floating rates that reset as market rates move.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C1",
+     "hallucination": false,
+     "got": "Retired orthodontist Dr. Rosalind Glazebrook tells Celia why she has sent her sister, her neighbors and half of her former practice to Ullathorne Ormerod, and why she would do it again tomorrow.",
+     "expected": "Retired orthodontist Dr. Rosalind Glazebrook tells Celia why she has sent her sister, her neighbors and half of her former practice to Ullathorne Ormerod, and why she would do it again tomorrow.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p3",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C6",
+     "hallucination": false,
+     "got": "Ullathorne Ormerod clients have never lost money in a calendar year, a record no other firm in Virginia can match.",
+     "expected": "Ullathorne Ormerod clients have never lost money in a calendar year, a record no other firm in Virginia can match.",
+     "extra": {
+      "category_match": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 2,
+   "group": "t7_p21",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 48.73,
+    "prompt_tokens": 1824,
+    "output_tokens": 214,
+    "output_tokens_per_sec": 4.7,
+    "prompt_tokens_per_sec": 587.6,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11031
+   }
+  },
+  "t7_p22": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C5",
+     "hallucination": false,
+     "got": "Run against actual market returns from January 2000 through December 2025, our Four-Bucket Income Model would have produced an average annual return of 8.7% with no calendar year worse than -4.1%, including 2008.",
+     "expected": "Run against actual market returns from January 2000 through December 2025, our Four-Bucket Income Model would have produced an average annual return of 8.7% with no calendar year worse than -4.1%, including 2008.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C7",
+     "hallucination": false,
+     "got": "Wetherden Lathom was recently ranked among the Top 25 Wealth Managers in Arizona for the third consecutive year.",
+     "expected": "Wetherden Lathom was recently ranked among the Top 25 Wealth Managers in Arizona for the third consecutive year.",
+     "extra": {
+      "category_match": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 2,
+   "group": "t7_p22",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 47.24,
+    "prompt_tokens": 1875,
+    "output_tokens": 206,
+    "output_tokens_per_sec": 4.7,
+    "prompt_tokens_per_sec": 595.1,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11031
+   }
+  },
+  "t7_p23": {
+   "units": [],
+   "parse_problems": [],
+   "n_flags": 0,
+   "group": "t7_p23",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 5.22,
+    "prompt_tokens": 1955,
+    "output_tokens": 10,
+    "output_tokens_per_sec": 5.2,
+    "prompt_tokens_per_sec": 618.1,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11031
+   }
+  },
+  "t7_p24": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C2",
+     "hallucination": false,
+     "got": "",
+     "expected": "Since inception on April 1, 2012, the composite has compounded at 13.84% annualized gross of fees, against 11.93% for the Index.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C6",
+     "hallucination": false,
+     "got": "The strategy has outperformed the Index over every trailing period we have reported, in rising and falling markets alike.",
+     "expected": "The strategy has outperformed the Index over every trailing period we have reported, in rising and falling markets alike.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p3",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C1",
+     "hallucination": false,
+     "got": "Lorne Haverstick, Principal at Corriemoor Consulting Group, says: \"I recommend Linnea and Callum to our consulting clients without reservation, and I would trust them with my own family's savings.\"",
+     "expected": "Lorne Haverstick, Principal at Corriemoor Consulting Group, says: \"I recommend Linnea and Callum to our consulting clients without reservation, and I would trust them with my own family's savings.\"",
+     "extra": {
+      "category_match": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 2,
+   "group": "t7_p24",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 46.15,
+    "prompt_tokens": 2017,
+    "output_tokens": 200,
+    "output_tokens_per_sec": 4.7,
+    "prompt_tokens_per_sec": 626.6,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11034
+   }
+  },
+  "t7_p25": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C8",
+     "hallucination": false,
+     "got": "Three positions we added to our Small Cap Value portfolios in the spring of 2025, a short-line railroad operator, a specialty coatings manufacturer and a dental consumables distributor, have returned 64%, 51% and 47% through June 30, 2026.",
+     "expected": "Three positions we added to our Small Cap Value portfolios in the spring of 2025, a short-line railroad operator, a specialty coatings manufacturer and a dental consumables distributor, have returned 64%, 51% and 47% through June 30, 2026.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C4",
+     "hallucination": false,
+     "got": "",
+     "expected": "Measured from the October 12, 2022 market low through June 30, 2026, our Dividend Growth composite has returned 58.6% net of fees.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p3",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C3",
+     "hallucination": false,
+     "got": "",
+     "expected": "Our Balanced Income composite, which we have managed since 2009, returned 9.8% net of fees (10.6% gross) for the twelve months ended June 30, 2026.",
+     "extra": {
+      "category_match": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 1,
+   "group": "t7_p25",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 31.02,
+    "prompt_tokens": 1975,
+    "output_tokens": 130,
+    "output_tokens_per_sec": 4.7,
+    "prompt_tokens_per_sec": 616.2,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11034
+   }
+  }
+ }
+}

@@ -1,0 +1,21 @@
+*   Question: "What were the results of the Firm's most recent valuation back-testing, for example the average difference between prior-day valuations and actual sale prices?"
+    *   Constraint: Return only a JSON object with keys "answer", "source_document", "section", "quote".
+
+    *   Document 1: (Implicitly part of the Fee Schedule or similar, though the header is missing, it contains Section 6. Termination and Refunds).
+    *   Document 2: `06_policy_update_memo.md` (Compliance Memorandum 2026-03).
+
+    *   Document 1 (Section 6): Discusses Termination and Refunds. No mention of valuation back-testing.
+    *   Document 2 (Section 3): Discusses "Amendments to the Valuation Policy".
+        *   3.1 Stale Price Threshold: Mentions "three consecutive business days" and "20 consecutive business days".
+        *   3.2 Price Override Approval: Mentions "Chief Financial Officer", "Chief Risk Officer", "Valuation Committee".
+    *   Scanning the entire text of `06_policy_update_memo.md` for "back-testing", "valuation", "sale prices", "difference", "average".
+    *   The word "valuation" appears in the title of Section 3 and in the context of "Valuation Policy and Procedures".
+    *   The word "back-testing" does not appear in the text.
+    *   The phrase "average difference" does not appear.
+
+    *   The information regarding "valuation back-testing" or "average difference between prior-day valuations and actual sale prices" is not present in either provided document.
+
+    *   answer: "NOT_IN_DOCUMENTS"
+    *   source_document: ""
+    *   section: ""
+    *   quote: ""

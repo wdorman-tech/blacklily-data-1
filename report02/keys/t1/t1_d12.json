@@ -1,0 +1,517 @@
+{
+  "doc_id": "t1_d12",
+  "doc_title": "Vessary Point Commodities Fund Ltd. Confidential Offering Memorandum with Supplements No. 1 and No. 2",
+  "doc_type": "Offering Memorandum",
+  "difficulty": "adversarial",
+  "notes": "Terms are amended twice: Supplement No. 1 cuts both management fee rates and the redemption notice period, and Supplement No. 2 cuts only the Class B fee and refers back to Supplement No. 1 for Class A without restating the rate, so the fee must be reconciled body, S1, S2 by class while the notice period comes from S1 alone. The stale body values appear twice (summary table and operative sections). Five fields are absent or expressly inapplicable (gate, hurdle, key person, manager commitment, MFN), each placed next to a plausible distractor: suspension and holdback powers, the high water mark, a key-personnel risk factor, a disclosed principals' holding, and a side-letter paragraph.",
+  "traps": {
+    "management_fee": "The body (Sections 1.1 and 4.1) gives 2.00% (Class A) and 1.50% (Class B), Supplement No. 1 cuts both to 1.75% and 1.25%, and Supplement No. 2 cuts only Class B to 1.00% while pointing back to Section S-2 for Class A without restating the number, so the correct answer is 1.75% for Class A and 1.00% for Class B.",
+    "redemption_notice_days": "The body and the summary table say 90 calendar days, Supplement No. 1 reduces it to 60 calendar days and Supplement No. 2 is silent on it, so 60 days stands and a reader who takes only the latest supplement or only the body goes wrong.",
+    "lockup_period": "Both classes have a 12-month lock-up, but Class A is soft (3% early redemption charge) and Class B is hard, so an answer giving one lock for both classes is wrong.",
+    "gate_provision": "The Fund expressly imposes no gate, but a suspension power and a 5% audit holdback sit in adjacent sections and must not be reported as a gate.",
+    "key_man_provision": "There is no key person clause anywhere; the only mention is a risk factor headed Reliance on Key Personnel naming Mr. Rennard, which triggers nothing.",
+    "gp_commitment": "No manager commitment is required; Section 9.2 discloses a voluntary US$6.4 million Class B holding by principals and US$100 of Management Shares, neither of which is a commitment.",
+    "hurdle_rate": "The Performance Fee is expressly subject to no hurdle or preferred return; the High Water Mark is not a hurdle and must not be reported as one.",
+    "mfn_election": "Section 9.3 permits side letters but expressly denies any Shareholder the right to receive or elect another Shareholder's side letter terms, so no MFN election is offered."
+  },
+  "fields": {
+    "fund_name": {
+      "expected": "Vessary Point Commodities Fund Ltd.",
+      "citation": "Section 2.1",
+      "quote": "Vessary Point Commodities Fund Ltd. was incorporated on 14 August 2023",
+      "accept": [
+        "vessary\\s*point\\s*commodities\\s*fund"
+      ],
+      "partial": [],
+      "reject": {
+        "WRONG_ENTITY_MANAGER_OR_AFFILIATE": [
+          "^(?!.*commodities fund).*vessary point (capital|holdings|gp)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "fund_domicile": {
+      "expected": "Cayman Islands (exempted company with limited liability)",
+      "citation": "Section 2.1",
+      "quote": "an exempted company with limited liability under the Companies Act (As Revised) of the Cayman Islands",
+      "accept": [
+        "cayman"
+      ],
+      "partial": [],
+      "reject": {
+        "WRONG_JURISDICTION": [
+          "^(?!.*cayman).*(delaware|texas|united states|\\bu\\.?s\\.?\\b)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "fund_structure": {
+      "expected": "Open-ended (Shares redeemable at the option of the holder); standalone fund, not a master-feeder structure",
+      "citation": "Section 2.3",
+      "quote": "The Fund is a standalone vehicle. It does not invest through a master fund and no feeder fund invests in it.",
+      "accept": [
+        "^(?=.*(open[- ]?end|redeemable|evergreen))(?=.*(stand[- ]?alone|\\bnot\\b[^.;]{0,30}master|\\bno\\b[^.;]{0,20}(master|feeder)|non[- ]master|single[- ]tier|neither a master|does not invest through a master|neither[^.;]{0,40}master|master[- /]?feeder\\W{0,3}(no|n/a|none|not applicable)\\b))"
+      ],
+      "partial": [
+        "^(?=.*(open[- ]?end|redeemable))(?!(?!.*(stand[- ]?alone|\\bnot\\b[^.;]{0,30}master|\\bno\\b[^.;]{0,20}(master|feeder)|non[- ]master|single[- ]tier|neither a master|does not invest through a master|neither[^.;]{0,40}master|neither|master[- /]?feeder\\W{0,3}(no|n/a|none|not applicable)\\b)).*(master[- /]?feeder|feeder fund|master fund|through a master))"
+      ],
+      "reject": {
+        "MASTER_FEEDER": [
+          "^(?!.*(stand[- ]?alone|\\bnot\\b[^.;]{0,30}master|\\bno\\b[^.;]{0,20}(master|feeder)|non[- ]master|single[- ]tier|neither a master|does not invest through a master|neither[^.;]{0,40}master|neither|master[- /]?feeder\\W{0,3}(no|n/a|none|not applicable)\\b)).*(master[- /]?feeder|feeder fund|master fund)"
+        ],
+        "CLOSED_END": [
+          "^(?!.*(open|redeemable)).*closed[- ]?end"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "management_fee": {
+      "expected": "Class A: 1.75% per annum of the Net Asset Value of the Class A Shares (set by Supplement No. 1); Class B: 1.00% per annum of the Net Asset Value of the Class B Shares (set by Supplement No. 2); each calculated monthly and payable monthly in advance, before accrual of the Performance Fee",
+      "citation": "Section S-6; Section S-2",
+      "quote": "the Management Fee payable in respect of the Class B Shares is reduced to one-twelfth of 1.00% (a rate of 1.00% per annum) of the Net Asset Value of the Class B Shares",
+      "accept": [
+        "^(?!.*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent)[^;%()]{0,40}?\\(\\s*class a(\\s*shares?)?\\s*\\))(?!.*class a\\b(\\s*shares?)?\\s*[:=(-]?\\s*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent))(?!.*\\b(both|all|each)\\b[^;]{0,30}class(es)?\\s*[:=(-]?\\s*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent))(?!.*class(es)? a\\b(\\s*shares?)?\\s*(and|&|/|,)\\s*(class )?b\\b(\\s*shares?)?\\s*[:=(-]?\\s*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent))(?!.*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent)[^;]{0,30}?(\\bfor\\b|\\bto\\b|\\bacross\\b|\\bin respect of\\b|\\()\\s*(both|all) (share )?class(es)?\\b(?!\\s*[ab]\\b(?!\\s*(and|&|/|,|or)\\s*(class(es)?\\s*)?[ab]\\b)))(?=.*(1\\.75\\s*(%|percent|per ?cent)|\\b175\\s*(bps|basis points)|one and three[- ]quarters? per ?cent))(?=.*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent))(?=.*(nav|net asset))"
+      ],
+      "partial": [
+        "^(?!.*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent)[^;%()]{0,40}?\\(\\s*class a(\\s*shares?)?\\s*\\))(?!.*class a\\b(\\s*shares?)?\\s*[:=(-]?\\s*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent))(?!.*\\b(both|all|each)\\b[^;]{0,30}class(es)?\\s*[:=(-]?\\s*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent))(?!.*class(es)? a\\b(\\s*shares?)?\\s*(and|&|/|,)\\s*(class )?b\\b(\\s*shares?)?\\s*[:=(-]?\\s*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent))(?!.*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent)[^;]{0,30}?(\\bfor\\b|\\bto\\b|\\bacross\\b|\\bin respect of\\b|\\()\\s*(both|all) (share )?class(es)?\\b(?!\\s*[ab]\\b(?!\\s*(and|&|/|,|or)\\s*(class(es)?\\s*)?[ab]\\b)))(?=.*(1\\.75\\s*(%|percent|per ?cent)|\\b175\\s*(bps|basis points)|one and three[- ]quarters? per ?cent))(?=.*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent))"
+      ],
+      "reject": {
+        "STALE_BODY_CLASS_A_2_00": [
+          "^(?!.*(1\\.75|\\b175\\s*(bps|basis points))).*\\b2(\\.00?)?\\s*(%|percent|per ?cent)"
+        ],
+        "STALE_BODY_CLASS_B_1_50": [
+          "^(?!.*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent)).*\\b1\\.50?\\s*(%|percent|per ?cent)"
+        ],
+        "STALE_S1_CLASS_B_1_25": [
+          "^(?!.*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent)).*\\b1\\.25\\s*(%|percent|per ?cent)"
+        ],
+        "CLASS_RATES_SWAPPED": [
+          "^(?=.*class a\\b(\\s*shares?)?\\s*[:=(-]?\\s*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent))(?=.*class b\\b(\\s*shares?)?\\s*[:=(-]?\\s*(1\\.75\\s*(%|percent|per ?cent)|\\b175\\s*(bps|basis points)|one and three[- ]quarters? per ?cent))",
+          "^(?=.*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent)[^;%()]{0,40}?\\(\\s*class a(\\s*shares?)?\\s*\\))(?=.*(1\\.75\\s*(%|percent|per ?cent)|\\b175\\s*(bps|basis points)|one and three[- ]quarters? per ?cent)[^;%()]{0,40}?\\(\\s*class b(\\s*shares?)?\\s*\\))"
+        ],
+        "S2_APPLIED_TO_BOTH_CLASSES": [
+          "^(?!.*(1\\.75|\\b175\\s*(bps|basis points)|one and three[- ]quarters?|class a)).*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent)",
+          "class a\\b(\\s*shares?)?\\s*[:=(-]?\\s*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent)",
+          "\\b(both|all|each)\\b[^;]{0,30}class(es)?\\s*[:=(-]?\\s*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent)",
+          "class(es)? a\\b(\\s*shares?)?\\s*(and|&|/|,)\\s*(class )?b\\b(\\s*shares?)?\\s*[:=(-]?\\s*(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent)",
+          "(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent)[^;]{0,30}?(\\bfor\\b|\\bto\\b|\\bacross\\b|\\bin respect of\\b|\\()\\s*(both|all) (share )?class(es)?\\b(?!\\s*[ab]\\b(?!\\s*(and|&|/|,|or)\\s*(class(es)?\\s*)?[ab]\\b))",
+          "(\\b1(\\.00?)?\\s*(%|percent|per ?cent)|\\b100\\s*(bps|basis points)|\\bone per ?cent)[^;%()]{0,40}?\\(\\s*class a(\\s*shares?)?\\s*\\)"
+        ],
+        "CLASS_A_NOT_1_75": [
+          "^(?!.*(1\\.75|\\b175\\s*(bps|basis points)|one and three[- ]quarters?)).*class a\\b"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": true,
+      "trap_type": "supersession"
+    },
+    "performance_fee": {
+      "expected": "Class A: 20% and Class B: 15% of Net New Appreciation, calculated per Series above the High Water Mark as of 31 December each year and on redemption",
+      "citation": "Section 4.2",
+      "quote": "equal to 20% of the Net New Appreciation of each Class A Share and 15% of the Net New Appreciation of each Class B Share",
+      "accept": [
+        "^(?!.*class a\\b(\\s*shares?)?\\s*[:=(]?\\s*(15|fifteen)\\b)(?!.*class b\\b(\\s*shares?)?\\s*[:=(]?\\s*(20|twenty)\\b)(?!(?=.*class a\\b(\\s*shares?)?\\s*-\\s*(15|fifteen)\\b)(?=.*class b\\b(\\s*shares?)?\\s*-\\s*(20|twenty)\\b))(?!.*\\b(15|fifteen)\\s*(%|percent|per ?cent)[^;%()]{0,40}?\\(\\s*class a(\\s*shares?)?\\s*\\))(?!.*\\b(20|twenty)\\s*(%|percent|per ?cent)[^;%()]{0,40}?\\(\\s*class b(\\s*shares?)?\\s*\\))(?=.*(\\b20(\\.0+)?\\s*(%|percent|per ?cent)|twenty per ?cent))(?=.*(\\b15(\\.0+)?\\s*(%|percent|per ?cent)|fifteen per ?cent))"
+      ],
+      "partial": [
+        "^(?!.*\\b(both|all|each)\\b[^;]{0,20}class(es)?\\b(?!\\s*[ab]\\b))(?!.*(\\b15(\\.0+)?\\s*(%|percent|per ?cent)|fifteen per ?cent)).*(\\b20(\\.0+)?\\s*(%|percent|per ?cent)|twenty per ?cent)"
+      ],
+      "reject": {
+        "CLASS_RATES_SWAPPED": [
+          "class a\\b(\\s*shares?)?\\s*[:=(]?\\s*(15|fifteen)\\b",
+          "class b\\b(\\s*shares?)?\\s*[:=(]?\\s*(20|twenty)\\b",
+          "^(?=.*class a\\b(\\s*shares?)?\\s*-\\s*(15|fifteen)\\b)(?=.*class b\\b(\\s*shares?)?\\s*-\\s*(20|twenty)\\b)",
+          "\\b(15|fifteen)\\s*(%|percent|per ?cent)[^;%()]{0,40}?\\(\\s*class a(\\s*shares?)?\\s*\\)",
+          "\\b(20|twenty)\\s*(%|percent|per ?cent)[^;%()]{0,40}?\\(\\s*class b(\\s*shares?)?\\s*\\)"
+        ],
+        "SINGLE_RATE_FOR_BOTH_CLASSES": [
+          "^(?!(?=.*(\\b20(\\.0+)?\\s*(%|percent|per ?cent)|twenty per ?cent))(?=.*(\\b15(\\.0+)?\\s*(%|percent|per ?cent)|fifteen per ?cent))).*\\b(both|all|each)\\b[^;]{0,20}class(es)?\\b(?!\\s*[ab]\\b)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "hurdle_rate": {
+      "expected": "NOT_APPLICABLE: no hurdle rate or preferred return; the Performance Fee is subject only to the High Water Mark",
+      "citation": "Section 4.2",
+      "quote": "No hurdle rate, preferred return or index-relative threshold applies.",
+      "accept": [
+        "not[_ ]found",
+        "not[_ ]applicable",
+        "\\bnone\\b",
+        "\\bn/a\\b",
+        "^\\W*no\\W*$",
+        "not (stated|specified|addressed|disclosed|provided|mentioned)",
+        "does not (contain|include|provide|specify|state|impose|have|apply|offer|address|mention)",
+        "\\bno (such )?(provision|clause|term)\\b",
+        "\\bsilent\\b",
+        "no hurdle",
+        "no preferred return",
+        "not subject to (a|any) (hurdle|preferred)",
+        "without (a|any) hurdle",
+        "does not (use|charge|include|apply) (a|any) hurdle",
+        "exclud\\w*[^.;]{0,20}hurdle",
+        "\\bno\\b[^.;,]{0,20}hurdle"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_HURDLE": [
+          "^(?!.*((?:not[_ ]found)|(?:not[_ ]applicable)|(?:\\bnone\\b)|(?:\\bn/a\\b)|(?:^\\W*no\\W*$)|(?:not (stated|specified|addressed|disclosed|provided|mentioned))|(?:does not (contain|include|provide|specify|state|impose|have|apply|offer|address|mention))|(?:\\bno (such )?(provision|clause|term)\\b)|(?:\\bsilent\\b)|(?:no hurdle)|(?:no preferred return)|(?:not subject to (a|any) (hurdle|preferred))|(?:without (a|any) hurdle)|(?:does not (use|charge|include|apply) (a|any) hurdle)|(?:exclud\\w*[^.;]{0,20}hurdle)|(?:\\bno\\b[^.;,]{0,20}hurdle))).*\\d+(\\.\\d+)?\\s*(%|percent|per ?cent)"
+        ],
+        "HWM_REPORTED_AS_HURDLE": [
+          "^(?!.*((?:not[_ ]found)|(?:not[_ ]applicable)|(?:\\bnone\\b)|(?:\\bn/a\\b)|(?:^\\W*no\\W*$)|(?:not (stated|specified|addressed|disclosed|provided|mentioned))|(?:does not (contain|include|provide|specify|state|impose|have|apply|offer|address|mention))|(?:\\bno (such )?(provision|clause|term)\\b)|(?:\\bsilent\\b)|(?:no hurdle)|(?:no preferred return)|(?:not subject to (a|any) (hurdle|preferred))|(?:without (a|any) hurdle)|(?:does not (use|charge|include|apply) (a|any) hurdle)|(?:exclud\\w*[^.;]{0,20}hurdle)|(?:\\bno\\b[^.;,]{0,20}hurdle))).*(high[- ]?water|hwm)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    },
+    "high_water_mark": {
+      "expected": "Yes: a High Water Mark applies to each Share of each Series and is never reset (perpetual), so losses are carried forward until recouped",
+      "citation": "Section 4.3",
+      "quote": "The High Water Mark is never reset.",
+      "accept": [
+        "^(?=.*(high[- ]?water|hwm|loss carry[- ]?forward|carried forward|recoup))(?=.*(\\bnever\\b[^.;]{0,40}reset|\\b(not|no|without)\\b[^.;,]{0,25}reset|n't (be )?reset|perpetual|indefinite|carried forward|until recouped|permanent|never expires|for the life|(must|required to) be recouped|recoup[a-z]* in full|however many))"
+      ],
+      "partial": [
+        "^(?!.*\\breset).*(high[- ]?water|hwm)"
+      ],
+      "reject": {
+        "RESETS": [
+          "^(?!.*(\\bnever\\b[^.;]{0,40}reset|\\b(not|no|without)\\b[^.;,]{0,25}reset|n't (be )?reset)).*\\breset"
+        ],
+        "NO_HWM": [
+          "^(?!.*(high[- ]?water|hwm|loss carry|carried forward|recoup)).*(not[_ ]applicable|not[_ ]found|\\bnone\\b|\\bno\\b)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "minimum_initial_investment": {
+      "expected": "Class A: US$1,000,000; Class B: US$10,000,000 (the Directors may accept less, but not below US$100,000)",
+      "citation": "Section 5.2",
+      "quote": "The minimum initial subscription is US$1,000,000 for Class A Shares and US$10,000,000 for Class B Shares.",
+      "accept": [
+        "^(?=.*(1,000,000|\\b1(\\.0+)?\\s*(million|mm|m)\\b|one million|\\b1000000\\b))(?=.*(10,000,000|\\b10(\\.0+)?\\s*(million|mm|m)\\b|ten million|\\b10000000\\b))"
+      ],
+      "partial": [
+        "^(?!.*(10,000,000|\\b10(\\.0+)?\\s*(million|mm|m)\\b|ten million|\\b10000000\\b)).*(1,000,000|\\b1(\\.0+)?\\s*(million|mm|m)\\b|one million|\\b1000000\\b)"
+      ],
+      "reject": {
+        "ADDITIONAL_OR_STATUTORY_MINIMUM": [
+          "^(?!.*(1,000,000|\\b1(\\.0+)?\\s*(million|mm|m)\\b|one million|\\b1000000\\b)).*(100,000|250,000|\\b(100|250)\\s*(k|thousand)\\b)"
+        ],
+        "RESIDUAL_HOLDING_THRESHOLD": [
+          "^(?!.*(1,000,000|\\b1(\\.0+)?\\s*(million|mm|m)\\b|one million|\\b1000000\\b)).*(500,000|5,000,000|\\b5(\\.0+)?\\s*(million|mm|m)\\b)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "lockup_period": {
+      "expected": "Class A: 12-month soft lock-up (redemption before the first anniversary of issue only with a 3% early redemption charge); Class B: 12-month hard lock-up (no redemption before the first anniversary of issue)",
+      "citation": "Section 6.2",
+      "quote": "Class A Shares are subject to a soft lock-up: a Class A Share may be redeemed as of a Redemption Day falling before the first anniversary of its issue only on payment of an early redemption charge of 3% of the redemption proceeds",
+      "accept": [
+        "^(?=.*(class a\\b(?:(?!class b\\b).){0,120}?(soft|early redemption (charge|fee)|redemption (charge|fee)|\\b3\\s*(%|percent|per ?cent)|three per ?cent)|(soft|early redemption (charge|fee)|redemption (charge|fee)|\\b3\\s*(%|percent|per ?cent)|three per ?cent)(?:(?!class b\\b)[^;]){0,80}?class a\\b))(?=.*(class b\\b(?:(?!class a\\b).){0,120}?(hard|no (early )?redemptions?(?!\\s*(charge|fee))|(may|can|could) not (be )?redeem|cannot (be )?redeem|not (be )?redeemable|not permitted|prohibited)|(hard|no (early )?redemptions?(?!\\s*(charge|fee))|(may|can|could) not (be )?redeem|cannot (be )?redeem|not (be )?redeemable|not permitted|prohibited)(?:(?!class a\\b)[^;]){0,80}?class b\\b))(?=.*((12|twelve)\\)?[- ]?months?|one[- ]year|1[- ]year|first anniversary|first year|\\ba year\\b))"
+      ],
+      "partial": [
+        "^(?=.*(class a\\b(?:(?!class b\\b).){0,120}?(soft|early redemption (charge|fee)|redemption (charge|fee)|\\b3\\s*(%|percent|per ?cent)|three per ?cent)|(soft|early redemption (charge|fee)|redemption (charge|fee)|\\b3\\s*(%|percent|per ?cent)|three per ?cent)(?:(?!class b\\b)[^;]){0,80}?class a\\b))(?=.*(class b\\b(?:(?!class a\\b).){0,120}?(hard|no (early )?redemptions?(?!\\s*(charge|fee))|(may|can|could) not (be )?redeem|cannot (be )?redeem|not (be )?redeemable|not permitted|prohibited)|(hard|no (early )?redemptions?(?!\\s*(charge|fee))|(may|can|could) not (be )?redeem|cannot (be )?redeem|not (be )?redeemable|not permitted|prohibited)(?:(?!class a\\b)[^;]){0,80}?class b\\b))",
+        "^(?=.*(class a\\b(?:(?!class b\\b).){0,120}?(soft|early redemption (charge|fee)|redemption (charge|fee)|\\b3\\s*(%|percent|per ?cent)|three per ?cent)|(soft|early redemption (charge|fee)|redemption (charge|fee)|\\b3\\s*(%|percent|per ?cent)|three per ?cent)(?:(?!class b\\b)[^;]){0,80}?class a\\b))(?=.*class b\\b(?:(?!class a\\b)[^;]){0,60}?(12|twelve|one[- ]year|1[- ]year|first (year|anniversary)|lock))(?!.*class b\\b(?:(?!class a\\b)[^;]){0,80}?(soft|charge|\\bfee\\b|\\b3\\s*(%|percent|per ?cent)|three per ?cent))(?!.*\\bsoft\\b(?:(?!class a\\b)[^;,()]){0,40}?class b\\b)"
+      ],
+      "reject": {
+        "CLASS_LOCKS_SWAPPED": [
+          "^(?=.*class a\\b(?:(?!class b\\b).){0,60}?hard)(?=.*class b\\b(?:(?!class a\\b).){0,60}?soft)",
+          "^(?=.*hard(?:(?!class b\\b)[^;]){0,60}?class a\\b)(?=.*soft(?:(?!class a\\b)[^;]){0,60}?class b\\b)"
+        ],
+        "NO_HARD_LOCK_FOR_CLASS_B": [
+          "^(?!.*(hard|no (early )?redemptions?(?!\\s*(charge|fee))|(may|can|could) not (be )?redeem|cannot (be )?redeem|not (be )?redeemable|not permitted|prohibited)).*(soft|early redemption (charge|fee)|redemption (charge|fee)|\\b3\\s*(%|percent|per ?cent)|three per ?cent)"
+        ],
+        "NO_SOFT_LOCK_FOR_CLASS_A": [
+          "^(?!.*(soft|early redemption|3\\s*(%|percent)|charge|\\bfee\\b)).*hard"
+        ],
+        "NO_LOCKUP": [
+          "^(?!.*(soft|hard|lock|anniversary|12|twelve|one[- ]year)).*(\\bnone\\b|not[_ ]applicable|not[_ ]found|\\bno\\b)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "class_variants"
+    },
+    "redemption_frequency": {
+      "expected": "Quarterly, as of the last Business Day of each calendar quarter",
+      "citation": "Section 6.1",
+      "quote": "a Shareholder may redeem some or all of its Shares as of the last Business Day of each calendar quarter",
+      "accept": [
+        "quarter"
+      ],
+      "partial": [],
+      "reject": {
+        "MONTHLY_SUBSCRIPTION_CONFUSED": [
+          "^(?!.*quarter).*month"
+        ],
+        "ANNUAL": [
+          "^(?!.*quarter).*(annual|yearly)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "redemption_notice_days": {
+      "expected": "60 calendar days' prior written notice before the relevant Redemption Day (set by Supplement No. 1, effective for Redemption Days on or after 31 March 2025; not changed by Supplement No. 2)",
+      "citation": "Section S-3",
+      "quote": "the minimum period of prior written notice required for a Redemption Notice is reduced from 90 calendar days to 60 calendar days before the relevant Redemption Day",
+      "accept": [
+        "^(?=.*(\\b60\\b|\\bsixty\\b))(?=.*day)",
+        "^\\s*60\\s*$"
+      ],
+      "partial": [],
+      "reject": {
+        "STALE_BODY_90_DAYS": [
+          "^(?!.*(\\b60\\b|\\bsixty\\b)).*(\\b90\\b|\\bninety\\b)"
+        ],
+        "OTHER_PERIOD_CONFUSED": [
+          "^(?!.*(\\b60\\b|\\bsixty\\b)).*(\\b30\\b|\\bthirty\\b|\\b10\\b|\\bten\\b|\\b180\\b|\\bfive\\b|\\b5\\b)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": true,
+      "trap_type": "supersession"
+    },
+    "gate_provision": {
+      "expected": "NOT_APPLICABLE: the Fund imposes no gate (no limit on aggregate redemptions at the Fund or Shareholder level)",
+      "citation": "Section 6.4",
+      "quote": "The Fund does not impose any limit on the aggregate amount of redemptions that may be made as of any Redemption Day",
+      "accept": [
+        "not[_ ]found",
+        "not[_ ]applicable",
+        "\\bnone\\b",
+        "\\bn/a\\b",
+        "^\\W*no\\W*$",
+        "not (stated|specified|addressed|disclosed|provided|mentioned)",
+        "does not (contain|include|provide|specify|state|impose|have|apply|offer|address|mention)",
+        "\\bno (such )?(provision|clause|term)\\b",
+        "\\bsilent\\b",
+        "\\bno gate",
+        "imposes no",
+        "no (fund[- ]level |investor[- ]level |shareholder[- ]level )?(limit|restriction|cap)\\b",
+        "not (subject to|impose) (a|any) (gate|limit)",
+        "without (a|any) (gate|limit)",
+        "\\bno\\b[^.;%]{0,40}\\bgat(e|es|ing)\\b",
+        "\\bnot gated\\b",
+        "does not gate"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_GATE": [
+          "^(?!.*((?:not[_ ]found)|(?:not[_ ]applicable)|(?:\\bnone\\b)|(?:\\bn/a\\b)|(?:^\\W*no\\W*$)|(?:not (stated|specified|addressed|disclosed|provided|mentioned))|(?:does not (contain|include|provide|specify|state|impose|have|apply|offer|address|mention))|(?:\\bno (such )?(provision|clause|term)\\b)|(?:\\bsilent\\b)|(?:\\bno gate)|(?:imposes no)|(?:no (fund[- ]level |investor[- ]level |shareholder[- ]level )?(limit|restriction|cap)\\b)|(?:not (subject to|impose) (a|any) (gate|limit))|(?:without (a|any) (gate|limit))|(?:\\bno\\b[^.;%]{0,40}\\bgat(e|es|ing)\\b)|(?:\\bnot gated\\b)|(?:does not gate))).*\\d+(\\.\\d+)?\\s*(%|percent|per ?cent)"
+        ],
+        "SUSPENSION_OR_HOLDBACK_AS_GATE": [
+          "^(?!.*((?:not[_ ]found)|(?:not[_ ]applicable)|(?:\\bnone\\b)|(?:\\bn/a\\b)|(?:^\\W*no\\W*$)|(?:not (stated|specified|addressed|disclosed|provided|mentioned))|(?:does not (contain|include|provide|specify|state|impose|have|apply|offer|address|mention))|(?:\\bno (such )?(provision|clause|term)\\b)|(?:\\bsilent\\b)|(?:\\bno gate)|(?:imposes no)|(?:no (fund[- ]level |investor[- ]level |shareholder[- ]level )?(limit|restriction|cap)\\b)|(?:not (subject to|impose) (a|any) (gate|limit))|(?:without (a|any) (gate|limit))|(?:\\bno\\b[^.;%]{0,40}\\bgat(e|es|ing)\\b)|(?:\\bnot gated\\b)|(?:does not gate))).*(suspen|hold ?back)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    },
+    "key_man_provision": {
+      "expected": "NOT_FOUND: the document contains no key person provision; dependence on Mr. Rennard is disclosed as a risk factor only",
+      "citation": "Section 10.2",
+      "quote": "The Fund's performance depends to a significant degree on the skills of a small number of individuals, in particular Mr. Rennard.",
+      "accept": [
+        "not[_ ]found",
+        "not[_ ]applicable",
+        "\\bnone\\b",
+        "\\bn/a\\b",
+        "^\\W*no\\W*$",
+        "^(?!(?=.*\\b(rennard|arkwright|oduya|halvorsen|tresillian|aldersey|latchmere|investment committee|chief investment officer|\\bcio|managing partner)\\b)(?!.*(risk factor|no key|not a key|not[_ ]found|not[_ ]applicable|\\bnone\\b|\\bn/a\\b|^\\W*(no|not (stated|specified|addressed|disclosed|provided|mentioned))\\b|(does not|doesn't|do not) (contain|include|provide|have|impose|set out|establish|specify|name|designate|identify)\\W+(a |any )?(key|provision|clause)|(contains|has|includes|sets out|provides) no (key|provision|clause|such)|there (is|are) no (key|provision|clause|such)|without (a|any) key|\\babsent\\b|\\blacks?\\b|silent (on|as to|regarding|about) (a |any )?(key|provision|clause)|key[- ]?(man|person)s?( provision| clause| event)?\\W{0,3}(not|none|no|n/a)\\b))).*(not (stated|specified|addressed|disclosed|provided|mentioned)|does not (contain|include|provide|specify|state|impose|have|apply|offer|address|mention)|\\bno (such )?(provision|clause|term)\\b|\\bsilent\\b)",
+        "no key[- ]?(man|person|principal)",
+        "not (a|any) key[- ]?(man|person)",
+        "^\\W*absent\\b|\\b(is|are) absent from\\b|(provision|clause|term)s?\\W{0,3}(is |are )?absent\\b",
+        "lacks? (a|any) key",
+        "\\bno\\b[^.;]{0,20}key[- ]?(man|person)"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_KEY_PERSON": [
+          "^(?!.*((?:not[_ ]found)|(?:not[_ ]applicable)|(?:\\bnone\\b)|(?:\\bn/a\\b)|(?:^\\W*no\\W*$)|(?:^(?!(?=.*\\b(rennard|arkwright|oduya|halvorsen|tresillian|aldersey|latchmere|investment committee|chief investment officer|\\bcio|managing partner)\\b)(?!.*(risk factor|no key|not a key|not[_ ]found|not[_ ]applicable|\\bnone\\b|\\bn/a\\b|^\\W*(no|not (stated|specified|addressed|disclosed|provided|mentioned))\\b|(does not|doesn't|do not) (contain|include|provide|have|impose|set out|establish|specify|name|designate|identify)\\W+(a |any )?(key|provision|clause)|(contains|has|includes|sets out|provides) no (key|provision|clause|such)|there (is|are) no (key|provision|clause|such)|without (a|any) key|\\babsent\\b|\\blacks?\\b|silent (on|as to|regarding|about) (a |any )?(key|provision|clause)|key[- ]?(man|person)s?( provision| clause| event)?\\W{0,3}(not|none|no|n/a)\\b))).*(not (stated|specified|addressed|disclosed|provided|mentioned)|does not (contain|include|provide|specify|state|impose|have|apply|offer|address|mention)|\\bno (such )?(provision|clause|term)\\b|\\bsilent\\b))|(?:no key[- ]?(man|person|principal))|(?:not (a|any) key[- ]?(man|person))|(?:^\\W*absent\\b|\\b(is|are) absent from\\b|(provision|clause|term)s?\\W{0,3}(is |are )?absent\\b)|(?:lacks? (a|any) key)|(?:\\bno\\b[^.;]{0,20}key[- ]?(man|person))|(?:risk factor only))).*(rennard|arkwright|oduya|halvorsen|tresillian|aldersey|latchmere|investment committee|chief investment officer|key[- ]?(man|person) event|trigger)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    },
+    "gp_commitment": {
+      "expected": "NOT_FOUND: no required Investment Manager or sponsor commitment; the disclosed Class B holding of the principals (about US$6.4 million) is voluntary and not a commitment",
+      "citation": "Section 9.2",
+      "quote": "The Investment Manager and its principals and employees may, but are not required to, invest in the Fund.",
+      "accept": [
+        "not[_ ]found",
+        "not[_ ]applicable",
+        "\\bnone\\b",
+        "\\bn/a\\b",
+        "^\\W*no\\W*$",
+        "^(?!\\W*(approximately |about |approx\\.? )?(us\\s?\\$|usd|\\$)\\s*\\d).*not (stated|specified|addressed|disclosed|provided|mentioned)",
+        "^(?!\\W*(approximately |about |approx\\.? )?(us\\s?\\$|usd|\\$)\\s*\\d).*does not (contain|include|provide|specify|state|impose|have|apply|offer|address|mention)",
+        "^(?!\\W*(approximately |about |approx\\.? )?(us\\s?\\$|usd|\\$)\\s*\\d).*\\bno (such )?(provision|clause|term)\\b",
+        "^(?!\\W*(approximately |about |approx\\.? )?(us\\s?\\$|usd|\\$)\\s*\\d).*\\bsilent\\b",
+        "no (required |mandatory |minimum |stated )?(gp |manager |sponsor |investment manager |general partner )?commitment",
+        "not (required|obliged|obligated)",
+        "no obligation",
+        "not a commitment",
+        "\\bno\\b[^.;]{0,30}commitment",
+        "does not require",
+        "no requirement",
+        "^(?!\\W*(approximately |about |approx\\.? )?(us\\s?\\$|usd|\\$)\\s*\\d).*\\bvoluntar"
+      ],
+      "partial": [],
+      "reject": {
+        "HOLDING_REPORTED_AS_COMMITMENT": [
+          "^(?!.*((?:not[_ ]found)|(?:not[_ ]applicable)|(?:\\bnone\\b)|(?:\\bn/a\\b)|(?:^\\W*no\\W*$)|(?:^(?!\\W*(approximately |about |approx\\.? )?(us\\s?\\$|usd|\\$)\\s*\\d).*not (stated|specified|addressed|disclosed|provided|mentioned))|(?:^(?!\\W*(approximately |about |approx\\.? )?(us\\s?\\$|usd|\\$)\\s*\\d).*does not (contain|include|provide|specify|state|impose|have|apply|offer|address|mention))|(?:^(?!\\W*(approximately |about |approx\\.? )?(us\\s?\\$|usd|\\$)\\s*\\d).*\\bno (such )?(provision|clause|term)\\b)|(?:^(?!\\W*(approximately |about |approx\\.? )?(us\\s?\\$|usd|\\$)\\s*\\d).*\\bsilent\\b)|(?:no (required |mandatory |minimum |stated )?(gp |manager |sponsor |investment manager |general partner )?commitment)|(?:not (required|obliged|obligated))|(?:no obligation)|(?:not a commitment)|(?:\\bno\\b[^.;]{0,30}commitment)|(?:does not require)|(?:no requirement)|(?:^(?!\\W*(approximately |about |approx\\.? )?(us\\s?\\$|usd|\\$)\\s*\\d).*\\bvoluntar))).*(6\\.4|\\$\\s*6|holding|holds|held)"
+        ],
+        "MANAGEMENT_SHARES_AS_COMMITMENT": [
+          "^(?!.*((?:not[_ ]found)|(?:not[_ ]applicable)|(?:\\bnone\\b)|(?:\\bn/a\\b)|(?:^\\W*no\\W*$)|(?:^(?!\\W*(approximately |about |approx\\.? )?(us\\s?\\$|usd|\\$)\\s*\\d).*not (stated|specified|addressed|disclosed|provided|mentioned))|(?:^(?!\\W*(approximately |about |approx\\.? )?(us\\s?\\$|usd|\\$)\\s*\\d).*does not (contain|include|provide|specify|state|impose|have|apply|offer|address|mention))|(?:^(?!\\W*(approximately |about |approx\\.? )?(us\\s?\\$|usd|\\$)\\s*\\d).*\\bno (such )?(provision|clause|term)\\b)|(?:^(?!\\W*(approximately |about |approx\\.? )?(us\\s?\\$|usd|\\$)\\s*\\d).*\\bsilent\\b)|(?:no (required |mandatory |minimum |stated )?(gp |manager |sponsor |investment manager |general partner )?commitment)|(?:not (required|obliged|obligated))|(?:no obligation)|(?:not a commitment)|(?:\\bno\\b[^.;]{0,30}commitment)|(?:does not require)|(?:no requirement)|(?:^(?!\\W*(approximately |about |approx\\.? )?(us\\s?\\$|usd|\\$)\\s*\\d).*\\bvoluntar))).*(management shares|\\$\\s*100\\b)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    },
+    "fund_term": {
+      "expected": "Perpetual: incorporated for an unlimited duration with no fixed termination date (continues until wound up)",
+      "citation": "Section 2.1",
+      "quote": "The Fund has been incorporated for an unlimited duration and has no fixed termination date",
+      "accept": [
+        "perpetual|unlimited|indefinite|evergreen|until wound up|open[- ]ended",
+        "no (fixed |stated |set )?(term|duration|termination|end date|maturity)"
+      ],
+      "partial": [
+        "not[_ ]applicable"
+      ],
+      "reject": {
+        "MISSED_STATED_TERM": [
+          "^(?!.*(perpetual|unlimited|indefinite|no fixed|evergreen|until wound up)).*not[_ ]found"
+        ],
+        "HALLUCINATED_FIXED_TERM": [
+          "^(?!.*(perpetual|unlimited|indefinite|no fixed|evergreen|until wound up)).*\\b\\d+[- ]?(years?|yrs?)\\b"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "auditor": {
+      "expected": "Kellaway Brandt (Cayman)",
+      "citation": "Section 7.5",
+      "quote": "Kellaway Brandt (Cayman), chartered accountants (the \"Auditor\"), has been appointed as independent auditor of the Fund",
+      "accept": [
+        "kellaway\\s*brandt"
+      ],
+      "partial": [],
+      "reject": {
+        "OTHER_PROVIDER_AS_AUDITOR": [
+          "^(?!.*kellaway).*(marrowgate|cordell bay|carrow pendle|linacre stowe)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "administrator": {
+      "expected": "Marrowgate Fund Services (Cayman) Ltd.",
+      "citation": "Section 7.3",
+      "quote": "Marrowgate Fund Services (Cayman) Ltd. (the \"Administrator\"), licensed under the Mutual Funds Act",
+      "accept": [
+        "marrowgate"
+      ],
+      "partial": [],
+      "reject": {
+        "REGISTERED_OFFICE_OR_OTHER_PROVIDER": [
+          "^(?!.*marrowgate).*(cordell bay|kellaway|wexcombe)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "prime_broker": {
+      "expected": "Wexcombe Securities LLC (Cinderford Quay Futures LLC is separately the clearing broker and futures commission merchant)",
+      "citation": "Section 7.4",
+      "quote": "Wexcombe Securities LLC (the \"Prime Broker\") is the prime broker of the Fund.",
+      "accept": [
+        "wexcombe"
+      ],
+      "partial": [],
+      "reject": {
+        "CLEARING_BROKER_ONLY": [
+          "^(?!.*wexcombe).*cinderford"
+        ],
+        "MISSED_NAMED_PRIME_BROKER": [
+          "^(?!.*wexcombe).*(not[_ ]found|not[_ ]applicable|\\bnone\\b)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "legal_counsel": {
+      "expected": "Carrow Pendle (Cayman Islands counsel to the Fund) and Linacre Stowe LLP (United States counsel to the Fund and counsel to the Investment Manager)",
+      "citation": "Section 7.6",
+      "quote": "Carrow Pendle acts as Cayman Islands legal counsel to the Fund. Linacre Stowe LLP acts as United States legal counsel to the Fund",
+      "accept": [
+        "^(?=.*carrow\\s*pendle)(?=.*linacre\\s*stowe)"
+      ],
+      "partial": [
+        "^(?!.*linacre).*carrow\\s*pendle",
+        "^(?!.*carrow).*linacre\\s*stowe"
+      ],
+      "reject": {},
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "mfn_election": {
+      "expected": "NOT_APPLICABLE: no MFN election is offered; no Shareholder is entitled to receive, or to elect to receive, the benefit of side letter terms granted to another Shareholder",
+      "citation": "Section 9.3",
+      "quote": "no Shareholder will be entitled to receive, or to elect to receive, the benefit of the terms of any side letter granted to another Shareholder",
+      "accept": [
+        "not[_ ]found",
+        "not[_ ]applicable",
+        "\\bnone\\b",
+        "\\bn/a\\b",
+        "^\\W*no\\W*$",
+        "not (stated|specified|addressed|disclosed|provided|mentioned)",
+        "does not (contain|include|provide|specify|state|impose|have|apply|offer|address|mention)",
+        "\\bno (such )?(provision|clause|term)\\b",
+        "\\bsilent\\b",
+        "no mfn",
+        "no most[- ]favou?red",
+        "not (offered|entitled|available|provided|granted)",
+        "no (right|election|entitlement)",
+        "(will )?not be (entitled|able)",
+        "\\bno (shareholder|investor|holder)s?\\b[^.;]{0,30}(entitled|may|permitted|able|right)",
+        "(cannot|can not|may not|not be able to) elect",
+        "\\bno\\b (\\w+ ){0,3}(mfn|most[- ]favou?red)",
+        "exclud\\w*[^.;]{0,20}(mfn|most[- ]favou?red)"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_MFN": [
+          "^(?!.*((?:not[_ ]found)|(?:not[_ ]applicable)|(?:\\bnone\\b)|(?:\\bn/a\\b)|(?:^\\W*no\\W*$)|(?:not (stated|specified|addressed|disclosed|provided|mentioned))|(?:does not (contain|include|provide|specify|state|impose|have|apply|offer|address|mention))|(?:\\bno (such )?(provision|clause|term)\\b)|(?:\\bsilent\\b)|(?:no mfn)|(?:no most[- ]favou?red)|(?:not (offered|entitled|available|provided|granted))|(?:no (right|election|entitlement))|(?:(will )?not be (entitled|able))|(?:\\bno (shareholder|investor|holder)s?\\b[^.;]{0,30}(entitled|may|permitted|able|right))|(?:(cannot|can not|may not|not be able to) elect)|(?:\\bno\\b (\\w+ ){0,3}(mfn|most[- ]favou?red))|(?:exclud\\w*[^.;]{0,20}(mfn|most[- ]favou?red))|(?:does not)|(?:will not))).*(mfn|most[- ]favou?red|elect)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    }
+  }
+}

@@ -1,0 +1,126 @@
+*   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from a provided fund offering document.
+    *   Constraint 1: Accuracy is paramount. No invented terms.
+    *   Constraint 2: Use `NOT_FOUND` if not stated.
+    *   Constraint 3: Use `NOT_APPLICABLE` if stated as not applicable.
+    *   Constraint 4: Amendments/supplements supersede original text.
+    *   Constraint 5: Report all variants (share class, tier, period) in one string.
+    *   Constraint 6: Distinguish commitment vs. holding.
+    *   Constraint 7: Citations must be section/appendix identifiers.
+    *   Constraint 8: Quotes must be verbatim.
+    *   Output Format: JSON only, no markdown, no preamble.
+
+    *   `fund_name`: "CALDER & WYETH PRIVATE CREDIT FUND III, L.P." (Section 1.1)
+    *   `fund_domicile`: "Delaware" (Section 1.1)
+    *   `fund_structure`: "closed-end, drawdown private investment fund" (Section 1.1). Not a master-feeder.
+    *   `management_fee`:
+        *   During Investment Period: 1.50% of aggregate capital commitment (Section 5.1).
+        *   After Investment Period: 1.50% of invested capital in unrealized portfolio investments (Section 5.1).
+        *   Tiered discounts: <$50M (1.50%), $50M-$99.9M (1.35%), $\ge$100M (1.25%) (Section 5.2).
+        *   Special discount: 10 basis point reduction for investors in Fund II (Section 5.2).
+    *   `performance_fee`: "20% of profits" (Section 6.2).
+    *   `hurdle_rate`: "preferred return of 7% per annum, compounded annually" (Section 6.1).
+    *   `high_water_mark`: "There is no high water mark." (Section 6.2).
+    *   `minimum_initial_investment`: "$10,000,000" (Section 2.2).
+    *   `lockup_period`: "The Fund does not offer redemption or withdrawal rights of any kind. There is no lock-up period as that term is used in open-end funds, because there is no mechanism by which a Limited Partner may redeem." (Section 4.4).
+    *   `redemption_frequency`: "no redemption frequency" (Section 4.4).
+    *   `redemption_notice_days`: "no redemption notice period" (Section 4.4).
+    *   `gate_provision`: "no gate provision" (Section 4.4).
+    *   `key_man_provision`: "Key Person Event" (Section 7.2). Trigger: "both Rosalind Adeyemi-Clarke and Theodore Vance Kirkpatrick, or any three (3) of the four (4) members of the investment committee, cease to devote substantially all of their business time to the affairs of the Sponsor and the Fund during the Investment Period." Trigger effect: "Investment Period is automatically suspended." (Section 7.2).
+    *   `gp_commitment`: "not less than 2.0% of aggregate commitments, subject to a minimum of $20,000,000 and a maximum of $30,000,000" (Section 7.3).
+    *   `fund_term`: "Initial Term" is "eighth (8th) anniversary of the final closing date", with up to "two (2) consecutive one-year periods" extensions, for a "maximum term of the Fund is ten (10) years from the final closing date, subject to a further extension solely for the purpose of winding up, which shall not exceed twelve (12) months." (Section 4.2).
+    *   `auditor`: "Halloran Meade & Co. LLP" (Section 9.2).
+    *   `administrator`: "Pemberton Vaux Fund Administration LLC" (Section 9.1).
+    *   `prime_broker`: "The Fund has not appointed a prime broker." (Section 9.5).
+    *   `legal_counsel`: "Ashford Petrakis & Lowe LLP" (Section 9.4).
+    *   `mfn_election`: "The Fund provides a most favored nation ("MFN") election." (Section 10.3). Scope: "Economic terms (Management Fee and Carried Interest reductions), Advisory Committee seats, and capacity or co-investment priority rights are excluded from the MFN election at all commitment levels." (Section 10.3).
+
+    *   `fund_name`: "CALDER & WYETH PRIVATE CREDIT FUND III, L.P." (Section 1.1)
+    *   `fund_domicile`: "Delaware" (Section 1.1)
+    *   `fund_structure`: "closed-end, drawdown private investment fund" (Section 1.1)
+    *   `management_fee`: "During the Investment Period, 1.50% of aggregate capital commitment; Following expiration or termination of the Investment Period, 1.50% of invested capital in unrealized portfolio investments; Tiered discounts: Less than $50,000,000 (1.50%), $50,000,000 to $99,999,999 (1.35%), $100,000,000 or greater (1.25%); Investors in Fund II receive an additional 10 basis point reduction." (Section 5.1, 5.2)
+    *   `performance_fee`: "20% of profits" (Section 6.2)
+    *   `hurdle_rate`: "preferred return of 7% per annum, compounded annually" (Section 6.1)
+    *   `high_water_mark`: "NOT_APPLICABLE" (Section 6.2)
+    *   `minimum_initial_investment`: "$10,000,000" (Section 2.2)
+    *   `lockup_period`: "NOT_APPLICABLE" (Section 4.4)
+    *   `redemption_frequency`: "NOT_APPLICABLE" (Section 4.4)
+    *   `redemption_notice_days`: "NOT_APPLICABLE" (Section 4.4)
+    *   `gate_provision`: "NOT_APPLICABLE" (Section 4.4)
+    *   `key_man_provision`: "Key Person Event: both Rosalind Adeyemi-Clarke and Theodore Vance Kirkpatrick, or any three (3) of the four (4) members of the investment committee, cease to devote substantially all of their business time to the affairs of the Sponsor and the Fund during the Investment Period; triggers automatic suspension of the Investment Period." (Section 7.2)
+    *   `gp_commitment`: "not less than 2.0% of aggregate commitments, subject to a minimum of $20,000,000 and a maximum of $30,000,000" (Section 7.3)
+    *   `fund_term`: "Initial Term: eighth (8th) anniversary of the final closing date; maximum term of the Fund is ten (10) years from the final closing date, subject to a further extension solely for the purpose of winding up, which shall not exceed twelve (12) months." (Section 4.2)
+    *   `auditor`: "Halloran Meade & Co. LLP" (Section 9.2)
+    *   `administrator`: "Pemberton Vaux Fund Administration LLC" (Section 9.1)
+    *   `prime_broker`: "NOT_APPLICABLE" (Section 9.5)
+    *   `legal_counsel`: "Ashford Petrakis & Lowe LLP" (Section 9.4)
+    *   `mfn_election`: "The Fund provides a most favored nation (\"MFN\") election. Economic terms (Management Fee and Carried Interest reductions), Advisory Committee seats, and capacity or co-investment priority rights are excluded from the MFN election at all commitment levels." (Section 10.3)
+
+    *   *Refining `management_fee`*: Need to include all variants.
+        *   "During the Investment Period, the Management Fee is charged at an annual rate of 1.50% of each Limited Partner's aggregate capital commitment, whether or not drawn. Following expiration or termination of the Investment Period, the Management Fee is charged at an annual rate of 1.50% of each Limited Partner's invested capital in unrealized portfolio investments... [with tiered discounts] Less than $50,000,000 (1.50%), $50,000,000 to $99,999,999 (1.35%), $100,000,000 or greater (1.25%). An investor that committed to Calder & Wyeth Private Credit Fund II, L.P. receives an additional 10 basis point reduction."
+    *   *Refining `high_water_mark`*: The text says "There is no high water mark." This means the term "high water mark" does not apply.
+    *   *Refining `lockup_period`*: The text says "There is no lock-up period as that term is used in open-end funds, because there is no mechanism by which a Limited Partner may redeem." This means the term does not apply.
+    *   *Refining `redemption_frequency`*: "no redemption frequency" (Section 4.4).
+    *   *Refining `redemption_notice_days`*: "no redemption notice period" (Section 4.4).
+    *   *Refining `gate_provision`*: "no gate provision" (Section 4.4).
+    *   *Refining `prime_broker`*: "The Fund has not appointed a prime broker." (Section 9.5).
+
+    *   `fund_name`: "CALDER & WYETH PRIVATE CREDIT FUND III, L.P." (Section 1.1)
+    *   `fund_domicile`: "Delaware" (Section 1.1)
+    *   `fund_structure`: "closed-end, drawdown private investment fund" (Section 1.1)
+    *   `management_fee`: "During the Investment Period, 1.50% of aggregate capital commitment; Following expiration or termination of the Investment Period, 1.50% of invested capital in unrealized portfolio investments; Tiered discounts: Less than $50,000,000 (1.50%), $50,000,000 to $99,999,999 (1.35%), $100,000,000 or greater (1.25%); Investor in Fund II gets 10 basis point reduction." (Section 5.1, 5.2)
+    *   `performance_fee`: "20% of profits" (Section 6.2)
+    *   `hurdle_rate`: "preferred return of 7% per annum, compounded annually" (Section 6.1)
+    *   `high_water_mark`: "NOT_APPLICABLE" (Section 6.2)
+    *   `minimum_initial_investment`: "$10,000,000" (Section 2.2)
+    *   `lockup_period`: "NOT_APPLICABLE" (Section 4.4)
+    *   `redemption_frequency`: "NOT_APPLICABLE" (Section 4.4)
+    *   `redemption_notice_days`: "NOT_APPLICABLE" (Section 4.4)
+    *   `gate_provision`: "NOT_APPLICABLE" (Section 4.4)
+    *   `key_man_provision`: "Key Person Event: both Rosalind Adeyemi-Clarke and Theodore Vance Kirkpatrick, or any three (3) of the four (4) members of the investment committee, cease to devote substantially all of their business time to the affairs of the Sponsor and the Fund during the Investment Period; triggers automatic suspension of the Investment Period." (Section 7.2)
+    *   `gp_commitment`: "not less than 2.0% of aggregate commitments, subject to a minimum of $20,000,000 and a maximum of $30,000,000" (Section 7.3)
+    *   `fund_term`: "Initial Term: eighth (8th) anniversary of the final closing date; maximum term of the Fund is ten (10) years from the final closing date, subject to a further extension solely for the purpose of winding up, which shall not exceed twelve (12) months." (Section 4.2)
+    *   `auditor`: "Halloran Meade & Co. LLP" (Section 9.2)
+    *   `administrator`: "Pemberton Vaux Fund Administration LLC" (Section 9.1)
+    *   `prime_broker`: "NOT_APPLICABLE" (Section 9.5)
+    *   `legal_counsel`: "Ashford Petrakis & Lowe LLP" (Section 9.4)
+    *   `mfn_election`: "The Fund provides a most favored nation (\"MFN\") election. Economic terms (Management Fee and Carried Interest reductions), Advisory Committee seats, and capacity or co-investment priority rights are excluded from the MFN election at all commitment levels." (Section 10.3)
+
+    *   *Self-Correction on `management_fee`*: The prompt asks for "Annual management fee rate AND the basis it is charged on. Give every class or tier."
+        *   Value: "During the Investment Period, 1.50% of aggregate capital commitment; Following expiration or termination of the Investment Period, 1.50% of invested capital in unrealized portfolio investments; Tiered discounts: Less than $50,000,000 (1.50%), $50,000,000 to $99,999,999 (1.35%), $100,000,000 or greater (1.25%); Investor in Fund II gets 10 basis point reduction."
+        *   Citation: "Section 5.1, Section 5.2"
+        *   Quote: "During the Investment Period, the Management Fee is charged at an annual rate of 1.50% of each Limited Partner's aggregate capital commitment, whether or not drawn. Following expiration or termination of the Investment Period, the Management Fee is charged at an annual rate of 1.50% of each Limited Partner's invested capital in unrealized portfolio investments, determined at cost and reduced as investments are realized or written off. ... The Management Fee rate is reduced for larger commitments on the following schedule, applied to the entire commitment on a \"cliff\" basis rather than marginally: Less than $50,000,000 (1.50%), $50,000,000 to $99,999,999 (1.35%), $100,000,000 or greater (1.25%). An investor that committed to Calder & Wyeth Private Credit Fund II, L.P. receives an additional 10 basis point reduction from the rate that would otherwise apply."
+
+    *   *Self-Correction on `high_water_mark`*: "There is no high water mark."
+        *   Value: "NOT_APPLICABLE"
+        *   Citation: "Section 6.2"
+        *   Quote: "There is no high water mark."
+
+    *   *Self-Correction on `lockup_period`*: "There is no lock-up period as that term is used in open-end funds, because there is no mechanism by which a Limited Partner may redeem."
+        *   Value: "NOT_APPLICABLE"
+        *   Citation: "Section 4.4"
+        *   Quote: "There is no lock-up period as that term is used in open-end funds, because there is no mechanism by which a Limited Partner may redeem."
+
+    *   *Self-Correction on `redemption_frequency`*: "no redemption frequency"
+        *   Value: "NOT_APPLICABLE"
+        *   Citation: "Section 4.4"
+        *   Quote: "There is no redemption notice period, no redemption frequency, and no gate provision, because no redemptions are permitted."
+
+    *   *Self-Correction on `redemption_notice_days`*: "no redemption notice period"
+        *   Value: "NOT_APPLICABLE"
+        *   Citation: "Section 4.4"
+        *   Quote: "There is no redemption notice period, no redemption frequency, and no gate provision, because no redemptions are permitted."
+
+    *   *Self-Correction on `gate_provision`*: "no gate provision"
+        *   Value: "NOT_APPLICABLE"
+        *   Citation: "Section 4.4"
+        *   Quote: "There is no redemption notice period, no redemption frequency, and no gate provision, because no redemptions are permitted."
+
+    *   *Self-Correction on `prime_broker`*: "The Fund has not appointed a prime broker."
+        *   Value: "NOT_APPLICABLE"
+        *   Citation: "Section 9.5"
+        *   Quote: "The Fund has not appointed a prime broker."
+
+    *   *Self-Correction on `mfn_election`*:
+        *   Value: "The Fund provides a most favored nation (\"MFN\") election. Economic terms (Management Fee and Carried Interest reductions), Advisory Committee seats, and capacity or co-investment priority rights are excluded from the MFN election at all commitment levels."
+        *   Citation: "Section

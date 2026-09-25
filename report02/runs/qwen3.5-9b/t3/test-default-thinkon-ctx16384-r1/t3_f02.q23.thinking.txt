@@ -1,0 +1,44 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Who sits on the Best Execution Committee and how often does it meet?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "Best Execution Committee", "members", "sits", "meet", "frequency".
+
+4.  **Evaluate Document Content:**
+
+    *   `01_brochure.md` (March 27, 2026):
+        *   Section: Item 12. Brokerage Practices > 12.1 Selection of Executing Brokers. Mentions "Adviser's Best Execution Committee reviews" but doesn't list members or frequency.
+        *   Section: Item 13. Review of Accounts. No mention of Best Execution Committee composition/frequency.
+
+    *   `02_compliance_manual.md` (January 15, 2026):
+        *   Section: SECTION 10. BEST EXECUTION > 10.2 Best Execution Committee.
+        *   Text: "The Best Execution Committee consists of the President and Chief Operating Officer (chair), the Head of Trading, the Chief Financial Officer and the CCO. The Committee meets quarterly..."
+        *   This document contains both pieces of information requested (members and frequency).
+
+    *   `03_valuation_policy.md` (November 3, 2025):
+        *   Section: SECTION 2. VALUATION COMMITTEE > 2.1 Composition / 2.3 Meetings.
+        *   This is about the *Valuation Committee*, not the *Best Execution Committee*. Do not use this for Best Execution Committee info.
+
+5.  **Determine Validity and Superseding:**
+    *   `02_compliance_manual.md` is dated January 15, 2026.
+    *   `01_brochure.md` is dated March 27, 2026.
+    *   Rule 3: "Later-dated documents supersede earlier ones."
+    *   However, the question asks about the Best Execution Committee. The Brochure (`01_brochure.md`) mentions the committee exists but doesn't detail composition/frequency in the provided snippets (Item 12.1). The Compliance Manual (`02_compliance_manual.md`) details it.
+    *   Is there a conflict? The Brochure is later dated (March vs January). Usually, brochures are static snapshots, while compliance manuals are operational policies. However, Rule 3 says "Later-dated documents supersede earlier ones."
+    *   Does the Brochure contradict the Compliance Manual regarding the Best Execution Committee?
+        *   Brochure Item 12.1: "The Adviser seeks best execution... In 20

@@ -1,0 +1,101 @@
+{
+  "sheet_id": "t6_f11",
+  "notes": "Negative Q2 net return ahead of the index, a fee cut on the first tier, and an internal note about an unannounced co-manager resignation.",
+  "required_facts": [
+    {
+      "fid": "net_return",
+      "kind": "number",
+      "desc": "Q2 2026 net return -1.9%",
+      "accept": [
+        "(?:(?:-|\\u2212|\\u2013|\\u2014)\\s*\\(?\\s*(?<![\\d.,])1\\.90?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\b(?:negative|minus|down|lower by|lost|losing|loss|losses|declined|declining|declines|decline|decreased|decreasing|decrease|fell|falling|falls|fall|fallen|dropped|dropping|drops|drop|slipped|slipping|slid|sliding|retreated|retreating|gave back|giving back|gave up|giving up|shed|shedding|dipped|dipping|eased|easing|off)\\b(?:,?\\s+[a-z]+){0,3}?,?\\s*\\(?\\s*(?<![\\d.,])1\\.90?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\(\\s*(?<![\\d.,])1\\.90?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)\\s*\\)|(?<![\\d.,])1\\.90?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?:\\s+[a-z]+){0,3}?\\s+(?:declines?|loss(?:es)?|drops?|decrease|fall|lower|negative|below|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "benchmark",
+      "kind": "number",
+      "desc": "Comparison index (developed markets ex-US equity index, net dividends) Q2 2026 return -3.2%",
+      "accept": [
+        "(?:(?:-|\\u2212|\\u2013|\\u2014)\\s*\\(?\\s*(?<![\\d.,])3\\.20?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\b(?:negative|minus|down|lower by|lost|losing|loss|losses|declined|declining|declines|decline|decreased|decreasing|decrease|fell|falling|falls|fall|fallen|dropped|dropping|drops|drop|slipped|slipping|slid|sliding|retreated|retreating|gave back|giving back|gave up|giving up|shed|shedding|dipped|dipping|eased|easing|off)\\b(?:,?\\s+[a-z]+){0,3}?,?\\s*\\(?\\s*(?<![\\d.,])3\\.20?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|\\(\\s*(?<![\\d.,])3\\.20?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)\\s*\\)|(?<![\\d.,])3\\.20?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?:\\s+[a-z]+){0,3}?\\s+(?:declines?|loss(?:es)?|drops?|decrease|fall|lower|negative|below|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "ytd",
+      "kind": "number",
+      "desc": "Year-to-date net return 4.6%",
+      "accept": [
+        "(?<![^\\w]-)(?<!^-)(?<![(\\[]- )(?<![(\\[] - )(?<!^- )(?<!: - )(?<!\\u2212)(?<!\\u2013)(?<!\\u2014)(?<!negative )(?<!minus )(?<!down )(?<!lost )(?<!fell )(?<!declined )(?<!loss of )(?<!decline of )(?<!falling )(?<!losing )(?<!dropped )(?<!dipped )(?<!slipped )(?<!slid )(?<![\\d.,])4\\.60?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)(?!\\s+(?:declines?|loss(?:es)?|drops?|decrease|negative|dip|drawdown)\\b)"
+      ]
+    },
+    {
+      "fid": "point_1",
+      "kind": "concept",
+      "desc": "Financials cut to 14.5% of the portfolio (from 19.0%) after halving the two Nordic bank positions",
+      "accept": [
+        "(?<![\\d.,])14\\.50?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)"
+      ]
+    },
+    {
+      "fid": "point_2",
+      "kind": "concept",
+      "desc": "Japan added on the May sell-off; largest country weight at 23.5%",
+      "accept": [
+        "(?<![\\d.,])23\\.50?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)"
+      ]
+    },
+    {
+      "fid": "point_3",
+      "kind": "concept",
+      "desc": "Cash 4.4% at quarter end, to be redeployed through July",
+      "accept": [
+        "(?<![\\d.,])4\\.40?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)"
+      ]
+    },
+    {
+      "fid": "fee_new_rate",
+      "kind": "fee",
+      "desc": "New rate 0.80% (from 0.90%) on the first $2,000,000; 0.65% above unchanged",
+      "accept": [
+        "(?<![\\d.,])(?:0?\\.80?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)|80\\s*(?:basis points?|basis-points?|bps|bp)\\b)"
+      ]
+    },
+    {
+      "fid": "fee_effective",
+      "kind": "fee",
+      "desc": "Effective October 1, 2026",
+      "accept": [
+        "(?:\\boct(?:ober|\\.)?\\s*1(?:st|nd|rd|th)?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d)|(?<![\\d.])1(?:st|nd|rd|th)?\\s+(?:of\\s+)?oct(?:ober|\\.)?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d)|(?<![\\d/])10/0?1/(?:20)?26\\b|2026-10-01|\\bfirst\\s+(?:day\\s+)?of\\s+oct(?:ober|\\.)?\\b(?!\\s*,?\\s*(?:19|20)(?!26)\\d\\d))"
+      ]
+    }
+  ],
+  "disclosure": "International investing involves risks not present in domestic markets, including currency fluctuation, political and economic instability, and differences in accounting and reporting standards, and these risks may be heightened in periods of market stress.",
+  "forbidden": [
+    {
+      "fid": "internal_note",
+      "desc": "Co-manager Ingrid Salomaa-Brecht resigned and leaves August 14, 2026 for a competitor; client notice on hold",
+      "patterns": [
+        "salomaa",
+        "brecht",
+        "\\bingrid\\b",
+        "\\bresign",
+        "august\\s*14",
+        "co-?manager",
+        "(?:staff(?:ing)?|team|personnel)\\s+chang",
+        "changes?\\s+(?:to|in|on|within)\\s+(?:the|our|your)\\s+(?:\\w+\\s+){0,2}team",
+        "\\bsuccession\\b",
+        "join(?:s|ing)?\\s+(?:a|another)\\s+(?:competitor|competing|rival|firm)",
+        "transition plan",
+        "(?:leaving|departing|departure from)\\s+(?:the|our)\\s+(?:firm|team)|\\bleaving us\\b",
+        "\\bdepart(?:s|ed|ing|ure|ures)?\\b"
+      ]
+    },
+    {
+      "fid": "gross_only",
+      "desc": "gross return -1.7% stated without the net return -1.9%",
+      "patterns": [
+        "(?<![\\d.,])1\\.70?(?!\\d)\\s*(?:%|percent\\b|per cent\\b|pct\\b)"
+      ]
+    }
+  ],
+  "gross_return": "-1.7%",
+  "net_return": "-1.9%"
+}

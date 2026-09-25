@@ -1,0 +1,95 @@
+*   Role: Senior analyst at a registered investment adviser.
+    *   Task: Compare two versions of a document (10-K Risk Factors) and list material changes.
+    *   Output: JSON object with "changes" list.
+    *   Rules:
+        1.  Section = heading + text below until next heading.
+        2.  Report only if text differs.
+        3.  Types: "added", "removed", "modified".
+        4.  Materiality: New/removed risk, exposure, right, obligation, provision; new/dropped specific event, proceeding, regulation, product, party, program; change in likelihood/severity; change in numbers, rates, thresholds, periods, deadlines (excluding routine date roll-forward).
+        5.  No minor edits (punctuation, rewordings with same meaning, etc.).
+        6.  Identical text = no change.
+        7.  Format: "type", "heading", "description", "quote".
+        8.  Report each changed section once.
+
+    *   **Section 1: "The Company’s results are affected by competitive conditions and customer preferences."**
+        *   Prior: "...including preferences for products that do not contain PFAS..."
+        *   Current: "...including preferences for products that do not contain third-party manufactured PFAS..."
+        *   Current also adds a whole paragraph about Tariffs and trade restrictions.
+        *   *Analysis:* The addition of "third-party manufactured" is a specific detail about the product. The addition of the "Tariffs and other trade restrictions" paragraph is a new risk/exposure.
+        *   *Decision:* Modified.
+
+    *   **Section 2: "The Company’s growth objectives are largely dependent on the timing and market acceptance of its new product offerings, including its ability to continually renew its pipeline of new products and to bring those products to market."**
+        *   Prior: "This ability is subject to..."
+        *   Current: "The ability to successfully bring new products to market is subject to..."
+        *   *Analysis:* "successfully" is a minor addition, but the core meaning is the same. However, the prompt says "any change to the stated likelihood or severity... or any change to a number, rate, threshold, period or deadline". "Successfully" doesn't change the core risk.
+        *   *Wait*, let's look closer.
+        *   Prior: "This ability is subject to..."
+        *   Current: "The ability to successfully bring new products to market is subject to..."
+        *   Is "successfully" a material change in likelihood/severity? Not really. It's a minor wording change.
+        *   *Decision:* No material change.
+
+    *   **Section 3: "The Company’s future results are subject to vulnerability with respect to materials and fluctuations in the costs and availability of purchased components, compounds, raw materials, energy, and labor due to shortages, increased demand and wages, strikes or other labor disruptions, logistics, supply chain interruptions, manufacturing site disruptions, regulatory developments, natural disasters, and other disruptive factors."**
+        *   Prior: "...supply chain interruptions, manufacturing site disruptions, regulatory developments, natural disasters, and other disruptive factors."
+        *   Current: "...supply chain interruptions, manufacturing site disruptions, regulatory developments, natural disasters, and other disruptive factors."
+        *   Wait, let's check the text inside the paragraph.
+        *   Prior: "...supply chain interruptions, manufacturing site disruptions, regulatory developments, natural disasters, and other disruptive factors. The Company depends on various components... Supplier relationships have been and could be interrupted in the future due to supplier material shortage, climate impacts and severe weather events, natural and other disasters, and other disruptive events such as military conflicts, or be terminated."
+        *   Current: "...supply chain interruptions, manufacturing site disruptions, regulatory developments, natural disasters, and other disruptive factors. The Company depends on various components... Supplier relationships have been and could be interrupted or terminated in the future due to events such as supplier material shortages, climate impacts and severe weather events, natural and other disasters, and other disruptive events such as those noted in the first risk factor above."
+        *   *Analysis:* The current version replaces "military conflicts" with "those noted in the first risk factor above" (which refers to the list in the first section). This is a change in the specific items listed as risks.
+        *   *Decision:* Modified.
+
+    *   **Section 4: "The Company employs information including operational technology systems to support its business and to collect, store, and/or use proprietary and confidential information, including ongoing phased implementation of an enterprise resource planning (ERP) system as part of its business transformation on a worldwide basis over the next several years."**
+        *   Prior: "...could disrupt or interfere with the Company’s operations; result in the compromise and misappropriation of proprietary and confidential information belonging to the Company or its customers, suppliers, and employees; and expose the Company to numerous expenses, liabilities, and other negative consequences..."
+        *   Current: "...could: disrupt or interfere with the Company’s operations; result in the compromise and misappropriation of proprietary and confidential information belonging to the Company or its customers, suppliers, and employees; and expose the Company to numerous expenses, liabilities, and other negative consequences..."
+        *   *Analysis:* The addition of a colon (:) is a punctuation change.
+        *   *Decision:* No material change.
+
+    *   **Section 5: "The Company’s use of artificial intelligence technologies exposes the Company to risks which could have a material adverse effect on the Company’s business, reputation and results of operations."**
+        *   Prior: (Not present)
+        *   Current: (Present)
+        *   *Analysis:* This is a new risk section.
+        *   *Decision:* Added.
+
+    *   **Section 6: "The Company’s future results may be affected by its operational execution, including through organizational restructurings and scenarios where the Company generates fewer productivity improvements than planned."**
+        *   Prior: "Workforce restructuring activities impact business groups, functions, and geographies, and the structural reorganization is expected to reduce the size of the corporate center, simplify supply chain, streamline 3M's geographic footprint, reduce layers of management, further align business go-to-market models to customers, and reduce manufacturing roles to align with production volumes, with the goal of improving the Company's longer-term outlook in overall performance."
+        *   Current: "Workforce restructuring activities are expected to deliver benefits, but also impact business groups, functions, and geographies."
+        *   *Analysis:* The current version removes a long list of specific goals/actions (reduce size of corporate center, simplify supply chain, etc.) and replaces it with a general statement about expected benefits. This is a significant change in the level of detail regarding the scope and goals of the restructuring.
+        *   *Decision:* Modified.
+
+    *   **Section 7: "The Company's defined benefit pension and postretirement plans are subject to financial market risks that could have a material adverse effect on our results."**
+        *   Prior: "The performance of financial markets and discount rates impact the Company's funding obligations under its defined benefit plans. Significant changes in market interest rates, decreases in the fair value of plan assets and investment losses on plan assets, and legislative or regulatory changes relating to defined benefit plan funding may increase the Company's funding obligations and could have a material adverse effect on its results of operations and cash flows."
+        *   Current: "The performance of financial markets and discount rates impact the Company's funding obligations under its defined benefit plans. Significant changes in market interest rates, decreases in the fair value of plan assets and investment losses on plan assets, and legislative or regulatory changes relating to defined benefit plan funding may increase the Company's funding obligations and could have a material adverse effect on its results of operations and cash flows."
+        *   *Analysis:* Identical text.
+        *   *Decision:* No change.
+
+    *   **Section 8: "Change in the Company’s credit ratings or increases in benchmark interest rates could increase cost of funding."**
+        *   Prior: "...a credit rating of BBB+, negative outlook from S&P Global Ratings, and a credit rating of A-, stable outlook from Fitch."
+        *   Current: "...a credit rating of BBB+, stable outlook from S&P Global Ratings, and a credit rating of A-, stable outlook from Fitch Ratings."
+        *   *Analysis:* The outlook for S&P Global Ratings changed from "negative" to "stable". This is a change in the stated status of a credit rating.
+        *   *Decision:* Modified.
+
+    *   **Section 9: "Changes in tax rates, laws, or regulations could adversely impact our financial results."**
+        *   Prior: "The Company’s business is subject to tax-related external conditions, such as tax rates, tax laws and regulations, changing political environments in the U.S. and foreign jurisdictions that impact tax examination, and assessment and enforcement approaches. In addition, changes in tax laws including further regulatory developments arising from U.S. or international tax reform legislation could result in a tax expense or benefit recorded to the Company’s Consolidated Statement of Earnings. In connection with the Base Erosion and Profit Shifting (BEPS) Integrated Framework provided by Organization for Economic Cooperation and Development (OECD), determination of multi-jurisdictional taxation rights and the rate of tax applicable to certain types of income may be subject to potential change. Due to the evolving nature of global tax laws and regulations and compliance approaches, it is currently not possible to assess the ultimate impact of these actions on our financial statements, but these actions could have a material adverse effect on the Company's financial results."
+        *   Current: "The Company’s business is subject to tax-related external conditions, such as tax rates, tax laws and regulations, changing political environments in the U.S. and foreign jurisdictions that impact tax examination, and assessment and enforcement approaches. In addition, changes in tax laws including further regulatory developments arising from U.S. or international tax reform legislation could result in a tax expense or benefit recorded to the Company’s Consolidated Statement of Earnings. In connection with the Base Erosion and Profit Shifting (BEPS) Integrated Framework provided by Organization for Economic Cooperation and Development (OECD), determination of multi-jurisdictional taxation rights and the rate of tax applicable to certain types of income may be subject to potential change. Due to the evolving nature of global tax laws and regulations and compliance approaches, it is currently not possible to assess the ultimate impact of these actions on our financial statements, but these actions could have a material adverse effect on the Company's financial results."
+        *   *Analysis:* Identical text.
+        *   *Decision:* No change.
+
+    *   **Section 10: "The Company is subject to risks related to the Company's Aearo Entities and CAE Settlement."**
+        *   Prior: "...as discussed further in Note 19, “Commitments and Contingencies,”..."
+        *   Current: "...as discussed further in Note 17, “Commitments and Contingencies,”..."
+        *   *Analysis:* This is a cross-reference change. Rule 5 says "an updated cross-reference or section number" is not a material change.
+        *   *Decision:* No material change.
+
+    *   **Section 11: "The Company is subject to risks related to the separation of Solventum, the Company's former Health Care business, into an independent public company."**
+        *   Prior: "...including potential impacts on the Company’s relationships with its customers, employees, regulators, and other counterparties; and the risk that any consents or approvals required will not be obtained or will be obtained subject to material modifications to the terms of the underlying arrangement."
+        *   Current: "...including potential impacts on the Company’s relationships with its customers, employees, regulators, and other counterparties."
+        *   *Analysis:* The current version removes the clause about "the risk that any consents or approvals required will not be obtained or will be obtained subject to material modifications to the terms of the underlying arrangement."
+        *   *Decision:* Modified.
+
+    *   **Section 1: "The Company’s results are affected by competitive conditions and customer preferences."**
+        *   Old: "...including preferences for products that do not contain PFAS..."
+        *   New: "...including preferences for products that do not contain third-party manufactured PFAS, the success of products offered by our competitors, and changes in customer designs for their products that can affect the demand for some of the Company’s products; and (v) changes in the business environment related to disruptive technologies, such as artificial intelligence and machine learning technologies, block-chain, expanded analytics, and other enhanced learnings from increasing volume of available data. Tariffs and other trade restrictions may also: increase the cost of raw materials and components imported from other countries, leading to higher production costs and product pricing to the extent those increased costs are offset through pricing actions; disrupt established supply chains, forcing the Company to find new suppliers or relocate production, which can be time-consuming and costly; limit the Company's access to end markets and, in turn, result in reduced sales and revenue; lower profitability; result in uncertainty related to planning long-term investments and strategies; and have other competitive effects. Any of the foregoing could have a material adverse effect on the Company’s business, financial condition, and results of operations."
+        *   *Description:* The section was updated to include "third-party manufactured" regarding PFAS and added a new paragraph regarding the risks associated with tariffs and trade restrictions.
+
+    *   **Section 3: "The Company’s future results are subject to vulnerability with respect to materials and fluctuations in the costs and availability of purchased components, compounds, raw materials, energy, and labor due to shortages, increased demand and wages, strikes or other labor disruptions, logistics, supply chain interruptions, manufacturing site disruptions, regulatory developments, natural disasters, and other disruptive factors."**
+        *   Old: "...Supplier relationships have been and could be interrupted in the future due to supplier material shortage, climate impacts and severe weather events, natural and other disasters, and other disruptive events such as military conflicts, or be terminated."
+        *   New: "...Supplier relationships have been and could be interrupted or terminated

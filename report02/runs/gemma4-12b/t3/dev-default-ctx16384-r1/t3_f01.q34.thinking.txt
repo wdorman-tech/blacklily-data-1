@@ -1,0 +1,22 @@
+*   Question: "Does the firm have any affiliated entities that provide services to clients? Describe the affiliation and how the resulting conflict of interest is managed."
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in docs, answer NOT_IN_DOCUMENTS.
+    *   Constraint 3: Later-dated docs supersede earlier ones (01_brochure.md is March 2026, 02_compliance_manual.md is Jan 2026, 03_valuation_policy.md is Feb 2026).
+    *   Constraint 4: Short and specific.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   `01_brochure.md`: Section 10.2 "Kilnwick Tax Services, LLC" describes an affiliated entity (Kilnwick) that provides tax preparation and planning services. It explicitly mentions the conflict of interest (owners benefit from revenue) and how it's managed (disclosure, no requirement to use, no compensation for referrals, shared info only with consent).
+    *   `01_brochure.md`: Section 10.3 "Trustee and Other Fiduciary Appointments" mentions roles as trustee, but doesn't describe an "affiliated entity" in the same way as 10.2.
+    *   `01_brochure.md`: Section 10.4 "Third-Party Private Funds" mentions unaffiliated funds.
+    *   `02_compliance_manual.md`: Section 3.2 "Outside Business Activities" mentions rules for Supervised Persons but doesn't describe the specific affiliation/conflict management for a specific entity in the same detail as 10.2.
+    *   `03_valuation_policy.md`: Section 2.5 "Conflicts of Interest" discusses valuation conflicts, not affiliated entities.
+
+    *   The question asks about "affiliated entities that provide services to clients".
+    *   Section 10.2 of `01_brochure.md` specifically addresses "Kilnwick Tax Services, LLC", which is "under common control with the Firm".
+    *   The text says: "Kilnwick Tax Services, LLC ("Kilnwick") is a tax preparation and tax planning firm under common control with the Firm... Because Ms. Tennick and Mr. Arlow benefit from Kilnwick's revenue, we have an incentive to recommend Kilnwick to our clients. We address this conflict by disclosing it, by not requiring any client to use Kilnwick, by paying our wealth advisors no compensation for referrals to Kilnwick, and by sharing client information with any Kilnwick only with the client's written consent."
+
+    *   Answer: Yes, Kilnwick Tax Services, LLC. It is a tax preparation and tax planning firm under common control with the Firm. The conflict is managed by disclosing it, not requiring any client to use Kilnwick, paying wealth advisors no compensation for referrals to Kilnwick, and sharing client information with Kilnwick only with the client's written consent.
+    *   Source: 01_brochure.md
+    *   Section: Item 10. Other Financial Industry Activities and Affiliations > 10.2 Kilnwick Tax Services, LLC
+    *   Quote: "Kilnwick Tax Services, LLC ("Kilnwick") is a tax preparation and tax planning firm under common control with the Firm:

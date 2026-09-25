@@ -1,0 +1,112 @@
+*   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from a provided fund offering document.
+    *   Constraint 1: Accuracy is paramount. No guessing, no inferring.
+    *   Constraint 2: Use `NOT_FOUND` if not stated.
+    *   Constraint 3: Use `NOT_APPLICABLE` if stated as not applicable.
+    *   Constraint 4: Amendments/supplements supersede original text.
+    *   Constraint 5: Report all variants (share class, etc.) in one string.
+    *   Constraint 6: Distinguish commitment vs. holding.
+    *   Constraint 7: Citations must be section/appendix identifiers.
+    *   Constraint 8: Quotes must be verbatim.
+    *   Output Format: JSON only, no markdown, no preamble.
+
+    *   `fund_name`: "Castellow Wexcombe Multi-Manager Fund, L.P." (Section 1.1)
+    *   `fund_domicile`: "Delaware" (Section 1.1: "organized on September 17, 2019 under the Delaware Revised Uniform Limited Partnership Act")
+    *   `fund_structure`: "open-end (redeemable) ... not a feeder fund in a master-feeder structure" (Section 1.2)
+    *   `management_fee`: "1.00% of the net asset value of each Limited Partner's capital account" (Section 4.1)
+    *   `performance_fee`: "10% of the Excess Net Profits of each Limited Partner's capital account" (Section 4.2)
+    *   `hurdle_rate`: "5.00% per annum, prorated for periods of less than a full fiscal year" (Section 4.3). Note: "hard hurdle" and "no catch-up".
+    *   `high_water_mark`: "Loss Carryforward functions as a high-water mark for each capital account. It does not expire and is not reset at the end of any fiscal term or for any other reason" (Section 4.3).
+    *   `minimum_initial_investment`: "$1,000,000" (Section 5.2)
+    *   `lockup_period`: "soft lock-up of one year" (Section 5.4). Note: "The Partnership does not impose a hard lock-up." (Section 5.4).
+    *   `redemption_frequency`: "quarterly" (Section 5.3)
+    *   `redemption_notice_days`: "95 days" (Section 5.3)
+    *   `gate_provision`: "Investor-Level Gate: No Limited Partner may withdraw, as of any single Withdrawal Date, more than 25% of the net asset value of its capital account" (Section 5.5).
+    *   `key_man_provision`: "The success of the Partnership depends on the Investment Manager's ability to select and monitor Portfolio Managers and, in particular, on the judgment of Ms. Throckford and Mr. Varrell as the voting members of the Investment Committee. The loss of the services of either of them could adversely affect the Partnership." (Section 8.3). *Wait, is there a specific "key person clause" that triggers a specific action?* Section 8.3 describes the risk, but doesn't explicitly state a "key person clause" that triggers a specific event like a dissolution or management change. Let's look closer. Section 8.3 describes the risk of losing them, but doesn't define a "key person clause" in the legal sense of a "key person event" triggering a specific action. However, the prompt asks for "who is named and what it triggers". If the document doesn't state what it triggers, I should check if it's mentioned. It doesn't mention a specific trigger.
+    *   `gp_commitment`: Section 3.2 says: "Neither the General Partner nor the Investment Manager has made, or is required by the Partnership Agreement or otherwise to make or maintain, any capital commitment or minimum investment in the Partnership".
+    *   `fund_term`: "no fixed term and will continue perpetually" (Section 1.3)
+    *   `auditor`: "Tamsford Keverne LLP" (Section 7.2)
+    *   `administrator`: "Marrowdale Fund Services, LLC" (Section 7.1)
+    *   `prime_broker`: "the Partnership does not engage a prime broker" (Section 7.3)
+    *   `legal_counsel`: "Thursby Kilbride LLP" (Section 7.4)
+    *   `mfn_election`: "the Partnership does not offer Limited Partners any most favored nation election or other right to receive the benefit of terms granted to another Limited Partner." (Section 9.2)
+
+    *   `fund_name`: "Castellow Wexcombe Multi-Manager Fund, L.P." (Section 1.1)
+    *   `fund_domicile`: "Delaware" (Section 1.1)
+    *   `fund_structure`: "open-end (redeemable) ... not a feeder fund in a master-feeder structure" (Section 1.2)
+    *   `management_fee`: "1.00% of the net asset value of each Limited Partner's capital account" (Section 4.1)
+    *   `performance_fee`: "10% of the Excess Net Profits of each Limited Partner's capital account" (Section 4.2)
+    *   `hurdle_rate`: "5.00% per annum, prorated for periods of less than a full fiscal year" (Section 4.3). Note: "hard hurdle" (Section 4.3).
+    *   `high_water_mark`: "Loss Carryforward functions as a high-water mark for just capital account. It does not expire and is not reset at the end of any fiscal year or for any other reason" (Section 4.3).
+    *   `minimum_initial_investment`: "$1,000,000" (Section 5.2)
+    *   `lockup_period`: "soft lock-up of one year" (Section 5.4). "The Partnership does not impose a hard lock-up." (Section 5.4).
+    *   `redemption_frequency`: "quarterly" (Section 5.3)
+    *   `redemption_notice_days`: "95 days" (Section 5.3)
+    *   `gate_provision`: "Investor-Level Gate: No Limited Partner may withdraw, as of any single Withdrawal Date, more than 25% of the net asset value of its capital account" (Section 5.5)
+    *   `key_man_provision`: The text mentions the risk of losing Throckford and Varrell (Section 8.3), but does not define a "key person clause" that triggers a specific action. I will check if there's a specific clause. There isn't. So, I'll check if it's NOT_FOUND or if the risk description counts. The prompt asks: "who is named and what it triggers". Since no trigger is mentioned, I'll check if the risk description is enough. Actually, looking at the prompt: "key person clause: who is named and what it triggers." If the document doesn't say what it triggers, I can't say what it triggers.
+    *   `gp_commitment`: "Neither the General Partner nor the Investment Manager has made, or is required by the Partnership Agreement or otherwise to make or maintain, any capital commitment or minimum investment in the Partnership" (Section 3.2).
+    *   `fund_term`: "no fixed term and will continue perpetually" (Section 1.3)
+    *   `auditor`: "Tamsford Keverne LLP" (Section 7.2)
+    *   `administrator`: "Marrowdale Fund Services, LLC" (Section 7.1)
+    *   `prime_broker`: "the Partnership does not engage a prime broker" (Section 7.3)
+    *   `legal_counsel`: "Thursby Kilbride LLP" (Section 7.4)
+    *   `mfn_election`: "the Partnership does not offer Limited Partners any most favored nation election or other right to receive the benefit of terms granted to another Limited Partner." (Section 9.2)
+
+    *   `fund_name`: "Castellow Wexcombe Multi-Manager Fund, L.P." (Section 1.1)
+    *   `fund_domicile`: "Delaware" (Section 1.1)
+    *   `fund_structure`: "open-end (redeemable) ... not a feeder fund in a master-feeder structure" (Section 1.2)
+    *   `management_fee`: "1.00% of the net asset value of each Limited Partner's capital account" (Section 4.1)
+    *   `performance_fee`: "10% of the Excess Net Profits of each Limited Partner's capital account" (Section 4.2)
+    *   `hurdle_rate`: "5.00% per annum, prorated for periods of less than a full fiscal year" (Section 4.3). Note: "hard hurdle" (Section 4.3).
+    *   `high_water_mark`: "Loss Carryforward functions as a high-water mark for each capital account. It does not expire and is not reset at the end of any fiscal year or for any other reason" (Section 4.3)
+    *   `minimum_initial_investment`: "$1,000,000" (Section 5.2)
+    *   `lockup_period`: "soft lock-up of one year" (Section 5.4). "The Partnership does not impose a hard lock-up." (Section 5.4)
+    *   `redemption_frequency`: "quarterly" (Section 5.3)
+    *   `redemption_notice_days`: "95 days" (Section 5.3)
+    *   `gate_provision`: "Investor-Level Gate: No Limited Partner may withdraw, as of any single Withdrawal Date, more than 25% of the net asset value of its capital account" (Section 5.5)
+    *   `key_man_provision`: The text mentions the risk of losing Throckford and Varrell (Section 8.3), but it doesn't state what it triggers. I will mark as NOT_FOUND or use the risk section if it's the only mention. However, the prompt asks "what it triggers". Since no trigger is mentioned, I'll stick to the rule: "If the document does not state a term, the value is exactly NOT_FOUND."
+    *   `gp_commitment`: "Neither the General Partner nor the Investment Manager has made, or is required by the Partnership Agreement or otherwise to make or maintain, any capital commitment or minimum investment in the Partnership" (Section 3.2)
+    *   `fund_term`: "no fixed term and will continue perpetually" (Section 1.3)
+    *   `auditor`: "Tamsford Keverne LLP" (Section 7.2)
+    *   `administrator`: "Marrowdale Fund Services, LLC" (Section 7.1)
+    *   `prime_broker`: "the Partnership does not engage a prime broker" (Section 7.3)
+    *   `legal_counsel`: "Thursby Kilbride LLP" (Section 7.4)
+    *   `mfn_election`: "the Partnership does not offer Limited Partners any most favored nation election or other right to receive the benefit of terms granted to another Limited Partner." (Section 9.2)
+
+    *   `fund_name`: "Castellow Wexcombe Multi-Manager Fund, L.P." (Section 1.1)
+    *   `fund_domicile`: "Delaware" (Section 1.1)
+    *   `fund_structure`: "open-end (redeemable) ... not a feeder fund in a master-feeder structure" (Section 1.2)
+    *   `management_fee`: "1.00% of the net asset value of each Limited Partner's capital account" (Section 4.1)
+    *   `performance_fee`: "10% of the Excess Net Profits of each Limited Partner's capital account" (Section 4.2)
+    *   `hurdle_rate`: "5.00% per annum, prorated for periods of less than a full fiscal year" (Section 4.3). Note: "hard hurdle" (Section 4.3).
+    *   `high_water_mark`: "Loss Carryforward functions as a high-water mark for each capital account. It does not expire and is not reset at the end of any fiscal year or for any other reason" (Section 4.3)
+    *   `minimum_initial_investment`: "$1,000,000" (Section 5.2)
+    *   `lockup_period`: "soft lock-up of one year" (Section 5.4). "The Partnership does not impose a hard lock-up." (Section 5.4)
+    *   `redemption_frequency`: "quarterly" (Section 5.3)
+    *   `redemption_notice_days`: "95 days" (Section 5.3)
+    *   `gate_provision`: "Investor-Level Gate: No Limited Partner may withdraw, as of any single Withdrawal Date, more than 25% of the net asset value of its capital account" (Section 5.5)
+    *   `key_man_provision`: NOT_FOUND (because no trigger is mentioned).
+    *   `gp_commitment`: "Neither the General Partner nor the Investment Manager has made, or is required by the Partnership Agreement or otherwise to make or maintain, any capital commitment or minimum investment in the Partnership" (Section 3.2)
+    *   `fund_term`: "no fixed term and will continue perpetually" (Section 1.3)
+    *   `auditor`: "Tamsford Keverne LLP" (Section 7.2)
+    *   `administrator`: "Marrowdale Fund Services, LLC" (Section 7.1)
+    *   `prime_broker`: "the Partnership does not engage a prime broker" (Section 7.3)
+    *   `legal_counsel`: "Thursby Kilbride LLP" (Section 7.4)
+    *   `mfn_election`: "the Partnership does not offer Limited Partners any most favored nation election or other right to receive the benefit of terms granted to another Limited Partner." (Section 9.2)
+
+    *   `fund_structure`: "The Partnership is an open-end fund of hedge funds. ... The Partnership is a stand-alone fund: it is not a feeder fund in a master-feeder structure" (Section 1.2).
+    *   `hurdle_rate`: "The 'Hurdle Amount' for a capital account for any Incentive Period equals 5.00% per annum, prorated for periods of less than a full fiscal year... The hurdle is a hard hurdle: the Incentive Allocation is calculated only on Net Profits in excess of the Hurdle Amount, and the General Partner receives no catch-up allocation of the Net Profits below it." (Section 4.3).
+    *   `high_water_mark`: "The 'Loss Carryforward' of a capital account is the cumulative Net Losses allocated to it for prior Incentive Periods that have not been offset by later Net Profits. No Incentive Allocation is made until the Loss Carryforward has been fully recovered, so that the Loss Carryforward functions as a high-water mark for each capital account. It does not expire and is not reset at the end of any fiscal year or for any other reason, except that it is reduced proportionately on a partial withdrawal." (Section 4.3).
+    *   `lockup_period`: "Each capital contribution is subject to a soft lock-up of one year. ... The Partnership does not impose a hard lock-up." (Section 5.4).
+    *   `gate_provision`: "No Limited Partner may withdraw, as of any single Withdrawal Date, more than 25% of the net asset value of its capital account, measured as of the first Withdrawal Date to which its withdrawal request relates (the 'Investor Gate')." (Section 5.5).
+    *   `gp_commitment`: "Neither the General Partner nor the Investment Manager has made, or is required by the Partnership Agreement or otherwise to make or maintain, any capital commitment or minimum investment in the Partnership" (Section 3.2).
+    *   `mfn_election`: "the Partnership does not offer Limited Partners any most favored nation election or other right to receive the benefit of terms granted to another Limited Partner." (Section 9.2).
+
+    *   `key_man_provision`: The prompt asks "who is named and what it triggers". Section 8.3 mentions "the judgment of Ms. Throckford and Mr. Varrell as the voting members of the Investment Committee. The loss of the services of either of them could adversely affect the Partnership." It does not state what it *triggers* (e.g., a "key person event" triggering a dissolution or management change). Therefore, it is NOT_FOUND.
+
+    *   `fund_name`: "Castellow Wexcombe Multi-Manager Fund, L.P." (Section 1.1)
+    *   `fund_domicile`: "Delaware" (Section 1.1)
+    *   `fund_structure`: "open-end (redeemable) ... not a feeder fund in a master-feeder structure" (Section 1.2)
+    *   `management_fee`: "1.00% of the net asset value of each Limited Partner's capital account" (Section 4.1)
+    *   `performance_fee`: "10% of the Excess Net Profits of each Limited Partner's capital account" (Section 4.2)
+    *   `hurdle_rate`: "5.00% per annum, prorated for periods of less than a full fiscal

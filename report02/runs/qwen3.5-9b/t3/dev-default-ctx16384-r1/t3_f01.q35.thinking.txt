@@ -1,0 +1,52 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What percentage of client assets under management is classified as Level 3 or valued using significant unobservable inputs?"
+    *   Key information needed: A specific percentage figure regarding Level 3 assets relative to total client assets under management (AUM).
+
+3.  **Scan the Documents:**
+    *   `01_brochure.md`: Contains total AUM ($2,046,300,000), discretionary/non-discretionary breakdown, number of clients/households, employees. Does not mention Level 3 asset percentage or value.
+    *   `03_valuation_policy.md`:
+        *   Section 3.1: Primary source (custodian prices).
+        *   Section 3.3: Fair Value Hierarchy definitions (Level 1, Level 2, Level 3). Defines Level 3 as "valued using significant unobservable inputs".
+        *   Section 3.5: Held-Away and Accommodation Assets.
+        *   Section 5.1: Lists types of Level 3 assets (private funds, non-traded REITs, etc.).
+        *   Section 5.2: Private Funds valuation methodology.
+        *   Section 5.5: Documentation for Level 3 assets.
+        *   Section 7.1: Back-testing procedure.
+
+4.  **Evaluate Findings:**
+    *   The documents define what Level 3 assets are (Section 3.3, 5.1).
+    *   The documents state the total AUM in `01_brochure.md`.
+    *   However, neither document provides a breakdown of the *percentage* or *dollar amount* of assets classified specifically as Level 3.
+    *   There is no text stating "X% of our assets are Level 3".
+    *   Therefore, the specific detail asked for (a percentage) is not in the documents.
+
+5.  **Formulate Answer:**
+    *   Since the specific percentage is not provided, the answer must be `NOT_IN_DOCUMENTS`.
+    *   Source document: "" (empty string as per instructions for NOT_IN_DOCUMENTS).
+    *   Section: "" (empty string).
+    *   Quote: "" (empty string).
+
+6.  **Verify Constraints:**
+    *   JSON object only.
+    *   Keys: "answer", "source_document", "section", "quote".
+    *   Values must be strings.
+    *   No markdown code blocks (```json ... ```).
+    *   No preamble.
+
+7.  **Final Check:**
+    *   Did I miss any mention of Level 3 AUM percentage? Scanned `01_brochure

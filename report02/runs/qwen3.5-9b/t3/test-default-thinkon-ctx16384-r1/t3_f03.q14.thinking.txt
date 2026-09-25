@@ -1,0 +1,41 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific (number, name, frequency, threshold, rule).
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What recovery time objective and recovery point objective apply to the firm's most critical systems?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "recovery time objective", "recovery point objective", "critical systems", "Tier".
+    *   Document 1: `04_business_continuity_plan.md` (dated April 21, 2026).
+        *   Section: `SECTION 4. RECOVERY OBJECTIVES > 4.1 System Tiers and Objectives`.
+        *   Content: "Tier 1 systems carry a recovery time objective of four hours and a recovery point objective of one hour."
+        *   Table: Tier 1 | Custodian portals and trading platforms... | 4 hours | 1 hour.
+    *   Document 2: `06_policy_update_memo.md` (dated September 8, 2026).
+        *   Section: `SECTION 6. OFFSITE DATA BACKUP VENDOR`.
+        *   Content: Amends BCP Sections 5.1 and 5.2 regarding backup vendors. Does not mention recovery objectives for systems tiers.
+
+4.  **Evaluate Superseding Documents:**
+    *   The question asks about "most critical systems". In the BCP, Tier 1 is defined as the most critical (Tier 1 > Tier 2 > Tier 3).
+    *   Document `04_business_continuity_plan.md` defines Tier 1 objectives.
+    *   Document `06_policy_update_memo.md` updates vendor information (Section 5) but explicitly states it amends Sections 5.1 and 5.2 of the BCP. It does not mention changing Section 4 (Recovery Objectives).
+    *   Therefore, the recovery objectives in `04_business_continuity_plan.md` remain valid for Tier 1 systems.
+    *   Date check: BCP is April 21, 2026. Memo is September 8, 2026. The memo supersedes specific sections (5.1, 5.2) regarding vendors. It does not supersede Section 4.
+    *   So the answer comes from `04_business_continuity_plan.md`.
+
+5.  **Extract Specific Details:**
+    *   Recovery Time Objective (RTO): four hours.
+    *   Recovery Point Objective (RPO): one hour.
+    *   Source: `04_business_continuity_plan.md`.
+    *   Section: `SECTION 4. RECOVERY OBJECTIVES > 4.1 System Tiers and Objectives` (or just `SECTION 4. RECOVERY OBJECTIVES >

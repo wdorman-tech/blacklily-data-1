@@ -1,0 +1,39 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "How many investment professionals have left the firm in each of the last three years, and for what reasons?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "investment professionals", "left", "resigned", "terminated", "employees", "turnover", "years", "reasons".
+    *   Document 1: `01_brochure.md` (Form ADV Part 2A, dated March 27, 2026).
+        *   Section Item 4.1 Firm Overview: Mentions "As of December 31, 2025, the Adviser had 22 employees, of whom 10 are investment professionals". Does not mention turnover or departures in the last three years.
+    *   Document 2: `03_valuation_policy.md` (Valuation Policy, dated November 3, 2025).
+        *   Section 8.1 Independent Valuation Firm: Discusses valuation reviews. No employee turnover info.
+    *   Document 3: `04_business_continuity_plan.md` (Business Continuity Plan, dated February 9, 2026).
+        *   Section 8.2 Investors, Counterparties and Service Providers: Discusses communication tree. No employee turnover info.
+    *   Document 4: `05_fee_schedule.md` (Fee Schedule, dated January 1, 2026).
+        *   Section 5.3 Termination of Investment Management Agreements: Discusses termination of agreements between Adviser and Fund. Not employee turnover.
+    *   Document 5: `06_policy_update_memo.md` (Memorandum: Amendments to Firm Policies and Fee Schedule, dated August 24, 2026).
+        *   Section 3.1 Conforming Changes: Discusses brochure amendments and fee schedule changes. No employee turnover info.
+
+3.  **Evaluate Findings:**
+    *   None of the provided documents contain information regarding how many investment professionals have left the firm in the last three years or the reasons for their departure.
+    *   The only mention of staff is in `01_brochure.md` Section Item 4.1, which states the current count as of Dec 31, 2025, but does not provide historical turnover data.
+
+4.  **Formulate Answer:**
+    *   Since the information is not present, the answer must be "NOT_IN_DOCUMENTS".
+    *   Source document: "" (empty string per instructions for NOT_IN_DOCUMENTS cases usually, but looking at the instruction: "source_document - the file name of the document that answers it, or "" if NOT_IN_DOCUMENTS").
+    *   Section: ""
+    *   Quote: ""
+
+5

@@ -1,0 +1,40 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Which pricing services does the Firm use to value fixed income securities, and which one is primary?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "pricing services", "value", "fixed income", "primary".
+
+4.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Discusses strategies (Core Fixed Income, Long Duration Credit, Insurance Core). Mentions securities types but not specific pricing service names.
+    *   `02_compliance_manual.md`: Discusses best execution review. Not about valuation services.
+    *   `03_valuation_policy.md`:
+        *   Section 1.1 Purpose: Mentions determining fair value, calculating NAV, etc.
+        *   Section 3.1 Hierarchy: Lists order of sources (exchange price, evaluated price by primary service, evaluated price by secondary service, broker quotations, Committee).
+        *   Section 3.2 Primary Pricing Service: Explicitly states "Lanthorn Evaluated Pricing, Inc. is the primary pricing service for all fixed income securities held by the Firm's clients..."
+        *   Section 3.3 Secondary Pricing Service: Explicitly states "Brayford Pricing Data LLC is the secondary pricing service."
+
+5.  **Synthesize the Answer:**
+    *   Primary Service: Lanthorn Evaluated Pricing, Inc.
+    *   Secondary Service: Brayford Pricing Data LLC.
+    *   Source Document: `03_valuation_policy.md`
+    *   Section: `SECTION 3. PRICING HIERARCHY AND SOURCES` (specifically subsections 3.2 and 3.3).
+    *   Quote: Need to combine or select the most relevant verbatim text. The prompt asks for "the answer" in one string, but also requires a quote. I should construct the answer based on the text found.
+    *   Constraint Check: "Quote the supporting text verbatim." Usually, this means the specific sentence(s) that support the answer. Since there are two services mentioned in different subsections (3.2 and 3.3), I should probably quote the relevant parts or the section header if it encompasses both. However, Section 3.2 explicitly names the primary one, and Section 3.3 names the secondary one.
+    *   Best approach for "quote": Combine the specific sentences that answer the question directly.
+    *   Sentence 1 (Primary): "Lanthorn Evaluated Pricing, Inc. is the primary pricing service for all fixed income securities held by the Firm's clients..."
+    *   Sentence 2 (Secondary): "Brayford Pricing Data LLC is the secondary pricing service."
+    *   Since I need to provide *one* JSON object with *one* quote field

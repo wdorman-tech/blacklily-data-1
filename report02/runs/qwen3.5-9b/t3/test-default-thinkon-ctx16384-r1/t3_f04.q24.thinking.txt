@@ -1,0 +1,44 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+    *   Question: "Is the Firm a signatory to the Principles for Responsible Investment, and how does it integrate ESG factors into its credit research?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "Principles for Responsible Investment", "PRI", "ESG", "Environmental", "Social", "Governance", "credit research".
+
+3.  **Review Document Content:**
+    *   `01_brochure.md`:
+        *   Section 4.2 Advisory Services and Strategies: Describes strategies (Core Fixed Income, Long Duration Credit, Insurance Core). Mentions credit research team led by Rafael Denholm. Mentions fundamental credit research based on business risk, leverage, cash flow coverage, liquidity, covenant protection, revenue pledge, legal structure. No mention of PRI or ESG integration.
+        *   Section 4.4 The Commingled Fund: Describes fund structure, administrator, custodian, auditor. No mention of PRI or ESG.
+        *   Section 8.1 Methods of Analysis: Mentions Investment Policy Committee, credit research team, risk management function. Describes analysis methods (top-down/bottom-up). No mention of PRI or ESG integration.
+        *   Section 8.2 Investment Strategies: Discusses duration, swaps, securities lending. No mention of PRI or ESG.
+        *   Section 10.3 Relationships with Investment Consultants: Discusses consultant payments. No mention of PRI or ESG.
+        *   Section 12.2 Research and Other Soft Dollar Benefits: Discusses research funding. No mention of PRI or ESG.
+        *   Section 17.1 Proxy and Consent Voting: Discusses voting policy. No mention of PRI or ESG integration in research.
+    *   `02_compliance_manual.md`:
+        *   Section 12.1 Scope: Discusses privacy, Regulation S-P. No mention of PRI or ESG.
+
+4.  **Evaluate Findings:**
+    *   The documents describe the firm's strategies, analysis methods, credit research factors (business risk, leverage, cash flow, etc.), and compliance policies.
+    *   There is no explicit statement confirming or denying signatory status to the Principles for Responsible Investment (PRI).
+    *   There is no description of how ESG factors are integrated into credit research (the text mentions fundamental credit research based on specific financial metrics, but does not mention ESG integration specifically).
+
+5.  **Formulate Answer:**
+    *   Since the information is not present in the provided documents, the answer must be `NOT_IN_DOCUMENTS`.
+    *   Source document: "" (empty string as per instructions for NOT_IN_DOCUMENTS case).
+    *   Section: "" (empty string).
+    *   Quote: "" (empty string).
+
+6.  **Construct JSON:**
+    *

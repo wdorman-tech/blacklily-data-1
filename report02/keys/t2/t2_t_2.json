@@ -1,0 +1,259 @@
+{
+ "pair_id": "t2_t_2",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "AT&T Inc.",
+ "ticker": "T",
+ "split": "test",
+ "prior": {
+  "fiscal_year_end": "2024-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271725000013/t-20241231.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2025-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/732717/000073271726000120/t-20251231.htm"
+ },
+ "words": 4835,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "modified",
+   "prior_heading": "We depend on various suppliers to provide equipment to operate our business and satisfy customer demand, and interruption or delay in supply can adversely impact our operating results.",
+   "current_heading": "We depend on various suppliers to provide equipment to operate our business and satisfy customer demand, and interruption or delay in supply can adversely impact our operating results.",
+   "similarity": 0.972,
+   "diff": [
+    "insert: [] -> [In certain circumstances, we could be liable for the actions of our suppliers and other third parties we do business with.]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds a new sentence disclosing that in certain circumstances AT&T could be liable for the actions of its suppliers and other third parties it does business with.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: a new exposure (liability for supplier and third-party conduct) is disclosed."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: a new exposure (third-party liability for supplier and partner conduct) is disclosed that was absent in the prior year."
+    }
+   }
+  },
+  {
+   "aid": "a02",
+   "status": "modified",
+   "prior_heading": "Increasing costs to provide services and failure to renew agreements on favorable terms, or at all, could adversely affect operating margins.",
+   "current_heading": "Increasing costs to provide services and failure to renew agreements on favorable terms, or at all, could adversely affect operating margins.",
+   "similarity": 0.999,
+   "diff": [
+    "delete: [11] -> []"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The only change is removal of a stray page number (11) from the text; the risk factor wording is identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: pagination artifact only, no change in substance."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: page-number artifact only, no change in substance, likelihood, scope or figures."
+    }
+   }
+  },
+  {
+   "aid": "a03",
+   "status": "modified",
+   "prior_heading": "A significant portion of our workforce is represented by labor unions, and we could incur additional costs or experience work stoppages as a result of the renegotiation of our labor contracts.",
+   "current_heading": "A significant portion of our workforce is represented by labor unions, and we could incur additional costs or experience work stoppages as a result of the renegotiation of our labor contracts.",
+   "similarity": 0.998,
+   "diff": [
+    "replace: [2024,] -> [2025,]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The as-of date rolls forward from December 31, 2024 to December 31, 2025, with the unionized share of the workforce unchanged at approximately 43%.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: routine date roll-forward only; the percentage is unchanged."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: routine date roll-forward only; the 43% figure and the named unions (CWA, IBEW) are unchanged."
+    }
+   }
+  },
+  {
+   "aid": "a04",
+   "status": "modified",
+   "prior_heading": "We may not realize or sustain the expected benefits from our business transformation initiatives, and these efforts could have a materially adverse effect on our business, operations, financial condition, results of operations and competitive position.",
+   "current_heading": "We may not realize or sustain the expected benefits from acquisitions, joint ventures or our business transformation initiatives, including dispositions, which could have a material adverse effect on our business, operations, financial condition, results of operations and competitive position.",
+   "similarity": 0.69,
+   "diff": [
+    "insert: [] -> [acquisitions, joint ventures or]",
+    "replace: [and these efforts] -> [including dispositions, which]",
+    "replace: [materially] -> [material]",
+    "replace: [initiatives,] -> [initiatives and investments,]",
+    "insert: [] -> [improve our products and services,]",
+    "replace: [initiatives,] -> [initiatives and investments, which may include acquisitions, joint ventures, particularly those aimed at enhancing our fiber serviceable locations, and other strategic transactions,]",
+    "insert: [] -> [In addition, any such initiative or investment entails certain risks and could present financial, managerial and operational challenges.]",
+    "replace: [artificial intelligence (AI)-driven] -> [AI-driven]",
+    "replace: [products,] -> [products or operations,]",
+    "replace: [Any] -> [AI-related laws and regulations continue to remain uncertain and may vary from jurisdiction to jurisdiction. There can be no assurance that the usage of AI will meaningfully enhance our 11 products or operations, and any]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Scope widens from business transformation initiatives to also cover acquisitions, joint ventures (particularly those aimed at enhancing fiber serviceable locations), dispositions and other strategic transactions, and adds new disclosure that AI-related laws are uncertain and vary by jurisdiction and that AI may not meaningfully enhance products or operations.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criteria 1, 2 and 3: new risks (transaction execution challenges, AI regulatory uncertainty) and new business activities are disclosed and the scope of the risk factor is widened."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 2 and criterion 3: new business activities (acquisitions, joint ventures, dispositions, fiber-location investments) and AI regulation are referenced, and the scope of the risk is widened."
+    }
+   }
+  },
+  {
+   "aid": "a05",
+   "status": "modified",
+   "prior_heading": "Unfavorable litigation or governmental investigation results could require us to pay significant amounts or lead to onerous operating procedures.",
+   "current_heading": "Unfavorable litigation or governmental investigation results could require us to pay significant amounts or lead to onerous operating procedures.",
+   "similarity": 0.988,
+   "diff": [
+    "insert: [] -> [subject to injunctions or]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds injunctions as a possible outcome of litigation or government charges, alongside paying amounts or changing operations.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: a new exposure (being subject to injunctions) is disclosed."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1 and criterion 3: a new remedy exposure (injunctive relief) is disclosed, widening the scope of the litigation risk."
+    }
+   }
+  },
+  {
+   "aid": "a06",
+   "status": "modified",
+   "prior_heading": "Cyberattacks impacting our networks, systems or data or those of our suppliers or vendors may have a material adverse effect on our operations or results of operations.",
+   "current_heading": "Cyberattacks impacting our networks, systems or data or those of our suppliers or vendors may have a material adverse effect on our operations or results of operations.",
+   "similarity": 0.959,
+   "diff": [
+    "replace: [the Company believes] -> [we believe]",
+    "replace: [it is] -> [we are]",
+    "replace: [the Company experiences] -> [we experience]",
+    "replace: [can cause] -> [have caused, and may in the future cause,]",
+    "insert: [] -> [have and in the future]",
+    "replace: [the Company] -> [us]",
+    "replace: [its] -> [our]",
+    "replace: [the Company] -> [we]",
+    "delete: [12] -> []",
+    "replace: [the Company] -> [we]",
+    "replace: [its] -> [our]",
+    "replace: [the Company] -> [we]",
+    "..."
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The consequences of cyberattacks change from hypothetical to realized, from \"can cause\" equipment failures and data loss that \"could result\" in expenses and liability to \"have caused, and may in the future cause\" them and \"have and in the future could result\" in those harms, alongside a stylistic switch from \"the Company\" to \"we\".",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 3: the characterization shifts from hypothetical to realized harm."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: the characterization moves from hypothetical to realized harm, even though the \"the Company\" to \"we\" edits are stylistic."
+    }
+   }
+  },
+  {
+   "aid": "a07",
+   "status": "modified",
+   "prior_heading": "Natural disasters, extreme weather conditions or terrorist or other hostile acts could cause damage to our infrastructure and result in significant disruptions to our operations.",
+   "current_heading": "Natural disasters, extreme weather conditions or terrorist or other hostile acts could cause damage to our infrastructure and result in significant disruptions to our operations.",
+   "similarity": 0.999,
+   "diff": [
+    "insert: [] -> [12]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The only change is a page number (12) inserted mid-paragraph; the risk factor wording is identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: pagination artifact only, no change in substance."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: page-number artifact only, no change in substance."
+    }
+   }
+  },
+  {
+   "aid": "a08",
+   "status": "modified",
+   "prior_heading": "Increases in our debt levels to fund spectrum purchases, or other strategic decisions could adversely affect our ability to finance future debt at attractive rates and reduce our ability to respond to competition and adverse economic trends.",
+   "current_heading": "Increases in our debt levels to fund spectrum purchases, or other strategic decisions could adversely affect our ability to finance future debt at attractive rates and reduce our ability to respond to competition and adverse economic trends.",
+   "similarity": 0.988,
+   "diff": [
+    "insert: [] -> [intend to and]",
+    "replace: [level going forward.] -> [level.]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The debt disclosure changes from \"we have incurred debt\" to \"we intend to and have incurred debt\" to fund significant acquisitions and spectrum purchases, and \"managing our debt level going forward\" becomes \"managing our debt level\".",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 3: scope widens from past borrowing to a stated intention to incur further acquisition and spectrum debt."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: the risk moves from a past fact to a stated intention to incur further debt, widening the scope; the \"going forward\" deletion alone would be stylistic."
+    }
+   }
+  },
+  {
+   "aid": "a09",
+   "status": "modified",
+   "prior_heading": "Our business may be impacted by changes in tax laws and regulations, judicial interpretations of the same or administrative actions by federal, state, local and foreign taxing authorities.",
+   "current_heading": "Our business may be impacted by changes in tax laws and regulations, judicial interpretations of the same or administrative actions by federal, state, local and foreign taxing authorities.",
+   "similarity": 0.232,
+   "diff": [
+    "delete: [(such as the U.S. Tax Cuts and Jobs Act of 2017 and the Inflation Reduction Act of 2022)] -> []",
+    "insert: [] -> [13]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Drops the named examples of tax legislation, the U.S. Tax Cuts and Jobs Act of 2017 and the Inflation Reduction Act of 2022, from the discussion of uncertain application of tax laws (a page number is also added).",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2: two named regulations previously referenced are dropped."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 2: two specifically named regulations are dropped from the disclosure."
+    }
+   }
+  },
+  {
+   "aid": "a10",
+   "status": "removed",
+   "prior_heading": "If the distribution of WarnerMedia, together with certain related transactions, were to fail to qualify for non-recognition treatment for U.S. federal income tax purposes under audit, then we could be subject to significant tax liability.",
+   "current_heading": "",
+   "similarity": 0.0,
+   "diff": [],
+   "material": true,
+   "rationale": "",
+   "description": "Covered the risk that the IRS could, on audit and despite a favorable Private Letter Ruling, treat the WarnerMedia distribution and related transactions as taxable, exposing AT&T to significant tax liability with any indemnification from Warner Bros. Discovery subject to that company's credit risk."
+  }
+ ]
+}

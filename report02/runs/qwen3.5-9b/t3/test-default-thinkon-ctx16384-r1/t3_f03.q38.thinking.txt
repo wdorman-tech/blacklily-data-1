@@ -1,0 +1,47 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraint 1: Answer only from the documents provided.
+    *   Constraint 2: If documents don't answer, return exactly `NOT_IN_DOCUMENTS`.
+    *   Constraint 3: Later-dated documents supersede earlier ones (not relevant here as dates seem consistent or not conflicting on this topic).
+    *   Constraint 4: Keep answers short and specific.
+    *   Constraint 5: Cite document file name and section.
+    *   Constraint 6: Quote supporting text verbatim.
+    *   Output Format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Does the firm run criminal history and credit checks on prospective employees before hire? Describe the checks performed."
+
+3.  **Scan the Documents for Keywords:**
+    *   Keywords: "criminal", "history", "credit", "check", "background", "hire", "employment", "prospective", "employee".
+
+4.  **Review Document Content:**
+    *   `01_brochure.md`: Discusses Code of Ethics, Personal Trading (pre-clearance, blackout periods, etc.). No mention of hiring checks.
+    *   `02_compliance_manual.md`:
+        *   Section 1.2 Persons Covered: Defines Supervised Persons, mentions temporary staff/consultants signing confidentiality undertaking. No mention of criminal/credit checks.
+        *   Section 2.2 Responsibilities: CCO responsibilities (administering Manual, etc.). No mention of hiring checks.
+        *   Section 3.2 Acknowledgment: Code acknowledgment upon hire. No mention of checks.
+        *   Section 4.7 Review of Personal Trading: Compliance Manager reviews holdings/transactions. No mention of hiring checks.
+        *   Section 6.3 New Employees: Discloses political contributions made during two years/six months before hire. No mention of criminal/credit checks.
+        *   Section 11.4 Vulnerability Management...: Cybersecurity, phishing simulations. No mention of hiring checks.
+        *   Section 15.2 Conduct and Reporting: Annual review by CCO with Hethersett Compliance Advisors. No mention of hiring checks.
+
+5.  **Evaluate Findings:**
+    *   I have scanned all provided text segments.
+    *   There is no mention of criminal history checks or credit checks on prospective employees in any of the provided documents (`01_brochure.md` or `02_compliance_manual.md`).
+    *   The only pre-hire disclosure mentioned is regarding political contributions (Section 6.3) and signing confidentiality undertakings for temporary staff (Section 1.2).
+    *   Therefore, the information requested is not in the documents.
+
+6.  **Formulate the Output:**
+    *   "answer": "NOT_IN_DOCUMENTS"
+    *   "source_document": ""
+    *   "section": ""
+    *   "quote": ""
+
+7.  **Final Verification:**
+    *   Does any text imply it? No.
+    *   Is the instruction to return ONLY a JSON object followed? Yes.
+    *   Are there markdown fences? No.
+    *   Is the answer exactly `

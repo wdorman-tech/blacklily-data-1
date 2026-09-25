@@ -1,0 +1,51 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "What are the coverage limits of the Adviser's cyber liability insurance policy, and who is the carrier?"
+    *   Key information needed: Coverage limits (amount), Carrier name.
+
+3.  **Scan the Documents:**
+    *   `02_compliance_manual.md` (dated January 15, 2026):
+        *   Section 11.5 Incident Response and Insurance: "The Adviser maintains a cyber liability insurance policy, and the President and Chief Operating Officer reviews the adequacy of its coverage at each annual renewal." -> Mentions existence, review process, but no limits or carrier name.
+    *   `04_business_continuity_plan.md` (dated February 9, 2026):
+        *   Section 9.2 Cyber Incident Response: "The President and Chief Operating Officer notifies the carrier under the Adviser's cyber liability insurance policy." -> Mentions notifying the carrier, but does not name the carrier or state limits.
+    *   `06_policy_update_memo.md` (dated August 24, 2026):
+        *   Section 2.5 Business Continuity Plan Section 5.2 (IT Managed Service Provider): Discusses vendor change (Oskerby to Anselby). Mentions backup platform unchanged. No mention of insurance limits or carrier name.
+
+4.  **Evaluate Findings:**
+    *   The documents confirm the existence of a cyber liability insurance policy.
+    *   They mention who reviews it (President and Chief Operating Officer).
+    *   They mention that the President and Chief Operating Officer notifies the carrier.
+    *   They do *not* state the coverage limits (e.g., $5 million, etc.).
+    *   They do *not* name the insurance carrier (e.g., AIG, Chubb, etc.).
+
+5.  **Determine the Answer:**
+    *   Since the specific details requested (coverage limits, carrier name) are not present in any of the provided documents, the answer must be `NOT_IN_DOCUMENTS`.
+
+6.  **Format the Output:**
+    *   JSON object.
+    *   Keys: "answer", "source_document", "section", "quote".
+    *   Values: "NOT_IN_DOCUMENTS", "", "", "".
+
+7.  **Final Check:**
+    *   Did I miss anything? Scanned all sections related to insurance (11.5 in Compliance Manual, 9.2 in BCP). Neither contains limits or carrier name.
+    *   Is the JSON valid? Yes.
+    *   Are there markdown fences? No.
+    *   Is there preamble? No.
+
+8.  **Construct JSON:**
+    ```json
+    {

@@ -1,0 +1,29 @@
+*   Question: Identify the qualified custodian(s) holding client assets and the independent public accountant that performs the firm's surprise custody examination.
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+
+    *   Document 1: `05_fee_schedule.md`
+        *   Section 3.3 mentions "custodial accounts" but doesn't name specific custodians.
+        *   Section 2.4 mentions "custodial accounts" but doesn't name specific custodians.
+    *   Document 2: `06_policy_update_memo.md`
+        *   Section 6 mentions "Kelvedon Cloud Recovery, Inc." (backup provider) and "Ferncastle Data Vault, Inc." (former backup provider).
+        *   Section 6 mentions "Norrell Bay and Corvedale Clay" (these are mentioned in the BCP section of the first document, but let's check the memo).
+        *   Wait, let's look at the BCP section in the first snippet (which is actually part of a document not explicitly named in the prompt's header, but it's the first block of text provided).
+        *   The first block of text (which seems to be part of a BCP or Compliance Manual) mentions: "The Director of Operations notifies Norrell Bay and Corveded Clay of the declaration...". These are likely the custodians or related entities, but the text doesn't explicitly call them "qualified custodians" or "independent public accountants".
+        *   Let's re-read the first block (Section 6.3 to Section 9).
+        *   Section 7.3: "The Director of Operations notifies Norrell Bay and Corvedale Clay of the declaration and of any change in authorized contacts."
+        *   Section 8.3: "the Director of Operations asks Norrell Bay and Corvedale Clay to apply heightened review..."
+        *   The text does not mention an "independent public accountant" or "surprise custody examination".
+
+    *   The question asks for:
+        1.  Qualified custodian(s) holding client assets.
+        2.  Independent public accountant that performs the firm's surprise custody examination.
+    *   Looking at the provided text:
+        *   "Norrell Bay" and "Corvedale Clay" are mentioned in the context of "custodians" in Section 7.3 (implied by the context of "notifies Norrell Bay and Corvedale Clay of the declaration" in a BCP section where custodians are typically notified). However, the text doesn't explicitly state they are the "qualified custodians holding client assets".
+        *   There is no mention of an "independent public accountant" or a "surprise custody examination" in any of the provided sections.
+
+    *   The text mentions "Norrell Bay" and "Corvedale Clay" in the context of "Custodians" in Section 7.3.
+    *   However, the prompt asks for "the qualified custodian(s) holding client assets" and "the independent public accountant that performs the firm's surprise custody examination".
+    *   The text provided does not contain information about an "independent public accountant" or "surprise custody examination".
+    *   Since the specific details (independent public accountant/surprise examination) are missing, the answer for the whole question is likely NOT_IN_DOCUMENTS.
+
+    *   "Norrell Bay" and "Corvedale Clay" are mentioned in Section 7.3 of the first document (which is not

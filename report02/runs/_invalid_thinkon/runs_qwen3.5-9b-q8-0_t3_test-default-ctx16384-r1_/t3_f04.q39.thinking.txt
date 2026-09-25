@@ -1,0 +1,32 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "What is the minimum account size for a separately managed account, and what minimum annual fee applies?"
+
+2.  **Analyze the Documents:**
+    *   `01_brochure.md` (dated March 27, 2026):
+        *   Section Item 7. Types of Clients > 7.2 Account Minimums: "The minimum account size for a separate account is $100 million."
+        *   Section Item 5. Fees and Compensation > 5.2 Separate Account Fee Schedules: "Each separate account is subject to a minimum annual fee of $150,000."
+    *   `05_fee_schedule.md` (dated January 1, 2026):
+        *   Section SECTION 5. MINIMUMS > 5.1 Minimum Account Size: "The minimum account size for a separate account is $100 million. The Firm may accept a smaller account in its discretion."
+        *   Section SECTION 5. MINIMUMS > 5.2 Minimum Annual Fee: "Each separate account is subject to a minimum annual fee of $150,000, billed in equal quarterly amounts and prorated for any partial year."
+
+3.  **Determine the Correct Document:**
+    *   `01_brochure.md` is dated March 27, 2026.
+    *   `05_fee_schedule.md` is dated January 1, 2026.
+    *   Rule 3: "Later-dated documents supersede earlier ones."
+    *   Therefore, `01_brochure.md` (March 27, 2026) supersedes `05_fee_schedule.md` (January 1, 2026).
+    *   I need to check if the information in `01_brochure.md` is sufficient and accurate compared to `05_fee_schedule.md`.
+    *   Minimum Account Size: Both say $100 million. `01_brochure.md` Section 7.2 Account Minimums says "The minimum account size for a separate account is $100 million."
+    *   Minimum Annual Fee: `01_brochure.md` Section 5.2 Separate Account Fee Schedules says "Each separate account is subject to a minimum annual fee of $150,000." `05_fee_schedule.md` adds billing details ("billed in equal quarterly amounts..."). The question asks for the minimum annual fee amount. Both agree on the amount ($150,000).
+    *   Since `01_brochure.md` is later, I should prioritize it. However, Rule 2 says "If the documents do not answer the question...". Both documents answer

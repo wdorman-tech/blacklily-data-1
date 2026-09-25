@@ -1,0 +1,34 @@
+*   Question: Who is the Firm's Chief Compliance Officer, and to whom does the CCO report?
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+
+    *   "Chief Compliance Officer"
+    *   "Priya Castellane"
+    *   "reports to"
+
+    *   *01_valuation_policy.md*:
+        *   Section 2.1: "The Chief Compliance Officer, Priya Castellane..."
+        *   Section 2.5: "...the Firm has an incentive to overstate values. The Committee addresses this conflict by... excluding portfolio managers and traders from its votes, and by the independent review described in Section 8." (Doesn't mention reporting structure).
+    *   *02_business_continuity_plan.md*:
+        *   Section 1.2: "...the Chief Compliance Officer, Priya Castellane..."
+        *   Section 1.4: "The Chief Compliance Officer reviews the Plan as part of the annual compliance review."
+    *   *03_fee_schedule.md*:
+        *   Section 1.2: "...the Chief Compliance Officer reviews each new fee arrangement..."
+    *   *04_policy_update_memo.md*:
+        *   Section 1.2: "The Management Committee approved this memorandum on August 11, 2026... The Chief Compliance Officer reviews the Plan as part of the annual compliance review." (Wait, that's from the BCP).
+        *   Section 1.2: "The Management Committee approved this memorandum... under Section 1.3 of the Compliance Manual."
+        *   Section 6: "Questions should be directed to the Chief Compliance Officer or the Deputy Chief Compliance Officer."
+
+    *   The name of the CCO is Priya Castellane.
+    *   Does the document state who she reports to?
+    *   Looking at *04_policy_update_memo.md*: "The Management Committee approved this memorandum... under Section 1.3 of the Compliance Manual."
+    *   Looking at *01_valuation_policy.md*: "The Committee addresses this conflict by... the independent review described in Section 8."
+    *   Looking at *02_business_continuity_plan.md*: "The Chief Compliance Officer reviews the Plan as part of the annual compliance review."
+    *   Looking at *04_policy_update_memo.md*: "The Management Committee approved this memorandum... under Section 1.3 of the Compliance Manual."
+    *   Wait, let me re-read the prompt's documents carefully.
+    *   *01_valuation_policy.md* Section 2.1: "The Chief Compliance Officer, Priya Castellane..."
+    *   *02_business_continuity_plan.md* Section 1.2: "...the Chief Compliance Officer, Priya Castellane..."
+    *   *04_policy_update_memo.md* Section 1.2: "The Management Committee approved this memorandum on August 11, 2026, under Section 1.3 of the Compliance Manual."
+    *   Does it say who she reports to?
+    *   Let's check the "Management Committee".
+    *   In *04_policy_update_memo.md*, it says "The Management Committee approved this memorandum...".
+    *   In *01_valuation_policy.md*, Section 2.4: "...and reports quarterly to the Management

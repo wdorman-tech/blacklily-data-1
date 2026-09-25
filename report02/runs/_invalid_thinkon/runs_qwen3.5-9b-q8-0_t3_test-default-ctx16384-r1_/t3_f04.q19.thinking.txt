@@ -1,0 +1,33 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question using *only* the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "Under what conditions does the Firm effect cross trades between client accounts, and does it engage in principal transactions?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "cross trades", "client accounts", "principal transactions".
+
+3.  **Locate Relevant Information:**
+    *   Document 1: `01_brochure.md` (Form ADV Part 2A, dated March 27, 2026).
+        *   Section: Item 11. Code of Ethics... > 11.3 Cross Trades.
+            *   Text: "The Firm may effect a cross trade between two client accounts, in which one account sells a security to another, only when the portfolio manager has determined that the transaction is in the best interest of both accounts and consistent with each account's guidelines; the Chief Compliance Officer or the Deputy Chief Compliance Officer has approved the transaction in advance; and the transaction is executed at the current evaluated price supplied by the Firm's independent primary pricing service. Neither the Firm nor any affiliate receives a commission, markup or other compensation in connection with a cross trade. Cross trades are not effected for any account whose IMA or governing law prohibits them."
+        *   Section: Item 11. Code of Ethics... > 11.4 Principal Transactions.
+            *   Text: "The Firm does not engage in principal transactions, in which the Firm or an affiliate buys a security from or sells a security to a client for its own account, and it does not effect agency cross transactions, because it has no affiliated broker-dealer."
+
+    *   Document 2: `02_compliance_manual.md` (Compliance Manual, dated January 15, 2026).
+        *   Section: SECTION 10. BEST EXECUTION REVIEW > 10.1 Standard.
+            *   Text: Mentions fixed income securities traded with dealers as principal, but this is about best execution review, not the firm's general policy on engaging in principal transactions vs cross trades specifically regarding client accounts. The Brochure (March 27, 2026) is later than the Compliance Manual (January 15, 2026), so if there were a conflict, the Brochure would supersede. However, the Brochure explicitly answers both parts of the question.
+
+4.  **Synthesize the Answer:**
+    *   The question asks for conditions for cross trades and whether they engage in principal transactions.
+    *   Both pieces of information are found in `01_brochure.md`.
+    *   Cross Trade Conditions (Section 11.3): Portfolio manager determines best interest/consistent with guidelines; CCO or Deputy CCO approves in advance; executed at current evaluated price from independent primary pricing service; no commission/markup; not for accounts where IMA/governing

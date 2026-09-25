@@ -1,0 +1,41 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Who must approve a price override before it is applied?"
+
+3.  **Scan the Documents:**
+    *   Document 1: `03_valuation_policy.md` (dated February 10, 2026).
+        *   Section 5.3 Overrides: "A price override... must be approved in writing by the Chief Financial Officer before it is applied."
+    *   Document 2: `06_policy_update_memo.md` (dated August 14, 2026).
+        *   Section 3.2 Price Override Approval: "This Section 3.2 amends Section 5.3 (Overrides) of the Valuation Policy and Procedures. Effective September 1, 2026, a price override must be approved in writing by both the Chief Financial Officer and the Chief Risk Officer before it is applied."
+        *   It also mentions: "Approval by the Chief Financial Officer alone, as stated in Section 5.3, is no longer sufficient."
+
+4.  **Determine the Current Rule:**
+    *   The `06_policy_update_memo.md` is dated August 14, 2026.
+    *   The `03_valuation_policy.md` is dated February 10, 2026.
+    *   Rule 3 states: "Later-dated documents supersede earlier ones."
+    *   Therefore, the amendment in `06_policy_update_memo.md` (August 14, 2026) supersedes the original text in `03_valuation_policy.md` (February 10, 2026).
+    *   The effective date of the change is September 1, 2026. Since the memo is dated August 14, 2026 and states "Effective September 1, 2026", this represents the current policy update relative to the earlier document. The question asks for the current requirement ("Who must approve...").
+    *   Current requirement: Both the Chief Financial Officer and the Chief Risk Officer.
+
+5.  **Draft the Answer:**
+    *   Answer: "both the Chief Financial Officer and the Chief Risk Officer" (or similar verbatim).
+    *   Source Document: `06_policy_update_memo.md`
+    *   Section: `SECTION 3.2 Price Override Approval`
+    *   Quote: "Effective September 1, 2026, a price override must be approved in writing by both the Chief Financial Officer and the Chief Risk Officer before it is applied."
+
+6.  **Refine for Constraints:**
+    *   Must be JSON.
+    *   Keys: "answer", "source_document", "section

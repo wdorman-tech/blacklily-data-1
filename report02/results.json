@@ -1,0 +1,5942 @@
+{
+ "meta": {
+  "report": "Benchmark Report No. 02",
+  "month": "September 2026",
+  "generated": "2026-09-25T14:17:02-0400",
+  "split": "test",
+  "prereg_sha256": "c996d2253993bfef4429cd2595f10f84c53ce0696b3f9ff52f9ba14fcadca4a7",
+  "prompt_hashes": {
+   "frozen_at": "2026-09-22T15:01:59-0400",
+   "files": {
+    "judge.py": "5931b5faf61fcb599dab7b27a7036185252cdaddf37beb76d2d30bbe73040410",
+    "t1.py": "ea07bfe78c2591908c807f8000ed9ddd059e6179940cf95774c77581cea06ea7",
+    "t2.py": "cb4c354b0ff8e3c85f85e40c45c72cdcc17e344834772b887e603e37e1434b93",
+    "t3.py": "ff603fde2e1563786caaa00741f10ce74161e33be6e459a99816edde30ef06ef",
+    "t4.py": "3bf017290a43842e21fc095ba0572f716557f686757504424a22558f5e7b40ed",
+    "t5.py": "5c4199dde59d4492502c1f185cc8ecb27159f0ecdf6741614b5f8da73457f568",
+    "t6.py": "b0337e71fe1552d1770dde55791527b392cc950f82324a4ea2ad4b95c894e299",
+    "t7.py": "aa17e8831fcacf50dfd3c11d159255186d24fe57c1981286ffa90d5b76b90b74",
+    "no1_schema.py": "646db100834e60afba14fd8122f655a1ba9cc65a9e676e2300ce0754dfb775f0"
+   },
+   "systems": {
+    "t1": "3c0741e24dce410773f7ceff6b943c4e376f60816b52542829880f056d8bf1c6",
+    "t2": "aa05aa43ac256ee3c7b839b175be263c78446bd9a9f3af84e122be084067c069",
+    "t3": "71fe27a89ceec4bc2e81954adb9852d62532aa8027e124eba8bc519af11c0785",
+    "t4": "82d9d723c6013991979cac498a4d59e1d61ca6a9178a7c0a291f4f68bdf35ea5",
+    "t5": "8a96cf4ee0e7d1ec6e59cc7af41b5004fcd5b3fa4b6e73201c5831d286f19909",
+    "t6": "b6349c80edd6a6a9103a06bf79c9f56ccbdd8abb68d518e2f57b5cc51a80111f",
+    "t7": "c41ea209ed5b2e12add1c5e7d42fc918d090e028c6f4d7c377d22bd61f40b51b"
+   }
+  }
+ },
+ "hardware": {
+  "gpu": "NVIDIA GeForce RTX 5070",
+  "vram_gb": 12,
+  "cpu": "AMD Ryzen 7 7700X",
+  "ram_gb": 63,
+  "os": "Windows 11 Pro"
+ },
+ "runtime": {
+  "ollama": "0.34.2",
+  "flash_attention": true,
+  "kv_cache": "q8_0",
+  "num_ctx": 16384
+ },
+ "models": {
+  "claude-opus-5": {
+   "label": "Claude Opus 5",
+   "short": "Opus 5",
+   "role": "frontier",
+   "tag": "claude-opus-5",
+   "card_url": "https://www.anthropic.com/claude",
+   "slug": "claude-opus-5"
+  },
+  "qwen2.5-14b-instruct-q4-k-m": {
+   "label": "Qwen2.5 14B",
+   "short": "Qwen2.5 14B",
+   "role": "local_continuity",
+   "tag": "qwen2.5:14b-instruct-q4_K_M",
+   "card_url": "https://huggingface.co/Qwen/Qwen2.5-14B-Instruct",
+   "slug": "qwen2.5-14b-instruct-q4-k-m",
+   "digest": "7cdf5a0187d5c58cc5d369b255592f7841d1c4696d45a8c8a9489440385b22f6",
+   "loaded": {
+    "size_bytes": 10388735261,
+    "size_vram_bytes": 10388735261,
+    "fully_on_gpu": true,
+    "context_length": 16384
+   },
+   "server": {
+    "flash_attention": "true",
+    "kv_cache_type": "q8_0",
+    "version": "0.34.2",
+    "num_parallel": 1
+   },
+   "gpu_before": {
+    "vram_used_mib": 7973,
+    "vram_total_mib": 12227,
+    "gpu_util_pct": 2
+   },
+   "details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "qwen2",
+    "families": [
+     "qwen2"
+    ],
+    "parameter_size": "14.8B",
+    "quantization_level": "Q4_K_M",
+    "context_length": 32768,
+    "embedding_length": 5120
+   }
+  },
+  "gemma4-12b": {
+   "label": "Gemma 4 12B",
+   "short": "Gemma 4 12B",
+   "role": "local_current",
+   "tag": "gemma4:12b",
+   "card_url": "https://ollama.com/library/gemma4",
+   "slug": "gemma4-12b",
+   "digest": "4eb23ef187e2c5462566d6a1d3bbbc2f1346d0b4327cbb66d58fffbcc9b2b05c",
+   "loaded": {
+    "size_bytes": 8076467895,
+    "size_vram_bytes": 8076467895,
+    "fully_on_gpu": true,
+    "context_length": 16384
+   },
+   "server": {
+    "flash_attention": "true",
+    "kv_cache_type": "q8_0",
+    "version": "0.34.2",
+    "num_parallel": 1
+   },
+   "gpu_before": {
+    "vram_used_mib": 7914,
+    "vram_total_mib": 12227,
+    "gpu_util_pct": 3
+   },
+   "details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "gemma4",
+    "families": [
+     "gemma4"
+    ],
+    "parameter_size": "11.9B",
+    "quantization_level": "Q4_K_M",
+    "context_length": 262144,
+    "embedding_length": 3840
+   }
+  },
+  "qwen3.5-9b": {
+   "label": "Qwen3.5 9B",
+   "short": "Qwen3.5 9B",
+   "role": "local_current",
+   "tag": "qwen3.5:9b",
+   "card_url": "https://ollama.com/library/qwen3.5",
+   "slug": "qwen3.5-9b",
+   "digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+   "loaded": {
+    "size_bytes": 5763005151,
+    "size_vram_bytes": 5763005151,
+    "fully_on_gpu": true,
+    "context_length": 16384
+   },
+   "server": {
+    "flash_attention": "true",
+    "kv_cache_type": "q8_0",
+    "version": "0.34.2",
+    "num_parallel": 1
+   },
+   "gpu_before": {
+    "vram_used_mib": 8136,
+    "vram_total_mib": 12227,
+    "gpu_util_pct": 2
+   },
+   "details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "qwen35",
+    "families": [
+     "qwen35"
+    ],
+    "parameter_size": "9.7B",
+    "quantization_level": "Q4_K_M",
+    "context_length": 262144,
+    "embedding_length": 4096
+   }
+  },
+  "ministral-3-14b": {
+   "label": "Ministral 3 14B",
+   "short": "Ministral 3 14B",
+   "role": "local_current",
+   "tag": "ministral-3:14b",
+   "card_url": "https://ollama.com/library/ministral-3",
+   "slug": "ministral-3-14b",
+   "digest": "4760c35aeb9d9e9c6174c2492562c0b999e80a222804fd96b1915ab72bbcdcf7",
+   "loaded": {
+    "size_bytes": 9491709951,
+    "size_vram_bytes": 9491709951,
+    "fully_on_gpu": true,
+    "context_length": 16384
+   },
+   "server": {
+    "flash_attention": "true",
+    "kv_cache_type": "q8_0",
+    "version": "0.34.2",
+    "num_parallel": 1
+   },
+   "gpu_before": {
+    "vram_used_mib": 11647,
+    "vram_total_mib": 12227,
+    "gpu_util_pct": 98
+   },
+   "details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "mistral3",
+    "families": [
+     "mistral3"
+    ],
+    "parameter_size": "13.9B",
+    "quantization_level": "Q4_K_M",
+    "context_length": 262144,
+    "embedding_length": 5120
+   }
+  },
+  "qwen2.5-7b-instruct-q4-k-m": {
+   "label": "Qwen2.5 7B",
+   "short": "Qwen2.5 7B",
+   "role": "ablation_size",
+   "tag": "qwen2.5:7b-instruct-q4_K_M",
+   "card_url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct",
+   "slug": "qwen2.5-7b-instruct-q4-k-m",
+   "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+   "loaded": {
+    "size_bytes": 5180164668,
+    "size_vram_bytes": 5180164668,
+    "fully_on_gpu": true,
+    "context_length": 16384
+   },
+   "server": {
+    "flash_attention": "true",
+    "kv_cache_type": "q8_0",
+    "version": "0.34.2",
+    "num_parallel": 1
+   },
+   "gpu_before": {
+    "vram_used_mib": 11240,
+    "vram_total_mib": 12227,
+    "gpu_util_pct": 1
+   },
+   "details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "qwen2",
+    "families": [
+     "qwen2"
+    ],
+    "parameter_size": "7.6B",
+    "quantization_level": "Q4_K_M",
+    "context_length": 32768,
+    "embedding_length": 3584
+   }
+  }
+ },
+ "tasks": {
+  "t1": {
+   "name": "Fund term extraction",
+   "mirrors": "Diligence on a private fund's offering documents",
+   "source": "Synthetic offering memoranda, LPAs and side letters",
+   "id": "t1",
+   "primary_label": "Field accuracy",
+   "halluc_label": "Hallucinated fields",
+   "models": {
+    "claude-opus-5": {
+     "citation": {
+      "mean": 100.0,
+      "min": 100.0,
+      "max": 100.0,
+      "runs": [
+       100.0
+      ]
+     },
+     "halluc": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0
+      ]
+     },
+     "primary": {
+      "mean": 100.0,
+      "min": 100.0,
+      "max": 100.0,
+      "runs": [
+       100.0
+      ]
+     },
+     "traps": {
+      "absence": {
+       "failures_mean": 0.0,
+       "opportunities": 38.0,
+       "runs": 1
+      },
+      "class_variants": {
+       "failures_mean": 0.0,
+       "opportunities": 10.0,
+       "runs": 1
+      },
+      "holding_not_commitment": {
+       "failures_mean": 0.0,
+       "opportunities": 5.0,
+       "runs": 1
+      },
+      "late_position": {
+       "failures_mean": 0.0,
+       "opportunities": 3.0,
+       "runs": 1
+      },
+      "layered_fee": {
+       "failures_mean": 0.0,
+       "opportunities": 3.0,
+       "runs": 1
+      },
+      "precedence": {
+       "failures_mean": 0.0,
+       "opportunities": 2.0,
+       "runs": 1
+      },
+      "side_letter": {
+       "failures_mean": 0.0,
+       "opportunities": 5.0,
+       "runs": 1
+      },
+      "supersession": {
+       "failures_mean": 0.0,
+       "opportunities": 6.0,
+       "runs": 1
+      },
+      "table_only": {
+       "failures_mean": 0.0,
+       "opportunities": 3.0,
+       "runs": 1
+      }
+     },
+     "errors": {
+      "missed": 0.0,
+      "stale": 0.0,
+      "fabricated": 0.0,
+      "other": 0.0,
+      "bad_citation": 0.0,
+      "units": 180
+     },
+     "speed": {
+      "sec_per_item_median": 50.6,
+      "output_tps_median": null,
+      "prompt_tokens_median": null,
+      "output_tokens_median": 5810,
+      "peak_vram_mib_max": 0,
+      "thinking_chars_median": null,
+      "items": 9
+     },
+     "n_runs": 1,
+     "judge_pending": false
+    },
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "citation": {
+      "mean": 100.0,
+      "min": 100.0,
+      "max": 100.0,
+      "runs": [
+       100.0,
+       100.0,
+       100.0
+      ]
+     },
+     "halluc": {
+      "mean": 1.7,
+      "min": 1.7,
+      "max": 1.7,
+      "runs": [
+       1.7,
+       1.7,
+       1.7
+      ]
+     },
+     "primary": {
+      "mean": 93.9,
+      "min": 93.9,
+      "max": 93.9,
+      "runs": [
+       93.9,
+       93.9,
+       93.9
+      ]
+     },
+     "traps": {
+      "absence": {
+       "failures_mean": 2.0,
+       "opportunities": 38.0,
+       "runs": 3
+      },
+      "class_variants": {
+       "failures_mean": 1.0,
+       "opportunities": 10.0,
+       "runs": 3
+      },
+      "holding_not_commitment": {
+       "failures_mean": 0.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "late_position": {
+       "failures_mean": 0.0,
+       "opportunities": 3.0,
+       "runs": 3
+      },
+      "layered_fee": {
+       "failures_mean": 0.0,
+       "opportunities": 3.0,
+       "runs": 3
+      },
+      "precedence": {
+       "failures_mean": 2.0,
+       "opportunities": 2.0,
+       "runs": 3
+      },
+      "side_letter": {
+       "failures_mean": 0.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "supersession": {
+       "failures_mean": 1.0,
+       "opportunities": 6.0,
+       "runs": 3
+      },
+      "table_only": {
+       "failures_mean": 0.0,
+       "opportunities": 3.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 0.0,
+      "stale": 0.0,
+      "fabricated": 3.0,
+      "other": 11.0,
+      "bad_citation": 0.0,
+      "units": 180
+     },
+     "speed": {
+      "sec_per_item_median": 51.6,
+      "output_tps_median": 45.1,
+      "prompt_tokens_median": 8192,
+      "output_tokens_median": 1810,
+      "peak_vram_mib_max": 11852,
+      "thinking_chars_median": 0,
+      "items": 27
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "gemma4-12b": {
+     "citation": {
+      "mean": 97.7,
+      "min": 97.7,
+      "max": 97.7,
+      "runs": [
+       97.7,
+       97.7,
+       97.7
+      ]
+     },
+     "halluc": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0,
+       0.0,
+       0.0
+      ]
+     },
+     "primary": {
+      "mean": 97.8,
+      "min": 97.8,
+      "max": 97.8,
+      "runs": [
+       97.8,
+       97.8,
+       97.8
+      ]
+     },
+     "traps": {
+      "absence": {
+       "failures_mean": 0.0,
+       "opportunities": 38.0,
+       "runs": 3
+      },
+      "class_variants": {
+       "failures_mean": 1.0,
+       "opportunities": 10.0,
+       "runs": 3
+      },
+      "holding_not_commitment": {
+       "failures_mean": 0.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "late_position": {
+       "failures_mean": 0.0,
+       "opportunities": 3.0,
+       "runs": 3
+      },
+      "layered_fee": {
+       "failures_mean": 0.0,
+       "opportunities": 3.0,
+       "runs": 3
+      },
+      "precedence": {
+       "failures_mean": 2.0,
+       "opportunities": 2.0,
+       "runs": 3
+      },
+      "side_letter": {
+       "failures_mean": 0.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "supersession": {
+       "failures_mean": 0.0,
+       "opportunities": 6.0,
+       "runs": 3
+      },
+      "table_only": {
+       "failures_mean": 0.0,
+       "opportunities": 3.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 0.0,
+      "stale": 0.0,
+      "fabricated": 0.0,
+      "other": 6.0,
+      "bad_citation": 4.0,
+      "units": 180
+     },
+     "speed": {
+      "sec_per_item_median": 35.2,
+      "output_tps_median": 60.5,
+      "prompt_tokens_median": 8312,
+      "output_tokens_median": 1888,
+      "peak_vram_mib_max": 9869,
+      "thinking_chars_median": 0,
+      "items": 27
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "qwen3.5-9b": {
+     "citation": {
+      "mean": 100.0,
+      "min": 100.0,
+      "max": 100.0,
+      "runs": [
+       100.0,
+       100.0,
+       100.0
+      ]
+     },
+     "halluc": {
+      "mean": 1.7,
+      "min": 1.7,
+      "max": 1.7,
+      "runs": [
+       1.7,
+       1.7,
+       1.7
+      ]
+     },
+     "primary": {
+      "mean": 96.7,
+      "min": 96.7,
+      "max": 96.7,
+      "runs": [
+       96.7,
+       96.7,
+       96.7
+      ]
+     },
+     "traps": {
+      "absence": {
+       "failures_mean": 2.0,
+       "opportunities": 38.0,
+       "runs": 3
+      },
+      "class_variants": {
+       "failures_mean": 1.0,
+       "opportunities": 10.0,
+       "runs": 3
+      },
+      "holding_not_commitment": {
+       "failures_mean": 0.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "late_position": {
+       "failures_mean": 0.0,
+       "opportunities": 3.0,
+       "runs": 3
+      },
+      "layered_fee": {
+       "failures_mean": 0.0,
+       "opportunities": 3.0,
+       "runs": 3
+      },
+      "precedence": {
+       "failures_mean": 0.0,
+       "opportunities": 2.0,
+       "runs": 3
+      },
+      "side_letter": {
+       "failures_mean": 0.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "supersession": {
+       "failures_mean": 0.0,
+       "opportunities": 6.0,
+       "runs": 3
+      },
+      "table_only": {
+       "failures_mean": 0.0,
+       "opportunities": 3.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 0.0,
+      "stale": 0.0,
+      "fabricated": 3.0,
+      "other": 5.0,
+      "bad_citation": 0.0,
+      "units": 180
+     },
+     "speed": {
+      "sec_per_item_median": 8.0,
+      "output_tps_median": 88.7,
+      "prompt_tokens_median": 8304,
+      "output_tokens_median": 493,
+      "peak_vram_mib_max": 8169,
+      "thinking_chars_median": 0,
+      "items": 27
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "ministral-3-14b": {
+     "citation": {
+      "mean": 98.9,
+      "min": 98.9,
+      "max": 98.9,
+      "runs": [
+       98.9,
+       98.9,
+       98.9
+      ]
+     },
+     "halluc": {
+      "mean": 2.2,
+      "min": 2.2,
+      "max": 2.2,
+      "runs": [
+       2.2,
+       2.2,
+       2.2
+      ]
+     },
+     "primary": {
+      "mean": 97.2,
+      "min": 97.2,
+      "max": 97.2,
+      "runs": [
+       97.2,
+       97.2,
+       97.2
+      ]
+     },
+     "traps": {
+      "absence": {
+       "failures_mean": 1.0,
+       "opportunities": 38.0,
+       "runs": 3
+      },
+      "class_variants": {
+       "failures_mean": 0.0,
+       "opportunities": 10.0,
+       "runs": 3
+      },
+      "holding_not_commitment": {
+       "failures_mean": 0.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "late_position": {
+       "failures_mean": 0.0,
+       "opportunities": 3.0,
+       "runs": 3
+      },
+      "layered_fee": {
+       "failures_mean": 0.0,
+       "opportunities": 3.0,
+       "runs": 3
+      },
+      "precedence": {
+       "failures_mean": 0.0,
+       "opportunities": 2.0,
+       "runs": 3
+      },
+      "side_letter": {
+       "failures_mean": 0.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "supersession": {
+       "failures_mean": 0.0,
+       "opportunities": 6.0,
+       "runs": 3
+      },
+      "table_only": {
+       "failures_mean": 0.0,
+       "opportunities": 3.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 0.0,
+      "stale": 0.0,
+      "fabricated": 4.0,
+      "other": 2.0,
+      "bad_citation": 2.0,
+      "units": 180
+     },
+     "speed": {
+      "sec_per_item_median": 43.8,
+      "output_tps_median": 52.9,
+      "prompt_tokens_median": 8477,
+      "output_tokens_median": 2044,
+      "peak_vram_mib_max": 11550,
+      "thinking_chars_median": 0,
+      "items": 27
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "citation": {
+      "mean": 96.2,
+      "min": 96.2,
+      "max": 96.2,
+      "runs": [
+       96.2
+      ]
+     },
+     "halluc": {
+      "mean": 2.2,
+      "min": 2.2,
+      "max": 2.2,
+      "runs": [
+       2.2
+      ]
+     },
+     "primary": {
+      "mean": 59.4,
+      "min": 59.4,
+      "max": 59.4,
+      "runs": [
+       59.4
+      ]
+     },
+     "traps": {
+      "absence": {
+       "failures_mean": 12.0,
+       "opportunities": 38.0,
+       "runs": 1
+      },
+      "class_variants": {
+       "failures_mean": 5.0,
+       "opportunities": 10.0,
+       "runs": 1
+      },
+      "holding_not_commitment": {
+       "failures_mean": 2.0,
+       "opportunities": 5.0,
+       "runs": 1
+      },
+      "late_position": {
+       "failures_mean": 2.0,
+       "opportunities": 3.0,
+       "runs": 1
+      },
+      "layered_fee": {
+       "failures_mean": 0.0,
+       "opportunities": 3.0,
+       "runs": 1
+      },
+      "precedence": {
+       "failures_mean": 2.0,
+       "opportunities": 2.0,
+       "runs": 1
+      },
+      "side_letter": {
+       "failures_mean": 5.0,
+       "opportunities": 5.0,
+       "runs": 1
+      },
+      "supersession": {
+       "failures_mean": 3.0,
+       "opportunities": 6.0,
+       "runs": 1
+      },
+      "table_only": {
+       "failures_mean": 3.0,
+       "opportunities": 3.0,
+       "runs": 1
+      }
+     },
+     "errors": {
+      "missed": 58.0,
+      "stale": 3.0,
+      "fabricated": 4.0,
+      "other": 12.0,
+      "bad_citation": 4.0,
+      "units": 180
+     },
+     "speed": {
+      "sec_per_item_median": 23.0,
+      "output_tps_median": 90.6,
+      "prompt_tokens_median": 8095.0,
+      "output_tokens_median": 1940.5,
+      "peak_vram_mib_max": 6642,
+      "thinking_chars_median": 0.0,
+      "items": 8
+     },
+     "n_runs": 1,
+     "judge_pending": false
+    }
+   },
+   "vs_frontier": {
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "tier": "usable",
+     "primary_local": 93.9,
+     "primary_frontier": 100.0,
+     "diff": {
+      "diff": -6.1,
+      "ci": [
+       -8.9,
+       -3.3
+      ],
+      "clusters": 9,
+      "items": 9
+     },
+     "halluc_local": {
+      "halluc": 1.7
+     },
+     "halluc_frontier": {
+      "halluc": 0.0
+     },
+     "worse_traps": [
+      "absence",
+      "class_variants",
+      "precedence",
+      "supersession"
+     ],
+     "reasons": [
+      "primary 6.1 points below frontier",
+      "Hallucinated fields 1.7% vs 0.0%",
+      "trap categories failed more often: absence, class_variants, precedence, supersession"
+     ],
+     "not_distinguishable": false,
+     "straddles": []
+    },
+    "gemma4-12b": {
+     "tier": "usable",
+     "primary_local": 97.8,
+     "primary_frontier": 100.0,
+     "diff": {
+      "diff": -2.2,
+      "ci": [
+       -4.4,
+       -0.6
+      ],
+      "clusters": 9,
+      "items": 9
+     },
+     "halluc_local": {
+      "halluc": 0.0
+     },
+     "halluc_frontier": {
+      "halluc": 0.0
+     },
+     "worse_traps": [
+      "class_variants",
+      "precedence"
+     ],
+     "reasons": [
+      "trap categories failed more often: class_variants, precedence"
+     ],
+     "not_distinguishable": true,
+     "straddles": [
+      -3.0
+     ]
+    },
+    "qwen3.5-9b": {
+     "tier": "usable",
+     "primary_local": 96.7,
+     "primary_frontier": 100.0,
+     "diff": {
+      "diff": -3.3,
+      "ci": [
+       -4.7,
+       -1.9
+      ],
+      "clusters": 9,
+      "items": 9
+     },
+     "halluc_local": {
+      "halluc": 1.7
+     },
+     "halluc_frontier": {
+      "halluc": 0.0
+     },
+     "worse_traps": [
+      "absence",
+      "class_variants"
+     ],
+     "reasons": [
+      "primary 3.3 points below frontier",
+      "Hallucinated fields 1.7% vs 0.0%",
+      "trap categories failed more often: absence, class_variants"
+     ],
+     "not_distinguishable": true,
+     "straddles": [
+      -3.0
+     ]
+    },
+    "ministral-3-14b": {
+     "tier": "usable",
+     "primary_local": 97.2,
+     "primary_frontier": 100.0,
+     "diff": {
+      "diff": -2.8,
+      "ci": [
+       -5.0,
+       -0.8
+      ],
+      "clusters": 9,
+      "items": 9
+     },
+     "halluc_local": {
+      "halluc": 2.2
+     },
+     "halluc_frontier": {
+      "halluc": 0.0
+     },
+     "worse_traps": [
+      "absence"
+     ],
+     "reasons": [
+      "Hallucinated fields 2.2% vs 0.0%",
+      "trap categories failed more often: absence"
+     ],
+     "not_distinguishable": true,
+     "straddles": [
+      -3.0
+     ]
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "tier": "gap",
+     "primary_local": 59.4,
+     "primary_frontier": 100.0,
+     "diff": {
+      "diff": -40.6,
+      "ci": [
+       -68.3,
+       -15.3
+      ],
+      "clusters": 9,
+      "items": 9
+     },
+     "halluc_local": {
+      "halluc": 2.2
+     },
+     "halluc_frontier": {
+      "halluc": 0.0
+     },
+     "worse_traps": [
+      "absence",
+      "class_variants",
+      "holding_not_commitment",
+      "late_position",
+      "precedence",
+      "side_letter",
+      "supersession",
+      "table_only"
+     ],
+     "reasons": [
+      "primary 40.6 points below frontier",
+      "Hallucinated fields 2.2% vs 0.0%",
+      "trap categories failed more often: absence, class_variants, holding_not_commitment, late_position, precedence, side_letter, supersession, table_only"
+     ],
+     "not_distinguishable": false,
+     "straddles": []
+    }
+   },
+   "failures": {
+    "claude-opus-5": null,
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "item": "t1_d06",
+     "unit": "fund_structure",
+     "verdict": "HALLUCINATION",
+     "trap": "none",
+     "got": "Open-end (redeemable)",
+     "expected": "Closed-end (drawdown) limited partnership: capital is called against commitments and Limited Partners have no redemption rights; not master-feeder (a Cayman parallel fund invests alongside it)",
+     "run": "test-default-ctx16384-r1"
+    },
+    "gemma4-12b": {
+     "item": "t1_d13",
+     "unit": "gp_commitment",
+     "verdict": "WRONG",
+     "trap": "precedence",
+     "got": "The General Partner and its Affiliates will commit, in the aggregate, 1.0% of total Capital Commitments to the Partnership and the Parallel Funds, funded in cash.",
+     "expected": "Not less than 2% of the aggregate Capital Commitments of the Partnership and the Parallel Funds (determined as of the Final Closing Date), made by the General Partner directly or through its Affiliates, funded in cash and not through any Management Fee waiver",
+     "run": "test-default-thinkoff-ctx16384-r1"
+    },
+    "qwen3.5-9b": {
+     "item": "t1_d06",
+     "unit": "fund_structure",
+     "verdict": "HALLUCINATION",
+     "trap": "none",
+     "got": "Open-end; no master-feeder",
+     "expected": "Closed-end (drawdown) limited partnership: capital is called against commitments and Limited Partners have no redemption rights; not master-feeder (a Cayman parallel fund invests alongside it)",
+     "run": "test-default-thinkoff-ctx16384-r1"
+    },
+    "ministral-3-14b": {
+     "item": "t1_d06",
+     "unit": "fund_structure",
+     "verdict": "HALLUCINATION",
+     "trap": "none",
+     "got": "Closed-end (no redemptions), master-feeder NOT_APPLICABLE",
+     "expected": "Closed-end (drawdown) limited partnership: capital is called against commitments and Limited Partners have no redemption rights; not master-feeder (a Cayman parallel fund invests alongside it)",
+     "run": "test-default-ctx16384-r1"
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "item": "t1_d06",
+     "unit": "fund_structure",
+     "verdict": "HALLUCINATION",
+     "trap": "none",
+     "got": "master-feeder",
+     "expected": "Closed-end (drawdown) limited partnership: capital is called against commitments and Limited Partners have no redemption rights; not master-feeder (a Cayman parallel fund invests alongside it)",
+     "run": "test-default-ctx16384-r1"
+    }
+   },
+   "units": {
+    "items": 9,
+    "clusters": 9,
+    "primary_units": 180
+   },
+   "local_errors": {
+    "counts": {
+     "fabricated": 10,
+     "other": 30
+    },
+    "units": 720,
+    "total": 40
+   }
+  },
+  "t2": {
+   "name": "Change detection",
+   "mirrors": "Annual document review; amended fund terms",
+   "source": "Real 10-K risk factors (FY2024 vs FY2025) and synthetic LPA and policy versions",
+   "id": "t2",
+   "primary_label": "Material-change recall",
+   "halluc_label": "Invented changes",
+   "models": {
+    "claude-opus-5": {
+     "halluc": {
+      "mean": 0.9,
+      "min": 0.9,
+      "max": 0.9,
+      "runs": [
+       0.9
+      ]
+     },
+     "location": {
+      "mean": 100.0,
+      "min": 100.0,
+      "max": 100.0,
+      "runs": [
+       100.0
+      ]
+     },
+     "minor_reported": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0
+      ]
+     },
+     "precision": {
+      "mean": 99.1,
+      "min": 99.1,
+      "max": 99.1,
+      "runs": [
+       99.1
+      ]
+     },
+     "primary": {
+      "mean": 93.5,
+      "min": 93.5,
+      "max": 93.5,
+      "runs": [
+       93.5
+      ]
+     },
+     "traps": {
+      "added": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 1
+      },
+      "modified": {
+       "failures_mean": 4.0,
+       "opportunities": 83.0,
+       "runs": 1
+      },
+      "removed": {
+       "failures_mean": 4.0,
+       "opportunities": 8.0,
+       "runs": 1
+      },
+      "subtle": {
+       "failures_mean": 0.0,
+       "opportunities": 17.0,
+       "runs": 1
+      }
+     },
+     "errors": {
+      "missed": 8.0,
+      "stale": 0.0,
+      "fabricated": 1.0,
+      "other": 0.0,
+      "bad_citation": 0.0,
+      "units": 123
+     },
+     "speed": {
+      "sec_per_item_median": 39.5,
+      "output_tps_median": null,
+      "prompt_tokens_median": null,
+      "output_tokens_median": 3952.5,
+      "peak_vram_mib_max": 0,
+      "thinking_chars_median": null,
+      "items": 22
+     },
+     "n_runs": 1,
+     "judge_pending": false
+    },
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "halluc": {
+      "mean": 3.8,
+      "min": 3.8,
+      "max": 3.8,
+      "runs": [
+       3.8,
+       3.8,
+       3.8
+      ]
+     },
+     "location": {
+      "mean": 95.3,
+      "min": 95.3,
+      "max": 95.3,
+      "runs": [
+       95.3,
+       95.3,
+       95.3
+      ]
+     },
+     "minor_reported": {
+      "mean": 16.5,
+      "min": 16.5,
+      "max": 16.5,
+      "runs": [
+       16.5,
+       16.5,
+       16.5
+      ]
+     },
+     "precision": {
+      "mean": 96.2,
+      "min": 96.2,
+      "max": 96.2,
+      "runs": [
+       96.2,
+       96.2,
+       96.2
+      ]
+     },
+     "primary": {
+      "mean": 75.6,
+      "min": 75.6,
+      "max": 75.6,
+      "runs": [
+       75.6,
+       75.6,
+       75.6
+      ]
+     },
+     "traps": {
+      "added": {
+       "failures_mean": 5.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "modified": {
+       "failures_mean": 15.0,
+       "opportunities": 83.0,
+       "runs": 3
+      },
+      "moved": {
+       "failures_mean": 3.0,
+       "opportunities": 3.0,
+       "runs": 3
+      },
+      "removed": {
+       "failures_mean": 6.0,
+       "opportunities": 8.0,
+       "runs": 3
+      },
+      "subtle": {
+       "failures_mean": 4.0,
+       "opportunities": 17.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 30.0,
+      "stale": 0.0,
+      "fabricated": 5.0,
+      "other": 0.0,
+      "bad_citation": 0.0,
+      "units": 123
+     },
+     "speed": {
+      "sec_per_item_median": 43.1,
+      "output_tps_median": 44.4,
+      "prompt_tokens_median": 8344.5,
+      "output_tokens_median": 762.0,
+      "peak_vram_mib_max": 11815,
+      "thinking_chars_median": 0.0,
+      "items": 66
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "gemma4-12b": {
+     "halluc": {
+      "mean": 2.3,
+      "min": 2.3,
+      "max": 2.3,
+      "runs": [
+       2.3,
+       2.3,
+       2.3
+      ]
+     },
+     "location": {
+      "mean": 94.6,
+      "min": 94.6,
+      "max": 94.6,
+      "runs": [
+       94.6,
+       94.6,
+       94.6
+      ]
+     },
+     "minor_reported": {
+      "mean": 22.6,
+      "min": 22.6,
+      "max": 22.6,
+      "runs": [
+       22.6,
+       22.6,
+       22.6
+      ]
+     },
+     "precision": {
+      "mean": 97.7,
+      "min": 97.7,
+      "max": 97.7,
+      "runs": [
+       97.7,
+       97.7,
+       97.7
+      ]
+     },
+     "primary": {
+      "mean": 78.0,
+      "min": 78.0,
+      "max": 78.0,
+      "runs": [
+       78.0,
+       78.0,
+       78.0
+      ]
+     },
+     "traps": {
+      "added": {
+       "failures_mean": 6.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "modified": {
+       "failures_mean": 15.0,
+       "opportunities": 83.0,
+       "runs": 3
+      },
+      "moved": {
+       "failures_mean": 1.0,
+       "opportunities": 1.0,
+       "runs": 3
+      },
+      "removed": {
+       "failures_mean": 5.0,
+       "opportunities": 8.0,
+       "runs": 3
+      },
+      "subtle": {
+       "failures_mean": 1.0,
+       "opportunities": 17.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 27.0,
+      "stale": 0.0,
+      "fabricated": 3.0,
+      "other": 0.0,
+      "bad_citation": 0.0,
+      "units": 123
+     },
+     "speed": {
+      "sec_per_item_median": 25.1,
+      "output_tps_median": 59.8,
+      "prompt_tokens_median": 8418.5,
+      "output_tokens_median": 1296.5,
+      "peak_vram_mib_max": 9738,
+      "thinking_chars_median": 0.0,
+      "items": 66
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "qwen3.5-9b": {
+     "halluc": {
+      "mean": 8.0,
+      "min": 8.0,
+      "max": 8.0,
+      "runs": [
+       8.0,
+       8.0,
+       8.0
+      ]
+     },
+     "location": {
+      "mean": 95.3,
+      "min": 95.3,
+      "max": 95.3,
+      "runs": [
+       95.3,
+       95.3,
+       95.3
+      ]
+     },
+     "minor_reported": {
+      "mean": 21.0,
+      "min": 21.0,
+      "max": 21.0,
+      "runs": [
+       21.0,
+       21.0,
+       21.0
+      ]
+     },
+     "precision": {
+      "mean": 92.0,
+      "min": 92.0,
+      "max": 92.0,
+      "runs": [
+       92.0,
+       92.0,
+       92.0
+      ]
+     },
+     "primary": {
+      "mean": 66.7,
+      "min": 66.7,
+      "max": 66.7,
+      "runs": [
+       66.7,
+       66.7,
+       66.7
+      ]
+     },
+     "traps": {
+      "added": {
+       "failures_mean": 6.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "modified": {
+       "failures_mean": 26.0,
+       "opportunities": 83.0,
+       "runs": 3
+      },
+      "moved": {
+       "failures_mean": 3.0,
+       "opportunities": 3.0,
+       "runs": 3
+      },
+      "removed": {
+       "failures_mean": 6.0,
+       "opportunities": 8.0,
+       "runs": 3
+      },
+      "subtle": {
+       "failures_mean": 3.0,
+       "opportunities": 17.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 41.0,
+      "stale": 0.0,
+      "fabricated": 11.0,
+      "other": 0.0,
+      "bad_citation": 0.0,
+      "units": 123
+     },
+     "speed": {
+      "sec_per_item_median": 24.8,
+      "output_tps_median": 87.5,
+      "prompt_tokens_median": 8423.5,
+      "output_tokens_median": 1942.0,
+      "peak_vram_mib_max": 8596,
+      "thinking_chars_median": 0.0,
+      "items": 66
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "ministral-3-14b": {
+     "halluc": {
+      "mean": 5.3,
+      "min": 5.3,
+      "max": 5.3,
+      "runs": [
+       5.3,
+       5.3,
+       5.3
+      ]
+     },
+     "location": {
+      "mean": 97.5,
+      "min": 97.5,
+      "max": 97.5,
+      "runs": [
+       97.5,
+       97.5,
+       97.5
+      ]
+     },
+     "minor_reported": {
+      "mean": 15.3,
+      "min": 15.3,
+      "max": 15.3,
+      "runs": [
+       15.3,
+       15.3,
+       15.3
+      ]
+     },
+     "precision": {
+      "mean": 94.7,
+      "min": 94.7,
+      "max": 94.7,
+      "runs": [
+       94.7,
+       94.7,
+       94.7
+      ]
+     },
+     "primary": {
+      "mean": 82.1,
+      "min": 82.1,
+      "max": 82.1,
+      "runs": [
+       82.1,
+       82.1,
+       82.1
+      ]
+     },
+     "traps": {
+      "added": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "modified": {
+       "failures_mean": 19.0,
+       "opportunities": 83.0,
+       "runs": 3
+      },
+      "moved": {
+       "failures_mean": 2.0,
+       "opportunities": 2.0,
+       "runs": 3
+      },
+      "removed": {
+       "failures_mean": 2.0,
+       "opportunities": 8.0,
+       "runs": 3
+      },
+      "subtle": {
+       "failures_mean": 1.0,
+       "opportunities": 17.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 22.0,
+      "stale": 0.0,
+      "fabricated": 9.0,
+      "other": 0.0,
+      "bad_citation": 0.0,
+      "units": 123
+     },
+     "speed": {
+      "sec_per_item_median": 29.0,
+      "output_tps_median": 54.4,
+      "prompt_tokens_median": 8491.0,
+      "output_tokens_median": 1456.0,
+      "peak_vram_mib_max": 11678,
+      "thinking_chars_median": 0.0,
+      "items": 66
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "halluc": {
+      "mean": 14.4,
+      "min": 14.4,
+      "max": 14.4,
+      "runs": [
+       14.4
+      ]
+     },
+     "location": {
+      "mean": 24.7,
+      "min": 24.7,
+      "max": 24.7,
+      "runs": [
+       24.7
+      ]
+     },
+     "minor_reported": {
+      "mean": 14.4,
+      "min": 14.4,
+      "max": 14.4,
+      "runs": [
+       14.4
+      ]
+     },
+     "precision": {
+      "mean": 85.6,
+      "min": 85.6,
+      "max": 85.6,
+      "runs": [
+       85.6
+      ]
+     },
+     "primary": {
+      "mean": 52.8,
+      "min": 52.8,
+      "max": 52.8,
+      "runs": [
+       52.8
+      ]
+     },
+     "traps": {
+      "added": {
+       "failures_mean": 9.0,
+       "opportunities": 15.0,
+       "runs": 1
+      },
+      "modified": {
+       "failures_mean": 27.0,
+       "opportunities": 83.0,
+       "runs": 1
+      },
+      "removed": {
+       "failures_mean": 8.0,
+       "opportunities": 8.0,
+       "runs": 1
+      },
+      "subtle": {
+       "failures_mean": 14.0,
+       "opportunities": 17.0,
+       "runs": 1
+      }
+     },
+     "errors": {
+      "missed": 58.0,
+      "stale": 0.0,
+      "fabricated": 15.0,
+      "other": 0.0,
+      "bad_citation": 0.0,
+      "units": 123
+     },
+     "speed": {
+      "sec_per_item_median": 9.0,
+      "output_tps_median": 91.1,
+      "prompt_tokens_median": 8313,
+      "output_tokens_median": 685,
+      "peak_vram_mib_max": 6409,
+      "thinking_chars_median": 0,
+      "items": 21
+     },
+     "n_runs": 1,
+     "judge_pending": false
+    }
+   },
+   "vs_frontier": {
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "tier": "gap",
+     "primary_local": 75.6,
+     "primary_frontier": 93.5,
+     "diff": {
+      "diff": -17.9,
+      "ci": [
+       -27.3,
+       -9.0
+      ],
+      "clusters": 9,
+      "items": 22
+     },
+     "halluc_local": {
+      "halluc": 3.8
+     },
+     "halluc_frontier": {
+      "halluc": 0.9
+     },
+     "worse_traps": [
+      "added",
+      "modified",
+      "moved",
+      "removed",
+      "subtle"
+     ],
+     "reasons": [
+      "primary 17.9 points below frontier",
+      "Invented changes 3.8% vs 0.9%",
+      "trap categories failed more often: added, modified, moved, removed, subtle"
+     ],
+     "not_distinguishable": true,
+     "straddles": [
+      -10.0
+     ]
+    },
+    "gemma4-12b": {
+     "tier": "gap",
+     "primary_local": 78.0,
+     "primary_frontier": 93.5,
+     "diff": {
+      "diff": -15.4,
+      "ci": [
+       -24.8,
+       -6.5
+      ],
+      "clusters": 9,
+      "items": 22
+     },
+     "halluc_local": {
+      "halluc": 2.3
+     },
+     "halluc_frontier": {
+      "halluc": 0.9
+     },
+     "worse_traps": [
+      "added",
+      "modified",
+      "moved",
+      "removed",
+      "subtle"
+     ],
+     "reasons": [
+      "primary 15.5 points below frontier",
+      "Invented changes 2.3% vs 0.9%",
+      "trap categories failed more often: added, modified, moved, removed, subtle"
+     ],
+     "not_distinguishable": true,
+     "straddles": [
+      -10.0
+     ]
+    },
+    "qwen3.5-9b": {
+     "tier": "gap",
+     "primary_local": 66.7,
+     "primary_frontier": 93.5,
+     "diff": {
+      "diff": -26.8,
+      "ci": [
+       -40.0,
+       -13.6
+      ],
+      "clusters": 9,
+      "items": 22
+     },
+     "halluc_local": {
+      "halluc": 8.0
+     },
+     "halluc_frontier": {
+      "halluc": 0.9
+     },
+     "worse_traps": [
+      "added",
+      "modified",
+      "moved",
+      "removed",
+      "subtle"
+     ],
+     "reasons": [
+      "primary 26.8 points below frontier",
+      "Invented changes 8.0% vs 0.9%",
+      "trap categories failed more often: added, modified, moved, removed, subtle"
+     ],
+     "not_distinguishable": false,
+     "straddles": []
+    },
+    "ministral-3-14b": {
+     "tier": "gap",
+     "primary_local": 82.1,
+     "primary_frontier": 93.5,
+     "diff": {
+      "diff": -11.4,
+      "ci": [
+       -25.9,
+       2.0
+      ],
+      "clusters": 9,
+      "items": 22
+     },
+     "halluc_local": {
+      "halluc": 5.3
+     },
+     "halluc_frontier": {
+      "halluc": 0.9
+     },
+     "worse_traps": [
+      "modified",
+      "moved",
+      "subtle"
+     ],
+     "reasons": [
+      "primary 11.4 points below frontier",
+      "Invented changes 5.3% vs 0.9%",
+      "trap categories failed more often: modified, moved, subtle"
+     ],
+     "not_distinguishable": true,
+     "straddles": [
+      -3.0,
+      -10.0
+     ]
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "tier": "gap",
+     "primary_local": 52.8,
+     "primary_frontier": 93.5,
+     "diff": {
+      "diff": -40.7,
+      "ci": [
+       -62.5,
+       -22.1
+      ],
+      "clusters": 9,
+      "items": 22
+     },
+     "halluc_local": {
+      "halluc": 14.4
+     },
+     "halluc_frontier": {
+      "halluc": 0.9
+     },
+     "worse_traps": [
+      "added",
+      "modified",
+      "removed",
+      "subtle"
+     ],
+     "reasons": [
+      "primary 40.7 points below frontier",
+      "Invented changes 14.4% vs 0.9%",
+      "trap categories failed more often: added, modified, removed, subtle"
+     ],
+     "not_distinguishable": false,
+     "straddles": []
+    }
+   },
+   "failures": {
+    "claude-opus-5": {
+     "item": "t2_s02",
+     "unit": "reported_01",
+     "verdict": "FABRICATED",
+     "trap": "none",
+     "got": "The document is now an Amended and Restated Limited Partnership Agreement dated February 27, 2026 that expressly supersedes the prior Limited Partnership Agreement dated March 10, 2025.",
+     "expected": "",
+     "run": "test-default-r1"
+    },
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "item": "t2_hd_4",
+     "unit": "reported_01",
+     "verdict": "FABRICATED",
+     "trap": "none",
+     "got": "The heading was modified to include 'MARKET' and remove 'GLOBAL'.",
+     "expected": "",
+     "run": "test-default-ctx16384-r1"
+    },
+    "gemma4-12b": {
+     "item": "t2_hd_4",
+     "unit": "reported_01",
+     "verdict": "FABRICATED",
+     "trap": "none",
+     "got": "The section heading for external risks was updated to include 'MARKET' in the list of risk categories.",
+     "expected": "",
+     "run": "test-default-thinkoff-ctx16384-r1"
+    },
+    "qwen3.5-9b": {
+     "item": "t2_hd_4",
+     "unit": "reported_01",
+     "verdict": "FABRICATED",
+     "trap": "none",
+     "got": "The section heading was modified to add 'MARKET' and remove 'GLOBAL', changing the text from 'LEGAL, FINANCIAL, REGULATORY, GLOBAL AND OTHER EXTERNAL RISKS' to 'MARKET, LEGAL, FINANCIAL, REGULATORY, AND OTHER EXTERNAL RISKS'.",
+     "expected": "",
+     "run": "test-default-thinkoff-ctx16384-r1"
+    },
+    "ministral-3-14b": {
+     "item": "t2_hd_4",
+     "unit": "reported_01",
+     "verdict": "FABRICATED",
+     "trap": "none",
+     "got": "The heading was changed to 'MARKET, LEGAL, FINANCIAL, REGULATORY, AND OTHER EXTERNAL RISKS' by adding 'MARKET' at the beginning.",
+     "expected": "",
+     "run": "test-default-ctx16384-r1"
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "item": "t2_hd_4",
+     "unit": "reported_01",
+     "verdict": "FABRICATED",
+     "trap": "none",
+     "got": "The heading was changed from 'LEGAL, FINANCIAL, REGULATORY, GLOBAL AND OTHER EXTERNAL RISKS' to 'MARKET, LEGAL, FINANCIAL, REGULATORY, AND OTHER EXTERNAL RISKS'.",
+     "expected": "",
+     "run": "test-default-ctx16384-r1"
+    }
+   },
+   "units": {
+    "items": 22,
+    "clusters": 9,
+    "primary_units": 123
+   },
+   "local_errors": {
+    "counts": {
+     "missed": 120,
+     "fabricated": 28
+    },
+    "units": 492,
+    "total": 148
+   }
+  },
+  "t3": {
+   "name": "Grounded Q&A with abstention",
+   "mirrors": "DDQ and RFP responses; internal policy lookup",
+   "source": "Synthetic firm document packs and 40-question DDQs",
+   "id": "t3",
+   "primary_label": "Answer accuracy",
+   "halluc_label": "Fabricated answers",
+   "models": {
+    "claude-opus-5": {
+     "abstention": {
+      "mean": 100.0,
+      "min": 100.0,
+      "max": 100.0,
+      "runs": [
+       100.0
+      ]
+     },
+     "answerable_acc": {
+      "mean": 98.9,
+      "min": 98.9,
+      "max": 98.9,
+      "runs": [
+       98.9
+      ]
+     },
+     "citation": {
+      "mean": 90.0,
+      "min": 90.0,
+      "max": 90.0,
+      "runs": [
+       90.0
+      ]
+     },
+     "false_abstain": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0
+      ]
+     },
+     "halluc": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0
+      ]
+     },
+     "primary": {
+      "mean": 99.2,
+      "min": 99.2,
+      "max": 99.2,
+      "runs": [
+       99.2
+      ]
+     },
+     "traps": {
+      "multi_part": {
+       "failures_mean": 2.0,
+       "opportunities": 25.0,
+       "runs": 1
+      },
+      "near_miss": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 1
+      },
+      "supersession": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 1
+      },
+      "unanswerable_clean": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 1
+      }
+     },
+     "errors": {
+      "missed": 0.0,
+      "stale": 0.0,
+      "fabricated": 0.0,
+      "other": 2.0,
+      "bad_citation": 0.0,
+      "units": 120
+     },
+     "speed": {
+      "sec_per_item_median": 3.6,
+      "output_tps_median": null,
+      "prompt_tokens_median": null,
+      "output_tokens_median": 275.0,
+      "peak_vram_mib_max": 0,
+      "thinking_chars_median": null,
+      "items": 120
+     },
+     "n_runs": 1,
+     "judge_pending": false
+    },
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "abstention": {
+      "mean": 90.0,
+      "min": 90.0,
+      "max": 90.0,
+      "runs": [
+       90.0,
+       90.0,
+       90.0
+      ]
+     },
+     "answerable_acc": {
+      "mean": 83.3,
+      "min": 83.3,
+      "max": 83.3,
+      "runs": [
+       83.3,
+       83.3,
+       83.3
+      ]
+     },
+     "citation": {
+      "mean": 97.8,
+      "min": 97.8,
+      "max": 97.8,
+      "runs": [
+       97.8,
+       97.8,
+       97.8
+      ]
+     },
+     "false_abstain": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0,
+       0.0,
+       0.0
+      ]
+     },
+     "halluc": {
+      "mean": 2.5,
+      "min": 2.5,
+      "max": 2.5,
+      "runs": [
+       2.5,
+       2.5,
+       2.5
+      ]
+     },
+     "primary": {
+      "mean": 85.0,
+      "min": 85.0,
+      "max": 85.0,
+      "runs": [
+       85.0,
+       85.0,
+       85.0
+      ]
+     },
+     "traps": {
+      "multi_part": {
+       "failures_mean": 12.0,
+       "opportunities": 25.0,
+       "runs": 3
+      },
+      "near_miss": {
+       "failures_mean": 3.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "supersession": {
+       "failures_mean": 2.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "unanswerable_clean": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 0.0,
+      "stale": 0.0,
+      "fabricated": 3.0,
+      "other": 25.0,
+      "bad_citation": 0.0,
+      "units": 120
+     },
+     "speed": {
+      "sec_per_item_median": 8.3,
+      "output_tps_median": 29.6,
+      "prompt_tokens_median": 1559.0,
+      "output_tokens_median": 102.5,
+      "peak_vram_mib_max": 11497,
+      "thinking_chars_median": 0.0,
+      "items": 360
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "gemma4-12b": {
+     "abstention": {
+      "mean": 93.3,
+      "min": 93.3,
+      "max": 93.3,
+      "runs": [
+       93.3,
+       93.3,
+       93.3
+      ]
+     },
+     "answerable_acc": {
+      "mean": 97.8,
+      "min": 97.8,
+      "max": 97.8,
+      "runs": [
+       97.8,
+       97.8,
+       97.8
+      ]
+     },
+     "citation": {
+      "mean": 85.6,
+      "min": 85.6,
+      "max": 85.6,
+      "runs": [
+       85.6,
+       85.6,
+       85.6
+      ]
+     },
+     "false_abstain": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0,
+       0.0,
+       0.0
+      ]
+     },
+     "halluc": {
+      "mean": 1.7,
+      "min": 1.7,
+      "max": 1.7,
+      "runs": [
+       1.7,
+       1.7,
+       1.7
+      ]
+     },
+     "primary": {
+      "mean": 96.7,
+      "min": 96.7,
+      "max": 96.7,
+      "runs": [
+       96.7,
+       96.7,
+       96.7
+      ]
+     },
+     "traps": {
+      "multi_part": {
+       "failures_mean": 3.0,
+       "opportunities": 25.0,
+       "runs": 3
+      },
+      "near_miss": {
+       "failures_mean": 2.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "supersession": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "unanswerable_clean": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 0.0,
+      "stale": 0.0,
+      "fabricated": 2.0,
+      "other": 3.0,
+      "bad_citation": 0.0,
+      "units": 120
+     },
+     "speed": {
+      "sec_per_item_median": 3.0,
+      "output_tps_median": 62.6,
+      "prompt_tokens_median": 1586.5,
+      "output_tokens_median": 139.5,
+      "peak_vram_mib_max": 9883,
+      "thinking_chars_median": 0.0,
+      "items": 360
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "qwen3.5-9b": {
+     "abstention": {
+      "mean": 96.7,
+      "min": 96.7,
+      "max": 96.7,
+      "runs": [
+       96.7,
+       96.7,
+       96.7
+      ]
+     },
+     "answerable_acc": {
+      "mean": 97.8,
+      "min": 97.8,
+      "max": 97.8,
+      "runs": [
+       97.8,
+       97.8,
+       97.8
+      ]
+     },
+     "citation": {
+      "mean": 93.3,
+      "min": 93.3,
+      "max": 93.3,
+      "runs": [
+       93.3,
+       93.3,
+       93.3
+      ]
+     },
+     "false_abstain": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0,
+       0.0,
+       0.0
+      ]
+     },
+     "halluc": {
+      "mean": 0.8,
+      "min": 0.8,
+      "max": 0.8,
+      "runs": [
+       0.8,
+       0.8,
+       0.8
+      ]
+     },
+     "primary": {
+      "mean": 97.5,
+      "min": 97.5,
+      "max": 97.5,
+      "runs": [
+       97.5,
+       97.5,
+       97.5
+      ]
+     },
+     "traps": {
+      "multi_part": {
+       "failures_mean": 3.0,
+       "opportunities": 25.0,
+       "runs": 3
+      },
+      "near_miss": {
+       "failures_mean": 1.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "supersession": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "unanswerable_clean": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 0.0,
+      "stale": 0.0,
+      "fabricated": 1.0,
+      "other": 3.0,
+      "bad_citation": 0.0,
+      "units": 120
+     },
+     "speed": {
+      "sec_per_item_median": 2.0,
+      "output_tps_median": 91.3,
+      "prompt_tokens_median": 1579.0,
+      "output_tokens_median": 140.5,
+      "peak_vram_mib_max": 8306,
+      "thinking_chars_median": 0.0,
+      "items": 360
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "ministral-3-14b": {
+     "abstention": {
+      "mean": 93.3,
+      "min": 93.3,
+      "max": 93.3,
+      "runs": [
+       93.3,
+       93.3,
+       93.3
+      ]
+     },
+     "answerable_acc": {
+      "mean": 97.8,
+      "min": 97.8,
+      "max": 97.8,
+      "runs": [
+       97.8,
+       97.8,
+       97.8
+      ]
+     },
+     "citation": {
+      "mean": 87.8,
+      "min": 87.8,
+      "max": 87.8,
+      "runs": [
+       87.8,
+       87.8,
+       87.8
+      ]
+     },
+     "false_abstain": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0,
+       0.0,
+       0.0
+      ]
+     },
+     "halluc": {
+      "mean": 1.7,
+      "min": 1.7,
+      "max": 1.7,
+      "runs": [
+       1.7,
+       1.7,
+       1.7
+      ]
+     },
+     "primary": {
+      "mean": 96.7,
+      "min": 96.7,
+      "max": 96.7,
+      "runs": [
+       96.7,
+       96.7,
+       96.7
+      ]
+     },
+     "traps": {
+      "multi_part": {
+       "failures_mean": 3.0,
+       "opportunities": 25.0,
+       "runs": 3
+      },
+      "near_miss": {
+       "failures_mean": 2.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "supersession": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "unanswerable_clean": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 0.0,
+      "stale": 0.0,
+      "fabricated": 2.0,
+      "other": 3.0,
+      "bad_citation": 0.0,
+      "units": 120
+     },
+     "speed": {
+      "sec_per_item_median": 2.9,
+      "output_tps_median": 62.3,
+      "prompt_tokens_median": 1632.0,
+      "output_tokens_median": 141.0,
+      "peak_vram_mib_max": 11534,
+      "thinking_chars_median": 0.0,
+      "items": 360
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "abstention": {
+      "mean": 96.7,
+      "min": 96.7,
+      "max": 96.7,
+      "runs": [
+       96.7
+      ]
+     },
+     "answerable_acc": {
+      "mean": 66.7,
+      "min": 66.7,
+      "max": 66.7,
+      "runs": [
+       66.7
+      ]
+     },
+     "citation": {
+      "mean": 85.6,
+      "min": 85.6,
+      "max": 85.6,
+      "runs": [
+       85.6
+      ]
+     },
+     "false_abstain": {
+      "mean": 7.8,
+      "min": 7.8,
+      "max": 7.8,
+      "runs": [
+       7.8
+      ]
+     },
+     "halluc": {
+      "mean": 0.8,
+      "min": 0.8,
+      "max": 0.8,
+      "runs": [
+       0.8
+      ]
+     },
+     "primary": {
+      "mean": 74.2,
+      "min": 74.2,
+      "max": 74.2,
+      "runs": [
+       74.2
+      ]
+     },
+     "traps": {
+      "multi_part": {
+       "failures_mean": 20.0,
+       "opportunities": 25.0,
+       "runs": 1
+      },
+      "near_miss": {
+       "failures_mean": 1.0,
+       "opportunities": 15.0,
+       "runs": 1
+      },
+      "supersession": {
+       "failures_mean": 2.0,
+       "opportunities": 15.0,
+       "runs": 1
+      },
+      "unanswerable_clean": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 1
+      }
+     },
+     "errors": {
+      "missed": 8.0,
+      "stale": 0.0,
+      "fabricated": 1.0,
+      "other": 35.0,
+      "bad_citation": 0.0,
+      "units": 120
+     },
+     "speed": {
+      "sec_per_item_median": 1.1,
+      "output_tps_median": 105.6,
+      "prompt_tokens_median": 1560,
+      "output_tokens_median": 87,
+      "peak_vram_mib_max": 6590,
+      "thinking_chars_median": 0,
+      "items": 119
+     },
+     "n_runs": 1,
+     "judge_pending": false
+    }
+   },
+   "vs_frontier": {
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "tier": "gap",
+     "primary_local": 85.0,
+     "primary_frontier": 99.2,
+     "diff": {
+      "diff": -14.2,
+      "ci": [
+       -17.6,
+       -10.6
+      ],
+      "clusters": 21,
+      "items": 120
+     },
+     "halluc_local": {
+      "halluc": 2.5
+     },
+     "halluc_frontier": {
+      "halluc": 0.0
+     },
+     "worse_traps": [
+      "multi_part",
+      "near_miss",
+      "supersession"
+     ],
+     "reasons": [
+      "primary 14.2 points below frontier",
+      "Fabricated answers 2.5% vs 0.0%",
+      "trap categories failed more often: multi_part, near_miss, supersession"
+     ],
+     "not_distinguishable": false,
+     "straddles": []
+    },
+    "gemma4-12b": {
+     "tier": "usable",
+     "primary_local": 96.7,
+     "primary_frontier": 99.2,
+     "diff": {
+      "diff": -2.5,
+      "ci": [
+       -5.2,
+       0.0
+      ],
+      "clusters": 21,
+      "items": 120
+     },
+     "halluc_local": {
+      "halluc": 1.7
+     },
+     "halluc_frontier": {
+      "halluc": 0.0
+     },
+     "worse_traps": [
+      "multi_part",
+      "near_miss"
+     ],
+     "reasons": [
+      "Fabricated answers 1.7% vs 0.0%",
+      "trap categories failed more often: multi_part, near_miss"
+     ],
+     "not_distinguishable": true,
+     "straddles": [
+      -3.0
+     ]
+    },
+    "qwen3.5-9b": {
+     "tier": "usable",
+     "primary_local": 97.5,
+     "primary_frontier": 99.2,
+     "diff": {
+      "diff": -1.7,
+      "ci": [
+       -4.2,
+       0.0
+      ],
+      "clusters": 21,
+      "items": 120
+     },
+     "halluc_local": {
+      "halluc": 0.8
+     },
+     "halluc_frontier": {
+      "halluc": 0.0
+     },
+     "worse_traps": [
+      "multi_part",
+      "near_miss"
+     ],
+     "reasons": [
+      "trap categories failed more often: multi_part, near_miss"
+     ],
+     "not_distinguishable": true,
+     "straddles": [
+      -3.0
+     ]
+    },
+    "ministral-3-14b": {
+     "tier": "usable",
+     "primary_local": 96.7,
+     "primary_frontier": 99.2,
+     "diff": {
+      "diff": -2.5,
+      "ci": [
+       -5.2,
+       0.0
+      ],
+      "clusters": 21,
+      "items": 120
+     },
+     "halluc_local": {
+      "halluc": 1.7
+     },
+     "halluc_frontier": {
+      "halluc": 0.0
+     },
+     "worse_traps": [
+      "multi_part",
+      "near_miss"
+     ],
+     "reasons": [
+      "Fabricated answers 1.7% vs 0.0%",
+      "trap categories failed more often: multi_part, near_miss"
+     ],
+     "not_distinguishable": true,
+     "straddles": [
+      -3.0
+     ]
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "tier": "gap",
+     "primary_local": 74.2,
+     "primary_frontier": 99.2,
+     "diff": {
+      "diff": -25.0,
+      "ci": [
+       -32.5,
+       -18.1
+      ],
+      "clusters": 21,
+      "items": 120
+     },
+     "halluc_local": {
+      "halluc": 0.8
+     },
+     "halluc_frontier": {
+      "halluc": 0.0
+     },
+     "worse_traps": [
+      "multi_part",
+      "near_miss",
+      "supersession"
+     ],
+     "reasons": [
+      "primary 25.0 points below frontier",
+      "trap categories failed more often: multi_part, near_miss, supersession"
+     ],
+     "not_distinguishable": false,
+     "straddles": []
+    }
+   },
+   "failures": {
+    "claude-opus-5": {
+     "item": "t3_f02.q06",
+     "unit": "q06",
+     "verdict": "PARTIAL",
+     "trap": "multi_part",
+     "got": "Flagship Fund: Sallowmere Partners GP, LLC receives an incentive allocation as of December 31 each year and as of the effective date of any redemption, equal to 20% of net profits allocated to each Class A capital account and 15% of net profits allocated to each Class F capital account; Class E capital accounts (principals/employees) bear none. It is subject to a high water mark (no allocation until prior net losses are recovered) and there is no hurdle rate. For the Offshore Fund's investment, it is calculated on a look-through basis and allocated once at the Flagship Fund level. Co-Investmen",
+     "expected": "Flagship Fund: an annual incentive allocation to the general partner of 20% of net profits on Class A capital accounts (15% for Class F, none for Class E), subject to a high water mark with loss carryforward and no hurdle, determined each December 31 and on redemption. Co-Investment Fund: carried interest of 10% of net realized profits, paid only after investors receive 100% of their capital contributions and expenses; no carried interest on unrealized gains and no management fee.",
+     "run": "test-default-r1"
+    },
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "item": "t3_f02.q15",
+     "unit": "q15",
+     "verdict": "FABRICATED",
+     "trap": "near_miss",
+     "got": "2026",
+     "expected": "NOT_IN_DOCUMENTS",
+     "run": "test-default-ctx16384-r1"
+    },
+    "gemma4-12b": {
+     "item": "t3_f03.q02",
+     "unit": "q02",
+     "verdict": "FABRICATED",
+     "trap": "near_miss",
+     "got": "The document states that Ostler Vane Security Testing, LLC performs an external penetration test annually, but it does not provide the date of the most recent test or the specific findings.",
+     "expected": "NOT_IN_DOCUMENTS",
+     "run": "test-default-thinkoff-ctx16384-r1"
+    },
+    "qwen3.5-9b": {
+     "item": "t3_f03.q02",
+     "unit": "q02",
+     "verdict": "FABRICATED",
+     "trap": "near_miss",
+     "got": "Northgale Security Operations, Inc. performs vulnerability scans of the Firm's external and internal networks quarterly. Ostler Vane Security Testing, LLC performs an external penetration test annually, and its findings are reported to the Management Committee with a remediation plan and target dates tracked by the ISO.",
+     "expected": "NOT_IN_DOCUMENTS",
+     "run": "test-default-thinkoff-ctx16384-r1"
+    },
+    "ministral-3-14b": {
+     "item": "t3_f03.q02",
+     "unit": "q02",
+     "verdict": "FABRICATED",
+     "trap": "near_miss",
+     "got": "The most recent external penetration test was completed annually by Ostler Vane Security Testing, LLC, with findings reported to the Management Committee including a remediation plan and target dates tracked by the ISO. The specific date of the most recent test is NOT_IN_DOCUMENTS.",
+     "expected": "NOT_IN_DOCUMENTS",
+     "run": "test-default-ctx16384-r1"
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "item": "t3_f04.q20",
+     "unit": "q20",
+     "verdict": "FABRICATED",
+     "trap": "near_miss",
+     "got": "Grisby Lane Security",
+     "expected": "NOT_IN_DOCUMENTS",
+     "run": "test-default-ctx16384-r1"
+    }
+   },
+   "units": {
+    "items": 120,
+    "clusters": 21,
+    "primary_units": 120
+   },
+   "local_errors": {
+    "counts": {
+     "fabricated": 8,
+     "other": 34
+    },
+    "units": 480,
+    "total": 42
+   }
+  },
+  "t4": {
+   "name": "Filing brief",
+   "mirrors": "Morning notes and coverage updates",
+   "source": "Real 8-K earnings releases, July and August 2026",
+   "id": "t4",
+   "primary_label": "Key-fact coverage",
+   "halluc_label": "Ungrounded numbers",
+   "models": {
+    "claude-opus-5": {
+     "halluc": {
+      "mean": 0.5,
+      "min": 0.5,
+      "max": 0.5,
+      "runs": [
+       0.5
+      ]
+     },
+     "halluc2": {
+      "mean": 1.2,
+      "min": 1.2,
+      "max": 1.2,
+      "runs": [
+       1.2
+      ]
+     },
+     "misstated": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0
+      ]
+     },
+     "primary": {
+      "mean": 98.3,
+      "min": 98.3,
+      "max": 98.3,
+      "runs": [
+       98.3
+      ]
+     },
+     "words": {
+      "mean": 56991.7,
+      "min": 56991.7,
+      "max": 56991.7,
+      "runs": [
+       56991.7
+      ]
+     },
+     "traps": {
+      "guidance": {
+       "failures_mean": 0.0,
+       "opportunities": 7.0,
+       "runs": 1
+      },
+      "non_gaap": {
+       "failures_mean": 0.0,
+       "opportunities": 25.0,
+       "runs": 1
+      }
+     },
+     "errors": {
+      "missed": 2.0,
+      "stale": 0.0,
+      "fabricated": 0.0,
+      "other": 0.0,
+      "bad_citation": 0.0,
+      "units": 120
+     },
+     "speed": {
+      "sec_per_item_median": 30.8,
+      "output_tps_median": null,
+      "prompt_tokens_median": null,
+      "output_tokens_median": 2921.0,
+      "peak_vram_mib_max": 0,
+      "thinking_chars_median": null,
+      "items": 12
+     },
+     "n_runs": 1,
+     "judge_pending": false
+    },
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "halluc": {
+      "mean": 0.3,
+      "min": 0.3,
+      "max": 0.3,
+      "runs": [
+       0.3,
+       0.3,
+       0.3
+      ]
+     },
+     "halluc2": {
+      "mean": 5.0,
+      "min": 5.0,
+      "max": 5.0,
+      "runs": [
+       5.0,
+       5.0,
+       5.0
+      ]
+     },
+     "misstated": {
+      "mean": 3.3,
+      "min": 3.3,
+      "max": 3.3,
+      "runs": [
+       3.3,
+       3.3,
+       3.3
+      ]
+     },
+     "primary": {
+      "mean": 60.0,
+      "min": 60.0,
+      "max": 60.0,
+      "runs": [
+       60.0,
+       60.0,
+       60.0
+      ]
+     },
+     "words": {
+      "mean": 25150.0,
+      "min": 25150.0,
+      "max": 25150.0,
+      "runs": [
+       25150.0,
+       25150.0,
+       25150.0
+      ]
+     },
+     "traps": {
+      "guidance": {
+       "failures_mean": 2.0,
+       "opportunities": 7.0,
+       "runs": 3
+      },
+      "non_gaap": {
+       "failures_mean": 9.0,
+       "opportunities": 25.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 44.0,
+      "stale": 0.0,
+      "fabricated": 0.0,
+      "other": 4.0,
+      "bad_citation": 0.0,
+      "units": 120
+     },
+     "speed": {
+      "sec_per_item_median": 83.4,
+      "output_tps_median": 26.6,
+      "prompt_tokens_median": 7883.0,
+      "output_tokens_median": 430.5,
+      "peak_vram_mib_max": 11597,
+      "thinking_chars_median": 0.0,
+      "items": 36
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "gemma4-12b": {
+     "halluc": {
+      "mean": 1.1,
+      "min": 1.1,
+      "max": 1.1,
+      "runs": [
+       1.1,
+       1.1,
+       1.1
+      ]
+     },
+     "halluc2": {
+      "mean": 3.5,
+      "min": 3.5,
+      "max": 3.5,
+      "runs": [
+       3.5,
+       3.5,
+       3.5
+      ]
+     },
+     "misstated": {
+      "mean": 1.7,
+      "min": 1.7,
+      "max": 1.7,
+      "runs": [
+       1.7,
+       1.7,
+       1.7
+      ]
+     },
+     "primary": {
+      "mean": 76.7,
+      "min": 76.7,
+      "max": 76.7,
+      "runs": [
+       76.7,
+       76.7,
+       76.7
+      ]
+     },
+     "words": {
+      "mean": 33433.3,
+      "min": 33433.3,
+      "max": 33433.3,
+      "runs": [
+       33433.3,
+       33433.3,
+       33433.3
+      ]
+     },
+     "traps": {
+      "guidance": {
+       "failures_mean": 0.0,
+       "opportunities": 7.0,
+       "runs": 3
+      },
+      "non_gaap": {
+       "failures_mean": 5.0,
+       "opportunities": 25.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 26.0,
+      "stale": 0.0,
+      "fabricated": 0.0,
+      "other": 2.0,
+      "bad_citation": 0.0,
+      "units": 120
+     },
+     "speed": {
+      "sec_per_item_median": 13.1,
+      "output_tps_median": 61.0,
+      "prompt_tokens_median": 7973.0,
+      "output_tokens_median": 583.5,
+      "peak_vram_mib_max": 9776,
+      "thinking_chars_median": 0.0,
+      "items": 36
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "qwen3.5-9b": {
+     "halluc": {
+      "mean": 0.8,
+      "min": 0.8,
+      "max": 0.8,
+      "runs": [
+       0.8,
+       0.8,
+       0.8
+      ]
+     },
+     "halluc2": {
+      "mean": 5.8,
+      "min": 5.8,
+      "max": 5.8,
+      "runs": [
+       5.8,
+       5.8,
+       5.8
+      ]
+     },
+     "misstated": {
+      "mean": 3.3,
+      "min": 3.3,
+      "max": 3.3,
+      "runs": [
+       3.3,
+       3.3,
+       3.3
+      ]
+     },
+     "primary": {
+      "mean": 75.0,
+      "min": 75.0,
+      "max": 75.0,
+      "runs": [
+       75.0,
+       75.0,
+       75.0
+      ]
+     },
+     "words": {
+      "mean": 44733.3,
+      "min": 44733.3,
+      "max": 44733.3,
+      "runs": [
+       44733.3,
+       44733.3,
+       44733.3
+      ]
+     },
+     "traps": {
+      "guidance": {
+       "failures_mean": 1.0,
+       "opportunities": 7.0,
+       "runs": 3
+      },
+      "non_gaap": {
+       "failures_mean": 8.0,
+       "opportunities": 25.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 26.0,
+      "stale": 0.0,
+      "fabricated": 0.0,
+      "other": 4.0,
+      "bad_citation": 0.0,
+      "units": 120
+     },
+     "speed": {
+      "sec_per_item_median": 10.4,
+      "output_tps_median": 88.8,
+      "prompt_tokens_median": 7982.5,
+      "output_tokens_median": 725.5,
+      "peak_vram_mib_max": 8420,
+      "thinking_chars_median": 0.0,
+      "items": 36
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "ministral-3-14b": {
+     "halluc": {
+      "mean": 3.4,
+      "min": 3.4,
+      "max": 3.4,
+      "runs": [
+       3.4,
+       3.4,
+       3.4
+      ]
+     },
+     "halluc2": {
+      "mean": 8.3,
+      "min": 8.3,
+      "max": 8.3,
+      "runs": [
+       8.3,
+       8.3,
+       8.3
+      ]
+     },
+     "misstated": {
+      "mean": 8.3,
+      "min": 8.3,
+      "max": 8.3,
+      "runs": [
+       8.3,
+       8.3,
+       8.3
+      ]
+     },
+     "primary": {
+      "mean": 75.0,
+      "min": 75.0,
+      "max": 75.0,
+      "runs": [
+       75.0,
+       75.0,
+       75.0
+      ]
+     },
+     "words": {
+      "mean": 36483.3,
+      "min": 36483.3,
+      "max": 36483.3,
+      "runs": [
+       36483.3,
+       36483.3,
+       36483.3
+      ]
+     },
+     "traps": {
+      "guidance": {
+       "failures_mean": 2.0,
+       "opportunities": 7.0,
+       "runs": 3
+      },
+      "non_gaap": {
+       "failures_mean": 7.0,
+       "opportunities": 25.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 20.0,
+      "stale": 0.0,
+      "fabricated": 0.0,
+      "other": 10.0,
+      "bad_citation": 0.0,
+      "units": 120
+     },
+     "speed": {
+      "sec_per_item_median": 16.6,
+      "output_tps_median": 54.7,
+      "prompt_tokens_median": 8108.0,
+      "output_tokens_median": 754.0,
+      "peak_vram_mib_max": 11588,
+      "thinking_chars_median": 0.0,
+      "items": 36
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "halluc": {
+      "mean": 2.5,
+      "min": 2.5,
+      "max": 2.5,
+      "runs": [
+       2.5
+      ]
+     },
+     "halluc2": {
+      "mean": 7.9,
+      "min": 7.9,
+      "max": 7.9,
+      "runs": [
+       7.9
+      ]
+     },
+     "misstated": {
+      "mean": 5.8,
+      "min": 5.8,
+      "max": 5.8,
+      "runs": [
+       5.8
+      ]
+     },
+     "primary": {
+      "mean": 58.3,
+      "min": 58.3,
+      "max": 58.3,
+      "runs": [
+       58.3
+      ]
+     },
+     "words": {
+      "mean": 26925.0,
+      "min": 26925.0,
+      "max": 26925.0,
+      "runs": [
+       26925.0
+      ]
+     },
+     "traps": {
+      "guidance": {
+       "failures_mean": 2.0,
+       "opportunities": 7.0,
+       "runs": 1
+      },
+      "non_gaap": {
+       "failures_mean": 10.0,
+       "opportunities": 25.0,
+       "runs": 1
+      }
+     },
+     "errors": {
+      "missed": 43.0,
+      "stale": 0.0,
+      "fabricated": 0.0,
+      "other": 7.0,
+      "bad_citation": 0.0,
+      "units": 120
+     },
+     "speed": {
+      "sec_per_item_median": 7.4,
+      "output_tps_median": 91.9,
+      "prompt_tokens_median": 7883.0,
+      "output_tokens_median": 495.5,
+      "peak_vram_mib_max": 6576,
+      "thinking_chars_median": 0.0,
+      "items": 12
+     },
+     "n_runs": 1,
+     "judge_pending": false
+    }
+   },
+   "vs_frontier": {
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "tier": "gap",
+     "primary_local": 60.0,
+     "primary_frontier": 98.3,
+     "diff": {
+      "diff": -38.3,
+      "ci": [
+       -46.7,
+       -30.0
+      ],
+      "clusters": 12,
+      "items": 12
+     },
+     "halluc_local": {
+      "halluc": 0.3,
+      "halluc2": 5.0
+     },
+     "halluc_frontier": {
+      "halluc": 0.5,
+      "halluc2": 1.2
+     },
+     "worse_traps": [
+      "guidance",
+      "non_gaap"
+     ],
+     "reasons": [
+      "primary 38.3 points below frontier",
+      "Unsupported claims 5.0% vs 1.2%",
+      "trap categories failed more often: guidance, non_gaap"
+     ],
+     "not_distinguishable": false,
+     "straddles": []
+    },
+    "gemma4-12b": {
+     "tier": "gap",
+     "primary_local": 76.7,
+     "primary_frontier": 98.3,
+     "diff": {
+      "diff": -21.7,
+      "ci": [
+       -30.8,
+       -12.5
+      ],
+      "clusters": 12,
+      "items": 12
+     },
+     "halluc_local": {
+      "halluc": 1.1,
+      "halluc2": 3.5
+     },
+     "halluc_frontier": {
+      "halluc": 0.5,
+      "halluc2": 1.2
+     },
+     "worse_traps": [
+      "non_gaap"
+     ],
+     "reasons": [
+      "primary 21.6 points below frontier",
+      "Unsupported claims 3.5% vs 1.2%",
+      "trap categories failed more often: non_gaap"
+     ],
+     "not_distinguishable": false,
+     "straddles": []
+    },
+    "qwen3.5-9b": {
+     "tier": "gap",
+     "primary_local": 75.0,
+     "primary_frontier": 98.3,
+     "diff": {
+      "diff": -23.3,
+      "ci": [
+       -31.7,
+       -15.8
+      ],
+      "clusters": 12,
+      "items": 12
+     },
+     "halluc_local": {
+      "halluc": 0.8,
+      "halluc2": 5.8
+     },
+     "halluc_frontier": {
+      "halluc": 0.5,
+      "halluc2": 1.2
+     },
+     "worse_traps": [
+      "guidance",
+      "non_gaap"
+     ],
+     "reasons": [
+      "primary 23.3 points below frontier",
+      "Unsupported claims 5.8% vs 1.2%",
+      "trap categories failed more often: guidance, non_gaap"
+     ],
+     "not_distinguishable": false,
+     "straddles": []
+    },
+    "ministral-3-14b": {
+     "tier": "gap",
+     "primary_local": 75.0,
+     "primary_frontier": 98.3,
+     "diff": {
+      "diff": -23.3,
+      "ci": [
+       -31.7,
+       -15.0
+      ],
+      "clusters": 12,
+      "items": 12
+     },
+     "halluc_local": {
+      "halluc": 3.4,
+      "halluc2": 8.3
+     },
+     "halluc_frontier": {
+      "halluc": 0.5,
+      "halluc2": 1.2
+     },
+     "worse_traps": [
+      "guidance",
+      "non_gaap"
+     ],
+     "reasons": [
+      "primary 23.3 points below frontier",
+      "Ungrounded numbers 3.4% vs 0.5%",
+      "Unsupported claims 8.3% vs 1.2%",
+      "trap categories failed more often: guidance, non_gaap"
+     ],
+     "not_distinguishable": false,
+     "straddles": []
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "tier": "gap",
+     "primary_local": 58.3,
+     "primary_frontier": 98.3,
+     "diff": {
+      "diff": -40.0,
+      "ci": [
+       -49.2,
+       -30.8
+      ],
+      "clusters": 12,
+      "items": 12
+     },
+     "halluc_local": {
+      "halluc": 2.5,
+      "halluc2": 7.9
+     },
+     "halluc_frontier": {
+      "halluc": 0.5,
+      "halluc2": 1.2
+     },
+     "worse_traps": [
+      "guidance",
+      "non_gaap"
+     ],
+     "reasons": [
+      "primary 40.0 points below frontier",
+      "Ungrounded numbers 2.5% vs 0.5%",
+      "Unsupported claims 7.9% vs 1.2%",
+      "trap categories failed more often: guidance, non_gaap"
+     ],
+     "not_distinguishable": false,
+     "straddles": []
+    }
+   },
+   "failures": {
+    "claude-opus-5": {
+     "item": "t4_jpm",
+     "unit": "f04",
+     "verdict": "ABSENT",
+     "trap": "none",
+     "got": "",
+     "expected": "Markets revenue was $12.1 billion, up 35% year over year, predominantly driven by Equity Markets.",
+     "run": "test-default-r1"
+    },
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "item": "t4_googl",
+     "unit": "f06",
+     "verdict": "MISSTATED",
+     "trap": "none",
+     "got": "Monitor the impact of the $98.0 billion net gain from equity securities on future financial performance.",
+     "expected": "Other income reflected a net gain of $98.0 billion, primarily net unrealized gains on equity securities; the net effect of the equity securities gain increased diluted EPS by $6.26.",
+     "run": "test-default-ctx16384-r1"
+    },
+    "gemma4-12b": {
+     "item": "t4_jnj",
+     "unit": "f07",
+     "verdict": "MISSTATED",
+     "trap": "non_gaap",
+     "got": "Non-GAAP free cash flow for the second quarter of 2026 was approximately $8.7 billion. [Release reports ~$8,700 million for second-quarter YTD 2026, estimated as of July 15, 2026, versus $6,214 million; the brief presents the YTD figure as the quarter and omits the prior-year comparison.]",
+     "expected": "Free cash flow (non-GAAP) for second-quarter year to date 2026 was an estimated ~$8,700 million, versus $6,214 million a year earlier.",
+     "run": "test-default-thinkoff-ctx16384-r1"
+    },
+    "qwen3.5-9b": {
+     "item": "t4_ibm",
+     "unit": "f01",
+     "verdict": "MISSTATED",
+     "trap": "none",
+     "got": "IBM reported second-quarter 2026 revenue of $17.2 billion, representing a flat year-over-year change at GAAP",
+     "expected": "Revenue was $17.2 billion, up 1 percent year over year (GAAP, as reported).",
+     "run": "test-default-thinkoff-ctx16384-r1"
+    },
+    "ministral-3-14b": {
+     "item": "t4_cvx",
+     "unit": "f09",
+     "verdict": "MISSTATED",
+     "trap": "none",
+     "got": "**Dividend declared** at **$1.78 per share**, payable September 10, 2026.",
+     "expected": "Capital return (both figures required): the Board declared a quarterly dividend of $1.78 per share, and shares repurchased in the quarter totaled $3,117 million per the cash flow statement.",
+     "run": "test-default-ctx16384-r1"
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "item": "t4_hd",
+     "unit": "f04",
+     "verdict": "MISSTATED",
+     "trap": "none",
+     "got": "**Comparable Sales**: 1.7% increase. [The 1.7% total is correct, but the brief omits the U.S. comparable sales increase of 1.3%.]",
+     "expected": "Comparable sales increased 1.7%, and comparable sales in the U.S. increased 1.3%.",
+     "run": "test-default-ctx16384-r1"
+    }
+   },
+   "halluc2_label": "Unsupported claims",
+   "units": {
+    "items": 12,
+    "clusters": 12,
+    "primary_units": 120
+   },
+   "local_errors": {
+    "counts": {
+     "missed": 116,
+     "other": 20
+    },
+    "units": 480,
+    "total": 136
+   }
+  },
+  "t5": {
+   "name": "Meeting notes to CRM",
+   "mirrors": "The CRM update after every client meeting",
+   "source": "Synthetic adviser-client meeting transcripts",
+   "id": "t5",
+   "primary_label": "CRM accuracy",
+   "halluc_label": "Invented CRM items",
+   "models": {
+    "claude-opus-5": {
+     "halluc": {
+      "mean": 0.6,
+      "min": 0.6,
+      "max": 0.6,
+      "runs": [
+       0.6
+      ]
+     },
+     "primary": {
+      "mean": 100.0,
+      "min": 100.0,
+      "max": 100.0,
+      "runs": [
+       100.0
+      ]
+     },
+     "traps": {
+      "correction": {
+       "failures_mean": 0.0,
+       "opportunities": 30.0,
+       "runs": 1
+      },
+      "declined_proposal": {
+       "failures_mean": 0.0,
+       "opportunities": 12.0,
+       "runs": 1
+      },
+      "due_changed": {
+       "failures_mean": 0.0,
+       "opportunities": 9.0,
+       "runs": 1
+      },
+      "reassigned": {
+       "failures_mean": 0.0,
+       "opportunities": 9.0,
+       "runs": 1
+      },
+      "tentative": {
+       "failures_mean": 0.0,
+       "opportunities": 28.0,
+       "runs": 1
+      }
+     },
+     "errors": {
+      "missed": 1.0,
+      "stale": 0.0,
+      "fabricated": 0.0,
+      "other": 0.0,
+      "bad_citation": 0.0,
+      "units": 218
+     },
+     "speed": {
+      "sec_per_item_median": 41.3,
+      "output_tps_median": null,
+      "prompt_tokens_median": null,
+      "output_tokens_median": 4069,
+      "peak_vram_mib_max": 0,
+      "thinking_chars_median": null,
+      "items": 9
+     },
+     "n_runs": 1,
+     "judge_pending": false
+    },
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "halluc": {
+      "mean": 1.2,
+      "min": 1.2,
+      "max": 1.2,
+      "runs": [
+       1.2,
+       1.2,
+       1.2
+      ]
+     },
+     "primary": {
+      "mean": 72.8,
+      "min": 72.8,
+      "max": 72.8,
+      "runs": [
+       72.8,
+       72.8,
+       72.8
+      ]
+     },
+     "traps": {
+      "correction": {
+       "failures_mean": 4.0,
+       "opportunities": 30.0,
+       "runs": 3
+      },
+      "declined_proposal": {
+       "failures_mean": 0.0,
+       "opportunities": 12.0,
+       "runs": 3
+      },
+      "due_changed": {
+       "failures_mean": 2.0,
+       "opportunities": 9.0,
+       "runs": 3
+      },
+      "reassigned": {
+       "failures_mean": 5.0,
+       "opportunities": 9.0,
+       "runs": 3
+      },
+      "tentative": {
+       "failures_mean": 0.0,
+       "opportunities": 28.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 79.0,
+      "stale": 3.0,
+      "fabricated": 0.0,
+      "other": 28.0,
+      "bad_citation": 0.0,
+      "units": 218
+     },
+     "speed": {
+      "sec_per_item_median": 144.1,
+      "output_tps_median": 23.2,
+      "prompt_tokens_median": 10193,
+      "output_tokens_median": 515,
+      "peak_vram_mib_max": 11698,
+      "thinking_chars_median": 0,
+      "items": 27
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "gemma4-12b": {
+     "halluc": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0,
+       0.0,
+       0.0
+      ]
+     },
+     "primary": {
+      "mean": 85.4,
+      "min": 85.4,
+      "max": 85.4,
+      "runs": [
+       85.4,
+       85.4,
+       85.4
+      ]
+     },
+     "traps": {
+      "correction": {
+       "failures_mean": 1.0,
+       "opportunities": 30.0,
+       "runs": 3
+      },
+      "declined_proposal": {
+       "failures_mean": 0.0,
+       "opportunities": 12.0,
+       "runs": 3
+      },
+      "due_changed": {
+       "failures_mean": 0.0,
+       "opportunities": 9.0,
+       "runs": 3
+      },
+      "reassigned": {
+       "failures_mean": 2.0,
+       "opportunities": 9.0,
+       "runs": 3
+      },
+      "tentative": {
+       "failures_mean": 0.0,
+       "opportunities": 28.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 41.0,
+      "stale": 1.0,
+      "fabricated": 0.0,
+      "other": 20.0,
+      "bad_citation": 0.0,
+      "units": 218
+     },
+     "speed": {
+      "sec_per_item_median": 15.5,
+      "output_tps_median": 59.7,
+      "prompt_tokens_median": 10406,
+      "output_tokens_median": 685,
+      "peak_vram_mib_max": 10039,
+      "thinking_chars_median": 0,
+      "items": 27
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "qwen3.5-9b": {
+     "halluc": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0,
+       0.0,
+       0.0
+      ]
+     },
+     "primary": {
+      "mean": 80.1,
+      "min": 80.1,
+      "max": 80.1,
+      "runs": [
+       80.1,
+       80.1,
+       80.1
+      ]
+     },
+     "traps": {
+      "correction": {
+       "failures_mean": 2.0,
+       "opportunities": 30.0,
+       "runs": 3
+      },
+      "declined_proposal": {
+       "failures_mean": 0.0,
+       "opportunities": 12.0,
+       "runs": 3
+      },
+      "due_changed": {
+       "failures_mean": 3.0,
+       "opportunities": 9.0,
+       "runs": 3
+      },
+      "reassigned": {
+       "failures_mean": 3.0,
+       "opportunities": 9.0,
+       "runs": 3
+      },
+      "tentative": {
+       "failures_mean": 0.0,
+       "opportunities": 28.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 58.0,
+      "stale": 3.0,
+      "fabricated": 0.0,
+      "other": 25.0,
+      "bad_citation": 0.0,
+      "units": 218
+     },
+     "speed": {
+      "sec_per_item_median": 11.1,
+      "output_tps_median": 87.5,
+      "prompt_tokens_median": 10395,
+      "output_tokens_median": 710,
+      "peak_vram_mib_max": 8425,
+      "thinking_chars_median": 0,
+      "items": 27
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "ministral-3-14b": {
+     "halluc": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0,
+       0.0,
+       0.0
+      ]
+     },
+     "primary": {
+      "mean": 87.6,
+      "min": 87.6,
+      "max": 87.6,
+      "runs": [
+       87.6,
+       87.6,
+       87.6
+      ]
+     },
+     "traps": {
+      "correction": {
+       "failures_mean": 3.0,
+       "opportunities": 30.0,
+       "runs": 3
+      },
+      "declined_proposal": {
+       "failures_mean": 0.0,
+       "opportunities": 12.0,
+       "runs": 3
+      },
+      "due_changed": {
+       "failures_mean": 0.0,
+       "opportunities": 9.0,
+       "runs": 3
+      },
+      "reassigned": {
+       "failures_mean": 4.0,
+       "opportunities": 9.0,
+       "runs": 3
+      },
+      "tentative": {
+       "failures_mean": 0.0,
+       "opportunities": 28.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 27.0,
+      "stale": 1.0,
+      "fabricated": 0.0,
+      "other": 28.0,
+      "bad_citation": 0.0,
+      "units": 218
+     },
+     "speed": {
+      "sec_per_item_median": 23.8,
+      "output_tps_median": 52.5,
+      "prompt_tokens_median": 10298,
+      "output_tokens_median": 1013,
+      "peak_vram_mib_max": 11337,
+      "thinking_chars_median": 0,
+      "items": 27
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "halluc": {
+      "mean": 3.4,
+      "min": 3.4,
+      "max": 3.4,
+      "runs": [
+       3.4
+      ]
+     },
+     "primary": {
+      "mean": 72.2,
+      "min": 72.2,
+      "max": 72.2,
+      "runs": [
+       72.2
+      ]
+     },
+     "traps": {
+      "correction": {
+       "failures_mean": 9.0,
+       "opportunities": 30.0,
+       "runs": 1
+      },
+      "declined_proposal": {
+       "failures_mean": 0.0,
+       "opportunities": 12.0,
+       "runs": 1
+      },
+      "due_changed": {
+       "failures_mean": 2.0,
+       "opportunities": 9.0,
+       "runs": 1
+      },
+      "reassigned": {
+       "failures_mean": 6.0,
+       "opportunities": 9.0,
+       "runs": 1
+      },
+      "tentative": {
+       "failures_mean": 0.0,
+       "opportunities": 28.0,
+       "runs": 1
+      }
+     },
+     "errors": {
+      "missed": 85.0,
+      "stale": 6.0,
+      "fabricated": 0.0,
+      "other": 25.0,
+      "bad_citation": 0.0,
+      "units": 218
+     },
+     "speed": {
+      "sec_per_item_median": 7.8,
+      "output_tps_median": 88.4,
+      "prompt_tokens_median": 10193,
+      "output_tokens_median": 467,
+      "peak_vram_mib_max": 6576,
+      "thinking_chars_median": 0,
+      "items": 9
+     },
+     "n_runs": 1,
+     "judge_pending": false
+    }
+   },
+   "vs_frontier": {
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "tier": "gap",
+     "primary_local": 72.8,
+     "primary_frontier": 100.0,
+     "diff": {
+      "diff": -27.2,
+      "ci": [
+       -29.7,
+       -24.6
+      ],
+      "clusters": 9,
+      "items": 9
+     },
+     "halluc_local": {
+      "halluc": 1.2
+     },
+     "halluc_frontier": {
+      "halluc": 0.6
+     },
+     "worse_traps": [
+      "correction",
+      "due_changed",
+      "reassigned"
+     ],
+     "reasons": [
+      "primary 27.2 points below frontier",
+      "trap categories failed more often: correction, due_changed, reassigned"
+     ],
+     "not_distinguishable": false,
+     "straddles": []
+    },
+    "gemma4-12b": {
+     "tier": "gap",
+     "primary_local": 85.4,
+     "primary_frontier": 100.0,
+     "diff": {
+      "diff": -14.6,
+      "ci": [
+       -20.2,
+       -9.3
+      ],
+      "clusters": 9,
+      "items": 9
+     },
+     "halluc_local": {
+      "halluc": 0.0
+     },
+     "halluc_frontier": {
+      "halluc": 0.6
+     },
+     "worse_traps": [
+      "correction",
+      "reassigned"
+     ],
+     "reasons": [
+      "primary 14.6 points below frontier",
+      "trap categories failed more often: correction, reassigned"
+     ],
+     "not_distinguishable": true,
+     "straddles": [
+      -10.0
+     ]
+    },
+    "qwen3.5-9b": {
+     "tier": "gap",
+     "primary_local": 80.1,
+     "primary_frontier": 100.0,
+     "diff": {
+      "diff": -19.9,
+      "ci": [
+       -23.9,
+       -15.6
+      ],
+      "clusters": 9,
+      "items": 9
+     },
+     "halluc_local": {
+      "halluc": 0.0
+     },
+     "halluc_frontier": {
+      "halluc": 0.6
+     },
+     "worse_traps": [
+      "correction",
+      "due_changed",
+      "reassigned"
+     ],
+     "reasons": [
+      "primary 19.9 points below frontier",
+      "trap categories failed more often: correction, due_changed, reassigned"
+     ],
+     "not_distinguishable": false,
+     "straddles": []
+    },
+    "ministral-3-14b": {
+     "tier": "gap",
+     "primary_local": 87.6,
+     "primary_frontier": 100.0,
+     "diff": {
+      "diff": -12.4,
+      "ci": [
+       -16.7,
+       -8.6
+      ],
+      "clusters": 9,
+      "items": 9
+     },
+     "halluc_local": {
+      "halluc": 0.0
+     },
+     "halluc_frontier": {
+      "halluc": 0.6
+     },
+     "worse_traps": [
+      "correction",
+      "reassigned"
+     ],
+     "reasons": [
+      "primary 12.4 points below frontier",
+      "trap categories failed more often: correction, reassigned"
+     ],
+     "not_distinguishable": true,
+     "straddles": [
+      -10.0
+     ]
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "tier": "gap",
+     "primary_local": 72.2,
+     "primary_frontier": 100.0,
+     "diff": {
+      "diff": -27.8,
+      "ci": [
+       -33.4,
+       -21.8
+      ],
+      "clusters": 9,
+      "items": 9
+     },
+     "halluc_local": {
+      "halluc": 3.4
+     },
+     "halluc_frontier": {
+      "halluc": 0.6
+     },
+     "worse_traps": [
+      "correction",
+      "due_changed",
+      "reassigned"
+     ],
+     "reasons": [
+      "primary 27.8 points below frontier",
+      "Invented CRM items 3.4% vs 0.6%",
+      "trap categories failed more often: correction, due_changed, reassigned"
+     ],
+     "not_distinguishable": false,
+     "straddles": []
+    }
+   },
+   "failures": {
+    "claude-opus-5": {
+     "item": "t5_m06",
+     "unit": "i2",
+     "verdict": "MISSED",
+     "trap": "reassigned",
+     "got": "",
+     "expected": "Call Imogen Threlkeld's office to schedule the trust signing and the guardianship petition meeting [owner: Owen Latchford, reassigned from Priya; due: tomorrow = Wednesday, September 16, 2026]",
+     "run": "test-default-r1"
+    },
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "item": "t5_m04",
+     "unit": "i1",
+     "verdict": "STALE",
+     "trap": "reassigned",
+     "got": "task: get iso grant paperwork from parrish lane and send to rhea delacroix owner: jonah castellvi due: 2026-11-20",
+     "expected": "Send Jonah's ISO grant agreement and the Parrish Lane vesting export (already in the onboarding file) to CPA Rhea Delacroix for her final AMT run. Owner: Tessa Varnum (reassigned from Jonah Castellvi). Due: tomorrow morning (Friday, September 11, 2026).",
+     "run": "test-default-ctx16384-r1"
+    },
+    "gemma4-12b": {
+     "item": "t5_m06",
+     "unit": "i6",
+     "verdict": "STALE",
+     "trap": "none",
+     "got": "task: draft first version of the letter of intent for miles owner: priya latchford due: 2026-12-01",
+     "expected": "Write the first draft of the letter of intent for Miles (doctors, medications, routines, preferences) from the attorney's questionnaire, with Owen adding what only he knows [owner: Priya Latchford; due: before the December meeting = December 8, 2026]",
+     "run": "test-default-thinkoff-ctx16384-r1"
+    },
+    "qwen3.5-9b": {
+     "item": "t5_m05",
+     "unit": "e1",
+     "verdict": "STALE",
+     "trap": "correction",
+     "got": "record item 1",
+     "expected": "Divorce from Gavin Kettridge: marital settlement agreement signed September 10, 2026; final hearing October 13, 2026, with the decree expected to be entered that day",
+     "run": "test-default-thinkoff-ctx16384-r1"
+    },
+    "ministral-3-14b": {
+     "item": "t5_m10",
+     "unit": "a2",
+     "verdict": "STALE",
+     "trap": "correction",
+     "got": "record item 7",
+     "expected": "Move $200,000 from the Tendry Acoustic Design operating account at Marrowgate Community Bank to a government money market fund in a new business brokerage account at Pellrose titled to the corporation, authorized on the account application",
+     "run": "test-default-ctx16384-r1"
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "item": "t5_m06",
+     "unit": "i2",
+     "verdict": "STALE",
+     "trap": "reassigned",
+     "got": "task: call imogen's office to set up guardianship and able account signings owner: priya latchford due: 2026-09-29",
+     "expected": "Call Imogen Threlkeld's office to schedule the trust signing and the guardianship petition meeting [owner: Owen Latchford, reassigned from Priya; due: tomorrow = Wednesday, September 16, 2026]",
+     "run": "test-default-ctx16384-r1"
+    }
+   },
+   "units": {
+    "items": 9,
+    "clusters": 9,
+    "primary_units": 178
+   },
+   "local_errors": {
+    "counts": {
+     "missed": 205,
+     "stale": 8,
+     "other": 101
+    },
+    "units": 872,
+    "total": 314
+   }
+  },
+  "t6": {
+   "name": "Client drafting",
+   "mirrors": "Quarterly client letters",
+   "source": "Synthetic adviser fact sheets",
+   "id": "t6",
+   "primary_label": "Required-content rate",
+   "halluc_label": "Ungrounded numbers",
+   "models": {
+    "claude-opus-5": {
+     "halluc": {
+      "mean": 1.6,
+      "min": 1.6,
+      "max": 1.6,
+      "runs": [
+       1.6
+      ]
+     },
+     "leak": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0
+      ]
+     },
+     "primary": {
+      "mean": 100.0,
+      "min": 100.0,
+      "max": 100.0,
+      "runs": [
+       100.0
+      ]
+     },
+     "words": {
+      "mean": 37946.7,
+      "min": 37946.7,
+      "max": 37946.7,
+      "runs": [
+       37946.7
+      ]
+     },
+     "traps": {
+      "concept": {
+       "failures_mean": 0.0,
+       "opportunities": 45.0,
+       "runs": 1
+      },
+      "disclosure": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 1
+      },
+      "gross_only": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 1
+      },
+      "internal_note": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 1
+      }
+     },
+     "errors": {
+      "missed": 0.0,
+      "stale": 0.0,
+      "fabricated": 0.0,
+      "other": 0.0,
+      "bad_citation": 0.0,
+      "units": 165
+     },
+     "speed": {
+      "sec_per_item_median": 17.6,
+      "output_tps_median": null,
+      "prompt_tokens_median": null,
+      "output_tokens_median": 1546,
+      "peak_vram_mib_max": 0,
+      "thinking_chars_median": null,
+      "items": 15
+     },
+     "n_runs": 1,
+     "judge_pending": false
+    },
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "halluc": {
+      "mean": 1.5,
+      "min": 1.5,
+      "max": 1.5,
+      "runs": [
+       1.5,
+       1.5,
+       1.5
+      ]
+     },
+     "leak": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0,
+       0.0,
+       0.0
+      ]
+     },
+     "primary": {
+      "mean": 95.6,
+      "min": 95.6,
+      "max": 95.6,
+      "runs": [
+       95.6,
+       95.6,
+       95.6
+      ]
+     },
+     "words": {
+      "mean": 29820.0,
+      "min": 29820.0,
+      "max": 29820.0,
+      "runs": [
+       29820.0,
+       29820.0,
+       29820.0
+      ]
+     },
+     "traps": {
+      "concept": {
+       "failures_mean": 0.0,
+       "opportunities": 45.0,
+       "runs": 3
+      },
+      "disclosure": {
+       "failures_mean": 3.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "gross_only": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "internal_note": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 3.0,
+      "stale": 0.0,
+      "fabricated": 0.0,
+      "other": 3.0,
+      "bad_citation": 0.0,
+      "units": 165
+     },
+     "speed": {
+      "sec_per_item_median": 19.2,
+      "output_tps_median": 29.4,
+      "prompt_tokens_median": 1096,
+      "output_tokens_median": 483,
+      "peak_vram_mib_max": 11447,
+      "thinking_chars_median": 0,
+      "items": 45
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "gemma4-12b": {
+     "halluc": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0,
+       0.0,
+       0.0
+      ]
+     },
+     "leak": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0,
+       0.0,
+       0.0
+      ]
+     },
+     "primary": {
+      "mean": 94.8,
+      "min": 94.8,
+      "max": 94.8,
+      "runs": [
+       94.8,
+       94.8,
+       94.8
+      ]
+     },
+     "words": {
+      "mean": 30506.7,
+      "min": 30506.7,
+      "max": 30506.7,
+      "runs": [
+       30506.7,
+       30506.7,
+       30506.7
+      ]
+     },
+     "traps": {
+      "concept": {
+       "failures_mean": 1.0,
+       "opportunities": 45.0,
+       "runs": 3
+      },
+      "disclosure": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "gross_only": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "internal_note": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 7.0,
+      "stale": 0.0,
+      "fabricated": 0.0,
+      "other": 0.0,
+      "bad_citation": 0.0,
+      "units": 165
+     },
+     "speed": {
+      "sec_per_item_median": 8.2,
+      "output_tps_median": 63.3,
+      "prompt_tokens_median": 1114,
+      "output_tokens_median": 484,
+      "peak_vram_mib_max": 9795,
+      "thinking_chars_median": 0,
+      "items": 45
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "qwen3.5-9b": {
+     "halluc": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0,
+       0.0,
+       0.0
+      ]
+     },
+     "leak": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0,
+       0.0,
+       0.0
+      ]
+     },
+     "primary": {
+      "mean": 98.5,
+      "min": 98.5,
+      "max": 98.5,
+      "runs": [
+       98.5,
+       98.5,
+       98.5
+      ]
+     },
+     "words": {
+      "mean": 35120.0,
+      "min": 35120.0,
+      "max": 35120.0,
+      "runs": [
+       35120.0,
+       35120.0,
+       35120.0
+      ]
+     },
+     "traps": {
+      "concept": {
+       "failures_mean": 0.0,
+       "opportunities": 45.0,
+       "runs": 3
+      },
+      "disclosure": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "gross_only": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "internal_note": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 2.0,
+      "stale": 0.0,
+      "fabricated": 0.0,
+      "other": 0.0,
+      "bad_citation": 0.0,
+      "units": 165
+     },
+     "speed": {
+      "sec_per_item_median": 5.9,
+      "output_tps_median": 92.0,
+      "prompt_tokens_median": 1135,
+      "output_tokens_median": 499,
+      "peak_vram_mib_max": 8185,
+      "thinking_chars_median": 0,
+      "items": 45
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "ministral-3-14b": {
+     "halluc": {
+      "mean": 15.4,
+      "min": 15.4,
+      "max": 15.4,
+      "runs": [
+       15.4,
+       15.4,
+       15.4
+      ]
+     },
+     "leak": {
+      "mean": 6.7,
+      "min": 6.7,
+      "max": 6.7,
+      "runs": [
+       6.7,
+       6.7,
+       6.7
+      ]
+     },
+     "primary": {
+      "mean": 97.0,
+      "min": 97.0,
+      "max": 97.0,
+      "runs": [
+       97.0,
+       97.0,
+       97.0
+      ]
+     },
+     "words": {
+      "mean": 34893.3,
+      "min": 34893.3,
+      "max": 34893.3,
+      "runs": [
+       34893.3,
+       34893.3,
+       34893.3
+      ]
+     },
+     "traps": {
+      "concept": {
+       "failures_mean": 0.0,
+       "opportunities": 45.0,
+       "runs": 3
+      },
+      "disclosure": {
+       "failures_mean": 2.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "gross_only": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 3
+      },
+      "internal_note": {
+       "failures_mean": 2.0,
+       "opportunities": 15.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 2.0,
+      "stale": 0.0,
+      "fabricated": 2.0,
+      "other": 2.0,
+      "bad_citation": 0.0,
+      "units": 165
+     },
+     "speed": {
+      "sec_per_item_median": 9.4,
+      "output_tps_median": 63.0,
+      "prompt_tokens_median": 1114,
+      "output_tokens_median": 570,
+      "peak_vram_mib_max": 11356,
+      "thinking_chars_median": 0,
+      "items": 45
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "halluc": {
+      "mean": 0.4,
+      "min": 0.4,
+      "max": 0.4,
+      "runs": [
+       0.4
+      ]
+     },
+     "leak": {
+      "mean": 3.3,
+      "min": 3.3,
+      "max": 3.3,
+      "runs": [
+       3.3
+      ]
+     },
+     "primary": {
+      "mean": 94.1,
+      "min": 94.1,
+      "max": 94.1,
+      "runs": [
+       94.1
+      ]
+     },
+     "words": {
+      "mean": 35360.0,
+      "min": 35360.0,
+      "max": 35360.0,
+      "runs": [
+       35360.0
+      ]
+     },
+     "traps": {
+      "concept": {
+       "failures_mean": 0.0,
+       "opportunities": 45.0,
+       "runs": 1
+      },
+      "disclosure": {
+       "failures_mean": 6.0,
+       "opportunities": 15.0,
+       "runs": 1
+      },
+      "gross_only": {
+       "failures_mean": 0.0,
+       "opportunities": 15.0,
+       "runs": 1
+      },
+      "internal_note": {
+       "failures_mean": 1.0,
+       "opportunities": 15.0,
+       "runs": 1
+      }
+     },
+     "errors": {
+      "missed": 2.0,
+      "stale": 0.0,
+      "fabricated": 1.0,
+      "other": 6.0,
+      "bad_citation": 0.0,
+      "units": 165
+     },
+     "speed": {
+      "sec_per_item_median": 5.4,
+      "output_tps_median": 105.1,
+      "prompt_tokens_median": 1096,
+      "output_tokens_median": 541,
+      "peak_vram_mib_max": 6576,
+      "thinking_chars_median": 0,
+      "items": 15
+     },
+     "n_runs": 1,
+     "judge_pending": false
+    }
+   },
+   "vs_frontier": {
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "tier": "usable",
+     "primary_local": 95.6,
+     "primary_frontier": 100.0,
+     "diff": {
+      "diff": -4.4,
+      "ci": [
+       -8.1,
+       -1.5
+      ],
+      "clusters": 15,
+      "items": 15
+     },
+     "halluc_local": {
+      "halluc": 1.5
+     },
+     "halluc_frontier": {
+      "halluc": 1.6
+     },
+     "worse_traps": [
+      "disclosure"
+     ],
+     "reasons": [
+      "primary 4.4 points below frontier",
+      "trap categories failed more often: disclosure"
+     ],
+     "not_distinguishable": true,
+     "straddles": [
+      -3.0
+     ]
+    },
+    "gemma4-12b": {
+     "tier": "usable",
+     "primary_local": 94.8,
+     "primary_frontier": 100.0,
+     "diff": {
+      "diff": -5.2,
+      "ci": [
+       -8.1,
+       -2.2
+      ],
+      "clusters": 15,
+      "items": 15
+     },
+     "halluc_local": {
+      "halluc": 0.0
+     },
+     "halluc_frontier": {
+      "halluc": 1.6
+     },
+     "worse_traps": [
+      "concept"
+     ],
+     "reasons": [
+      "primary 5.2 points below frontier",
+      "trap categories failed more often: concept"
+     ],
+     "not_distinguishable": true,
+     "straddles": [
+      -3.0
+     ]
+    },
+    "qwen3.5-9b": {
+     "tier": "parity",
+     "primary_local": 98.5,
+     "primary_frontier": 100.0,
+     "diff": {
+      "diff": -1.5,
+      "ci": [
+       -3.7,
+       0.0
+      ],
+      "clusters": 15,
+      "items": 15
+     },
+     "halluc_local": {
+      "halluc": 0.0
+     },
+     "halluc_frontier": {
+      "halluc": 1.6
+     },
+     "worse_traps": [],
+     "reasons": [],
+     "not_distinguishable": true,
+     "straddles": [
+      -3.0
+     ]
+    },
+    "ministral-3-14b": {
+     "tier": "gap",
+     "primary_local": 97.0,
+     "primary_frontier": 100.0,
+     "diff": {
+      "diff": -3.0,
+      "ci": [
+       -6.7,
+       0.0
+      ],
+      "clusters": 15,
+      "items": 15
+     },
+     "halluc_local": {
+      "halluc": 15.4
+     },
+     "halluc_frontier": {
+      "halluc": 1.6
+     },
+     "worse_traps": [
+      "disclosure",
+      "internal_note"
+     ],
+     "reasons": [
+      "Ungrounded numbers 15.4% vs 1.6%",
+      "trap categories failed more often: disclosure, internal_note"
+     ],
+     "not_distinguishable": true,
+     "straddles": [
+      -3.0
+     ]
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "tier": "usable",
+     "primary_local": 94.1,
+     "primary_frontier": 100.0,
+     "diff": {
+      "diff": -5.9,
+      "ci": [
+       -9.6,
+       -3.0
+      ],
+      "clusters": 15,
+      "items": 15
+     },
+     "halluc_local": {
+      "halluc": 0.4
+     },
+     "halluc_frontier": {
+      "halluc": 1.6
+     },
+     "worse_traps": [
+      "disclosure",
+      "internal_note"
+     ],
+     "reasons": [
+      "primary 5.9 points below frontier",
+      "trap categories failed more often: disclosure, internal_note"
+     ],
+     "not_distinguishable": false,
+     "straddles": []
+    }
+   },
+   "failures": {
+    "claude-opus-5": null,
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "item": "t6_f10",
+     "unit": "ytd",
+     "verdict": "ABSENT",
+     "trap": "number",
+     "got": "",
+     "expected": "Year-to-date net return 3.29%",
+     "run": "test-default-ctx16384-r1"
+    },
+    "gemma4-12b": {
+     "item": "t6_f07",
+     "unit": "benchmark",
+     "verdict": "ABSENT",
+     "trap": "number",
+     "got": "",
+     "expected": "Senior Secured Direct Lending Index (preliminary) Q3 2026 return 2.12%",
+     "run": "test-default-thinkoff-ctx16384-r1"
+    },
+    "qwen3.5-9b": {
+     "item": "t6_f08",
+     "unit": "ytd",
+     "verdict": "ABSENT",
+     "trap": "number",
+     "got": "",
+     "expected": "Year-to-date net return 0.92%",
+     "run": "test-default-thinkoff-ctx16384-r1"
+    },
+    "ministral-3-14b": {
+     "item": "t6_f07",
+     "unit": "internal_note",
+     "verdict": "LEAKED",
+     "trap": "internal_note",
+     "got": "",
+     "expected": "Sarrowdene Credit Partners' CIO to retire; Fund III placed on the watch list, no new commitments may be recommended",
+     "run": "test-default-ctx16384-r1"
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "item": "t6_f09",
+     "unit": "internal_note",
+     "verdict": "LEAKED",
+     "trap": "internal_note",
+     "got": "",
+     "expected": "Carrowby GC disclosed a likely November secondary offering and possible 90-day lock-up; Carrowby on the restricted list",
+     "run": "test-default-ctx16384-r1"
+    }
+   },
+   "units": {
+    "items": 15,
+    "clusters": 15,
+    "primary_units": 135
+   },
+   "local_errors": {
+    "counts": {
+     "missed": 14,
+     "other": 5,
+     "fabricated": 2
+    },
+    "units": 660,
+    "total": 21
+   },
+   "pairwise": {
+    "qwen3.5-9b": {
+     "overall": {
+      "local": 0,
+      "frontier": 15,
+      "tie": 0
+     },
+     "clarity": {
+      "local": 0,
+      "frontier": 15,
+      "tie": 0
+     },
+     "tone": {
+      "local": 0,
+      "frontier": 15,
+      "tie": 0
+     },
+     "items": 15,
+     "runs": "qwen3.5-9b__test-default-thinkoff-ctx16384-r1__vs__test-default-r1"
+    }
+   }
+  },
+  "t7": {
+   "name": "Marketing review flagging",
+   "mirrors": "First-pass review of marketing drafts for a human reviewer",
+   "source": "Synthetic marketing drafts with planted issues",
+   "id": "t7",
+   "primary_label": "Planted-issue recall",
+   "halluc_label": "False flags",
+   "models": {
+    "claude-opus-5": {
+     "category_match": {
+      "mean": 100.0,
+      "min": 100.0,
+      "max": 100.0,
+      "runs": [
+       100.0
+      ]
+     },
+     "halluc": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0
+      ]
+     },
+     "primary": {
+      "mean": 86.7,
+      "min": 86.7,
+      "max": 86.7,
+      "runs": [
+       86.7
+      ]
+     },
+     "traps": {
+      "C1": {
+       "failures_mean": 1.0,
+       "opportunities": 6.0,
+       "runs": 1
+      },
+      "C2": {
+       "failures_mean": 2.0,
+       "opportunities": 4.0,
+       "runs": 1
+      },
+      "C3": {
+       "failures_mean": 0.0,
+       "opportunities": 4.0,
+       "runs": 1
+      },
+      "C4": {
+       "failures_mean": 1.0,
+       "opportunities": 5.0,
+       "runs": 1
+      },
+      "C5": {
+       "failures_mean": 0.0,
+       "opportunities": 5.0,
+       "runs": 1
+      },
+      "C6": {
+       "failures_mean": 2.0,
+       "opportunities": 8.0,
+       "runs": 1
+      },
+      "C7": {
+       "failures_mean": 0.0,
+       "opportunities": 4.0,
+       "runs": 1
+      },
+      "C8": {
+       "failures_mean": 0.0,
+       "opportunities": 4.0,
+       "runs": 1
+      },
+      "C9": {
+       "failures_mean": 0.0,
+       "opportunities": 5.0,
+       "runs": 1
+      }
+     },
+     "errors": {
+      "missed": 6.0,
+      "stale": 0.0,
+      "fabricated": 0.0,
+      "other": 0.0,
+      "bad_citation": 0.0,
+      "units": 45
+     },
+     "speed": {
+      "sec_per_item_median": 16.3,
+      "output_tps_median": null,
+      "prompt_tokens_median": null,
+      "output_tokens_median": 1327.0,
+      "peak_vram_mib_max": 0,
+      "thinking_chars_median": null,
+      "items": 20
+     },
+     "n_runs": 1,
+     "judge_pending": false
+    },
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "category_match": {
+      "mean": 87.5,
+      "min": 87.5,
+      "max": 87.5,
+      "runs": [
+       87.5,
+       87.5,
+       87.5
+      ]
+     },
+     "halluc": {
+      "mean": 27.3,
+      "min": 27.3,
+      "max": 27.3,
+      "runs": [
+       27.3,
+       27.3,
+       27.3
+      ]
+     },
+     "primary": {
+      "mean": 53.3,
+      "min": 53.3,
+      "max": 53.3,
+      "runs": [
+       53.3,
+       53.3,
+       53.3
+      ]
+     },
+     "traps": {
+      "C1": {
+       "failures_mean": 0.0,
+       "opportunities": 6.0,
+       "runs": 3
+      },
+      "C2": {
+       "failures_mean": 2.0,
+       "opportunities": 4.0,
+       "runs": 3
+      },
+      "C3": {
+       "failures_mean": 3.0,
+       "opportunities": 4.0,
+       "runs": 3
+      },
+      "C4": {
+       "failures_mean": 1.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "C5": {
+       "failures_mean": 1.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "C6": {
+       "failures_mean": 5.0,
+       "opportunities": 8.0,
+       "runs": 3
+      },
+      "C7": {
+       "failures_mean": 2.0,
+       "opportunities": 4.0,
+       "runs": 3
+      },
+      "C8": {
+       "failures_mean": 2.0,
+       "opportunities": 4.0,
+       "runs": 3
+      },
+      "C9": {
+       "failures_mean": 5.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "decoy": {
+       "failures_mean": 7.0,
+       "opportunities": 7.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 21.0,
+      "stale": 0.0,
+      "fabricated": 9.0,
+      "other": 0.0,
+      "bad_citation": 0.0,
+      "units": 45
+     },
+     "speed": {
+      "sec_per_item_median": 11.4,
+      "output_tps_median": 29.0,
+      "prompt_tokens_median": 1903.0,
+      "output_tokens_median": 169.0,
+      "peak_vram_mib_max": 11291,
+      "thinking_chars_median": 0.0,
+      "items": 60
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "gemma4-12b": {
+     "category_match": {
+      "mean": 100.0,
+      "min": 100.0,
+      "max": 100.0,
+      "runs": [
+       100.0,
+       100.0,
+       100.0
+      ]
+     },
+     "halluc": {
+      "mean": 3.2,
+      "min": 3.2,
+      "max": 3.2,
+      "runs": [
+       3.2,
+       3.2,
+       3.2
+      ]
+     },
+     "primary": {
+      "mean": 66.7,
+      "min": 66.7,
+      "max": 66.7,
+      "runs": [
+       66.7,
+       66.7,
+       66.7
+      ]
+     },
+     "traps": {
+      "C1": {
+       "failures_mean": 0.0,
+       "opportunities": 6.0,
+       "runs": 3
+      },
+      "C2": {
+       "failures_mean": 1.0,
+       "opportunities": 4.0,
+       "runs": 3
+      },
+      "C3": {
+       "failures_mean": 3.0,
+       "opportunities": 4.0,
+       "runs": 3
+      },
+      "C4": {
+       "failures_mean": 3.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "C5": {
+       "failures_mean": 1.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "C6": {
+       "failures_mean": 2.0,
+       "opportunities": 8.0,
+       "runs": 3
+      },
+      "C7": {
+       "failures_mean": 0.0,
+       "opportunities": 4.0,
+       "runs": 3
+      },
+      "C8": {
+       "failures_mean": 1.0,
+       "opportunities": 4.0,
+       "runs": 3
+      },
+      "C9": {
+       "failures_mean": 4.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "decoy": {
+       "failures_mean": 1.0,
+       "opportunities": 1.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 15.0,
+      "stale": 0.0,
+      "fabricated": 1.0,
+      "other": 0.0,
+      "bad_citation": 0.0,
+      "units": 45
+     },
+     "speed": {
+      "sec_per_item_median": 3.9,
+      "output_tps_median": 62.4,
+      "prompt_tokens_median": 1949.0,
+      "output_tokens_median": 188.0,
+      "peak_vram_mib_max": 9750,
+      "thinking_chars_median": 0.0,
+      "items": 60
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "qwen3.5-9b": {
+     "category_match": {
+      "mean": 60.0,
+      "min": 60.0,
+      "max": 60.0,
+      "runs": [
+       60.0,
+       60.0,
+       60.0
+      ]
+     },
+     "halluc": {
+      "mean": 37.7,
+      "min": 37.7,
+      "max": 37.7,
+      "runs": [
+       37.7,
+       37.7,
+       37.7
+      ]
+     },
+     "primary": {
+      "mean": 55.6,
+      "min": 55.6,
+      "max": 55.6,
+      "runs": [
+       55.6,
+       55.6,
+       55.6
+      ]
+     },
+     "traps": {
+      "C1": {
+       "failures_mean": 0.0,
+       "opportunities": 6.0,
+       "runs": 3
+      },
+      "C2": {
+       "failures_mean": 3.0,
+       "opportunities": 4.0,
+       "runs": 3
+      },
+      "C3": {
+       "failures_mean": 1.0,
+       "opportunities": 4.0,
+       "runs": 3
+      },
+      "C4": {
+       "failures_mean": 3.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "C5": {
+       "failures_mean": 1.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "C6": {
+       "failures_mean": 4.0,
+       "opportunities": 8.0,
+       "runs": 3
+      },
+      "C7": {
+       "failures_mean": 1.0,
+       "opportunities": 4.0,
+       "runs": 3
+      },
+      "C8": {
+       "failures_mean": 2.0,
+       "opportunities": 4.0,
+       "runs": 3
+      },
+      "C9": {
+       "failures_mean": 5.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "decoy": {
+       "failures_mean": 11.0,
+       "opportunities": 11.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 20.0,
+      "stale": 0.0,
+      "fabricated": 20.0,
+      "other": 0.0,
+      "bad_citation": 0.0,
+      "units": 45
+     },
+     "speed": {
+      "sec_per_item_median": 4.2,
+      "output_tps_median": 91.7,
+      "prompt_tokens_median": 1946.0,
+      "output_tokens_median": 332.0,
+      "peak_vram_mib_max": 8140,
+      "thinking_chars_median": 0.0,
+      "items": 60
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "ministral-3-14b": {
+     "category_match": {
+      "mean": 78.6,
+      "min": 78.6,
+      "max": 78.6,
+      "runs": [
+       78.6,
+       78.6,
+       78.6
+      ]
+     },
+     "halluc": {
+      "mean": 37.0,
+      "min": 37.0,
+      "max": 37.0,
+      "runs": [
+       37.0,
+       37.0,
+       37.0
+      ]
+     },
+     "primary": {
+      "mean": 62.2,
+      "min": 62.2,
+      "max": 62.2,
+      "runs": [
+       62.2,
+       62.2,
+       62.2
+      ]
+     },
+     "traps": {
+      "C1": {
+       "failures_mean": 1.0,
+       "opportunities": 6.0,
+       "runs": 3
+      },
+      "C2": {
+       "failures_mean": 3.0,
+       "opportunities": 4.0,
+       "runs": 3
+      },
+      "C3": {
+       "failures_mean": 2.0,
+       "opportunities": 4.0,
+       "runs": 3
+      },
+      "C4": {
+       "failures_mean": 4.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "C5": {
+       "failures_mean": 1.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "C6": {
+       "failures_mean": 2.0,
+       "opportunities": 8.0,
+       "runs": 3
+      },
+      "C7": {
+       "failures_mean": 1.0,
+       "opportunities": 4.0,
+       "runs": 3
+      },
+      "C8": {
+       "failures_mean": 1.0,
+       "opportunities": 4.0,
+       "runs": 3
+      },
+      "C9": {
+       "failures_mean": 2.0,
+       "opportunities": 5.0,
+       "runs": 3
+      },
+      "decoy": {
+       "failures_mean": 7.0,
+       "opportunities": 7.0,
+       "runs": 3
+      }
+     },
+     "errors": {
+      "missed": 17.0,
+      "stale": 0.0,
+      "fabricated": 17.0,
+      "other": 0.0,
+      "bad_citation": 0.0,
+      "units": 45
+     },
+     "speed": {
+      "sec_per_item_median": 3.9,
+      "output_tps_median": 62.3,
+      "prompt_tokens_median": 1926.5,
+      "output_tokens_median": 208.5,
+      "peak_vram_mib_max": 11358,
+      "thinking_chars_median": 0.0,
+      "items": 60
+     },
+     "n_runs": 3,
+     "judge_pending": false
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "category_match": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "runs": [
+       0.0
+      ]
+     },
+     "halluc": {
+      "mean": 70.8,
+      "min": 70.8,
+      "max": 70.8,
+      "runs": [
+       70.8
+      ]
+     },
+     "primary": {
+      "mean": 15.6,
+      "min": 15.6,
+      "max": 15.6,
+      "runs": [
+       15.6
+      ]
+     },
+     "traps": {
+      "C1": {
+       "failures_mean": 6.0,
+       "opportunities": 6.0,
+       "runs": 1
+      },
+      "C2": {
+       "failures_mean": 3.0,
+       "opportunities": 4.0,
+       "runs": 1
+      },
+      "C3": {
+       "failures_mean": 3.0,
+       "opportunities": 4.0,
+       "runs": 1
+      },
+      "C4": {
+       "failures_mean": 4.0,
+       "opportunities": 5.0,
+       "runs": 1
+      },
+      "C5": {
+       "failures_mean": 5.0,
+       "opportunities": 5.0,
+       "runs": 1
+      },
+      "C6": {
+       "failures_mean": 4.0,
+       "opportunities": 8.0,
+       "runs": 1
+      },
+      "C7": {
+       "failures_mean": 4.0,
+       "opportunities": 4.0,
+       "runs": 1
+      },
+      "C8": {
+       "failures_mean": 4.0,
+       "opportunities": 4.0,
+       "runs": 1
+      },
+      "C9": {
+       "failures_mean": 5.0,
+       "opportunities": 5.0,
+       "runs": 1
+      },
+      "decoy": {
+       "failures_mean": 14.0,
+       "opportunities": 14.0,
+       "runs": 1
+      }
+     },
+     "errors": {
+      "missed": 38.0,
+      "stale": 0.0,
+      "fabricated": 17.0,
+      "other": 0.0,
+      "bad_citation": 0.0,
+      "units": 45
+     },
+     "speed": {
+      "sec_per_item_median": 1.5,
+      "output_tps_median": 104.3,
+      "prompt_tokens_median": 1903.0,
+      "output_tokens_median": 119.0,
+      "peak_vram_mib_max": 6576,
+      "thinking_chars_median": 0.0,
+      "items": 20
+     },
+     "n_runs": 1,
+     "judge_pending": false
+    }
+   },
+   "vs_frontier": {
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "tier": "gap",
+     "primary_local": 53.3,
+     "primary_frontier": 86.7,
+     "diff": {
+      "diff": -33.3,
+      "ci": [
+       -52.3,
+       -12.2
+      ],
+      "clusters": 20,
+      "items": 20
+     },
+     "halluc_local": {
+      "halluc": 27.3
+     },
+     "halluc_frontier": {
+      "halluc": 0.0
+     },
+     "worse_traps": [
+      "C3",
+      "C5",
+      "C6",
+      "C7",
+      "C8",
+      "C9",
+      "decoy"
+     ],
+     "reasons": [
+      "primary 33.4 points below frontier",
+      "False flags 27.3% vs 0.0%",
+      "trap categories failed more often: C3, C5, C6, C7, C8, C9, decoy"
+     ],
+     "not_distinguishable": false,
+     "straddles": []
+    },
+    "gemma4-12b": {
+     "tier": "gap",
+     "primary_local": 66.7,
+     "primary_frontier": 86.7,
+     "diff": {
+      "diff": -20.0,
+      "ci": [
+       -38.1,
+       0.0
+      ],
+      "clusters": 20,
+      "items": 20
+     },
+     "halluc_local": {
+      "halluc": 3.2
+     },
+     "halluc_frontier": {
+      "halluc": 0.0
+     },
+     "worse_traps": [
+      "C3",
+      "C4",
+      "C5",
+      "C8",
+      "C9",
+      "decoy"
+     ],
+     "reasons": [
+      "primary 20.0 points below frontier",
+      "False flags 3.2% vs 0.0%",
+      "trap categories failed more often: C3, C4, C5, C8, C9, decoy"
+     ],
+     "not_distinguishable": true,
+     "straddles": [
+      -3.0,
+      -10.0
+     ]
+    },
+    "qwen3.5-9b": {
+     "tier": "gap",
+     "primary_local": 55.6,
+     "primary_frontier": 86.7,
+     "diff": {
+      "diff": -31.1,
+      "ci": [
+       -51.2,
+       -10.6
+      ],
+      "clusters": 20,
+      "items": 20
+     },
+     "halluc_local": {
+      "halluc": 37.7
+     },
+     "halluc_frontier": {
+      "halluc": 0.0
+     },
+     "worse_traps": [
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7",
+      "C8",
+      "C9",
+      "decoy"
+     ],
+     "reasons": [
+      "primary 31.1 points below frontier",
+      "False flags 37.7% vs 0.0%",
+      "trap categories failed more often: C2, C3, C4, C5, C6, C7, C8, C9, decoy"
+     ],
+     "not_distinguishable": false,
+     "straddles": []
+    },
+    "ministral-3-14b": {
+     "tier": "gap",
+     "primary_local": 62.2,
+     "primary_frontier": 86.7,
+     "diff": {
+      "diff": -24.4,
+      "ci": [
+       -39.5,
+       -8.3
+      ],
+      "clusters": 20,
+      "items": 20
+     },
+     "halluc_local": {
+      "halluc": 37.0
+     },
+     "halluc_frontier": {
+      "halluc": 0.0
+     },
+     "worse_traps": [
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C7",
+      "C8",
+      "C9",
+      "decoy"
+     ],
+     "reasons": [
+      "primary 24.5 points below frontier",
+      "False flags 37.0% vs 0.0%",
+      "trap categories failed more often: C2, C3, C4, C5, C7, C8, C9, decoy"
+     ],
+     "not_distinguishable": true,
+     "straddles": [
+      -10.0
+     ]
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "tier": "gap",
+     "primary_local": 15.6,
+     "primary_frontier": 86.7,
+     "diff": {
+      "diff": -71.1,
+      "ci": [
+       -89.7,
+       -48.9
+      ],
+      "clusters": 20,
+      "items": 20
+     },
+     "halluc_local": {
+      "halluc": 70.8
+     },
+     "halluc_frontier": {
+      "halluc": 0.0
+     },
+     "worse_traps": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5",
+      "C6",
+      "C7",
+      "C8",
+      "C9",
+      "decoy"
+     ],
+     "reasons": [
+      "primary 71.1 points below frontier",
+      "False flags 70.8% vs 0.0%",
+      "trap categories failed more often: C1, C2, C3, C4, C5, C6, C7, C8, C9, decoy"
+     ],
+     "not_distinguishable": false,
+     "straddles": []
+    }
+   },
+   "failures": {
+    "claude-opus-5": {
+     "item": "t7_p07",
+     "unit": "p1",
+     "verdict": "MISSED",
+     "trap": "C2",
+     "got": "",
+     "expected": "Year to date through June 30, 2026, the Focused Small Cap Value composite is up 11.3% before fees, against a 4.2% gain for its comparison index.",
+     "run": "test-default-r1"
+    },
+    "qwen2.5-14b-instruct-q4-k-m": {
+     "item": "t7_p09",
+     "unit": "flag_01",
+     "verdict": "FLAGGED_DECOY",
+     "trap": "decoy",
+     "got": "For the ten years ended June 30, 2026, the composite returned 3.1% a year gross of fees and 2.8% a year net of fees, compared with 1.9% a year for the Index.",
+     "expected": "",
+     "run": "test-default-ctx16384-r1"
+    },
+    "gemma4-12b": {
+     "item": "t7_p13",
+     "unit": "flag_01",
+     "verdict": "FLAGGED_DECOY",
+     "trap": "decoy",
+     "got": "Largest contributors: Orrinby Rail Components (+118 bps), Solvik Diagnostics (+94 bps) and Merriell Packaging (+71 bps). Largest detractors: Cobden Specialty Chemicals (-83 bps), Haverdal Home Furnishings (-61 bps) and Brassfield Regional Bancorp (-44 bps).",
+     "expected": "",
+     "run": "test-default-thinkoff-ctx16384-r1"
+    },
+    "qwen3.5-9b": {
+     "item": "t7_p06",
+     "unit": "flag_01",
+     "verdict": "FLAGGED_DECOY",
+     "trap": "decoy",
+     "got": "In March 2026, Tamberlyn Voss was named to the Brantlow Wealth Survey's list of Top Advisers for Medical Professionals.",
+     "expected": "",
+     "run": "test-default-thinkoff-ctx16384-r1"
+    },
+    "ministral-3-14b": {
+     "item": "t7_p07",
+     "unit": "flag_03",
+     "verdict": "FLAGGED_DECOY",
+     "trap": "decoy",
+     "got": "The five largest contributors to the composite's return were a regional bank holding company (+3.1 percentage points), an aftermarket truck-parts distributor (+2.6), a specialty chemicals producer (+2.2), a title insurance underwriter (+1.9) and a short-line railroad operator (+1.7).",
+     "expected": "",
+     "run": "test-default-ctx16384-r1"
+    },
+    "qwen2.5-7b-instruct-q4-k-m": {
+     "item": "t7_p06",
+     "unit": "flag_01",
+     "verdict": "FLAGGED_DECOY",
+     "trap": "decoy",
+     "got": "In March 2026, Tamberlyn Voss was named to the Brantlow Wealth Survey's list of Top Advisers for Medical Professionals. The list was published by Brantlow Media Group on March 9, 2026 and was based on information for the twelve months ended December 31, 2025, including regulatory history, client ret",
+     "expected": "",
+     "run": "test-default-ctx16384-r1"
+    }
+   },
+   "units": {
+    "items": 20,
+    "clusters": 20,
+    "primary_units": 45
+   },
+   "local_errors": {
+    "counts": {
+     "missed": 73,
+     "fabricated": 47
+    },
+    "units": 180,
+    "total": 120
+   }
+  }
+ },
+ "blinding": {
+  "frontier_calls": 314,
+  "blind": 314,
+  "violations": []
+ },
+ "keys": {
+  "t2_materiality": {
+   "dev": {
+    "modified_sections": 20,
+    "agreement": 20,
+    "agreement_pct": 100.0,
+    "kappa": 1.0,
+    "both_material": 9,
+    "both_minor": 11
+   },
+   "test": {
+    "modified_sections": 123,
+    "agreement": 117,
+    "agreement_pct": 95.1,
+    "kappa": 0.889,
+    "both_material": 80,
+    "both_minor": 37
+   }
+  }
+ },
+ "derived": {
+  "error_total": 821,
+  "missed_share": 64.3,
+  "fabricated_share": 11.6,
+  "stale_share": 1.0,
+  "other_share": 23.1,
+  "t1_doc_tokens": [
+   7329,
+   7653,
+   7748,
+   7998,
+   8192,
+   8479,
+   8808,
+   9076,
+   12782
+  ],
+  "size_ablation": {
+   "t1": {
+    "name": "Fund term extraction",
+    "small": 59.4,
+    "base": 93.9,
+    "delta": -34.5,
+    "small_halluc": 2.2,
+    "halluc_label": "Hallucinated fields"
+   },
+   "t2": {
+    "name": "Change detection",
+    "small": 52.8,
+    "base": 75.6,
+    "delta": -22.8,
+    "small_halluc": 14.4,
+    "halluc_label": "Invented changes"
+   },
+   "t3": {
+    "name": "Grounded Q&A with abstention",
+    "small": 74.2,
+    "base": 85.0,
+    "delta": -10.8,
+    "small_halluc": 0.8,
+    "halluc_label": "Fabricated answers"
+   },
+   "t4": {
+    "name": "Filing brief",
+    "small": 58.3,
+    "base": 60.0,
+    "delta": -1.7,
+    "small_halluc": 2.5,
+    "halluc_label": "Ungrounded numbers"
+   },
+   "t5": {
+    "name": "Meeting notes to CRM",
+    "small": 72.2,
+    "base": 72.8,
+    "delta": -0.6,
+    "small_halluc": 3.4,
+    "halluc_label": "Invented CRM items"
+   },
+   "t6": {
+    "name": "Client drafting",
+    "small": 94.1,
+    "base": 95.6,
+    "delta": -1.5,
+    "small_halluc": 0.4,
+    "halluc_label": "Ungrounded numbers"
+   },
+   "t7": {
+    "name": "Marketing review flagging",
+    "small": 15.6,
+    "base": 53.3,
+    "delta": -37.7,
+    "small_halluc": 70.8,
+    "halluc_label": "False flags"
+   }
+  }
+ },
+ "config": {
+  "ctx_sweep": {
+   "qwen2.5-14b-instruct-q4-k-m": {
+    "2048": 0.0,
+    "4096": 0.6,
+    "8192": 10.8,
+    "16384": 93.9,
+    "32768": 93.6
+   },
+   "gemma4-12b": {
+    "2048": 0.6,
+    "4096": 3.3,
+    "8192": 1.1,
+    "16384": 97.8,
+    "32768": 95.3
+   }
+  },
+  "t1_oob": {
+   "primary": 0.0,
+   "base": 93.9,
+   "delta": -93.9
+  },
+  "t1_naive": {
+   "primary": 81.9,
+   "base": 93.9,
+   "delta": -12.0
+  },
+  "t1_nojson": {
+   "primary": 82.8,
+   "base": 93.9,
+   "delta": -11.1
+  },
+  "t3_fullpack": {
+   "4096": 42.5,
+   "8192": 52.1,
+   "16384": 71.2,
+   "32768": 94.6
+  },
+  "t3_strategies": {
+   "retrieval": 96.7,
+   "mapreduce": 95.0,
+   "whole_pack_16k": 71.2,
+   "whole_pack_32k": 94.6
+  },
+  "t3_as_deployed": {
+   "pack": "t3_f02",
+   "questions": 40,
+   "frontier_whole_pack": {
+    "primary": 100.0,
+    "halluc": 0.0
+   },
+   "frontier_retrieval": {
+    "primary": 97.5,
+    "halluc": 0.0
+   },
+   "local_retrieval": {
+    "primary": 97.5,
+    "halluc": 0.0
+   },
+   "local_whole_pack_32k": {
+    "primary": 93.8,
+    "halluc": 0.0
+   }
+  },
+  "silent_failure": {
+   "truncated_items": 415,
+   "complete_looking": 360,
+   "share": 86.7,
+   "by_task": {
+    "t1": {
+     "truncated": 55,
+     "complete_looking": 0,
+     "share": 0.0
+    },
+    "t3": {
+     "truncated": 360,
+     "complete_looking": 360,
+     "share": 100.0
+    }
+   },
+   "runs": [
+    {
+     "arm": "qwen2.5-14b t1",
+     "run": "test-default-ctx2048-r1",
+     "truncated": 9,
+     "complete_looking": 0,
+     "share": 0.0
+    },
+    {
+     "arm": "qwen2.5-14b t1",
+     "run": "test-default-ctx4096-r1",
+     "truncated": 9,
+     "complete_looking": 0,
+     "share": 0.0
+    },
+    {
+     "arm": "qwen2.5-14b t1",
+     "run": "test-default-ctx8192-r1",
+     "truncated": 5,
+     "complete_looking": 0,
+     "share": 0.0
+    },
+    {
+     "arm": "qwen2.5-14b t1",
+     "run": "test-oob-r1",
+     "truncated": 9,
+     "complete_looking": 0,
+     "share": 0.0
+    },
+    {
+     "arm": "gemma4-12b t1",
+     "run": "test-default-thinkoff-ctx2048-r1",
+     "truncated": 9,
+     "complete_looking": 0,
+     "share": 0.0
+    },
+    {
+     "arm": "gemma4-12b t1",
+     "run": "test-default-thinkoff-ctx4096-r1",
+     "truncated": 9,
+     "complete_looking": 0,
+     "share": 0.0
+    },
+    {
+     "arm": "gemma4-12b t1",
+     "run": "test-default-thinkoff-ctx8192-r1",
+     "truncated": 5,
+     "complete_looking": 0,
+     "share": 0.0
+    },
+    {
+     "arm": "gemma4-12b t3 whole pack",
+     "run": "test-fullpack-thinkoff-ctx4096-r1",
+     "truncated": 120,
+     "complete_looking": 120,
+     "share": 100.0
+    },
+    {
+     "arm": "gemma4-12b t3 whole pack",
+     "run": "test-fullpack-thinkoff-ctx8192-r1",
+     "truncated": 120,
+     "complete_looking": 120,
+     "share": 100.0
+    },
+    {
+     "arm": "gemma4-12b t3 whole pack",
+     "run": "test-fullpack-thinkoff-ctx16384-r1",
+     "truncated": 120,
+     "complete_looking": 120,
+     "share": 100.0
+    }
+   ],
+   "definition": "prompt tokens processed below the same model's count for the same item at a 32K window; complete-looking = valid JSON with every required key and no mention of lost input"
+  },
+  "arms": {
+   "t1": {
+    "q8": 95.3,
+    "q4": 96.7,
+    "think_on": 55.6,
+    "think_off": 96.7
+   },
+   "t3": {
+    "q8": 97.5,
+    "q4": 97.5,
+    "think_on": 0.0,
+    "think_off": 97.5
+   }
+  }
+ }
+}

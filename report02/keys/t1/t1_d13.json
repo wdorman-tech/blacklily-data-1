@@ -1,0 +1,485 @@
+{
+  "doc_id": "t1_d13",
+  "doc_title": "Quarrendon Vale Infrastructure Secondaries Fund II, L.P. Summary of Principal Terms and Amended and Restated Agreement of Limited Partnership",
+  "doc_type": "LPA with Summary of Principal Terms",
+  "difficulty": "adversarial",
+  "notes": "The document opens with a Summary of Principal Terms table whose GP Commitment (1.0%) and term extensions (three, each at the General Partner's discretion) conflict with the LPA body (2%; two extensions, the second requiring Advisory Committee consent), and both the Summary preamble and Section 15.1 state that the LPA controls. A reader that stops at the table gets both wrong. The redemption group, high-water mark and prime broker are expressly disclaimed, while nearby distractors (10 Business Day drawdown notice, 45-day transfer notice, 10-day required withdrawal notice, a 6% late-closing rate, a $5,000,000 discretionary floor and a bank acting as lender and hedging counterparty) invite substantive answers.",
+  "traps": {
+    "gp_commitment": "The Summary table says the General Partner and its Affiliates commit 1.0% of total Capital Commitments, but Section 3.2 of the LPA requires not less than 2%, and the precedence clause makes the LPA value correct.",
+    "fund_term": "The Summary table allows three one-year extensions each at the General Partner's discretion, but Section 2.3 permits only two (the second with Advisory Committee consent) and caps the term at the fourteenth anniversary of the Final Closing Date; the LPA controls.",
+    "lockup_period": "Section 10.1 expressly states there is no lock-up period because Limited Partners have no withdrawal or redemption right; any period given is a hallucination.",
+    "redemption_frequency": "The Partnership is closed-end with no redemption dates (Section 10.1); quarterly distribution timing in Section 6.1 is not a redemption frequency.",
+    "redemption_notice_days": "Section 10.1 states there is no redemption notice requirement; the 10 Business Day drawdown notice, the 45-day transfer notice and the 10-day required-withdrawal notice are not redemption notice periods.",
+    "gate_provision": "Section 10.1 expressly states there is no gate; the 2% annual transfer limit in Section 11.2 is a publicly traded partnership safe harbor, not a gate.",
+    "prime_broker": "Section 13.4 states the Partnership does not engage a prime broker; Ostrander Keel Bank, N.A. is only the lender and currency hedging counterparty.",
+    "high_water_mark": "Section 6.4 states that no high water mark, loss carryforward or similar mechanism applies to the Carried Interest; the clawback is the only adjustment, so the correct answer is NOT_APPLICABLE."
+  },
+  "fields": {
+    "fund_name": {
+      "expected": "Quarrendon Vale Infrastructure Secondaries Fund II, L.P.",
+      "citation": "Section 2.1",
+      "quote": "under the name \"Quarrendon Vale Infrastructure Secondaries Fund II, L.P.\"",
+      "accept": [
+        "quarrendon vale infrastructure secondaries fund ii\\b"
+      ],
+      "partial": [
+        "^(?!.*secondaries fund (i|1)\\b)(?!.*\\b(gp|capital partners)\\b)(?!.*\\bl\\.?l\\.?c\\b).*quarrendon vale.*\\bfund\\b"
+      ],
+      "reject": {
+        "PREDECESSOR_FUND_I": [
+          "^(?!.*fund (ii|2)\\b).*secondaries fund (i|1)\\b"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "fund_domicile": {
+      "expected": "Delaware (Delaware limited partnership formed under the Delaware Revised Uniform Limited Partnership Act)",
+      "citation": "Section 2.1",
+      "quote": "as a limited partnership under the Delaware Revised Uniform Limited Partnership Act",
+      "accept": [
+        "delaware"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_OFFSHORE": [
+          "^(?!.*delaware).*(cayman|luxembourg|ireland|bermuda|jersey|guernsey)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "fund_structure": {
+      "expected": "Closed-end drawdown fund; Interests are not redeemable; not part of a master-feeder structure (Parallel Funds may invest alongside the Partnership)",
+      "citation": "Section 2.2",
+      "quote": "The Partnership is a closed-end fund. Limited Partners contribute capital only as called under Article IV, and Interests are not redeemable at the option of any Partner. The Partnership is not part of a master-feeder structure.",
+      "accept": [
+        "^(?!(?!.*((\\bnot?\\b|\\bneither\\b|\\bnor\\b|\\bnon\\b|\\bisn't\\b|\\bwithout\\b)[^.;,]{0,40}master[- /]?feeder|(\\bnot?\\b|\\bneither\\b|\\bnon\\b|\\bwithout\\b)[^.;]{0,40}\\b(or|nor) master[- /]?feeder|\\b(rather than|instead of)\\b[^.;,]{0,20}master[- /]?feeder|master[- /]?feeder[^.;,]{0,15}(\\b(no|none|not|n/a|absent|false)\\b|n't)|stand[- ]?alone)).*master[- /]?feeder).*(closed[- ]end|draw[- ]?down)"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_OPEN_END": [
+          "^(?!.*(closed[- ]end|draw[- ]?down)).*(open[- ]end|evergreen)"
+        ],
+        "HALLUCINATED_MASTER_FEEDER": [
+          "^(?!.*((\\bnot?\\b|\\bneither\\b|\\bnor\\b|\\bnon\\b|\\bisn't\\b|\\bwithout\\b)[^.;,]{0,40}master[- /]?feeder|(\\bnot?\\b|\\bneither\\b|\\bnon\\b|\\bwithout\\b)[^.;]{0,40}\\b(or|nor) master[- /]?feeder|\\b(rather than|instead of)\\b[^.;,]{0,20}master[- /]?feeder|master[- /]?feeder[^.;,]{0,15}(\\b(no|none|not|n/a|absent|false)\\b|n't)|stand[- ]?alone)).*master[- /]?feeder"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "management_fee": {
+      "expected": "1.00% per annum of Capital Commitments during the Investment Period; thereafter 0.75% per annum of Net Invested Capital; payable quarterly in advance; no Management Fee after the twelfth anniversary of the Final Closing Date (including any extension) or on the GP Commitment; reduced by 100% of Transaction Fees",
+      "citation": "Section 7.1",
+      "quote": "0.25% (1.00% per annum) of that Limited Partner's Capital Commitment; and (b) for each calendar quarter thereafter, 0.1875% (0.75% per annum) of that Limited Partner's pro rata share of Net Invested Capital",
+      "accept": [
+        "^(?=.*(\\b1(\\.00?)?\\s*(%|percent|per cent)|\\bone (percent|per cent)|\\b100\\s*(bps|basis points)))(?=.*(\\b0?\\.75\\s*(%|percent|per cent)|\\b75\\s*(bps|basis points)|three[- ]quarters of (one|1) (percent|per cent)))(?=.*commit)(?=.*(invested capital|acquisition cost|cost basis|\\bnic\\b|cost of (the )?(unreali[sz]ed|investments|portfolio)|unreali[sz]ed investments|not (yet )?disposed)).*"
+      ],
+      "partial": [
+        "^(?=.*(\\b1(\\.00?)?\\s*(%|percent|per cent)|\\bone (percent|per cent)))(?=.*commit).*",
+        "\\b0?\\.75\\s*(%|percent|per cent)"
+      ],
+      "reject": {
+        "QUARTERLY_RATE_AS_ANNUAL": [
+          "^(?!.*(\\b1(\\.00?)?\\s*(%|percent|per cent)|\\b0?\\.75\\s*(%|percent|per cent))).*(\\b0?\\.25\\s*%|\\b0?\\.1875\\s*%)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "performance_fee": {
+      "expected": "12.5% carried interest, determined cumulatively on a whole-fund basis after return of all Capital Contributions and the 8% Preferred Return, with a 100% General Partner catch-up; subject to GP clawback",
+      "citation": "Section 6.2",
+      "quote": "thereafter, (i) 87.5% to that Limited Partner and (ii) 12.5% to the General Partner",
+      "accept": [
+        "\\b12\\.50?\\s*(%|percent|per cent)",
+        "twelve and (a |one[- ])?half",
+        "\\b12 1/2\\s*(%|percent|per cent)",
+        "\\b12\\s*\u00bd",
+        "87\\.5\\s*%?\\s*/\\s*12\\.5"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_20_PERCENT": [
+          "^(?!.*(12\\.5|twelve and|12 1/2)).*\\b20(\\.0+)?\\s*(%|percent|per cent)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "hurdle_rate": {
+      "expected": "8% per annum preferred return, compounded annually, on outstanding Capital Contributions, followed by a 100% (full) General Partner catch-up",
+      "citation": "Section 1.1",
+      "quote": "a return of 8% per annum, compounded annually, on the balance of its Capital Contributions outstanding from time to time",
+      "accept": [
+        "(\\b8(\\.0+)?\\s*(%|percent|per cent)|\\beight (percent|per cent))"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_LATE_CLOSING_RATE": [
+          "^(?!.*(\\b8(\\.0+)?\\s*(%|percent|per cent)|\\beight (percent|per cent))).*(\\b6(\\.0+)?\\s*(%|percent|per cent)|\\bsix (percent|per cent))"
+        ],
+        "HALLUCINATED_DEFAULT_RATE": [
+          "^(?!.*(\\b8(\\.0+)?\\s*(%|percent|per cent)|\\beight (percent|per cent))).*\\b12(\\.0+)?\\s*(%|percent|per cent)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "high_water_mark": {
+      "expected": "NOT_APPLICABLE: the Partnership Agreement states that no high water mark, loss carryforward or similar mechanism applies to the Carried Interest; carry is determined cumulatively on a whole-fund basis and the Section 6.3 clawback is the exclusive adjustment",
+      "citation": "Section 6.4",
+      "quote": "No high water mark, loss carryforward or similar mechanism applies to the Carried Interest",
+      "accept": [
+        "not[_ ]applicable",
+        "not[_ ]found",
+        "\\bno (high[- ]?water|hwm|loss carry)",
+        "not subject to (a|any) (high[- ]?water|hwm)",
+        "\\bnone\\b",
+        "\\bn/a\\b",
+        "does not (apply|have|provide|use)",
+        "not (expressly |explicitly )?(stated|specified|mentioned|disclosed|provided|addressed)",
+        "\\b(does|do)(n't| not)\\b",
+        "^no\\b",
+        "\\bexclud\\w*[^.;]{0,40}(high[- ]?water|\\bhwm\\b|loss carry)",
+        "(high[- ]?water|\\bhwm\\b|loss carry)[^.;]{0,40}\\bexcluded\\b",
+        "\\b(rather than|instead of) (a |an |any )?(high[- ]?water|\\bhwm\\b|loss carry)"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_HWM": [
+          "^(?!.*(not[_ ]applicable|not[_ ]found|\\bno\\b|\\bnot\\b|\\bnone\\b|\\bn/a\\b|does not|without|\\bexclud\\w*[^.;]{0,40}(high[- ]?water|\\bhwm\\b|loss carry)|(high[- ]?water|\\bhwm\\b|loss carry)[^.;]{0,40}\\bexcluded\\b|\\b(rather than|instead of) (a |an |any )?(high[- ]?water|\\bhwm\\b|loss carry))).*(high[- ]?water|\\bhwm\\b|loss carry[- ]?forward)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    },
+    "minimum_initial_investment": {
+      "expected": "$10,000,000 Capital Commitment (the General Partner may accept lesser amounts, but not less than $5,000,000)",
+      "citation": "Section 3.1",
+      "quote": "The minimum Capital Commitment of a Limited Partner is $10,000,000; provided that the General Partner may in its sole discretion accept Capital Commitments of lesser amounts, but not less than $5,000,000",
+      "accept": [
+        "(\\$\\s?10(\\.0+)?\\s?(,000,000|million|mm|m\\b)|\\b10,000,000|\\bten million|\\b10(\\.0+)? ?(million|mm)\\b|usd\\s?10(\\.0+)?\\s?(,000,000|million|mm|m\\b))"
+      ],
+      "partial": [],
+      "reject": {
+        "DISCRETIONARY_FLOOR_AS_MINIMUM": [
+          "^(?!.*(\\$\\s?10(\\.0+)?\\s?(,000,000|million|mm|m\\b)|\\b10,000,000|\\bten million|\\b10(\\.0+)? ?(million|mm)\\b|usd\\s?10(\\.0+)?\\s?(,000,000|million|mm|m\\b))).*(\\$\\s?5(\\.0+)?\\s?(,000,000|million|mm|m\\b)|\\b5,000,000|\\bfive million|\\b5(\\.0+)? ?(million|mm)\\b)"
+        ],
+        "MFN_THRESHOLD_AS_MINIMUM": [
+          "^(?!.*(\\$\\s?10(\\.0+)?\\s?(,000,000|million|mm|m\\b)|\\b10,000,000|\\bten million|\\b10(\\.0+)? ?(million|mm)\\b|usd\\s?10(\\.0+)?\\s?(,000,000|million|mm|m\\b))).*(\\$\\s?50(\\.0+)?\\s?(,000,000|million|mm|m\\b)|\\b50,000,000|\\bfifty million|\\b50(\\.0+)? ?(million|mm)\\b|usd\\s?50(\\.0+)?\\s?(,000,000|million|mm|m\\b))"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "lockup_period": {
+      "expected": "NOT_APPLICABLE: Limited Partners have no right to withdraw or redeem, and the Partnership Agreement states there is no lock-up period",
+      "citation": "Section 10.1",
+      "quote": "The Partnership has no redemption dates, lock-up period, redemption notice requirement or gate",
+      "accept": [
+        "not[_ ]applicable",
+        "not[_ ]found",
+        "\\bnone\\b",
+        "\\bn/a\\b",
+        "does not (impose|have|provide|apply|contain|permit|offer)",
+        "\\bno (right|rights) (to|of) (withdraw|redeem|redemption|withdrawal)",
+        "\\bno (redemptions?|withdrawals?)\\b",
+        "not (redeemable|permitted|available)",
+        "non[- ]?redeemable",
+        "closed[- ]end",
+        "not (expressly |explicitly )?(stated|specified|mentioned|disclosed|provided|addressed)",
+        "\\b(does|do)(n't| not)\\b",
+        "^no\\b",
+        "(may|shall|can) ?not (withdraw|redeem|be (redeemed|withdrawn))",
+        "(cannot|can't) (withdraw|redeem)",
+        "not (allowed|be redeemed)",
+        "\\bno lock",
+        "not subject to (a|any) lock"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_LOCKUP": [
+          "^(?!.*(not[_ ]applicable|not[_ ]found|\\bnone\\b|\\bn/a\\b|\\bno lock|\\bno gate|\\bno (right|rights|redemptions?|withdrawals?|redemption dates?|notice)\\b|not redeemable|non[- ]?redeemable|closed[- ]end|does not (impose|have|provide|apply|contain|permit))).*(\\b(hard|soft)[- ]lock|\\b(\\d+|one|two|three|four|twelve)[- ]?(years?|months?)\\b)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    },
+    "redemption_frequency": {
+      "expected": "NOT_APPLICABLE: no withdrawal or redemption rights; the Partnership is closed-end and has no redemption dates",
+      "citation": "Section 10.1",
+      "quote": "No Limited Partner shall have the right to withdraw from the Partnership, or to withdraw or redeem all or any part of its Interest or Capital Account, before the dissolution and winding up of the Partnership.",
+      "accept": [
+        "not[_ ]applicable",
+        "not[_ ]found",
+        "\\bnone\\b",
+        "\\bn/a\\b",
+        "does not (impose|have|provide|apply|contain|permit|offer)",
+        "\\bno (right|rights) (to|of) (withdraw|redeem|redemption|withdrawal)",
+        "\\bno (redemptions?|withdrawals?)\\b",
+        "not (redeemable|permitted|available)",
+        "non[- ]?redeemable",
+        "closed[- ]end",
+        "not (expressly |explicitly )?(stated|specified|mentioned|disclosed|provided|addressed)",
+        "\\b(does|do)(n't| not)\\b",
+        "^no\\b",
+        "(may|shall|can) ?not (withdraw|redeem|be (redeemed|withdrawn))",
+        "(cannot|can't) (withdraw|redeem)",
+        "not (allowed|be redeemed)",
+        "\\bno redemption dates?",
+        "\\bonly (upon|at|on|after) (the )?(dissolution|winding[- ]up|liquidation)"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_FREQUENCY": [
+          "^(?!.*(not[_ ]applicable|not[_ ]found|\\bnone\\b|\\bn/a\\b|\\bno lock|\\bno gate|\\bno (right|rights|redemptions?|withdrawals?|redemption dates?|notice)\\b|not redeemable|non[- ]?redeemable|closed[- ]end|does not (impose|have|provide|apply|contain|permit))).*(monthly|quarterly|annual(ly)?|semi[- ]annual)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    },
+    "redemption_notice_days": {
+      "expected": "NOT_APPLICABLE: there is no redemption right and the Partnership Agreement states there is no redemption notice requirement",
+      "citation": "Section 10.1",
+      "quote": "The Partnership has no redemption dates, lock-up period, redemption notice requirement or gate",
+      "accept": [
+        "not[_ ]applicable",
+        "not[_ ]found",
+        "\\bnone\\b",
+        "\\bn/a\\b",
+        "does not (impose|have|provide|apply|contain|permit|offer)",
+        "\\bno (right|rights) (to|of) (withdraw|redeem|redemption|withdrawal)",
+        "\\bno (redemptions?|withdrawals?)\\b",
+        "not (redeemable|permitted|available)",
+        "non[- ]?redeemable",
+        "closed[- ]end",
+        "not (expressly |explicitly )?(stated|specified|mentioned|disclosed|provided|addressed)",
+        "\\b(does|do)(n't| not)\\b",
+        "^no\\b",
+        "(may|shall|can) ?not (withdraw|redeem|be (redeemed|withdrawn))",
+        "(cannot|can't) (withdraw|redeem)",
+        "not (allowed|be redeemed)",
+        "\\bno (redemption )?notice"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_OTHER_NOTICE": [
+          "^(?!.*(not[_ ]applicable|not[_ ]found|\\bnone\\b|\\bn/a\\b|\\bno lock|\\bno gate|\\bno (right|rights|redemptions?|withdrawals?|redemption dates?|notice)\\b|not redeemable|non[- ]?redeemable|closed[- ]end|does not (impose|have|provide|apply|contain|permit))).*\\b(5|five|10|ten|30|thirty|45|forty[- ]five|60|sixty|90|ninety)\\b( \\(\\d+\\))?\\s*(business |calendar )?days"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    },
+    "gate_provision": {
+      "expected": "NOT_APPLICABLE: there are no withdrawal rights and the Partnership Agreement states there is no gate",
+      "citation": "Section 10.1",
+      "quote": "The Partnership has no redemption dates, lock-up period, redemption notice requirement or gate",
+      "accept": [
+        "not[_ ]applicable",
+        "not[_ ]found",
+        "\\bnone\\b",
+        "\\bn/a\\b",
+        "does not (impose|have|provide|apply|contain|permit|offer)",
+        "\\bno (right|rights) (to|of) (withdraw|redeem|redemption|withdrawal)",
+        "\\bno (redemptions?|withdrawals?)\\b",
+        "not (redeemable|permitted|available)",
+        "non[- ]?redeemable",
+        "closed[- ]end",
+        "not (expressly |explicitly )?(stated|specified|mentioned|disclosed|provided|addressed)",
+        "\\b(does|do)(n't| not)\\b",
+        "^no\\b",
+        "(may|shall|can) ?not (withdraw|redeem|be (redeemed|withdrawn))",
+        "(cannot|can't) (withdraw|redeem)",
+        "not (allowed|be redeemed)",
+        "\\bno gate"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_GATE": [
+          "^(?!.*(not[_ ]applicable|not[_ ]found|\\bnone\\b|\\bn/a\\b|\\bno lock|\\bno gate|\\bno (right|rights|redemptions?|withdrawals?|redemption dates?|notice)\\b|not redeemable|non[- ]?redeemable|closed[- ]end|does not (impose|have|provide|apply|contain|permit))).*\\d+(\\.\\d+)?\\s*(%|percent|per cent)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    },
+    "key_man_provision": {
+      "expected": "Helena Strathdee, Marcus Vellacott and Priya Lathcombe. A Key Person Event occurs if, during the Investment Period, fewer than two of them devote substantially all of their business time to the Partnership, the Parallel Funds, Fund I and the Manager; the Investment Period is automatically suspended (no new Investments other than those committed in writing) and resumes only if Two-Thirds in Interest of the Limited Partners approve replacement Key Persons or reinstate it within 180 days, otherwise the Investment Period terminates",
+      "citation": "Section 8.3",
+      "quote": "fewer than two (2) of the Key Persons devote substantially all of their business time to the affairs of the Partnership, the Parallel Funds, Fund I and the Manager (a \"Key Person Event\")",
+      "accept": [
+        "^(?=.*strathdee)(?=.*vellacott)(?=.*lathcombe)(?=.*(suspen|terminat|halt|cease|paus|stop|freez|\\bends?\\b)).*"
+      ],
+      "partial": [
+        "^(?=.*strathdee)(?=.*vellacott)(?=.*lathcombe).*",
+        "^(?=.*(strathdee|vellacott|lathcombe))(?=.*(suspen|terminat|halt|cease|paus|stop|freez|\\bends?\\b)).*"
+      ],
+      "reject": {},
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "gp_commitment": {
+      "expected": "Not less than 2% of the aggregate Capital Commitments of the Partnership and the Parallel Funds (determined as of the Final Closing Date), made by the General Partner directly or through its Affiliates, funded in cash and not through any Management Fee waiver",
+      "citation": "Section 3.2",
+      "quote": "not less than two percent (2%) of the aggregate Capital Commitments of all partners of the Partnership and the Parallel Funds",
+      "accept": [
+        "(\\b2(\\.0+)?\\s*(%|percent|per cent|pct)|\\btwo (\\(2%?\\) )?(percent|per cent))"
+      ],
+      "partial": [],
+      "reject": {
+        "TABLE_VALUE_ONE_PERCENT": [
+          "^(?!.*(\\b2(\\.0+)?\\s*(%|percent|per cent|pct)|\\btwo (\\(2%?\\) )?(percent|per cent))).*(\\b1(\\.0+)?\\s*(%|percent|per cent|pct)|\\bone (\\(1%?\\) )?(percent|per cent))"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "precedence"
+    },
+    "fund_term": {
+      "expected": "12 years from the Final Closing Date, plus up to two successive one-year extensions (the first at the General Partner's discretion, the second with Advisory Committee consent), for a maximum of 14 years from the Final Closing Date",
+      "citation": "Section 2.3",
+      "quote": "The General Partner may extend the term for up to two (2) successive periods of one (1) year each",
+      "accept": [
+        "\\b(12(th)?|twelve|twelfth)\\b( \\(12(th)?\\))?[- ]?(years?|yrs?|anniversary)\\b.*\\b(two|2)\\b( \\(2\\))?( x)?( additional| successive| consecutive| further| separate| optional| possible| potential| permitted| permissible| discretionary| available| allowable)*( one[- ]year| 1[- ]year| one[- ]yr| 1[- ]?yr| 12[- ]month| twelve[- ]month| one \\(1\\)[- ]year| annual)?( periods?| extensions?| terms?)",
+        "\\b(two|2)\\b( \\(2\\))?( x)?( additional| successive| consecutive| further| separate| optional| possible| potential| permitted| permissible| discretionary| available| allowable)*( one[- ]year| 1[- ]year| one[- ]yr| 1[- ]?yr| 12[- ]month| twelve[- ]month| one \\(1\\)[- ]year| annual)?( periods?| extensions?| terms?).*\\b(12(th)?|twelve|twelfth)\\b( \\(12(th)?\\))?[- ]?(years?|yrs?|anniversary)\\b",
+        "\\b(12(th)?|twelve|twelfth)\\b( \\(12(th)?\\))?[- ]?(years?|yrs?|anniversary)\\b.*\\b(twice|two times)\\b",
+        "\\b(12(th)?|twelve|twelfth)\\b( \\(12(th)?\\))?[- ]?(years?|yrs?|anniversary)\\b.*\\b(14(th)?|fourteen|fourteenth)\\b( \\(14(th)?\\))?[- ]?(years?|yrs?|anniversary)",
+        "\\b12( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1\\b(?!( ?years?| ?yrs?| ?y)?\\s*\\+)",
+        "\\b(12(th)?|twelve|twelfth)\\b( \\(12(th)?\\))?[- ]?(years?|yrs?|anniversary)\\b.*\\b(2|two) ?x ?(1|one)[- ]?(years?|yrs?|y)\\b",
+        "^(?!.*(\\b(three|3)\\b( \\(3\\))?( x)?( additional| successive| consecutive| further| separate| optional| possible| potential| permitted| permissible| discretionary| available| allowable)*( one[- ]year| 1[- ]year| one[- ]yr| 1[- ]?yr| 12[- ]month| twelve[- ]month| one \\(1\\)[- ]year| annual)?( periods?| extensions?| terms?)|((extend|extension|plus|\\+|up to)[^.;]{0,60}\\b(three|3)\\b( \\(3\\))?( additional| further| more| extra)? years?\\b|\\b(three|3)\\b( \\(3\\))?( additional| further| more| extra) years?\\b)|\\b(15(th)?|fifteen|fifteenth)\\b( \\(15(th)?\\))?[- ]?(years?|yrs?|anniversary)|\\b12( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1\\b|\\b(three|3) times\\b|\\bthrice\\b|\\bthird (one[- ]year |1[- ]year )?(year|extension)|\\b(3|three) ?x ?(1|one)[- ]?(years?|yrs?|y)\\b)).*\\b(12(th)?|twelve|twelfth)\\b( \\(12(th)?\\))?[- ]?(years?|yrs?|anniversary)\\b.*((extend|extension|plus|\\+|up to)[^.;]{0,60}\\b(two|2)\\b( \\(2\\))?( additional| further| more| extra)? years?\\b|\\b(two|2)\\b( \\(2\\))?( additional| further| more| extra) years?\\b)",
+        "^(?!.*(\\b(three|3)\\b( \\(3\\))?( x)?( additional| successive| consecutive| further| separate| optional| possible| potential| permitted| permissible| discretionary| available| allowable)*( one[- ]year| 1[- ]year| one[- ]yr| 1[- ]?yr| 12[- ]month| twelve[- ]month| one \\(1\\)[- ]year| annual)?( periods?| extensions?| terms?)|((extend|extension|plus|\\+|up to)[^.;]{0,60}\\b(three|3)\\b( \\(3\\))?( additional| further| more| extra)? years?\\b|\\b(three|3)\\b( \\(3\\))?( additional| further| more| extra) years?\\b)|\\b(15(th)?|fifteen|fifteenth)\\b( \\(15(th)?\\))?[- ]?(years?|yrs?|anniversary)|\\b12( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1\\b|\\b(three|3) times\\b|\\bthrice\\b|\\bthird (one[- ]year |1[- ]year )?(year|extension)|\\b(3|three) ?x ?(1|one)[- ]?(years?|yrs?|y)\\b)).*\\b(12(th)?|twelve|twelfth)\\b( \\(12(th)?\\))?[- ]?(years?|yrs?|anniversary)\\b.*\\b(one|1)[- ](year|yr)\\b.{0,120}\\b(further|second|another|additional|(one|1) more) (one[- ]|1[- ])?(year|yr)"
+      ],
+      "partial": [
+        "^(?!.*(\\b(three|3)\\b( \\(3\\))?( x)?( additional| successive| consecutive| further| separate| optional| possible| potential| permitted| permissible| discretionary| available| allowable)*( one[- ]year| 1[- ]year| one[- ]yr| 1[- ]?yr| 12[- ]month| twelve[- ]month| one \\(1\\)[- ]year| annual)?( periods?| extensions?| terms?)|((extend|extension|plus|\\+|up to)[^.;]{0,60}\\b(three|3)\\b( \\(3\\))?( additional| further| more| extra)? years?\\b|\\b(three|3)\\b( \\(3\\))?( additional| further| more| extra) years?\\b)|\\b(15(th)?|fifteen|fifteenth)\\b( \\(15(th)?\\))?[- ]?(years?|yrs?|anniversary)|\\b12( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1\\b|\\b(three|3) times\\b|\\bthrice\\b|\\bthird (one[- ]year |1[- ]year )?(year|extension)|\\b(3|three) ?x ?(1|one)[- ]?(years?|yrs?|y)\\b)).*\\b(12(th)?|twelve|twelfth)\\b( \\(12(th)?\\))?[- ]?(years?|yrs?|anniversary)\\b"
+      ],
+      "reject": {
+        "TABLE_VALUE_THREE_EXTENSIONS": [
+          "^(?!.*(\\b(two|2)\\b( \\(2\\))?( x)?( additional| successive| consecutive| further| separate| optional| possible| potential| permitted| permissible| discretionary| available| allowable)*( one[- ]year| 1[- ]year| one[- ]yr| 1[- ]?yr| 12[- ]month| twelve[- ]month| one \\(1\\)[- ]year| annual)?( periods?| extensions?| terms?)|\\btwice\\b|\\btwo times\\b|\\b(14(th)?|fourteen|fourteenth)\\b( \\(14(th)?\\))?[- ]?(years?|yrs?|anniversary)|((extend|extension|plus|\\+|up to)[^.;]{0,60}\\b(two|2)\\b( \\(2\\))?( additional| further| more| extra)? years?\\b|\\b(two|2)\\b( \\(2\\))?( additional| further| more| extra) years?\\b)|\\b12( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1\\b(?!( ?years?| ?yrs?| ?y)?\\s*\\+)|\\b(2|two) ?x ?(1|one)[- ]?(years?|yrs?|y)\\b)).*\\b(three|3)\\b( \\(3\\))?( x)?( additional| successive| consecutive| further| separate| optional| possible| potential| permitted| permissible| discretionary| available| allowable)*( one[- ]year| 1[- ]year| one[- ]yr| 1[- ]?yr| 12[- ]month| twelve[- ]month| one \\(1\\)[- ]year| annual)?( periods?| extensions?| terms?)",
+          "^(?!.*(\\b(two|2)\\b( \\(2\\))?( x)?( additional| successive| consecutive| further| separate| optional| possible| potential| permitted| permissible| discretionary| available| allowable)*( one[- ]year| 1[- ]year| one[- ]yr| 1[- ]?yr| 12[- ]month| twelve[- ]month| one \\(1\\)[- ]year| annual)?( periods?| extensions?| terms?)|\\btwice\\b|\\btwo times\\b|\\b(14(th)?|fourteen|fourteenth)\\b( \\(14(th)?\\))?[- ]?(years?|yrs?|anniversary)|((extend|extension|plus|\\+|up to)[^.;]{0,60}\\b(two|2)\\b( \\(2\\))?( additional| further| more| extra)? years?\\b|\\b(two|2)\\b( \\(2\\))?( additional| further| more| extra) years?\\b)|\\b12( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1\\b(?!( ?years?| ?yrs?| ?y)?\\s*\\+)|\\b(2|two) ?x ?(1|one)[- ]?(years?|yrs?|y)\\b)).*((extend|extension|plus|\\+|up to)[^.;]{0,60}\\b(three|3)\\b( \\(3\\))?( additional| further| more| extra)? years?\\b|\\b(three|3)\\b( \\(3\\))?( additional| further| more| extra) years?\\b)",
+          "^(?!.*\\b(14(th)?|fourteen|fourteenth)\\b( \\(14(th)?\\))?[- ]?(years?|yrs?|anniversary)).*\\b(15(th)?|fifteen|fifteenth)\\b( \\(15(th)?\\))?[- ]?(years?|yrs?|anniversary)",
+          "\\b12( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1\\b",
+          "^(?!.*(\\b(two|2)\\b( \\(2\\))?( x)?( additional| successive| consecutive| further| separate| optional| possible| potential| permitted| permissible| discretionary| available| allowable)*( one[- ]year| 1[- ]year| one[- ]yr| 1[- ]?yr| 12[- ]month| twelve[- ]month| one \\(1\\)[- ]year| annual)?( periods?| extensions?| terms?)|\\btwice\\b|\\btwo times\\b|\\b(14(th)?|fourteen|fourteenth)\\b( \\(14(th)?\\))?[- ]?(years?|yrs?|anniversary)|((extend|extension|plus|\\+|up to)[^.;]{0,60}\\b(two|2)\\b( \\(2\\))?( additional| further| more| extra)? years?\\b|\\b(two|2)\\b( \\(2\\))?( additional| further| more| extra) years?\\b)|\\b12( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1( ?years?| ?yrs?| ?y)?\\s*\\+\\s*1\\b(?!( ?years?| ?yrs?| ?y)?\\s*\\+)|\\b(2|two) ?x ?(1|one)[- ]?(years?|yrs?|y)\\b)).*(\\b(three|3) times\\b|\\bthrice\\b|\\bthird (one[- ]year |1[- ]year )?(year|extension)|\\b(3|three) ?x ?(1|one)[- ]?(years?|yrs?|y)\\b)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "precedence"
+    },
+    "auditor": {
+      "expected": "Merriwick Sowerby LLP",
+      "citation": "Section 13.2",
+      "quote": "The General Partner has appointed Merriwick Sowerby LLP as the independent auditors of the Partnership",
+      "accept": [
+        "merriwick\\s*sowerby"
+      ],
+      "partial": [
+        "merriwick"
+      ],
+      "reject": {
+        "HALLUCINATED_OTHER_PROVIDER": [
+          "^(?!.*merriwick).*(orrelby|haskett|ostrander)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "administrator": {
+      "expected": "Orrelby Fund Services (US) LLC",
+      "citation": "Section 13.3",
+      "quote": "The General Partner has engaged Orrelby Fund Services (US) LLC (the \"Administrator\")",
+      "accept": [
+        "orrelby"
+      ],
+      "partial": [],
+      "reject": {
+        "HALLUCINATED_OTHER_PROVIDER": [
+          "^(?!.*orrelby).*(merriwick|haskett|ostrander)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "prime_broker": {
+      "expected": "NOT_APPLICABLE: the Partnership does not engage, and does not intend to engage, a prime broker",
+      "citation": "Section 13.4",
+      "quote": "The Partnership does not engage, and does not intend to engage, a prime broker.",
+      "accept": [
+        "not[_ ]applicable",
+        "not[_ ]found",
+        "\\bnone\\b",
+        "\\bn/a\\b",
+        "\\bno prime",
+        "(does|will) not (engage|use|have|retain|appoint|intend)",
+        "not (engaged|used|retained|appointed)",
+        "not (expressly |explicitly )?(stated|specified|mentioned|disclosed|provided|addressed)",
+        "\\b(does|do)(n't| not)\\b",
+        "^no\\b"
+      ],
+      "partial": [],
+      "reject": {
+        "LENDER_OR_OTHER_PROVIDER": [
+          "^(?!.*(not[_ ]applicable|not[_ ]found|\\bnone\\b|\\bn/a\\b|\\bno prime|(does|will) not)).*(ostrander|orrelby|merriwick|haskett)"
+        ]
+      },
+      "absence_test": true,
+      "supersession_test": false,
+      "trap_type": "absence"
+    },
+    "legal_counsel": {
+      "expected": "Haskett Voorlan LLP (counsel to the Partnership, the General Partner and the Manager)",
+      "citation": "Section 15.3",
+      "quote": "Haskett Voorlan LLP (\"Fund Counsel\") has acted as counsel to the Partnership, the General Partner and the Manager",
+      "accept": [
+        "haskett\\s*voorlan"
+      ],
+      "partial": [
+        "haskett"
+      ],
+      "reject": {
+        "HALLUCINATED_OTHER_PROVIDER": [
+          "^(?!.*haskett).*(merriwick|orrelby|ostrander)"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    },
+    "mfn_election": {
+      "expected": "Offered: each Limited Partner whose Capital Commitment (aggregated with its Affiliates and accounts under common investment control) is $50,000,000 or more may elect, within 30 days after receipt of the compilation, the benefit of side letter provisions granted to Limited Partners with equal or smaller Capital Commitments, excluding provisions on tax, legal, regulatory or policy status, Advisory Committee seats, co-investment rights, consents to Transfers to Affiliates and terms granted for admission at the Initial Closing Date",
+      "citation": "Section 14.2",
+      "quote": "equals or exceeds $50,000,000 a compilation of all side letter provisions granted to any other Limited Partner whose Capital Commitment is equal to or less than its own",
+      "accept": [
+        "(\\$\\s?50(\\.0+)?\\s?(,000,000|million|mm|mn|m\\b)|\\b50,000,000|\\bfifty million|\\b50(\\.0+)? ?(million|mm|mn|m)\\b|usd\\s?50(\\.0+)?\\s?(,000,000|million|mm|mn|m\\b))"
+      ],
+      "partial": [
+        "^(?!(.*\\b(no|not|none)\\b.{0,20}(mfn|most[- ]favou?red)|(no|none|not offered|not available)\\b))(?!.*(\\$\\s?\\d|\\busd\\s?\\d|\\b\\d+(\\.\\d+)?\\s?(million|mm|mn)\\b|\\b\\d{1,3}(,\\d{3}){2,}\\b|\\b(one|two|five|ten|fifteen|twenty|twenty[- ]five|thirty|forty|one hundred|hundred) million)).*\\b(yes|offered|available|mfn|most[- ]favou?red)\\b"
+      ],
+      "reject": {
+        "HALLUCINATED_NO_MFN": [
+          "^(?!.*(\\$\\s?50(\\.0+)?\\s?(,000,000|million|mm|mn|m\\b)|\\b50,000,000|\\bfifty million|\\b50(\\.0+)? ?(million|mm|mn|m)\\b|usd\\s?50(\\.0+)?\\s?(,000,000|million|mm|mn|m\\b))).*(not[_ ]found|not[_ ]applicable|\\bno mfn|not offered|\\bnone\\b)"
+        ],
+        "MINIMUM_AS_MFN_THRESHOLD": [
+          "^(?!.*(\\$\\s?50(\\.0+)?\\s?(,000,000|million|mm|mn|m\\b)|\\b50,000,000|\\bfifty million|\\b50(\\.0+)? ?(million|mm|mn|m)\\b|usd\\s?50(\\.0+)?\\s?(,000,000|million|mm|mn|m\\b))).*(\\$\\s?10(\\.0+)?\\s?(,000,000|million|mm|mn|m\\b)|\\b10,000,000|\\bten million|\\b10(\\.0+)? ?(million|mm|mn)\\b|usd\\s?10(\\.0+)?\\s?(,000,000|million|mm|mn|m\\b))"
+        ]
+      },
+      "absence_test": false,
+      "supersession_test": false,
+      "trap_type": "none"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question using *only* the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "How frequently is Firm data backed up, and where are the backups stored?"
+    *   Key information needed: Frequency of backup, Location of backup storage.
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "backup", "frequency", "stored", "location", "data".
+
+4.  **Evaluate Document Content:**
+
+    *   `02_compliance_manual.md` (Jan 15, 2026):
+        *   Section 11.2 Technical Controls: Mentions encryption, endpoint detection, vulnerability scans (monthly), penetration test (annually). No specific backup frequency or location details here.
+        *   Section 13.2 Retention Period: Mentions retention periods (7 years, etc.). Not about backup frequency/location.
+        *   Section 13.3 Electronic Storage: Mentions email captured by Kestle Archive Services, other records on Firm systems backed up as described in Business Continuity Plan.
+
+    *   `04_business_continuity_plan.md` (Dec 1, 2025):
+        *   Section 2.3 Data Centers: Mentions Windsor facility (Tullborne) and Pelloran Systems. Email via cloud service.
+        *   Section 5.1 Replication: "Systems hosted in the Windsor facility are replicated to the Ferrowby Cloud Backup recovery environment every 15 minutes." (This is replication, not necessarily full backup frequency).
+        *   Section 5.2 Backup Frequency, Location and Retention:
+            *   "Nightly immutable backups of all Firm-hosted systems, cloud email and cloud document storage are taken at 11:00 p.m. Eastern time..." -> Frequency: Nightly.
+            *   "...written to Ferrowby Cloud Backup data centers in Columbus, Ohio and Hillsboro, Oregon." -> Location: Ferrowby Cloud Backup data centers in Columbus, Ohio and Hillsboro, Oregon.
+            *   "Nightly backups are retained for 35 days..." (Retention info).
+
+    *   Comparison of Dates:
+        *   `02_compliance_manual.md`: Jan 15, 2026.
+        *   `04_business_continuity_plan.md`: Dec 1, 2025.
+        *   Rule 3 says: "Later-dated documents supersede earlier ones."
+        *   However, the question asks about backup frequency and location. The Compliance Manual (Jan 2026) refers to the Business Continuity Plan for backup details ("backed up as described in the Business Continuity Plan"). The Business Continuity Plan (Dec 2025) contains the specific details.
+        *   Since the Compliance Manual is later dated, does it supersede the B

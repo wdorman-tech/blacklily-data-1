@@ -1,0 +1,44 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Which firm performs the Firm's annual external penetration test, and when was the most recent penetration test completed?"
+    *   Key Information Needed:
+        1.  Name of the firm performing the annual external penetration test.
+        2.  Date of the most recent penetration test completion.
+
+3.  **Scan the Documents:**
+
+    *   `02_compliance_manual.md` (dated January 15, 2026):
+        *   Section 8.4: Testimonials... (Irrelevant)
+        *   Section 11.2 Technical Controls: "An external penetration test is performed annually by a qualified independent firm that is not otherwise engaged to provide managed security services to the Firm..." -> Does not name the specific firm. Mentions frequency (annually).
+        *   Section 15.1 Scope and Timing: CCO annual review... (Irrelevant)
+        *   Section 15.2 Independent Assessment: Hessendale Compliance Advisors performs independent assessment... (Irrelevant to penetration test specifically, though related to compliance).
+
+    *   `03_valuation_policy.md` (dated February 10, 2026):
+        *   Section 7.2 Reporting: Back-testing results... (Irrelevant)
+        *   Section 8.3 Pricing Vendor Due Diligence: Committee conducts due diligence on each pricing service... (Irrelevant)
+
+    *   `04_business_continuity_plan.md` (dated December 1, 2025):
+        *   Section 6.1 Testing Program: Mentions full test annually, tabletop exercises, call tree. (Irrelevant to penetration test specifically).
+        *   Section 6.2 Most Recent Full Test: "The most recent full test was conducted on Saturday, October 18, 2025." -> This refers to the Business Continuity Plan test ("full test of the Plan"), not necessarily the external penetration test mentioned in the Compliance Manual.
+        *   Does it mention the name of the firm performing the penetration test? No.
+        *   Does it mention the date of the most recent *penetration* test? It mentions a "full test" of the BCP on Oct 18, 2025. The question asks about the "annual external penetration test".
+
+4.  **Evaluate Findings:**
+
+    *   **Firm Name for Penetration Test:**
+        *   `02_compliance_manual.md` Section 11.2 says: "...by a qualified independent firm that is not otherwise engaged to provide managed security services to the Firm..."
+        *   It does *not* name the specific firm (e.g., "Grisby Lane Security" is

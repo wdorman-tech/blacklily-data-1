@@ -1,0 +1,40 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "What percentage of the Flagship Fund's capital is held by the Adviser's principals and employees?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "Flagship Fund", "principals", "employees", "capital", "percentage", "held".
+
+3.  **Evaluate Document 1 (01_brochure.md):**
+    *   Section 4.2 The Funds: Mentions Flagship Fund, Offshore Fund, Co-Investment Fund. Mentions Class E interests are held only by the Adviser's principals and employees. Does not state a percentage of capital.
+    *   Section 4.4 Assets Under Management: Gives NAV figures ($1,182.4 million for Flagship, $97.8 million for Co-Investment). Does not break down ownership percentages by class or principal/employee holdings.
+    *   Section 5.1 Management Fees: Mentions Class E interests bear no management fee. No percentage of capital held.
+    *   Section 8.2 Investment Strategy: Discusses portfolio guidelines. No ownership info.
+    *   Section 11.4 Investment by Principals and Employees in the Funds: "The Adviser's principals and employees invest in the Flagship Fund through Class E interests, which bear no management fee or incentive allocation." It mentions they invest, but does not state *what percentage* of the capital is held.
+
+4.  **Evaluate Document 2 (02_compliance_manual.md):**
+    *   Section 6.1 Scope: Discusses political contributions. No ownership info.
+    *   Section 8.2 Performance Presentation: Discusses performance reporting. No ownership info.
+
+5.  **Evaluate Document 3 (05_fee_schedule.md):**
+    *   Section 3.1 Rate: Discusses incentive allocation percentages for Class A, F, and E. Does not state the percentage of capital held by principals/employees.
+
+6.  **Synthesize Findings:**
+    *   The documents confirm that principals and employees hold Class E interests in the Flagship Fund (01_brochure.md, Section 11.4).
+    *   However, none of the provided documents specify the *percentage* or proportion of the Flagship Fund's capital held by these individuals.
+    *   Therefore, the specific detail requested ("What percentage...") is not in the documents.
+
+7.  **Formulate Answer:**
+    *   According to Rule 2: "If the documents do not answer the question, or address the topic without giving the specific detail asked for (a limit, a date, a name, a frequency), the answer is exactly NOT_IN_DOCUMENTS."
+    *   The question asks for a percentage. The documents mention Class E interests exist and are held by principals/employees, but do not quantify the capital

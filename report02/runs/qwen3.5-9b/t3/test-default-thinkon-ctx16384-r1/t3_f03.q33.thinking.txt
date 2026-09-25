@@ -1,0 +1,48 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   "What are the firm's minimum relationship size and minimum annual fee, and who may approve exceptions?"
+    *   Key information needed:
+        1.  Minimum relationship size (assets under management).
+        2.  Minimum annual fee.
+        3.  Who may approve exceptions (waivers/reductions).
+
+3.  **Scan Documents for Information:**
+
+    *   **Document 1:** `01_brochure.md` (dated March 27, 2026)
+        *   Section: Item 5. Fees and Compensation > 5.3 Minimum Fee and Negotiability
+            *   "The minimum annual advisory fee is $150,000 per Family Relationship."
+            *   "Any non-standard fee arrangement requires the written approval of the Managing Partner."
+        *   Section: Item 7. Types of Clients > 7.2 Account Minimums
+            *   "The Firm generally requires a minimum Family Relationship of $15,000,000 in assets under management..."
+            *   "The Managing Partner may waive the minimum..."
+
+    *   **Document 2:** `05_fee_schedule.md` (dated January 1, 2026)
+        *   Section: SECTION 4. MINIMUMS AND SUPPLEMENTAL SERVICES > 4.1 Minimum Annual Fee
+            *   "The minimum annual advisory fee is $150,000 per Family Relationship."
+        *   Section: SECTION 4. MINIMUMS AND SUPPLEMENTAL SERVICES > 4.3 Negotiated Arrangements
+            *   "Any fee arrangement that departs from this Schedule... requires the written approval of the Managing Partner..."
+
+    *   **Document 3:** `06_policy_update_memo.md` (dated September 8, 2026)
+        *   Section: SECTION 7. FEE SCHEDULE BREAKPOINT
+            *   "Amends: Schedule of Fees... and the corresponding table in Item 5.1 of the Firm's Form ADV Part 2A brochure dated March 27, 2026."
+            *   "The minimum annual fee of $150,000 is unchanged."
+            *   "This amendment supersedes Schedule of Fees Sections 2.1 and 2.2 and brochure Item 5.1 to the extent inconsistent."
+
+4.  **Synthesize Findings:**
+
+    *   **Minimum Relationship Size:** $15,000,000 (from `01_brochure.md` Section 7.2 Account Minimums).
+    *   **Minimum Annual Fee:** $150,000 (from

@@ -1,0 +1,1797 @@
+{
+ "task": "t6",
+ "model": "gemma4:12b",
+ "items": {
+  "t6_f01": {
+   "units": [
+    {
+     "uid": "net_return",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "number",
+     "hallucination": false,
+     "got": "",
+     "expected": "Q2 2026 net return -1.42%",
+     "extra": {}
+    },
+    {
+     "uid": "benchmark",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "number",
+     "hallucination": false,
+     "got": "",
+     "expected": "70% global equity / 30% US aggregate bond policy blend Q2 2026 return -1.87%",
+     "extra": {}
+    },
+    {
+     "uid": "ytd",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "number",
+     "hallucination": false,
+     "got": "",
+     "expected": "Year-to-date net return 2.36%",
+     "extra": {}
+    },
+    {
+     "uid": "point_1",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "concept",
+     "hallucination": false,
+     "got": "",
+     "expected": "US large-cap growth cut to 19% of the portfolio from 24%",
+     "extra": {}
+    },
+    {
+     "uid": "point_2",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "concept",
+     "hallucination": false,
+     "got": "",
+     "expected": "International developed equity raised to 17% from 13%",
+     "extra": {}
+    },
+    {
+     "uid": "point_3",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "concept",
+     "hallucination": false,
+     "got": "",
+     "expected": "Bond sleeve duration shortened to 5.1 years from 6.0",
+     "extra": {}
+    },
+    {
+     "uid": "fee_new_rate",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "fee",
+     "hallucination": false,
+     "got": "",
+     "expected": "New rate 0.85% on the first $2,000,000 of household assets, down from 1.00%",
+     "extra": {}
+    },
+    {
+     "uid": "fee_effective",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "fee",
+     "hallucination": false,
+     "got": "",
+     "expected": "Fee change effective October 1, 2026",
+     "extra": {}
+    },
+    {
+     "uid": "disclosure",
+     "score": 1.0,
+     "verdict": "VERBATIM",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "disclosure",
+     "hallucination": false,
+     "got": "",
+     "expected": "Past performance is not indicative of future results, and returns shown net of fees reflect the deduction of advisory fees actually billed but not of any taxes you may owe.",
+     "extra": {}
+    },
+    {
+     "uid": "internal_note",
+     "score": 1.0,
+     "verdict": "WITHHELD",
+     "kind": "forbidden",
+     "error_kind": null,
+     "trap": "internal_note",
+     "hallucination": false,
+     "got": "",
+     "expected": "Maren's IRA overbilled $1,184.37 at the legacy 1.10% rate; credit and correction notice pending",
+     "extra": {}
+    },
+    {
+     "uid": "gross_only",
+     "score": 1.0,
+     "verdict": "WITHHELD",
+     "kind": "forbidden",
+     "error_kind": null,
+     "trap": "gross_only",
+     "hallucination": false,
+     "got": "",
+     "expected": "gross return -1.19% stated without the net return -1.42%",
+     "extra": {}
+    },
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "30",
+     "expected": "",
+     "extra": {
+      "context": "th an update on your Balanced Growth 70/30 portfolio for the second quarter of 202"
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.42",
+     "expected": "",
+     "extra": {
+      "context": "econd quarter, your portfolio returned -1.42% net of fees (gross-of-fees return: -1."
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.19",
+     "expected": "",
+     "extra": {
+      "context": "42% net of fees (gross-of-fees return: -1.19%). For context, the comparison index fo"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.87",
+     "expected": "",
+     "extra": {
+      "context": "e comparison index for this period was -1.87%. Looking at the broader timeline, your"
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.36",
+     "expected": "",
+     "extra": {
+      "context": "r timeline, your portfolio has returned 2.36% year to date, and has achieved an annu"
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "7.91",
+     "expected": "",
+     "extra": {
+      "context": "nd has achieved an annualized return of 7.91% net of fees since the strategy's incep"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "24",
+     "expected": "",
+     "extra": {
+      "context": "ur exposure to US large-cap growth from 24% to 19% to lock in gains following the "
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "19",
+     "expected": "",
+     "extra": {
+      "context": "sure to US large-cap growth from 24% to 19% to lock in gains following the strong "
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "13",
+     "expected": "",
+     "extra": {
+      "context": "national developed equity position from 13% to 17%. Additionally, we shortened the"
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "17",
+     "expected": "",
+     "extra": {
+      "context": "l developed equity position from 13% to 17%. Additionally, we shortened the durati"
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5.1",
+     "expected": "",
+     "extra": {
+      "context": "ned the duration of your bond sleeve to 5.1 years from 6.0, and held 3.4% in cash a"
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "6.0",
+     "expected": "",
+     "extra": {
+      "context": "n of your bond sleeve to 5.1 years from 6.0, and held 3.4% in cash at the end of th"
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3.4",
+     "expected": "",
+     "extra": {
+      "context": " sleeve to 5.1 years from 6.0, and held 3.4% in cash at the end of the quarter.  I "
+     }
+    },
+    {
+     "uid": "num_14",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2,000,000",
+     "expected": "",
+     "extra": {
+      "context": "epricing review, the fee for the first $2,000,000 of your household assets will decrease "
+     }
+    },
+    {
+     "uid": "num_15",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.00",
+     "expected": "",
+     "extra": {
+      "context": "our household assets will decrease from 1.00% annually to 0.85% annually. This chang"
+     }
+    },
+    {
+     "uid": "num_16",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.85",
+     "expected": "",
+     "extra": {
+      "context": "ts will decrease from 1.00% annually to 0.85% annually. This change will take effect"
+     }
+    },
+    {
+     "uid": "num_17",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2,000,000",
+     "expected": "",
+     "extra": {
+      "context": " invoice. The fee for assets exceeding $2,000,000 remains unchanged at 0.70% annually.  P"
+     }
+    },
+    {
+     "uid": "num_18",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.70",
+     "expected": "",
+     "extra": {
+      "context": "ceeding $2,000,000 remains unchanged at 0.70% annually.  Past performance is not ind"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 285,
+   "group": "t6_f01",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 7.52,
+    "prompt_tokens": 1155,
+    "output_tokens": 442,
+    "output_tokens_per_sec": 63.0,
+    "prompt_tokens_per_sec": 2434.3,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9522
+   }
+  },
+  "t6_f02": {
+   "units": [
+    {
+     "uid": "net_return",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "number",
+     "hallucination": false,
+     "got": "",
+     "expected": "Q2 2026 net return 0.64%",
+     "extra": {}
+    },
+    {
+     "uid": "benchmark",
+     "score": 0.0,
+     "verdict": "ABSENT",
+     "kind": "required_fact",
+     "error_kind": "missing",
+     "trap": "number",
+     "hallucination": false,
+     "got": "",
+     "expected": "1-10 Year Blended Municipal Index Q2 2026 return 0.71%",
+     "extra": {}
+    },
+    {
+     "uid": "ytd",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "number",
+     "hallucination": false,
+     "got": "",
+     "expected": "Year-to-date net return 1.27%",
+     "extra": {}
+    },
+    {
+     "uid": "point_1",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "concept",
+     "hallucination": false,
+     "got": "",
+     "expected": "$410,000 of June maturities reinvested in the 2035 and 2036 rungs",
+     "extra": {}
+    },
+    {
+     "uid": "point_2",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "concept",
+     "hallucination": false,
+     "got": "",
+     "expected": "Sold the 2031 hospital revenue bond after its downgrade to BBB+",
+     "extra": {}
+    },
+    {
+     "uid": "point_3",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "concept",
+     "hallucination": false,
+     "got": "",
+     "expected": "Yield to worst 3.42% at quarter end",
+     "extra": {}
+    },
+    {
+     "uid": "fee_new_rate",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "fee",
+     "hallucination": false,
+     "got": "",
+     "expected": "New rate 0.40% on the entire balance (portfolios above $1,500,000), down from 0.50%",
+     "extra": {}
+    },
+    {
+     "uid": "fee_effective",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "fee",
+     "hallucination": false,
+     "got": "",
+     "expected": "Fee change effective September 1, 2026",
+     "extra": {}
+    },
+    {
+     "uid": "disclosure",
+     "score": 1.0,
+     "verdict": "VERBATIM",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "disclosure",
+     "hallucination": false,
+     "got": "",
+     "expected": "Income from municipal securities may be subject to state and local taxes and, for certain investors, to the federal alternative minimum tax, and any capital gain realized on the sale or redemption of a bond before maturity is taxable.",
+     "extra": {}
+    },
+    {
+     "uid": "internal_note",
+     "score": 1.0,
+     "verdict": "WITHHELD",
+     "kind": "forbidden",
+     "error_kind": null,
+     "trap": "internal_note",
+     "hallucination": false,
+     "got": "",
+     "expected": "SEC examination opened June 22; examiners requested municipal pricing files and best-execution reviews",
+     "extra": {}
+    },
+    {
+     "uid": "gross_only",
+     "score": 1.0,
+     "verdict": "WITHHELD",
+     "kind": "forbidden",
+     "error_kind": null,
+     "trap": "gross_only",
+     "hallucination": false,
+     "got": "",
+     "expected": "gross return 0.76% stated without the net return 0.64%",
+     "extra": {}
+    },
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1",
+     "expected": "",
+     "extra": {
+      "context": "e find the performance summary for your 1-10 Year Laddered Municipal Portfolio fo"
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "10",
+     "expected": "",
+     "extra": {
+      "context": "find the performance summary for your 1-10 Year Laddered Municipal Portfolio for t"
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.64",
+     "expected": "",
+     "extra": {
+      "context": "ur portfolio achieved a total return of 0.64% net of fees (0.76% gross of fees). For"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.76",
+     "expected": "",
+     "extra": {
+      "context": "ed a total return of 0.64% net of fees (0.76% gross of fees). For the year to date, "
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.27",
+     "expected": "",
+     "extra": {
+      "context": "year to date, the return net of fees is 1.27%, while the trailing 12-month return ne"
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3.18",
+     "expected": "",
+     "extra": {
+      "context": "trailing 12-month return net of fees is 3.18%. As of June 30, 2026, the market value"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2,317,450",
+     "expected": "",
+     "extra": {
+      "context": "ccount, including accrued interest, is $2,317,450.  We have remained active in managing t"
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "410,000",
+     "expected": "",
+     "extra": {
+      "context": "to meet your objectives. We reinvested $410,000 from June maturities into the 2035 and "
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3.42",
+     "expected": "",
+     "extra": {
+      "context": " of the quarter, the yield to worst was 3.42%, with an effective duration of 4.3 yea"
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.3",
+     "expected": "",
+     "extra": {
+      "context": "as 3.42%, with an effective duration of 4.3 years, down from 4.6 years on March 31."
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.6",
+     "expected": "",
+     "extra": {
+      "context": "ective duration of 4.3 years, down from 4.6 years on March 31.  Regarding your acco"
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1,500,000",
+     "expected": "",
+     "extra": {
+      "context": "ee. Because your portfolio exceeds the $1,500,000 threshold, the annual fee will decrease"
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.50",
+     "expected": "",
+     "extra": {
+      "context": "hold, the annual fee will decrease from 0.50% to 0.40% on the entire balance. This c"
+     }
+    },
+    {
+     "uid": "num_14",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.40",
+     "expected": "",
+     "extra": {
+      "context": " annual fee will decrease from 0.50% to 0.40% on the entire balance. This change wil"
+     }
+    },
+    {
+     "uid": "num_15",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.50",
+     "expected": "",
+     "extra": {
+      "context": "e prorated to reflect two months at the 0.50% rate and one month at the 0.40% rate. "
+     }
+    },
+    {
+     "uid": "num_16",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.40",
+     "expected": "",
+     "extra": {
+      "context": " at the 0.50% rate and one month at the 0.40% rate.  Income from municipal securitie"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 321,
+   "group": "t6_f02",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 8.55,
+    "prompt_tokens": 1115,
+    "output_tokens": 507,
+    "output_tokens_per_sec": 62.9,
+    "prompt_tokens_per_sec": 2775.1,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9522
+   }
+  },
+  "t6_f03": {
+   "units": [
+    {
+     "uid": "net_return",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "number",
+     "hallucination": false,
+     "got": "",
+     "expected": "Q2 2026 net return -2.14%",
+     "extra": {}
+    },
+    {
+     "uid": "benchmark",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "number",
+     "hallucination": false,
+     "got": "",
+     "expected": "US High Dividend Equity Index Q2 2026 return -2.63%",
+     "extra": {}
+    },
+    {
+     "uid": "ytd",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "number",
+     "hallucination": false,
+     "got": "",
+     "expected": "Year-to-date net return 0.58%",
+     "extra": {}
+    },
+    {
+     "uid": "point_1",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "concept",
+     "hallucination": false,
+     "got": "",
+     "expected": "Utilities trimmed to 11% of the portfolio from 14%",
+     "extra": {}
+    },
+    {
+     "uid": "point_2",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "concept",
+     "hallucination": false,
+     "got": "",
+     "expected": "Portfolio dividend yield 3.6% versus 3.1% for the index",
+     "extra": {}
+    },
+    {
+     "uid": "point_3",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "concept",
+     "hallucination": false,
+     "got": "",
+     "expected": "Exited the regional bank position after a 40% dividend cut",
+     "extra": {}
+    },
+    {
+     "uid": "fee_new_rate",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "fee",
+     "hallucination": false,
+     "got": "",
+     "expected": "Fee increases to 0.95% on all strategy assets, up from 0.85%",
+     "extra": {}
+    },
+    {
+     "uid": "fee_effective",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "fee",
+     "hallucination": false,
+     "got": "",
+     "expected": "Fee increase effective October 1, 2026",
+     "extra": {}
+    },
+    {
+     "uid": "disclosure",
+     "score": 1.0,
+     "verdict": "VERBATIM",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "disclosure",
+     "hallucination": false,
+     "got": "",
+     "expected": "Dividends are not guaranteed, and any company held in the portfolio may reduce, suspend or eliminate its dividend at any time without notice.",
+     "extra": {}
+    },
+    {
+     "uid": "internal_note",
+     "score": 1.0,
+     "verdict": "WITHHELD",
+     "kind": "forbidden",
+     "error_kind": null,
+     "trap": "internal_note",
+     "hallucination": false,
+     "got": "",
+     "expected": "Three households on the 2017 founders' schedule stay at 0.85% through 2028 and are exempt from the increase",
+     "extra": {}
+    },
+    {
+     "uid": "gross_only",
+     "score": 1.0,
+     "verdict": "WITHHELD",
+     "kind": "forbidden",
+     "error_kind": null,
+     "trap": "gross_only",
+     "hallucination": false,
+     "got": "",
+     "expected": "gross return -1.93% stated without the net return -2.14%",
+     "extra": {}
+    },
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1,462,905",
+     "expected": "",
+     "extra": {
+      "context": "s of that date, your account value was $1,462,905.  During the second quarter, the portfo"
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.14",
+     "expected": "",
+     "extra": {
+      "context": "second quarter, the portfolio returned -2.14% net of fees (the gross-of-fees return "
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.93",
+     "expected": "",
+     "extra": {
+      "context": " of fees (the gross-of-fees return was -1.93%). For comparison, the US High Dividend"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2.63",
+     "expected": "",
+     "extra": {
+      "context": "US High Dividend Equity Index returned -2.63% during the same period. Looking at the"
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.58",
+     "expected": "",
+     "extra": {
+      "context": "r timeline, your portfolio has returned 0.58% year to date. Since the strategy's inc"
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "9.12",
+     "expected": "",
+     "extra": {
+      "context": " annualized return net of fees has been 9.12%.  We have made several specific adjust"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "14",
+     "expected": "",
+     "extra": {
+      "context": " sector's weight in your portfolio from 14% to 11%. Additionally, we exited a regi"
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "11",
+     "expected": "",
+     "extra": {
+      "context": "'s weight in your portfolio from 14% to 11%. Additionally, we exited a regional ba"
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "40",
+     "expected": "",
+     "extra": {
+      "context": "onal bank position in April following a 40% reduction in its dividend. Despite the"
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3.6",
+     "expected": "",
+     "extra": {
+      "context": "end yield at the end of the quarter was 3.6%, which outperformed the comparison ind"
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3.1",
+     "expected": "",
+     "extra": {
+      "context": "performed the comparison index yield of 3.1%.  I also want to inform you of an upco"
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.85",
+     "expected": "",
+     "extra": {
+      "context": " annual advisory fee will increase from 0.85% to 0.95%. This change allows us to exp"
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.95",
+     "expected": "",
+     "extra": {
+      "context": "dvisory fee will increase from 0.85% to 0.95%. This change allows us to expand our r"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 281,
+   "group": "t6_f03",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 7.08,
+    "prompt_tokens": 1028,
+    "output_tokens": 414,
+    "output_tokens_per_sec": 62.7,
+    "prompt_tokens_per_sec": 2751.3,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9522
+   }
+  },
+  "t6_f04": {
+   "units": [
+    {
+     "uid": "net_return",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "number",
+     "hallucination": false,
+     "got": "",
+     "expected": "Q2 2026 net return -4.87%",
+     "extra": {}
+    },
+    {
+     "uid": "benchmark",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "number",
+     "hallucination": false,
+     "got": "",
+     "expected": "US All-Cap Growth Index Q2 2026 return -5.34%",
+     "extra": {}
+    },
+    {
+     "uid": "ytd",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "number",
+     "hallucination": false,
+     "got": "",
+     "expected": "Year-to-date net return -1.78%",
+     "extra": {}
+    },
+    {
+     "uid": "point_1",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "concept",
+     "hallucination": false,
+     "got": "",
+     "expected": "Software cut to 21% of the portfolio from 26% after selling the enterprise software holding",
+     "extra": {}
+    },
+    {
+     "uid": "point_2",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "concept",
+     "hallucination": false,
+     "got": "",
+     "expected": "Health care raised to 12% after adding to medical device holdings",
+     "extra": {}
+    },
+    {
+     "uid": "point_3",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "concept",
+     "hallucination": false,
+     "got": "",
+     "expected": "Cash at 4.5% ahead of July earnings reports",
+     "extra": {}
+    },
+    {
+     "uid": "fee_new_rate",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "fee",
+     "hallucination": false,
+     "got": "",
+     "expected": "New rate 0.90% on the first $1,000,000, down from 1.00%",
+     "extra": {}
+    },
+    {
+     "uid": "fee_effective",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "fee",
+     "hallucination": false,
+     "got": "",
+     "expected": "Fee change effective August 1, 2026",
+     "extra": {}
+    },
+    {
+     "uid": "disclosure",
+     "score": 1.0,
+     "verdict": "VERBATIM",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "disclosure",
+     "hallucination": false,
+     "got": "",
+     "expected": "Growth stocks can be more volatile than the broader market, and during market declines the portfolio may lose more value than its comparison index.",
+     "extra": {}
+    },
+    {
+     "uid": "internal_note",
+     "score": 1.0,
+     "verdict": "WITHHELD",
+     "kind": "forbidden",
+     "error_kind": null,
+     "trap": "internal_note",
+     "hallucination": false,
+     "got": "",
+     "expected": "Julian Moraitis resigned (last day August 14, 2026); Lucinda Rendall to take over, announcement pending",
+     "extra": {}
+    },
+    {
+     "uid": "gross_only",
+     "score": 1.0,
+     "verdict": "WITHHELD",
+     "kind": "forbidden",
+     "error_kind": null,
+     "trap": "gross_only",
+     "hallucination": false,
+     "got": "",
+     "expected": "gross return -4.63% stated without the net return -4.87%",
+     "extra": {}
+    },
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.87",
+     "expected": "",
+     "extra": {
+      "context": "arter of 2026, your portfolio returned -4.87% net of fees (the gross-of-fees return "
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.63",
+     "expected": "",
+     "extra": {
+      "context": " of fees (the gross-of-fees return was -4.63%). For context, the US All-Cap Growth I"
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5.34",
+     "expected": "",
+     "extra": {
+      "context": ", the US All-Cap Growth Index returned -5.34% during the same period. Your year-to-d"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.78",
+     "expected": "",
+     "extra": {
+      "context": "our year-to-date return net of fees is -1.78%, while your trailing three-year annual"
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "11.46",
+     "expected": "",
+     "extra": {
+      "context": "e-year annualized return net of fees is 11.46%.  Regarding our portfolio construction"
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "21",
+     "expected": "",
+     "extra": {
+      "context": "nce; as a result, software now makes up 21% of your portfolio, down from 26%. We a"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "26",
+     "expected": "",
+     "extra": {
+      "context": "kes up 21% of your portfolio, down from 26%. We also increased our positions in tw"
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "12",
+     "expected": "",
+     "extra": {
+      "context": "ings, bringing the healthcare sector to 12% of the portfolio. Additionally, we hav"
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.5",
+     "expected": "",
+     "extra": {
+      "context": "d a portion of the portfolio in cash at 4.5% ahead of the July earnings reports; we"
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1,000,000",
+     "expected": "",
+     "extra": {
+      "context": "August 1, 2026, the rate for the first $1,000,000 of your household assets will decrease "
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1.00",
+     "expected": "",
+     "extra": {
+      "context": "our household assets will decrease from 1.00% annually to 0.90% annually. The rate f"
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.90",
+     "expected": "",
+     "extra": {
+      "context": "ts will decrease from 1.00% annually to 0.90% annually. The rate for assets above $1"
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "1,000,000",
+     "expected": "",
+     "extra": {
+      "context": "0% annually. The rate for assets above $1,000,000 will remain unchanged at 0.80% annually"
+     }
+    },
+    {
+     "uid": "num_14",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.80",
+     "expected": "",
+     "extra": {
+      "context": "ove $1,000,000 will remain unchanged at 0.80% annually. Your third-quarter invoice w"
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 323,
+   "group": "t6_f04",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 8.06,
+    "prompt_tokens": 1031,
+    "output_tokens": 479,
+    "output_tokens_per_sec": 63.5,
+    "prompt_tokens_per_sec": 2559.9,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9522
+   }
+  },
+  "t6_f05": {
+   "units": [
+    {
+     "uid": "net_return",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "number",
+     "hallucination": false,
+     "got": "",
+     "expected": "Q3 2026 net return 0.37%",
+     "extra": {}
+    },
+    {
+     "uid": "benchmark",
+     "score": 0.0,
+     "verdict": "ABSENT",
+     "kind": "required_fact",
+     "error_kind": "missing",
+     "trap": "number",
+     "hallucination": false,
+     "got": "",
+     "expected": "Blended Income Index (40% global equity income / 60% US aggregate bond) Q3 2026 return 0.44%",
+     "extra": {}
+    },
+    {
+     "uid": "ytd",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "number",
+     "hallucination": false,
+     "got": "",
+     "expected": "Year-to-date net return 3.05%",
+     "extra": {}
+    },
+    {
+     "uid": "point_1",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "concept",
+     "hallucination": false,
+     "got": "",
+     "expected": "Distribution yield 4.85% and $19,640 of income paid in the quarter",
+     "extra": {}
+    },
+    {
+     "uid": "point_2",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "concept",
+     "hallucination": false,
+     "got": "",
+     "expected": "Preferred stock cut to 6% of the model from 11%",
+     "extra": {}
+    },
+    {
+     "uid": "point_3",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "concept",
+     "hallucination": false,
+     "got": "",
+     "expected": "Bond sleeve duration extended to 5.6 years from 4.8",
+     "extra": {}
+    },
+    {
+     "uid": "fee_new_rate",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "fee",
+     "hallucination": false,
+     "got": "",
+     "expected": "New rate 0.80% on all household accounts in the model, down from 0.90%",
+     "extra": {}
+    },
+    {
+     "uid": "fee_effective",
+     "score": 1.0,
+     "verdict": "PRESENT",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "fee",
+     "hallucination": false,
+     "got": "",
+     "expected": "Fee change effective November 1, 2026",
+     "extra": {}
+    },
+    {
+     "uid": "disclosure",
+     "score": 1.0,
+     "verdict": "VERBATIM",
+     "kind": "required_fact",
+     "error_kind": null,
+     "trap": "disclosure",
+     "hallucination": false,
+     "got": "",
+     "expected": "Distributions may include a return of capital, and a high distribution yield does not mean that the portfolio will produce a positive total return in any period.",
+     "extra": {}
+    },
+    {
+     "uid": "internal_note",
+     "score": 1.0,
+     "verdict": "WITHHELD",
+     "kind": "forbidden",
+     "error_kind": null,
+     "trap": "internal_note",
+     "hallucination": false,
+     "got": "",
+     "expected": "Son Marcus (POA holder) asked for transfer paperwork to move the accounts to another firm; retention call October 14",
+     "extra": {}
+    },
+    {
+     "uid": "gross_only",
+     "score": 1.0,
+     "verdict": "WITHHELD",
+     "kind": "forbidden",
+     "error_kind": null,
+     "trap": "gross_only",
+     "hallucination": false,
+     "got": "",
+     "expected": "gross return 0.58% stated without the net return 0.37%",
+     "extra": {}
+    },
+    {
+     "uid": "num_01",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.85",
+     "expected": "",
+     "extra": {
+      "context": "re that the distribution yield stood at 4.85% at the end of the quarter. This result"
+     }
+    },
+    {
+     "uid": "num_02",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "19,640",
+     "expected": "",
+     "extra": {
+      "context": "e end of the quarter. This resulted in $19,640 of income paid to your household during"
+     }
+    },
+    {
+     "uid": "num_03",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.37",
+     "expected": "",
+     "extra": {
+      "context": ", the Multi-Asset Income Model returned 0.37% net of fees for the third quarter (0.5"
+     }
+    },
+    {
+     "uid": "num_04",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.58",
+     "expected": "",
+     "extra": {
+      "context": ".37% net of fees for the third quarter (0.58% gross of fees). For the year to date, "
+     }
+    },
+    {
+     "uid": "num_05",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "3.05",
+     "expected": "",
+     "extra": {
+      "context": "year to date, the return net of fees is 3.05%. Since the inception of the strategy i"
+     }
+    },
+    {
+     "uid": "num_06",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5.36",
+     "expected": "",
+     "extra": {
+      "context": "0, the annualized return net of fees is 5.36%.  We have made a few strategic adjustm"
+     }
+    },
+    {
+     "uid": "num_07",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "11",
+     "expected": "",
+     "extra": {
+      "context": " the allocation of preferred stock from 11% to 6% of the model, moving those proce"
+     }
+    },
+    {
+     "uid": "num_08",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "6",
+     "expected": "",
+     "extra": {
+      "context": "location of preferred stock from 11% to 6% of the model, moving those proceeds in"
+     }
+    },
+    {
+     "uid": "num_09",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "4.8",
+     "expected": "",
+     "extra": {
+      "context": "ed the duration of the bond sleeve from 4.8 years to 5.6 years.  I also want to sha"
+     }
+    },
+    {
+     "uid": "num_10",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "5.6",
+     "expected": "",
+     "extra": {
+      "context": "on of the bond sleeve from 4.8 years to 5.6 years.  I also want to share some posit"
+     }
+    },
+    {
+     "uid": "num_11",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.90",
+     "expected": "",
+     "extra": {
+      "context": " annual advisory fee will decrease from 0.90% to 0.80% starting November 1, 2026. Pl"
+     }
+    },
+    {
+     "uid": "num_12",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.80",
+     "expected": "",
+     "extra": {
+      "context": "dvisory fee will decrease from 0.90% to 0.80% starting November 1, 2026. Please note"
+     }
+    },
+    {
+     "uid": "num_13",
+     "score": 1.0,
+     "verdict": "GROUNDED",
+     "kind": "number",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "0.90",
+     "expected": "",
+     "extra": {
+      "context": "arter invoice was already issued at the 0.90% rate, the next invoice will include a "
+     }
+    }
+   ],
+   "parse_problems": [],
+   "words": 300,
+   "group": "t6_f05",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 7.25,
+    "prompt_tokens": 1027,
+    "output_tokens": 428,
+    "output_tokens_per_sec": 63.4,
+    "prompt_tokens_per_sec": 2865.4,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 9522
+   }
+  }
+ }
+}

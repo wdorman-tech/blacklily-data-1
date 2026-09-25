@@ -1,0 +1,64 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "In what year was the Funds' current fund administrator appointed?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "administrator", "appointed", "year", "fund administrator", "Carvell Brink Fund Services Ltd."
+
+3.  **Analyze Document Content:**
+    *   `01_brochure.md` (March 27, 2026):
+        *   Item 15. Custody > 15.2 Administrator: "Carvell Brink Fund Services Ltd. (the "Administrator") serves as administrator to each of the Funds."
+        *   Does not mention when they were appointed or the year of appointment.
+    *   `03_valuation_policy.md` (November 3, 2025):
+        *   Section 1.2 Scope and Frequency: Mentions Administrator calculates NAV.
+        *   Section 8.2 Administrator: Describes Administrator's role in pricing/oversight.
+        *   Does not mention appointment date or year.
+    *   `06_policy_update_memo.md` (August 24, 2026):
+        *   Preamble: Mentions amendments to policies.
+        *   Does not mention administrator appointment details.
+
+4.  **Evaluate Findings:**
+    *   The documents identify the current administrator ("Carvell Brink Fund Services Ltd.").
+    *   None of the documents state when this administrator was appointed or in what year they were appointed.
+    *   Rule 2: "If the documents do not answer the question, or address the topic without giving the specific detail asked for (a limit, a date, a name, a frequency), the answer is exactly NOT_IN_DOCUMENTS."
+
+5.  **Formulate Output:**
+    *   Answer: NOT_IN_DOCUMENTS
+    *   Source Document: ""
+    *   Section: ""
+    *   Quote: ""
+
+6.  **Final Verification:**
+    *   Does any text mention "appointed"? No.
+    *   Does any text mention a date regarding the administrator's engagement? No.
+    *   Must output valid JSON without markdown.
+
+7.  **Construct JSON:**
+    ```json
+    {
+      "answer": "NOT_IN_DOCUMENTS",
+      "source_document": "",
+      "section": "",
+      "quote": ""
+    }
+    ```
+
+8.  **Final Check against Constraints:**
+    *   JSON object only? Yes.
+    *   No markdown fence? Yes.
+    *   No preamble? Yes.
+    *   Keys correct? Yes.
+    *   Answer exactly NOT_IN_DOCUMENTS if not found? Yes.
+
+    Wait, I need to double check the `06_policy_update_memo.md`. It says "This

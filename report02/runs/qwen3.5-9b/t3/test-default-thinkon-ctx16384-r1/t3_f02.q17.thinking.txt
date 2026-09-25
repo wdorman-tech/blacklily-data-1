@@ -1,0 +1,39 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Is the Adviser a signatory to the Principles for Responsible Investment, and does it maintain a written ESG or responsible investment policy?"
+    *   Key information needed:
+        1.  Signatory status to PRI (Principles for Responsible Investment).
+        2.  Existence of a written ESG or responsible investment policy.
+
+3.  **Scan the Documents:**
+    *   `01_brochure.md` (Form ADV Part 2A, dated March 27, 2026):
+        *   Section 4.3 Tailored Services and Investment Restrictions: Discusses fund management, restrictions, side letters, wrap fees. No mention of PRI or ESG policy.
+        *   Section 11.3 Principal and Cross Transactions: Discusses principal transactions, cross trades. No mention of PRI or ESG policy.
+        *   Section 11.4 Investment by Principals and Employees in the Funds: Discusses employee investments (Flagship vs Co-Investment). No mention of PRI or ESG policy.
+        *   Section 17.1 Proxy Voting Policy: Discusses proxy voting, Harlaxton Proxy Services LLC, CIO approval, abstention rules. No mention of PRI signatory status or specific ESG policy document existence beyond general voting policy.
+    *   `02_compliance_manual.md` (Compliance Manual, dated January 15, 2026):
+        *   Section 3.1 Standards of Business Conduct: Discusses Code of Ethics, honesty, integrity, conflicts, etc. No mention of PRI or ESG policy.
+        *   Section 6.1 Scope: Discusses political contributions (Rule 206(4)-5). No mention of PRI or ESG policy.
+        *   Section 13.1 Required Records: Lists required records (trade, order tickets, etc.). No mention of PRI or ESG policy.
+    *   `03_valuation_policy.md` (Valuation Policy and Procedures, dated November 3, 2025):
+        *   Section 1.1 Purpose: Discusses valuation of investments in Flagship Fund, Offshore Fund, Co-Investment Fund. Mentions Management Committee, Valuation Committee. No mention of PRI or ESG policy.
+
+4.  **Evaluate Findings:**
+    *   I have scanned all provided text segments.
+    *   There is no mention of "Principles for Responsible Investment" (PRI).
+    *   There is no mention of a specific "ESG or responsible investment policy" document or statement confirming its existence beyond general proxy voting policies which are distinct from ESG/responsible investment policies in this context.
+    *   Therefore, the information required to answer the question is

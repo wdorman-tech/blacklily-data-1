@@ -1,0 +1,48 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+    *   Question: "What percentage of the firm's total annual revenue is attributable to its largest client family?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "revenue", "total annual revenue", "largest client family", "percentage", "attributable".
+    *   Document 1: `01_brochure.md` (Form ADV Part 2A). Sections: Item 2 (Material Changes), Item 5 (Fees and Compensation), Item 7 (Types of Clients), Item 11 (Code of Ethics...).
+        *   Item 5.1 discusses fee tiers based on assets under management ($25M, $50M, etc.).
+        *   Item 5.3 discusses minimum fee ($150k).
+        *   Item 7 discusses client types (HNW/UHNW individuals/families).
+        *   No mention of total firm revenue or breakdown by client family percentage.
+    *   Document 2: `02_compliance_manual.md` (Compliance Policies and Procedures Manual). Sections: SECTION 3 (Code of Ethics), SECTION 5 (Gifts and Entertainment).
+        *   Discusses fiduciary duty, confidentiality, gifts from clients.
+        *   No mention of revenue or client concentration percentages.
+
+3.  **Evaluate Findings:**
+    *   The documents describe fee structures, minimum assets, client types, compliance policies, and material changes.
+    *   None of the provided text contains information about the firm's total annual revenue or the percentage attributable to any specific client family (largest or otherwise).
+    *   This is a common question for institutional clients (concentration risk), but the public-facing brochure and compliance manual do not disclose this internal financial data.
+
+4.  **Formulate Answer:**
+    *   Since the information is not in the documents, the answer must be `NOT_IN_DOCUMENTS`.
+    *   Source document: "" (empty string as per instructions for NOT_IN_DOCUMENTS).
+    *   Section: "" (empty string).
+    *   Quote: "" (empty string).
+
+5.  **Construct JSON:**
+    *   Ensure valid JSON syntax.
+    *   Ensure no markdown code blocks (```json ... ```).
+    *   Ensure keys match exactly: "answer", "source_document", "section", "quote".
+
+6.  **Final Check:**
+    *   Did I miss anything? Scanned `01_brochure.md` again. Item 2 mentions material changes but no revenue stats. Item 5 is fees, not total revenue. Item 7 is client types.
+    *   Scanned `02_compliance_manual.md`. No financial stats.
+    *   Conclusion: Information is definitely not present.
+    *

@@ -1,0 +1,42 @@
+{
+ "task": "t3",
+ "model": "gemma4:31b-it-q4_K_M",
+ "items": {
+  "t3_f01.q01": {
+   "units": [
+    {
+     "uid": "q01",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "question",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Ms. Tennick owns 46% and Mr. Arlow owns 34% of the Firm's membership interests.",
+     "expected": "Margaret L. Tennick owns 46% and Daniel R. Arlow owns 34% of the membership interests; the remaining 20% is held by Tennick Arlow Employee Holdings, LLC, owned by nine senior employees, none with an indirect interest of 5% or more.",
+     "extra": {
+      "answerable": true,
+      "abstained": false,
+      "cited_doc_ok": true,
+      "gold_doc_retrieved": true,
+      "quote": "Ms. Tennick owns 46% of the Firm's membership interests and Mr. Arlow owns 34%."
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "t3_f01:01_brochure.md",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 38.74,
+    "prompt_tokens": 1970,
+    "output_tokens": 109,
+    "output_tokens_per_sec": 3.2,
+    "prompt_tokens_per_sec": 468.0,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11379
+   }
+  }
+ }
+}

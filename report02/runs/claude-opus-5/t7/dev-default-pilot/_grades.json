@@ -1,0 +1,294 @@
+{
+ "task": "t7",
+ "model": "claude-opus-5",
+ "items": {
+  "t7_p01": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C2",
+     "hallucination": false,
+     "got": "",
+     "expected": "Dividend Growth Equity: 14.62% over one year, 12.07% over five years and 11.84% over ten years, annualized, for periods ended December 31, 2025, gross of fees.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "planted",
+     "error_kind": "missed",
+     "trap": "C3",
+     "hallucination": false,
+     "got": "",
+     "expected": "Since its April 1, 2009 inception through December 31, 2025, the Intermediate Tax-Exempt Composite returned 3.28% annualized gross of fees and 2.76% annualized net of fees.",
+     "extra": {
+      "category_match": false
+     }
+    },
+    {
+     "uid": "p3",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C7",
+     "hallucination": false,
+     "got": "Named to the Penwarden Adviser Review list of Top 50 Independent Advisers in the Mid-Atlantic",
+     "expected": "Named to the Penwarden Adviser Review list of Top 50 Independent Advisers in the Mid-Atlantic, Ardwell & Tamsett has served Virginia families for more than two decades.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "flag_01",
+     "score": 0.0,
+     "verdict": "UNPLANTED_FLAG",
+     "kind": "extra_flag",
+     "error_kind": "unplanted",
+     "trap": "none",
+     "hallucination": true,
+     "got": "Dividend Growth Equity: 11.84% average annual return over the ten years ended December 31, 2025, gross of fees.",
+     "expected": "",
+     "extra": {
+      "category": "C2",
+      "reason": "The page header shows gross performance alone in headline type, and the net figure (10.72%) appears only later in body text, so net is not shown with at least equal prominence.",
+      "quote_grounded": false,
+      "needs_adjudication": true
+     }
+    },
+    {
+     "uid": "flag_03",
+     "score": 0.0,
+     "verdict": "UNPLANTED_FLAG",
+     "kind": "extra_flag",
+     "error_kind": "unplanted",
+     "trap": "none",
+     "hallucination": true,
+     "got": "Over the three years ended December 31, 2025, the Intermediate Tax-Exempt Composite returned 3.42% annualized gross of fees and 2.90% net of fees, and 3.28% gross and 2.76% net annualized since its April 1, 2009 inception.",
+     "expected": "",
+     "extra": {
+      "category": "C3",
+      "reason": "This composite has more than ten years of history but shows a three-year period instead of the required 1-, 5- and 10-year results, and that window happens to leave out its disclosed 2022 loss.",
+      "quote_grounded": true,
+      "needs_adjudication": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 3,
+   "group": "t7_p01",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 21.26,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 3228,
+    "output_tokens": 1782,
+    "thinking_tokens": 1399,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t7_p02": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C6",
+     "hallucination": false,
+     "got": "Capital preservation comes first: the Fund has never finished a calendar year in negative territory, through the 2018 selloff, the 2020 drawdown and the 2022 rate shock.",
+     "expected": "Capital preservation comes first: the Fund has never finished a calendar year in negative territory, through the 2018 selloff, the 2020 drawdown and the 2022 rate shock.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C4",
+     "hallucination": false,
+     "got": "The last restructuring cycle shows what the strategy can do: from the March 23, 2020 market low through June 30, 2021, the Fund returned 71.4% net of fees.",
+     "expected": "The last restructuring cycle shows what the strategy can do: from the March 23, 2020 market low through June 30, 2021, the Fund returned 71.4% net of fees.",
+     "extra": {
+      "category_match": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 2,
+   "group": "t7_p02",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 34.05,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 3458,
+    "output_tokens": 2119,
+    "thinking_tokens": 1798,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t7_p03": {
+   "units": [],
+   "parse_problems": [],
+   "n_flags": 0,
+   "group": "t7_p03",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 71.64,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 3071,
+    "output_tokens": 541,
+    "thinking_tokens": 532,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t7_p04": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C1",
+     "hallucination": false,
+     "got": "\"Dana took a shoebox of statements from four different firms and turned it into one plan we finally understand. Hiring her team was the best financial decision we have made in retirement.\"",
+     "expected": "A client couple let me share their note from last week: \"Dana took a shoebox of statements from four different firms and turned it into one plan we finally understand. Hiring her team was the best financial decision we have made in retirement.\"",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C8",
+     "hallucination": false,
+     "got": "Three of the positions we added to client portfolios in early 2025 finished the year up 112%, 74% and 58%: Quillon Grid Systems, Tamsworth Biologics and Arnbeck Freight.",
+     "expected": "Three of the positions we added to client portfolios in early 2025 finished the year up 112%, 74% and 58%: Quillon Grid Systems, Tamsworth Biologics and Arnbeck Freight.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p3",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C6",
+     "hallucination": false,
+     "got": "Our tax-loss harvesting program adds at least 1.5% a year to every client's after-tax return, in up markets and down.",
+     "expected": "Our tax-loss harvesting program adds at least 1.5% a year to every client's after-tax return, in up markets and down.",
+     "extra": {
+      "category_match": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 3,
+   "group": "t7_p04",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 12.82,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 2963,
+    "output_tokens": 1017,
+    "thinking_tokens": 645,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t7_p05": {
+   "units": [
+    {
+     "uid": "p1",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C5",
+     "hallucination": false,
+     "got": "A couple who retired on January 1, 2000 with $1,000,000 and followed the Three-Bucket Income Plan we use today could have withdrawn $50,000 a year, raised it each year for inflation, and still had $1.4 million at the end of 2025.",
+     "expected": "A couple who retired on January 1, 2000 with $1,000,000 and followed the Three-Bucket Income Plan we use today could have withdrawn $35,000 a year, raised it each year for inflation, and still had $1.4 million at the end of 2025.",
+     "extra": {
+      "category_match": true
+     }
+    },
+    {
+     "uid": "p2",
+     "score": 1.0,
+     "verdict": "FLAGGED",
+     "kind": "planted",
+     "error_kind": null,
+     "trap": "C9",
+     "hallucination": false,
+     "got": "A ladder of individual bonds, each held until it matures, gives you a predictable schedule of income, lets you match maturities to the years you will need the money and takes the guesswork out of retirement spending.",
+     "expected": "A ladder of individual bonds, each held until it matures, gives you a predictable schedule of income, lets you match maturities to the years you will need the money and takes the guesswork out of retirement spending.",
+     "extra": {
+      "category_match": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_flags": 2,
+   "group": "t7_p05",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 12.42,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 2846,
+    "output_tokens": 1033,
+    "thinking_tokens": 678,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  }
+ }
+}

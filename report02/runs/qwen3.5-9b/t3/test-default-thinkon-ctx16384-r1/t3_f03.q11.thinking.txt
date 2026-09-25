@@ -1,0 +1,45 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Who is the firm's Chief Compliance Officer, and to whom does the CCO report?"
+    *   Required Information: Name of CCO, Reporting line (to whom).
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "Chief Compliance Officer", "CCO", "report", "reports".
+
+4.  **Evaluate Document Content:**
+    *   `02_compliance_manual.md`:
+        *   Section: SECTION 2. CHIEF COMPLIANCE OFFICER > 2.1 Designation
+        *   Text: "The Management Committee has designated Theresa L. Vannoy as Chief Compliance Officer of the Firm (the "CCO"). The CCO reports directly to the Managing Partner..."
+    *   `03_valuation_policy.md`:
+        *   Section: SECTION 8. INDEPENDENT REVIEW > 8.2 Annual Policy Review
+        *   Text: "...with the participation of the Chief Compliance Officer..." (Doesn't specify name or reporting line).
+
+5.  **Synthesize Answer:**
+    *   Name: Theresa L. Vannoy.
+    *   Reports to: Managing Partner.
+    *   Source Document: `02_compliance_manual.md`.
+    *   Section: SECTION 2. CHIEF COMPLIANCE OFFICER > 2.1 Designation (or just "SECTION 2. CHIEF COMPLIANCE OFFICER" depending on how sections are labeled, but the text says "Section: SECTION 2. CHIEF COMPLIANCE OFFICER > 2.1 Designation"). I should use the specific section label provided in the header of the document snippet. The snippet shows `<<< 02_compliance_manual.md | Compliance Policies and Procedures Manual, dated January 15, 2026 | Section: SECTION 2. CHIEF COMPLIANCE OFFICER > 2.1 Designation >>>`.
+    *   Quote: "The Management Committee has designated Theresa L. Vannoy as Chief Compliance Officer of the Firm (the "CCO"). The CCO reports directly to the Managing Partner and has unrestricted access to the Management Committee."
+
+6.  **Format Output:**
+    *   JSON structure.
+    *   Keys: "answer", "source_document", "section", "quote".
+    *   Ensure no markdown code blocks (```json ... ```).
+    *   Ensure verbatim quote.
+
+7.  **Refine Quote:**
+    *   The relevant sentence is: "The Management Committee has designated Theresa L. Vannoy as Chief Compliance Officer of the Firm (the "CCO"). The CCO reports directly to the Managing Partner and has unrestricted access to the Management Committee

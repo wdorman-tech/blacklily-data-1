@@ -1,0 +1,36 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Documents:**
+    *   `01_brochure.md`: Dated March 27, 2026.
+        *   Section: Item 7. Types of Clients > 7.2 Account Minimums. Text: "The minimum account size for a separate account is $100 million."
+        *   Section: Item 5. Fees and Compensation > 5.2 Separate Account Fee Schedules. Text: "Each separate account is subject to a minimum annual fee of $150,000."
+    *   `05_fee_schedule.md`: Dated January 1, 2026.
+        *   Section: SECTION 5. MINIMUMS > 5.1 Minimum Account Size. Text: "The minimum account size for a separate account is $100 million."
+        *   Section: SECTION 5. MINIMUMS > 5.2 Minimum Annual Fee. Text: "Each separate account is subject to a minimum annual fee of $150,000, billed in equal quarterly amounts and prorated for any partial year."
+
+3.  **Determine Superseding Status:**
+    *   `01_brochure.md` is dated March 27, 2026.
+    *   `05_fee_schedule.md` is dated January 1, 2026.
+    *   Rule 3: Later-dated documents supersede earlier ones.
+    *   Therefore, `01_brochure.md` (March 27, 2026) supersedes `05_fee_schedule.md` (January 1, 2026).
+    *   However, both documents contain the same information regarding minimum account size ($100 million) and minimum annual fee ($150,000). The brochure is more recent.
+    *   I should use the most recent document (`01_brochure.md`) for the citation to be accurate according to Rule 3 ("Later-dated documents supersede earlier ones... answer with the provision currently in effect").
+    *   Wait, let's check if there are differences.
+        *   Account Size: Brochure says "$100 million". Fee Schedule says "$100 million". Same.
+        *   Min Annual Fee: Brochure says "$150,000". Fee Schedule says "$150,000". Same.
+    *   Since the information is identical, I can cite either, but Rule 3 implies using the current provision. The brochure is later. I will use `01_brochure.md`.
+    *   Actually, looking closely at the text provided in the prompt:
+        *   `01_b

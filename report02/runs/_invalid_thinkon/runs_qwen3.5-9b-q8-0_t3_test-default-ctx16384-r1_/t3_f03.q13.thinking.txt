@@ -1,0 +1,40 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly "NOT_IN_DOCUMENTS".
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "What percentage of the firm's total annual revenue is attributable to its largest client family?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "revenue", "total annual revenue", "largest client family", "percentage", "%".
+    *   Document 1: `01_brochure.md` (Form ADV Part 2A, dated March 27, 2026).
+        *   Sections scanned: Item 2. Material Changes, Item 5. Fees and Compensation (5.1 Advisory Fee, 5.3 Minimum Fee), Item 7. Types of Clients (7.1 Clients, 7.2 Account Minimums), Item 11. Code of Ethics...
+        *   Content analysis: Discusses fee schedules (tiered rates), minimum fees ($150k), client types, custody, personnel changes. No mention of total revenue or breakdown by client family size/percentage.
+    *   Document 2: `02_compliance_manual.md` (Compliance Policies and Procedures Manual, dated January 15, 2026).
+        *   Sections scanned: SECTION 3. CODE OF ETHICS, SECTION 5. GIFTS AND ENTERTAINMENT.
+        *   Content analysis: Discusses fiduciary duty, gifts from clients, conflicts of interest. No mention of revenue or client concentration.
+
+3.  **Evaluate Findings:**
+    *   The documents provided describe fee structures, minimums, client types, compliance policies, and material changes.
+    *   None of the documents disclose financial performance data, total annual revenue, or the percentage of revenue attributable to specific clients (even the largest one).
+    *   This is a common limitation in public-facing brochures and compliance manuals; they rarely disclose concentration risk metrics like "percentage of revenue from top client" unless specifically asked for in a regulatory filing (like Form ADV Part 2A Item 5 or 10, but even then, it's usually about custody or conflicts, not revenue concentration).
+    *   Since the information is not present in the provided text, I must follow Rule 2: "If the documents do not answer the question... the answer is exactly NOT_IN_DOCUMENTS."
+
+4.  **Formulate Output:**
+    *   Answer: "NOT_IN_DOCUMENTS"
+    *   Source Document: "" (empty string as per rule for NOT_IN_DOCUMENTS)
+    *   Section: "" (empty string as per rule for NOT_IN_DOCUMENTS)
+    *   Quote: "" (empty string as per rule for NOT_IN_DOCUMENTS)
+
+5.  **Final Check:**
+    *   Does the JSON match the required schema? Yes.
+    *   Are there markdown fences? No.
+    *   Is the answer exactly "NOT_IN_DOCUMENTS

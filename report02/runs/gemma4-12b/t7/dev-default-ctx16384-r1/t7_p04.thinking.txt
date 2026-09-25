@@ -1,0 +1,74 @@
+*   Role: Marketing review analyst at an SEC-registered investment adviser.
+    *   Task: Review draft marketing materials against a specific checklist (C1-C9) based on Rule 206(4)-1.
+    *   Output: JSON object with "flags" (category, quote, reason).
+    *   Constraints:
+        *   Only flag items under C1-C9.
+        *   Quote must be verbatim.
+        *   Do not flag if the required disclosure is already present.
+        *   One flag per distinct issue.
+        *   No preamble, no markdown, just JSON.
+
+    *   C1: Testimonial/endorsement without disclosure of client status, compensation, and material conflict.
+    *   C2: Gross performance without net performance of equal prominence.
+    *   C3: Performance of a non-private fund portfolio without 1, 5, 10-year periods (or life of portfolio).
+    *   C4: Performance results not fair/balanced (e.g., cherry-picked window).
+    *   C5: Hypothetical/model/backtested/projected performance without criteria, assumptions, risks, and limitations.
+    *   C6: Material statement of fact untrue or unsubstantiable (absolute claims).
+    *   C7: Third-party rating/ranking without date, period, source, and disclosure of compensation.
+    *   C8: Performance of selected positions/subset without the total portfolio.
+    *   C9: Benefits described without fair/balanced treatment of risks/limitations.
+
+    *   *Post 1:*
+        *   Quote: "A client couple let me share their note from last week: 'Dana took a shoebox of statements from four different firms and turned it into one plan we finally understand. Hiring her team was the best financial decision we have made in retirement.'"
+        *   Analysis: This is a testimonial. Does it have "clear and prominent disclosure of whether the person is a current client, whether they were compensated, and any material conflict of interest"?
+        *   Draft says: "A client couple let me share their note". It identifies them as a "client couple", but does it state if they were compensated or if there's a conflict? The prompt says "clear and prominent disclosure of whether the person is a current client, whether they were compensated, and any material conflict of interest."
+        *   The draft says "A client couple". This identifies them as a client. However, it does *not* mention compensation or conflict of interest.
+        *   Wait, Rule 206(4)-1 requires all three: 1. Current client status, 2. Compensation, 3. Material conflict.
+        *   The draft only addresses "client" status. It misses "compensated" and "conflict".
+        *   *Decision:* Flag C1.
+
+    *   *Post 2:*
+        *   Quote: "Three of the positions we added to client portfolios in early 2025 finished the year up 112%, 74% and 58%: Quillon Grid Systems, Tamsworth Biologics and Arnbeck Freight."
+        *   Analysis: This is performance of a subset of a portfolio (specific stocks) without the performance of the total portfolio.
+        *   Rule C8: "Performance of selected positions or a subset of a portfolio without the performance of the total portfolio it was taken from."
+        *   The text lists the performance of three specific stocks but does not mention the performance of the total portfolio they were part of.
+        *   *Decision:* Flag C8.
+
+    *   *Post 3:*
+        *   Quote: "Our tax-loss harvesting program adds at least 1.5% a year to every client's after-tax return, in up markets and down."
+        *   Analysis: This is a benefit (tax-loss harvesting) with a specific claim of "at least 1.5%".
+        *   Rule C9: "Benefits described without fair and balanced treatment of the material risks or limitations that go with them."
+        *   The text follows up with "A few things worth knowing" and lists limitations (only taxable accounts, not IRAs, etc.). However, the "at least 1.5%" is a very specific, potentially unsubstantiable claim or a "guaranteed" sounding result.
+        *   Wait, is "at least 1.5%" a "material statement of fact" (C6) or a "benefit without risk" (C9)?
+        *   Actually, the text *does* list some limitations (only taxable, not IRAs, etc.). But does it balance the "at least 1.5%" claim? The claim "at least 1.5%... in up markets and down" is a very strong claim.
+        *   Let's look at C6: "A material statement of fact that is untrue or that the adviser could not substantiate (absolute claims such as never losing money, guaranteed results...)"
+        *   "at least 1.5% a year... in up markets and down" sounds like a guaranteed result or a claim that is hard to substantiate.
+        *   However, C9 is specifically about "Benefits described without fair and balanced treatment of the material risks or limitations".
+        *   Let's look at the text again. It says "at least 1.5% a year... in up markets and down." Then it lists some technical limitations. But it doesn't really address the risk that the 1.5% might not be achieved or the volatility of the underlying assets.
+        *   Actually, looking at C6: "absolute claims such as... guaranteed results". "At least 1.5%... in up markets and down" is a very strong claim.
+        *   Let's re-evaluate C9. Does it have "fair and balanced treatment"? It lists some limitations, but the "at least 1.5%" is a very specific performance claim.
+        *   Let's check C8 again. "Three of the positions... finished the year up 112%, 74% and 58%". This is definitely C8 because it's a subset of a portfolio.
+
+    *   *Post 4:*
+        *   Quote: "In February 2026, Brenlow Adviser Quarterly named Fenwright Ostler to its list of 40 Independent Firms to Watch in the Mountain West, based on firm data for the period January 1 through December 31, 2025. The list is created and tabulated by Brenlow Adviser Quarterly, which is not affiliated with our firm. Brenlow's criteria are growth in clients served, team credentials and regulatory history; the list does not reflect client experience or investment returns. We paid Brenlow a $2,400 licensing fee to use the designation in our marketing; there is no fee to be considered for the list. It is not a guarantee of future results."
+        *   Analysis: This is a third-party rating/ranking.
+        *   Rule C7: "A third-party rating or ranking without the date it was given, the period it covers, who gave it, and whether compensation was paid for it."
+        *   The text includes:
+            *   Date: "In February 2026"
+            *   Period: "January 1 through December 31, 2025"
+            *   Who gave it: "Brenlow Adviser Quarterly"
+            *   Compensation: "We paid Brenlow a $2,400 licensing fee"
+        *   Since all requirements for C7 are met, do not flag.
+
+    *   *Re-evaluating Post 3:*
+        *   "Our tax-loss harvesting program adds at least 1.5% a year to every client's after-tax return, in up markets and down."
+        *   Is this a "material statement of fact" (C6)? "at least 1.5%... in up markets and down" is a very specific, almost guaranteed-sounding claim.
+        *   Is it a "benefit" (C9)? Yes. Does it have "fair and balanced treatment of the material risks or limitations"? It lists some limitations (only taxable, not IRAs, etc.), but it doesn't really address the risk that the 1.5% might not be achieved or the volatility.
+        *   However, compared to the other clear violations (C1 and C8), C9 is a bit more subjective. But "at least 1.5%... in up markets and down" is a very strong claim.
+        *   Let's look at C6 again: "absolute claims such as... guaranteed results". "At least 1.5%... in up markets and down" is very close to a guaranteed result.
+        *   Wait, I should check if there are any other issues.
+
+    *   *Re-evaluating Post 1:*
+        *   "A client couple let me share their note from last week: 'Dana took a shoebox of statements from four different firms and turned it into one plan we finally understand. Hiring her team was the best financial decision we have made in retirement.'"
+        *   C1 requires: 1. Current client, 2. Compensation, 3. Conflict.
+        *   The text says "A client couple". This identifies them

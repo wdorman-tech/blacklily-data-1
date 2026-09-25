@@ -1,0 +1,37 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   "Identify the qualified custodian(s) holding client assets and the independent public accountant that performs the firm's surprise custody examination."
+    *   Two pieces of information needed:
+        1.  Qualified custodian(s).
+        2.  Independent public accountant for surprise examination.
+
+3.  **Scan Documents for Information:**
+
+    *   **Document 1:** `01_brochure.md` (Form ADV Part 2A: Firm Brochure, dated March 27, 2026)
+        *   *Section Item 12. Brokerage Practices > 12.1 Selection and Recommendation of Custodians:* Mentions "Norrell Bay Trust & Custody, N.A." and "Corvedale Clay Securities, LLC".
+        *   *Section Item 15. Custody > 15.1 Qualified Custodians:* "Client assets are held by Norrell Bay Trust & Custody, N.A., a national banking association, which serves as the qualified custodian for substantially all client accounts." Also mentions Corvedale Clay Securities, LLC for limited accounts.
+        *   *Section Item 15. Custody > 15.3 Surprise Examination:* "The Firm engages Aldwick Brennan LLP, an independent public accountant, to conduct an annual surprise examination..."
+
+    *   **Document 2:** `02_compliance_manual.md` (Compliance Policies and Procedures Manual, dated January 15, 2026)
+        *   *Section SECTION 15. ANNUAL REVIEW > 15.2 Conduct and Reporting:* Mentions CCO conducts annual review with Hethersett Compliance Advisors, LLC. This is not the surprise examination accountant.
+
+4.  **Synthesize the Answer:**
+    *   The question asks for "qualified custodian(s)" and "independent public accountant".
+    *   From `01_brochure.md`, Section Item 15. Custody > 15.1 Qualified Custodians: "Norrell Bay Trust & Custody, N.A." is the qualified custodian for substantially all client accounts. Corvedale Clay Securities, LLC is also mentioned as holding a limited number of accounts.
+    *   From `01_brochure.md`, Section Item 15. Custody > 15.3 Surprise Examination: "Aldwick Brennan LLP" is the independent public accountant.
+    *   The question asks to identify them. I need to combine this into a concise answer within the JSON structure. Since the instructions say "Keep answers short and specific", I should extract the relevant names.
+    *   However, the constraint says "Cite the document file name and the section where the answer appears". If the

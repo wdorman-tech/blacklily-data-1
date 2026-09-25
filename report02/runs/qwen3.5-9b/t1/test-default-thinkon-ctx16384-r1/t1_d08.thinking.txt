@@ -1,0 +1,31 @@
+The user wants me to extract key investment terms from the provided private fund offering document and return them as a JSON object. I need to follow strict rules about accuracy, citing sources, and handling amendments/supplements.
+
+Let me go through each field systematically:
+
+1. **fund_name**: "Tarrenfield Oakes Real Estate Partners III, L.P." - This appears in the title and Section 1.1
+2. **fund_domicile**: Delaware - Section 1.1 says "Delaware limited partnership"
+3. **fund_structure**: Closed-end (not redeemable), single stand-alone vehicle (not master-feeder) - Section 1.1
+4. **management_fee**: Multiple tiers - Section 1.8 and 4.1 detail this:
+   - During Investment Period: 1.50% per annum of Capital Commitments
+   - After Investment Period: 1.50% per annum of Invested Equity
+   - Large Commitment Limited Partners ($50M+): 1.25% per annum on same bases
+5. **performance_fee**: Section 1.9 and 5.2 describe the waterfall with catch-up and carried interest at 20%
+6. **hurdle_rate**: 9% per annum preferred return, hard hurdle - Section 1.9 and 5.3
+7. **high_water_mark**: NOT_APPLICABLE - Section 5.4 says "no high-water mark or loss carryforward applies"
+8. **minimum_initial_investment**: $5,000,000 - Section 1.4
+9. **lockup_period**: NOT_APPLICABLE - Section 6.3 says no redemption right, no lock-up applies
+10. **redemption_frequency**: NOT_APPLICABLE - Section 6.3
+11. **redemption_notice_days**: NOT_APPLICABLE - Section 6.3
+12. **gate_provision**: NOT_APPLICABLE - Section 6.3
+13. **key_man_provision**: Garrett Vashon and Ines Kalloway - Section 7.1
+14. **gp_commitment**: Greater of $7,500,000 or 2.0% of LP commitments - Section 1.5 and 13.2
+15. **fund_term**: Eighth anniversary with two one-year extensions (max tenth anniversary) - Section 1.7 and 7.4
+16. **auditor**: Lindenhall Crewe LLP (current, per Section 13.4 which supersedes Appendix A)
+
+
+17. **administrator**: Ostrander Pell Fund Services, LLC - Section 9.1
+18. **prime_broker**: NOT_FOUND - No prime broker mentioned in document
+19. **legal_counsel**: Haverill Quint LLP - Section 9.3 and 8
+20. **mfn_election**: Yes, for LPs with $25M+ commitment - Section 7.5
+
+I need to verify each field against the actual document text before finalizing my responses.

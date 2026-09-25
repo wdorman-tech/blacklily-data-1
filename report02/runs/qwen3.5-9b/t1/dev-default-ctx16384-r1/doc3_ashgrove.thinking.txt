@@ -1,0 +1,45 @@
+The user wants me to extract key investment terms from the provided fund offering document into a structured JSON format. I need to follow strict rules about accuracy, citing text verbatim, and handling amendments/supplements correctly.
+
+Let me go through each field systematically:
+
+1. **fund_name**: "Ashgrove Special Situations Fund, L.P." - This appears in the title of both documents.
+
+2. **fund_domicile**: "Delaware" - From Section 1.1: "organized under the laws of the State of Delaware"
+
+3. **fund_structure**: Open-end (redeemable) based on redemption provisions. Not a master-feeder (Section 1.1 says "does not operate as a feeder into a master fund"). Need to check if there's any closed-end language - Section 5 shows redemptions are allowed, so it's open-end.
+
+4. **management_fee**: Original was 2.00% (Section 4.1), but Supplement S-2 amends this to 1.60% effective January 1, 2025. Both classes have identical rates. Need to report the amended value: "1.60% of net asset value"
+
+5. **performance_fee**: Original Section 4.2 had Class F at 15% and Class I at 20%. Supplement S-3 amends Class I to have a preferred return but keeps the 20% rate. Class F remains at 15%. Need to report both classes with their respective rates.
+
+6. **hurdle_rate**: Original Section 4.3 said no hurdle. Supplement S-3 adds a preferred return of 4.00% per annum for Class I Interests only, described as "soft hurdle with full catch-up". Class F has no hurdle.
+
+7. **high_water_mark**: Section 4.4 states "perpetual high water mark" on a per-Limited-Partner basis. It does not reset.
+
+8. **minimum_initial_investment**: Section 3.1 says $1,000,000 for Class I. Supplement S-6 confirms this remains unchanged.
+
+9. **lockup_period**: Section 5.1 describes a soft lock-up (not hard lock-up) with 2.00% early redemption charge within 18 months. No hard lock-up exists.
+
+10. **redemption_frequency**: Section 5.2 says "last business day of each calendar quarter" - quarterly.
+
+11. **redemption_notice_days**: Original was 60 days (Section 5.3), but Supplement S-4 amends to 45 calendar days effective January 1, 2025.
+
+12. **gate_provision**: Appendix A shows fund-level gate at 25% of NAV. Investor-level gate is "None."
+
+13. **key_man_provision**: Section 6.3 explicitly states "the Partnership does not provide any key person provision, key man clause, or associated redemption right."
+
+14. **gp_commitment**: Section 6.4 states "The General Partner has not committed, and does not commit, to maintain any minimum investment in the Partnership."
+
+15. **fund_term**: Section 7.1 says "perpetual term"
+
+16. **auditor**: Original was Ardmore Pike & Levinson LLP (Section 9.2), but Supplement S-5 amends this to Wexley Sandoval Partners LLP effective for fiscal year ending December 31, 2024.
+
+17. **administrator**: Section 9.1 says "Kestrel Harbour Fund Administration, LLC"
+
+18. **prime_broker**: Not mentioned anywhere in the document - NOT_FOUND
+
+19. **legal_counsel**: Section 9.3 and Appendix B say "Farrow Tindall Greaves LLP"
+
+20. **mfn_election**: Section 8 says "The Partnership does not offer a most favored nation election."
+
+Let me verify each citation is accurate and quotes are verbatim from the document.

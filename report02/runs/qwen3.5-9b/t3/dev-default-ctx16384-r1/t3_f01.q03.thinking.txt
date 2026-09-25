@@ -1,0 +1,47 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraint 1: Answer only from the documents provided.
+    *   Constraint 2: If documents don't answer, return exactly `NOT_IN_DOCUMENTS`.
+    *   Constraint 3: Later-dated documents supersede earlier ones (not relevant here as dates seem consistent or not conflicting on this specific topic).
+    *   Constraint 4: Keep answers short and specific.
+    *   Constraint 5: Cite document file name and section.
+    *   Constraint 6: Quote supporting text verbatim.
+    *   Output Format: JSON object with keys `answer`, `source_document`, `section`, `quote`. No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "What errors and omissions (professional liability) and directors and officers insurance coverage does the firm carry, and what are the policy limits?"
+    *   Key Information Needed: Type of insurance (E&O, D&O), Policy Limits.
+
+3.  **Scan the Documents:**
+    *   `01_brochure.md`: Contains Item 3 Table of Contents, Item 4 Advisory Business (Assets/Personnel). No mention of insurance coverage details or limits.
+    *   `02_compliance_manual.md`:
+        *   Section 1: Purpose...
+        *   Section 2: CCO Responsibilities...
+        *   Section 3: Code of Ethics...
+        *   Section 11: Cybersecurity and Information Security > 11.7 Cyber Insurance. Mentions "The Firm maintains a cyber liability insurance policy." Does not mention E&O or D&O limits.
+    *   `04_business_continuity_plan.md`:
+        *   Section 10: Cyber Incident Response > 10.1 Incident Response Team. Mentions "Firm's outside counsel, Garrow Whitcombe LLP" and "cyber liability insurance policy". No mention of E&O or D&O limits.
+
+4.  **Evaluate Findings:**
+    *   The documents mention "cyber liability insurance policy" (`02_compliance_manual.md`, Section 11.7) and reference it in the BCP (`04_business_continuity_plan.md`, Section 10.1).
+    *   The question asks about "errors and omissions (professional liability) and directors and officers insurance coverage".
+    *   None of the provided documents mention Errors & Omissions (E&O) or Directors & Officers (D&O) insurance, nor do they specify policy limits for any insurance.
+    *   Therefore, the specific information requested is not in the documents.
+
+5.  **Formulate the Answer:**
+    *   According to Rule 2: "If the documents do not answer the question... the answer is exactly NOT_IN_DOCUMENTS."
+    *   Source document: "" (empty string as per instruction for NOT_IN_DOCUMENTS case).
+    *   Section: "" (empty string).
+    *   Quote: "" (empty string).
+
+6.  **Construct JSON:**
+    *   `answer`: "NOT_IN_DOCUMENTS"
+    *   `source_document`: ""
+    *   `section`: ""
+    *   `quote`: ""
+
+7.  **Final Review:**
+    *   Does the text support E

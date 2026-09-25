@@ -1,0 +1,38 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question using *only* the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: Identify the Firm's principal owners and the percentage of the Firm each owns.
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "owners", "ownership", "percentage", "%", "interests", "principal owners".
+    *   Document 1: `01_brochure.md` (Form ADV Part 2A).
+        *   Section: Item 4. Advisory Business > 4.1 Ownership and Management.
+        *   Text: "Colette Varnum, Chief Executive Officer, owns 41% of the Firm's membership interests; Tobias Aldren, Chief Investment Officer, owns 34%; and Wrenholt Pryce Partners Pool LLC, a vehicle through which 14 employees hold economic interests in the Firm, owns the remaining 25%. Ms. Varnum and Mr. Aldren co-founded the Firm and are its control persons."
+    *   Document 2: `04_business_continuity_plan.md` (Business Continuity Plan).
+        *   Section: SECTION 1. PLAN OWNERSHIP AND GOVERNANCE > 1.1 Plan Owner.
+        *   Text: "The Chief Operating Officer, Dmitri Halloway, is the owner of this Plan..." (This refers to the BCP plan, not the Firm's ownership).
+
+3.  **Evaluate Findings:**
+    *   The question asks for the Firm's principal owners and their percentages.
+    *   `01_brochure.md`, Section: Item 4. Advisory Business > 4.1 Ownership and Management contains this information.
+    *   It lists Colette Varnum (41%), Tobias Aldren (34%), and Wrenholt Pryce Partners Pool LLC (25%).
+    *   It also mentions they are control persons ("principal owners" usually maps to "control persons" or ownership interests in this context). The text explicitly states who owns what percentage.
+
+4.  **Draft the Answer:**
+    *   Answer: Colette Varnum owns 41%, Tobias Aldren owns 34%, and Wrenholt Pryce Partners Pool LLC owns 25%.
+    *   Source Document: `01_brochure.md`
+    *   Section: Item 4. Advisory Business > 4.1 Ownership and Management
+    *   Quote: "Colette Varnum, Chief Executive Officer, owns 41% of the Firm's membership interests; Tobias Aldren, Chief Investment Officer, owns 34%; and Wrenholt Pryce Partners Pool LLC, a vehicle through which 14 employees hold economic interests in the Firm, owns the remaining 25%. Ms. Varnum and Mr. Aldren co-founded the Firm and are its control persons."
+
+5.  **Format as JSON:**
+    *   Ensure no

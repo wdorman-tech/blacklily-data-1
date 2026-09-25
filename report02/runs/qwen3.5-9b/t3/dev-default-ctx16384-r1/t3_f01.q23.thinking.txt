@@ -1,0 +1,47 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (though here dates seem consistent or close).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Who conducts the firm's external penetration testing, and how often is it performed?"
+    *   Key information needed:
+        *   Entity conducting external penetration testing.
+        *   Frequency of external penetration testing.
+
+3.  **Scan the Documents:**
+
+    *   `01_brochure.md`: Discusses custody, trustees, surprise examinations (Pemberline & Rusk LLP), Form ADV-E filing. No mention of external penetration testing frequency or vendor.
+    *   `02_compliance_manual.md`:
+        *   Section 2.4: Compliance Calendar, mentions "custody examinations".
+        *   Section 11. CYBERSECURITY AND INFORMATION SECURITY > 11.4 Testing: "The Firm engages Tallowmere Security Partners to conduct an external penetration test of the Firm's network and client-facing applications annually."
+        *   Section 15. ANNUAL REVIEW...: Mentions annual review by CCO.
+    *   `03_valuation_policy.md`: Discusses valuation reviews (CCO annually, Wraxall Dunmore Advisory every two years). No mention of penetration testing.
+    *   `04_business_continuity_plan.md`: Discusses BCDR testing frequency (at least annually), most recent test date, next test date. No mention of external penetration testing vendor or specific frequency for that specific test type (though it mentions "Plan is tested at least annually").
+
+4.  **Extract Information:**
+    *   Document: `02_compliance_manual.md`
+    *   Section: `SECTION 11. CYBERSECURITY AND INFORMATION SECURITY > 11.4 Testing`
+    *   Text: "The Firm engages Tallowmere Security Partners to conduct an external penetration test of the Firm's network and client-facing applications annually."
+    *   Who: Tallowmere Security Partners.
+    *   How often: Annually.
+
+5.  **Verify Constraints:**
+    *   Does the document answer both parts? Yes (Who + Frequency).
+    *   Is it verbatim? Yes.
+    *   Is the citation correct? Yes (`02_compliance_manual.md`, `SECTION 11. CYBERSECURITY AND INFORMATION SECURITY > 11.4 Testing`).
+    *   JSON format? Yes.
+    *   No markdown? Yes.
+
+6.  **Construct JSON:**
+    *   `answer`: "Tallowmere Security Partners conduct the external penetration testing annually." (Need to make sure it's specific and short). Let's stick close to the text but answer the question directly. The instruction says "Keep answers short and specific: the number, name, frequency, threshold or rule that was asked for

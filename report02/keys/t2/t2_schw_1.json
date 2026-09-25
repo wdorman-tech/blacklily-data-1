@@ -1,0 +1,287 @@
+{
+ "pair_id": "t2_schw_1",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "The Charles Schwab Corporation",
+ "ticker": "SCHW",
+ "split": "test",
+ "prior": {
+  "fiscal_year_end": "2024-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/316709/000031670925000010/schw-20241231.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2025-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/316709/000031670926000009/schw-20251231.htm"
+ },
+ "words": 6504,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "modified",
+   "prior_heading": "Developments in the business, economic, and geopolitical environment could negatively impact our business.",
+   "current_heading": "Developments in the business, economic, and geopolitical environment could negatively impact our business.",
+   "similarity": 0.946,
+   "diff": [
+    "insert: [] -> [Market-driven changes, such as declines in equity markets, can also reduce client demand for margin lending, which is a significant source of net interest revenue.]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds a sentence that market-driven changes such as equity market declines can reduce client demand for margin lending, which is newly described as a significant source of net interest revenue.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: a new exposure (equity-market-driven decline in margin lending demand) and a new revenue dependency (margin lending as a significant source of net interest revenue) are disclosed."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: a new exposure (dependence of net interest revenue on margin lending demand) is disclosed; the rest of the section is unchanged."
+    }
+   }
+  },
+  {
+   "aid": "a02",
+   "status": "modified",
+   "prior_heading": "A significant change in client cash allocations could negatively impact our income.",
+   "current_heading": "A significant change in client cash allocations could negatively impact our income.",
+   "similarity": 0.923,
+   "diff": [
+    "replace: [We rely heavily on client] -> [Client]",
+    "replace: [to generate] -> [are a significant funding source for the generation of the Company’s]",
+    "replace: [As] -> [For example, as]",
+    "delete: [the] -> []",
+    "replace: [facilitate] -> [support]",
+    "insert: [] -> [extensively]",
+    "delete: [supplemental] -> []"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The Company now says it extensively utilized higher-cost funding sources to support the 2022 and 2023 client cash reallocation (previously it utilized higher-cost supplemental funding sources), and client cash is recast from something the Company relies heavily on to generate revenue into a significant funding source for revenue.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 3: the severity of the realized impact is escalated by adding 'extensively' and dropping 'supplemental' from the description of higher-cost funding use; the other edits ('For example,' and 'facilitate' to 'support') are stylistic."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: adding 'extensively' escalates the characterization of the realized reliance on higher-cost funding and dropping 'supplemental' changes how that funding is characterized, so the rewording is not identical in meaning; the other edits ('For example', 'support' for 'facilitate') are stylistic."
+    }
+   }
+  },
+  {
+   "aid": "a03",
+   "status": "modified",
+   "prior_heading": "Significant interest rate changes could affect our profitability.",
+   "current_heading": "Significant interest rate changes could affect our profitability.",
+   "similarity": 0.646,
+   "diff": [
+    "replace: [mortgages.] -> [margin loans, mortgages, and PALs.]",
+    "delete: [which is earned primarily] -> []",
+    "replace: [increase if market conditions or the] -> [increase. The]",
+    "replace: [induces] -> [may induce]",
+    "insert: [] -> [we may need to]",
+    "insert: [] -> [as we experienced in recent years. In such situations,]",
+    "delete: [which can reduce] -> []",
+    "replace: [revenue, as we experienced in recent years.] -> [revenue may be reduced.]",
+    "insert: [] -> [securities portfolios. Increased unrealized losses on investment securities or other assets on our balance sheet can reduce market or client confidence in us, which could limit our ability to attract new client assets and accounts or result in the transfer of client assets and accounts from the Comp]",
+    "replace: [12] -> [11]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The rate-sensitive interest-earning assets expand from investment securities and mortgages to investment securities plus margin loans, mortgages, and PALs, and market conditions is dropped as a stated driver of higher deposit rates, leaving only the competitive environment.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2: new products (margin loans and PALs) are referenced as rate-exposed assets, plus criterion 3 narrowing of the funding-cost driver; the current-only text after 'unrealized losses on our investment' (confidence risk and the IDA commitment paragraph) is not a change, because the prior excerpt is cut mid-sentence at a page break and the prior-year source filing contains that text too."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criteria 1 and 3: margin loans and PALs are newly disclosed as rate-sensitive assets and the 'primarily' qualifier and the market-conditions driver are removed; the unrealized-loss confidence sentence and the IDA commitments paragraph visible only in the current excerpt also appear in the full prior filing, so their absence from the prior excerpt is a page-break cut, not a change."
+    }
+   }
+  },
+  {
+   "aid": "a04",
+   "status": "modified",
+   "prior_heading": "Problems encountered by other financial institutions and responsive measures to manage such problems could adversely affect financial markets generally, could have an adverse effect on our financial position or results of operations, and have indirect adverse effects on us.",
+   "current_heading": "Problems encountered by other financial institutions and responsive measures to manage such problems could have direct adverse effects on financial markets generally and our financial position or results of operations, as well as indirect adverse effects on us.",
+   "similarity": 0.95,
+   "diff": [
+    "replace: [adversely affect] -> [have direct adverse effects on]",
+    "replace: [generally, could have an adverse effect on] -> [generally and]",
+    "replace: [and have] -> [as well as]",
+    "insert: [] -> [custody,]",
+    "replace: [costs] -> [costs,]",
+    "insert: [] -> [potential future bank failures or other similar events]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Custody is added to the relationships that interconnect financial institutions, and further FDIC premium increases or special assessments are now tied to potential future bank failures or other similar events rather than only to the cost of resolving the 2023 bank failures (heading reworded to 'direct adverse effects').",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 3: the scope of both the contagion channel (custody) and the FDIC assessment trigger (future bank failures) is widened; the heading rewording is otherwise of equivalent meaning."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: the scope of the FDIC assessment risk widens to future bank failures and the interconnection channels widen to include custody; the heading rewording ('direct adverse effects') is largely stylistic."
+    }
+   }
+  },
+  {
+   "aid": "a05",
+   "status": "modified",
+   "prior_heading": "A significant decrease in our liquidity could negatively affect our business as well as reduce client confidence in us.",
+   "current_heading": "A significant decrease in our liquidity could negatively affect our business as well as reduce client confidence in us.",
+   "similarity": 0.83,
+   "diff": [
+    "delete: [the] -> []",
+    "replace: [that] -> [as]",
+    "insert: [] -> [activities (including margin, mortgage-related, and personal lending), increased capital requirements, changes in regulatory guidance or interpretations, other regulatory changes, or a loss of market or client confidence in us resulting in unanticipated withdrawals of client funds. The Company’s mar]",
+    "replace: [13] -> [12]"
+   ],
+   "material": "contested",
+   "rationale": "",
+   "description": "In the text present in both excerpts the only edits are 'such as the significant client reallocation ... that we experienced' becoming 'such as significant client reallocation ... as we experienced'; the current-only remainder (lending activities list, margin lending growth sentence, clearing house margin paragraph) lies past the point where the prior excerpt is cut mid-sentence at a page break.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: stylistic rewording with identical meaning in the comparable text, and the apparent insertion is an excerpt artifact (src/t2_real.py treats the bold running page header as a category and drops the prior continuation); for adjudication, the source filing shows one real change past the cutoff (margin lending growth now attributed to market-driven factors and overall business growth instead of the Ameritrade acquisition) that this pair cannot show."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 2: the Ameritrade acquisition is dropped as the named driver of margin lending growth (and in the full filings the named FHLB advance, repurchase and brokered CD supplemental funding sources and the FHLB tangible capital condition are removed); within the overlapping excerpt text the only edit is stylistic, while the lending, margin-growth and clearing house text appears only in the current excerpt."
+    }
+   }
+  },
+  {
+   "aid": "a06",
+   "status": "modified",
+   "prior_heading": "Security breaches of our systems, or those of our clients or third parties, may subject us to significant liability and damage our reputation.",
+   "current_heading": "Security breaches of our systems, or those of our clients or third parties, may subject us to significant liability and damage our reputation.",
+   "similarity": 0.925,
+   "diff": [
+    "delete: [to] -> []",
+    "delete: [non-technical means, for example,] -> []",
+    "insert: [] -> [Data exposure may also result from a failure to adequately destroy data during system or asset decommissioning, which might result in client or Company information being made available to external parties in error.]",
+    "replace: [counterparties] -> [counterparties,]",
+    "replace: [laws] -> [laws,]",
+    "replace: [- 14 -] -> [investigate and remediate vulnerabilities or other exposures. We may also be required to pay ransom to threat actors to restore operations or prevent dissemination of sensitive data.]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds a new data exposure risk from failure to adequately destroy data during system or asset decommissioning, which could make client or Company information available to external parties in error.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: a new risk is disclosed; the other comparable edits (dropping 'non-technical means, for example,' and commas) are stylistic, and the current-only ransom sentence lies past the prior excerpt's page-break cutoff and is also in the prior-year source filing."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: a data-exposure risk appears that the prior excerpt lacks; in the full filings this sentence was relocated from the prior's external fraud paragraph, which is removed from this risk factor now that fraud has its own risk factor (itself a removed disclosure), and the ransom sentence visible only in the current excerpt is a page-break cut in the prior excerpt."
+    }
+   }
+  },
+  {
+   "aid": "a07",
+   "status": "modified",
+   "prior_heading": "Technology and operational failures or errors and other operational risks could subject us to losses, litigation, regulatory actions, and reputational damage.",
+   "current_heading": "Technology and operational failures or errors and other operational risks could subject us to losses, litigation, regulatory actions, and reputational damage.",
+   "similarity": 0.196,
+   "diff": [
+    "delete: [systems, linkages with third-party systems and power failures and can have a significant impact on our business and operations. Our systems are vulnerable to disruptions from human error, execution errors, errors in models such as those used for asset management, capital planning and management, ris] -> []",
+    "replace: [15] -> [13]"
+   ],
+   "material": "contested",
+   "rationale": "",
+   "description": "The current excerpt stops mid-sentence at a page break ('changes to our') and the opening text present in both versions is identical, so the apparent deletion of the rest of the section, including the fraud paragraph and the 2024 outage references, is an excerpt artifact.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: no change in the comparable text beyond the page number; for adjudication, the source filing shows real changes past the cutoff (fraud paragraph moved out to the new fraud factor a11, '2024' outages changed to 'recent years', custodians added to intermediaries) that this pair cannot show."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: previously disclosed risks are absent from the current text; most of that gap is a page-break extraction loss, but in the full filings the fraud paragraph is genuinely removed (moved to the new fraud risk factor) and custodians are added to the intermediaries relied on, so the section is material on either reading."
+    }
+   }
+  },
+  {
+   "aid": "a08",
+   "status": "unchanged",
+   "prior_heading": "Our investment management operations may subject us to fiduciary or other legal liability for client losses.",
+   "current_heading": "Our investment management operations may subject us to fiduciary or other legal liability for client losses.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a09",
+   "status": "added",
+   "prior_heading": "",
+   "current_heading": "We rely on outsourced service providers and financial intermediaries to perform key functions, and failure of these entities to perform as expected could result in financial or reputational harm to us or financial harm to our clients.",
+   "similarity": 0.0,
+   "diff": [],
+   "material": true,
+   "rationale": "",
+   "description": "Covers reliance on external service providers for key technology, cloud infrastructure, processing, servicing, support and custody functions, and on financial intermediaries, where their failure to perform could cause losses and reputational harm to Schwab and financial harm to clients."
+  },
+  {
+   "aid": "a10",
+   "status": "removed",
+   "prior_heading": "We rely on outsourced service providers to perform key functions.",
+   "current_heading": "",
+   "similarity": 0.0,
+   "diff": [],
+   "material": true,
+   "rationale": "",
+   "description": "Covered reliance on outsourced service providers for key technology, cloud, processing, servicing and support functions, and the risk that their failures, data misuse or service interruptions (including past outages and COVID-19 service losses) disrupt operations and cause losses."
+  },
+  {
+   "aid": "a11",
+   "status": "added",
+   "prior_heading": "",
+   "current_heading": "We may suffer financial loss from fraud and financial crime.",
+   "similarity": 0.0,
+   "diff": [],
+   "material": true,
+   "rationale": "",
+   "description": "Covers losses from fraud and financial crime, including account takeover through social engineering, phishing and AI-enabled impersonation, fraudulent money movement and account openings, deliberate client fraud, employee insider misconduct, and losses reimbursed under Schwab's guarantee against unauthorized account activity."
+  },
+  {
+   "aid": "a12",
+   "status": "removed",
+   "prior_heading": "We rely on financial intermediaries to execute and settle client orders and transactions with financial intermediaries are a significant source of revenue.",
+   "current_heading": "",
+   "similarity": 0.0,
+   "diff": [],
+   "material": true,
+   "rationale": "",
+   "description": "Covered reliance on market makers, dealers, exchanges, clearing houses and other intermediaries to execute and settle client orders, and on payments from market makers and exchanges for trade execution and from securities lending counterparties as a significant source of revenue."
+  },
+  {
+   "aid": "a13",
+   "status": "modified",
+   "prior_heading": "We may suffer significant losses from our credit exposures.",
+   "current_heading": "We may suffer significant losses from our credit exposures.",
+   "similarity": 0.589,
+   "diff": [
+    "delete: [financial contracts and investing activities, and indirectly from the investing activities of certain of the proprietary funds that the Company sponsors. When clients purchase securities on margin, borrow on lines of credit collateralized by securities, or trade options or futures, we are subject to] -> []",
+    "replace: [16] -> [15]"
+   ],
+   "material": "contested",
+   "rationale": "",
+   "description": "The current excerpt stops mid-sentence at a page break ('our role as a counterparty in') and the text present in both versions is identical, so the apparent deletion of the margin, options and futures default paragraph is an excerpt artifact.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: no change in the comparable text beyond the page number; for adjudication, the source filing shows one real change past the cutoff (growth in the margin, options and futures business attributed to market-driven factors and business growth including the trader client base instead of the Ameritrade acquisition) that this pair cannot show."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criteria 1 and 2: on the excerpts a disclosed risk is absent from the current text, and in the full filings the Ameritrade acquisition is replaced as the named driver of margin, options and futures growth by market-driven factors, overall business growth and trader client base growth; the overlapping text is identical."
+    }
+   }
+  }
+ ]
+}

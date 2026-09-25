@@ -1,0 +1,241 @@
+{
+ "pair_id": "t2_hd_1",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "The Home Depot, Inc.",
+ "ticker": "HD",
+ "split": "test",
+ "prior": {
+  "fiscal_year_end": "2025-02-02",
+  "url": "https://www.sec.gov/Archives/edgar/data/354950/000035495025000085/hd-20250202.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2026-02-01",
+  "url": "https://www.sec.gov/Archives/edgar/data/354950/000162828026019436/hd-20260201.htm"
+ },
+ "words": 6732,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "modified",
+   "prior_heading": "A positive brand and reputation are critical to our business success, and, if our brand and reputation are damaged, it could negatively impact our relationships with our customers, associates and jobseekers, suppliers, vendors, shareholders, regulators, and the communities we serve, and, consequently, our business, results of operations and the price of our stock.",
+   "current_heading": "A positive brand and reputation are critical to our business success, and, if our brand and reputation are damaged, it could negatively impact our relationships with our customers, associates and jobseekers, suppliers, service providers, vendors, shareholders, regulators, and the communities we serve, and, consequently, our business, results of operations and the price of our stock.",
+   "similarity": 0.903,
+   "diff": [
+    "insert: [] -> [service providers,]",
+    "replace: [suppliers] -> [suppliers, service providers,]",
+    "insert: [] -> [Table of Contents]",
+    "replace: [accuracy or] -> [accuracy,]",
+    "replace: [source,] -> [source and whether we are involved in the incident,]",
+    "replace: [scrutiny, investigations] -> [scrutiny]",
+    "insert: [] -> [investigations; lead to]",
+    "replace: [Our suppliers’] -> [Third party actions, including our suppliers’, service providers’,]",
+    "replace: [positions] -> [positions,]",
+    "insert: [] -> [regulatory,]",
+    "replace: [scrutiny,] -> [scrutiny or investigations,]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds service providers as a stakeholder group and as a third party whose actions may be attributed to the company, and extends the adverse publicity risk to incidents regardless of whether the company is involved.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 3: the scope of the reputational risk is widened to service providers' practices and to incidents the company is not involved in, and criterion 1: regulatory investigations are added as a consequence of inaccurate sustainability-related data and reporting."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: scope widened to service providers and third-party incidents in which the company is not involved, and criterion 1: investigations added as a new exposure tied to data and reporting on sensitive matters."
+    }
+   }
+  },
+  {
+   "aid": "a02",
+   "status": "modified",
+   "prior_heading": "Strong competition could adversely affect prices and demand for our products and services and could decrease our market share.",
+   "current_heading": "Strong competition could adversely affect prices and demand for our products and services and could decrease our market share.",
+   "similarity": 0.548,
+   "diff": [
+    "replace: [retailers,] -> [retailers (including those operating reseller marketplaces),]",
+    "delete: [and] -> []",
+    "delete: [Table of Contents] -> []",
+    "replace: [The internet facilitates] -> [Online and other digital capabilities, as well as AI tools, facilitate]",
+    "insert: [] -> [customer’s]",
+    "insert: [] -> [professional and reliable deliveries, and]",
+    "replace: [purchase] -> [project]",
+    "insert: [] -> [real-time updates on delivery status,]",
+    "delete: [retail] -> []",
+    "delete: [customer] -> []",
+    "delete: [or through maintenance of effective sales and marketing, advertising or promotional programs] -> []",
+    "replace: [If we experience inflation or deflation at a level beyond our ability to respond effectively, we may not be able to adjust prices to sufficiently offset the effects without negatively impacting demand or margins, as applicable, or it may adversely affect our ability to compete based on price.] -> [Table of Contents]",
+    "..."
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Drops the sentence that inflation or deflation beyond the company's ability to respond could prevent it from offsetting effects through price and hurt its price competitiveness, and adds reseller marketplace operators and AI tools as sources of competition.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: a previously disclosed inflation/deflation pricing exposure is removed, and criterion 2: reseller marketplaces and AI tools are newly referenced as competitive drivers."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: a previously disclosed risk (inflation/deflation pricing pressure) is removed, and criterion 2: reseller marketplaces and AI tools are newly referenced as sources of competition."
+    }
+   }
+  },
+  {
+   "aid": "a03",
+   "status": "modified",
+   "prior_heading": "We may not timely identify or effectively respond to customer needs, expectations or trends, which could adversely affect our relationship with our customers, the demand for our products and services, and our market share.",
+   "current_heading": "We may not timely identify or effectively respond to customer needs, expectations or trends, which could adversely affect our relationship with our customers, the demand for our products and services, and our market share.",
+   "similarity": 0.458,
+   "diff": [
+    "delete: [in part] -> []",
+    "replace: [demographics;] -> [demographics and]",
+    "replace: [needs; changes in the macroeconomic or political environment; and unexpected weather conditions, natural disasters, or public health issues (including pandemics and related impacts) that impact our customers,] -> [needs,]",
+    "insert: [] -> [These trends include those driven by changes in the macroeconomic or political environment, geopolitical tensions or conflicts, military conflicts, or civil unrest, as well as unexpected weather conditions, natural disasters, or public health issues (including pandemics or quarantines and related im]",
+    "replace: [artificial intelligence,] -> [AI,]",
+    "insert: [] -> [find, evaluate,]",
+    "replace: [becoming more demanding.] -> [evolving.]",
+    "insert: [] -> [gather inspiration,]",
+    "replace: [products, and new] -> [products. New]",
+    "replace: [rapidly.] -> [rapidly, and some of those technologies, such as generative and agentic AI tools, may dramatically change customer shopping and buying habits.]",
+    "insert: [] -> [professional and reliable deliveries,]",
+    "replace: [purchase] -> [project]",
+    "..."
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Adds that generative and agentic AI tools may dramatically change customer shopping and buying habits, and adds geopolitical tensions, military conflicts and civil unrest as drivers of customer trends.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: new exposures to agentic and generative AI shopping tools and to geopolitical and military conflict are disclosed, with further scope changes such as dropping the higher delivery cost effect of online sales and softening expectations from 'more demanding' to 'evolving'."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: a new risk from generative and agentic AI changing buying behavior is disclosed, and criterion 2: new geopolitical and military conflict drivers are referenced while the higher-delivery-cost exposure is removed."
+    }
+   }
+  },
+  {
+   "aid": "a04",
+   "status": "added",
+   "prior_heading": "",
+   "current_heading": "The execution of initiatives to deliver our interconnected experience could adversely impact our business operations or financial results, and these initiatives might not provide the anticipated benefits.",
+   "similarity": 0.0,
+   "diff": [],
+   "material": true,
+   "rationale": "",
+   "description": "Covers the risk that investments to deliver the interconnected experience (supply chain, digital capabilities, store base, new store, branch and supply chain facility locations, and strategic acquisitions) could disrupt operations or fail to deliver the anticipated benefits."
+  },
+  {
+   "aid": "a05",
+   "status": "removed",
+   "prior_heading": "The execution of initiatives to implement our interconnected retail strategy could adversely impact our business operations or financial results, and these initiatives might not provide the anticipated benefits.",
+   "current_heading": "",
+   "similarity": 0.0,
+   "diff": [],
+   "material": true,
+   "rationale": "",
+   "description": "Covered the risk that investments to execute the interconnected retail strategy (supply chain and distribution network real estate projects, store base, new store and branch locations, and strategic acquisitions) could disrupt operations or fail to deliver the anticipated benefits."
+  },
+  {
+   "aid": "a06",
+   "status": "modified",
+   "prior_heading": "If we are unable to effectively manage and expand our alliances and relationships with certain suppliers of both brand name and proprietary products, we may be unable to effectively execute our strategy to differentiate ourselves from our competitors.",
+   "current_heading": "If we are unable to effectively manage and expand our strategic alliances and relationships with certain suppliers of both brand name and proprietary products, we may be unable to effectively execute our strategy to differentiate ourselves from our competitors.",
+   "similarity": 0.38,
+   "diff": [
+    "insert: [] -> [strategic]",
+    "replace: [market] -> [offer]",
+    "replace: [Our] -> [These]",
+    "insert: [] -> [help]",
+    "insert: [] -> [effectively]",
+    "insert: [] -> [strategic]",
+    "replace: [Our] -> [Additionally, our]",
+    "insert: [] -> [could]",
+    "replace: [could] -> [may]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Softens the statements that proprietary products differentiate the company (now 'help differentiate') and that supplier controversies pose reputational risks (now 'could pose risks'), alongside adding 'strategic' to the alliances language.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 3: the characterization of the supplier controversy risk moves from a stated fact ('pose risks') to a possibility ('could pose risks') and the differentiation benefit is hedged, which is a softening rather than an identical-meaning rewording."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: applied literally, the change from an unconditional \"pose risks\" to a conditional \"could pose risks\" softens the characterization of the supplier-controversy risk, which is not an identical-meaning stylistic edit."
+    }
+   }
+  },
+  {
+   "aid": "a07",
+   "status": "modified",
+   "prior_heading": "Our strategic transactions involve risks, which could have an adverse impact on our business, financial condition and results of operations, and we may not realize the anticipated benefits of these transactions.",
+   "current_heading": "Our strategic transactions involve risks, which could have an adverse impact on our business, financial condition and results of operations, and we may not realize the anticipated benefits of these transactions.",
+   "similarity": 0.714,
+   "diff": [
+    "replace: [strategies, such as our acquisition of SRS in the second quarter of fiscal 2024.] -> [strategies.]",
+    "replace: [capabilities or] -> [capabilities, and/or]",
+    "replace: [synergies] -> [synergies, cost savings, enhanced capabilities,]",
+    "insert: [] -> [other]",
+    "insert: [] -> [or unanticipated]",
+    "replace: [uncertainty. The changing] -> [uncertainty, and changes in the]",
+    "replace: [transaction, including as a result of the enforcement environment.] -> [transaction.]",
+    "insert: [] -> [our ability to integrate new associates,]",
+    "insert: [] -> [anticipated]",
+    "insert: [] -> [Table of Contents]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Drops the named reference to the SRS acquisition in the second quarter of fiscal 2024 and the enforcement environment as a source of regulatory delay, and adds the ability to integrate new associates as a failure point.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2: a named transaction (SRS) and the enforcement environment are dropped, and criterion 1: integration of new associates and unanticipated liabilities are added as risks."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 2: a specific named transaction (the SRS acquisition) and the enforcement environment reference are dropped, and criterion 1: integration of new associates is added as a new risk."
+    }
+   }
+  },
+  {
+   "aid": "a08",
+   "status": "modified",
+   "prior_heading": "A failure of one or more key information technology systems or processes could adversely affect our business, financial results, and reputation.",
+   "current_heading": "A failure of one or more key elements of our technology infrastructure, including associated systems or processes, could adversely affect our business, financial results, and reputation.",
+   "similarity": 0.546,
+   "diff": [
+    "replace: [information] -> [elements of our]",
+    "insert: [] -> [infrastructure, including associated]",
+    "replace: [processes] -> [processes,]",
+    "insert: [] -> [our technology infrastructure, including associated]",
+    "replace: [systems] -> [systems, applications, processes,]",
+    "insert: [] -> [to operate our day-to-day business and]",
+    "replace: [job applicant] -> [jobseeker]",
+    "replace: [matters.] -> [support.]",
+    "replace: [systems] -> [technology infrastructure]",
+    "insert: [] -> [tensions]",
+    "insert: [] -> [conflicts,]",
+    "replace: [many] -> [certain]",
+    "..."
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Broadens the risk from information technology systems to the company's whole technology infrastructure used to operate its day-to-day business, adds that outages could prevent it from accepting or fulfilling orders or serving customers, and expands AI activity from testing to developing and deploying AI tools.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 3: the scope of the risk is widened to the full technology infrastructure and AI deployment, and criterion 1: a new consequence (inability to accept or fulfill orders) and geopolitical tensions as a cause are disclosed."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: scope widened from IT systems to technology infrastructure, and criterion 1: a new exposure (inability to accept or fulfill orders) and deployment of AI tools are disclosed."
+    }
+   }
+  }
+ ]
+}

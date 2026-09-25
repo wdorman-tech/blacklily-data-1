@@ -1,0 +1,240 @@
+{
+ "pair_id": "t2_ko_1",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "The Coca-Cola Company",
+ "ticker": "KO",
+ "split": "test",
+ "prior": {
+  "fiscal_year_end": "2024-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/21344/000002134425000011/ko-20241231.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2025-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm"
+ },
+ "words": 6748,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "modified",
+   "prior_heading": "Unfavorable general economic and geopolitical conditions could negatively impact our financial results.",
+   "current_heading": "Unfavorable general economic and geopolitical conditions could negatively impact our financial results.",
+   "similarity": 0.71,
+   "diff": [
+    "replace: [intensified] -> [high rates of]",
+    "replace: [2024,] -> [2025,]",
+    "replace: [2025.] -> [2026.]",
+    "replace: [2024,] -> [2025,]",
+    "replace: [conflicts, including the conflict between Russia and Ukraine and conflicts in the Middle East.] -> [conflicts.]",
+    "replace: [tariffs;] -> [tariffs, including tariffs that increase suppliers’ sourcing costs;]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The named conflicts (Russia and Ukraine, the Middle East) behind the operational disruption are dropped in favor of generic 'international conflicts', tariffs that increase suppliers' sourcing costs are added as an exposure, and 'intensified inflation throughout 2024' becomes 'high rates of inflation throughout 2025'.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2: specific named conflicts are dropped; criterion 1 also applies because supplier sourcing-cost tariffs are a newly disclosed exposure."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 2: specific named conflicts are dropped, and criterion 1: a new exposure (tariffs raising suppliers' sourcing costs) is disclosed, so the section is material even though the year changes are routine."
+    }
+   }
+  },
+  {
+   "aid": "a02",
+   "status": "unchanged",
+   "prior_heading": "Increased competition could hurt our business.",
+   "current_heading": "Increased competition could hurt our business.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a03",
+   "status": "modified",
+   "prior_heading": "If we are not successful in our innovation activities, our financial results may be negatively affected.",
+   "current_heading": "If we are not successful in our innovation activities, our financial results may be negatively affected.",
+   "similarity": 0.986,
+   "diff": [
+    "replace: [on] -> [on, among other factors,]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The only change is inserting 'among other factors' before the list of things innovation success depends on.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: a stylistic hedge marking the list as non-exhaustive, with no new factor, risk or characterization introduced."
+    },
+    "B": {
+     "material": false,
+     "rationale": "Minor: a stylistic hedge that marks the existing list as non-exhaustive without naming any new risk, factor or change in likelihood or severity."
+    }
+   }
+  },
+  {
+   "aid": "a04",
+   "status": "modified",
+   "prior_heading": "Changes in the retail landscape or the loss of key retail or foodservice customers could adversely affect our financial results.",
+   "current_heading": "Changes in the retail landscape or the loss of key customers could adversely affect our financial results.",
+   "similarity": 0.042,
+   "diff": [
+    "delete: [retail or foodservice] -> []",
+    "replace: [retail and foodservice customers. The] -> [customers.The]",
+    "delete: [retail or foodservice] -> []"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The customer-loss risk is broadened from 'key retail or foodservice customers' to 'key customers' in both the headline and the body.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 3: the scope of the customer dependency is widened by removing the retail and foodservice qualifier."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: the scope of the disclosed customer-loss risk is widened from two named customer types to all key customers."
+    }
+   }
+  },
+  {
+   "aid": "a05",
+   "status": "unchanged",
+   "prior_heading": "If we are unable to expand our business in emerging and developing markets, our growth could be negatively affected.",
+   "current_heading": "If we are unable to expand our business in emerging and developing markets, our growth could be negatively affected.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a06",
+   "status": "modified",
+   "prior_heading": "If we do not successfully manage the potential negative consequences of our productivity initiatives, our business operations could be adversely affected.",
+   "current_heading": "If we do not successfully manage the potential negative consequences of our productivity initiatives, our business operations could be adversely affected.",
+   "similarity": 0.798,
+   "diff": [
+    "delete: [13] -> []",
+    "insert: [] -> [13]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The text is unchanged; only the position of the page number 13 moved relative to the paragraph.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: page-break artifact with no change in wording or substance."
+    },
+    "B": {
+     "material": false,
+     "rationale": "Minor: a pagination artifact with no change in wording or substance."
+    }
+   }
+  },
+  {
+   "aid": "a07",
+   "status": "added",
+   "prior_heading": "",
+   "current_heading": "If we are unable to attract, retain and inspire outstanding talent, our business could be negatively affected.",
+   "similarity": 0.0,
+   "diff": [],
+   "material": true,
+   "rationale": "",
+   "description": "Covers the risk that failing to attract, retain and inspire outstanding talent, plan management succession, maintain an innovative culture or implement suitable work models could disrupt operations and harm the business."
+  },
+  {
+   "aid": "a08",
+   "status": "removed",
+   "prior_heading": "If we are unable to attract or retain specialized talent or top talent with diverse perspectives, experiences and backgrounds that reflect the broad range of consumers and markets we serve around the world, our business could be negatively affected.",
+   "current_heading": "",
+   "similarity": 0.0,
+   "diff": [],
+   "material": true,
+   "rationale": "",
+   "description": "Covered the risk that failing to attract or retain specialized or top talent with diverse perspectives, experiences and backgrounds reflecting the consumers and markets served could disrupt operations and harm the business."
+  },
+  {
+   "aid": "a09",
+   "status": "modified",
+   "prior_heading": "Disruption of our supply chain, including increased commodity, raw material, packaging, energy, transportation and other input costs, may adversely affect our financial condition or results of operations.",
+   "current_heading": "Disruption of our supply chain, including increased commodity, raw material, packaging, energy, transportation and other input costs, may adversely affect our financial condition or results of operations.",
+   "similarity": 0.902,
+   "diff": [
+    "replace: [suppliers] -> [suppliers,]",
+    "replace: [supplier] -> [supplier,]",
+    "replace: [derived.] -> [derived and manufactured.]",
+    "delete: [our] -> []",
+    "replace: [that we use] -> [used]",
+    "insert: [] -> [including tariffs that increase suppliers’ sourcing costs,]",
+    "delete: [we pay] -> []",
+    "replace: [2025.] -> [2026.]",
+    "delete: [14] -> []",
+    "insert: [] -> [14]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Tariffs that increase suppliers' sourcing costs are added to the list of factors driving input price volatility, alongside a 2025 to 2026 roll-forward and minor rewording ('derived' to 'derived and manufactured', 'that we use' to 'used').",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: supplier sourcing-cost tariffs are a newly disclosed exposure; the rest is roll-forward and stylistic."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: a new cost exposure (tariffs raising suppliers' sourcing costs) is disclosed, which makes the section material despite the otherwise routine edits."
+    }
+   }
+  },
+  {
+   "aid": "a10",
+   "status": "unchanged",
+   "prior_heading": "If we do not successfully integrate and manage our acquired businesses, brands or bottling operations, or if we are unable to realize a significant portion of the anticipated benefits of our joint ventures or strategic relationships, our financial results could suffer.",
+   "current_heading": "If we do not successfully integrate and manage our acquired businesses, brands or bottling operations, or if we are unable to realize a significant portion of the anticipated benefits of our joint ventures or strategic relationships, our financial results could suffer.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a11",
+   "status": "unchanged",
+   "prior_heading": "If our third-party service providers and business partners do not satisfactorily fulfill their commitments and responsibilities, or experience adverse events, our business could suffer.",
+   "current_heading": "If our third-party service providers and business partners do not satisfactorily fulfill their commitments and responsibilities, or experience adverse events, our business could suffer.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a12",
+   "status": "modified",
+   "prior_heading": "If we are unable to renew collective bargaining agreements on satisfactory terms, or if we or our bottling partners experience strikes, work stoppages or labor unrest, our business could suffer.",
+   "current_heading": "If we are unable to renew collective bargaining agreements on satisfactory terms, or if we or our bottling partners experience strikes, work stoppages or labor unrest, our business could suffer.",
+   "similarity": 0.84,
+   "diff": [
+    "delete: [15] -> []",
+    "insert: [] -> [15]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The text is unchanged; only the position of the page number 15 moved relative to the paragraph.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: page-break artifact with no change in wording or substance."
+    },
+    "B": {
+     "material": false,
+     "rationale": "Minor: a pagination artifact with no change in wording or substance."
+    }
+   }
+  }
+ ]
+}

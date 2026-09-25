@@ -1,0 +1,66 @@
+The user wants a JSON object representing the provided legal document.
+
+    *   *Article V: Management Fee and Expenses*
+        *   5.1 Management Fee:
+            *   Years 1-5: 2.50% of Capital Commitments (excluding Affiliated LPs).
+            *   Year 6+: Decreases by 0.25% each year until a floor of 1.50%.
+            *   Specific rates: Year 6 (2.25%), Year 7 (2.00%), Year 8 (1.75%), Year 9+ (1.50%).
+            *   Calculation: Based on days in the semi-annual period.
+            *   Exclusions: GP Commitment and Affiliated LP commitments.
+        *   5.2 Management Fee Offset: Reduced by 100% of Fee Income (prev. period), placement fees, and excess Organizational Expenses.
+        *   5.3 Expenses:
+            *   Organizational: Up to $750,000 (Partnership); excess and placement fees (Management Co).
+            *   Partnership Expenses: Operating costs (valuation, legal, audit, etc.).
+            *   Management Co Expenses: Overhead, compensation, rent, compliance.
+    *   *Article VI: Distributions and Allocations*
+        *   6.1 Timing: 90 days after receipt of Net Proceeds.
+        *   6.2 Distribution Waterfall:
+            *   (a) Return of Capital: 100% to LP.
+            *   (b) 80/20 Split: 80% to LP, 20% to GP (until Step-Up).
+            *   (c) 75/25 Split: 75% to LP, 25% to GP (after Step-Up).
+        *   6.3 No Preferred Return: No hurdle/preferred return. No catch-up.
+        *   6.4 Step-Up:
+            *   Threshold: 3.0x paid-in capital of non-affiliated LPs.
+            *   Mechanism: 25% applies only to amounts after threshold. No retroactive catch-up.
+        *   6.5 Tax Distributions: GP can receive tax distributions as advances.
+        *   6.6 Clawback/High-Water Mark: GP clawback if over-distributed. No high-water mark.
+        *   6.7 Distributions in Kind: Only if listed/transferable.
+    *   *Article VII: Management and Advisory Committee*
+        *   7.1 Management: GP has authority. Advisory Committee (3-7 members) has no fiduciary duty.
+        *   7.2 Successor Funds: Rules on timing of first closing.
+        *   7.3 Removal of GP: Majority (Cause) or Super Majority (No Cause).
+        *   7.4 Exculpation/Indemnification: Standard protections.
+    *   *Article VIII: Service Providers*
+        *   8.1 Auditor: Brisley Ashcombe LLP.
+        *   8.2 Administrator: Stavely Rook Fund Services, LLC.
+        *   8.3 Legal Counsel: Quarrington Voss LLP.
+        *   8.4 Custody: No prime broker, no shorting/margin.
+        *   8.5 Reports: Quarterly (unaudited), Annual (audited).
+    *   *Article IX: Transfers and Withdrawals*
+        *   9.1 Restrictions: No transfer without GP consent.
+        *   9.2 No Right of Withdrawal: No redemption/withdrawal.
+        *   9.3 Required Withdrawals: ERISA/Regulatory compliance.
+    *   *Article X: Side Letters and MFN*
+        *   10.1 Side Letters: GP can enter without consent.
+        *   10.2 MFN: For LPs with $\ge$ $10M commitment.
+    *   *Article XI: Dissolution*
+        *   11.1 Events: Expiration, GP determination, Super Majority, Bankruptcy, Judicial.
+        *   11.2 Winding Up: Order of payment.
+    *   *Article XII: Miscellaneous*
+        *   12.1 Governing Law: Delaware.
+        *   12.2 Amendments: Specific requirements for certain clauses.
+
+    *   `management_fee`: { `base_rate_years_1_5`: 0.025, `floor_rate`: 0.015, `reduction_rate`: 0.0025, `calculation_method`: "semi-annual", `exclusions`: ["GP Commitment", "Affiliated Limited Partner Capital Commitment"] }
+    *   `management_fee_offset`: { `deductions`: ["Fee Income", "Placement Fees", "Excess Organizational Expenses"] }
+    *   `expenses`: { `organizational_cap`: 750000, `partnership_expenses`: ["valuation", "acquisition", "holding", "disposal", "audit", "administration", "legal", "interest", "insurance", "taxes", "indemnification", "winding up"], `management_company_expenses`: ["overhead", "compensation", "rent", "regulatory compliance"] }
+    *   `distribution_waterfall`: { `return_of_capital`: 1.0, `tier_1_split`: [0.8, 0.2], `tier_2_split`: [0.75, 0.25], `step_up_threshold`: 3.0 }
+    *   `no_preferred_return`: true
+    *   `clawback_provision`: true
+    *   `high_water_mark`: false
+    *   `advisor_committee_size`: { `min`: 3, `max`: 7 }
+    *   `service_providers`: { `auditor`: "Brisley Ashcombe LLP", `administrator`: "Stavely Rook Fund Services, LLC", `legal_counsel`: "Quarrington Voss LLP" }
+    *   `mfn_threshold`: 10000000
+    *   `governing_law`: "Delaware"
+
+    *   Ensure the JSON is valid.
+    *   Ensure all key terms from the text are captured.

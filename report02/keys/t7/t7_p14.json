@@ -1,0 +1,33 @@
+{
+  "piece_id": "t7_p14",
+  "form": "LinkedIn post series",
+  "notes": "Six-post LinkedIn series from a wealth adviser's CIO with three planted issues (C2 gross-only composite returns, C3 three-year-only composite returns, C9 one-sided buffered equity pitch) and one decoy (a compounding illustration with full assumptions and limitations).",
+  "planted": [
+    {
+      "iid": "p1",
+      "category": "C2",
+      "span": "Our Core Equity composite, annualized returns before fees for periods ended June 30, 2026: 1 year 14.2%, 5 years 11.6%, 10 years 12.3%.",
+      "explanation": "Gross-of-fees composite returns are shown for 1, 5 and 10 years with no net-of-fees returns anywhere in the post or its appended comment."
+    },
+    {
+      "iid": "p2",
+      "category": "C3",
+      "span": "Over the three years ended June 30, 2026, our Balanced Income composite, launched in 2012, returned 7.9% a year net of fees and 8.6% a year gross of fees.",
+      "explanation": "Performance of a composite that has existed since 2012 is shown only for a three-year period, without the required 1-, 5- and 10-year periods."
+    },
+    {
+      "iid": "p3",
+      "category": "C9",
+      "span": "Our Buffered Equity sleeve lets clients keep participating in stock market gains while a 15% buffer absorbs the first leg of any decline, so they can stay invested through rough patches without the sleepless nights.",
+      "explanation": "Upside participation and downside protection are described with no mention of the cap on gains, losses beyond the 15% buffer, the outcome-period and timing limits of the buffer, or issuer and counterparty risk."
+    }
+  ],
+  "decoys": [
+    {
+      "did": "d1",
+      "looks_like": "C5",
+      "span": "Why start early? A hypothetical illustration. A 35-year-old who invests $1,000 at the end of every month for 30 years and earns an assumed 6% a year, compounded monthly, would have about $1,004,515 at 65, before taxes and fees. At an assumed 4%, the same savings would grow to about $694,049.\n\nThe 6% and 4% rates are assumptions chosen to show how compounding works. They are not projections, they are not the returns of any Merridew Greaves strategy or client account, and no actual account achieved these results. Real returns vary from year to year and can be negative, and the illustration ignores inflation, taxes, fees and the chance that contributions stop. With steady contributions, a portfolio that averages 6% can still end with far less if its worst years come near the end.",
+      "why_ok": "The illustration is labeled hypothetical, shows an alternative lower rate, states that the rates are assumptions and not the returns of any strategy or account, and discloses the risks and limitations it ignores."
+    }
+  ]
+}

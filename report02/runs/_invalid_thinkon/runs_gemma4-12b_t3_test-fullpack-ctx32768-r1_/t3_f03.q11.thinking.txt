@@ -1,0 +1,41 @@
+*   Question: Who is the firm's Chief Compliance Officer, and to whom does the CCO report?
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer NOT_IN_DOCUMENTS.
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "01_brochure.md":
+        *   Section 1.1: "please contact Theresa L. Vannoy, Chief Compliance Officer"
+    *   "02_compliance_manual.md":
+        *   Section 2.1: "The Management Committee has designated Theresa L. Vannoy as Chief Compliance Officer of the Firm (the "CCO"). The CCO reports directly to the Managing Partner..."
+    *   "03_valuation_policy.md":
+        *   Section 2.1: Mentions "Chief Compliance Officer" as a non-voting member.
+    *   "04_business_continuity_plan.md":
+        *   Section 1.3: "The Chief Compliance Officer reviews the Plan..."
+    *   "05_fee_schedule.md": No mention of CCO name.
+    *   "06_policy_update_memo.md":
+        *   Mentions "Theresa L. Vannoy, Chief Compliance Officer" in the header.
+
+    *   The question asks for the name of the CCO and who they report to.
+    *   "01_brochure.md" gives the name (Theresa L. Vannoy) but doesn't explicitly state who she reports to.
+    *   "02_compliance_manual.md" Section 2.1 states: "The Management Committee has designated Theresa L. Vannoy as Chief Compliance Officer of the Firm (the "CCO"). The CCO reports directly to the Managing Partner..."
+
+    *   Answer: Theresa L. Vannoy; she reports directly to the Managing Partner.
+    *   Source: 02_compliance_manual.md
+    *   Section: 2.1
+    *   Quote: "The Management Committee has designated Theresa L. Vannoy as Chief Compliance Officer of the Firm (the \"CCO\"). The CCO reports directly to the Managing Partner..."
+
+    *   "06_policy_update_memo.md" is dated September 8, 2026.
+    *   "02_compliance_manual.md" is dated January 15, 2026.
+    *   The memo mentions the CCO's name in the header but doesn't change the reporting structure.
+    *   The manual is the primary source for the reporting structure.
+
+    *   Answer: Theresa L. Vannoy; she reports directly to the Managing Partner.
+    *   Source: 02_compliance_manual.md
+    *   Section: 2.1
+    *   Quote: "The Management Committee has designated Theresa L. Vannoy as Chief Compliance Officer of the Firm (the \"CCO\"). The CCO reports directly to the Managing Partner..."
+
+    *   Wait, the prompt says "answer with the provision currently in effect".
+    *   The memo (06_policy_update_memo.md) is the latest document. It mentions "Theresa L. Vannoy, Chief Compliance

@@ -1,0 +1,39 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question using *only* the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones (not relevant here as dates seem consistent or irrelevant for this specific question).
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "How long does the Firm retain its required books and records?"
+
+3.  **Scan the Documents:**
+    *   Document 1: `01_brochure.md` (Form ADV Part 2A, dated March 27, 2026).
+        *   Section Item 15. Custody: Discusses separate accounts, custodians, statements. No mention of record retention periods for books and records generally.
+        *   Section Item 18. Financial Information: Discusses fee prepayment, bankruptcy. No mention of record retention.
+    *   Document 2: `02_compliance_manual.md` (Compliance Manual: Policies and Procedures, dated January 15, 2026).
+        *   Section SECTION 13. RECORDKEEPING > 13.1 Required Records: Lists types of records (trade blotters, IMAs, etc.). No retention period mentioned here.
+        *   Section SECTION 13. RECORDKEEPING > 13.2 Retention Period: "The Firm retains all required books and records for not less than seven years from the end of the fiscal year during which the last entry was made on the record, the first two years in an appropriate office of the Firm."
+        *   Section SECTION 13. RECORDKEEPING > 13.3 Electronic Storage: Discusses archiving.
+        *   Section SECTION 13. RECORDKEEPING > 13.4 Production and Legal Holds: Discusses production to SEC.
+        *   Section SECTION 15. ANNUAL REVIEW: Discusses CCO review timing.
+        *   Section SECTION 16. TRAINING: Discusses training records retention (refers back to Section 13).
+
+4.  **Extract the Answer:**
+    *   Found in `02_compliance_manual.md`.
+    *   Section: `SECTION 13. RECORDKEEPING > 13.2 Retention Period`.
+    *   Text: "The Firm retains all required books and records for not less than seven years from the end of the fiscal year during which the last entry was made on the record, the first two years in an appropriate office of the Firm."
+
+5.  **Format the Output:**
+    *   Must be valid JSON.
+    *   Keys: `answer`, `source_document`, `section`, `quote`.
+    *   `answer`: "not less than seven years from the end of the fiscal year during which the last entry was made on the record, the first two years in an appropriate office of the Firm" (or similar verbatim extraction). The instruction says "Keep answers short

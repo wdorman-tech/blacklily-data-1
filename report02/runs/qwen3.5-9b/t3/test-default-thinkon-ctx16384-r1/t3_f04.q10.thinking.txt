@@ -1,0 +1,45 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+    *   Question: "What has been the Firm's turnover of investment professionals over the past three years? Please list any senior departures."
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "turnover", "investment professionals", "departures", "senior", "employees", "hiring", "firing", "resignation".
+    *   Document 1 (`01_brochure.md`):
+        *   Item 2. Material Changes: Mentions employee count (68 employees, 27 investment professionals) as of Dec 31, 2025. No turnover data.
+        *   Item 4. Ownership and Management: Lists ownership structure, management committee members. No turnover history.
+        *   Item 7. Types of Clients: Client types. No turnover data.
+        *   Item 10. Other Financial Industry Activities: Consultant payments. No turnover data.
+    *   Document 2 (`02_compliance_manual.md`):
+        *   Section 15. Annual Review: Mentions outside compliance firm, sample reviews. No turnover data.
+        *   Section 16. Training: Mentions training for traders, PMs, analysts, client service. No turnover data.
+    *   Document 3 (`03_valuation_policy.md`):
+        *   Section 8. Independent Review: Valuation review process. No turnover data.
+    *   Document 4 (`06_policy_update_memo.md`):
+        *   Preamble: Mentions amendments to policies, fee schedule, etc. Lists Priya Castellane as Chief Compliance Officer (fictional note says invented for benchmark use). Mentions Nadia Fenwick as Deputy CCO appointed June 2, 2025 (from Brochure Item 2). No turnover data or senior departure lists.
+
+3.  **Evaluate Findings:**
+    *   The documents provide current employee counts (68 total, 27 investment professionals) as of Dec 31, 2025.
+    *   They do not provide historical turnover rates over the past three years.
+    *   They do not list specific senior departures over the past three years.
+    *   The question asks for specific data (turnover rate/number, senior departures) that is not present in the text.
+
+4.  **Formulate Answer:**
+    *   Since the information is not in the documents, the answer must be `NOT_IN_DOCUMENTS`.
+    *   Source document: "" (empty string as per instructions for NOT_IN_DOCUMENTS).
+    *   Section: "" (empty string).
+    *   Quote: "" (empty string).
+
+5.  **Construct JSON:**
+    *   Ensure valid JSON.

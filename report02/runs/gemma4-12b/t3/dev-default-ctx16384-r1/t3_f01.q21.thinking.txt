@@ -1,0 +1,25 @@
+*   Question: "What were the firm's regulatory assets under management as of its most recent fiscal year-end, and how much of that total was managed on a discretionary basis?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer NOT_IN_DOCUMENTS.
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   `01_brochure.md` (March 27, 2026): Section 4.6 "Assets Under Management and Personnel" says: "As of December 31, 2025, the Firm managed $2,046,300,000 of regulatory assets under management, of which $1,982,100,000 was managed on a discretionary basis and $64,200,000 on a non-discretionary basis."
+    *   `02_compliance_manual.md` (January 15, 2026): No mention of AUM.
+    *   `03_valuation_policy.md` (February 10, 2026): No mention of AUM.
+    *   `05_fee_schedule.md` (April 1, 2026): No mention of AUM.
+
+    *   The question asks for "regulatory assets under management as of its most recent fiscal year-end" and "how much of that total was managed on a discretionary basis".
+    *   `01_brochure.md` provides exactly this: "$2,046,300,000 of regulatory assets under management" and "$1,982,100,000 was managed on a discretionary basis".
+    *   Date check: `01_brochure.md` is dated March 27, 2026. The data is as of December 31, 2025.
+
+    *   Answer: $2,046,300,000 of regulatory assets under management, of which $1,982,100,000 was managed on a discretionary basis.
+    *   Source: 01_brochure.md
+    *   Section: Item 4.6 Assets Under Management and Personnel
+    *   Quote: "As of December 31, 2025, the Firm managed $2,046,300,000 of regulatory assets under management, of which $1,982,100,000 was managed on a discretionary basis and $64,200,000 on a non-discretionary basis."
+
+    *   "As of December 31, 2025, the Firm managed $2,046,300,000 of regulatory assets under management, of which $1,982,100,000 was managed on a discretionary basis and $64,200,000 on a non-discretionary basis."
+
+    *   Answer: $2,046,300,000 of regulatory assets under management, of which $1,

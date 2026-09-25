@@ -1,0 +1,30 @@
+*   Question: "What is the minimum holding period for personal investments in covered securities by access persons?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "01_brochure.md": Item 11.2 (Personal Trading) mentions "minimum holding period" but doesn't specify the number of days.
+    *   "02_compliance_manual.md": Section 4.4 (Holding Period) states: "Covered securities, other than exchange-traded funds that track broad market indices, must be held for at least 30 calendar days from the date of acquisition."
+    *   "03_valuation_policy.md": Not relevant.
+    *   "04_business_continuity_plan.md": Not relevant.
+    *   "05_fee_schedule.md": Not relevant.
+    *   "06_policy_update_memo.md": Section 2.1 (Minimum Holding Period) amends Section 4.4 of the Compliance Manual. It states: "Effective September 1, 2026, covered securities must be held for at least 60 calendar days from the date of acquisition. The 60-day period supersedes the 30-day period stated in Section 4.4."
+
+    *   The Compliance Manual (02_compliance_manual.md) says 30 days.
+    *   The Policy Update Memo (06_policy_update_memo.md) is dated August 14, 2026.
+    *   The Memo's Section 2.1 explicitly states that the 60-day period supersedes the 30-day period in the Compliance Manual.
+    *   The question asks for the current rule. Since the Memo is the latest document and it supersedes the previous one, the answer is 60 calendar days.
+
+    *   Answer: 60 calendar days.
+    *   Source: 06_policy_update_memo.md
+    *   Section: Section 2.1
+    *   Quote: "Effective September 1, 2026, covered securities must be held for at least 60 calendar days from the date of acquisition. The 60-day period supersedes the 30-day period stated in Section 4.4."
+
+    *   Wait, the question asks for the "minimum holding period".
+    *   The memo says: "covered securities must be held for at least 60 calendar days from the date of acquisition."
+    *   The exception for ETFs is still there: "The exclusion for exchange-traded funds that track broad market indices, the last-in, first-out convention, the CCO's authority to grant hardship exceptions and the disgorgement provision are unchanged."
+    *   The question is "What is the minimum holding period for personal investments in covered securities by access persons?"
+    *   The most accurate answer is "60 calendar days" (with the exception for ETFs). However, the prompt says "Keep answers short and specific: the number, name, frequency, threshold or rule that was asked for, with enough words to be unambiguous."

@@ -1,0 +1,122 @@
+The user wants me to compare two versions of a Caterpillar Inc. Form 10-K document (Risk Factors section) and identify material changes.
+I need to output a JSON object with a "changes" key containing a list of change objects.
+Each change object must have: "type", "heading", "description", "quote".
+
+**Analysis of the Documents:**
+
+*   **Prior Version:** Fiscal year ended 2024-12-31.
+*   **Current Version:** Fiscal year ended 2025-12-31.
+
+I will go section by section comparing the text.
+
+1.  **Header:**
+    *   Prior: `# Caterpillar Inc.: Form 10-K for fiscal year ended 2024-12-31`
+    *   Current: `# Caterpillar Inc.: Form 10-K for fiscal year ended 2025-12-31`
+    *   Change: Fiscal year changed from 2024 to 2025. This is a routine date roll-forward (Rule 5 says "a date rolled forward with nothing else changed" is not material). However, the document title itself changes. Usually, in annual reports, the fiscal year change is expected and considered a standard update for the new filing year, not necessarily a "material change" in substance unless accompanied by other changes. Rule 5 says: "Do not report minor edits: a date rolled forward with nothing else changed". The header title is often treated as metadata. However, looking at the content, I need to check if there are substantive changes.
+    *   Let's look deeper into the text.
+
+2.  **Item 1A. Risk Factors (excerpt, prior year) vs (excerpt, current year):**
+    *   Heading: `## Item 1A. Risk Factors (excerpt, prior year)` vs `## Item 1A. Risk Factors (excerpt, current year)`
+    *   Change: The sub-heading text changed from "prior year" to "current year". This is a label change indicating the version of the document. Is this material? It's metadata about the excerpt context. Rule 5 says "Do not report minor edits... an updated cross-reference or section number, punctuation, or rewording with identical meaning." Changing "prior year" to "current year" in the header description is likely a label update for the filing year, not a substantive risk change. I will treat this as a non-material edit unless it implies a different document structure.
+    *   Wait, looking closely at the text provided:
+        *   Prior Version Header: `# Caterpillar Inc.: Form 10-K for fiscal year ended 2024-12-31`
+        *   Current Version Header: `# Caterpillar Inc.: Form 10-K for fiscal year ended 2025-12-31`
+        *   Prior Version Sub-header: `## Item 1A. Risk Factors (excerpt, prior year)`
+        *   Current Version Sub-header: `## Item 1A. Risk Factors (excerpt, current year)`
+    *   These are standard metadata updates for a new fiscal year filing. Rule 5 explicitly excludes "a date rolled forward with nothing else changed". The header date is the primary identifier of the document version. I will exclude this as it's the expected change for a new annual report.
+
+3.  **Operational Risks:**
+    *   Heading: `**OPERATIONAL RISKS**` (Same)
+    *   Sub-heading: `### Unexpected events may increase our cost of doing business or disrupt our operations.` (Same)
+    *   Text: "The occurrence of one or more unexpected events... including war, acts of terrorism or violence, civil unrest, fires, tornadoes, tsunamis, hurricanes, earthquakes, floods and other forms of severe weather in the United States or in other countries in which we operate or in which our suppliers are located could adversely affect our operations and financial performance. Natural disasters, pandemic illness, equipment failures, power outages or other unexpected events could result in physical damage to and complete or partial closure of one or more of our manufacturing facilities or distribution centers, temporary or long-term disruption in the supply of component products from some local and international suppliers, and disruption and delay in the transport of our products to dealers, end-users and distribution centers. Existing insurance coverage may not provide protection for all of the costs that may arise from such events."
+    *   Comparison: Text appears identical.
+
+4.  **Financial Risks:**
+    *   Heading: `**FINANCIAL RISKS**` (Same)
+    *   Sub-heading: `### Disruptions or volatility in global financial markets could limit our sources of liquidity, or the liquidity of our customers, dealers and suppliers.` (Same)
+    *   Text: "Continuing to meet our cash requirements over the long-term requires substantial liquidity...".
+    *   Comparison: Text appears identical.
+
+5.  **Credit Ratings:**
+    *   Heading: `### Failure to maintain our credit ratings could increase our cost of borrowing and could adversely affect our cost of funds, liquidity, competitive position and access to capital markets.` (Same)
+    *   Text: "Each of Caterpillar's and Cat Financial's costs of borrowing...".
+    *   Comparison: Text appears identical.
+
+6.  **Financial Products Segment:**
+    *   Heading: `### Our Financial Products segment is subject to risks associated with the financial services industry.` (Same)
+    *   Text: "Cat Financial is significant to our operations...".
+    *   Comparison: Text appears identical.
+
+7.  **Interest Rates:**
+    *   Heading: `### Changes in interest rates or market liquidity conditions could adversely affect Cat Financial's and our earnings and/or cash flow.` (Same)
+    *   Text: "Changes in interest rates and market liquidity conditions...".
+    *   Comparison: Text appears identical.
+
+8.  **Delinquencies:**
+    *   Heading: `### An increase in delinquencies, repossessions or net losses of Cat Financial customers could adversely affect its results.` (Same)
+    *   Text: "Inherent in the operation of Cat Financial...".
+    *   Comparison: Text appears identical.
+
+9.  **Currency:**
+    *   Heading: `### Currency exchange rate fluctuations affect our results of operations.` (Same)
+    *   Text: "We conduct operations in many countries...".
+    *   Comparison: Text appears identical.
+
+10. **Restrictive Covenants:**
+    *   Heading: `### Restrictive covenants in our debt agreements could limit our financial and operating flexibility.` (Same)
+    *   Text: "We maintain a number of credit facilities...".
+    *   Comparison: Text appears identical.
+
+11. **Pension Plans:**
+    *   Heading: `### Sustained increases in funding obligations under our pension plans may impair our liquidity or financial condition.` (Same)
+    *   Prior Version Text: "We maintain certain defined benefit pension plans for our employees, which impose on us certain funding obligations. We use many assumptions in determining our future payment obligations under the plans. We employ a liability-driven investment strategy, where the interest rate sensitivity of the pension investments and pension obligations are aligned to reduce funded status volatility. Significant adverse changes in credit or capital markets could result in actual rates of return on pension investments being materially lower than projected and result in increased contribution requirements. These factors could significantly increase our payment obligations under the plans and, as a result, adversely affect our business and overall financial condition. We may be required to make material contributions to our pension plans in the future and may fund contributions through the use of cash on hand, the proceeds of borrowings, shares of our common stock or a combination of the foregoing, as permitted by applicable law."
+    *   Current Version Text: "We maintain certain defined benefit pension plans for our employees, which impose on us certain funding obligations. We use many assumptions in determining our future payment obligations under the plans. Significant adverse changes in credit or capital markets could result in actual rates of return on pension investments being materially lower than projected and result in increased contribution requirements. These factors could increase our payment obligations under the plans and, as a result, adversely affect our business and overall financial condition. We may be required to make material contributions to our pension plans in the future and may fund contributions through the use of cash on hand, the proceeds of borrowings, shares of our common stock or a combination of the foregoing, as permitted by applicable law. We employ a liability-driven investment strategy, where the interest rate sensitivity of the pension investments and pension obligations are aligned to reduce funded status volatility."
+    *   **Difference Found:** The order of sentences changed, and one sentence was moved.
+        *   Prior: "We use many assumptions...". "We employ a liability-driven investment strategy...". "Significant adverse changes...". "These factors could significantly increase...". "We may be required...".
+        *   Current: "We use many assumptions...". "Significant adverse changes...". "These factors could increase...". "We may be required...". "We employ a liability-driven investment strategy...".
+    *   Wait, let me look closer at the text provided in the prompt.
+    *   **Prior Version Pension Section:**
+        1. We maintain certain defined benefit pension plans for our employees, which impose on us certain funding obligations.
+        2. We use many assumptions in determining our future payment obligations under the plans.
+        3. We employ a liability-driven investment strategy, where the interest rate sensitivity of the pension investments and pension obligations are aligned to reduce funded status volatility.
+        4. Significant adverse changes in credit or capital markets could result in actual rates of return on pension investments being materially lower than projected and result in increased contribution requirements.
+        5. These factors could significantly increase our payment obligations under the plans and, as a result, adversely affect our business and overall financial condition.
+        6. We may be required to make material contributions to our pension plans in the future and may fund contributions through the use of cash on hand, the proceeds of borrowings, shares of our common stock or a combination of the foregoing, as permitted by applicable law.
+    *   **Current Version Pension Section:**
+        1. We maintain certain defined benefit pension plans for our employees, which impose on us certain funding obligations.
+        2. We use many assumptions in determining our future payment obligations under the plans.
+        3. Significant adverse changes in credit or capital markets could result in actual rates of return on pension investments being materially lower than projected and result in increased contribution requirements.
+        4. These factors could increase our payment obligations under the plans and, as a result, adversely affect our business and overall financial condition.
+        5. We may be required to make material contributions to our pension plans in the future and may fund contributions through the use of cash on hand, the proceeds of borrowings, shares of our common stock or a combination of the foregoing, as permitted by applicable law.
+        6. We employ a liability-driven investment strategy, where the interest rate sensitivity of the pension investments and pension obligations are aligned to reduce funded status volatility.
+    *   **Analysis:** The text is identical in substance, just reordered. Rule 5 says: "Do not report minor edits... rewording with identical meaning." Reordering sentences without changing meaning is generally considered a formatting/structure change, not a material change in substance. However, if the order implies emphasis or logic flow change, it might be noted. But usually, for risk factors, sentence reordering without content change is not material.
+    *   Wait, I need to check if there are other differences.
+    *   Let's check the **Legal & Regulatory Risks** section.
+
+12. **Legal & Regulatory Risks:**
+    *   Heading: `**LEGAL & REGULATORY RISKS**` (Same)
+    *   Sub-heading: `### Our global operations are subject to a wide range of trade and anti-corruption laws and regulations.` (Same)
+    *   Text: "Due to the international scope...".
+    *   Comparison: Text appears identical.
+
+13. **International Trade Policies:**
+    *   Heading: `### International trade policies may impact demand for our products and our competitive position.` (Same)
+    *   Text: "Government policies on international trade...".
+    *   Comparison: Text appears identical.
+
+14. **Tax Expense:**
+    *   Heading: `### We may incur additional tax expense or become subject to additional tax exposure.` (Same)
+    *   Text: "We are subject to income taxes...".
+    *   Comparison: Text appears identical.
+
+15. **Lawsuits/Investigations:**
+    *   Heading: `### Costs associated with lawsuits or investigations or adverse rulings in enforcement or other legal proceedings may have an adverse effect on our results of operations.` (Same)
+    *   Text: "We are subject to a variety of legal proceedings...".
+    *   Comparison: Text appears identical.
+
+**Re-evaluating the Pension Section:**
+In the Prior Version, the sentence about the liability-driven investment strategy comes *before* the discussion on significant adverse changes in credit markets.
+In the Current Version, the sentence about the liability-driven investment strategy is moved to the *end* of the paragraph.
+Does this constitute a material change? Rule 5 says "Do not report minor edits... rewording with identical meaning." Reordering sentences is often considered a minor edit unless it changes the emphasis significantly. However, in strict document review contexts, if the text is semantically identical but structurally different, it's often flagged as modified if the structure is part of the content. But Rule 5 says "rewording with identical meaning". Moving a sentence around isn't rewording. Is it material?
+Usually, for annual reports, the substance of risk factors is what matters. If the risk description is the same, just the order changed, it's often not considered a material change requiring committee action on the *risk* itself. However, the instruction says "Report a change only where the text actually differs between the versions." and "A section that appears in both versions with identical text is unchanged".
+The text *actually differs* in order. But Rule 5 says "Do not report minor edits... reword

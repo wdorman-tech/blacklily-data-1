@@ -1,0 +1,48 @@
+The user wants to know:
+1. The annual limit on gifts a supervised person may accept from a single business contact.
+2. Who must approve business entertainment above the per-event threshold.
+
+Looking at the documents:
+- `06_policy_update_memo.md` contains "Section 2.2 Gifts Received".
+- It says: "supervised persons may not accept gifts from any single business contact with an aggregate value exceeding $100 per calendar year."
+- It also mentions: "The entertainment provisions of Section 5.3, including the requirement of prior CCO approval for entertainment exceeding $500 per person per event... are unchanged."
+
+Wait, the question asks "who must approve business entertainment above the per-event threshold?".
+The text says "the requirement of prior CCO approval for entertainment exceeding $500 per person per event".
+So the answer to the first part is $100.
+The answer to the second part is the CCO (Chief Compliance Officer).
+
+Let's check the source:
+Document: `06_policy_update_memo.md`
+Section: `2.2 Gifts Received`
+Quote: "supervised persons may not accept gifts from any single business contact with an aggregate value exceeding $100 per calendar year. The entertainment provisions of Section 5.3, including the requirement of prior CCO approval for entertainment exceeding $500 per person per event, and the limits on gifts given in Section 5.4 are unchanged."
+
+Wait, the question asks "who must approve business entertainment above the per-event threshold?".
+The text says "prior CCO approval for entertainment exceeding $500 per person per event".
+So the answer is the CCO.
+
+Let's refine the answer.
+Question: "What is the annual limit on gifts a supervised person may accept from a single business contact, and who must approve business entertainment above the per-event threshold?"
+Answer: The annual limit is $100, and the CCO must approve entertainment exceeding $500 per person per event.
+
+Let's check the exact wording in the memo.
+"supervised persons may not accept gifts from any single business contact with an aggregate value exceeding $100 per calendar year."
+"the requirement of prior CCO approval for entertainment exceeding $500 per person per event"
+
+The question asks "who must approve...". The text says "prior CCO approval".
+
+JSON structure:
+"answer": "The annual limit is $100 per calendar year, and the CCO must approve business entertainment exceeding $500 per person per event."
+"source_document": "06_policy_update_memo.md"
+"section": "2.2 Gifts Received"
+"quote": "supervised persons may not accept gifts from any single business contact with an aggregate value exceeding $100 per calendar year. The entertainment provisions of Section 5.3, including the requirement of prior CCO approval for entertainment exceeding $500 per person per event, and the limits on gifts given in Section 5.4 are unchanged."
+
+Wait, the prompt asks for "the answer". I should combine both parts.
+"The annual limit is $100 per calendar year, and the CCO must approve business entertainment exceeding $500 per person per event."
+
+Let's double check the section.
+Section 2.2 of `06_policy_update_memo.md`.
+
+One detail: "who must approve business entertainment above the per-event threshold?"
+The text says "prior CCO approval".
+

@@ -1,0 +1,33 @@
+{
+  "piece_id": "t7_p12",
+  "form": "seminar invitation",
+  "notes": "Retirement income workshop invitation with three planted issues (C7 undated ranking of the host, C5 historical-simulation withdrawal claim, C9 one-sided private credit pitch) and one decoy (an attendee testimonial carrying all three required disclosures).",
+  "planted": [
+    {
+      "iid": "p1",
+      "category": "C7",
+      "span": "Your host is Managing Partner Dana Ollerby, who was named one of America's Top Retirement Planners by Quillmere Wealth Digest.",
+      "explanation": "A third-party ranking is cited with the rater's name but without the date of the ranking, the period of information it was based on, or whether the firm paid anything in connection with obtaining or using it."
+    },
+    {
+      "iid": "p2",
+      "category": "C5",
+      "span": "Our Retirement Income Model, applied to market returns for every 30-year period from 1970 through 2025, would have supported a 6.5% annual withdrawal, raised each year for inflation, without ever running out of money.",
+      "explanation": "Hypothetical performance of a model applied retroactively to historical data is presented without the criteria, assumptions (asset mix, return series, fees, taxes) or the risks and limitations of relying on it."
+    },
+    {
+      "iid": "p3",
+      "category": "C9",
+      "span": "Learn how our Private Credit Income sleeve can pay a monthly distribution, smooth out the swings on your statement and add a source of return that does not move with the stock market.",
+      "explanation": "Income, lower statement volatility and diversification benefits are promised with no mention of the sleeve's material risks such as illiquidity, credit and default losses, lagged valuations that understate volatility, or distributions that are not guaranteed, and the generic risk legend does not address them."
+    }
+  ],
+  "decoys": [
+    {
+      "did": "d1",
+      "looks_like": "C1",
+      "span": "\"Dana's workshop was the first time anyone explained Roth conversions in a way we could actually act on.\" Ray and Linda P., Fountain Hills. Ray and Linda attended a 2024 workshop and became clients of Ollerby Strand in 2025. They were not paid and received nothing of value for this statement. Because they are current clients who rely on the firm for advice, they have a relationship with Ollerby Strand that could lead them to speak favorably about it, and their experience may not be representative of other clients.",
+      "why_ok": "The testimonial is immediately followed, in the same type, by disclosure that the speakers are current clients, that they received no compensation, and that their client relationship is a conflict that may lead them to speak favorably."
+    }
+  ]
+}

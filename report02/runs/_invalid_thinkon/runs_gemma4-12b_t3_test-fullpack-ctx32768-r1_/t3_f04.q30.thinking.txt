@@ -1,0 +1,36 @@
+*   Question: "How long does the Firm retain its required books and records?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not found, use "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "01_brochure.md": Item 18 (Financial Information) mentions "not required to include a balance sheet" but doesn't specify retention period.
+    *   "02_compliance_manual.md": Section 13 (Recordkeeping) seems relevant.
+    *   "03_valuation_policy.md": Doesn't mention record retention.
+    *   "04_business_continuity_plan.md": Doesn't mention record retention.
+    *   "05_fee_schedule.md": Doesn't mention record retention.
+    *   "06_policy_update_memo.md": Mentions updates to other documents, but doesn't mention record retention.
+
+    *   Section 13.2 (Retention Period): "The Firm retains all required books and records for not less than seven years from the end of the fiscal year during which the last entry was made on the record, the first two years in an appropriate office of the Firm. This period exceeds the five-year period required by Rule 204-2."
+
+    *   The question asks "How long does the Firm retain its required books and records?"
+    *   The text says: "not less than seven years from the end of the fiscal year during which the last entry was made on the record, the first two years in an appropriate office of the Firm."
+
+    *   Answer: "not less than seven years from the end of the fiscal year during which the last entry was made on the record, the first two years in an appropriate office of the Firm"
+    *   Source: 02_compliance_manual.md
+    *   Section: Section 13.2
+    *   Quote: "The Firm retains all required books and records for not less than seven years from the end of the fiscal year during which the last entry was made on the record, the first two years in an appropriate office of the Firm."
+
+    *   "not less than seven years from the end of the fiscal year during which the last entry was made on the record, the first two years in an appropriate office of the Firm"
+    *   Source: 02_compliance_manual.md
+    *   Section: Section 13.2
+    *   Quote: "The Firm retains all required books and records for not less than seven years from the end of the fiscal year during which the last entry was made on the record, the first two years in an appropriate office of the Firm."
+
+    *   Wait, check if any later documents override this.
+    *   06_policy_update_memo.md:
+        *   Section 2: Compliance Manual (2.1 Minimum Holding Period, 2.2 Gifts Received)
+        *   Section 3: Valuation Policy (3.1 Stale Price Threshold, 3.2 Price Override Approval)
+        *   Section 4: Business Continuity Plan (4.1 Recovery Time Objective for Trading Systems)
+        *   Section 5: Fee Schedule (5.1 Core Fixed Income

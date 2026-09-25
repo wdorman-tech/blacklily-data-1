@@ -1,0 +1,33 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, return exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: "Who conducts the annual review of the compliance program, and does an outside firm participate?"
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "annual review", "compliance program", "outside firm", "independent assessment".
+    *   Document 1: `02_compliance_manual.md` (dated January 15, 2026).
+        *   Section 1.2 Applicability: Mentions supervised persons reading the Manual.
+        *   Section 15. ANNUAL REVIEW > 15.1 Scope and Timing: "The CCO conducts an annual review of the adequacy of the Firm's policies and procedures...".
+        *   Section 15. ANNUAL REVIEW > 15.2 Independent Assessment: "Every second year, Hessendale Compliance Advisors, an outside compliance consulting firm, performs an independent assessment of the compliance program as part of the annual review..."
+    *   Document 2: `03_valuation_policy.md` (dated February 10, 2026).
+        *   Section 8. INDEPENDENT REVIEW > 8.4 Policy Review: Mentions Committee and CCO review this Policy at least annually. Not about the compliance program generally.
+    *   Document 3: `04_business_continuity_plan.md` (dated December 1, 2025).
+        *   Section 1. PLAN OWNERSHIP AND GOVERNANCE > 1.4 Review and Approval: Mentions Plan owner reviews Plan annually. Not about the compliance program generally.
+
+3.  **Synthesize Findings:**
+    *   Who conducts the annual review? The CCO (Chief Compliance Officer). Source: `02_compliance_manual.md`, Section 15.1. Quote: "The CCO conducts an annual review of the adequacy of the Firm's policies and procedures..."
+    *   Does an outside firm participate? Yes, every second year. Source: `02_compliance_manual.md`, Section 15.2. Quote: "Every second year, Hessendale Compliance Advisors, an outside compliance consulting firm, performs an independent assessment of the compliance program as part of the annual review..."
+    *   The question asks about the annual review of the *compliance program*.
+    *   Document `02_compliance_manual.md` Section 15.1 states: "The CCO conducts an annual review of the adequacy of the Firm's policies and procedures...".
+    *   Document `02_compliance_manual.md` Section 15.2 states: "...Hessendale Compliance Advisors, an outside compliance consulting firm, performs an independent assessment of the compliance program as part of the annual review..."
+    *   Since both pieces of information are in the same document (`02_compliance_manual.md`)

@@ -1,0 +1,134 @@
+{
+ "pair_id": "t2_mmm_1",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "3M Company",
+ "ticker": "MMM",
+ "split": "dev",
+ "prior": {
+  "fiscal_year_end": "2024-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/66740/000006674025000006/mmm-20241231.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2025-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/66740/000006674026000014/mmm-20251231.htm"
+ },
+ "words": 6745,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "modified",
+   "prior_heading": "* The Company’s results are impacted by the effects of, and changes in, worldwide economic, political, regulatory, international trade, geopolitical, and other external conditions.",
+   "current_heading": "* The Company’s results are impacted by the effects of, and changes in, worldwide economic, political, regulatory, international trade, geopolitical, tariffs and retaliatory counter measures, and other external conditions.",
+   "similarity": 0.817,
+   "diff": [
+    "insert: [] -> [tariffs and retaliatory counter measures,]",
+    "replace: [2024,] -> [2025,]",
+    "replace: [imposed] -> [imposed, and propose to impose additional,]",
+    "insert: [] -> [and tariffs]",
+    "replace: [products] -> [products,]",
+    "replace: [parties in certain conflict zones.] -> [parties.]",
+    "replace: [disruptions,] -> [disruptions (including limitations on access to rare earth minerals and other raw materials),]",
+    "replace: [any] -> [and tariffs and trade restrictions may result in increased production costs and product pricing, further supply chain disruptions, limited access to end markets, lower profitability, and uncertainty related to planning long-term investments and strategies, and may have other competitive effects. Com]",
+    "replace: [which may] -> [doing business, and could result in fines and penalties or reputational harm if we are found to not be in compliance. Any of the foregoing could]",
+    "insert: [] -> [on]",
+    "replace: [Company's business] -> [Company’s business, financial condition,]",
+    "replace: [supply chain.] -> [results of operations.]",
+    "..."
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "Tariffs and retaliatory counter measures are elevated into the headline, and the body adds proposed additional export controls and tariffs, limited access to rare earth minerals and other raw materials, tariff-driven cost, pricing, market access and planning impacts, and the cost and fines exposure of complying with rapidly changing trade restrictions, while dropping the limitation of sanctions to parties in certain conflict zones.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: new exposures are disclosed (rare earth and raw material access, tariff compliance cost and penalty risk), and under criterion 3 the scope of the sanctions and trade risk is widened; the 2024 to 2025 revenue-share date roll is routine with the 56 percent figure unchanged."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: new exposures are disclosed (rare earth and raw material access, tariff compliance cost and penalty risk), and criterion 3 applies because the scope widens from imposed controls to proposed additional tariffs and the stated consequence widens from business and supply chain to business, financial condition and results of operations."
+    }
+   }
+  },
+  {
+   "aid": "a02",
+   "status": "unchanged",
+   "prior_heading": "* Foreign currency exchange rates and fluctuations in those rates may affect the Company’s ability to realize projected growth rates in its sales and earnings.",
+   "current_heading": "* Foreign currency exchange rates and fluctuations in those rates may affect the Company’s ability to realize projected growth rates in its sales and earnings.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a03",
+   "status": "modified",
+   "prior_heading": "* The Company faces liabilities related to certain fluorochemicals, which could have a material adverse effect on our results.",
+   "current_heading": "* The Company faces liabilities related to certain fluorochemicals, which could have a material adverse effect on our results.",
+   "similarity": 0.511,
+   "diff": [
+    "replace: [substances produced by the Company,] -> [substances,]",
+    "delete: [presently or historically] -> []",
+    "replace: [Company.] -> [Company prior to the end of 2025.]",
+    "replace: [manufacture] -> [manufactured]",
+    "replace: [compounds.] -> [compounds prior to the end of 2025.]",
+    "replace: [will] -> [would]",
+    "insert: [] -> [further]",
+    "replace: [is progressing toward the] -> [completed its]",
+    "delete: [all] -> []",
+    "replace: [by] -> [at]",
+    "replace: [The Company continues] -> [3M will continue]",
+    "replace: [discuss its] -> [take actions to address]",
+    "..."
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The PFAS manufacturing exit moves from in progress (\"is progressing toward the exit of all PFAS manufacturing by the end of 2025\") to completed (\"completed its exit of PFAS manufacturing at the end of 2025\"), with new disclosure of ongoing water treatment, remediation and facility disposition obligations, third-party PFAS product use that will continue beyond 2025 with transitions not completed, the dropped 2018 State of Minnesota settlement example ($897 million pre-tax charge), and asset retirement obligations broadened to charges on ongoing asset use, retirement or disposition.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 3: a planned exit becomes realized and expected continuation of third-party PFAS use becomes certain; criterion 2 and 4 also apply because the Minnesota settlement and its $897 million figure are dropped and international litigation is newly referenced."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: a planned exit becomes realized and the exit timing and feasibility risks are removed, plus criterion 2 and criterion 4 for the dropped $897 million Minnesota settlement and the added international litigation, and criterion 1 for the new post-exit remediation and asset disposition exposures."
+    }
+   }
+  },
+  {
+   "aid": "a04",
+   "status": "modified",
+   "prior_heading": "* The Company is subject to risks related to international, federal, state, and local treaties, laws, and regulations, as well as compliance risks related to legal or regulatory requirements, contract requirements, policies and practices, or other matters that require or encourage the Company or its suppliers, vendors, or channel partners to conduct business in a certain way. The outcome of legal and regulatory proceedings related to compliance with these treaties, laws, regulations, and requirements could have a material adverse effect on the Company's reputation, ability to execute its strategy and its results of operations.",
+   "current_heading": "* The Company is subject to risks related to international, federal, state, and local treaties, laws, and regulations, as well as compliance risks related to legal or regulatory requirements, contract requirements, policies and practices, or other matters that require or encourage the Company or its customers, suppliers, vendors, or channel partners to conduct business in a certain way. The outcome of legal and regulatory proceedings related to compliance with these treaties, laws, regulations, and requirements could have a material adverse effect on the Company's reputation, ability to execute its strategy and its results of operations.",
+   "similarity": 0.851,
+   "diff": [
+    "insert: [] -> [customers,]",
+    "replace: [or its third-party vendors may develop or incorporate artificial intelligence technology in] -> [is also subject to]",
+    "replace: [business processes, services or products. The development] -> [risks as a direct]",
+    "replace: [use of artificial intelligence may present risks] -> [indirect supplier]",
+    "replace: [Company’s business. Also,] -> [U.S. government and other governments, such as those associated with compliance with procurement regulations, as well as]",
+    "replace: [rapidly evolving legal] -> [government’s rights to audit]",
+    "replace: [regulatory environment relating] -> [conduct investigations and]",
+    "replace: [artificial intelligence,] -> [terminate contracts. There is also uncertainty as to the extent and timing of funding that may be available for U.S. federal government and other government procurement activities. Failure by the Company or one of its customers, suppliers, vendors, or channel partners to comply with provisions of go]",
+    "replace: [United States] -> [Company being unable to fulfill its contract commitments under a government contract or inability to realize the full value of such contract. Significant administrative, civil or criminal liabilities, including under the U.S. False Claims Act or similar enforcement legislation,]",
+    "replace: [internationally, could impact] -> [suspension or debarment from business with]",
+    "replace: [Company’s implementation of artificial intelligence technology, and increase compliance costs and the risk of non-compliance. While the Company will seek to develop and use artificial intelligence responsibly, and will attempt to identify and mitigate ethical, privacy, legal] -> [U.S.]",
+    "replace: [issues presented by its use, there can be no assurance that the Company will be fully successful in doing so, and may be subject to data breaches, allegations of unauthorized access to, or use of, third party data, information, or intellectual property rights, or other risks, which may lead to finan] -> [governments,]",
+    "..."
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The paragraph on artificial intelligence development, use and regulatory risk is removed and replaced by a new paragraph on risks as a direct and indirect supplier to the U.S. and other governments, covering procurement compliance, audit and contract termination rights, funding uncertainty, False Claims Act liability and suspension or debarment, with customers added to the parties whose conduct creates compliance risk.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: a previously disclosed risk (artificial intelligence) is removed and a new exposure (government contracting) is disclosed; the customers addition also widens scope under criterion 3."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: a previously disclosed risk (artificial intelligence) is removed and a new exposure (government contracting) is disclosed, which also triggers criterion 2 for the dropped AI regulation reference and the new government procurement programs."
+    }
+   }
+  }
+ ]
+}

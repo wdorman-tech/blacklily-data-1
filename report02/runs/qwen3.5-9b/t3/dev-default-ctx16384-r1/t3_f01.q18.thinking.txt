@@ -1,0 +1,45 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor Relations and Operations Analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys `answer`, `source_document`, `section`, `quote`.
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "How often is the business continuity plan tested, and when was the most recent test conducted?"
+    *   Key information needed: Frequency of testing, Date of most recent test.
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "business continuity plan", "tested", "frequency", "recent test", "date".
+    *   Document 1: `02_compliance_manual.md` (Cybersecurity section) - Mentions penetration tests, vulnerability scans, phishing exercises. Not about the Business Continuity Plan (BCP) testing frequency specifically for the plan itself.
+    *   Document 2: `04_business_continuity_plan.md` (Business Continuity and Disaster Recovery Plan).
+        *   Section 1.1 Purpose: General purpose.
+        *   Section 2.2 Approval and Review: Mentions annual review by Plan Owner, but not testing frequency of the plan itself explicitly here (though mentions "after each test").
+        *   Section 5.1 Vendor Oversight: Vendor reviews.
+        *   Section 6.3 Restoration Testing: Backup restoration testing quarterly.
+        *   Section 7.1 Testing Frequency and Most Recent Test: This looks promising.
+            *   Text: "The Plan is tested at least annually."
+            *   Text: "The most recent full test of the Plan was conducted on October 22, 2025."
+        *   Section 7.2 Follow-Up: Issue tracking.
+        *   Section 7.3 Training: Training frequency.
+
+4.  **Evaluate Findings:**
+    *   Document: `04_business_continuity_plan.md`
+    *   Section: `SECTION 7. TESTING AND TRAINING > 7.1 Testing Frequency and Most Recent Test` (or just `SECTION 7. TESTING AND TRAINING` depending on how the section is labeled in the text provided). The text says "Section: SECTION 7. TESTING AND TRAINING > 7.1 Testing Frequency and Most Recent Test".
+    *   Content found:
+        *   Frequency: "at least annually"
+        *   Most recent test date: "October 22, 2025"
+    *   Date of document: May 4, 2026. This is the latest available document regarding BCP.
+
+5.  **Draft the Answer:**
+    *   `answer`: The Plan is tested at least annually. The most recent full test of the Plan was conducted on October 22, 2025.
+    *   `source_document`: 04_business_continuity_plan.md
+    *   `section`: SECTION 7. TESTING AND TRAINING > 7.1 Testing

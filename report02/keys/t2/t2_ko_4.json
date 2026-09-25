@@ -1,0 +1,206 @@
+{
+ "pair_id": "t2_ko_4",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "The Coca-Cola Company",
+ "ticker": "KO",
+ "split": "test",
+ "prior": {
+  "fiscal_year_end": "2024-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/21344/000002134425000011/ko-20241231.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2025-12-31",
+  "url": "https://www.sec.gov/Archives/edgar/data/21344/000162828026010047/ko-20251231.htm"
+ },
+ "words": 6679,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "unchanged",
+   "prior_heading": "Default by or failure of one or more of our counterparty financial institutions could cause us to incur significant losses.",
+   "current_heading": "Default by or failure of one or more of our counterparty financial institutions could cause us to incur significant losses.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a02",
+   "status": "modified",
+   "prior_heading": "We may be required to recognize impairment charges that could materially affect our financial results.",
+   "current_heading": "We may be required to recognize impairment charges that could materially affect our financial results.",
+   "similarity": 0.999,
+   "diff": [
+    "insert: [] -> [22]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The only difference is a page number (22) that now falls inside the body text; the wording of the risk factor is identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: page-break artifact with no change to the disclosure text, so no criterion applies."
+    },
+    "B": {
+     "material": false,
+     "rationale": "Minor: a pagination artifact with no change in wording or substance."
+    }
+   }
+  },
+  {
+   "aid": "a03",
+   "status": "modified",
+   "prior_heading": "If we are unable to protect our information systems against service interruption, misappropriation of data or cybersecurity incidents, our operations could be disrupted, we may suffer financial losses and our reputation may be damaged.",
+   "current_heading": "If we are unable to protect our information systems against service interruption, misappropriation of data or cybersecurity incidents, our operations could be disrupted, we may suffer financial losses and our reputation may be damaged.",
+   "similarity": 1.0,
+   "diff": [
+    "delete: [22] -> []",
+    "insert: [] -> [23]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The only difference is that a page number moved (22 removed, 23 inserted at a new page break); the cybersecurity disclosure text is identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: page-break artifacts only, no criterion applies."
+    },
+    "B": {
+     "material": false,
+     "rationale": "Minor: a pagination artifact with no change in wording or substance."
+    }
+   }
+  },
+  {
+   "aid": "a04",
+   "status": "modified",
+   "prior_heading": "If we fail to comply with privacy and data protection laws, we could be subject to adverse publicity, business disruption, data loss, government enforcement actions and/or private litigation, any of which could negatively affect our business and operating results.",
+   "current_heading": "If we fail to comply with privacy and data protection laws, we could be subject to adverse publicity, business disruption, data loss, government enforcement actions and/or private litigation, any of which could negatively affect our business and operating results.",
+   "similarity": 0.997,
+   "diff": [
+    "delete: [23] -> []",
+    "insert: [] -> [or restrictions]",
+    "replace: [expenses] -> [expenses,]",
+    "replace: [investigations),] -> [investigations)]",
+    "replace: [activity,] -> [activity]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "Cross-border data transfer laws are now described as imposing \"obligations or restrictions\" instead of \"obligations\", alongside comma changes and a moved page number.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: adding \"or restrictions\" is stylistic rewording with the same meaning (restrictions are already a kind of obligation), and the rest is punctuation and a page-break artifact."
+    },
+    "B": {
+     "material": false,
+     "rationale": "Minor: stylistic rewording and punctuation; cross-border transfer rules and data localization restrictions were already disclosed in the same section, so no new risk or change in scope."
+    }
+   }
+  },
+  {
+   "aid": "a05",
+   "status": "modified",
+   "prior_heading": "Our business is subject to evolving sustainability regulatory requirements and expectations, which exposes us to increased costs and legal and reputational risks.",
+   "current_heading": "Our business is subject to evolving sustainability regulatory requirements and expectations, which exposes us to increased costs and legal and reputational risks.",
+   "similarity": 0.986,
+   "diff": [
+    "insert: [] -> [24]",
+    "replace: [standards.] -> [standards across jurisdictions.]",
+    "insert: [] -> [our or]",
+    "replace: [circumstances.] -> [circumstances, as well as correction of identified errors in data reporting.]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The company now says previously reported sustainability data may be adjusted to correct identified errors in data reporting and because of better quality in its own data, not only third-party data, and adds that the disclosure frameworks apply \"across jurisdictions\".",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 1: the possibility of correcting identified errors in reported sustainability data is a new exposure, and criterion 3: the reasons data may be restated now cover the company's own data as well as third-party data."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 1: a new risk is disclosed, that the Company's own reported sustainability data may contain identified errors requiring correction."
+    }
+   }
+  },
+  {
+   "aid": "a06",
+   "status": "modified",
+   "prior_heading": "Increasing concerns about the environmental impact of plastic bottles and other packaging materials could result in reduced demand for our beverage products and increased production and distribution costs.",
+   "current_heading": "Increasing concerns about the environmental impact of plastic bottles and other packaging materials could result in reduced demand for our beverage products and increased production and distribution costs.",
+   "similarity": 1.0,
+   "diff": [
+    "delete: [24] -> []"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The only difference is that a page number (24) was removed from the body text; the plastic packaging disclosure is identical.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: page-break artifact only, no criterion applies."
+    },
+    "B": {
+     "material": false,
+     "rationale": "Minor: a pagination artifact with no change in wording or substance."
+    }
+   }
+  },
+  {
+   "aid": "a07",
+   "status": "modified",
+   "prior_heading": "Water scarcity and poor quality could negatively impact the Coca-Cola system’s costs and capacity.",
+   "current_heading": "Water scarcity and poor quality could negatively impact the Coca-Cola system’s costs and capacity.",
+   "similarity": 0.435,
+   "diff": [
+    "replace: [overexploitation,] -> [overexploitation;]",
+    "insert: [] -> [agricultural]",
+    "delete: [for food] -> []",
+    "replace: [water,] -> [water;]",
+    "replace: [contaminants,] -> [contaminants;]",
+    "replace: [management,] -> [management;]",
+    "replace: [water,] -> [water;]",
+    "replace: [world] -> [world;]",
+    "insert: [] -> [25]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The list of pressures on water is now separated by semicolons instead of commas, and \"increasing demand for food\" becomes \"increasing agricultural demand\", with a page number (25) added.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: punctuation changes plus a stylistic rewording of the same water-demand driver, with no new risk, severity change or number."
+    },
+    "B": {
+     "material": false,
+     "rationale": "Minor: punctuation and stylistic rewording of the same demand driver, with no new risk, severity or scope change."
+    }
+   }
+  },
+  {
+   "aid": "a08",
+   "status": "modified",
+   "prior_heading": "Increased demand for food products, decreased agricultural productivity and increased regulation of ingredient sourcing due diligence may negatively affect our business.",
+   "current_heading": "Increased demand for food products, decreased agricultural productivity and increased regulation of ingredient sourcing due diligence may negatively affect our business.",
+   "similarity": 0.998,
+   "diff": [
+    "insert: [] -> [more]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The phrase \"investment in sustainable agriculture\" becomes \"investment in more sustainable agriculture\".",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: stylistic rewording with the same meaning, no new risk, program or change in severity."
+    },
+    "B": {
+     "material": false,
+     "rationale": "Minor: stylistic rewording with the same meaning, no change to the disclosed risk or mitigation."
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,91 @@
+*   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from a fund offering document into a specific JSON structure.
+    *   Constraints:
+        *   Accuracy is paramount. No invented terms.
+        *   Use `NOT_FOUND` if not stated.
+        *   Use `NOT_APPLICABLE` if stated as not applicable.
+        *   Amendments/Restatements supersede original text.
+        *   Report all variants for different share classes/tiers.
+        *   Distinguish between commitment and current holding.
+        *   Citations must be section/appendix identifiers.
+        *   Quotes must be verbatim.
+        *   Output format: JSON only, no markdown, no preamble.
+
+    *   `fund_name`: "Quarrendon Vale Infrastructure Secondaries Fund II, L.P." (Section 1, Summary; Section 2.1)
+    *   `fund_domicile`: "Delaware" (Section 1, Summary; Section 2.1; Section 15.5)
+    *   `fund_structure`: "closed-end, drawdown vehicle; not a feeder fund and does not invest through a master fund" (Section 1, Summary); "The Partnership is a closed-end fund. ... The Partnership is not part of a master-feeder structure." (Section 2.2)
+    *   `management_fee`:
+        *   Summary: "During the Investment Period, 1.00% per annum of Capital Commitments; thereafter, 0.75% per annum of Net Invested Capital. Payable quarterly in advance. No Management Fee for any period after the twelfth anniversary of the Final Closing Date, and none on the GP Commitment."
+        *   Article 7.1: "(a) for each calendar quarter from the Initial Closing Date through the last day of the Investment Period, 0.25% (1.00% per annum) of that Limited Partner's Capital Commitment; and (b) for each calendar quarter thereafter, 0.1875% (0.75% per annum) of that Limited Partner's pro rata share of Net Invested Capital as of the first day of the quarter. ... No Management Fee shall be charged for any period after the twelfth anniversary of the Final Closing Date, including any extension under Section 2.3, or on the GP Commitment."
+    *   `performance_fee`:
+        *   Summary: "12.5%, after the Preferred Return and a full catch-up."
+        *   Article 6.2(c): "100% to the General Partner until it has received under this Section 6.2(c) 12.5% of the sum of distributions to that Limited Partner under Section 6.2(b) and to the General Partner under Section 6.2(c)"
+        *   Article 6.2(d): "thereafter, (i) 87.5% to that Limited Partner and (ii) 12.5% to the General Partner."
+        *   Note: The "Carried Interest" is the performance fee.
+    *   `hurdle_rate`:
+        *   Summary: "8% per annum, compounded annually, on outstanding Capital Contributions."
+        *   Article 6.2(b): "Preferred Return: second, 100% to that Limited Partner until it has received its Preferred Return"
+        *   Article 1.1: "Preferred Return" means "... a return of 8% per annum, compounded annually, on the balance of its Capital Contributions outstanding from time to time..."
+    *   `high_water_mark`:
+        *   Article 6.4: "No high water mark, loss carryforward or similar mechanism applies to the Carried Interest; Section 6.3 is the exclusive adjustment for Carried Interest distributed in excess of entitlement."
+    *   `minimum_initial_investment`:
+        *   Summary: "$10,000,000, subject to the General Partner's discretion to accept lesser amounts of not less than $5,000,000."
+        *   Article 3.1: "The minimum Capital Commitment of a Limited Partner is $10,000,000; provided that the General Partner may in its sole discretion accept Capital Commitments of lesser amounts, but not less than $5,000,000..."
+    *   `lockup_period`:
+        *   Summary: "There is no lock-up period, redemption notice period, redemption date or gate."
+        *   Article 10.1: "The Partnership has no redemption dates, lock-up period, redemption notice requirement or gate, and none shall be implied from any provision of this Agreement governing Transfers."
+    *   `redemption_frequency`:
+        *   Summary: "None. Limited Partners may not withdraw or redeem any part of their Interests."
+        *   Article 10.1: "No Limited Partner shall have the right to withdraw from the Partnership, or to withdraw or redeem all or any part of its Interest or Capital Account, before the dissolution and winding up of the Partnership."
+    *   `redemption_notice_days`:
+        *   Summary: "None."
+        *   Article 10.1: "The Partnership has no redemption dates, lock-up period, redemption notice requirement or gate..."
+    *   `gate_provision`:
+        *   Summary: "None."
+        *   Article 10.1: "The Partnership has no redemption dates, lock-up period, redemption notice requirement or gate..."
+    *   `key_man_provision`:
+        *   Summary: "Key Persons: Helena Strathdee, Marcus Vellacott and Priya Lathcombe. If during the Investment Period fewer than two Key Persons devote substantially all of their business time to the Partnership, Fund I, the Parallel Funds and the Manager, the Investment Period is automatically suspended. It resumes only if Two-Thirds in Interest of the Limited Partners so approve within 180 days; otherwise it terminates."
+        *   Article 8.3: "If at any time during the Investment Period fewer than two (2) of the Key Persons devote substantially all of their business time to the affairs of the Partnership, the Parallel Funds, Fund I and the Manager (a "Key Person Event"), (a) the General Partner shall notify the Limited Partners within ten (10) Business Days; (b) the Investment Period shall be automatically suspended, and the Partnership shall make no new Investment other than one committed to in writing before the Key Person Event; and (c) the suspension shall end if, within one hundred eighty (180) days after the Key Person Event, Two-Thirds in Interest of the Limited Partners approve replacement Key Persons proposed by the General Partner or otherwise elect to reinstate the Investment Period. Absent such approval or election, the Investment Period terminates at the end of that period."
+    *   `gp_commitment`:
+        *   Summary: "The General Partner and its Affiliates will commit, in the aggregate, 1.0% of total Capital Commitments to the Partnership and the Parallel Funds, funded in cash."
+        *   Article 3.2: "The General Partner shall make, directly or through its Affiliates (including the Manager, the Key Persons and vehicles controlled by them), Capital Commitments to the Partnership and the Parallel Funds that are, in the aggregate, not less than two percent (2%) of the aggregate Capital Commitments of all partners of the Partnership and the Parallel Funds, determined as of the Final Closing Date (the "GP Commitment")."
+        *   *Conflict Check:* The Summary says 1.0%, but the Agreement (which supersedes the Summary per Section 15.1) says "not less than two percent (2%)". I must use the Agreement value.
+    *   `fund_term`:
+        *   Summary: "Twelve years from the Final Closing Date, subject to up to three consecutive one-year extensions, each at the discretion of the General Partner."
+        *   Article 2.3: "The term of the Partnership shall continue until the twelfth (12th) anniversary of the Final Closing Date, unless the Partnership is sooner dissolved under Article XII. The General Partner may extend the term for up to two (2) successive periods of one (1) year each: the first such extension in its discretion, by notice to the Limited Partners given not less than sixty (60) days before the scheduled expiration, and the second only with the prior written consent of the Advisory Committee. The General Partner has no right to extend the term beyond the second such extension, and the Partnership shall not continue, other than to wind up under Section 12.2, after the fourteenth (14th) anniversary of the Final Closing Date."
+        *   *Conflict Check:* Summary says 3 extensions, Article 2.3 says 2 extensions. Article 2.3 supersedes.
+    *   `auditor`:
+        *   Summary: "Merriwick Sowerby LLP."
+        *   Article 13.2: "The General Partner has appointed Merriwick Sowerby LLP as the independent auditors of the Partnership, commencing with the fiscal year ending December 31, 2026..."
+    *   `administrator`:
+        *   Summary: "Orrelby Fund Services (US) LLC."
+        *   Article 13.3: "The General Partner has engaged Orrelby Fund Services (US) LLC (the "Administrator") to maintain the register of Partners and the Capital Accounts..."
+    *   `prime_broker`:
+        *   Summary: "None. The Partnership does not engage a prime broker."
+        *   Article 13.4: "The Partnership does not engage, and does not intend to engage, a prime broker."
+    *   `legal_counsel`:
+        *   Summary: "Haskett Voorlan LLP, counsel to the Partnership, the General Partner and the Manager."
+        *   Article 15.3: "Haskett Voorlan LLP (\"Fund Counsel\") has acted as counsel to the Partnership, the General Partner and the Manager..."
+    *   `mfn_selection`:
+        *   Summary: "Side letters permitted. Limited Partners with Capital Commitments of $50,000,000 or more may elect the benefit of side letter provisions granted to Limited Partners with equal or smaller Capital Commitments, subject to customary exclusions."
+        *   Article 14.2: "Within thirty (30) days after the Final Closing Date, the General Partner shall furnish to each Limited Partner whose Capital Commitment, aggregated with those of its Affiliates and accounts under common investment control, equals or exceeds $50,000,000 a compilation of all side letter provisions granted to any other Limited Partner whose Capital Commitment is equal to or less than its own. Each such Limited Partner may elect, within thirty (30) days after receipt, the benefit of any such provision, other than provisions (a) relating to the tax, legal, regulatory or policy status of another Limited Partner, (b) granting an Advisory Committee seat, (c) granting co-investment rights, (d) consenting to Transfers to Affiliates or (e) granted in consideration of admission at the Initial Closing Date. A Limited Partner whose Capital Commitment is less than $50,000,000 has no election under this Section 14.2."
+
+    *   `fund_name`: "Quarrendon Vale Infrastructure Secondaries Fund II, L.P." (Section 1, Summary; Section 2.1)
+    *   `fund_domicile`: "Delaware" (Section 1, Summary; Section 2.1; Section 15.5)
+    *   `fund_structure`: "closed-end, drawdown vehicle; not a feeder fund and does not invest through a master fund" (Section 1, Summary) and "The Partnership is a closed-end fund. ... The Partnership is not part of a master-feeder structure." (Section 2.2)
+    *   `management_fee`: "During the Investment Period, 1.00% per annum of Capital Commitments; thereafter, 0.75% per annum of Net Invested Capital. ... No Management Fee for any period after the twelfth anniversary of the Final Closing Date, and none on the GP Commitment." (Section 1, Summary) and "(a) for each calendar quarter from the Initial Closing Date through the last day of the Investment Period, 0.25% (1.00% per annum) of that Limited Partner's Capital Commitment; and (b) for each calendar quarter thereafter, 0.1875% (0.75% per annum) of that Limited Partner's pro rata share of Net Invested Capital as of the first day of the quarter. ... No Management Fee shall be charged for any period after the twelfth anniversary of the Final Closing Date, including any extension under Section 2.3, or on the GP Commitment." (Section 7.1)
+    *   `performance_fee`: "12.5%, after the Preferred Return and a full catch-up." (Section 1, Summary) and "100% to the General Partner until it has received under this Section 6.2(c) 12.5% of the sum of distributions to that Limited Partner under Section 6.2(b) and to the General Partner under Section 6.2(c); and (d) Final Split: thereafter, (i) 87.5% to that Limited Partner and (ii) 12.5% to the General Partner." (Section 6.2)
+    *   `hurdle_rate`: "8% per annum, compounded annually, on outstanding Capital Contributions." (Section 1, Summary) and "Preferred Return: ... a return of 8% per annum, compounded annually, on the balance of its Capital Contributions outstanding from time to time" (Section 1.1)
+    *   `high_water_mark`: "No high water mark, loss carryforward or similar mechanism applies to the Carried Interest; Section 6.3 is the exclusive adjustment for Carried Interest distributed in excess of entitlement." (Section 6.4)
+    *   `minimum_initial_investment`: "$10,000,000, subject to the General Partner's discretion to accept lesser amounts of not less than $5,000,000." (Section 1, Summary) and "The minimum Capital Commitment of a Limited Partner is $10,000,000; provided that the General Partner may in its sole discretion accept Capital Commitments of lesser amounts, but not less than $5,000,000" (Section 3.1)
+    *   `lockup_period`: "There is no lock-up period, redemption notice period, redemption date or gate." (Section 1, Summary) and "The Partnership has no redemption dates, lock-up period, redemption notice requirement or gate, and none shall be implied from any provision of this Agreement governing Transfers." (Section 10.1)
+    *   `redemption_frequency`: "None. Limited Partners may not withdraw or redeem any part of their Interests." (Section 1, Summary) and "No Limited Partner shall have the right to withdraw from the Partnership, or to withdraw or redeem all or any part of its Interest or Capital Account, before the dissolution and winding up of the Partnership." (Section 10.1)
+    *   `redemption_notice_days`: "None." (Section 1, Summary) and "The Partnership has no redemption dates, lock-up period, redemption notice requirement or gate" (Section 10.1)
+    *   `gate_provision`: "None." (Section 1, Summary) and "The Partnership has no redemption dates, lock-up period, redemption notice requirement or gate" (Section 10.1)
+    *   `key_man_provision`: "If during the Investment Period fewer than two Key Persons devote substantially all of their business time to the Partnership, Fund I, the Parallel Funds and the Manager, the Investment Period is automatically suspended. It resumes only if Two-Thirds in Interest of the Limited Partners so approve within 180 days; otherwise it terminates." (Section 1, Summary) and "If at any time during the Investment Period fewer than two (2) of the Key Persons devote substantially all of their business time to the affairs of the Partnership, the Parallel Funds, Fund I and the Manager (a \"Key Person Event\"), (a) the General Partner shall notify the Limited Partners within ten (10) Business Days; (b) the Investment Period shall be automatically suspended, and the Partnership shall make no new Investment other than one committed to in writing before the Key Person Event; and (c) the suspension shall end if, within one hundred eighty (180) days after the Key Person Event, Two-Thirds in Interest of the Limited Partners approve replacement Key Persons proposed by the General Partner or otherwise elect to reinstate the Investment Period. Absent such approval or election, the Investment Period terminates at the end of that period." (Section 8.3)
+    *   `gp_commitment`: "not less than two percent (2%) of the aggregate Capital Commitments of all partners of the Partnership and the Parallel Funds, determined as of the Final Closing Date" (Section 3.2)
+    *   `fund_term`: "The term of the Partnership shall continue until the twelfth (12th) anniversary of the Final Closing Date, unless the Partnership is sooner dissolved under Article XII. The General Partner may extend the term for up to two (2) successive periods of one (1) year each: the first such extension in its discretion, by notice to the Limited Partners given not less than sixty (60) days before the scheduled expiration, and the second only with the prior written consent of the Advisory Committee. The General Partner has no right to extend the term beyond the second such extension, and the Partnership shall not continue, other than to wind up under Section 12.2, after the fourteenth (14th) anniversary of the Final Closing Date." (Section 2.3)
+    *   `auditor`: "Merriwick Sowerby LLP" (Section 1, Summary; Section 13.2)
+    *   `administrator`: "Orrelby Fund Services (US) LLC" (Section 1, Summary; Section 13.3)
+    *   `prime_broker`: "None. The Partnership does not engage a prime broker." (Section 1, Summary) and "The Partnership does not engage, and does not intend to engage, a prime broker." (Section 13.4)
+    

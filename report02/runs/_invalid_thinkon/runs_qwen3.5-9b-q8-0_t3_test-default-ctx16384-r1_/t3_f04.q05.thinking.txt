@@ -1,0 +1,45 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraint 1: Answer only from documents provided.
+    *   Constraint 2: If documents don't answer, return exactly "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones (not relevant here as there's only one document mentioning insurance).
+    *   Constraint 4: Keep answers short and specific.
+    *   Constraint 5: Cite document file name and section.
+    *   Constraint 6: Quote supporting text verbatim.
+    *   Output Format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: What are the coverage limits of the Firm's cyber liability insurance policy, and who is the carrier?
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "cyber liability insurance", "coverage limits", "carrier", "insurer", "policy".
+
+3.  **Evaluate Document Content:**
+    *   `01_brochure.md`: Mentions clients, assets under management. No mention of insurance.
+    *   `02_compliance_manual.md`:
+        *   Section 11.1 Governance: Mentions ISO, risk assessment. No insurance details.
+        *   Section 11.2 Technical Controls: Mentions Grisby Lane Security. No insurance details.
+        *   Section 11.3 Vendor Oversight: Mentions vendors. No insurance details.
+        *   Section 11.5 Cyber Insurance: "The Firm maintains a cyber liability insurance policy. The Chief Financial Officer reviews the adequacy of coverage annually with the ISO and the Firm's insurance broker, and the ISO ensures that the notice requirements of the policy are reflected in the incident response plan."
+            *   Does this mention coverage limits? No.
+            *   Does this mention the carrier name? No.
+    *   `04_business_continuity_plan.md`:
+        *   Section 9.2 Detection and Escalation: Mentions Grisby Lane Security. No insurance details.
+        *   Section 9.3 Outside Advisers: Mentions Quenby Digital Forensics LLC, Dunmore Achterberg LLP. No insurance carrier.
+        *   Section 9.5 Notifications: "The Chief Financial Officer notifies the Firm's cyber liability insurer in accordance with the terms of the policy."
+            *   Does this mention coverage limits? No.
+            *   Does this mention the carrier name? No.
+
+4.  **Determine Answer:**
+    *   The documents confirm the existence of a cyber liability insurance policy and that the CFO reviews it annually.
+    *   However, neither document specifies the *coverage limits* (e.g., $5 million) nor the *carrier name* (e.g., AIG, Chubb).
+    *   According to Rule 2: "If the documents do not answer the question... the answer is exactly NOT_IN_DOCUMENTS."
+
+5.  **Construct JSON:**
+    *   "answer": "NOT_IN_DOCUMENTS"
+    *   "source_document": "" (Since the answer is NOT_IN_DOCUMENTS, per instructions for that key)
+    *   "section": "" (Same logic)
+    *   "quote": "" (Same logic)
+
+    *Wait, checking Rule 2

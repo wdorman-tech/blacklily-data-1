@@ -1,0 +1,44 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "Who sits on the Best Execution Committee and how often does it meet?"
+
+3.  **Scan Documents for Keywords:**
+    *   Keywords: "Best Execution Committee", "members", "sit", "meet", "frequency".
+
+4.  **Evaluate Document 1 (`01_brochure.md`):**
+    *   Section: Item 12. Brokerage Practices > 12.1 Selection of Executing Brokers.
+    *   Content: Mentions "Adviser's Best Execution Committee reviews" Tessingham Execution Analytics LLC analysis. Does not list members or meeting frequency.
+
+5.  **Evaluate Document 2 (`02_compliance_manual.md`):**
+    *   Section: SECTION 10. BEST EXECUTION > 10.2 Best Execution Committee.
+    *   Content: "The Best Execution Committee consists of the President and Chief Operating Officer (chair), the Head of Trading, the Chief Financial Officer and the CCO. The Committee meets quarterly..."
+    *   This section directly answers both parts of the question (Who and How often).
+
+6.  **Evaluate Document 3 (`03_valuation_policy.md`):**
+    *   Section: SECTION 2. VALUATION COMMITTEE.
+    *   Content: Discusses Valuation Committee, not Best Execution Committee. Irrelevant.
+
+7.  **Check for Superseding Documents:**
+    *   `01_brochure.md`: Dated March 27, 2026.
+    *   `02_compliance_manual.md`: Dated January 15, 2026.
+    *   `03_valuation_policy.md`: Dated November 3, 2025.
+    *   The question is about the Best Execution Committee. Only `02_compliance_manual.md` contains specific details about this committee's composition and meeting frequency. `01_brochure.md` mentions the committee exists but doesn't detail members/frequency. Since `02_compliance_manual.md` is the only document with the specific answer, it is the source. There are no conflicting updates regarding the Best Execution Committee in later documents (the brochure is later but lacks the detail). The rule says "Later-dated documents supersede earlier ones... Where a policy update memorandum or amendment changes a provision". Since the brochure doesn't change the provision found in the compliance manual, the compliance manual remains the source of truth for this specific detail.
+
+8.  **Draft the Answer:**
+    *   Who: President and Chief Operating Officer (chair), Head of Trading, Chief Financial Officer, CCO.
+    *   How often: Quarterly.
+    *   Source Document: `02_compliance_manual.md`
+    *   Section: `SECTION 1

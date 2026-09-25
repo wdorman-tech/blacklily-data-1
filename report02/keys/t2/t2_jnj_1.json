@@ -1,0 +1,215 @@
+{
+ "pair_id": "t2_jnj_1",
+ "source": "sec_edgar_10k_item_1a",
+ "issuer": "Johnson & Johnson",
+ "ticker": "JNJ",
+ "split": "test",
+ "prior": {
+  "fiscal_year_end": "2024-12-29",
+  "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040625000038/jnj-20241229.htm"
+ },
+ "current": {
+  "fiscal_year_end": "2025-12-28",
+  "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000016/jnj-20251228.htm"
+ },
+ "words": 5912,
+ "sections": [
+  {
+   "aid": "a01",
+   "status": "unchanged",
+   "prior_heading": "The Company’s businesses operate in highly competitive product markets and competitive pressures could adversely affect the Company’s earnings.",
+   "current_heading": "The Company’s businesses operate in highly competitive product markets and competitive pressures could adversely affect the Company’s earnings.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a02",
+   "status": "modified",
+   "prior_heading": "Interruptions and delays in manufacturing operations could adversely affect the Company’s business, sales and reputation.",
+   "current_heading": "Interruptions and delays in manufacturing operations could adversely affect the Company’s business, sales and reputation.",
+   "similarity": 0.999,
+   "diff": [
+    "replace: [64] -> [63]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The number of manufacturing facilities operated by the Company's subsidiaries falls from 64 to 63.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 4: a count of manufacturing facilities changes (64 to 63), which is a quantitative change and not a date roll-forward."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 4: a count of manufacturing facilities changed (64 to 63), which is a quantitative change other than a date roll-forward."
+    }
+   }
+  },
+  {
+   "aid": "a03",
+   "status": "unchanged",
+   "prior_heading": "The Company relies on third parties to manufacture and supply certain of our products. Any failure by or loss of a third-party manufacturer or supplier could result in delays and increased costs, which may adversely affect our business.",
+   "current_heading": "The Company relies on third parties to manufacture and supply certain of our products. Any failure by or loss of a third-party manufacturer or supplier could result in delays and increased costs, which may adversely affect our business.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a04",
+   "status": "modified",
+   "prior_heading": "Counterfeit versions of our products could harm our patients and have a negative impact on our revenues, earnings, reputation and business.",
+   "current_heading": "Counterfeit versions of our products could harm our patients and have a negative impact on our revenues, earnings, reputation and business.",
+   "similarity": 0.986,
+   "diff": [
+    "delete: [industry’s failure to mitigate the] -> []"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The risk that could harm the business is recast from \"the industry's failure to mitigate the threat of counterfeit medicines\" to \"the threat of counterfeit medicines\" itself.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 3: the risk is no longer conditioned on an industry mitigation failure, so its scope widens to the counterfeit threat as such, and the meaning is not identical."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: the risk is no longer contingent on an industry mitigation failure, so its scope widens from a conditional risk to an unconditional one."
+    }
+   }
+  },
+  {
+   "aid": "a05",
+   "status": "unchanged",
+   "prior_heading": "Global health crises, pandemics, epidemics, or other outbreaks could adversely disrupt or impact certain aspects of the Company’s business, results of operations and financial condition.",
+   "current_heading": "Global health crises, pandemics, epidemics, or other outbreaks could adversely disrupt or impact certain aspects of the Company’s business, results of operations and financial condition.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a06",
+   "status": "unchanged",
+   "prior_heading": "Global sales in the Company’s Innovative Medicine and MedTech segments may be negatively impacted by healthcare reforms and increasing pricing pressures.",
+   "current_heading": "Global sales in the Company’s Innovative Medicine and MedTech segments may be negatively impacted by healthcare reforms and increasing pricing pressures.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a07",
+   "status": "modified",
+   "prior_heading": "We are subject to an increasing number of costly and complex governmental regulations in the countries in which operations are conducted which may materially adversely affect the Company’s financial condition and business operations.",
+   "current_heading": "The Company is subject to an increasing number of costly and complex governmental regulations in the countries in which operations are conducted which may have a material adverse affect on the Company’s financial condition and business operations.",
+   "similarity": 0.967,
+   "diff": [
+    "replace: [We are] -> [The Company is]",
+    "replace: [materially adversely] -> [have a material adverse]",
+    "insert: [] -> [on]"
+   ],
+   "material": false,
+   "rationale": "",
+   "description": "The headline changes \"We are subject\" to \"The Company is subject\" and \"may materially adversely affect\" to \"may have a material adverse affect on\", with the body unchanged.",
+   "labels": {
+    "A": {
+     "material": false,
+     "rationale": "minor: a change of subject reference and a stylistic rewording of the same material adverse effect language, with identical meaning and \"material\" retained."
+    },
+    "B": {
+     "material": false,
+     "rationale": "minor: stylistic rewording of the headline with identical meaning, and 'material' is present in both versions, so no criterion applies."
+    }
+   }
+  },
+  {
+   "aid": "a08",
+   "status": "unchanged",
+   "prior_heading": "The Company is subject to significant legal proceedings that can result in significant expenses, fines and reputational damage.",
+   "current_heading": "The Company is subject to significant legal proceedings that can result in significant expenses, fines and reputational damage.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a09",
+   "status": "modified",
+   "prior_heading": "Product reliability, safety and effectiveness concerns can have significant negative impacts on sales and results of operations, lead to litigation and cause reputational damage.",
+   "current_heading": "Product reliability, safety and effectiveness concerns can have significant negative impacts on sales and results of operations, lead to litigation and cause reputational damage.",
+   "similarity": 0.989,
+   "diff": [
+    "insert: [] -> [field actions, such as]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The list of outcomes of product concerns now names \"field actions\" as a category, with product recalls given as one example, where the prior year listed only product recalls.",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 3: adding field actions as a broader category of which recalls are one example widens the scope of the disclosed consequences."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 3: scope widened from product recalls to field actions generally (corrections, removals and similar actions), which is a broader stated exposure."
+    }
+   }
+  },
+  {
+   "aid": "a10",
+   "status": "unchanged",
+   "prior_heading": "The Company faces significant regulatory scrutiny, which imposes significant compliance costs and exposes the Company to government investigations, legal actions and penalties.",
+   "current_heading": "The Company faces significant regulatory scrutiny, which imposes significant compliance costs and exposes the Company to government investigations, legal actions and penalties.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  },
+  {
+   "aid": "a11",
+   "status": "modified",
+   "prior_heading": "Changes in tax laws or exposures to additional tax liabilities could negatively impact the Company’s operating results.",
+   "current_heading": "Changes in tax laws or exposures to additional tax liabilities could negatively impact the Company’s operating results.",
+   "similarity": 0.105,
+   "diff": [
+    "insert: [] -> [in the U.S. and]",
+    "delete: [in the U.S. and as led by the Organization for Economic Cooperation and Development, such as the enactment by certain EU and non-EU countries, and the anticipated enactment by additional countries, of a] -> []",
+    "replace: [tax,] -> [taxes]",
+    "replace: [to] -> [in]"
+   ],
+   "material": true,
+   "rationale": "",
+   "description": "The tax law sentence drops the reference to changes \"led by the Organization for Economic Cooperation and Development\" and to the enactment by certain EU and non-EU countries, and anticipated enactment by additional countries, of a global minimum tax, replacing it with a general mention of changes \"in the U.S. and around the world, including global minimum taxes\".",
+   "labels": {
+    "A": {
+     "material": true,
+     "rationale": "criterion 2: a named program sponsor (the OECD) and the specific jurisdictions enacting or expected to enact the global minimum tax are dropped."
+    },
+    "B": {
+     "material": true,
+     "rationale": "criterion 2: a named program and organization (the OECD-led global minimum tax initiative) and the EU and non-EU jurisdictions enacting it are dropped from the disclosure."
+    }
+   }
+  },
+  {
+   "aid": "a12",
+   "status": "unchanged",
+   "prior_heading": "The Company faces increased challenges to intellectual property rights central to its business.",
+   "current_heading": "The Company faces increased challenges to intellectual property rights central to its business.",
+   "similarity": 1.0,
+   "diff": [],
+   "material": false,
+   "rationale": "",
+   "description": ""
+  }
+ ]
+}

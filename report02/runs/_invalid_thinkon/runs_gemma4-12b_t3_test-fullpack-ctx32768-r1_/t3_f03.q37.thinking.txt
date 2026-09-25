@@ -1,0 +1,29 @@
+*   Question: "What are the firm's primary and secondary pricing sources for fixed income securities?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   "01_brochure.md": Mentions "Valuation Risk" in Item 8.3, but doesn't specify primary/secondary sources for fixed income.
+    *   "02_compliance_manual.md": Doesn't mention specific pricing sources for fixed income.
+    *   "03_valuation_policy.md": Section 3.3 "Fixed Income" specifically addresses this.
+    *   "04_business_continuity_plan.md": Mentions vendors, but not specific pricing sources for fixed income.
+    *   "05_fee_schedule.md": Mentions valuation policy but not specific sources.
+    *   "06_policy_update_memo.md": Mentions updates to Valuation Policy, but doesn't change the specific pricing sources for fixed income (it changes meeting frequency and override approval).
+
+    *   Document: `03_valuation_policy.md`
+    *   Section: `3.3 Fixed Income`
+    *   Content: "For fixed income securities, including municipal, Treasury, agency, corporate and securitized debt, Ostrander Valuation Data, Inc. is the primary pricing source and Kilbride Evaluated Pricing LLC serves as the secondary source..."
+
+    *   Answer: Ostrander Valuation Data, Inc. is the primary pricing source and Kilbride Evaluated Pricing LLC serves as the secondary source.
+    *   Source: 03_valuation_policy.md
+    *   Section: 3.3 Fixed Income
+    *   Quote: "For fixed income securities, including municipal, Treasury, agency, corporate and just securitized debt, Ostrander Valuation Data, Inc. is the primary pricing source and Kilbride Evaluated Pricing LLC serves as the secondary source is used when Ostrander does not price a security, when a challenge to an Ostrander price under Section 5 remains unresolved, or when the Controller determines that the Ostrander price is unreliable." (Wait, let me re-read the exact text).
+
+    *   Text in 3.3: "For fixed income securities, including municipal, Treasury, agency, corporate and securitized debt, Ostrander Valuation Data, Inc. is the primary pricing source and Kilbride Evaluated Pricing LLC serves as the secondary source is used when Ostrander does not price a security, when a challenge to an Ostrander price under Section 5 remains unresolved, or when the Controller determines that the Ostrander price is unreliable."
+
+    *   Wait, let me re-read the text carefully: "For fixed income securities, including municipal, Treasury, agency, corporate and securitized debt, Ostrander Valuation Data, Inc. is the primary pricing source and Kilbride Evaluated Pricing LLC serves as the secondary source is used when Ostrander does not price a security, when a challenge to an Ostrander price under Section 5 remains unresolved, or when the Controller determines that the Ostrander price is unreliable."
+
+    *   Wait, looking at the text again: "For fixed income securities, including municipal, Treasury, agency

@@ -1,0 +1,40 @@
+*   Question: Who is the Adviser's Chief Compliance Officer, and to whom does the CCO report?
+    *   Constraint: Return only a JSON object. No markdown, no preamble, no commentary.
+    *   Keys: "answer", "source_document", "section", "quote".
+
+    *   Document 1 (Snippet): Mentions "Adviser", "Fund", "General Partner", "Board of Directors". No mention of a CCO.
+    *   Document 2 (06_policy_update_memo.md):
+        *   "From: Harriet Lomasney, General Counsel and Chief Compliance Officer"
+        *   "Questions about this memorandum should be directed to the Chief Compliance Officer or to the Deputy Chief Compliance Officer, Desmond Achterberg."
+
+    *   Who is the CCO? Harriet Lomasney.
+    *   To whom does the CCO report? The document does not state who the CCO reports to. It lists her title as "General Counsel and Chief Compliance Officer".
+
+    *   "answer": "Harriet Lomasney is the Chief Compliance Officer; the document does not state to whom she reports." (Wait, let me check if there's any hint of reporting structure).
+    *   Looking at the "From" line: "Harriet Lomasney, General Counsel and Chief Compliance Officer".
+    *   Looking at the "To" line: "All Personnel".
+    *   Looking at the "Cc" line: "Management Committee".
+    *   The document doesn't specify a reporting line for the CCO.
+
+    *   "answer": "Harriet Lomasney is the Chief Compliance Officer; the document does not state to whom she reports."
+    *   "source_document": "06_policy_update_memo.md"
+    *   "section": "SECTION 1. PURPOSE, APPROVAL AND EFFECTIVE DATE" (Actually, the name is in the header/intro, but the question asks for the CCO's name and reporting line).
+    *   Wait, the header is before Section 1. Let's look at the structure.
+    *   The header contains the name.
+    *   "quote": "From: Harriet Lomasney, General Counsel and Chief Compliance Officer"
+
+    *   Question: "Who is the Adviser's Chief Compliance Officer, and to whom does the CCO report?"
+    *   Answer: Harriet Lenmsney is the CCO. The document does not state who she reports to.
+
+    *   "answer": "Harriet Lomasney is the Chief Compliance Officer; the document does not state to whom she reports."
+    *   "source_document": "06_policy_update_memo.md"
+    *   "section": "" (Since the name is in the header, not a numbered section). Or I can use the header area.
+    *   "quote": "From: Harriet Lomasney, General Counsel and Chief Compliance Officer"
+
+    *   "answer": "Harriet Lomasney is the Chief Compliance Officer; the document does not state to whom she reports."
+    *   "source_document": "06_policy_update_memo.md"
+    *   "section": ""
+    *   "quote": "From: Harriet Lomasney, General Counsel and Chief Compliance Officer"
+
+    Wait, let me check if there's any other mention of reporting.
+    "Questions about this memorandum should be directed to the Chief Compliance Officer or to the Deputy Chief Compliance

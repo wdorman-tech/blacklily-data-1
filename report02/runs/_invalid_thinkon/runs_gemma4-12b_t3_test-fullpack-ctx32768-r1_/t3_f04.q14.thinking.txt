@@ -1,0 +1,38 @@
+*   Question: "After how many consecutive business days without a price change is a security flagged as stale?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in documents, answer "NOT_IN_DOCUMENTS".
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answer.
+    *   Constraint 5: Cite document file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   `01_brochure.md`: Mentions "Valuation Policy" in Item 12.1 and Item 13.1.
+    *   `02_compliance_manual.md`: Mentions "Valuation Policy" in Section 1.3.
+    *   `03_valuation_policy.md`: Section 6.1 "Stale Price Threshold" says: "A security whose price from its assigned source has not changed for five consecutive business days is flagged as stale."
+    *   `04_business_continuity_plan.md`: No mention of stale prices.
+    *   `05_fee_schedule.md`: No mention of stale prices.
+    *   `06_policy_update_memo.md`: Section 3.1 "Stale Price Threshold" amends Section 6.1 of the Valuation Policy. It says: "Effective September 1, 2026, a security whose price from its assigned source has not changed for three consecutive business days is flagged as stale. The three-day threshold supersedes the five-day threshold stated in Section 6.1."
+
+    *   The original policy (03_valuation_policy.md) says 5 days.
+    *   The update memo (06_policy_update_memo.md) is dated August 14, 2026.
+    *   The update memo states that the 3-day threshold supersedes the 5-day threshold.
+    *   The question asks for the current rule. Since the memo is later-dated and explicitly supersedes the previous rule, the answer is 3 days.
+
+    *   Answer: 3
+    *   Source: 06_policy_update_memo.md
+    *   Section: SECTION 3. AMENDMENTS TO THE VALUATION POLICY (specifically 3.1 Stale Price Threshold)
+    *   Quote: "Effective September 1, 2026, a security whose price from its assigned source has not changed for three consecutive business days is flagged as stale."
+
+    *   The question asks "After how many consecutive business days...".
+    *   The memo says "three consecutive business days".
+
+    *   Answer: "three"
+    *   Source: "06_policy_update_memo.md"
+    *   Section: "SECTION 3. AMENDMENTS TO THE VALUATION POLICY"
+    *   Quote: "Effective September 1, 2026, a security whose price from its assigned source has not changed for three consecutive business days is flagged as stale."
+
+    *   Wait, the question is "After how many consecutive business days...". The answer is "three".
+    *   Let's check the section name again. It's "SECTION 3. AMENDMENTS TO THE VALUATION POLICY".
+    *   The specific subsection is "3.1 Stale Price Threshold". Usually, the section is the main heading.
+
+    *   

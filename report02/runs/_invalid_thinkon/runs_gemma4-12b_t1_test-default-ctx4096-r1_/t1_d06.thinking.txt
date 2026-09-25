@@ -1,0 +1,121 @@
+The objective is to extract specific information from the provided legal text and format it into a JSON object.
+
+    *   *Section 12.2 (implied by the first paragraph):* Deals with "MFN Eligible Partners" (investors with $\ge$ $25M commitment) and their right to "Most Favored Nation" (MFN) status regarding Side Letters.
+    *   *Section 12.3:* Amendments. Requires GP and Majority in Interest. Specific consent needed for increasing commitment or reducing distribution share.
+    *   *Section 12.4:* Governing Law (Delaware) and Power of Attorney.
+    *   *Appendix A (First Amendment):*
+        *   *Recitals:* Final Closing Date (Dec 16, 2024), total commitments ($712.5M), Key Person event (Celia Brandvold's resignation Jan 17, 2025), replacement (Tomas Wexcombe).
+        *   *Section S-2:* Replaces Key Persons (Graham Oduya and Tomas Wexcombe). Investment Period resumed April 22, 2025.
+        *   *Section S-3:* Management Fee after Investment Period (1.25% of Net Invested Capital).
+        *   *Section S-4:* Extension of Term (up to 2 years, requires Majority in Interest). Term expires Dec 16, 2034.
+        *   *Section S-5:* Ratification and legal fees.
+
+    *   *Key Entities:*
+        *   General Partner: FENWRIGHT COLQUIST GP III, L.L.C.
+        *   Key Persons: Graham Oduya, Tomas Wexcombe.
+        *   Former Key Person: Celia Brandvold.
+        *   Law Firms: Varley Dunmore LLP, Pellow Ashdown LLP.
+    *   *Key Dates:*
+        *   Final Closing Date: December 16, 2024.
+        *   Celia Brandvold resignation: January 17, 2025.
+        *   Amendment Effective Date: April 22, 2025.
+        *   Term Expiration: December 16, 2034.
+    *   *Financial Thresholds:*
+        *   MFN Eligible Partner: $\ge$ $25,000,000.
+        *   Total Capital Commitments: $712,500,000.
+        *   GP/Affiliate Commitments: $14,250,000.
+    *   *Legal/Regulatory:*
+        *   Governing Law: Delaware.
+        *   Court: Court of Chancery of the State of Delaware.
+
+    *   *Structure:*
+        *   `partnership_details` (Name, GP, Key Persons, etc.)
+        *   `dates` (Closing, Amendment, Expiration)
+        *   `financial_terms` (MFN threshold, Total Commitments)
+        *   *Amendment_details* (Management Fee, Term Extension)
+        *   *Legal_info* (Governing Law)
+
+    *   *Refining the JSON structure:*
+        ```json
+        {
+          "partnership_info": {
+            "name": "FENWRIGHT COLQUIST CAPITAL PARTNERS III, L.P.",
+            "general_partner": "FENWRIGHT COLQUIST GP III, L.L.C.",
+            "key_persons": ["Graham Oduya", "Tomas Wexcombe"],
+            "former_key_person": "Celia Brandvold"
+          },
+          "important_dates": {
+            "final_closing_date": "2024-12-16",
+            "key_person_event_date": "2025-01-17",
+            "amendment_effective_date": "2025-04-22",
+            "term_expiration_date": "2034-12-16"
+          },
+          "financial_thresholds": {
+            "mfn_eligible_partner_threshold": 25000000,
+            "total_capital_commitments": 712500000,
+            "gp_and_affiliate_commitments": 14250000
+          },
+          "amendment_details": {
+            "management_fee_post_investment_period": "1.25% of Net Invested Capital",
+            "term_extension_policy": "Up to two (2) successive periods of one (1) year each, requiring Majority in Interest consent",
+            "governing_law": "Delaware"
+          }
+        }
+        ```
+
+    *   Ensure all values are accurate to the text.
+    *   "1.25% (that is, 0.3125%)" -> The text says "one-quarter of one and one-quarter percent (1.25%)". Wait, let me re-read.
+    *   Text: "one-quarter of one and one-quarter percent (1.25%) (that is, 0.3125%)".
+    *   Calculation: $1.25\% / 4 = 0.3125\%$. The text is slightly confusing in its phrasing but the math is clear. I will include the 1.25% figure as it's the primary one mentioned in the parenthetical.
+    *   Actually, looking at the text: "one-quarter of one and one-quarter percent (1.25%)". This usually means $1.25\% / 4$. But the text puts (1.25%) right after "one and one-quarter percent".
+    *   Let's look closer: "one-quarter of one and one-quarter percent (1.25%) (that is, 0.3125%)".
+    *   Wait, "one and one-quarter percent" is 1.25%. "one-quarter of [that]" is 0.3125%.
+    *   So the fee is 0.3125%. I will note the specific percentage.
+
+    *   *Refining the JSON structure again to be more precise:*
+        *   `mfn_eligible_partner_threshold`: 25000000
+        *   `total_capital_commitments`: 712500000
+        *   `gp_affiliate_commitments`: 14250000
+        *   `management_fee_post_investment_period`: "0.3125% (one-quarter of 1.25%)"
+
+    *   *Final check of the prompt:* "JSON object only".
+
+    *   *Final check of the text:*
+        *   "one-quarter of one and one-quarter percent (1.25%) (that is, 0.3125%)"
+        *   The 1.25% is the "one and one-quarter percent".
+        *   The 0.3125% is the "one-quarter of [that]".
+        *   The fee is 0.3125%.
+
+    *   *Refining the JSON:*
+        ```json
+        {
+          "partnership_details": {
+            "name": "FENWRIGHT COLQUIST CAPITAL PARTNERS III, L.P.",
+            "general_partner": "FENWRIGHT COLQUIST GP III, L.L.C.",
+            "key_persons": [
+              "Graham Oduya",
+              "Tomas Wexcombe"
+            ],
+            "former_key_person": "Celia Brandvold"
+          },
+          "dates": {
+            "final_closing_date": "2024-12-16",
+            "key_person_event_date": "2025-01-17",
+            "amendment_effective_date": "2025-04-22",
+            "term_expiration_date": "2034-12-16"
+          },
+          "financial_data": {
+            "mfn_eligible_partner_threshold": 25000000,
+            "total_capital_commitments": 712500000,
+            "gp_and_affiliate_commitments": 14250000
+          },
+          "amendment_provisions": {
+            "management_fee_post_investment_period": "0.3125% (one-quarter of 1.25%)",
+            "term_extension_rules": "Up to two (2) successive periods of one (1) year each, requiring Majority in Interest consent",
+            "governing_law": "Delaware"
+          }
+        }
+        ```
+
+    *   *Wait, let me check the "one-quarter of one and one-quarter percent" again.*
+        "one-

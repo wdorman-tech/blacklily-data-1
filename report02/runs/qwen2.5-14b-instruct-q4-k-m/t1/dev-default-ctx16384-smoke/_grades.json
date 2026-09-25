@@ -1,0 +1,324 @@
+{
+ "task": "t1",
+ "model": "qwen2.5:14b-instruct-q4_K_M",
+ "items": {
+  "doc3_ashgrove": {
+   "units": [
+    {
+     "uid": "fund_name",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Ashgrove Special Situations Fund, L.P.",
+     "expected": "Ashgrove Special Situations Fund, L.P.",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_domicile",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Delaware",
+     "expected": "Delaware",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_structure",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Open-end (redeemable)",
+     "expected": "Open-end Delaware LP investing directly; no master-feeder, no offshore parallel vehicle; two classes (F and I)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "management_fee",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "1.60% of the net asset value of each Limited Partner's capital account",
+     "expected": "1.60% per annum of NAV, effective 1 January 2025 (Supplement No. 1 replaced the original 2.00%); identical for Class F and Class I",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "performance_fee",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "15% of Net New Appreciation for Class F Interests, 20% of Net New Appreciation for Class I Interests",
+     "expected": "Class F 15% of Net New Appreciation; Class I 20% of Net New Appreciation",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "hurdle_rate",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "4.00% per annum soft hurdle with full catch-up for Class I Interests, NOT_APPLICABLE for Class F Interests",
+     "expected": "Class I: 4.00% per annum preferred return, soft hurdle with full catch-up, effective 1 January 2025 (added by Supplement No. 1). Class F: none.",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "high_water_mark",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Perpetual high water mark on a per-Limited-Partner, per-subscription basis",
+     "expected": "Yes — perpetual, per-LP and per-subscription; does not reset on fee change or change of control",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "minimum_initial_investment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "$1,000,000",
+     "expected": "$1,000,000 for Class I initial subscription (unchanged; Supplement No. 1 raised only the additional-subscription minimum to $250,000)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "lockup_period",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Soft lock-up with 2.00% early redemption charge for redemptions within 18 months of subscription",
+     "expected": "No hard lock-up. Soft lock: 2.00% early redemption charge on interests redeemed within 18 months of subscription, FIFO",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_frequency",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Quarterly",
+     "expected": "Quarterly — last business day of each calendar quarter",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "redemption_notice_days",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "45 calendar days",
+     "expected": "45 calendar days, effective 1 January 2025 (Supplement No. 1 replaced the original 60 days)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gate_provision",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Fund-level gate of 25% of the Partnership's net asset value",
+     "expected": "Fund-level gate at 25% of NAV per redemption date; no investor-level gate; excess reduced pro rata and carried forward with priority; GP may waive",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "key_man_provision",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "NOT_APPLICABLE",
+     "expected": "NOT_APPLICABLE — the Partnership expressly provides no key person provision and no associated redemption right. Departure of Brannigan-Tate triggers nothing.",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "gp_commitment",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "NOT_APPLICABLE",
+     "expected": "NOT_APPLICABLE — no required GP commitment. A current holding of approximately $4,200,000 (~3.1% of NAV) is disclosed as fact and expressly stated not to be a commitment, and is redeemable at any time.",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "fund_term",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Perpetual",
+     "expected": "Perpetual — no fixed termination date, no investment period",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "auditor",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "supersession",
+     "hallucination": false,
+     "got": "Wexley Sandoval Partners LLP",
+     "expected": "Wexley Sandoval Partners LLP, appointed for FY2024 (Supplement No. 1 replaced Ardmore Pike & Levinson LLP, who remain only for tax preparation)",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "administrator",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Kestrel Harbour Fund Administration, LLC",
+     "expected": "Kestrel Harbour Fund Administration, LLC",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "prime_broker",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "absence",
+     "hallucination": false,
+     "got": "NOT_FOUND",
+     "expected": "NOT_FOUND -- no prime broker is named anywhere in the document",
+     "extra": {
+      "citation_valid": null,
+      "quote_grounded": null
+     }
+    },
+    {
+     "uid": "legal_counsel",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "Farrow Tindall Greaves LLP",
+     "expected": "Farrow Tindall Greaves LLP",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    },
+    {
+     "uid": "mfn_election",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "NOT_APPLICABLE",
+     "expected": "No — the Partnership expressly does not offer an MFN election; side letter terms are not disclosed to other LPs",
+     "extra": {
+      "citation_valid": true,
+      "quote_grounded": true
+     }
+    }
+   ],
+   "parse_problems": [],
+   "group": "doc3_ashgrove",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 45.93,
+    "prompt_tokens": 5251,
+    "output_tokens": 1472,
+    "output_tokens_per_sec": 34.4,
+    "prompt_tokens_per_sec": 1711.6,
+    "load_seconds": 0.0,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11752
+   }
+  }
+ }
+}

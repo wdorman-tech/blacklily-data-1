@@ -1,0 +1,44 @@
+{
+ "task": "t2",
+ "model": "qwen3.6:35b-a3b-q4_K_M",
+ "items": {
+  "t2_cat_1": {
+   "units": [
+    {
+     "uid": "reported_01",
+     "score": 1.0,
+     "verdict": "REAL_CHANGE",
+     "kind": "reported",
+     "error_kind": null,
+     "trap": "modified",
+     "hallucination": false,
+     "got": "The text was corrected to remove a line break that split the word 'condition' across pages, restoring it to a single continuous sentence.",
+     "expected": "Commodity price changes, material price increases, fluctuations in demand for our products and services, significant disruptions to our supply chains or significant shortages of labor and material may adversely impact our financial results or our ability to meet commitments to customers.",
+     "extra": {
+      "located_by": "heading",
+      "type_reported": "modified",
+      "location_correct": true,
+      "material": false,
+      "duplicate": false
+     }
+    }
+   ],
+   "parse_problems": [],
+   "n_reported": 1,
+   "contested": 0,
+   "group": "cat",
+   "split": "dev",
+   "stats": {
+    "wall_seconds": 13.36,
+    "prompt_tokens": 8469,
+    "output_tokens": 169,
+    "output_tokens_per_sec": 46.3,
+    "prompt_tokens_per_sec": 882.2,
+    "load_seconds": 0.01,
+    "done_reason": "stop",
+    "thinking_chars": 0,
+    "peak_vram_mib": 11348
+   }
+  }
+ }
+}

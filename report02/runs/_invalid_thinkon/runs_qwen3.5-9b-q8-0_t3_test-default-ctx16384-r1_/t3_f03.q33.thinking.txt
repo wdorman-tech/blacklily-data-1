@@ -1,0 +1,36 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a Due Diligence Questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+
+2.  **Analyze the Question:**
+    *   Question: "What are the firm's minimum relationship size and minimum annual fee, and who may approve exceptions?"
+    *   Key components needed:
+        1.  Minimum relationship size (minimum assets under management).
+        2.  Minimum annual fee.
+        3.  Who may approve exceptions (waivers/reductions).
+
+3.  **Scan Documents for Information:**
+
+    *   *Document 1:* `01_brochure.md` (Form ADV Part 2A, dated March 27, 2026)
+        *   Section: Item 5. Fees and Compensation > 5.1 Advisory Fee -> Mentions tiered rates, reporting-only assets. No minimum size or fee here explicitly in this section text provided, though it mentions "The Firm's complete Schedule of Fees is delivered...".
+        *   Section: Item 5. Fees and Compensation > 5.3 Minimum Fee and Negotiability -> "The minimum annual advisory fee is $150,000 per Family Relationship." "Any non-standard fee arrangement requires the written approval of the Managing Partner."
+        *   Section: Item 7. Types of Clients > 7.2 Account Minimums -> "The Firm generally requires a minimum Family Relationship of $15,000,000 in assets under management..." "The Managing Partner may waive the minimum..."
+
+    *   *Document 2:* `05_fee_schedule.md` (Schedule of Fees, dated January 1, 2026)
+        *   Section: SECTION 4. MINIMUMS AND SUPPLEMENTAL SERVICES > 4.1 Minimum Annual Fee -> "The minimum annual advisory fee is $150,000 per Family Relationship."
+        *   Section: SECTION 4. MINIMUMS AND SUPPLEMENTAL SERVICES > 4.3 Negotiated Arrangements -> "Any fee arrangement that departs from this Schedule... requires the written approval of the Managing Partner..."
+
+    *   *Document 3:* `06_policy_update_memo.md` (Memorandum: Amendments to Policies and Procedures, dated September 8, 2026)
+        *   Section: SECTION 7. FEE SCHEDULE BREAKPOINT -> This document amends the Schedule of Fees and Brochure Item 5.1 regarding fee breakpoints (lowering first breakpoint from $25M to $20M). It states "The minimum annual fee of $150,000 is unchanged."
+        *   Date: September 8, 2026. This is later than the Brochure (March 27, 2026) and Fee Schedule (January 1, 2026).
+        *   Superseding status:

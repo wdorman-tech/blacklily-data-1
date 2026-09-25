@@ -1,0 +1,28 @@
+*   Question: "Who approves employees' personal trading pre-clearance requests, and how long does a pre-clearance approval remain valid?"
+    *   Constraint 1: Use only provided documents.
+    *   Constraint 2: If not in docs, use NOT_IN_DOCUMENTS.
+    *   Constraint 3: Later-dated documents supersede earlier ones.
+    *   Constraint 4: Short and specific answers.
+    *   Constraint 5: Cite file name and section.
+    *   Constraint 6: Quote verbatim.
+
+    *   Document 1: `01_brochure.md` (March 27, 2026). Section 11.2 mentions "pre-clearance before trading most reportable securities" but doesn't specify *who* approves or the *duration*.
+    *   Document 2: `02_compliance_manual.md` (January 15, 2026).
+        *   Section 4.2: "Pre-clearance requests are approved or denied by the CCO or the Compliance Manager; requests submitted by the CCO are approved or denied by the Compliance Manager."
+        *   Section 4.3: "A pre-clearance approval is valid only until the close of regular trading on the business day on which it is granted."
+
+    *   Who approves? "the CCO or the Compliance Manager; requests submitted by the CCO are approved or denied by the Compliance Manager." (Section 4.2)
+    *   How long is it valid? "until the close of regular trading on the business day on which it is granted." (Section 4.3)
+
+    *   Question: "Who approves employees' personal trading pre-clearance requests, and how long does a pre-clearance approval remain valid?"
+    *   Answer: Pre-clearance requests are approved or denied by the CCO or the Compliance Manager (requests submitted by the CCO are approved or denied by the Compliance Manager), and a pre-clearance approval is valid only until the close of regular trading on the business day on which it is granted.
+    *   Source: `02_compliance_manual.md`
+    *   Sections: 4.2 and 4.3.
+
+    *   "answer": "Pre-clearance requests are approved or denied by the CCO or the Compliance Manager; requests submitted by the CCO are approved or denied by the Compliance Manager. A pre-clearance approval is valid only until the close of regular trading on the business day on which it is granted."
+    *   "source_document": "02_compliance_manual.md"
+    *   "section": "SECTION 4. PERSONAL TRADING AND PRE-CLEARANCE > 4.2 Pre-Clearance Requirement; SECTION 4. PERSONAL TRADING AND PRE-CLEARANCE > 4.3 Duration of Approval"
+    *   "quote": "Pre-clearance requests are approved or denied by the CCO or the Compliance Manager; requests submitted by the CCO are approved or denied by the Compliance Manager. A pre-clearance approval is valid only until the close of regular trading on the business day on which it is granted."
+
+    *   Wait, the prompt says "the section where the answer appears". Since the answer comes from two sections, I should list both or the most relevant.
+    *   Section 4.2: "Pre-clearance requests are approved or denied by the CCO or the Compliance Manager; requests submitted by the CCO are

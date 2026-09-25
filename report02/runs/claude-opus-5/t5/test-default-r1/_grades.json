@@ -1,0 +1,3247 @@
+{
+ "task": "t5",
+ "model": "claude-opus-5",
+ "items": {
+  "t5_m04": {
+   "units": [
+    {
+     "uid": "meeting_date",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "thursday, september 10, 2026",
+     "expected": "2026-09-10 (Thursday, September 10, 2026)",
+     "extra": {}
+    },
+    {
+     "uid": "client_names",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "jonah castellvi ; maren tolliver",
+     "expected": "Jonah Castellvi; Maren Tolliver",
+     "extra": {}
+    },
+    {
+     "uid": "primary_goal",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "fund the down payment and closing costs for a home purchase in spring 2027 - roughly $185,000 liquid and safe by february 2027 (20% down on a ~$850,000 home plus ~$15,000 closing costs); offers in february/march 2027, closing by april 2027",
+     "expected": "Fund the down payment and closing costs (about $185,000: 20% down on a home around $850,000 plus about $15,000 of closing costs) for a home purchase in spring 2027",
+     "extra": {}
+    },
+    {
+     "uid": "retirement_target",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "jonah castellvi: age 50 (changed from the age 55 placeholder set in march); maren tolliver: no retirement date, deliberately left open",
+     "expected": "Jonah: age 50 (about 19 years out; changed in the plan from 55 after Jonah first floated 45); no target set for Maren",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "aggressive on the long-term accounts (roth and pellbrook individual account 4471); house down payment carved out into treasury bills as a time-horizon matter rather than a risk-tolerance change",
+     "expected": "Aggressive (long-term accounts); the down payment is carved out separately in T-bills",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance_change",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "no change - remains aggressive, same as the march questionnaire",
+     "expected": "no change",
+     "extra": {}
+    },
+    {
+     "uid": "next_meeting",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "thursday, december 3, 2026 at 11:30 am mountain (same link; invite sent and accepted during the meeting)",
+     "expected": "Thursday, December 3, 2026, 11:30 AM Mountain",
+     "extra": {}
+    },
+    {
+     "uid": "e1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "engagement (proposal in portugal in july 2026); wedding date set for june 12, 2027, venue deposit already paid",
+     "expected": "Engaged (announced to Nell by email in July 2026; proposal in Portugal); wedding set for June 12, 2027",
+     "extra": {}
+    },
+    {
+     "uid": "e2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "promotion to staff engineer effective october 1, 2026: base salary rises from $212,000 to $236,000, plus a refresh grant of 1,600 rsus vesting quarterly over four years with the first vest in february 2027 (on top of the original grant, which has four vests remaining: november, february, may, august",
+     "expected": "Promoted to staff engineer at Orrinfell effective October 1, 2026: base salary from $212,000 to $236,000, plus a refresh grant of 1,600 RSUs vesting quarterly over four years starting February 2027",
+     "extra": {}
+    },
+    {
+     "uid": "e3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "planned home purchase around $850,000 in lafayette or louisville, 20% down (~$170,000) plus ~$15,000 closing costs, offers february/march 2027 and closing by april 2027",
+     "expected": "Planning a home purchase: offers February to March 2027, closing by April 2027, target price about $850,000 with 20% down (looking in Lafayette and Louisville)",
+     "extra": {}
+    },
+    {
+     "uid": "a1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: sold all vested rsu shares at market during the meeting (2,080 shares, filled at $96.05); executed while the trading window was open account: parrish lane stock plan services account amount: 2,080 shares / $199,784 gross proceeds before regulatory fee",
+     "expected": "Sell all 2,080 vested RSU shares of Orrinfell in the Parrish Lane stock plan account (market order placed during the meeting, filled at $96.05, proceeds about $199,784)",
+     "extra": {}
+    },
+    {
+     "uid": "a2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: scheduled transfer of full sale proceeds for friday, september 11, 2026 (t+1 settlement), confirmation number screenshotted by jonah account: from parrish lane to pellbrook individual account ending 4471 amount: $199,784",
+     "expected": "Transfer the full sale proceeds (about $199,784) from the Parrish Lane stock plan account to the Wrenfield-managed individual account at Pellbrook ending 4471, scheduled during the meeting for settlement on Friday, September 11, 2026",
+     "extra": {}
+    },
+    {
+     "uid": "a3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: on arrival of proceeds, buy a treasury bill ladder in three pieces maturing january, february and march 2027 account: pellbrook individual account ending 4471 amount: $185,000",
+     "expected": "Buy a $185,000 Treasury bill ladder (three maturities: January, February and March 2027) in the individual account ending 4471 once the funds arrive; the remaining ~$14,784 stays in the money market",
+     "extra": {}
+    },
+    {
+     "uid": "a4",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: exercise and hold 900 isos (strike $31.40) in the first week of december 2026; about half the cash from account 4471 money market and about half from savings account: orrinfell iso grant at parrish lane amount: $28,260 cash exercise cost (about $58,000 of amt income at the current $64.80 spr",
+     "expected": "Exercise and hold 900 ISOs (strike $31.40) in the Parrish Lane account in the first week of December 2026, after the December 3 meeting; exercise cost $28,260 in cash",
+     "extra": {}
+    },
+    {
+     "uid": "i1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "reassigned",
+     "hallucination": false,
+     "got": "task: send rhea delacroix the iso grant agreement and the parrish lane vesting export already on file from the march onboarding owner: tessa varnum due: friday morning, september 11, 2026",
+     "expected": "Send Jonah's ISO grant agreement and the Parrish Lane vesting export (already in the onboarding file) to CPA Rhea Delacroix for her final AMT run. Owner: Tessa Varnum (reassigned from Jonah Castellvi). Due: tomorrow morning (Friday, September 11, 2026).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: chase rhea delacroix for the final iso/amt projection, re-run after the promotion and the november vest owner: nell ashcombe due: friday, november 20, 2026",
+     "expected": "Get Rhea Delacroix's final AMT projection and confirm how many ISOs to exercise in December. Owner: Nell Ashcombe. Due: November 20, 2026 (the Friday before Thanksgiving).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: pay the third-quarter federal estimated tax payment via irs direct pay from checking owner: jonah castellvi due: tuesday, september 15, 2026 - $9,000",
+     "expected": "Pay the $9,000 federal third-quarter estimated tax payment through IRS Direct Pay from checking (RSU vests are under-withheld at the flat 22%). Owner: Jonah Castellvi. Due: Tuesday, September 15, 2026.",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i4",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "due_changed",
+     "hallucination": false,
+     "got": "task: complete the mortgage pre-approval with ferncastle mortgage, including the sit-down call on rsu income, pulling jonah in for whatever the lender needs owner: maren tolliver due: friday, october 2, 2026 (revised from end of next week due to a san diego conference)",
+     "expected": "Get the mortgage pre-approval letter from Ferncastle Mortgage. Owner: Maren Tolliver. Due: Friday, October 2, 2026 (moved from the end of next week, September 18, because Maren is at a conference in San Diego next week).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i5",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: turn on the parrish lane standing sell-at-vest election for the remainder of the original grant and the refresh grant (can be set once the window reopens after earnings) owner: jonah castellvi due: before the next vest on november 15, 2026",
+     "expected": "Turn on the Parrish Lane standing election to sell all shares automatically at each vest, for the rest of the original RSU grant and the 1,600-RSU refresh. Owner: Jonah Castellvi. Due: before the next vest on November 15, 2026.",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i6",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: change the orrinfell 401(k) beneficiary to maren tolliver in the benefits portal owner: jonah castellvi due: end of september 2026 (by september 30, 2026)",
+     "expected": "Change the Orrinfell 401(k) beneficiary from his mother to Maren Tolliver in the Orrinfell benefits portal (the firm cannot do it). Owner: Jonah Castellvi. Due: end of September (September 30, 2026).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "n1",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Donor-advised fund funded with appreciated Orrinfell shares: raised by Jonah; Nell deferred it to a future high-income year (for example the year a big block of ISO shares is sold). Not now.",
+     "extra": {}
+    },
+    {
+     "uid": "n2",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Exchange fund for Orrinfell stock: raised by Jonah; Nell said maybe someday once he holds a large block of exercised shares (seven-year lockup, larger minimums). Not now.",
+     "extra": {}
+    },
+    {
+     "uid": "n3",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "declined_proposal",
+     "hallucination": false,
+     "got": "",
+     "expected": "Nell's recommendation to exercise and sell 1,500 ISOs in a same-day sale before the window closes on Tuesday, September 15 (about $97,200 of ordinary income): Jonah declined and Nell documented the declined recommendation.",
+     "extra": {}
+    },
+    {
+     "uid": "n4",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Stepping the long-term risk profile down to moderately aggressive around the house purchase: floated by Nell as an option, declined by Jonah; risk tolerance left at aggressive.",
+     "extra": {}
+    }
+   ],
+   "parse_problems": [],
+   "unmatched": {
+    "life_events": [],
+    "account_actions": [
+     {
+      "action": "Leave remaining proceeds in the money market to cover roughly half the December ISO exercise cost",
+      "account": "Pellbrook individual account ending 4471",
+      "amount": "Approximately $14,700"
+     },
+     {
+      "action": "Turn on the standing election to automatically sell shares at each vest, covering the remaining original grant vests and the refresh grant",
+      "account": "Parrish Lane Stock Plan Services account",
+      "amount": "NOT_FOUND"
+     },
+     {
+      "action": "Change beneficiary from Jonah's mother to Maren Tolliver via the Orrinfell benefits portal",
+      "account": "Orrinfell 401(k)",
+      "amount": "NOT_FOUND"
+     }
+    ],
+    "action_items": [
+     {
+      "task": "Exercise and hold 900 ISOs at Parrish Lane, sized to Rhea Delacroix's final number",
+      "owner": "Jonah Castellvi",
+      "due": "First week of December 2026"
+     }
+    ]
+   },
+   "n_reported_items": 17,
+   "group": "t5_m04",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 40.93,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 15343,
+    "output_tokens": 4069,
+    "thinking_tokens": 2176,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t5_m05": {
+   "units": [
+    {
+     "uid": "meeting_date",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "wednesday, september 16, 2026",
+     "expected": "September 16, 2026",
+     "extra": {}
+    },
+    {
+     "uid": "client_names",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "graciela m. kettridge",
+     "expected": "Graciela Kettridge",
+     "extra": {}
+    },
+    {
+     "uid": "primary_goal",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "implement the divorce settlement cleanly - complete the qdro, split the joint brokerage account, get all accounts titled in her name - and make sure her cash flow works as a single household",
+     "expected": "Implement the divorce settlement cleanly (QDRO, splitting the joint account, retitling everything into Graciela's name) and make her cash flow work as a single household",
+     "extra": {}
+    },
+    {
+     "uid": "retirement_target",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "age 65 (2039)",
+     "expected": "Age 65 (2039)",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "moderate (approximately 60% stocks / 40% bonds and cash)",
+     "expected": "Moderate (roughly 60% stocks, 40% bonds and cash)",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance_change",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "from growth to moderate",
+     "expected": "from Growth to Moderate",
+     "extra": {}
+    },
+    {
+     "uid": "next_meeting",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "tuesday, november 10, 2026, 4:30 pm",
+     "expected": "Tuesday, November 10, 2026, 4:30 p.m.",
+     "extra": {}
+    },
+    {
+     "uid": "e1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "divorce: settlement agreement signed and notarized by both parties thursday, september 10, 2026; final hearing tuesday, october 13, 2026, at which the judge is expected to sign the decree",
+     "expected": "Divorce from Gavin Kettridge: marital settlement agreement signed September 10, 2026; final hearing October 13, 2026, with the decree expected to be entered that day",
+     "extra": {}
+    },
+    {
+     "uid": "e2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "promotion to director of pharmacy operations effective october 1, 2026; salary rising from $118,000 to $127,500; 403(b) deferral staying at 8% plus hospital match",
+     "expected": "Promoted to director of pharmacy operations effective October 1, 2026; base salary rises from $118,000 to $127,500",
+     "extra": {}
+    },
+    {
+     "uid": "a1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: journal her share of the joint brokerage account in kind, pro rata by position (48.93%), cost basis and holding periods carrying over, into her new individual account; release once joanna confirms judgment entered, within 30 days of entry account: joint brokerage account to new individual ac",
+     "expected": "Journal $358,000 in kind, pro rata by position, from the joint brokerage account into a new individual brokerage account titled Graciela M. Kettridge, released once the judgment is entered",
+     "extra": {}
+    },
+    {
+     "uid": "a2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: direct rollover of the full qdro share, nothing withheld and no cash distribution, into her new rollover ira account: vellamy freight 401(k) savings plan (quillmoor) to new rollover ira amount: $212,400 as of june 30, plus or minus gains and losses",
+     "expected": "Direct rollover of the $212,400 QDRO award (valued June 30, 2026, adjusted for gains and losses) from Gavin's Vellamy Freight 401(k) at Quillmoor into a new rollover IRA in Graciela's name",
+     "extra": {}
+    },
+    {
+     "uid": "a3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: after the journal settles, sell treasury bills and move the cash to her savings account at fallowbrook credit union as the six-month emergency reserve; the remaining approximately $8,800 of bills stays invested as part of the bond allocation account: new individual account (her share of bill",
+     "expected": "Sell $45,000 of Treasury bills in the new individual account and move the proceeds to Graciela's Fallowbrook Credit Union savings as the emergency reserve",
+     "extra": {}
+    },
+    {
+     "uid": "i1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: email the signed settlement agreement with all exhibits to silas owner: graciela kettridge due: thursday, september 17, 2026",
+     "expected": "Email Silas the signed marital settlement agreement with all exhibits. Owner: Graciela Kettridge. Due: tomorrow, Thursday, September 17, 2026 (tonight if possible).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "due_changed",
+     "hallucination": false,
+     "got": "task: complete and return the monthly expense worksheet, including what the house will cost her alone and her half of lucia's college costs owner: graciela kettridge due: friday, september 25, 2026",
+     "expected": "Complete and return the monthly expense worksheet (house costs once it is only her, her half of Lucia's college). Owner: Graciela Kettridge. Due: Friday, September 25, 2026.",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "reassigned",
+     "hallucination": false,
+     "got": "task: obtain the three-page loan estimate for the refinance from fallowbrook credit union (disclosing the support income) and send it to silas owner: graciela kettridge due: end of october 2026",
+     "expected": "Obtain a written loan estimate from Fallowbrook Credit Union to refinance the mortgage into Graciela's sole name and send it to Silas. Owner: Graciela Kettridge. Due: end of October 2026 (October 31, 2026).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i4",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: send out the e-signature packet: individual account application, rollover ira application, letter of authorization for the joint account split (requires both graciela's and gavin's signatures, gavin's sent directly by the custodian platform), new risk questionnaire and updated ips showing mode",
+     "expected": "Send the e-signature packet: individual brokerage account application, rollover IRA application, letter of authorization for the joint account split (the custodian's platform sends Gavin's signature page to him directly), and the new risk questionnaire and updated IPS at Moderate. Owner: Noor Haverkamp. Due: Friday, September 18, 2026.",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i5",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: change the 403(b) and group life beneficiaries in the hr benefits portal once the judgment is entered owner: graciela kettridge due: october 13, 2026 (that night or the next morning, once joanna confirms entry)",
+     "expected": "Change the primary beneficiary on her 403(b) and hospital group life insurance from Gavin to Lucia and Mateo (50/50, her sister as custodian for Mateo's share) in the HR benefits portal, only once the judgment is entered. Owner: Graciela Kettridge. Due: the day the judgment is entered, expected Tuesday, October 13, 2026 (not before, because of the automatic restraining order).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i6",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: review the draft qdro (confirming the $212,400 is defined as of june 30 with gains and losses to segregation, that her share excludes the outstanding 401(k) loan balance, and that she gets a separate alternate-payee account with immediate direct rollover rights) and send comments to attorney j",
+     "expected": "Review the draft QDRO from Joanna (Graciela's divorce attorney) for the Vellamy Freight 401(k) (June 30 valuation with gains and losses, exclusion of Gavin's plan loan, separate alternate payee account with immediate direct rollover) and send comments to Joanna. Owner: Silas Hadderley. Due: Monday, September 21, 2026.",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i7",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: prepare the full cash-flow projection and the retirement projection at age 65 using the moderate allocation and spousal support ending in 2033, plus the social security comparison of her own record versus the divorced-spouse benefit owner: silas hadderley due: for the november 10, 2026 meeting",
+     "expected": "Prepare the full cash-flow projection and a retirement projection at age 65 with the Moderate allocation and spousal support ending in 2033, including the own-record versus divorced-spouse Social Security comparison. Owner: Silas Hadderley. Due: next meeting, Tuesday, November 10, 2026.",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "n1",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Resuming her maiden name (Salcedo) and titling the accounts in that name: floated by Graciela and explicitly deferred (maybe someday, not now); new accounts stay titled Graciela M. Kettridge",
+     "extra": {}
+    },
+    {
+     "uid": "n2",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "declined_proposal",
+     "hallucination": false,
+     "got": "",
+     "expected": "Adviser proposed that Graciela buy and own a separate ten-year term life policy (about $300,000) on Gavin's life as a backup to the $500,000 policy the MSA requires him to carry; she declined",
+     "extra": {}
+    },
+    {
+     "uid": "n3",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Taking about $40,000 of the QDRO award out of the plan as a cash distribution for the emergency fund (penalty-free for an alternate payee under 72(t)(2)(C) but taxable): floated by Graciela and declined in favor of a full direct rollover",
+     "extra": {}
+    }
+   ],
+   "parse_problems": [],
+   "unmatched": {
+    "life_events": [
+     "Keeps the marital home; must refinance into her own name within 12 months after the decree to remove Gavin from the loan. Current mortgage balance about $301,000, payment $2,246/month with escrow ($1,456 principal and interest) at 3.125% from a 2021 refinance; estimated new payment about $1,878 P&I / $2,668 all in at an assumed 6.375% 30-year fixed",
+     "Receives $358,000 of the joint brokerage account (valued $731,600 as of Friday's close), equal to 48.93%; Gavin receives $373,600",
+     "Receives $212,400 from Gavin's Vellamy Freight 401(k) Savings Plan (record keeper Quillmoor Retirement Services) as of June 30, plus or minus gains and losses to the segregation date; Gavin's balance was about $424,000. Gavin has an outstanding 401(k) loan (originally about $18,000)",
+     "Keeps her entire 403(b)",
+     "Spousal support of $2,850/month for seven years beginning November 1, 2026 through October 2033; not taxable to her and not deductible to Gavin under the post-2019 rules",
+     "Child support of $1,410/month until Mateo graduates, expected June 2028",
+     "College for daughter Lucia (sophomore): Gavin's 529 (about $11,000 remaining) is used first, then costs split 50/50; about $18,000/year after scholarship, her half about $9,000/year (about $750/month) starting next fall",
+     "W-4 changed in June from married filing jointly to head of household (valid if decree entered by December 31 and Mateo lives with her)",
+     "Gavin required by the settlement to maintain $500,000 of term life insurance with Graciela as irrevocable beneficiary until spousal support ends; carrier confirmation letter received last week and held by attorney Joanna",
+     "Children remain on Gavin's health plan until they age out; Graciela is on her own hospital plan",
+     "New will and health care proxy completed by Joanna's office in June",
+     "Married 24 years, so eligible at full retirement age 67 to claim on her own record or as a divorced spouse on Gavin's, whichever is higher",
+     "Current spending about $6,900/month, rising to about $7,300/month after the refinance; current total income about $12,000/month",
+     "Considered resuming maiden name Salcedo but decided not now while Mateo is at home"
+    ],
+    "account_actions": [
+     {
+      "action": "Open a new individual taxable account titled Graciela M. Kettridge",
+      "account": "New individual account at current custodian",
+      "amount": "NOT_FOUND"
+     },
+     {
+      "action": "Open a new, initially empty rollover IRA titled Graciela M. Kettridge so the account number is ready for Quillmoor's rollover instructions",
+      "account": "New rollover IRA",
+      "amount": "NOT_FOUND"
+     },
+     {
+      "action": "Update allocation and investment policy statement to Moderate across all managed accounts",
+      "account": "All accounts managed by the firm",
+      "amount": "NOT_FOUND"
+     },
+     {
+      "action": "Change primary beneficiaries from Gavin to Lucia and Mateo 50/50, with her sister as custodian for Mateo's share while he is a minor, via the HR benefits portal, only after the judgment is entered",
+      "account": "403(b) and hospital group life insurance",
+      "amount": "NOT_FOUND"
+     }
+    ],
+    "action_items": [
+     {
+      "task": "Release the joint account journal once Joanna confirms the judgment is entered (settlement requires transfer within 30 days of entry, i.e., by November 12, 2026)",
+      "owner": "Noor Haverkamp",
+      "due": "Within 30 days of judgment entry, by November 12, 2026"
+     }
+    ]
+   },
+   "n_reported_items": 31,
+   "group": "t5_m05",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 47.51,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 13491,
+    "output_tokens": 4428,
+    "thinking_tokens": 1749,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t5_m06": {
+   "units": [
+    {
+     "uid": "meeting_date",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "tuesday, september 15, 2026",
+     "expected": "2026-09-15",
+     "extra": {}
+    },
+    {
+     "uid": "client_names",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "owen latchford ; priya latchford",
+     "expected": "Owen Latchford; Priya Latchford",
+     "extra": {}
+    },
+    {
+     "uid": "primary_goal",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "that when owen and priya are gone, their son miles is okay: he has somewhere to live, he has people, and he has money that does not knock him off his benefits. everything else is second.",
+     "expected": "Make sure Miles is provided for after Owen and Priya are gone (somewhere to live, people, and money) without knocking him off his SSI and Medicaid benefits, through a third-party special needs trust, an ABLE account and guardianship in place before he turns 18",
+     "extra": {}
+    },
+    {
+     "uid": "retirement_target",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "owen to retire at age 63 (revised during the meeting from the prior plan's age 60); priya to continue working per diem two days a week as a pharmacist with no end date",
+     "expected": "Owen retiring at age 63 (moved from 60 in last year's plan); Priya continues per diem work with no set end date",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "moderate (60/40 model) - reviewed and confirmed; a move to the conservative model was raised by priya and then set aside",
+     "expected": "Moderate (moderate model, 60/40)",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance_change",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "no change (moderate retained)",
+     "expected": "no change",
+     "extra": {}
+    },
+    {
+     "uid": "next_meeting",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "tuesday, december 8, 2026 at 10:00 am",
+     "expected": "Tuesday, December 8, 2026 at 10:00 a.m.",
+     "extra": {}
+    },
+    {
+     "uid": "e1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "miles turns 18 on february 11, 2027; ssi parental deeming ends and his own $2,000 ssi asset limit applies, which drives the able, guardianship and benefits work",
+     "expected": "Miles turns 18 on February 11, 2027: SSI eligibility then turns on his own income and assets, and a limited guardianship must be in place",
+     "extra": {}
+    },
+    {
+     "uid": "e2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "miles started a job at harrowdale garden supply in august 2026, 12 hours a week (tuesday, thursday and saturday mornings); job coach reduced from every shift to once a week",
+     "expected": "Miles started a part-time job at Harrowdale Garden Supply in August 2026, twelve hours a week, job coach now once a week",
+     "extra": {}
+    },
+    {
+     "uid": "e3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "priya's father is having hip replacement surgery on tuesday, september 22, 2026 and wants to redo his will beforehand, leaving a gift to each grandchild",
+     "expected": "Priya's father has hip replacement surgery on Tuesday, September 22, 2026 and is redoing his will, which leaves a gift to each grandchild",
+     "extra": {}
+    },
+    {
+     "uid": "a1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: contribute from miles's utma into the able account in 2026, before december 31, 2026 (2026 able limit is $20,000; leaving room for outside gifts) account: miles's utma (owen custodian, outside brokerage) to able account amount: $19,000",
+     "expected": "Open an ABLE account for Miles and contribute $19,000 from his UTMA before December 31, 2026 (under the $20,000 2026 limit, leaving room for other gifts), held mostly in the plan's cash option",
+     "extra": {}
+    },
+    {
+     "uid": "a2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: contribute the remaining utma balance into the able account in january 2027, ahead of miles's february 11 birthday; no spend-down needed since the remainder fits under the 2027 limit account: miles's utma to able account amount: approximately $18,612 (whatever remains after market movement)",
+     "expected": "Contribute the remaining UTMA balance, approximately $18,600, to Miles's ABLE account in January 2027 under the 2027 limit",
+     "extra": {}
+    },
+    {
+     "uid": "a3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "action: after the trust is signed, change the contingent beneficiary from 'children equally' to nora 50% and the supplemental needs trust 50% account: priya's term life policy amount: $500,000 death benefit",
+     "expected": "Once the trust is signed, change the contingent beneficiary on Owen's 401(k), Priya's rollover IRA, Owen's $1.5 million term policy and Priya's $500,000 term policy from the children equally to Nora 50% and the special needs trust 50%",
+     "extra": {}
+    },
+    {
+     "uid": "i1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: prepare an able plan comparison (in-state plan plus two larger out-of-state plans) covering fees, investment menu, debit card and online access for the authorized representative, plus the account application for whichever plan is chosen owner: deshawn pellow due: end of next week - friday, sep",
+     "expected": "Prepare a comparison of ABLE plans (in-state plan versus two larger out-of-state plans: fees, investment menu, debit card, authorized representative online access) and the account application for the plan chosen [owner: Deshawn Pellow; due: end of next week = Friday, September 25, 2026]",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i2",
+     "score": 0.0,
+     "verdict": "MISSED",
+     "kind": "action_item",
+     "error_kind": "missed",
+     "trap": "reassigned",
+     "hallucination": false,
+     "got": "",
+     "expected": "Call Imogen Threlkeld's office to schedule the trust signing and the guardianship petition meeting [owner: Owen Latchford, reassigned from Priya; due: tomorrow = Wednesday, September 16, 2026]",
+     "extra": {}
+    },
+    {
+     "uid": "i3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "due_changed",
+     "hallucination": false,
+     "got": "task: send femi oyelaran (priya's father's attorney) the exact trust name and suggested gift language so the gift to miles goes to the trust rather than to miles outright, after imogen confirms the trust name and language owner: celia tranmere due: wednesday, september 30, 2026 (revised from friday,",
+     "expected": "Send Priya's father's estate attorney, Femi Oyelaran, the trust's exact name and suggested gift language for his will [owner: Celia Tranmere; due: Wednesday the 30th = Wednesday, September 30, 2026, moved from Friday, September 18]",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i4",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: prepare beneficiary change forms for all four accounts/policies using the exact trust name and date from the signed copy, and walk owen through the 401(k) change in his hr portal owner: deshawn pellow due: within one week of the trust signing",
+     "expected": "Prepare beneficiary designation change forms for Owen's 401(k), Priya's rollover IRA and both term life policies (contingent: Nora 50%, special needs trust 50%) and walk Owen through the 401(k) change [owner: Deshawn Pellow; due: within a week of the trust signing]",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i5",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: call social security to book an appointment for miles's ssi application for around his february 11 birthday (field office appointments are running six to eight weeks out) owner: priya latchford due: january 2027",
+     "expected": "Call Social Security to book Miles's SSI application appointment for around his 18th birthday [owner: Priya Latchford; due: January 2027]",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i6",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: write the first draft of the letter of intent from imogen's template, with owen adding the details only he knows owner: priya latchford due: before the december 8, 2026 meeting",
+     "expected": "Write the first draft of the letter of intent for Miles (doctors, medications, routines, preferences) from the attorney's questionnaire, with Owen adding what only he knows [owner: Priya Latchford; due: before the December meeting = December 8, 2026]",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i7",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: rerun the retirement projections with owen retiring at 63 and priya's per diem income held flat, and show brokerage and retirement account values at the second death under several market scenarios so the clients can see what the trust would receive owner: celia tranmere due: by the next meetin",
+     "expected": "Rerun the retirement projections with Owen retiring at 63 instead of 60 and Priya's income flat, showing what the trust would receive at the second death under several market scenarios [owner: Celia Tranmere; due: next meeting = December 8, 2026]",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "n1",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Buying a condo near the family for Miles to live in, possibly owned by the trust: floated by Priya, explicitly not now",
+     "extra": {}
+    },
+    {
+     "uid": "n2",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "declined_proposal",
+     "hallucination": false,
+     "got": "",
+     "expected": "Survivorship (second-to-die) life insurance, $750,000 death benefit paying into the trust at about $6,800 a year: proposed by Celia, declined by both clients",
+     "extra": {}
+    },
+    {
+     "uid": "n3",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "declined_proposal",
+     "hallucination": false,
+     "got": "",
+     "expected": "Professional (corporate) co-trustee alongside Anjali: proposed by Celia, declined; Anjali serves alone with Nora as later successor",
+     "extra": {}
+    },
+    {
+     "uid": "n4",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Spending down UTMA money above the 2027 ABLE limit before February: contemplated only under the stale $46,000 figure and withdrawn after the correction",
+     "extra": {}
+    },
+    {
+     "uid": "n5",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Switching the portfolio from the moderate to the conservative model: floated by Priya after August, talked through and dropped (risk tolerance stays moderate, no change)",
+     "extra": {}
+    }
+   ],
+   "parse_problems": [],
+   "unmatched": {
+    "life_events": [
+     "Miles has been on the county board Medicaid waiver waiting list since age 14",
+     "Family decided on limited guardianship for Miles: Owen and Priya as co-guardians of the person, Priya's sister Anjali as standby guardian, with Miles retaining decision-making over his job, where he goes and his social life; petition to be filed in November 2026 so a hearing occurs before February 11, 2027",
+     "Third-party supplemental needs trust for Miles in draft with attorney Imogen Threlkeld (Threlkeld Amsel PLLC); Anjali named trustee, daughter Nora successor trustee at about age 30; professional/corporate co-trustee (roughly 1% per year) proposed by Celia and declined by Owen and Priya",
+     "Miles's UTMA at Owen's outside brokerage, with Owen as custodian, holds $37,612 (initially misstated as about $46,000, which was both children combined)",
+     "Daughter Nora returned to college for the year, moving in the Friday before Labor Day; tuition is an ongoing cost",
+     "Survivorship (second-to-die) policy of $750,000 payable to the trust at about $6,800 per year was proposed by Celia and declined by both Owen and Priya; existing term coverage is Owen's $1,500,000 20-year term (taken out 2019, running to 2039) and Priya's $500,000 term"
+    ],
+    "account_actions": [
+     {
+      "action": "Open an ABLE account for Miles once a plan is selected from Deshawn's comparison, with a parent as authorized legal representative",
+      "account": "New ABLE account (Miles Latchford)",
+      "amount": "NOT_FOUND"
+     },
+     {
+      "action": "Hold most of the initial ABLE balance in the plan's cash option since it is near-term spending money",
+      "account": "New ABLE account (Miles Latchford)",
+      "amount": "NOT_FOUND"
+     },
+     {
+      "action": "After the trust is signed, change the contingent beneficiary from 'children equally' to Nora 50% and the supplemental needs trust 50% (via Owen's HR portal)",
+      "account": "Owen's 401(k)",
+      "amount": "NOT_FOUND"
+     },
+     {
+      "action": "After the trust is signed, change the contingent beneficiary from 'children equally' to Nora 50% and the supplemental needs trust 50%",
+      "account": "Priya's rollover IRA held with the firm",
+      "amount": "NOT_FOUND"
+     },
+     {
+      "action": "After the trust is signed, change the contingent beneficiary from 'children equally' to Nora 50% and the supplemental needs trust 50%",
+      "account": "Owen's term life policy",
+      "amount": "$1,500,000 death benefit"
+     },
+     {
+      "action": "No change to the allocation; remain in the moderate 60/40 model",
+      "account": "Household managed portfolio",
+      "amount": "NOT_FOUND"
+     }
+    ],
+    "action_items": [
+     {
+      "task": "Call Imogen Threlkeld's office to get the trust signing on her calendar and to set aside time to discuss guardianship petition timing (reassigned from Priya to Owen because Priya is with her father for pre-op and surgery)",
+      "owner": "Owen Latchford",
+      "due": "Tomorrow morning - Wednesday, September 16, 2026"
+     },
+     {
+      "task": "File the limited guardianship petition so a hearing occurs before Miles turns 18 on February 11, 2027",
+      "owner": "Imogen Threlkeld",
+      "due": "November 2026"
+     }
+    ]
+   },
+   "n_reported_items": 26,
+   "group": "t5_m06",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 63.45,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 13171,
+    "output_tokens": 6157,
+    "thinking_tokens": 3563,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t5_m07": {
+   "units": [
+    {
+     "uid": "meeting_date",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "thursday, october 15, 2026",
+     "expected": "October 15, 2026",
+     "extra": {}
+    },
+    {
+     "uid": "client_names",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "everett stadtler ; lorraine stadtler",
+     "expected": "Everett Stadtler; Lorraine Stadtler",
+     "extra": {}
+    },
+    {
+     "uid": "primary_goal",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "reduce the lifetime tax bill on the ira money for themselves and for their children ('we don't want to hand the kids a tax problem') by shrinking the traditional iras while in lower brackets, and do their charitable giving in the most tax-efficient way",
+     "expected": "Reduce the lifetime tax bill on the IRA money for themselves and the kids (shrink the IRAs while in the lower brackets) and do their charitable giving tax-efficiently, out of the IRA rather than the checking account",
+     "extra": {}
+    },
+    {
+     "uid": "retirement_target",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "not_found",
+     "expected": "NOT_FOUND (both already retired: Everett \"ten years ago this January\", i.e. January 2016 or 2017; Lorraine in 2019)",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "moderate - 60/40 target (60% stocks, 40% bonds and cash) with a 5% band either way; currently about 62% stocks, inside the band",
+     "expected": "Moderate (60/40)",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance_change",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "no change (both confirmed moderate, unchanged from april; everett raised going to 40/60 and decided against it)",
+     "expected": "no change",
+     "extra": {}
+    },
+    {
+     "uid": "next_meeting",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "wednesday, december 9, 2026 at 10:00 a.m., by video",
+     "expected": "Wednesday, December 9, 2026, 10:00 a.m., by video",
+     "extra": {}
+    },
+    {
+     "uid": "e1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "birth of granddaughter maisie jane on august 27, 2026 to son nathan and jess, 7 pounds 2 ounces; clients visited denver for nine days in the second week of september",
+     "expected": "Granddaughter Maisie Jane born August 27, 2026 (son Nathan and Jess's daughter)",
+     "extra": {}
+    },
+    {
+     "uid": "e2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "everett's right knee replacement surgery scheduled for tuesday, november 17, 2026; one to two nights in hospital, then six weeks of physical therapy two to three times per week (tuesday and thursday mornings the first few weeks) and no driving for a month",
+     "expected": "Everett scheduled for right knee replacement surgery on Tuesday, November 17, 2026 (one or two nights in hospital, six weeks of physical therapy, no driving for a month)",
+     "extra": {}
+    },
+    {
+     "uid": "a1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: qualified charitable distribution paid directly to saint fintan parish for the hearth and steeple capital campaign, taken before any other ira withdrawal so it counts toward the 2026 rmd; to be completed before december 31, 2026 account: everett's rollover ira amount: $15,000",
+     "expected": "QCD of $15,000 from Everett's rollover IRA payable directly to Saint Fintan Parish (Hearth and Steeple capital campaign pledge); counts toward his 2026 RMD",
+     "extra": {}
+    },
+    {
+     "uid": "a2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: take the remainder of everett's 2026 rmd (total rmd $47,388.24) as a regular taxable distribution the first week of december, with 50% federal withholding (approximately $16,200) to cover the federal tax on lorraine's roth conversion; state withholding to be confirmed with hal dettweiler acc",
+     "expected": "Regular distribution of the remaining $32,388 of Everett's 2026 RMD from his rollover IRA, processed the first week of December, with 50% federal withholding (about $16,200)",
+     "extra": {}
+    },
+    {
+     "uid": "a3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: roth conversion from traditional ira to existing roth ira, executed in december once the year's income is known, with zero federal and state withholding so the full amount lands in the roth; sized to keep 2026 agi at roughly $212,000, under the $218,000 married irmaa threshold account: lorra",
+     "expected": "Roth conversion of $70,000 from Lorraine's traditional IRA to her existing Roth IRA, processed the first week of December with zero federal and state withholding",
+     "extra": {}
+    },
+    {
+     "uid": "a4",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: open a donor-advised fund named 'the stadtler family fund' at carrow valley community foundation, with nathan and claire as successor advisors, and fund it with an in-kind gift of kettleby controls shares (whole shares, approximately 540 at the recent $74.10 price), leaving about 285 shares ",
+     "expected": "Contribute about $40,000 of Kettleby Controls stock (about 540 whole shares) from the joint brokerage account to a new donor-advised fund, the Stadtler Family Fund, at Carrow Valley Community Foundation",
+     "extra": {}
+    },
+    {
+     "uid": "i1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "reassigned",
+     "hallucination": false,
+     "got": "task: get the parish's legal name, ein and remittance/lockbox mailing address from deb at the parish office (at sunday night's finance council) and email them to joelle pardoe; also ask deb about the written acknowledgment letter owner: everett stadtler due: monday morning, october 19, 2026",
+     "expected": "Get Saint Fintan Parish's legal name, EIN and lockbox/mailing address from the parish office (and ask about the acknowledgment letter), then email them to Joelle",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: build the qcd request form and send it to the clients through the e-signature portal once the parish details arrive owner: joelle pardoe due: wednesday, october 21, 2026",
+     "expected": "Build the QCD request ($15,000 from Everett's IRA payable to Saint Fintan Parish) and send it to Everett through the e-signature portal",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "due_changed",
+     "hallucination": false,
+     "got": "task: run the full roth conversion projection including the $15,000 qcd and the daf deduction, and send it to everett, lorraine and hal dettweiler (moved from the 23rd due to the custodian conference; also picks up october dividends) owner: tobias wendrick due: friday, october 30, 2026",
+     "expected": "Run the full Roth conversion projection (with the $15,000 QCD and the DAF deduction) and send it to Everett, Lorraine and Hal Dettweiler",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i4",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: send the carrow valley donor-advised fund application and the stock transfer letter to both clients owner: joelle pardoe due: tuesday, october 20, 2026",
+     "expected": "Send out the Carrow Valley Community Foundation DAF application (Stadtler Family Fund, Nathan and Claire as successor advisors) and the stock transfer letter for about $40,000 of Kettleby shares to both clients",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i5",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: call hal dettweiler to schedule a meeting for the first half of november (before everett's surgery), tell him the projection is coming on the 30th, and ask him about the state tax on the conversion owner: lorraine stadtler due: tomorrow, friday, october 16, 2026",
+     "expected": "Call Hal Dettweiler (CPA) to book a year-end tax meeting in the first half of November, before Everett's surgery, and ask how to handle the state tax on the conversion",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i6",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: prepare the two separate forms - the roth conversion for lorraine's signature and the december ira distribution for everett's signature - once hal dettweiler signs off and tobias provides final numbers, dated to process the first week of december owner: joelle pardoe due: both signed before no",
+     "expected": "Prepare the Roth conversion form (Lorraine, zero withholding) and the December RMD distribution form (Everett, 50% federal withholding) once Hal signs off, dated to process the first week of December, and have both signed",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "n1",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "declined_proposal",
+     "hallucination": false,
+     "got": "",
+     "expected": "QLAC (qualified longevity annuity contract) of about $200,000 from Everett's IRA to reduce RMDs; proposed by Tobias, declined by both clients",
+     "extra": {}
+    },
+    {
+     "uid": "n2",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Opening a 529 plan for granddaughter Maisie; floated by Lorraine, explicitly not this year and not put on the list",
+     "extra": {}
+    },
+    {
+     "uid": "n3",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Moving the allocation to a more conservative 40/60; floated by Everett and dropped (risk tolerance stays moderate)",
+     "extra": {}
+    },
+    {
+     "uid": "n4",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Putting IRA money into the donor-advised fund through a QCD; floated by Lorraine, ruled out because a QCD cannot go to a DAF",
+     "extra": {}
+    }
+   ],
+   "parse_problems": [],
+   "unmatched": {
+    "life_events": [
+     "Revised pledge of $15,000 to the Hearth and Steeple capital campaign at Saint Fintan Parish (increased from $12,000 in May under the Vanderlaan matching challenge), requested to be paid by year-end"
+    ],
+    "account_actions": [],
+    "action_items": []
+   },
+   "n_reported_items": 13,
+   "group": "t5_m07",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 34.79,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 12912,
+    "output_tokens": 3607,
+    "thinking_tokens": 1704,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t5_m08": {
+   "units": [
+    {
+     "uid": "meeting_date",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "tuesday, october 13, 2026",
+     "expected": "October 13, 2026",
+     "extra": {}
+    },
+    {
+     "uid": "client_names",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "priya halloran ; declan halloran",
+     "expected": "Priya Halloran; Declan Halloran",
+     "extra": {}
+    },
+    {
+     "uid": "primary_goal",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "retire early / become work-optional and financially independent early, without college costs for their three children pushing that back; also protect the plan if one of them is disabled",
+     "expected": "Retire early (financially independent, work-optional early) without college funding for the three children pushing retirement back",
+     "extra": {}
+    },
+    {
+     "uid": "retirement_target",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "age 58 for both (2043) - revised during this meeting from age 60",
+     "expected": "Age 58 for both Priya and Declan (2043), revised in the meeting from 60",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "growth - questionnaire score 64, current allocation 80% stocks / 20% bonds; agreed to keep it",
+     "expected": "Growth (80% stocks / 20% bonds)",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance_change",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "no change - declan raised moving to 90/10 or 100% stocks; advisor recommended against and both clients agreed to stay at growth 80/20",
+     "expected": "no change",
+     "extra": {}
+    },
+    {
+     "uid": "next_meeting",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "thursday, january 14, 2027 at 7:00 pm, by video (invite sent during the meeting)",
+     "expected": "Thursday, January 14, 2027 at 7:00 p.m. (video call)",
+     "extra": {}
+    },
+    {
+     "uid": "e1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "declan made partner at coldharbor emergency associates effective july 1, 2026 - compensation now k-1 instead of w-2, quarterly estimated taxes set up by margit in august, partnership buy-in coming out of his draws over two years, and he moved from the employee 401(k) to the partners' 401(k) with pro",
+     "expected": "Declan made partner at Coldharbor Emergency Associates effective July 1, 2026 (income now K-1 with quarterly estimates, buy-in paid from draws over two years, moved into the partners' profit-sharing 401(k))",
+     "extra": {}
+    },
+    {
+     "uid": "e2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "saint brennock medical center announced in september 2026 that it is affiliating/merging with aldmere health, expected to close in q1 2027 pending regulatory review; priya's contract is to be honored through the end of its term in june 2028, benefits to be 'harmonized' and currently undetermined",
+     "expected": "Saint Brennock Medical Center (Priya's employer) announced in September 2026 an affiliation, in effect a merger, with Aldmere Health, expected to close in the first quarter of 2027; her contract is honored through June 2028 and benefits are to be harmonized",
+     "extra": {}
+    },
+    {
+     "uid": "a1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: roll the full wrenfield securities traditional (rollover) ira into the coldharbor partners' 401(k) to clear the pro-rata rule; must be completed and balance confirmed at zero before december 31, 2026 account: declan's wrenfield securities traditional ira - coldharbor partners' 401(k) amount:",
+     "expected": "Roll over Declan's traditional (rollover) IRA at Wrenfield Securities, full balance of about $48,210, into the Coldharbor Emergency Associates partners' 401(k), completed before December 31, 2026 to clear the pro-rata rule",
+     "extra": {}
+    },
+    {
+     "uid": "a2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: open a new traditional ira, make a nondeductible contribution, hold in money market a few days, then convert to her existing roth ira as soon as the contribution settles account: priya's new traditional ira - existing roth ira amount: $7,500",
+     "expected": "Backdoor Roth for 2026: $7,500 nondeductible traditional IRA contribution for each of Priya and Declan ($15,000 total), converted into their Roth IRAs; Priya's as soon as her account is open, Declan's in December once his IRA balance is zero",
+     "extra": {}
+    },
+    {
+     "uid": "a3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: open a new 529 account for callum with an age-based portfolio and set up automatic monthly draft starting november 1, 2026 account: callum's new 529 amount: $1,000 per month",
+     "expected": "Open a 529 for Callum and set automatic contributions of $1,000 a month for each of the three children (Rowan and Ivy increased from $500; $3,000 a month total), first draft November 1, 2026",
+     "extra": {}
+    },
+    {
+     "uid": "i1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: obtain individual own-occupation, specialty-specific disability quotes from pellwood assurance and ashgrove life for both clients (noncancelable and guaranteed renewable, benefits to 65 or 67, 90-day elimination period, residual rider, future increase option), quoting the maximum each carrier ",
+     "expected": "Obtain quotes for individual true own-occupation, specialty-specific disability insurance for Priya and Declan from Pellwood Assurance and Ashgrove Life (owner: Theo Brandvold; due: by the end of the month, October 31, 2026)",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "due_changed",
+     "hallucination": false,
+     "got": "task: upload the saint brennock group ltd certificate and benefits summary (showing the cap and who pays the premium) to the client portal owner: priya halloran due: wednesday, october 21, 2026",
+     "expected": "Upload Priya's Saint Brennock group long-term disability certificate and benefits summary (showing the benefit cap and who pays the premium) to the client portal (owner: Priya Halloran; due: Wednesday, October 21, 2026, moved from Friday)",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "reassigned",
+     "hallucination": false,
+     "got": "task: call the recordkeeper to confirm whether the coldharbor partners' 401(k) accepts incoming ira roll-ins and obtain the roll-in form (reassigned from declan to theo during the meeting) owner: theo brandvold due: call wednesday, october 14, 2026; answer back by thursday, october 15, 2026",
+     "expected": "Call the Coldharbor partners' 401(k) recordkeeper to confirm the plan accepts incoming IRA roll-ins and obtain the roll-in form (owner: Theo Brandvold, reassigned from Declan; due: by Thursday, October 15, 2026)",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i4",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: prepare one e-sign packet: new traditional iras for priya and declan, rollover paperwork for declan's wrenfield ira, new 529 for callum, and the 529 contribution changes owner: theo brandvold due: early the week of october 19, 2026, if the roll-in answer comes back thursday october 15",
+     "expected": "Assemble and send one e-sign packet: new traditional IRAs for Priya and Declan, rollover paperwork for Declan's Wrenfield IRA, the new 529 for Callum and the updated monthly 529 contributions (owner: Theo Brandvold; due: early next week, week of October 19, 2026)",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i5",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: rerun the full retirement projection at age 58 and rerun the college funding analysis with the new 529 contribution amounts, and send the updated plan to the clients owner: renata oakhurst due: before thanksgiving (by november 26, 2026)",
+     "expected": "Rerun the retirement projection at age 58 for both (2043), together with updated college funding projections using the new 529 amounts, and send the updated plan (owner: Renata Oakhurst; due: before Thanksgiving, November 26, 2026)",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i6",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: email margit (cpa) so she expects two form 8606s and two 1099-rs for the roth conversions owner: renata oakhurst due: this week (week of october 13, 2026)",
+     "expected": "Send Margit, the couple's CPA, a note to expect two Forms 8606 and two 1099-Rs for the 2026 backdoor Roth conversions (owner: Renata Oakhurst; due: this week, by October 16, 2026)",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i7",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: obtain from marisa quennell the partner group ltd certificate and the disability section of the partnership agreement (including any disability buyout or overhead expense provision) owner: declan halloran due: end of next week - friday, october 23, 2026",
+     "expected": "Get from Marisa Quennell, the practice administrator, the Coldharbor partner group LTD certificate and the disability section of the partnership agreement (buyout or overhead expense provisions) (owner: Declan Halloran; due: end of next week, October 23, 2026)",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "n1",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "declined_proposal",
+     "hallucination": false,
+     "got": "",
+     "expected": "Renata recommended Priya defer $24,500 a year into the Saint Brennock non-governmental 457(b) (00:12:30); Priya declined because of general-creditor exposure, the distribution rules and the pending merger, and Renata recorded the decline (00:14:02)",
+     "extra": {}
+    },
+    {
+     "uid": "n2",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Declan reported that the Coldharbor partners are discussing a cash balance plan, possibly for 2027 (00:05:23); nothing adopted, parked until the partners vote",
+     "extra": {}
+    },
+    {
+     "uid": "n3",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "declined_proposal",
+     "hallucination": false,
+     "got": "",
+     "expected": "Renata offered superfunding the 529s with a five-year gift election, up to $95,000 per donor per child and $190,000 per child for the couple (00:23:09); declined in favor of monthly contributions (00:23:42)",
+     "extra": {}
+    },
+    {
+     "uid": "n4",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Declan floated saving for a lake house at Smith Mountain Lake (00:25:34); Priya ruled it out for at least five years and Renata parked it",
+     "extra": {}
+    },
+    {
+     "uid": "n5",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Declan floated moving to 100% stocks or the 90/10 aggressive allocation (00:26:25); Priya objected, Renata recommended against it and the allocation stayed at Growth 80/20 with no change (00:27:44)",
+     "extra": {}
+    }
+   ],
+   "parse_problems": [],
+   "unmatched": {
+    "life_events": [],
+    "account_actions": [
+     {
+      "action": "Open a new traditional IRA, make a nondeductible contribution, then convert to Roth - after the Wrenfield rollover is confirmed complete, probably in December 2026",
+      "account": "Declan's new traditional IRA -> Roth IRA",
+      "amount": "$7,500"
+     },
+     {
+      "action": "Increase automatic monthly contribution from $500 to $1,000",
+      "account": "Rowan's 529",
+      "amount": "$1,000 per month"
+     },
+     {
+      "action": "Increase automatic monthly contribution from $500 to $1,000",
+      "account": "Ivy's 529",
+      "amount": "$1,000 per month"
+     }
+    ],
+    "action_items": []
+   },
+   "n_reported_items": 15,
+   "group": "t5_m08",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 32.19,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 13507,
+    "output_tokens": 3309,
+    "thinking_tokens": 1444,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t5_m09": {
+   "units": [
+    {
+     "uid": "meeting_date",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "tuesday, september 15, 2026",
+     "expected": "2026-09-15",
+     "extra": {}
+    },
+    {
+     "uid": "client_names",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "gavin pellerin ; anneliese pellerin",
+     "expected": "Gavin Pellerin; Anneliese Pellerin",
+     "extra": {}
+    },
+    {
+     "uid": "primary_goal",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "retirement - retiring together in spring 2032 when gavin turns 60, with the two retained ohio rentals (about $20,000/year net) carrying part of the income until social security starts",
+     "expected": "Retirement: Gavin retiring at 60 in spring 2032 with Anneliese retiring at the same time, with the rental properties they keep carrying part of the income until Social Security",
+     "extra": {}
+    },
+    {
+     "uid": "retirement_target",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "gavin at age 60, spring 2032 (he turns 60 in april 2032); anneliese retiring at the same time at 58 with 30 years in the district and a full pension (changed this meeting from age 62 / spring 2034)",
+     "expected": "Gavin at age 60 in spring (April) 2032; Anneliese retires at the same time, at 58",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "moderate",
+     "expected": "Moderate",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance_change",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "no change - stays moderate. gavin raised going to moderately aggressive and anneliese raised moderately conservative; discussed and agreed to leave it at moderate",
+     "expected": "no change",
+     "extra": {}
+    },
+    {
+     "uid": "next_meeting",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "tuesday, december 8, 2026 at 4:00 pm, by video",
+     "expected": "Tuesday, December 8, 2026, 4:00 PM, video call",
+     "extra": {}
+    },
+    {
+     "uid": "e1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "gavin inherited four ohio rental properties through his mother's revocable trust, all mortgage-free, appraised at date of death for a total of $1,049,000: haverill road duplex $265,000, larchmere fourplex $410,000, cotswold lane $198,000, pennyroyal court $176,000. basis stepped up to those values. ",
+     "expected": "Death of Gavin's mother on February 11, 2026; through her revocable trust Gavin (successor trustee) inherited her four Dayton-area rental properties (Haverill Road duplex, Larchmere fourplex, Cotswold Lane and Pennyroyal Court houses; $1,049,000 combined date-of-death appraisal), with basis stepped up to date-of-death value",
+     "extra": {}
+    },
+    {
+     "uid": "e2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "anneliese having right knee replacement on november 10, 2026, roughly six weeks out of work, returning in january",
+     "expected": "Anneliese scheduled for right knee replacement surgery on November 10, 2026 (about six weeks out of work)",
+     "extra": {}
+    },
+    {
+     "uid": "a1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: ach the full trust distribution out of joint checking into the joint brokerage account account: joint brokerage account (from joint checking) amount: $68,400",
+     "expected": "Transfer (ACH) the $68,400 trust cash distribution from the Pellerins' checking account into their joint brokerage account",
+     "extra": {}
+    },
+    {
+     "uid": "a2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: invest the remainder in the moderate model account: joint brokerage account amount: $43,400",
+     "expected": "Invest $43,400 of the distribution in the moderate model portfolio within the joint brokerage account",
+     "extra": {}
+    },
+    {
+     "uid": "a3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "action: open a second joint cash-only account held in the money market, designated the property reserve and excluded from model rebalancing, and fund it account: new joint cash/money market account - property reserve amount: $25,000",
+     "expected": "Open a second joint account (cash only, money market) as the property reserve and fund it with $25,000 moved from the joint brokerage account",
+     "extra": {}
+    },
+    {
+     "uid": "i1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: send pdfs of all four appraisal reports (full reports, for the land/building split) and denise's rent ledger since february to cpa rick dunleavy, copying celeste owner: gavin pellerin due: end of next week - friday, september 25, 2026",
+     "expected": "Send all four date-of-death appraisals (full reports with the land and building split) and Denise's rent ledger since February to CPA Rick Dunleavy, copying Celeste. Owner: Gavin Pellerin. Due: end of next week (Friday, September 25, 2026).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "reassigned",
+     "hallucination": false,
+     "got": "task: get a quote through the firm's property and casualty partner for a $2 million umbrella with the rentals scheduled on it, plus landlord policies in the pellerins' names on the two retained properties (reassigned from anneliese to imani) owner: imani rourke due: tuesday, september 29, 2026",
+     "expected": "Get a quote to raise the umbrella liability policy from $1 million to $2 million with the rental properties scheduled on it, quoted together with landlord policies for the two kept properties through the firm's property and casualty partner. Owner: Imani Rourke (reassigned from Anneliese). Due: by the 29th (September 29, 2026).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "due_changed",
+     "hallucination": false,
+     "got": "task: walk the fourplex with realtor tamsin and then sign the listing agreement covering both the fourplex and pennyroyal court (signing as trustee) owner: gavin pellerin due: friday, october 2, 2026 (moved from september 18)",
+     "expected": "Sign the listing agreement with realtor Tamsin, as trustee, covering the Larchmere fourplex (list now, as is with a roof credit) and Pennyroyal Court (list once vacant), after walking the fourplex with her. Owner: Gavin Pellerin. Due: October 2, 2026 (Friday the 2nd; changed from by Friday, September 18).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i4",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: interview at least two of the three property managers tamsin recommended and select one to manage the duplex and cotswold lane before denise stops owner: gavin pellerin due: end of october 2026 (denise finishes october 31, 2026)",
+     "expected": "Interview at least two property management companies (from the three names Tamsin gave) and pick one to manage the Haverill Road duplex and Cotswold Lane house before cousin Denise stops. Owner: Gavin Pellerin. Due: end of October (by October 31, 2026).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i5",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: send the ach authorization and the new account application for e-signature owner: imani rourke due: tomorrow - wednesday, september 16, 2026",
+     "expected": "Send the ACH authorization (pull $68,400 from their checking into the joint brokerage account) and the new joint reserve account application for e-signature. Owner: Imani Rourke. Due: tomorrow (September 16, 2026).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i6",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: rerun the retirement projection with gavin retiring at 60, about $20,000/year net from the two retained rentals, and the sale proceeds as a range, and send it to the clients ahead of the december meeting owner: celeste harrowgate due: before the december 8, 2026 meeting",
+     "expected": "Rerun the retirement projection with Gavin retiring at 60, the two kept properties at about $20,000 a year net and the sale proceeds as a range, and send it ahead of the next meeting. Owner: Celeste Harrowgate. Due: before the December meeting (December 8, 2026).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i7",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: set up a joint call with cpa rick dunleavy and attorney hollis to determine whether the trust or gavin is the seller (which determines whose return the fourplex loss lands on) and whether a fourth-quarter estimated payment is needed on the rent received owner: celeste harrowgate due: week of s",
+     "expected": "Set up a joint call with CPA Rick Dunleavy and trust attorney Hollis on who the seller is (the trust or Gavin), whose return the fourplex loss lands on, and whether a fourth-quarter estimated tax payment is needed. Owner: Celeste Harrowgate. Due: the week of the 28th (week of September 28, 2026), once Rick has the appraisals.",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "n1",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "A gift to Maren (relationship not stated) toward a Denver condo down payment out of the sale money, floated by Anneliese at [00:25:59] as a someday idea; Celeste logs it as no action, nothing to model yet",
+     "extra": {}
+    },
+    {
+     "uid": "n2",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Moving the two kept properties into an LLC once they come out of the trust, raised by Gavin at [00:20:04] and deferred by both clients (not now), with Celeste putting it on no one's list",
+     "extra": {}
+    },
+    {
+     "uid": "n3",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "declined_proposal",
+     "hallucination": false,
+     "got": "",
+     "expected": "Selling the Haverill Road duplex along with the fourplex and Pennyroyal: Celeste recommends it at [00:15:47], Gavin says no at [00:16:29] and again, firmly, at [00:17:15]",
+     "extra": {}
+    },
+    {
+     "uid": "n4",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "A 1031 exchange of the fourplex into a replacement rental near Raleigh, raised by Gavin at [00:10:22] on the realtor's suggestion; Celeste advises against it because the stepped up basis leaves no gain to defer, and Gavin drops it",
+     "extra": {}
+    },
+    {
+     "uid": "n5",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Deciding where to invest the roughly $550,000 of net sale proceeds from the fourplex and Pennyroyal, explicitly deferred at [00:26:33] until there is a closing date",
+     "extra": {}
+    }
+   ],
+   "parse_problems": [],
+   "unmatched": {
+    "life_events": [
+     "Death of Gavin's mother on February 11, 2026",
+     "August trust distribution to Gavin of accumulated rent plus his mother's savings account: $68,400 (corrected during the meeting from an initial 86,000), currently sitting in the joint checking account. About $9,000 of tenant security deposits stays in the trust account",
+     "Cousin Denise, who has managed the properties since February for $400/month, is stopping as of October 31, 2026",
+     "Daughter Maren has talked about buying a condo in Denver and Anneliese would like to help with a down payment someday - explicitly a someday idea only, no amount, no action and nothing to model yet"
+    ],
+    "account_actions": [
+     {
+      "action": "Sell - list for sale as-is with a credit for the roof instead of replacing it; Gavin signs as trustee; listed now",
+      "account": "Larchmere fourplex (Ohio rental)",
+      "amount": "List at $425,000; roof bid $19,000; estimated net $375,000-$380,000 against a $410,000 stepped-up basis"
+     },
+     {
+      "action": "Sell - list once the tenant is out on October 31, 2026, after clean-up, rather than re-renting",
+      "account": "Pennyroyal Court (Ohio rental)",
+      "amount": "Stepped-up basis $176,000; sale at roughly basis, close to a tax non-event"
+     }
+    ],
+    "action_items": []
+   },
+   "n_reported_items": 18,
+   "group": "t5_m09",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 41.28,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 13947,
+    "output_tokens": 4035,
+    "thinking_tokens": 2097,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t5_m10": {
+   "units": [
+    {
+     "uid": "meeting_date",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "thursday, september 17, 2026",
+     "expected": "2026-09-17",
+     "extra": {}
+    },
+    {
+     "uid": "client_names",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "marisol tendry ; graham tendry",
+     "expected": "Marisol Tendry, Graham Tendry",
+     "extra": {}
+    },
+    {
+     "uid": "primary_goal",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "build retirement savings outside the business - move more money out of tendry acoustic design, inc. into retirement accounts so retirement does not depend on selling the firm",
+     "expected": "Move more of the business income into tax-advantaged retirement accounts so that retiring at 58 does not depend on selling the business",
+     "extra": {}
+    },
+    {
+     "uid": "retirement_target",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "marisol at age 58 (2038); graham retiring at the same time, at age 61 (2038)",
+     "expected": "Marisol retires at 58 (2038); Graham retires at the same time, at 61",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "growth, 80/20 (all managed assets, about $1.1 million across the joint account, the roth iras and the sep, stay in the growth model; the new solo 401(k) will also use the growth model)",
+     "expected": "Growth (80/20)",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance_change",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "no change - graham raised moving down to moderate (60/40) but agreed to stay at growth 80/20",
+     "expected": "no change",
+     "extra": {}
+    },
+    {
+     "uid": "next_meeting",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "tuesday, december 8, 2026 at 4:00 pm",
+     "expected": "Tuesday, December 8, 2026, 4:00 PM",
+     "extra": {}
+    },
+    {
+     "uid": "e1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "signed the brantmoor regional health new patient tower acoustic design contract - 3 years, about $1.2 million total, billed on milestones; first milestone in november of about $180,000",
+     "expected": "Tendry Acoustic Design signed a three-year contract with Brantmoor Regional Health for its new patient tower: about $1.2 million total, billed on milestones, first milestone about $180,000 in November 2026",
+     "extra": {}
+    },
+    {
+     "uid": "e2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "hiring first full-time w-2 employee, a project engineer, in february 2027 at about $95,000-$100,000; the two existing contractors remain contractors",
+     "expected": "Marisol plans to hire the firm's first full-time W-2 employee, a project engineer, around February 2027 at about $95,000 to $100,000",
+     "extra": {}
+    },
+    {
+     "uid": "e3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "son owen is a high school senior applying to college (two early action applications due november 1), starting college next year; funded by the 529, balance about $96,000",
+     "expected": "Son Owen, a high school senior, is applying to college (two early action applications due November 1) and starts college in fall 2027",
+     "extra": {}
+    },
+    {
+     "uid": "a1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: establish a solo 401(k) plan sponsored by tendry acoustic design, inc. with marisol as the only participant; invest in the growth 80/20 model account: new solo 401(k) at pellrose custody services amount: $57,500 total for 2026",
+     "expected": "Open a solo 401(k) sponsored by Tendry Acoustic Design, Inc. at Pellrose Custody Services and fund it for 2026: Marisol's $24,500 pre-tax employee deferral through the October, November and December payrolls (starting October 30) plus a $33,000 employer profit-sharing contribution (25% of the corrected $132,000 W-2) deposited after year-end and before the S-corp return is filed in March 2027, a 2026 total of $57,500",
+     "extra": {}
+    },
+    {
+     "uid": "a2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: move operating cash into a government money market fund (authorized by the funding section of the brokerage application), leaving about $210,000 (four months) in operating and $248,000 total at marrowgate account: marrowgate operating account to business brokerage government money market fun",
+     "expected": "Move $200,000 from the Tendry Acoustic Design operating account at Marrowgate Community Bank to a government money market fund in a new business brokerage account at Pellrose titled to the corporation, authorized on the account application",
+     "extra": {}
+    },
+    {
+     "uid": "a3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "action: formally discontinue the model sep - no 2026 contribution; account stays open (the $30,000 funded in march was the 2025 contribution). requires a discontinuance letter from the company to pellrose and a written participant notice account: sep ira at pellrose custody services amount: $0 for 2",
+     "expected": "Discontinue the model SEP for 2026: a letter from Tendry Acoustic Design to Pellrose ending the SEP agreement with no 2026 contribution, plus a written notice to Marisol; the SEP IRA itself stays open and no money moves",
+     "extra": {}
+    },
+    {
+     "uid": "i1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: prepare and send for e-signature the full package: solo 401(k) adoption agreement, pellrose plan application and deferral election, sep discontinuance letter and participant notice, and the business brokerage application with corporate resolution owner: devin oakes due: tuesday, september 22, ",
+     "expected": "Send the solo 401(k) package for e-signature: adoption agreement (sponsor Tendry Acoustic Design, Inc.), Pellrose plan account application and deferral election form, the SEP discontinuance letter to Pellrose and participant notice, plus the business brokerage account application and corporate resolution. Owner: Devin Oakes. Due: Tuesday the 22nd (2026-09-22).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: run key-person life insurance quotes at $1 million and $1.5 million, 10-year and 15-year level term, company-owned and company-beneficiary, and include the 101(j) notice-and-consent form in the application packet so it is signed before issue owner: devin oakes due: thursday, october 1, 2026",
+     "expected": "Obtain key-person term life quotes on Marisol at $1,000,000 and $1,500,000, 10-year and 15-year level term, company-owned with the company as beneficiary, with the section 101(j) notice-and-consent form in the application packet. Owner: Devin Oakes. Due: Thursday, October 1 (2026-10-01).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "reassigned",
+     "hallucination": false,
+     "got": "task: take the corrected one-pager to cpa jonas peltier at their meeting: confirm the $132,000 salary and the $33,000 employer contribution, and have him set up the deferral with payroll so it starts with the october 30 payroll owner: marisol tendry due: tuesday, october 6, 2026",
+     "expected": "Take the solo 401(k) numbers to CPA Jonas Peltier: confirm the $132,000 2026 W-2 and the $33,000 employer contribution, and have the deferral set up to start with the October 30 payroll. Owner: Marisol Tendry (reassigned from Anneliese Corvath). Due: her October 6 meeting with Jonas (2026-10-06).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i4",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "due_changed",
+     "hallucination": false,
+     "got": "task: request a state pension benefit estimate at age 61 through the member portal and send it to anneliese owner: graham tendry due: friday, october 9, 2026",
+     "expected": "Request a pension benefit estimate at age 61 from the state retirement system through the member portal and send it to Anneliese. Owner: Graham Tendry. Due: October 9 (2026-10-09), moved from next Friday the 25th.",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i5",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: rerun the retirement projection with graham at 61, marisol at 58, and $57,500 going into the solo 401(k) for 2026 owner: anneliese corvath due: before the december 8, 2026 meeting",
+     "expected": "Rerun the retirement projection with Marisol retiring at 58, Graham at 61 and $57,500 going into the solo 401(k) for 2026, ready before the December meeting. Owner: Anneliese Corvath. Due: before the December 8 meeting (2026-12-08).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i6",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: send the marrowgate line of credit agreement to devin oakes owner: marisol tendry due: monday, september 21, 2026",
+     "expected": "Send the Marrowgate Community Bank line of credit agreement to Devin Oakes. Owner: Marisol Tendry. Due: Monday the 21st (2026-09-21).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i7",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: review the line of credit agreement for anything on life insurance, collateral assignment or covenants owner: devin oakes due: before the key-person quotes come back (by october 1, 2026)",
+     "expected": "Read the line of credit agreement for any life insurance, collateral assignment or covenant requirement before the quotes come back. Owner: Devin Oakes. Due: before the quotes return (quotes due Thursday, October 1, 2026).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "n1",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Rolling the existing SEP IRA (about $268,000) into the new solo 401(k). Marisol floats it at [00:15:18] (\"Could we just roll the SEP money into the new 401(k)?\") and it is deferred at [00:16:02] (\"Let's not do it now. Maybe next year, once it's all running.\").",
+     "extra": {}
+    },
+    {
+     "uid": "n2",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "declined_proposal",
+     "hallucination": false,
+     "got": "",
+     "expected": "A cash balance (defined benefit) plan layered on top of the 401(k), proposed by Anneliese at [00:11:35] and declined by Marisol at [00:12:21] (\"No. Not with a hire coming.\").",
+     "extra": {}
+    },
+    {
+     "uid": "n3",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "declined_proposal",
+     "hallucination": false,
+     "got": "",
+     "expected": "A business overhead expense (disability) policy, proposed by Anneliese at [00:24:06] and declined by Marisol at [00:24:24] (\"I'm not paying for another disability policy.\").",
+     "extra": {}
+    },
+    {
+     "uid": "n4",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "A T-bill ladder in place of the money market fund, raised and set aside by Anneliese at [00:18:00] (\"could we do a T-bill ladder instead? We could, but for money you might need for payroll, I'd rather have next-day liquidity\").",
+     "extra": {}
+    }
+   ],
+   "parse_problems": [],
+   "unmatched": {
+    "life_events": [
+     "Marisol's 2026 W-2 salary is $132,000 ($11,000/month, $88,000 year-to-date through August); CPA Jonas Peltier wants her at $150,000 for 2027 for reasonable compensation",
+     "Business cash at Marrowgate Community Bank: $410,000 in operating and $38,000 in the tax reserve ($448,000 total, about $200,000 over the $250,000 FDIC limit); monthly burn $52,000-$53,000",
+     "Undrawn $250,000 business line of credit at Marrowgate renewed in March with Marisol's personal guarantee"
+    ],
+    "account_actions": [
+     {
+      "action": "Pre-tax employee salary deferral for 2026 through monthly payroll, starting with the October 30, 2026 paycheck (roughly $8,000 / $8,000 / $8,500 across October, November and December)",
+      "account": "Solo 401(k)",
+      "amount": "$24,500"
+     },
+     {
+      "action": "Employer profit-sharing contribution of 25% of the $132,000 W-2, funded in Q1 2027 before Jonas Peltier files the S-corp return in March",
+      "account": "Solo 401(k)",
+      "amount": "$33,000"
+     },
+     {
+      "action": "Open a business brokerage account titled to Tendry Acoustic Design, Inc., with corporate resolution signed by Marisol as president",
+      "account": "New business brokerage account at Pellrose Custody Services",
+      "amount": "NOT_FOUND"
+     }
+    ],
+    "action_items": []
+   },
+   "n_reported_items": 19,
+   "group": "t5_m10",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 50.51,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 14363,
+    "output_tokens": 4774,
+    "thinking_tokens": 2774,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t5_m11": {
+   "units": [
+    {
+     "uid": "meeting_date",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "thursday, september 10, 2026",
+     "expected": "2026-09-10 (Thursday, September 10, 2026)",
+     "extra": {}
+    },
+    {
+     "uid": "client_names",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "nadia wrenshaw ; theo wrenshaw",
+     "expected": "Nadia Wrenshaw; Theo Wrenshaw",
+     "extra": {}
+    },
+    {
+     "uid": "primary_goal",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "fund nadia's mother ingrid solvang's memory care and get her legal documents in order, without derailing the wrenshaws' own retirement plan",
+     "expected": "Pay for Nadia's mother Ingrid's care and get her legal documents in order without derailing the Wrenshaws' own retirement plan",
+     "extra": {}
+    },
+    {
+     "uid": "retirement_target",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2033, the year theo turns 65; both nadia and theo retiring at the same time (changed from 2030)",
+     "expected": "2033, when Theo turns 65 (moved from 2030 at Theo 62); Nadia retires at the same time",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "moderate growth, approximately 65% stocks / 35% bonds across the joint account and both roth accounts",
+     "expected": "Moderate growth (about 65% stocks / 35% bonds)",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance_change",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "no change. nadia raised moving to 50/50 and, after discussion, both agreed to leave the allocation as is",
+     "expected": "no change",
+     "extra": {}
+    },
+    {
+     "uid": "next_meeting",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "tuesday, october 27, 2026 at 2:00 p.m., in the office",
+     "expected": "Tuesday, October 27, 2026 at 2:00 p.m., in person at the office",
+     "extra": {}
+    },
+    {
+     "uid": "e1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "ingrid diagnosed in july 2026 by a neurologist with mild alzheimer's type dementia",
+     "expected": "Ingrid Solvang (Nadia's mother, 84) fell and broke her hip on June 8, 2026, had a skilled nursing rehab stay June 11 to August 14, and was diagnosed in July with mild Alzheimer's type dementia",
+     "extra": {}
+    },
+    {
+     "uid": "e2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "ingrid moved into memory care at callowmere commons in henrico on august 17, 2026; $8,900 per month at level one care (includes medication management), plus a $6,000 up-front community fee already paid from her checking",
+     "expected": "Ingrid moved into memory care at Callowmere Commons (Henrico) on August 17, 2026, at $8,900 a month for level one care; $6,000 community fee already paid",
+     "extra": {}
+    },
+    {
+     "uid": "e3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "ingrid's lynchburg house is under contract: listed at $345,000 in august, offer accepted at $331,000, closing october 23, 2026, with a $4,500 roof credit at closing; net proceeds estimated around $305,000 to be wired to ingrid's checking. only remaining contingency is buyer financing; nadia signs as",
+     "expected": "Ingrid's Lynchburg house is under contract at $331,000 (listed at $345,000), closing October 23, 2026, about $305,000 net expected",
+     "extra": {}
+    },
+    {
+     "uid": "e4",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "nadia reducing to 32 hours per week (0.8, four days) starting with the pay period beginning october 4, 2026; pay drops from about $148,000 to about $118,000; benefits unchanged and 403(b) deferral stays at 10%",
+     "expected": "Nadia is cutting back to 32 hours a week (0.8, four days) starting with the pay period that begins October 4, 2026, to be available for her mother; pay drops from about $148,000 to about $118,000 with benefits unchanged",
+     "extra": {}
+    },
+    {
+     "uid": "a1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: sell short-term bond fund holdings and transfer proceeds to the joint checking account so the wrenshaws can front ingrid's care bills through year end; trade to be placed today with funds expected in checking early next week account: joint brokerage account (short-term bond fund) to joint ch",
+     "expected": "Sell $25,000 of the short-term bond fund in the joint brokerage account and send the cash to the Wrenshaws' joint checking to front Ingrid's care bills through year end (to be documented as a loan)",
+     "extra": {}
+    },
+    {
+     "uid": "a2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: reduce the recurring monthly automatic transfer from joint checking to the joint brokerage account from $2,500 to $1,000, beginning with the october draft on the 5th account: joint checking to joint brokerage account amount: $1,000 per month",
+     "expected": "Reduce the monthly automatic investment from joint checking into the joint brokerage account from $2,500 to $1,000 a month, starting with the October draft",
+     "extra": {}
+    },
+    {
+     "uid": "i1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "reassigned",
+     "hallucination": false,
+     "got": "task: call tessaly mutual to open the long-term care claim on ingrid's policy, with policy number, callowmere move-in date and rehab stay dates in hand; ask specifically whether the skilled nursing days count toward the 90-day elimination period, and get the representative's name owner: nadia wrensh",
+     "expected": "Call Tessaly Mutual to open Ingrid's long-term care claim; ask whether the skilled nursing rehab days count toward the 90-day elimination period and get the rep's name. Owner: Nadia (first given to Jonah). Due as said: \"tomorrow\" = Friday, September 11, 2026.",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "due_changed",
+     "hallucination": false,
+     "got": "task: meet with elder law attorney mireille taskent to have a new durable power of attorney drafted (nadia as agent, erik as successor, with express gifting and medicaid planning powers), plus an advance medical directive, a hipaa release, a promissory note documenting the money the wrenshaws front ",
+     "expected": "Meet with elder law attorney Mireille Taskent (Taskent & Orlow) to execute a new durable power of attorney for Ingrid naming Nadia as agent with express gifting and Medicaid planning powers, plus an advance medical directive, a HIPAA release, a promissory note for the money being fronted, and a Medicaid backup plan. Owner: Nadia. Due as said: \"by next Friday, the 18th\" = Friday, September 18, 2026 (first set as the end of the month).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: send an introduction email to elder law attorney mireille taskent of taskent & orlow, copying nadia owner: celeste varnham due: this afternoon, thursday, september 10, 2026",
+     "expected": "Send an introduction email to elder law attorney Mireille Taskent, copying Nadia. Owner: Celeste. Due as said: \"this afternoon\" = Thursday, September 10, 2026.",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i4",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: pull five years of ingrid's bank statements (online plus scanning the older paper statements from the garage file box) and upload them to the portal folder for jonah owner: theo wrenshaw due: tuesday, september 15, 2026",
+     "expected": "Pull five years (60 months) of Ingrid's bank statements, scan the paper ones from the file box, and upload them to Jonah through the portal for the attorney's look-back review. Owner: Theo. Due as said: \"by Tuesday\" = Tuesday, September 15, 2026.",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i5",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: build a projection of how long ingrid's money lasts, using approximately $305,000 house proceeds, the $118,000 ira with required distributions left where it is, $2,850 monthly income, callowmere at $8,900 per month with a normal annual increase, and three years of tessaly benefits once they st",
+     "expected": "Build a care-funding projection for Ingrid showing how long her assets last (about $305,000 house proceeds, $118,000 IRA with required distributions, $2,850 monthly income, Callowmere at $8,900 with annual increases, Tessaly benefit for three years once it starts), plus a scenario with a higher level of care in two years. Owner: Jonah. Due as said: \"next Wednesday, the 16th\" = Wednesday, September 16, 2026.",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i6",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: call her brother erik to brief him on the new power of attorney, his role as successor agent, and the money the wrenshaws are fronting for ingrid's care owner: nadia wrenshaw due: this weekend (september 12-13, 2026)",
+     "expected": "Call her brother Erik to explain the new power of attorney (Erik as successor agent), the care costs and the money being fronted. Owner: Nadia. Due as said: \"this weekend\" = September 12 to 13, 2026.",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i7",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: rerun the wrenshaws' own retirement plan at a 2033 retirement date, reflecting nadia at 32 hours and the reduced $1,000 monthly savings, to review at the next meeting owner: celeste varnham due: by the october 27, 2026 meeting",
+     "expected": "Rerun the Wrenshaws' retirement plan at a 2033 retirement date with Nadia at 32 hours and the lower $1,000 monthly savings, for review at the next meeting. Owner: Celeste. Due as said: \"the next meeting\" = Tuesday, October 27, 2026.",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "n1",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Ingrid giving $10,000 to each of her four grandchildren ($40,000) this Christmas, or giving the house money to Nadia and Erik to shelter it from Medicaid; floated by Nadia, advised against and dropped: no gifts out of Ingrid's money",
+     "extra": {}
+    },
+    {
+     "uid": "n2",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "declined_proposal",
+     "hallucination": false,
+     "got": "",
+     "expected": "Selling Theo's company stock (about $198,000, 39% of the joint account) to raise the cash and trimming it toward 25%: Celeste proposed it at 00:08:43 and Theo refused at 00:09:08",
+     "extra": {}
+    },
+    {
+     "uid": "n3",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Long-term care insurance (traditional or hybrid) for Nadia and Theo themselves; Theo raised it and deferred it, nothing done now",
+     "extra": {}
+    },
+    {
+     "uid": "n4",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Moving Ingrid's IRA to Aldenmoor once a new power of attorney is in place; explicitly deferred (not today)",
+     "extra": {}
+    }
+   ],
+   "parse_problems": [],
+   "unmatched": {
+    "life_events": [
+     "Nadia's mother, Ingrid Solvang, age 84, fell in the kitchen at her Lynchburg house on June 8, 2026 and broke her left hip; surgery followed",
+     "Ingrid was in a skilled nursing rehabilitation facility from June 11, 2026 to August 14, 2026; rehab copays significant after the first 20 days under Medicare",
+     "Ingrid's income is $2,210 per month Social Security plus $640 per month teacher's pension, totaling $2,850 per month; roughly $4,000 remains in her checking",
+     "Ingrid holds an inherited/rolled-over IRA of $118,000 from which she takes required distributions",
+     "Ingrid holds a Tessaly Mutual long-term care policy purchased around 2003: $150 per day (about $4,500 per month), three-year benefit period, 90-day elimination period, no inflation rider; not yet in claim",
+     "Ingrid's existing power of attorney is from 2008 naming her late husband as agent (died 2019) and Nadia as successor; the IRA custodian is requiring an affidavit; no gifting authority, likely no HIPAA release, and no advance medical directive",
+     "Theo and Nadia pushing retirement from 2030 (Theo at 62) to 2033 (Theo at 65), citing lower savings, the cost of Ingrid's care, and pre-Medicare health insurance costs",
+     "Ingrid's proposed $10,000 Christmas gifts to each of four grandchildren ($40,000 total) declined on Medicaid five-year look-back grounds; family will continue the usual $100 per grandchild"
+    ],
+    "account_actions": [],
+    "action_items": []
+   },
+   "n_reported_items": 21,
+   "group": "t5_m11",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 36.33,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 13977,
+    "output_tokens": 3487,
+    "thinking_tokens": 1180,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  },
+  "t5_m12": {
+   "units": [
+    {
+     "uid": "meeting_date",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "tuesday, september 15, 2026",
+     "expected": "September 15, 2026",
+     "extra": {}
+    },
+    {
+     "uid": "client_names",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "renata brennock ; graham brennock",
+     "expected": "Renata Brennock; Graham Brennock",
+     "extra": {}
+    },
+    {
+     "uid": "primary_goal",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "relocate from minnesota to tennessee cleanly - settling residency/tax, the house sale and the accounts - without damaging the retirement plan",
+     "expected": "Relocate to Tennessee cleanly: break Minnesota residency and establish Tennessee domicile, sell the Woodbury home and consolidate Renata's 401(k), without derailing the retirement plan",
+     "extra": {}
+    },
+    {
+     "uid": "retirement_target",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "2039 (renata at 60, graham at 63); moved up from the prior 2041 base case",
+     "expected": "2039: Renata at 60, Graham at 63 (moved up from 2041 in the March plan)",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "moderate growth, approximately 70% stocks / 30% bonds, in the long-term accounts (joint account, both roths, and the incoming rollover ira)",
+     "expected": "Moderate Growth (about 70% stocks / 30% bonds)",
+     "extra": {}
+    },
+    {
+     "uid": "risk_tolerance_change",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "no change",
+     "expected": "no change",
+     "extra": {}
+    },
+    {
+     "uid": "next_meeting",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "field",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "tuesday, november 10, 2026 at 2:00 pm central, video call (invite already sent by jules marchetti; moved from november 3 because renata is in memphis that week)",
+     "expected": "Tuesday, November 10, 2026, 2:00 pm Central (video)",
+     "extra": {}
+    },
+    {
+     "uid": "e1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "renata starts at venholt clinical logistics monday october 5, 2026 as vp of distribution operations: $265,000 base, $40,000 sign-on paid with first paycheck (approximately the 16th, repayable if she leaves within 12 months), and a $15,000 taxable lump-sum relocation payment; benefits enrollment on d",
+     "expected": "Renata leaving Grevholm Instruments (last day September 25, 2026) to become VP of distribution operations at Venholt Clinical Logistics in Brentwood, TN, starting October 5, 2026: $265,000 base, $40,000 sign-on (repayable if she leaves within 12 months), $15,000 moving lump sum; forfeits $42,760 of unvested profit-sharing",
+     "extra": {}
+    },
+    {
+     "uid": "e2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "household relocation from woodbury, mn to franklin, tn: movers pack monday september 28, 2026, load and depart tuesday september 29, arrive franklin september 30, lease keys october 1 at 9:00 am; tennessee residency as of october 1, 2026",
+     "expected": "Family moving from Woodbury, MN to Franklin, TN: 12-month lease at $4,150 a month starting October 1, 2026; Tennessee residents from October 1; children start Franklin schools October 5",
+     "extra": {}
+    },
+    {
+     "uid": "e3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "sale of the woodbury, mn home: listed at $619,900, under contract at $604,000, financing contingency off october 9, 2026, closing friday october 30, 2026 as a mail-away closing; purchased 2014 for $392,000 plus $48,000 kitchen remodel in 2019; approximately $128,000 gain, fully covered by the $500,0",
+     "expected": "Sale of the Woodbury, MN home: under contract at $604,000, closing Friday, October 30, 2026 (mail-away close); estimated net proceeds $353,800; gain of about $128,000 fully covered by the $500,000 married-couple home sale exclusion",
+     "extra": {}
+    },
+    {
+     "uid": "e4",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "life_event",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "graham approved for fully remote work with tollefsrud mutual (approved thursday september 10, 2026), same manager and team, flying to minneapolis for quarterly planning sessions of roughly two to three days per quarter",
+     "expected": "Graham's employer, Tollefsrud Mutual (Minneapolis), approved fully remote work from Tennessee; he keeps his job and travels to Minneapolis two or three days a quarter",
+     "extra": {}
+    },
+    {
+     "uid": "a1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: direct rollover of the vested grevholm 401(k) balance into a new ira for renata at ferrant custody; check payable to ferrant for her benefit, nothing withheld. graham primary beneficiary, theo and ingrid 50/50 contingent account: grevholm instruments 401(k) to new ferrant custody ira (renata",
+     "expected": "Direct rollover of Renata's Grevholm Instruments 401(k) (vested balance only; all pre-tax, no company stock, no loan) to a new Rollover IRA at Ferrant Custody managed by Kessling Marrow; $387,240 as of September 15, 2026",
+     "extra": {}
+    },
+    {
+     "uid": "a2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "correction",
+     "hallucination": false,
+     "got": "action: open a new separate joint 'house account' at ferrant custody to receive the home sale proceeds wired directly from the title company account: new joint house account at ferrant custody amount: approximately $353,800 estimated net proceeds",
+     "expected": "Open a separate joint house account at Ferrant; the title company wires the Woodbury net sale proceeds (estimated $353,800) after the October 30 closing; invest $340,000 in a 3, 6, 9 and 12-month Treasury bill ladder (four $85,000 rungs), remainder in the money market",
+     "extra": {}
+    },
+    {
+     "uid": "a3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "action: pause the recurring automatic monthly investment for october, november and december 2026 and restart it in january 2027 account: joint account at ferrant custody (automatic investments) amount: $2,000 per month",
+     "expected": "Pause the $2,000 monthly automatic investment into the joint brokerage account for October through December 2026; resume January 2027",
+     "extra": {}
+    },
+    {
+     "uid": "a4",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "account_action",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "action: hold already placed on the joint account - no sales with gains until after october 1, 2026, so realized gains land on the tennessee side of the residency split account: joint account at ferrant custody amount: not_found",
+     "expected": "Hold on the joint account, already placed by Hollis before the meeting and in force until October 1, 2026: no sales that realize gains until after October 1, so any 2026 gains are realized as Tennessee residents (a standing trading restriction on a managed account; no amount)",
+     "extra": {}
+    },
+    {
+     "uid": "i1",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "due_changed",
+     "hallucination": false,
+     "got": "task: prepare and send for signature the ferrant ira application (current employer: venholt clinical logistics; graham primary beneficiary, theo and ingrid 50/50 contingent) and the grevholm direct-rollover distribution form, using the vested balance of $387,240 owner: jules marchetti due: tuesday, ",
+     "expected": "Prepare Renata's Rollover IRA application at Ferrant and the Grevholm distribution form (direct rollover of the vested balance; Graham primary beneficiary, Theo and Ingrid 50/50 contingent) and send them for her signature. Owner: Jules Marchetti. Due: Tuesday, October 6, 2026 (moved from Friday, September 18).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i2",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "reassigned",
+     "hallucination": false,
+     "got": "task: email deb kallistrom at kallistrom weir (copying hollis varga and both clients) with the october 1, 2026 residency date, renata's offer letter covering the sign-on and relocation payment, her most recent grevholm paystub, graham's remote-work approval and his few minnesota workdays per year, a",
+     "expected": "Email the Brennocks' CPA, Deb Kallistrom (Kallistrom Weir), the relocation packet: October 1 residency date, Renata's offer letter and most recent Grevholm paystub, Graham's remote approval and Minnesota workdays, and the estimated settlement statement; ask whether a fourth-quarter estimate is needed and whether the part-year position holds with the house owned through October 30; copy Hollis and the clients. Owner: Jules Marchetti (reassigned from Hollis Varga). Due: end of next week (Friday, September 25, 2026).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i3",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: submit the work location change in the tollefsrud hr portal so payroll stops withholding minnesota tax and switches to tennessee owner: graham brennock due: before thursday, october 1, 2026",
+     "expected": "Submit the work-location change in Tollefsrud Mutual's HR portal so payroll moves Graham to Tennessee and stops Minnesota state withholding. Owner: Graham Brennock. Due: before October 1, 2026.",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i4",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: at venholt benefits enrollment, set the 401(k) deferral so 2026 contributions across both employers total $24,500 (about $5,500 remaining at venholt, spread across remaining paychecks rather than front-loaded), and ask whether venholt does a true-up on the match owner: renata brennock due: mon",
+     "expected": "At Venholt benefits enrollment, set Renata's 401(k) deferral so her 2026 total across both employers stays at the $24,500 limit (about $5,500 of room after roughly $19,000 at Grevholm), override any 6% auto-enrollment, and ask whether Venholt trues up the match. Owner: Renata Brennock. Due: her first day, Monday, October 5, 2026.",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i5",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: obtain tennessee driver's licenses, register to vote in williamson county, and register both cars in tennessee owner: renata brennock and graham brennock due: within 30 days of becoming residents - by the end of october 2026",
+     "expected": "Get Tennessee driver's licenses, register to vote in Williamson County and register both cars in Tennessee. Owner: Renata and Graham Brennock. Due: end of October 2026 (within 30 days of becoming Tennessee residents on October 1; October 31, 2026).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i6",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: open the joint house account at ferrant and send graham the wire instructions for the title company owner: jules marchetti due: friday, october 23, 2026 (one week before the october 30 closing)",
+     "expected": "Open the separate joint house account at Ferrant and send Graham the wire instructions for the title company, a week ahead of the October 30 closing. Owner: Jules Marchetti. Due: Friday, October 23, 2026.",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "i7",
+     "score": 1.0,
+     "verdict": "CORRECT",
+     "kind": "action_item",
+     "error_kind": null,
+     "trap": "none",
+     "hallucination": false,
+     "got": "task: pause the $2,000 monthly automatic investment into the joint account in the ferrant app for october through december, restarting january owner: renata brennock due: tonight, tuesday september 15, 2026 (must be done before the 1st, as it pulls on the 1st)",
+     "expected": "Pause the $2,000 monthly automatic investment into the joint account for October through December (restart January) in the Ferrant app, before the October 1 draft. Owner: Renata Brennock. Due: tonight (September 15, 2026).",
+     "extra": {
+      "owner_ok": true,
+      "due_ok": true
+     }
+    },
+    {
+     "uid": "n1",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Buying a lake cabin near Brainerd, Minnesota for summers: Graham's someday idea, deferred to retirement because it would add a Minnesota residency tie",
+     "extra": {}
+    },
+    {
+     "uid": "n2",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "declined_proposal",
+     "hallucination": false,
+     "got": "",
+     "expected": "December 2026 Roth conversion of about $50,000 from the new rollover IRA after the move: proposed by Hollis, declined by Renata",
+     "extra": {}
+    },
+    {
+     "uid": "n3",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Moving the children's 529 accounts to a Tennessee plan: Graham asked, Hollis advised leaving them where they are",
+     "extra": {}
+    },
+    {
+     "uid": "n4",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Resuming backdoor Roth contributions for Renata by first moving the rollover IRA into the Venholt 401(k): a maybe, down the road, not now",
+     "extra": {}
+    },
+    {
+     "uid": "n5",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Shifting the long-term accounts to a more conservative allocation (for example fifty-fifty) until settled: Graham floated it, both clients chose to leave the allocation alone",
+     "extra": {}
+    },
+    {
+     "uid": "n6",
+     "score": 1.0,
+     "verdict": "CORRECTLY_OMITTED",
+     "kind": "non_action",
+     "error_kind": null,
+     "trap": "tentative",
+     "hallucination": false,
+     "got": "",
+     "expected": "Electing COBRA for the four-day gap between Grevholm and Venholt medical coverage: only if a claim arises, nothing being done",
+     "extra": {}
+    }
+   ],
+   "parse_problems": [],
+   "unmatched": {
+    "life_events": [
+     "12-month rental lease in Franklin, TN at $4,150 per month beginning October 1, 2026; plan to buy in Franklin in roughly 12 months when the lease is up",
+     "Renata leaving Grevholm Instruments, last day Friday September 25, 2026; Grevholm medical coverage runs through September 30, 2026 (four-day gap, no action to be taken, COBRA electable retroactively within 60 days)",
+     "Children Theo and Ingrid (age 11) start school in Tennessee Monday October 5, 2026; Theo joining a club hockey team in Brentwood",
+     "Grevholm 401(k) total balance approximately $430,000, of which $387,240 is vested; $42,760 unvested profit-sharing (60% vested on a six-year schedule) forfeited on departure"
+    ],
+    "account_actions": [
+     {
+      "action": "Build a Treasury bill ladder on the day the wire lands - four equal rungs of $85,000 at 3, 6, 9 and 12 months; remaining approximately $13,800 held in the money market in the same account for liquidity",
+      "account": "New joint house account at Ferrant Custody",
+      "amount": "$340,000 into the ladder"
+     }
+    ],
+    "action_items": [
+     {
+      "task": "Sign the IRA application and Grevholm direct-rollover distribution form",
+      "owner": "Renata Brennock",
+      "due": "on or after Tuesday, October 6, 2026, when the paperwork arrives"
+     }
+    ]
+   },
+   "n_reported_items": 21,
+   "group": "t5_m12",
+   "split": "test",
+   "stats": {
+    "wall_seconds": 42.0,
+    "attempts": 1,
+    "init_model": "claude-opus-5",
+    "init_tools": [],
+    "tool_use_blocks": 0,
+    "assistant_models": [
+     "claude-opus-5"
+    ],
+    "input_tokens": 14625,
+    "output_tokens": 4231,
+    "thinking_tokens": 1553,
+    "stop_reason": "end_turn",
+    "blind": true
+   }
+  }
+ }
+}

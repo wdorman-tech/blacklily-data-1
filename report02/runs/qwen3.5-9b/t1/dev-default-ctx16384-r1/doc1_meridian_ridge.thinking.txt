@@ -1,0 +1,28 @@
+The user wants me to extract key investment terms from the provided private fund offering document and return them as a JSON object. I need to follow strict rules about accuracy, citing sources, and handling missing information.
+
+Let me go through each field systematically:
+
+1. **fund_name**: "Meridian Ridge Global Opportunities Fund, L.P." - This appears in Section 1.1
+2. **fund_domicile**: "Delaware" - From Section 1.1 "organized under the Delaware Revised Uniform Limited Partnership Act"
+3. **fund_structure**: "master-feeder" - From Section 1.1 "The Partnership operates as a 'master-feeder' structure."
+4. **management_fee**: Class A: 1.75%, Class B: 1.25% - From Section 4.1
+5. **performance_fee**: 20% of Net Profits - From Section 4.2
+6. **hurdle_rate**: NOT_FOUND or NOT_APPLICABLE - Section 4.2 says "The Performance Allocation is not subject to a preferred return, hurdle rate or benchmark."
+7. **high_water_mark**: Yes, perpetual - From Section 4.3 "perpetual high water mark"
+8. **minimum_initial_investment**: $2,000,000 - From Section 2.2
+9. **lockup_period**: Class A: 12 months, Class B: 24 months - From Section 5.1
+10. **redemption_frequency**: Quarterly - From Section 5.2 "last business day of each calendar quarter"
+11. **redemption_notice_days**: 90 days - From Section 5.3
+12. **gate_provision**: 20% NAV at Partnership level - From Section 5.5
+13. **key_man_provision**: Dr. Elena Vasquez-Hartmann, redemption rights upon departure - From Section 6.2
+14. **gp_commitment**: Greater of $25M or 2% of Master Fund NAV - From Section 6.3
+15. **fund_term**: Perpetual - From Section 7.1
+16. **auditor**: Thornbury & Associates LLP - From Section 9.2
+17. **administrator**: Calderon Fund Services (Cayman) Ltd. - From Section 9.1
+18. **prime_broker**: Harrington Sloan Securities LLC and Beaumont Clarke International Ltd. - From Section 9.3
+19. **legal_counsel**: Whitlock Barr & Nunes LLP (U.S.), Kentish Drummond (Cayman) - From Section 9.4
+
+
+20. **mfn_election**: NOT_APPLICABLE - From Section 8.2 "The Partnership does not offer a 'most favored nation' election to Limited Partners."
+
+I need to verify each citation matches the exact text in the document and ensure I'm capturing the precise language used.

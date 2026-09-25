@@ -1,0 +1,56 @@
+The objective is to extract specific information from the provided text and format it as a JSON object.
+
+    *   *Section 13.10 Legal Counsel:*
+        *   U.S. Counsel: Tregarth Ellingsby LLP (New York, NY)
+        *   Cayman Islands Counsel: Carrick Mowbray (George Town, Grand Cayman)
+    *   *Section 13.11 Directory:*
+        *   General Partner and Investment Manager: 58 Tollgate Lane, Greenwich, Connecticut 06830.
+        *   Administrator: Stellmoor Fund Services Ltd., 118 Shedden Road, George Town, Grand Cayman KY1-1205, Cayman Islands.
+        *   Prime Brokers: Kittering Hale Securities LLC and Mallory Quenby & Co. LLC, New York, New York.
+        *   Independent Auditor: Brennick Tallow LLP, 1250 Commerce Plaza, New York, New York 10019.
+        *   U.S. Legal Counsel: Tregarth Ellingsby LLP, 400 Madison Crossing, New York, New York 10017.
+        *   Cayman Islands Legal Counsel: Carrick Mowbray, 46 Mary Street, George Town, Grand Cayman KY1-1206, Cayman Islands.
+    *   *Section 14 Summary of Changes (Effective July 1, 2026):*
+        *   14.1 Redemption Notice Period: Increased from 30 to 45 days (for dates $\ge$ Aug 31, 2026).
+        *   14.2 Fund-Level Gate: Imposed for redemptions $\ge$ July 31, 2026. Gate is 15% of NAV.
+        *   14.3 Independent Auditor: Changed from Brennick Tallow LLP to Marbeck Pennycott LLP (effective Dec 31, 2026).
+        *   14.4 Other Terms: Management Fee, Incentive Allocation, lock-up, and monthly Redemption Dates are unchanged.
+
+    *   *Legal Counsel:*
+        *   U.S. Counsel: Tregarth Ellingsby LLP
+        *   Cayman Counsel: Carrick Mowbray
+    *   *Directory:*
+        *   GP/IM: 58 Tollgate Lane, Greenwich, CT
+        *   Administrator: Stellmoor Fund Services Ltd.
+        *   Prime Brokers: Kittering Hale Securities LLC, Mallory Quenby & Co. LLC
+        *   Independent Auditor (Old): Brennick Tallow LLP
+        *   Independent Auditor (New): Marbeck Pennycott LLP
+    *   *Changes (Effective July 1, 2026):*
+        *   Redemption Notice Period: 45 days
+        *   Fund-Level Gate: 15%
+        *   Auditor Change: Marbeck Pennycott LLP
+
+    ```json
+    {
+      "legal_counsel": {
+        "us_counsel": "Tregarth Ellingsbray LLP",
+        "cayman_counsel": "Carrick Mowbray"
+      },
+      "directory": {
+        "general_partner_investment_manager": "58 Tollgate Lane, Greenwich, Connecticut 06830",
+        "administrator": "Stellmoor Fund Services Ltd., 118 Shedden Road, George Town, Grand Cayman KY1-1205, Cayman Islands",
+        "prime_brokers": [
+          "Kittering Hale Securities LLC",
+          "Mallory Quenby & Co. LLC"
+        ],
+        "independent_auditor_original": "Brennick Tallow LLP",
+        "us_legal_counsel_address": "400 Madison Crossing, New York, New York 10017",
+        "cayman_legal_counsel_address": "46 Mary Street, George Town, Grand Cayman KY1-1206, Cayman Islands"
+      },
+      "summary_of_changes_effective_july_1_2026": {
+        "redemption_notice_period": "Increased from 30 days to 45 days for redemptions on or after August 31, 2026",
+        "fund_level_gate": "15% of the net asset value of the Fund as of the Redemption Date",
+        "independent_auditor_update": "Marbeck Pennycott LLP (replacing Brennick Tallow LLP)",
+        "unchanged_terms": [
+          "Management Fee",
+          "In

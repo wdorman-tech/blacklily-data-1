@@ -1,0 +1,34 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on the provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote".
+        *   No markdown fences, no preamble, no commentary.
+
+2.  **Analyze the Question:**
+    *   Question: "Does the Firm file class action claims on behalf of separately managed account clients?"
+
+3.  **Scan the Documents:**
+    *   Document 1: `01_brochure.md` (Form ADV Part 2A: Firm Brochure, dated March 27, 2026).
+        *   Section Item 17. Voting Client Securities > 17.2 Class Actions and Bankruptcy Claims.
+        *   Text: "The Firm does not file proofs of claim in securities class actions or bankruptcy proceedings on behalf of separate account clients. Separate account clients and their custodians retain that responsibility, and the Firm forwards to the client any notice it receives."
+    *   Document 2: `02_compliance_manual.md` (Compliance Manual: Policies and Procedures, dated January 15, 2026).
+        *   Section SECTION 12. PRIVACY > 12.1 Scope.
+        *   Text: Discusses privacy, Regulation S-P, personal information. Not relevant to class action claims filing.
+
+4.  **Evaluate Findings:**
+    *   The question asks about "separately managed account clients".
+    *   Document `01_brochure.md` Section Item 17. Voting Client Securities > 17.2 Class Actions and Bankruptcy Claims explicitly states: "The Firm does not file proofs of claim in securities class actions or bankruptcy proceedings on behalf of separate account clients."
+    *   This directly answers the question (No).
+    *   Date check: `01_brochure.md` is dated March 27, 2026. `02_compliance_manual.md` is dated January 15, 2026. The brochure is later, but the specific section on class actions is in the brochure. There are no conflicting documents regarding this specific topic found in the provided text.
+    *   Constraint Check: "Answer only from the documents provided." -> Yes.
+    *   Constraint Check: "If the documents do not answer the question... the answer is exactly NOT_IN_DOCUMENTS." -> The document *does* answer it.
+    *   Constraint Check: "Cite the document file name and the section where the answer appears, as they are labelled in the documents." -> File: `01_brochure.md`, Section: Item 17. Voting Client Securities > 17.2 Class Actions and Bankruptcy Claims (or just the specific label provided). The prompt asks for "section" as labelled. In the text it says `Section: Item 17. Voting Client Securities > 17.2 Class Actions and Bankruptcy Claims`. I should use the full section path or the specific subsection label. Looking at

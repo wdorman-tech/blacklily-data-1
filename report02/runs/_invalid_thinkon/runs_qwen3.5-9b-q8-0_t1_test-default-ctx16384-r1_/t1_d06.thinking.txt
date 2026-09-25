@@ -1,0 +1,154 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Diligence analyst at a registered investment adviser.
+    *   Task: Extract key investment terms from the provided fund offering document (Amended and Restated Agreement of Limited Partnership + Appendix A First Amendment).
+    *   Constraint 1: Accuracy above all else. No invented terms, no guessing, no inferring market standards.
+    *   Constraint 2: If not found, value is `NOT_FOUND`.
+    *   Constraint 3: If not applicable, value is `NOT_APPLICABLE` (with quote).
+    *   Constraint 4: Amendments/Supplements supersede original text. Report amended values.
+    *   Constraint 5: Return ONLY a JSON object. No markdown, no preamble.
+    *   Constraint 6: Specific fields to extract with specific structure (`value`, `citation`, `quote`).
+    *   Input Document: "FENWRIGHT COLQUIST CAPITAL PARTNERS III, L.P." Amended and Restated Agreement + Appendix A First Amendment (dated April 22, 2025).
+
+2.  **Scan the Document for Each Field:**
+
+    *   **fund_name**: Look for the legal name of the fund entity.
+        *   Text: "FENWRIGHT COLQUIST CAPITAL PARTNERS III, L.P." (Title and Section 2.1).
+        *   Citation: Title or Section 2.1. Let's use Section 2.1 as it defines the name formally. Or the title. The prompt asks for section/appendix identifier. "Section 2.1" says "The name of the Partnership is 'Fenwright Colquist Capital Partners III, L.P.'".
+        *   Quote: "The name of the Partnership is 'Fenwright Colquist Capital Partners III, L.P.'"
+
+    *   **fund_domicile**: Jurisdiction of organization.
+        *   Text: Section 2.1: "organized under the laws of the State of Delaware."
+        *   Citation: Section 2.1.
+        *   Quote: "The Partnership is a limited partnership organized under the laws of the State of Delaware."
+
+    *   **fund_structure**: Open-end/closed-end, master-feeder.
+        *   Text: Section 3.5 says "No Limited Partner shall have the right to withdraw... The Interests are not redeemable at the option of the holder at any time." This indicates Closed-End (drawdown).
+        *   Master-Feeder? Section 2.2 mentions Parallel Funds but says "The Partnership shall not invest through a master fund or other intermediate pooled vehicle". It mentions Parallel Funds invest alongside pro rata. No explicit master-feeder structure described where the main fund feeds into others in a typical feeder sense, but it has a Parallel Fund (Cayman). However, Section 2.2 says "no Parallel Fund shall hold an interest in the Partnership." This suggests they are separate entities investing alongside, not a classic master-feeder where the Cayman holds LP interests in the US fund. It looks like a standard LP structure with parallel vehicles.
+        *   Wait, check for Master-Feeder explicitly. Section 2.2: "The Partnership shall not invest through a master fund...". This implies it is not a feeder into a master. Is it a master? Usually, if there's a Cayman Parallel Fund, the US fund might be the master. But Section 2.2 says no Parallel Fund holds an interest in the Partnership. So it's likely a parallel structure, not a master-feeder.
+        *   Structure: Closed-end (no redemptions per 3.5).
+        *   Quote for Closed-End: "The Interests are not redeemable at the option of the holder at any time." (Section 3.5).
+        *   Quote for Master/Feeder: Section 2.2 says "The Partnership shall not invest through a master fund...". This implies it is NOT a feeder. Is it a master? It doesn't explicitly say "This is a master fund". I should report what is found. If it's not explicitly stated as master-feeder, and it has parallel funds that don't hold interests in the main fund, it's likely just a Parallel Fund structure. However, the prompt asks for "whether master-feeder". If not found, `NOT_FOUND`.
+        *   Let's check if there is any indication of Master-Feeder. Section 2.2: "Parallel Funds... shall invest alongside the Partnership pro rata... no Parallel Fund shall hold an interest in the Partnership." This negates a standard feeder structure where the Cayman holds LP interests in the US fund.
+        *   So, Closed-end is clear. Master-feeder is `NOT_FOUND` or `NOT_APPLICABLE`. Given the instruction "If the document does not state a term, the value is exactly NOT_FOUND", I will use `NOT_FOUND` for master-feeder status if not explicitly defined as such, but I can describe the structure found.
+        *   Actually, usually "fund_structure" expects "Closed-end" or "Open-end". The prompt asks: "Open-end (redeemable) or closed-end (drawdown, no redemptions), and whether master-feeder."
+        *   Value: "Closed-end; NOT_FOUND for master-feeder status" -> Wait, the value field is a string. I should combine them. "Closed-end". For master-feeder, if not stated, `NOT_FOUND`.
+        *   Let's look at Section 3.5 again. "The Interests are not redeemable...". This confirms Closed-End.
+        *   Master-Feeder: Not explicitly stated as such. I will report "Closed-end" and for master-feeder part, if the document doesn't say it is one, I should probably note `NOT_FOUND` or just state what is there. The field asks for "whether master-feeder". If not found, `NOT_FOUND`.
+        *   Combined Value: "Closed-end; NOT_FOUND (master-feeder status not stated)". Or better: "Closed-end" and handle the master-feeder part in the value string if possible, or just state the structure. The prompt says "Give every class or tier." for fees. For structure, it asks "Open-end... or closed-end... and whether master-feeder."
+        *   I will write: "Closed-end; NOT_FOUND (master-feeder)".
+        *   Actually, looking at Section 2.2, it explicitly says "The Partnership shall not invest through a master fund". This implies it is not a feeder. Is it a master? It doesn't say. So `NOT_FOUND` for the master-feeder specific boolean.
+        *   Let's refine: Value = "Closed-end; NOT_FOUND (master-feeder)". Citation = Section 3.5, Section 2.2. Quote = "The Interests are not redeemable at the option of the holder at any time." / "The Partnership shall not invest through a master fund...".
+        *   Wait, I need to be careful with `NOT_FOUND`. If the document says it's NOT a feeder, does that mean master-feeder is `NOT_APPLICABLE`? No, it means the status is unknown or negative. The prompt asks "whether master-feeder". If it doesn't say, `NOT_FOUND`.
+        *   Let's stick to the text. Section 3.5 confirms Closed-End. Section 2.2 says no master fund investment through it (so not a feeder). It doesn't explicitly label itself as a Master Fund. So "Closed-end; NOT_FOUND".
+
+    *   **management_fee**: Annual rate and basis. Every class/tier.
+        *   Original Agreement Section 4.1(b):
+            *   Investment Period: 1.75% per annum (0.4375% quarterly) on Capital Commitment.
+            *   After Investment Period: 1.50% per annum (0.375% quarterly) on Invested Capital.
+        *   Amendment Section S-3(a): Amends Section 4.1(b)(ii).
+            *   New rate after Investment Period: "one-quarter of one and one-quarter percent (1.25%) (that is, 0.3125%)". Basis: "Net Invested Capital" (defined in S-3(b)).
+        *   So we have two tiers based on time.
+        *   Value: "Investment Period: 1.75% per annum on Capital Commitment; Post-Investment Period: 1.25% per annum on Net Invested Capital".
+        *   Citation: Section 4.1(b) (original), Appendix A, Section S-3(a) (amended). Since Amendment supersedes, I must report the amended value.
+        *   Quote: "(ii) for each fiscal quarter thereafter, one-quarter of one and one-quarter percent (1.25%) (that is, 0.3125%) of such Limited Partner's share of Net Invested Capital as of the first day of such fiscal quarter." (Appendix A, Section S-3(a)).
+        *   Also need to capture the Investment Period rate which wasn't changed by Amendment S-3(a) (S-3(c) says 4.1(b)(i) is not amended).
+        *   Quote for Investment Period: "(i) for each fiscal quarter commencing during the Investment Period, one-quarter of one and three-quarters percent (1.75%) (that is, 0.4375%) of such Limited Partner's Capital Commitment;" (Section 4.1(b)(i)).
+        *   Combined Value: "Investment Period: 1.75% per annum on Capital Commitment; Post-Investment Period: 1.25% per annum on Net Invested Capital".
+
+    *   **performance_fee**: Carried interest rate.
+        *   Section 5.3(d): "eighty percent (80%) to such Limited Partner and (ii) twenty percent (20%) to the General Partner." This implies a 20% GP carry.
+        *   Section 1.1 Definition: "Carried Interest means distributions to the General Partner under Sections 5.3(c) and 5.3(d)(ii)."
+        *   Section 5.4: "The Carried Interest is determined on a cumulative basis...".
+        *   Value: "20% (cumulative)".
+        *   Citation: Section 5.3(d).
+        *   Quote: "twenty percent (20%) to the General Partner."
+
+    *   **hurdle_rate**: Preferred return, hurdle or benchmark.
+        *   Section 1.1 Definition: "Preferred Return means... an amount equal to a return of eight percent (8%) per annum...".
+        *   Section 5.3(b): "Preferred Return: second, 100% to such Limited Partner until it has received cumulative distributions under this Section 5.3(b) equal to its Preferred Return;"
+        *   Type: Hard/Soft? It says "until it has received... equal to". This is a hard hurdle (must be paid before carry).
+        *   Value: "8% per annum; Hard".
+        *   Citation: Section 1.1, Section 5.3(b).
+        *   Quote: "Preferred Return means... an amount equal to a return of eight percent (8%) per annum..."
+
+    *   **high_water_mark**: Whether HWM applies.
+        *   Section 5.4: "...is not subject to a high-water mark, loss carryforward account or similar mechanism..."
+        *   Value: "NOT_APPLICABLE".
+        *   Citation: Section 5.4.
+        *   Quote: "The Carried Interest is... not subject to a high-water mark, loss carryforward account or similar mechanism;"
+
+    *   **minimum_initial_investment**: Minimum INITIAL subscription.
+        *   Section 3.2: "The minimum Capital Commitment of a Limited Partner is $5,000,000..."
+        *   Value: "$5,000,000".
+        *   Citation: Section 3.2.
+        *   Quote: "The minimum Capital Commitment of a Limited Partner is $5,000,000..."
+
+    *   **lockup_period**: Lock-up (hard/soft).
+        *   Section 3.5: "No Limited Partner shall have the right to withdraw... before the dissolution and winding up of the Partnership... The Interests are not redeemable at the option of the holder at any time."
+        *   This is a hard lockup until dissolution (Term ends).
+        *   Term Section 2.3: "tenth (10th) anniversary...".
+        *   Value: "Hard lock-up until dissolution (Term); Term up to 10 years + extensions".
+        *   Citation: Section 3.5, Section 2.3.
+        *   Quote: "The Interests are not redeemable at the option of the holder at any time."
+
+    *   **redemption_frequency**: How often interests may be redeemed.
+        *   Section 3.5: "No Limited Partner shall have the right to withdraw... or to demand the return of any Capital Contribution... except as the General Partner may require under Section 11.2." (Withdrawal for regulatory reasons).
+        *   Value: "NOT_APPLICABLE" (No redemption rights). Or "None". The prompt asks "How often interests may be redeemed." If they can't, `NOT_FOUND` or `NOT_APPLICABLE`. Given the instruction "If the document does not state a term... NOT_FOUND", but here it states they *cannot* redeem. So `NOT_APPLICABLE` is more accurate for "redemption frequency" if there is none. However, usually, if no redemption exists, we report that. Let's use `NOT_APPLICABLE` with quote saying no redemption.
+        *   Wait, Section 3.5 says "No Limited Partner shall have the right to withdraw...". So redemption frequency is effectively N/A.
+        *   Value: "NOT_APPLICABLE".
+        *   Citation: Section 3.5.
+        *   Quote: "The Interests are not redeemable at the option of the holder at any time."
+
+    *   **redemption_notice_days**: Advance written notice required to redeem.
+        *   Since there is no redemption, this is `NOT_APPLICABLE`.
+        *   Value: "NOT_APPLICABLE".
+        *   Citation: Section 3.5.
+        *   Quote: "The Interests are not redeemable at the option of the holder at any time."
+
+    *   **gate_provision**: Redemption gate.
+        *   No redemption, so no gate. `NOT_APPLICABLE`.
+        *   Value: "NOT_APPLICABLE".
+        *   Citation: Section 3.5.
+        *   Quote: "The Interests are not redeemable at the option of the holder at any time."
+
+    *   **key_man_provision**: Key person clause.
+        *   Section 6.3(a): "Key Persons" are Graham Oduya and Tomas Wexcombe (Amended).
+        *   Section 6.3(b): "Key Person Event" triggers suspension of Investment Period.
+        *   Value: "Graham Oduya and Tomas Wexcombe; Triggers suspension of Investment Period".
+        *   Citation: Appendix A, Section S-2(a) (Amended names), Section 6.3(b).
+        *   Quote: "The 'Key Persons' are Graham Oduya and Tomas Wexcombe..." (Appendix A S-2(a)).
+
+    *   **gp_commitment**: Required GP commitment.
+        *   Section 3.3: "...make Capital Commitments... in an aggregate amount equal to not less than two percent (2%) of the aggregate Capital Commitments of all Partners..."
+        *   Value: "2%".
+        *   Citation: Section 3.3.
+        *   Quote: "...aggregate amount equal to not less than two percent (2%) of the aggregate Capital Commitments of all Partners..."
+
+    *   **fund_term**: Term of the fund.
+        *   Original Section 2.3: "tenth (10th) anniversary... extend for up to three (3) successive periods of one (1) year each".
+        *   Amendment Appendix A, Section S-4(a): Amends Section 2.3. "Term may be extended for up to two (2) successive periods of one (1) year each".
+        *   Amendment S-4(c): "Based on the Final Closing Date recited above, the Term will expire on December 16, 2034..."
+        *   Value: "10 years from Initial Closing Date; extendable up to two (2) successive one-year periods with consent of Majority in Interest".
+        *   Citation: Appendix A, Section S-4(a).
+        *   Quote: "provided that the Term may be extended for up to two (2) successive periods of one (1) year each... which the General Partner shall request not later than ninety (90) days before the date on which the Term would otherwise expire."
+
+    *   **auditor**: Independent registered public accounting firm CURRENTLY appointed.
+        *   Section 7.1: "Aldwin Treloar LLP, independent certified public accountants...".
+        *   Value: "Aldwin Treloar LLP".
+        *   Citation: Section 7.1.
+        *   Quote: "The financial statements of the Partnership shall be audited as of the end of each fiscal year by Aldwin Treloar LLP..."
+
+    *   **administrator**: Fund administrator.
+        *   Section 7.2: "Kinnaird Stroud Fund Services, LLC (the 'Administrator')".
+        *   Value: "Kinnaird Stroud Fund Services, LLC".
+        *   Citation: Section 7.2.
+        *   Quote: "The General Partner has engaged Kinnaird Stroud Fund Services, LLC (the 'Administrator')..."
+
+    *   **prime_broker**: Prime broker(s).
+        *   Section 7.3: "The Partnership does not engage a prime broker...".
+        *   Value: "NOT_APPLICABLE" or "None". The prompt asks for "Prime broker(s)". If none, `NOT_FOUND`? Or `NOT_APPLICABLE`. Since it explicitly says they do not engage one, `NOT_APPLICABLE` is better.
+        *   Value: "NOT_APPLICABLE".
+        *   Citation: Section 7.3.
+        *

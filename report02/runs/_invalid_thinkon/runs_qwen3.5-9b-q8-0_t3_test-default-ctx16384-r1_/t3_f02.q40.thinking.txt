@@ -1,0 +1,35 @@
+Thinking Process:
+
+1.  **Analyze the Request:**
+    *   Role: Investor relations and operations analyst at a registered investment adviser.
+    *   Task: Answer a due diligence questionnaire (DDQ) question based *only* on provided firm documents.
+    *   Constraints:
+        *   Answer only from documents.
+        *   If not found, answer exactly `NOT_IN_DOCUMENTS`.
+        *   Later-dated documents supersede earlier ones.
+        *   Keep answers short and specific.
+        *   Cite document file name and section.
+        *   Quote supporting text verbatim.
+        *   Output format: JSON object with keys "answer", "source_document", "section", "quote". No markdown fences, no preamble.
+    *   Question: Describe the Adviser's cyber incident response process, including who leads it and the deadline for notifying individuals whose sensitive information was accessed without authorization.
+
+2.  **Scan Documents for Keywords:**
+    *   Keywords: "cyber incident response", "process", "leads", "deadline", "notify", "individuals", "sensitive information", "accessed without authorization".
+
+3.  **Evaluate Document Content:**
+
+    *   `02_compliance_manual.md` (Jan 15, 2026):
+        *   Section 11.5 Incident Response and Insurance: Mentions incidents handled under procedures in Section 9 of Business Continuity Plan. Mentions cyber liability insurance review.
+        *   Section 12.3 Notification of Unauthorized Access: "If the Adviser determines that sensitive customer information has been, or is reasonably likely to have been, accessed or used without authorization, it will notify each affected individual as soon as practicable, but not later than 30 days after becoming aware that the unauthorized access or use has occurred or is reasonably likely to have occurred..."
+    *   `04_business_continuity_plan.md` (Feb 9, 2026):
+        *   Section 1.2 Scope: Mentions Plan covers personnel, systems, vendors. Incident response provisions incorporated in Compliance Manual Section 11.5.
+        *   Section 9. PANDEMIC AND CYBER INCIDENT RESPONSE > 9.2 Cyber Incident Response: "The Incident Response Team is led by the Director of Technology, acting as Information Security Officer... On detection of a suspected incident, the Incident Response Team classifies its severity, contains the incident by isolating affected systems and disabling compromised credentials, preserves evidence, and eradicates the threat before systems are restored from clean backups. The Chief Compliance Officer determines whether notification is required to investors, affected individuals, regulators or law enforcement... After each incident, the Incident Response Team documents the root cause and remediation and reports to the Management Committee."
+
+4.  **Synthesize the Answer:**
+    *   **Process:** Classified severity, contains (isolate systems, disable credentials), preserves evidence, eradicates threat before restoring from backups, documents root cause/remediation, reports to Management Committee. (Source: BCP Section 9.2).
+    *   **Leader:** Director of Technology, acting as Information Security Officer. (Source: BCP Section 9.2).
+    *   **Deadline for notifying individuals:** Not later than 30 days after becoming aware that the unauthorized access or use has occurred or is reasonably likely to have occurred. (Source: Compliance Manual Section 12.3).
+
+5.  **Check Constraints & Rules:**
+    *   Must answer from documents. Yes.
+    *   Later-dated documents supersede earlier ones. BCP is Feb 9,

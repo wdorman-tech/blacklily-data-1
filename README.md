@@ -15,8 +15,8 @@ The full record behind Black Lily's pre-registered benchmarks of open-weight mod
 | | Question | Read |
 |---|---|---|
 | **No. 01** | Can a 14B model on one 12 GB card extract 20 fund terms as well as Claude? | `onepager/results.json` |
-| **No. 02** | Where do models that fit on one 12 GB card hold, and where do they break? | [Where local models hold, and where they break](https://blacklily.ai/research/local-vs-frontier) |
-| **No. 03** | What does a larger local model close? | [What a larger local model closes, and what card would hold it](https://blacklily.ai/research/larger-local-models) |
+| **No. 02** | Where do models that fit on one 12 GB card hold, and where do they break? | [Where local models hold, and where they break](https://www.blacklily.ai/research/local-vs-frontier) |
+| **No. 03** | What does a larger local model close? | [What a larger local model closes, and what card would hold it](https://www.blacklily.ai/research/larger-local-models) |
 
 ## Results
 
@@ -114,5 +114,9 @@ Rerunning models:
 - **Invented:** every fund, firm and person in T1, T3, T5, T6, T7 and T2's synthetic pairs.
 - **Public:** T2's real pairs are 10-K Item 1A risk factors (FY2024 against FY2025). T4 is Form 8-K Exhibit 99.1 earnings releases. Both come from SEC EDGAR. The cached filings are not included; refetch with `EDGAR_USER_AGENT="Name you@example.com" uv run report02/src/edgar.py 10k|8k <tickers>`.
 - **Anonymized:** paths are repo-relative. Claude transcripts keep model, messages, thinking, usage and timings, and drop session, request and message IDs, thinking signatures, cost fields and the local environment; tool-use IDs are renumbered. Personal names and locations are redacted. No document, key, prompt, model output, grade or verdict changed.
-- **Hashes:** both `results.json` files were rebuilt from this release and match the published numbers; their `meta.prereg_sha256` is the hash of the preregistration shipped here. Every file in `report03/ops/REGISTRATION.json` matches its registered hash except the preregistration (Section 13 grows after registration; the text above it still matches, see `meta.registration`) and `build_results_03.py` (a logged deviation).
+- **Hashes:** preregistration hashes are SHA-256 of the text with line endings normalized to LF. No. 02's preregistration has one name redacted, so it hashes to `c996d2253993bfef`, not the registered `799f8b5f7e0c5af4` (the No. 02 paper prints both); both `results.json` files record the hash of the preregistration shipped here and match the published numbers. Every file in `report03/ops/REGISTRATION.json` matches its registered hash except the preregistration (Section 13 grows after registration; the text above it still matches, see `meta.registration`) and `build_results_03.py` (a logged deviation).
 - **Not included:** the paper and website builders and working logs.
+
+## License
+
+[MIT](LICENSE), copyright Black Lily LLC. Third-party material keeps its owners' terms: the SEC filing text in `report02/corpus/t2` and `report02/corpus/t4` belongs to its issuers, and the pages in `report03/snapshots` belong to Ollama.
